@@ -1,0 +1,165 @@
+{
+	"apiVersion": 2,
+	"name": "create-block/whatsapp-button",
+	"title": "WhatsApp Button",
+	"category": "whatsapp-block",
+	"icon": "whatsapp",
+	"description": "WhatsApp button block for WhatsHelp plugin.",
+	"textdomain": "chat-help",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"supports": {
+		"html": false,
+		"color": {
+			"background": true,
+			"text": true,
+			"gradients": true,
+			"hover": true
+		},
+		"spacing": {},
+		"typography": {}
+	},
+
+	"example": {
+		"attributes": {
+			"text": "How can I help you?",
+			"gradients": "red-to-blue",
+			"links": true
+		}
+	},
+
+	"attributes": {
+		"text": {
+			"type": "string",
+			"default": "How can I help you?"
+		},
+		"info": {
+			"type": "string",
+			"default": "Robert / Sales Support"
+		},
+		"title": {
+			"type": "string",
+			"default": "How can I help you?"
+		},
+		"online": {
+			"type": "string",
+			"default": "I am online"
+		},
+		"offline": {
+			"type": "string",
+			"default": "I am offline"
+		},
+		"buttonType": {
+			"type": "string",
+			"default": "basic-button"
+		},
+		"buttonSize": {
+			"type": "string",
+			"default": "size-normal"
+		},
+		"borderRadius": {
+			"type": "string",
+			"default": "border-radius-rounded"
+		},
+		"topPadding": {
+			"type": "number",
+			"default": 7
+		},
+		"rightPadding": {
+			"type": "number",
+			"default": 12
+		},
+		"bottomPadding": {
+			"type": "number",
+			"default": 7
+		},
+		"leftPadding": {
+			"type": "number",
+			"default": 12
+		},
+		"visibility": {
+			"type": "string",
+			"default": ""
+		},
+		"textAlignment": {
+			"type": "string",
+			"default": "left"
+		},
+		"iconTarget": {
+			"type": "boolean",
+			"default": false
+		},
+		"buttonLinkTarget": {
+			"type": "boolean",
+			"default": false
+		},
+		"numberInput": {
+			"type": "string",
+			"default": ""
+		},
+		"imageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"timeZone": {
+			"type": "string",
+			"default": ""
+		},
+		"mondayStart": {
+			"type": "string",
+			"default": "00:01"
+		},
+		"mondayEnd": {
+			"type": "string",
+			"default": "23:59"
+		},
+		"tuesdayStart": {
+			"type": "string",
+			"default": "00:01"
+		},
+		"tuesdayEnd": {
+			"type": "string",
+			"default": "23:59"
+		},
+		"wednesdayStart": {
+			"type": "string",
+			"default": "00:01"
+		},
+		"wednesdayEnd": {
+			"type": "string",
+			"default": "23:59"
+		},
+		"thursdayStart": {
+			"type": "string",
+			"default": "00:01"
+		},
+		"thursdayEnd": {
+			"type": "string",
+			"default": "23:59"
+		},
+		"fridayStart": {
+			"type": "string",
+			"default": "00:01"
+		},
+		"fridayEnd": {
+			"type": "string",
+			"default": "23:59"
+		},
+		"saturdayStart": {
+			"type": "string",
+			"default": "00:01"
+		},
+		"saturdayEnd": {
+			"type": "string",
+			"default": "23:59"
+		},
+		"sundayStart": {
+			"type": "string",
+			"default": "00:01"
+		},
+		"sundayEnd": {
+			"type": "string",
+			"default": "05:00"
+		}
+	}
+}

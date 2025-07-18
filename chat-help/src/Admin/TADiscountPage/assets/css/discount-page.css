@@ -1,0 +1,56 @@
+.blackfriday-hero {
+  background-image: url(../images/black-friday-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
+.text-ta-section-title {
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: bold;
+}
+.themeatelier_discount_page_header h2{
+  font-size: 2em;
+  line-height: 1;
+  margin: 0 0 0.5em;
+  -webkit-font-smoothing: antialiased;
+}
+
+.themeatelier_discount_page_header.notice,
+.wp-core-ui .notice.is-dismissible.themeatelier_discount_page_header {
+  display: flex;
+  gap: 20px;
+  padding: 1em 2em;
+  border: 0;
+  width: auto;
+  box-shadow: 0 0.15rem 1.75rem 0 rgb(196 205 224 / 20%);
+  border-radius: 10px;
+  align-items: flex-start;
+  gap: 15px;
+}
+.notice.themeatelier_discount_page_header img {
+  max-width: 120px;
+}
+.notice.themeatelier_discount_page_header .button {
+  padding: 3px 12px;
+  transition: all 0.5s;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #3463e0;
+  display: inline-block;
+}
+.notice.themeatelier_discount_page_header .button:hover {
+  background-color: #000;
+  color: #fff;
+}
+.notice.themeatelier_discount_page_header h3 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+.notice.themeatelier_discount_page_header p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+.notice a.notice-dismiss {
+  text-decoration: none;
+}
