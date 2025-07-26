@@ -15,10 +15,13 @@ if ($show_current_time) {
     echo '<div class="current-time"></div>';
 }
 if ($agent_message) : ?>
+<?php 
+    $replaced_message = Helpers::replacement_vars($agent_message);
+?>
     <div class="sms">
         <div class="sms__text">
             <p>
-                <?php echo esc_html($agent_message); ?>
+                <?php echo wp_kses_post($replaced_message); ?>
             </p>
         </div>
     </div>
@@ -52,7 +55,9 @@ if ($gdpr_enable) : ?>
 
     $url_for_desktop = isset($options['url_for_desktop']) ? $options['url_for_desktop'] : '';
     $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
-    $url = Helpers::whatsAppUrl( $whatsapp_number,  $type_of_whatsapp,$whatsapp_group, $url_for_desktop, $url_for_mobile);
+    $message = isset($options['prefilled_message']) ? $options['prefilled_message'] : '';
+    $message = Helpers::replacement_vars($message);
+    $url = Helpers::whatsAppUrl( $whatsapp_number,  $type_of_whatsapp,$whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
 
     $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
     echo '<a href="' . esc_attr($url) . '" target="' . $open_in_new_tab . '"></a>';

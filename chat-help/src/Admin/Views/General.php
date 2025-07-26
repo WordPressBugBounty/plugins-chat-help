@@ -119,7 +119,7 @@ class General
                                         'type' => 'text',
                                         'title' => esc_html__('WhatsApp Number', 'chat-help'),
                                         'title_help' => '<div class="chat-help-info-label">' . esc_html__('Add your WhatsApp number including country code. eg: +880123456189', 'chat-help') . '</div> <a class="tooltip_btn_primary" target="_blank" href="https://faq.whatsapp.com/640432094208718/?helpref=uf_share">Detailed explanation</a>',
-                                        'desc' => 'WhatsApp number in international format.', 'chat-help',
+                                        'desc' => esc_html__('WhatsApp number in international format.', 'chat-help'),
                                         // 'title_video' => '<div class="chat-help-img-tag">
                                         // <video autoplay loop muted playsinline>
                                         // <source src="http://chat-whatsapp.local/wp-content/uploads/2025/05/os-aware-darkmode.webm" type="video/webm">
@@ -131,13 +131,28 @@ class General
                                         ),
                                     ),
 
+                                    // Predefined text
+                                    array(
+                                        'id'    => 'prefilled_message',
+                                        'type'  => 'textarea',
+                                        'title' => esc_html__('Pre-filled Message', 'chat-help'),
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Write a friendly, pre-filled message users will see when they click the chat bubble. Example: “Hi! I have a question about your services.” This saves them time—and makes starting a conversation feel effortless.', 'chat-help') . '</div>',
+                                        'desc' => __('Global Vars:  {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> {PRODUCT_START} WooCommerce Vars: {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} {PRODUCT_END} <br> <b>Conditional Blocks:</b>  {PRODUCT_START} ... {PRODUCT_END},  {NOT_PRODUCT_START} ... {NOT_PRODUCT_END},  {LOGGEDIN_START} ... {LOGGEDIN_END},  {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}', 'chat-help'),
+                                        'dependency' =>
+                                        array(
+                                            array('chat_layout',   '!=', 'form', 'visible'),
+                                            array('type_of_whatsapp',   '!=', 'group', 'visible'),
+                                        ),
+                                    ),
+
                                     array(
                                         'id' => 'opt-group',
                                         'type' => 'text',
                                         'title' => esc_html__('WhatsApp Group', 'chat-help'),
                                         'class' => 'chat_help_group',
                                         'title_help' => '<div class="chat-help-info-label">' . esc_html__('Invite your visitors to join into your whatapp group.', 'chat-help') . '</div> <a class="tooltip_btn_primary" target="_blank" href="https://faq.whatsapp.com/3242937609289432?helpref=search&cms_platform=web">Detailed explanation</a>',
-                                        'desc' => 'WhatsApp group link.', 'chat-help',
+                                        'desc' => 'WhatsApp group link.',
+                                        'chat-help',
                                         'dependency' =>  array(
                                             array('chat_layout',   '!=', 'form', 'visible'),
                                             array('type_of_whatsapp',   '==', 'group', 'visible'),
@@ -395,6 +410,7 @@ class General
                                         'title' => esc_html__('Message From Agent', 'chat-help'),
                                         'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/agent_message.png') . '" alt="' . esc_html__('Preview Image', 'chat-help') . '"></div> <div class="chat-help-info-label">' . esc_html__('Add add custom message for shoeing in message box.', 'chat-help') . '</div>',
                                         'default' => esc_html__('Hello, Welcome to the site. Please click below button for chating me throught WhatsApp.', 'chat-help'),
+                                        'desc' => __('Global Vars:  {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> {PRODUCT_START} WooCommerce Vars: {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} {PRODUCT_END} <br> <b>Conditional Blocks:</b>  {PRODUCT_START} ... {PRODUCT_END},  {NOT_PRODUCT_START} ... {NOT_PRODUCT_END},  {LOGGEDIN_START} ... {LOGGEDIN_END},  {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}', 'chat-help'),
                                         'dependency' => array('chat_layout', '==', 'agent', 'any'),
                                     ),
 
@@ -448,6 +464,8 @@ class General
                                         'default' => esc_html__('Send a message', 'chat-help'),
                                         'dependency' => array('chat_layout', 'any', 'form,agent', 'any'),
                                     ),
+
+
                                 )
                             ),
                             array(
@@ -561,7 +579,7 @@ class General
                                     array(
                                         'id' => 'whatsapp_message_template',
                                         'type' => 'textarea',
-                                        'title' => esc_html__('Message Template', 'chat-help'),
+                                        'title' => esc_html__('Pre-filled Message', 'chat-help'),
                                         'title_help' => '<div class="chat-help-info-label">' . esc_html__('Customize your message templates based on the information you need. You can recive all form fields data using {form_fields} or use separate important variables from below this field.', 'chat-help') . '</div>',
                                         'default' => esc_html__("{form_fields}.\n\nDate: {date}"),
                                         'desc' => '<div class="message_variables"></div>',
@@ -1089,7 +1107,7 @@ class General
                                         'type'    => 'text',
                                         'title'   => esc_html__('Alternative Bubble Switcher', 'chat-help'),
                                         'dependency' => array('chat_layout', 'any', 'form,agent', 'any'),
-                                        'title_help' => '<div class="chat-help-info-label">'. esc_html__('Enter comma-separated CSS class or ID selectors to treat them as bubble switch.', 'chat-help') .'</div>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enter comma-separated CSS class or ID selectors to treat them as bubble switch.', 'chat-help') . '</div>',
                                     ),
                                     array(
                                         'id'        => 'color_settings',

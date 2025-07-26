@@ -17,10 +17,17 @@ $chat_button_text = isset($options['chat-button-text']) ? $options['chat-button-
 $chat_loading_text = isset($options['chat-button-loading-text']) ? $options['chat-button-loading-text'] : 'Redirecting...';
 
 $form_editor = isset($options['form_editor']) ? $options['form_editor'] : '';
+global $product;
+$product_attr = '';
+if ($product) {
+    $product = wc_get_product();
+    $id = $product->get_id();
+    $product_attr = 'data-product_attr=' . esc_attr($id) . '';
+}
 ?>
 <form
     id="form"
-    class="wHelp__popup__content"
+    class="wHelp__popup__content" <?php echo esc_attr($product_attr); ?>
     data-loading="<?php echo esc_attr($chat_loading_text) ?>" data-button="<?php echo esc_attr($chat_button_text) ?>"
     style="--color-primary: <?php echo esc_attr($primary); ?>;--color-secondary: <?php echo esc_attr($secondary); ?>;">
     <div class="user-text">

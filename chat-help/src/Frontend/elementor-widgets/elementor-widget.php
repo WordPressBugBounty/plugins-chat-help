@@ -1,6 +1,6 @@
 <?php
 
-
+use ThemeAtelier\ChatHelp\Helpers\Helpers;
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
     exit;
@@ -56,6 +56,17 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 'description' => esc_html__('Add your whatsapp number including country code. eg: +880123456189', 'chat-help'),
                 'label_block' => false,
                 'type'      => \Elementor\Controls_Manager::TEXT,
+            ]
+        );
+
+    $this->add_control(
+            'predefined_template',
+            [
+                'label' => esc_html__('Pre-defeined Message', 'chat-help'),
+                'description' => __('Global Vars - {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br>Woocommerce Vars - {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus}<br><b>NOTE: WooCommerce vars will work only single product pages.</b>', 'chat-help'),
+                'type'  => \Elementor\Controls_Manager::TEXTAREA,
+                'label_block' => true,
+                'default' => esc_html__('Hi! I have a question about your services.', 'chat-help'),
             ]
         );
 
@@ -128,6 +139,10 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 'default' => esc_html__('How can I help you?', 'chat-help'),
             ]
         );
+
+
+
+
 
         $this->add_control(
             'online__text',
@@ -1140,6 +1155,25 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
             ]
         );
 
+      $this->add_responsive_control(
+            'padding',
+            array(
+                'label'      => esc_html__('Padding', 'chat-help-pro'),
+                'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => array('px', '%', 'em'),
+                'selectors'  => array(
+                    '{{WRAPPER}} .wHelpButtons, {{WRAPPER}} .wHelp-button-2' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ),
+                'default' => array(
+                    'top'      => '7',
+                    'right'    => '12',
+                    'bottom'   => '7',
+                    'left'     => '12',
+                    'unit'     => 'px',
+                    'isLinked' => true,
+                ),
+            )
+        );
 
         $this->add_group_control(
             \Elementor\Group_Control_Border::get_type(),
@@ -1227,7 +1261,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
             [
                 'label' => esc_html__('Icon color', 'chat-help'),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#118c7e',
+                'default' => '#ffffff',
                 'selectors' => [
                     '{{WRAPPER}} [class*="wHelp-button-"].wHelp-btn-bg i' => 'color: {{VALUE}}',
                 ],
@@ -1242,7 +1276,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
             [
                 'label' => esc_html__('Icon hover color', 'chat-help'),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#0b5a51',
+                'default' => '#ffffff',
                 'selectors' => [
                     '{{WRAPPER}} [class*="wHelp-button-"].wHelp-btn-bg:hover i' => 'color: {{VALUE}}',
                 ],
@@ -1369,7 +1403,14 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         $friday = ($settings['friday__start'] ? $settings['friday__start'] : "0:00") . "-" . ($settings['friday__end'] ? $settings['friday__end'] : "23:59");
         $saturday = ($settings['saturday__start'] ? $settings['saturday__start'] : "0:00") . "-" . ($settings['saturday__end'] ? $settings['saturday__end'] : "23:59");
         $wHelpIcon = $icon ? $icon : "icofont-brand-whatsapp";
-
+        $options = get_option('cwp_option');
+        $open_in_new_tab = isset($options['open_in_new_tab']) ? $options['open_in_new_tab'] : '';
+        $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
+        $url_for_desktop = isset($options['url_for_desktop']) ? $options['url_for_desktop'] : '';
+        $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
+        $message = isset($settings['predefined_template']) ? $settings['predefined_template'] : '';
+        $message = Helpers::replacement_vars($message);
+        $url = Helpers::whatsAppUrl($number, 'number', '', $url_for_desktop, $url_for_mobile, $message);
 ?>
         <?php if ($style === '1') : ?>
             <div class="button-wrapper">
@@ -1392,12 +1433,12 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                             <p class="offline"><?php echo esc_html($offline_text); ?></p>
                         <?php } ?>
                     </div>
-                    <a href="https://wa.me/<?php echo esc_attr($number); ?>" target="_blank"></a>
+                    <a href="<?php echo esc_attr($url); ?>" target="' . esc_attr($open_in_new_tab) . '"></a>
                 </div>
             </div>
         <?php else : ?>
             <div class="button-wrapper">
-                <a href="https://wa.me/<?php echo esc_url($number); ?>" class="wHelp-button-2 <?php echo esc_attr($icon__bg); ?> wHelp-btn-bg <?php echo esc_attr($visibility); ?> <?php echo esc_attr($rounded); ?> <?php echo esc_attr($sizes); ?>">
+                <a target="' . esc_attr($open_in_new_tab) . '" href="<?php echo esc_attr($url); ?>" class="wHelp-button-2 <?php echo esc_attr($icon__bg); ?> wHelp-btn-bg <?php echo esc_attr($visibility); ?> <?php echo esc_attr($rounded); ?> <?php echo esc_attr($sizes); ?>">
                     <i class="<?php echo esc_attr($wHelpIcon); ?>"></i>
                     <?php if ($label_text) { ?><span><?php echo esc_html($label_text); ?></span><?php } ?>
                 </a>

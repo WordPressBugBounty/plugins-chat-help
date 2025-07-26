@@ -1,1 +1,3048 @@
-(()=>{var a,e={679:(a,e,l)=>{"use strict";const r=window.wp.blocks,i=JSON.parse('{"UU":"create-block/whatsapp-button"}'),t=window.wp.blockEditor,o=window.wp.components,c=window.wp.element,p=window.wp.i18n;var h=l(942),_=l.n(h);const n=window.ReactJSXRuntime,u=l(403),{SelectControl:s,TextControl:b,RangeControl:A}=wp.components,v=[{value:"Africa/Abidjan",label:(0,p.__)("Africa/Abidjan","chat-help-pro")},{value:"Africa/Accra",label:(0,p.__)("Africa/Accra","chat-help-pro")},{value:"Africa/Addis_Ababa",label:(0,p.__)("Africa/Addis_Ababa","chat-help-pro")},{value:"Africa/Algiers",label:(0,p.__)("Africa/Algiers","chat-help-pro")},{value:"Africa/Asmara",label:(0,p.__)("Africa/Asmara","chat-help-pro")},{value:"Africa/Asmera",label:(0,p.__)("Africa/Asmera","chat-help-pro")},{value:"Africa/Bamako",label:(0,p.__)("Africa/Bamako","chat-help-pro")},{value:"Africa/Bangui",label:(0,p.__)("Africa/Bangui","chat-help-pro")},{value:"Africa/Banjul",label:(0,p.__)("Africa/Banjul","chat-help-pro")},{value:"Africa/Bissau",label:(0,p.__)("Africa/Bissau","chat-help-pro")},{value:"Africa/Blantyre",label:(0,p.__)("Africa/Blantyre","chat-help-pro")},{value:"Africa/Brazzaville",label:(0,p.__)("Africa/Brazzaville","chat-help-pro")},{value:"Africa/Bujumbura",label:(0,p.__)("Africa/Bujumbura","chat-help-pro")},{value:"Africa/Cairo",label:(0,p.__)("Africa/Cairo","chat-help-pro")},{value:"Africa/Casablanca",label:(0,p.__)("Africa/Casablanca","chat-help-pro")},{value:"Africa/Ceuta",label:(0,p.__)("Africa/Ceuta","chat-help-pro")},{value:"Africa/Conakry",label:(0,p.__)("Africa/Conakry","chat-help-pro")},{value:"Africa/Dakar",label:(0,p.__)("Africa/Dakar","chat-help-pro")},{value:"Africa/Dar_es_Salaam",label:(0,p.__)("Africa/Dar_es_Salaam","chat-help-pro")},{value:"Africa/Djibouti",label:(0,p.__)("Africa/Djibouti","chat-help-pro")},{value:"Africa/Douala",label:(0,p.__)("Africa/Douala","chat-help-pro")},{value:"Africa/El_Aaiun",label:(0,p.__)("Africa/El_Aaiun","chat-help-pro")},{value:"Africa/Freetown",label:(0,p.__)("Africa/Freetown","chat-help-pro")},{value:"Africa/Gaborone",label:(0,p.__)("Africa/Gaborone","chat-help-pro")},{value:"Africa/Harare",label:(0,p.__)("Africa/Harare","chat-help-pro")},{value:"Africa/Johannesburg",label:(0,p.__)("Africa/Johannesburg","chat-help-pro")},{value:"Africa/Juba",label:(0,p.__)("Africa/Juba","chat-help-pro")},{value:"Africa/Kampala",label:(0,p.__)("Africa/Kampala","chat-help-pro")},{value:"Africa/Khartoum",label:(0,p.__)("Africa/Khartoum","chat-help-pro")},{value:"Africa/Kigali",label:(0,p.__)("Africa/Kigali","chat-help-pro")},{value:"Africa/Kinshasa",label:(0,p.__)("Africa/Kinshasa","chat-help-pro")},{value:"Africa/Lagos",label:(0,p.__)("Africa/Lagos","chat-help-pro")},{value:"Africa/Libreville",label:(0,p.__)("Africa/Libreville","chat-help-pro")},{value:"Africa/Lome",label:(0,p.__)("Africa/Lome","chat-help-pro")},{value:"Africa/Luanda",label:(0,p.__)("Africa/Luanda","chat-help-pro")},{value:"Africa/Lubumbashi",label:(0,p.__)("Africa/Lubumbashi","chat-help-pro")},{value:"Africa/Lusaka",label:(0,p.__)("Africa/Lusaka","chat-help-pro")},{value:"Africa/Malabo",label:(0,p.__)("Africa/Malabo","chat-help-pro")},{value:"Africa/Maputo",label:(0,p.__)("Africa/Maputo","chat-help-pro")},{value:"Africa/Maseru",label:(0,p.__)("Africa/Maseru","chat-help-pro")},{value:"Africa/Mbabane",label:(0,p.__)("Africa/Mbabane","chat-help-pro")},{value:"Africa/Mogadishu",label:(0,p.__)("Africa/Mogadishu","chat-help-pro")},{value:"Africa/Monrovia",label:(0,p.__)("Africa/Monrovia","chat-help-pro")},{value:"Africa/Nairobi",label:(0,p.__)("Africa/Nairobi","chat-help-pro")},{value:"Africa/Ndjamena",label:(0,p.__)("Africa/Ndjamena","chat-help-pro")},{value:"Africa/Niamey",label:(0,p.__)("Africa/Niamey","chat-help-pro")},{value:"Africa/Nouakchott",label:(0,p.__)("Africa/Nouakchott","chat-help-pro")},{value:"Africa/Ouagadougou",label:(0,p.__)("Africa/Ouagadougou","chat-help-pro")},{value:"Africa/Porto-Novo",label:(0,p.__)("Africa/Porto-Novo","chat-help-pro")},{value:"Africa/Sao_Tome",label:(0,p.__)("Africa/Sao_Tome","chat-help-pro")},{value:"Africa/Timbuktu",label:(0,p.__)("Africa/Timbuktu","chat-help-pro")},{value:"Africa/Tripoli",label:(0,p.__)("Africa/Tripoli","chat-help-pro")},{value:"Africa/Tunis",label:(0,p.__)("Africa/Tunis","chat-help-pro")},{value:"Africa/Windhoek",label:(0,p.__)("Africa/Windhoek","chat-help-pro")},{value:"America/Adak",label:(0,p.__)("America/Adak","chat-help-pro")},{value:"America/Anchorage",label:(0,p.__)("America/Anchorage","chat-help-pro")},{value:"America/Anguilla",label:(0,p.__)("America/Anguilla","chat-help-pro")},{value:"America/Antigua",label:(0,p.__)("America/Antigua","chat-help-pro")},{value:"America/Araguaina",label:(0,p.__)("America/Araguaina","chat-help-pro")},{value:"America/Argentina/Buenos_Aires",label:(0,p.__)("America/Argentina/Buenos_Aires","chat-help-pro")},{value:"America/Argentina/Catamarca",label:(0,p.__)("America/Argentina/Catamarca","chat-help-pro")},{value:"America/Argentina/ComodRivadavia",label:(0,p.__)("America/Argentina/ComodRivadavia","chat-help-pro")},{value:"America/Argentina/Cordoba",label:(0,p.__)("America/Argentina/Cordoba","chat-help-pro")},{value:"America/Argentina/Jujuy",label:(0,p.__)("America/Argentina/Jujuy","chat-help-pro")},{value:"America/Argentina/La_Rioja",label:(0,p.__)("America/Argentina/La_Rioja","chat-help-pro")},{value:"America/Argentina/Mendoza",label:(0,p.__)("America/Argentina/Mendoza","chat-help-pro")},{value:"America/Argentina/Rio_Gallegos",label:(0,p.__)("America/Argentina/Rio_Gallegos","chat-help-pro")},{value:"America/Argentina/Salta",label:(0,p.__)("America/Argentina/Salta","chat-help-pro")},{value:"America/Argentina/San_Juan",label:(0,p.__)("America/Argentina/San_Juan","chat-help-pro")},{value:"America/Argentina/San_Luis",label:(0,p.__)("America/Argentina/San_Luis","chat-help-pro")},{value:"America/Argentina/Tucuman",label:(0,p.__)("America/Argentina/Tucuman","chat-help-pro")},{value:"America/Argentina/Ushuaia",label:(0,p.__)("America/Argentina/Ushuaia","chat-help-pro")},{value:"America/Aruba",label:(0,p.__)("America/Aruba","chat-help-pro")},{value:"America/Asuncion",label:(0,p.__)("America/Asuncion","chat-help-pro")},{value:"America/Atikokan",label:(0,p.__)("America/Atikokan","chat-help-pro")},{value:"America/Atka",label:(0,p.__)("America/Atka","chat-help-pro")},{value:"America/Bahia",label:(0,p.__)("America/Bahia","chat-help-pro")},{value:"America/Bahia_Banderas",label:(0,p.__)("America/Bahia_Banderas","chat-help-pro")},{value:"America/Barbados",label:(0,p.__)("America/Barbados","chat-help-pro")},{value:"America/Belem",label:(0,p.__)("America/Belem","chat-help-pro")},{value:"America/Belize",label:(0,p.__)("America/Belize","chat-help-pro")},{value:"America/Blanc-Sablon",label:(0,p.__)("America/Blanc-Sablon","chat-help-pro")},{value:"America/Boa_Vista",label:(0,p.__)("America/Boa_Vista","chat-help-pro")},{value:"America/Bogota",label:(0,p.__)("America/Bogota","chat-help-pro")},{value:"America/Boise",label:(0,p.__)("America/Boise","chat-help-pro")},{value:"America/Buenos_Aires",label:(0,p.__)("America/Buenos_Aires","chat-help-pro")},{value:"America/Cambridge_Bay",label:(0,p.__)("America/Cambridge_Bay","chat-help-pro")},{value:"America/Campo_Grande",label:(0,p.__)("America/Campo_Grande","chat-help-pro")},{value:"America/Cancun",label:(0,p.__)("America/Cancun","chat-help-pro")},{value:"America/Caracas",label:(0,p.__)("America/Caracas","chat-help-pro")},{value:"America/Catamarca",label:(0,p.__)("America/Catamarca","chat-help-pro")},{value:"America/Cayenne",label:(0,p.__)("America/Cayenne","chat-help-pro")},{value:"America/Cayman",label:(0,p.__)("America/Cayman","chat-help-pro")},{value:"America/Chicago",label:(0,p.__)("America/Chicago","chat-help-pro")},{value:"America/Chihuahua",label:(0,p.__)("America/Chihuahua","chat-help-pro")},{value:"America/Coral_Harbour",label:(0,p.__)("America/Coral_Harbour","chat-help-pro")},{value:"America/Cordoba",label:(0,p.__)("America/Cordoba","chat-help-pro")},{value:"America/Costa_Rica",label:(0,p.__)("America/Costa_Rica","chat-help-pro")},{value:"America/Creston",label:(0,p.__)("America/Creston","chat-help-pro")},{value:"America/Cuiaba",label:(0,p.__)("America/Cuiaba","chat-help-pro")},{value:"America/Curacao",label:(0,p.__)("America/Curacao","chat-help-pro")},{value:"America/Danmarkshavn",label:(0,p.__)("America/Danmarkshavn","chat-help-pro")},{value:"America/Dawson",label:(0,p.__)("America/Dawson","chat-help-pro")},{value:"America/Dawson_Creek",label:(0,p.__)("America/Dawson_Creek","chat-help-pro")},{value:"America/Denver",label:(0,p.__)("America/Denver","chat-help-pro")},{value:"America/Detroit",label:(0,p.__)("America/Detroit","chat-help-pro")},{value:"America/Dominica",label:(0,p.__)("America/Dominica","chat-help-pro")},{value:"America/Edmonton",label:(0,p.__)("America/Edmonton","chat-help-pro")},{value:"America/Eirunepe",label:(0,p.__)("America/Eirunepe","chat-help-pro")},{value:"America/El_Salvador",label:(0,p.__)("America/El_Salvador","chat-help-pro")},{value:"America/Ensenada",label:(0,p.__)("America/Ensenada","chat-help-pro")},{value:"America/Fort_Nelson",label:(0,p.__)("America/Fort_Nelson","chat-help-pro")},{value:"America/Fort_Wayne",label:(0,p.__)("America/Fort_Wayne","chat-help-pro")},{value:"America/Fortaleza",label:(0,p.__)("America/Fortaleza","chat-help-pro")},{value:"America/Glace_Bay",label:(0,p.__)("America/Glace_Bay","chat-help-pro")},{value:"America/Godthab",label:(0,p.__)("America/Godthab","chat-help-pro")},{value:"America/Goose_Bay",label:(0,p.__)("America/Goose_Bay","chat-help-pro")},{value:"America/Grand_Turk",label:(0,p.__)("America/Grand_Turk","chat-help-pro")},{value:"America/Grenada",label:(0,p.__)("America/Grenada","chat-help-pro")},{value:"America/Guadeloupe",label:(0,p.__)("America/Guadeloupe","chat-help-pro")},{value:"America/Guatemala",label:(0,p.__)("America/Guatemala","chat-help-pro")},{value:"America/Guayaquil",label:(0,p.__)("America/Guayaquil","chat-help-pro")},{value:"America/Guyana",label:(0,p.__)("America/Guyana","chat-help-pro")},{value:"America/Halifax",label:(0,p.__)("America/Halifax","chat-help-pro")},{value:"America/Havana",label:(0,p.__)("America/Havana","chat-help-pro")},{value:"America/Hermosillo",label:(0,p.__)("America/Hermosillo","chat-help-pro")},{value:"America/Indiana/Indianapolis",label:(0,p.__)("America/Indiana/Indianapolis","chat-help-pro")},{value:"America/Indiana/Knox",label:(0,p.__)("America/Indiana/Knox","chat-help-pro")},{value:"America/Indiana/Marengo",label:(0,p.__)("America/Indiana/Marengo","chat-help-pro")},{value:"America/Indiana/Petersburg",label:(0,p.__)("America/Indiana/Petersburg","chat-help-pro")},{value:"America/Indiana/Tell_City",label:(0,p.__)("America/Indiana/Tell_City","chat-help-pro")},{value:"America/Indiana/Vevay",label:(0,p.__)("America/Indiana/Vevay","chat-help-pro")},{value:"America/Indiana/Vincennes",label:(0,p.__)("America/Indiana/Vincennes","chat-help-pro")},{value:"America/Indiana/Winamac",label:(0,p.__)("America/Indiana/Winamac","chat-help-pro")},{value:"America/Indianapolis",label:(0,p.__)("America/Indianapolis","chat-help-pro")},{value:"America/Inuvik",label:(0,p.__)("America/Inuvik","chat-help-pro")},{value:"America/Iqaluit",label:(0,p.__)("America/Iqaluit","chat-help-pro")},{value:"America/Jamaica",label:(0,p.__)("America/Jamaica","chat-help-pro")},{value:"America/Jujuy",label:(0,p.__)("America/Jujuy","chat-help-pro")},{value:"America/Juneau",label:(0,p.__)("America/Juneau","chat-help-pro")},{value:"America/Kentucky/Louisville",label:(0,p.__)("America/Kentucky/Louisville","chat-help-pro")},{value:"America/Kentucky/Monticello",label:(0,p.__)("America/Kentucky/Monticello","chat-help-pro")},{value:"America/Knox_IN",label:(0,p.__)("America/Knox_IN","chat-help-pro")},{value:"America/Kralendijk",label:(0,p.__)("America/Kralendijk","chat-help-pro")},{value:"America/La_Paz",label:(0,p.__)("America/La_Paz","chat-help-pro")},{value:"America/Lima",label:(0,p.__)("America/Lima","chat-help-pro")},{value:"America/Los_Angeles",label:(0,p.__)("America/Los_Angeles","chat-help-pro")},{value:"America/Louisville",label:(0,p.__)("America/Louisville","chat-help-pro")},{value:"America/Lower_Princes",label:(0,p.__)("America/Lower_Princes","chat-help-pro")},{value:"America/Maceio",label:(0,p.__)("America/Maceio","chat-help-pro")},{value:"America/Managua",label:(0,p.__)("America/Managua","chat-help-pro")},{value:"America/Manaus",label:(0,p.__)("America/Manaus","chat-help-pro")},{value:"America/Marigot",label:(0,p.__)("America/Marigot","chat-help-pro")},{value:"America/Martinique",label:(0,p.__)("America/Martinique","chat-help-pro")},{value:"America/Matamoros",label:(0,p.__)("America/Matamoros","chat-help-pro")},{value:"America/Mazatlan",label:(0,p.__)("America/Mazatlan","chat-help-pro")},{value:"America/Mendoza",label:(0,p.__)("America/Mendoza","chat-help-pro")},{value:"America/Menominee",label:(0,p.__)("America/Menominee","chat-help-pro")},{value:"America/Merida",label:(0,p.__)("America/Merida","chat-help-pro")},{value:"America/Metlakatla",label:(0,p.__)("America/Metlakatla","chat-help-pro")},{value:"America/Mexico_City",label:(0,p.__)("America/Mexico_City","chat-help-pro")},{value:"America/Miquelon",label:(0,p.__)("America/Miquelon","chat-help-pro")},{value:"America/Moncton",label:(0,p.__)("America/Moncton","chat-help-pro")},{value:"America/Monterrey",label:(0,p.__)("America/Monterrey","chat-help-pro")},{value:"America/Montevideo",label:(0,p.__)("America/Montevideo","chat-help-pro")},{value:"America/Montreal",label:(0,p.__)("America/Montreal","chat-help-pro")},{value:"America/Montserrat",label:(0,p.__)("America/Montserrat","chat-help-pro")},{value:"America/Nassau",label:(0,p.__)("America/Nassau","chat-help-pro")},{value:"America/New_York",label:(0,p.__)("America/New_York","chat-help-pro")},{value:"America/Nipigon",label:(0,p.__)("America/Nipigon","chat-help-pro")},{value:"America/Nome",label:(0,p.__)("America/Nome","chat-help-pro")},{value:"America/Noronha",label:(0,p.__)("America/Noronha","chat-help-pro")},{value:"America/North_Dakota/Beulah",label:(0,p.__)("America/North_Dakota/Beulah","chat-help-pro")},{value:"America/North_Dakota/Center",label:(0,p.__)("America/North_Dakota/Center","chat-help-pro")},{value:"America/North_Dakota/New_Salem",label:(0,p.__)("America/North_Dakota/New_Salem","chat-help-pro")},{value:"America/Ojinaga",label:(0,p.__)("America/Ojinaga","chat-help-pro")},{value:"America/Panama",label:(0,p.__)("America/Panama","chat-help-pro")},{value:"America/Pangnirtung",label:(0,p.__)("America/Pangnirtung","chat-help-pro")},{value:"America/Paramaribo",label:(0,p.__)("America/Paramaribo","chat-help-pro")},{value:"America/Phoenix",label:(0,p.__)("America/Phoenix","chat-help-pro")},{value:"America/Port-au-Prince",label:(0,p.__)("America/Port-au-Prince","chat-help-pro")},{value:"America/Port_of_Spain",label:(0,p.__)("America/Port_of_Spain","chat-help-pro")},{value:"America/Porto_Acre",label:(0,p.__)("America/Porto_Acre","chat-help-pro")},{value:"America/Porto_Velho",label:(0,p.__)("America/Porto_Velho","chat-help-pro")},{value:"America/Puerto_Rico",label:(0,p.__)("America/Puerto_Rico","chat-help-pro")},{value:"America/Punta_Arenas",label:(0,p.__)("America/Punta_Arenas","chat-help-pro")},{value:"America/Rainy_River",label:(0,p.__)("America/Rainy_River","chat-help-pro")},{value:"America/Rankin_Inlet",label:(0,p.__)("America/Rankin_Inlet","chat-help-pro")},{value:"America/Recife",label:(0,p.__)("America/Recife","chat-help-pro")},{value:"America/Regina",label:(0,p.__)("America/Regina","chat-help-pro")},{value:"America/Resolute",label:(0,p.__)("America/Resolute","chat-help-pro")},{value:"America/Rio_Branco",label:(0,p.__)("America/Rio_Branco","chat-help-pro")},{value:"America/Rosario",label:(0,p.__)("America/Rosario","chat-help-pro")},{value:"America/Santa_Isabel",label:(0,p.__)("America/Santa_Isabel","chat-help-pro")},{value:"America/Santarem",label:(0,p.__)("America/Santarem","chat-help-pro")},{value:"America/Santiago",label:(0,p.__)("America/Santiago","chat-help-pro")},{value:"America/Santo_Domingo",label:(0,p.__)("America/Santo_Domingo","chat-help-pro")},{value:"America/Sao_Paulo",label:(0,p.__)("America/Sao_Paulo","chat-help-pro")},{value:"America/Scoresbysund",label:(0,p.__)("America/Scoresbysund","chat-help-pro")},{value:"America/Shiprock",label:(0,p.__)("America/Shiprock","chat-help-pro")},{value:"America/Sitka",label:(0,p.__)("America/Sitka","chat-help-pro")},{value:"America/St_Barthelemy",label:(0,p.__)("America/St_Barthelemy","chat-help-pro")},{value:"America/St_Johns",label:(0,p.__)("America/St_Johns","chat-help-pro")},{value:"America/St_Kitts",label:(0,p.__)("America/St_Kitts","chat-help-pro")},{value:"America/St_Lucia",label:(0,p.__)("America/St_Lucia","chat-help-pro")},{value:"America/St_Thomas",label:(0,p.__)("America/St_Thomas","chat-help-pro")},{value:"America/St_Vincent",label:(0,p.__)("America/St_Vincent","chat-help-pro")},{value:"America/Swift_Current",label:(0,p.__)("America/Swift_Current","chat-help-pro")},{value:"America/Tegucigalpa",label:(0,p.__)("America/Tegucigalpa","chat-help-pro")},{value:"America/Thule",label:(0,p.__)("America/Thule","chat-help-pro")},{value:"America/Thunder_Bay",label:(0,p.__)("America/Thunder_Bay","chat-help-pro")},{value:"America/Tijuana",label:(0,p.__)("America/Tijuana","chat-help-pro")},{value:"America/Toronto",label:(0,p.__)("America/Toronto","chat-help-pro")},{value:"America/Tortola",label:(0,p.__)("America/Tortola","chat-help-pro")},{value:"America/Vancouver",label:(0,p.__)("America/Vancouver","chat-help-pro")},{value:"America/Virgin",label:(0,p.__)("America/Virgin","chat-help-pro")},{value:"America/Whitehorse",label:(0,p.__)("America/Whitehorse","chat-help-pro")},{value:"America/Winnipeg",label:(0,p.__)("America/Winnipeg","chat-help-pro")},{value:"America/Yakutat",label:(0,p.__)("America/Yakutat","chat-help-pro")},{value:"America/Yellowknife",label:(0,p.__)("America/Yellowknife","chat-help-pro")},{value:"Antarctica/Casey",label:(0,p.__)("Antarctica/Casey","chat-help-pro")},{value:"Antarctica/Davis",label:(0,p.__)("Antarctica/Davis","chat-help-pro")},{value:"Antarctica/DumontDUrville",label:(0,p.__)("Antarctica/DumontDUrville","chat-help-pro")},{value:"Antarctica/Macquarie",label:(0,p.__)("Antarctica/Macquarie","chat-help-pro")},{value:"Antarctica/Mawson",label:(0,p.__)("Antarctica/Mawson","chat-help-pro")},{value:"Antarctica/McMurdo",label:(0,p.__)("Antarctica/McMurdo","chat-help-pro")},{value:"Antarctica/Palmer",label:(0,p.__)("Antarctica/Palmer","chat-help-pro")},{value:"Antarctica/Rothera",label:(0,p.__)("Antarctica/Rothera","chat-help-pro")},{value:"Antarctica/South_Pole",label:(0,p.__)("Antarctica/South_Pole","chat-help-pro")},{value:"Antarctica/Syowa",label:(0,p.__)("Antarctica/Syowa","chat-help-pro")},{value:"Antarctica/Troll",label:(0,p.__)("Antarctica/Troll","chat-help-pro")},{value:"Antarctica/Vostok",label:(0,p.__)("Antarctica/Vostok","chat-help-pro")},{value:"Arctic/Longyearbyen",label:(0,p.__)("Arctic/Longyearbyen","chat-help-pro")},{value:"Asia/Aden",label:(0,p.__)("Asia/Aden","chat-help-pro")},{value:"Asia/Almaty",label:(0,p.__)("Asia/Almaty","chat-help-pro")},{value:"Asia/Amman",label:(0,p.__)("Asia/Amman","chat-help-pro")},{value:"Asia/Anadyr",label:(0,p.__)("Asia/Anadyr","chat-help-pro")},{value:"Asia/Aqtau",label:(0,p.__)("Asia/Aqtau","chat-help-pro")},{value:"Asia/Aqtobe",label:(0,p.__)("Asia/Aqtobe","chat-help-pro")},{value:"Asia/Ashgabat",label:(0,p.__)("Asia/Ashgabat","chat-help-pro")},{value:"Asia/Ashkhabad",label:(0,p.__)("Asia/Ashkhabad","chat-help-pro")},{value:"Asia/Atyrau",label:(0,p.__)("Asia/Atyrau","chat-help-pro")},{value:"Asia/Baghdad",label:(0,p.__)("Asia/Baghdad","chat-help-pro")},{value:"Asia/Bahrain",label:(0,p.__)("Asia/Bahrain","chat-help-pro")},{value:"Asia/Baku",label:(0,p.__)("Asia/Baku","chat-help-pro")},{value:"Asia/Bangkok",label:(0,p.__)("Asia/Bangkok","chat-help-pro")},{value:"Asia/Barnaul",label:(0,p.__)("Asia/Barnaul","chat-help-pro")},{value:"Asia/Beirut",label:(0,p.__)("Asia/Beirut","chat-help-pro")},{value:"Asia/Bishkek",label:(0,p.__)("Asia/Bishkek","chat-help-pro")},{value:"Asia/Brunei",label:(0,p.__)("Asia/Brunei","chat-help-pro")},{value:"Asia/Calcutta",label:(0,p.__)("Asia/Calcutta","chat-help-pro")},{value:"Asia/Chita",label:(0,p.__)("Asia/Chita","chat-help-pro")},{value:"Asia/Choibalsan",label:(0,p.__)("Asia/Choibalsan","chat-help-pro")},{value:"Asia/Chongqing",label:(0,p.__)("Asia/Chongqing","chat-help-pro")},{value:"Asia/Chungking",label:(0,p.__)("Asia/Chungking","chat-help-pro")},{value:"Asia/Colombo",label:(0,p.__)("Asia/Colombo","chat-help-pro")},{value:"Asia/Dacca",label:(0,p.__)("Asia/Dacca","chat-help-pro")},{value:"Asia/Damascus",label:(0,p.__)("Asia/Damascus","chat-help-pro")},{value:"Asia/Dhaka",label:(0,p.__)("Asia/Dhaka","chat-help-pro")},{value:"Asia/Dili",label:(0,p.__)("Asia/Dili","chat-help-pro")},{value:"Asia/Dubai",label:(0,p.__)("Asia/Dubai","chat-help-pro")},{value:"Asia/Dushanbe",label:(0,p.__)("Asia/Dushanbe","chat-help-pro")},{value:"Asia/Famagusta",label:(0,p.__)("Asia/Famagusta","chat-help-pro")},{value:"Asia/Gaza",label:(0,p.__)("Asia/Gaza","chat-help-pro")},{value:"Asia/Harbin",label:(0,p.__)("Asia/Harbin","chat-help-pro")},{value:"Asia/Hebron",label:(0,p.__)("Asia/Hebron","chat-help-pro")},{value:"Asia/Ho_Chi_Minh",label:(0,p.__)("Asia/Ho_Chi_Minh","chat-help-pro")},{value:"Asia/Hong_Kong",label:(0,p.__)("Asia/Hong_Kong","chat-help-pro")},{value:"Asia/Hovd",label:(0,p.__)("Asia/Hovd","chat-help-pro")},{value:"Asia/Irkutsk",label:(0,p.__)("Asia/Irkutsk","chat-help-pro")},{value:"Asia/Istanbul",label:(0,p.__)("Asia/Istanbul","chat-help-pro")},{value:"Asia/Jakarta",label:(0,p.__)("Asia/Jakarta","chat-help-pro")},{value:"Asia/Jayapura",label:(0,p.__)("Asia/Jayapura","chat-help-pro")},{value:"Asia/Jerusalem",label:(0,p.__)("Asia/Jerusalem","chat-help-pro")},{value:"Asia/Kabul",label:(0,p.__)("Asia/Kabul","chat-help-pro")},{value:"Asia/Kamchatka",label:(0,p.__)("Asia/Kamchatka","chat-help-pro")},{value:"Asia/Karachi",label:(0,p.__)("Asia/Karachi","chat-help-pro")},{value:"Asia/Kashgar",label:(0,p.__)("Asia/Kashgar","chat-help-pro")},{value:"Asia/Kathmandu",label:(0,p.__)("Asia/Kathmandu","chat-help-pro")},{value:"Asia/Katmandu",label:(0,p.__)("Asia/Katmandu","chat-help-pro")},{value:"Asia/Khandyga",label:(0,p.__)("Asia/Khandyga","chat-help-pro")},{value:"Asia/Kolkata",label:(0,p.__)("Asia/Kolkata","chat-help-pro")},{value:"Asia/Krasnoyarsk",label:(0,p.__)("Asia/Krasnoyarsk","chat-help-pro")},{value:"Asia/Kuala_Lumpur",label:(0,p.__)("Asia/Kuala_Lumpur","chat-help-pro")},{value:"Asia/Kuching",label:(0,p.__)("Asia/Kuching","chat-help-pro")},{value:"Asia/Kuwait",label:(0,p.__)("Asia/Kuwait","chat-help-pro")},{value:"Asia/Macao",label:(0,p.__)("Asia/Macao","chat-help-pro")},{value:"Asia/Macau",label:(0,p.__)("Asia/Macau","chat-help-pro")},{value:"Asia/Magadan",label:(0,p.__)("Asia/Magadan","chat-help-pro")},{value:"Asia/Makassar",label:(0,p.__)("Asia/Makassar","chat-help-pro")},{value:"Asia/Manila",label:(0,p.__)("Asia/Manila","chat-help-pro")},{value:"Asia/Muscat",label:(0,p.__)("Asia/Muscat","chat-help-pro")},{value:"Asia/Nicosia",label:(0,p.__)("Asia/Nicosia","chat-help-pro")},{value:"Asia/Novokuznetsk",label:(0,p.__)("Asia/Novokuznetsk","chat-help-pro")},{value:"Asia/Novosibirsk",label:(0,p.__)("Asia/Novosibirsk","chat-help-pro")},{value:"Asia/Omsk",label:(0,p.__)("Asia/Omsk","chat-help-pro")},{value:"Asia/Oral",label:(0,p.__)("Asia/Oral","chat-help-pro")},{value:"Asia/Phnom_Penh",label:(0,p.__)("Asia/Phnom_Penh","chat-help-pro")},{value:"Asia/Pontianak",label:(0,p.__)("Asia/Pontianak","chat-help-pro")},{value:"Asia/Pyongyang",label:(0,p.__)("Asia/Pyongyang","chat-help-pro")},{value:"Asia/Qatar",label:(0,p.__)("Asia/Qatar","chat-help-pro")},{value:"Asia/Qyzylorda",label:(0,p.__)("Asia/Qyzylorda","chat-help-pro")},{value:"Asia/Rangoon",label:(0,p.__)("Asia/Rangoon","chat-help-pro")},{value:"Asia/Riyadh",label:(0,p.__)("Asia/Riyadh","chat-help-pro")},{value:"Asia/Saigon",label:(0,p.__)("Asia/Saigon","chat-help-pro")},{value:"Asia/Sakhalin",label:(0,p.__)("Asia/Sakhalin","chat-help-pro")},{value:"Asia/Samarkand",label:(0,p.__)("Asia/Samarkand","chat-help-pro")},{value:"Asia/Seoul",label:(0,p.__)("Asia/Seoul","chat-help-pro")},{value:"Asia/Shanghai",label:(0,p.__)("Asia/Shanghai","chat-help-pro")},{value:"Asia/Singapore",label:(0,p.__)("Asia/Singapore","chat-help-pro")},{value:"Asia/Srednekolymsk",label:(0,p.__)("Asia/Srednekolymsk","chat-help-pro")},{value:"Asia/Taipei",label:(0,p.__)("Asia/Taipei","chat-help-pro")},{value:"Asia/Tashkent",label:(0,p.__)("Asia/Tashkent","chat-help-pro")},{value:"Asia/Tbilisi",label:(0,p.__)("Asia/Tbilisi","chat-help-pro")},{value:"Asia/Tehran",label:(0,p.__)("Asia/Tehran","chat-help-pro")},{value:"Asia/Tel_Aviv",label:(0,p.__)("Asia/Tel_Aviv","chat-help-pro")},{value:"Asia/Thimbu",label:(0,p.__)("Asia/Thimbu","chat-help-pro")},{value:"Asia/Thimphu",label:(0,p.__)("Asia/Thimphu","chat-help-pro")},{value:"Asia/Tokyo",label:(0,p.__)("Asia/Tokyo","chat-help-pro")},{value:"Asia/Tomsk",label:(0,p.__)("Asia/Tomsk","chat-help-pro")},{value:"Asia/Ujung_Pandang",label:(0,p.__)("Asia/Ujung_Pandang","chat-help-pro")},{value:"Asia/Ulaanbaatar",label:(0,p.__)("Asia/Ulaanbaatar","chat-help-pro")},{value:"Asia/Ulan_Bator",label:(0,p.__)("Asia/Ulan_Bator","chat-help-pro")},{value:"Asia/Urumqi",label:(0,p.__)("Asia/Urumqi","chat-help-pro")},{value:"Asia/Ust-Nera",label:(0,p.__)("Asia/Ust-Nera","chat-help-pro")},{value:"Asia/Vientiane",label:(0,p.__)("Asia/Vientiane","chat-help-pro")},{value:"Asia/Vladivostok",label:(0,p.__)("Asia/Vladivostok","chat-help-pro")},{value:"Asia/Yakutsk",label:(0,p.__)("Asia/Yakutsk","chat-help-pro")},{value:"Asia/Yangon",label:(0,p.__)("Asia/Yangon","chat-help-pro")},{value:"Asia/Yekaterinburg",label:(0,p.__)("Asia/Yekaterinburg","chat-help-pro")},{value:"Asia/Yerevan",label:(0,p.__)("Asia/Yerevan","chat-help-pro")},{value:"Atlantic/Azores",label:(0,p.__)("Atlantic/Azores","chat-help-pro")},{value:"Atlantic/Bermuda",label:(0,p.__)("Atlantic/Bermuda","chat-help-pro")},{value:"Atlantic/Canary",label:(0,p.__)("Atlantic/Canary","chat-help-pro")},{value:"Atlantic/Cape_Verde",label:(0,p.__)("Atlantic/Cape_Verde","chat-help-pro")},{value:"Atlantic/Faeroe",label:(0,p.__)("Atlantic/Faeroe","chat-help-pro")},{value:"Atlantic/Faroe",label:(0,p.__)("Atlantic/Faroe","chat-help-pro")},{value:"Atlantic/Jan_Mayen",label:(0,p.__)("Atlantic/Jan_Mayen","chat-help-pro")},{value:"Atlantic/Madeira",label:(0,p.__)("Atlantic/Madeira","chat-help-pro")},{value:"Atlantic/Reykjavik",label:(0,p.__)("Atlantic/Reykjavik","chat-help-pro")},{value:"Atlantic/South_Georgia",label:(0,p.__)("Atlantic/South_Georgia","chat-help-pro")},{value:"Atlantic/St_Helena",label:(0,p.__)("Atlantic/St_Helena","chat-help-pro")},{value:"Atlantic/Stanley",label:(0,p.__)("Atlantic/Stanley","chat-help-pro")},{value:"Australia/ACT",label:(0,p.__)("Australia/ACT","chat-help-pro")},{value:"Australia/Adelaide",label:(0,p.__)("Australia/Adelaide","chat-help-pro")},{value:"Australia/Brisbane",label:(0,p.__)("Australia/Brisbane","chat-help-pro")},{value:"Australia/Broken_Hill",label:(0,p.__)("Australia/Broken_Hill","chat-help-pro")},{value:"Australia/Canberra",label:(0,p.__)("Australia/Canberra","chat-help-pro")},{value:"Australia/Currie",label:(0,p.__)("Australia/Currie","chat-help-pro")},{value:"Australia/Darwin",label:(0,p.__)("Australia/Darwin","chat-help-pro")},{value:"Australia/Eucla",label:(0,p.__)("Australia/Eucla","chat-help-pro")},{value:"Australia/Hobart",label:(0,p.__)("Australia/Hobart","chat-help-pro")},{value:"Australia/LHI",label:(0,p.__)("Australia/LHI","chat-help-pro")},{value:"Australia/Lindeman",label:(0,p.__)("Australia/Lindeman","chat-help-pro")},{value:"Australia/Lord_Howe",label:(0,p.__)("Australia/Lord_Howe","chat-help-pro")},{value:"Australia/Melbourne",label:(0,p.__)("Australia/Melbourne","chat-help-pro")},{value:"Australia/NSW",label:(0,p.__)("Australia/NSW","chat-help-pro")},{value:"Australia/North",label:(0,p.__)("Australia/North","chat-help-pro")},{value:"Australia/Perth",label:(0,p.__)("Australia/Perth","chat-help-pro")},{value:"Australia/Queensland",label:(0,p.__)("Australia/Queensland","chat-help-pro")},{value:"Australia/South",label:(0,p.__)("Australia/South","chat-help-pro")},{value:"Australia/Sydney",label:(0,p.__)("Australia/Sydney","chat-help-pro")},{value:"Australia/Tasmania",label:(0,p.__)("Australia/Tasmania","chat-help-pro")},{value:"Australia/Victoria",label:(0,p.__)("Australia/Victoria","chat-help-pro")},{value:"Australia/West",label:(0,p.__)("Australia/West","chat-help-pro")},{value:"Australia/Yancowinna",label:(0,p.__)("Australia/Yancowinna","chat-help-pro")},{value:"Brazil/Acre",label:(0,p.__)("Brazil/Acre","chat-help-pro")},{value:"Brazil/DeNoronha",label:(0,p.__)("Brazil/DeNoronha","chat-help-pro")},{value:"Brazil/East",label:(0,p.__)("Brazil/East","chat-help-pro")},{value:"Brazil/West",label:(0,p.__)("Brazil/West","chat-help-pro")},{value:"CET",label:(0,p.__)("CET","chat-help-pro")},{value:"CST6CDT",label:(0,p.__)("CST6CDT","chat-help-pro")},{value:"Canada/Atlantic",label:(0,p.__)("Canada/Atlantic","chat-help-pro")},{value:"Canada/Central",label:(0,p.__)("Canada/Central","chat-help-pro")},{value:"Canada/Eastern",label:(0,p.__)("Canada/Eastern","chat-help-pro")},{value:"Canada/Mountain",label:(0,p.__)("Canada/Mountain","chat-help-pro")},{value:"Canada/Newfoundland",label:(0,p.__)("Canada/Newfoundland","chat-help-pro")},{value:"Canada/Pacific",label:(0,p.__)("Canada/Pacific","chat-help-pro")},{value:"Canada/Saskatchewan",label:(0,p.__)("Canada/Saskatchewan","chat-help-pro")},{value:"Canada/Yukon",label:(0,p.__)("Canada/Yukon","chat-help-pro")},{value:"Chile/Continental",label:(0,p.__)("Chile/Continental","chat-help-pro")},{value:"Chile/EasterIsland",label:(0,p.__)("Chile/EasterIsland","chat-help-pro")},{value:"Cuba",label:(0,p.__)("Cuba","chat-help-pro")},{value:"EET",label:(0,p.__)("EET","chat-help-pro")},{value:"EST",label:(0,p.__)("EST","chat-help-pro")},{value:"EST5EDT",label:(0,p.__)("EST5EDT","chat-help-pro")},{value:"Egypt",label:(0,p.__)("Egypt","chat-help-pro")},{value:"Eire",label:(0,p.__)("Eire","chat-help-pro")},{value:"Etc/GMT",label:(0,p.__)("Etc/GMT","chat-help-pro")},{value:"Etc/GMT+0",label:(0,p.__)("Etc/GMT+0","chat-help-pro")},{value:"Etc/GMT+1",label:(0,p.__)("Etc/GMT+1","chat-help-pro")},{value:"Etc/GMT+10",label:(0,p.__)("Etc/GMT+10","chat-help-pro")},{value:"Etc/GMT+11",label:(0,p.__)("Etc/GMT+11","chat-help-pro")},{value:"Etc/GMT+12",label:(0,p.__)("Etc/GMT+12","chat-help-pro")},{value:"Etc/GMT+2",label:(0,p.__)("Etc/GMT+2","chat-help-pro")},{value:"Etc/GMT+3",label:(0,p.__)("Etc/GMT+3","chat-help-pro")},{value:"Etc/GMT+4",label:(0,p.__)("Etc/GMT+4","chat-help-pro")},{value:"Etc/GMT+5",label:(0,p.__)("Etc/GMT+5","chat-help-pro")},{value:"Etc/GMT+6",label:(0,p.__)("Etc/GMT+6","chat-help-pro")},{value:"Etc/GMT+7",label:(0,p.__)("Etc/GMT+7","chat-help-pro")},{value:"Etc/GMT+8",label:(0,p.__)("Etc/GMT+8","chat-help-pro")},{value:"Etc/GMT+9",label:(0,p.__)("Etc/GMT+9","chat-help-pro")},{value:"Etc/GMT-0",label:(0,p.__)("Etc/GMT-0","chat-help-pro")},{value:"Etc/GMT-1",label:(0,p.__)("Etc/GMT-1","chat-help-pro")},{value:"Etc/GMT-10",label:(0,p.__)("Etc/GMT-10","chat-help-pro")},{value:"Etc/GMT-11",label:(0,p.__)("Etc/GMT-11","chat-help-pro")},{value:"Etc/GMT-12",label:(0,p.__)("Etc/GMT-12","chat-help-pro")},{value:"Etc/GMT-13",label:(0,p.__)("Etc/GMT-13","chat-help-pro")},{value:"Etc/GMT-14",label:(0,p.__)("Etc/GMT-14","chat-help-pro")},{value:"Etc/GMT-2",label:(0,p.__)("Etc/GMT-2","chat-help-pro")},{value:"Etc/GMT-3",label:(0,p.__)("Etc/GMT-3","chat-help-pro")},{value:"Etc/GMT-4",label:(0,p.__)("Etc/GMT-4","chat-help-pro")},{value:"Etc/GMT-5",label:(0,p.__)("Etc/GMT-5","chat-help-pro")},{value:"Etc/GMT-6",label:(0,p.__)("Etc/GMT-6","chat-help-pro")},{value:"Etc/GMT-7",label:(0,p.__)("Etc/GMT-7","chat-help-pro")},{value:"Etc/GMT-8",label:(0,p.__)("Etc/GMT-8","chat-help-pro")},{value:"Etc/GMT-9",label:(0,p.__)("Etc/GMT-9","chat-help-pro")},{value:"Etc/GMT0",label:(0,p.__)("Etc/GMT0","chat-help-pro")},{value:"Etc/Greenwich",label:(0,p.__)("Etc/Greenwich","chat-help-pro")},{value:"Etc/UCT",label:(0,p.__)("Etc/UCT","chat-help-pro")},{value:"Etc/UTC",label:(0,p.__)("Etc/UTC","chat-help-pro")},{value:"Etc/Universal",label:(0,p.__)("Etc/Universal","chat-help-pro")},{value:"Etc/Zulu",label:(0,p.__)("Etc/Zulu","chat-help-pro")},{value:"Europe/Amsterdam",label:(0,p.__)("Europe/Amsterdam","chat-help-pro")},{value:"Europe/Andorra",label:(0,p.__)("Europe/Andorra","chat-help-pro")},{value:"Europe/Astrakhan",label:(0,p.__)("Europe/Astrakhan","chat-help-pro")},{value:"Europe/Athens",label:(0,p.__)("Europe/Athens","chat-help-pro")},{value:"Europe/Belfast",label:(0,p.__)("Europe/Belfast","chat-help-pro")},{value:"Europe/Belgrade",label:(0,p.__)("Europe/Belgrade","chat-help-pro")},{value:"Europe/Berlin",label:(0,p.__)("Europe/Berlin","chat-help-pro")},{value:"Europe/Bratislava",label:(0,p.__)("Europe/Bratislava","chat-help-pro")},{value:"Europe/Brussels",label:(0,p.__)("Europe/Brussels","chat-help-pro")},{value:"Europe/Bucharest",label:(0,p.__)("Europe/Bucharest","chat-help-pro")},{value:"Europe/Budapest",label:(0,p.__)("Europe/Budapest","chat-help-pro")},{value:"Europe/Busingen",label:(0,p.__)("Europe/Busingen","chat-help-pro")},{value:"Europe/Chisinau",label:(0,p.__)("Europe/Chisinau","chat-help-pro")},{value:"Europe/Copenhagen",label:(0,p.__)("Europe/Copenhagen","chat-help-pro")},{value:"Europe/Dublin",label:(0,p.__)("Europe/Dublin","chat-help-pro")},{value:"Europe/Gibraltar",label:(0,p.__)("Europe/Gibraltar","chat-help-pro")},{value:"Europe/Guernsey",label:(0,p.__)("Europe/Guernsey","chat-help-pro")},{value:"Europe/Helsinki",label:(0,p.__)("Europe/Helsinki","chat-help-pro")},{value:"Europe/Isle_of_Man",label:(0,p.__)("Europe/Isle_of_Man","chat-help-pro")},{value:"Europe/Istanbul",label:(0,p.__)("Europe/Istanbul","chat-help-pro")},{value:"Europe/Jersey",label:(0,p.__)("Europe/Jersey","chat-help-pro")},{value:"Europe/Kaliningrad",label:(0,p.__)("Europe/Kaliningrad","chat-help-pro")},{value:"Europe/Kiev",label:(0,p.__)("Europe/Kiev","chat-help-pro")},{value:"Europe/Kirov",label:(0,p.__)("Europe/Kirov","chat-help-pro")},{value:"Europe/Lisbon",label:(0,p.__)("Europe/Lisbon","chat-help-pro")},{value:"Europe/Ljubljana",label:(0,p.__)("Europe/Ljubljana","chat-help-pro")},{value:"Europe/London",label:(0,p.__)("Europe/London","chat-help-pro")},{value:"Europe/Luxembourg",label:(0,p.__)("Europe/Luxembourg","chat-help-pro")},{value:"Europe/Madrid",label:(0,p.__)("Europe/Madrid","chat-help-pro")},{value:"Europe/Malta",label:(0,p.__)("Europe/Malta","chat-help-pro")},{value:"Europe/Mariehamn",label:(0,p.__)("Europe/Mariehamn","chat-help-pro")},{value:"Europe/Minsk",label:(0,p.__)("Europe/Minsk","chat-help-pro")},{value:"Europe/Monaco",label:(0,p.__)("Europe/Monaco","chat-help-pro")},{value:"Europe/Moscow",label:(0,p.__)("Europe/Moscow","chat-help-pro")},{value:"Europe/Nicosia",label:(0,p.__)("Europe/Nicosia","chat-help-pro")},{value:"Europe/Oslo",label:(0,p.__)("Europe/Oslo","chat-help-pro")},{value:"Europe/Paris",label:(0,p.__)("Europe/Paris","chat-help-pro")},{value:"Europe/Podgorica",label:(0,p.__)("Europe/Podgorica","chat-help-pro")},{value:"Europe/Prague",label:(0,p.__)("Europe/Prague","chat-help-pro")},{value:"Europe/Riga",label:(0,p.__)("Europe/Riga","chat-help-pro")},{value:"Europe/Rome",label:(0,p.__)("Europe/Rome","chat-help-pro")},{value:"Europe/Samara",label:(0,p.__)("Europe/Samara","chat-help-pro")},{value:"Europe/San_Marino",label:(0,p.__)("Europe/San_Marino","chat-help-pro")},{value:"Europe/Sarajevo",label:(0,p.__)("Europe/Sarajevo","chat-help-pro")},{value:"Europe/Saratov",label:(0,p.__)("Europe/Saratov","chat-help-pro")},{value:"Europe/Simferopol",label:(0,p.__)("Europe/Simferopol","chat-help-pro")},{value:"Europe/Skopje",label:(0,p.__)("Europe/Skopje","chat-help-pro")},{value:"Europe/Sofia",label:(0,p.__)("Europe/Sofia","chat-help-pro")},{value:"Europe/Stockholm",label:(0,p.__)("Europe/Stockholm","chat-help-pro")},{value:"Europe/Tallinn",label:(0,p.__)("Europe/Tallinn","chat-help-pro")},{value:"Europe/Tirane",label:(0,p.__)("Europe/Tirane","chat-help-pro")},{value:"Europe/Tiraspol",label:(0,p.__)("Europe/Tiraspol","chat-help-pro")},{value:"Europe/Ulyanovsk",label:(0,p.__)("Europe/Ulyanovsk","chat-help-pro")},{value:"Europe/Uzhgorod",label:(0,p.__)("Europe/Uzhgorod","chat-help-pro")},{value:"Europe/Vaduz",label:(0,p.__)("Europe/Vaduz","chat-help-pro")},{value:"Europe/Vatican",label:(0,p.__)("Europe/Vatican","chat-help-pro")},{value:"Europe/Vienna",label:(0,p.__)("Europe/Vienna","chat-help-pro")},{value:"Europe/Vilnius",label:(0,p.__)("Europe/Vilnius","chat-help-pro")},{value:"Europe/Volgograd",label:(0,p.__)("Europe/Volgograd","chat-help-pro")},{value:"Europe/Warsaw",label:(0,p.__)("Europe/Warsaw","chat-help-pro")},{value:"Europe/Zagreb",label:(0,p.__)("Europe/Zagreb","chat-help-pro")},{value:"Europe/Zaporozhye",label:(0,p.__)("Europe/Zaporozhye","chat-help-pro")},{value:"Europe/Zurich",label:(0,p.__)("Europe/Zurich","chat-help-pro")},{value:"GB",label:(0,p.__)("GB","chat-help-pro")},{value:"GB-Eire",label:(0,p.__)("GB-Eire","chat-help-pro")},{value:"GMT",label:(0,p.__)("GMT","chat-help-pro")},{value:"GMT+0",label:(0,p.__)("GMT+0","chat-help-pro")},{value:"GMT-0",label:(0,p.__)("GMT-0","chat-help-pro")},{value:"GMT0",label:(0,p.__)("GMT0","chat-help-pro")},{value:"Greenwich",label:(0,p.__)("Greenwich","chat-help-pro")},{value:"HST",label:(0,p.__)("HST","chat-help-pro")},{value:"Hongkong",label:(0,p.__)("Hongkong","chat-help-pro")},{value:"Iceland",label:(0,p.__)("Iceland","chat-help-pro")},{value:"Indian/Antananarivo",label:(0,p.__)("Indian/Antananarivo","chat-help-pro")},{value:"Indian/Chagos",label:(0,p.__)("Indian/Chagos","chat-help-pro")},{value:"Indian/Christmas",label:(0,p.__)("Indian/Christmas","chat-help-pro")},{value:"Indian/Cocos",label:(0,p.__)("Indian/Cocos","chat-help-pro")},{value:"Indian/Comoro",label:(0,p.__)("Indian/Comoro","chat-help-pro")},{value:"Indian/Kerguelen",label:(0,p.__)("Indian/Kerguelen","chat-help-pro")},{value:"Indian/Mahe",label:(0,p.__)("Indian/Mahe","chat-help-pro")},{value:"Indian/Maldives",label:(0,p.__)("Indian/Maldives","chat-help-pro")},{value:"Indian/Mauritius",label:(0,p.__)("Indian/Mauritius","chat-help-pro")},{value:"Indian/Mayotte",label:(0,p.__)("Indian/Mayotte","chat-help-pro")},{value:"Indian/Reunion",label:(0,p.__)("Indian/Reunion","chat-help-pro")},{value:"Iran",label:(0,p.__)("Iran","chat-help-pro")},{value:"Israel",label:(0,p.__)("Israel","chat-help-pro")},{value:"Jamaica",label:(0,p.__)("Jamaica","chat-help-pro")},{value:"Japan",label:(0,p.__)("Japan","chat-help-pro")},{value:"Kwajalein",label:(0,p.__)("Kwajalein","chat-help-pro")},{value:"Libya",label:(0,p.__)("Libya","chat-help-pro")},{value:"MET",label:(0,p.__)("MET","chat-help-pro")},{value:"MST",label:(0,p.__)("MST","chat-help-pro")},{value:"MST7MDT",label:(0,p.__)("MST7MDT","chat-help-pro")},{value:"Mexico/BajaNorte",label:(0,p.__)("Mexico/BajaNorte","chat-help-pro")},{value:"Mexico/BajaSur",label:(0,p.__)("Mexico/BajaSur","chat-help-pro")},{value:"Mexico/General",label:(0,p.__)("Mexico/General","chat-help-pro")},{value:"NZ",label:(0,p.__)("NZ","chat-help-pro")},{value:"NZ-CHAT",label:(0,p.__)("NZ-CHAT","chat-help-pro")},{value:"Navajo",label:(0,p.__)("Navajo","chat-help-pro")},{value:"PRC",label:(0,p.__)("PRC","chat-help-pro")},{value:"PST8PDT",label:(0,p.__)("PST8PDT","chat-help-pro")},{value:"Pacific/Apia",label:(0,p.__)("Pacific/Apia","chat-help-pro")},{value:"Pacific/Auckland",label:(0,p.__)("Pacific/Auckland","chat-help-pro")},{value:"Pacific/Bougainville",label:(0,p.__)("Pacific/Bougainville","chat-help-pro")},{value:"Pacific/Chatham",label:(0,p.__)("Pacific/Chatham","chat-help-pro")},{value:"Pacific/Chuuk",label:(0,p.__)("Pacific/Chuuk","chat-help-pro")},{value:"Pacific/Easter",label:(0,p.__)("Pacific/Easter","chat-help-pro")},{value:"Pacific/Efate",label:(0,p.__)("Pacific/Efate","chat-help-pro")},{value:"Pacific/Enderbury",label:(0,p.__)("Pacific/Enderbury","chat-help-pro")},{value:"Pacific/Fakaofo",label:(0,p.__)("Pacific/Fakaofo","chat-help-pro")},{value:"Pacific/Fiji",label:(0,p.__)("Pacific/Fiji","chat-help-pro")},{value:"Pacific/Funafuti",label:(0,p.__)("Pacific/Funafuti","chat-help-pro")},{value:"Pacific/Galapagos",label:(0,p.__)("Pacific/Galapagos","chat-help-pro")},{value:"Pacific/Gambier",label:(0,p.__)("Pacific/Gambier","chat-help-pro")},{value:"Pacific/Guadalcanal",label:(0,p.__)("Pacific/Guadalcanal","chat-help-pro")},{value:"Pacific/Guam",label:(0,p.__)("Pacific/Guam","chat-help-pro")},{value:"Pacific/Honolulu",label:(0,p.__)("Pacific/Honolulu","chat-help-pro")},{value:"Pacific/Johnston",label:(0,p.__)("Pacific/Johnston","chat-help-pro")},{value:"Pacific/Kiritimati",label:(0,p.__)("Pacific/Kiritimati","chat-help-pro")},{value:"Pacific/Kosrae",label:(0,p.__)("Pacific/Kosrae","chat-help-pro")},{value:"Pacific/Kwajalein",label:(0,p.__)("Pacific/Kwajalein","chat-help-pro")},{value:"Pacific/Majuro",label:(0,p.__)("Pacific/Majuro","chat-help-pro")},{value:"Pacific/Marquesas",label:(0,p.__)("Pacific/Marquesas","chat-help-pro")},{value:"Pacific/Midway",label:(0,p.__)("Pacific/Midway","chat-help-pro")},{value:"Pacific/Nauru",label:(0,p.__)("Pacific/Nauru","chat-help-pro")},{value:"Pacific/Niue",label:(0,p.__)("Pacific/Niue","chat-help-pro")},{value:"Pacific/Norfolk",label:(0,p.__)("Pacific/Norfolk","chat-help-pro")},{value:"Pacific/Noumea",label:(0,p.__)("Pacific/Noumea","chat-help-pro")},{value:"Pacific/Pago_Pago",label:(0,p.__)("Pacific/Pago_Pago","chat-help-pro")},{value:"Pacific/Palau",label:(0,p.__)("Pacific/Palau","chat-help-pro")},{value:"Pacific/Pitcairn",label:(0,p.__)("Pacific/Pitcairn","chat-help-pro")},{value:"Pacific/Pohnpei",label:(0,p.__)("Pacific/Pohnpei","chat-help-pro")},{value:"Pacific/Ponape",label:(0,p.__)("Pacific/Ponape","chat-help-pro")},{value:"Pacific/Port_Moresby",label:(0,p.__)("Pacific/Port_Moresby","chat-help-pro")},{value:"Pacific/Rarotonga",label:(0,p.__)("Pacific/Rarotonga","chat-help-pro")},{value:"Pacific/Saipan",label:(0,p.__)("Pacific/Saipan","chat-help-pro")},{value:"Pacific/Samoa",label:(0,p.__)("Pacific/Samoa","chat-help-pro")},{value:"Pacific/Tahiti",label:(0,p.__)("Pacific/Tahiti","chat-help-pro")},{value:"Pacific/Tarawa",label:(0,p.__)("Pacific/Tarawa","chat-help-pro")},{value:"Pacific/Tongatapu",label:(0,p.__)("Pacific/Tongatapu","chat-help-pro")},{value:"Pacific/Truk",label:(0,p.__)("Pacific/Truk","chat-help-pro")},{value:"Pacific/Wake",label:(0,p.__)("Pacific/Wake","chat-help-pro")},{value:"Pacific/Wallis",label:(0,p.__)("Pacific/Wallis","chat-help-pro")},{value:"Pacific/Yap",label:(0,p.__)("Pacific/Yap","chat-help-pro")},{value:"Poland",label:(0,p.__)("Poland","chat-help-pro")},{value:"Portugal",label:(0,p.__)("Portugal","chat-help-pro")},{value:"ROC",label:(0,p.__)("ROC","chat-help-pro")},{value:"ROK",label:(0,p.__)("ROK","chat-help-pro")},{value:"Singapore",label:(0,p.__)("Singapore","chat-help-pro")},{value:"Turkey",label:(0,p.__)("Turkey","chat-help-pro")},{value:"UCT",label:(0,p.__)("UCT","chat-help-pro")},{value:"US/Alaska",label:(0,p.__)("US/Alaska","chat-help-pro")},{value:"US/Aleutian",label:(0,p.__)("US/Aleutian","chat-help-pro")},{value:"US/Arizona",label:(0,p.__)("US/Arizona","chat-help-pro")},{value:"US/Central",label:(0,p.__)("US/Central","chat-help-pro")},{value:"US/East-Indiana",label:(0,p.__)("US/East-Indiana","chat-help-pro")},{value:"US/Eastern",label:(0,p.__)("US/Eastern","chat-help-pro")},{value:"US/Hawaii",label:(0,p.__)("US/Hawaii","chat-help-pro")},{value:"US/Indiana-Starke",label:(0,p.__)("US/Indiana-Starke","chat-help-pro")},{value:"US/Michigan",label:(0,p.__)("US/Michigan","chat-help-pro")},{value:"US/Mountain",label:(0,p.__)("US/Mountain","chat-help-pro")},{value:"US/Pacific",label:(0,p.__)("US/Pacific","chat-help-pro")},{value:"US/Pacific-New",label:(0,p.__)("US/Pacific-New","chat-help-pro")},{value:"US/Samoa",label:(0,p.__)("US/Samoa","chat-help-pro")},{value:"UTC",label:(0,p.__)("UTC","chat-help-pro")},{value:"Universal",label:(0,p.__)("Universal","chat-help-pro")},{value:"W-SU",label:(0,p.__)("W-SU","chat-help-pro")},{value:"WET",label:(0,p.__)("WET","chat-help-pro")},{value:"Zulu",label:(0,p.__)("Zulu","chat-help-pro")}],m=l(403);(0,r.registerBlockType)(i.UU,{edit:function(a){const{attributes:e,setAttributes:l}=a,{buttonSize:r,buttonType:i,borderRadius:h,text:m,info:d,title:g,online:f,offline:E,textAlignment:y,iconTarget:T,visibility:C,buttonLinkTarget:P,numberInput:S,imageUrl:M,timeZone:k,mondayStart:x,mondayEnd:j,tuesdayStart:B,tuesdayEnd:w,wednesdayStart:G,wednesdayEnd:N,thursdayStart:I,thursdayEnd:R,fridayStart:$,fridayEnd:U,saturdayStart:K,saturdayEnd:H,sundayStart:D,sundayEnd:L,topPadding:z,rightPadding:O,bottomPadding:V,leftPadding:J}=e,[F,W]=(0,c.useState)(v),q=a=>{l({textAlignment:a})},Y=a=>{l({online:a})},Z=a=>{l({buttonLinkTarget:a})},Q=_()(`wHelpButtons-align-${y}`),X=_()("wHelp-button-4 wHelp-btn-bg"),aa=_()("wHelpButtons wHelp-button-4 wHelp-btn-bg"),ea=[{value:"size-small",label:(0,p.__)("Small","chat-help-pro")},{value:"size-medium",label:(0,p.__)("Medium","chat-help-pro")},{value:"size-large",label:(0,p.__)("Large","chat-help-pro")}],la=[{value:"basic-button",label:(0,p.__)("Basic Button","chat-help-pro")},{value:"advance-button",label:(0,p.__)("Advance Button","chat-help-pro")}],ra=[{value:"border-squared",label:(0,p.__)("Border Squared","chat-help-pro")},{value:"wHelp-btn-rounded",label:(0,p.__)("Border Rounded","chat-help-pro")}],ia=[{value:"",label:(0,p.__)("Everywhere","chat-help-pro")},{value:"wHelp-desktop-only",label:(0,p.__)("Desktop only","chat-help-pro")},{value:"wHelp-tablet-only",label:(0,p.__)("Tablets only","chat-help-pro")},{value:"wHelp-mobile-tablet-only",label:(0,p.__)("Mobile and tablets","chat-help-pro")},{value:"wHelp-mobile-only",label:(0,p.__)("Mobile only","chat-help-pro")}];return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(t.InspectorControls,{children:(0,n.jsx)(o.PanelBody,{children:(0,n.jsx)(s,{label:(0,p.__)("Button Type","chat-help-pro"),value:i,options:la.map((({value:a,label:e})=>({value:a,label:e}))),onChange:a=>{l({buttonType:a})}})})}),"basic-button"===i?(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(t.InspectorControls,{children:[(0,n.jsxs)(o.PanelBody,{title:(0,p.__)("WhatsApp Number","chat-help-pro"),initialOpen:!1,children:[(0,n.jsx)(b,{label:(0,p.__)("Number","chat-help-pro"),value:S,onChange:a=>l({numberInput:a}),help:(0,p.__)("Add your contact number including country code eg: +880123456789","chat-help-pro")}),(0,n.jsx)(o.ToggleControl,{label:(0,p.__)("Open link in new window","chat-help-pro"),checked:P,onChange:Z})]}),(0,n.jsxs)(o.PanelBody,{title:(0,p.__)("Button Style","chat-help-pro"),initialOpen:!1,children:[(0,n.jsx)(b,{label:(0,p.__)("Button Text","chat-help-pro"),value:m,onChange:a=>l({text:a})}),(0,n.jsx)(s,{label:(0,p.__)("Button Size","chat-help-pro"),value:r,options:ea.map((({value:a,label:e})=>({value:a,label:e}))),onChange:a=>{l({buttonSize:a})}}),(0,n.jsx)(s,{label:(0,p.__)("Border Radius","chat-help-pro"),value:h,options:ra.map((({value:a,label:e})=>({value:a,label:e}))),onChange:a=>{l({borderRadius:a})}}),(0,n.jsx)(s,{label:(0,p.__)("Visibility on","chat-help-pro"),value:C,options:ia.map((({value:a,label:e})=>({value:a,label:e}))),onChange:a=>{l({visibility:a})}}),(0,n.jsxs)(o.__experimentalSpacer,{children:[(0,n.jsx)(o.__experimentalHeading,{children:(0,p.__)("Padding","chat-help-pro")}),(0,n.jsx)(A,{label:(0,p.__)("Top","chat-help-pro"),value:z,onChange:a=>{l({topPadding:a})},min:5,max:100}),(0,n.jsx)(A,{label:(0,p.__)("Right","chat-help-pro"),value:O,onChange:a=>{l({rightPadding:a})},min:5,max:100}),(0,n.jsx)(A,{label:(0,p.__)("Bottom","chat-help-pro"),value:V,onChange:a=>{l({bottomPadding:a})},min:5,max:100}),(0,n.jsx)(A,{label:(0,p.__)("Left","chat-help-pro"),value:J,onChange:a=>{l({leftPadding:a})},min:5,max:100})]})]}),(0,n.jsx)(o.PanelBody,{title:(0,p.__)("Icon","chat-help-pro"),initialOpen:!1,children:(0,n.jsx)(o.ToggleControl,{label:(0,p.__)("Add Icon","chat-help-pro"),checked:T,onChange:a=>{l({iconTarget:a})}})})]}),(0,n.jsx)(t.BlockControls,{children:(0,n.jsx)(t.AlignmentToolbar,{value:y,onChange:q})}),(0,n.jsx)("div",{className:`button-wrapper whelp-editor ${Q}`,children:(0,n.jsxs)("a",{...(0,t.useBlockProps)({className:`${X} ${r} ${h} ${C}`}),style:{"--padding":`${z}px ${O}px ${V}px ${J}px`},children:[T&&(0,n.jsx)("span",{className:"dashicons dashicons-whatsapp"}),(0,n.jsx)(t.RichText,{onChange:a=>{l({text:a})},value:m,placeholder:(0,p.__)("How can I help you?","chat-help-pro"),tagName:"span",allowedFormats:[]})]})})]}):(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(t.InspectorControls,{children:[(0,n.jsxs)(o.PanelBody,{title:(0,p.__)("General Settings","chat-help-pro"),initialOpen:!1,children:[(0,n.jsx)(b,{label:(0,p.__)("Number","chat-help-pro"),value:S,onChange:a=>l({numberInput:a}),help:(0,p.__)("Add your contact number including country code eg: +880123456789","chat-help-pro")}),(0,n.jsx)(o.ToggleControl,{label:(0,p.__)("Open link in new window","chat-help-pro"),checked:P,onChange:Z}),(0,n.jsx)(t.MediaUpload,{label:(0,p.__)("Agent Image","chat-help-pro"),onSelect:a=>{l({imageUrl:a.url})},allowedTypes:["image"],render:({open:a})=>(0,n.jsxs)(o.Button,{onClick:a,style:{marginBottom:"20px",fontSize:"16px"},children:[(0,n.jsx)("span",{style:{marginRight:"5px"},className:"dashicons dashicons-cloud-upload"})," ","Agent photo"]})}),(0,n.jsx)(b,{label:(0,p.__)("Agent Info","chat-help-pro"),value:d,onChange:a=>l({info:a}),help:(0,p.__)("Write agent name & agent title","chat-help-pro")}),(0,n.jsx)(b,{label:(0,p.__)("Button Label","chat-help-pro"),value:g,onChange:a=>l({title:a}),help:(0,p.__)("Add custom button label","chat-help-pro")}),(0,n.jsx)(b,{label:(0,p.__)("Online Badge Text","chat-help-pro"),value:f,onChange:a=>l({online:a}),help:(0,p.__)("Add custom badget text when user in online.","chat-help-pro")}),(0,n.jsx)(b,{label:(0,p.__)("Offline Badge Text","chat-help-pro"),value:E,onChange:a=>l({offline:a}),help:(0,p.__)("Add custom badget text when user in offline.","chat-help-pro")})]}),(0,n.jsxs)(o.PanelBody,{title:(0,p.__)("Chat Settings","chat-help-pro"),initialOpen:!1,children:[(0,n.jsx)(o.ComboboxControl,{label:(0,p.__)("Timezone","chat-help-pro"),value:k,options:F,onChange:function(a){l({timeZone:a})},onInputChange:function(a){W(v.filter((e=>e.label.toLowerCase().includes(a.toLowerCase()))))},help:(0,p.__)("When using the date and time from the user browser you can transform it to your current timezone (in case your user is in a different timezone)","chat-help-pro")}),(0,n.jsxs)(o.PanelBody,{title:(0,p.__)("Monthday","chat-help-pro"),initialOpen:!1,children:[(0,n.jsx)(b,{label:(0,p.__)("Start Time","chat-help-pro"),value:x,onChange:a=>l({mondayStart:a}),placeholder:(0,p.__)("00:00","chat-help-pro")}),(0,n.jsx)(b,{label:(0,p.__)("End Time","chat-help-pro"),value:j,onChange:a=>l({mondayEnd:a}),placeholder:(0,p.__)("24:00","chat-help-pro")})]}),(0,n.jsxs)(o.PanelBody,{title:(0,p.__)("Tuesday","chat-help-pro"),initialOpen:!1,children:[(0,n.jsx)(b,{label:(0,p.__)("Start Time","chat-help-pro"),value:B,onChange:a=>l({tuesdayStart:a}),placeholder:(0,p.__)("00:00","chat-help-pro")}),(0,n.jsx)(b,{label:(0,p.__)("End Time","chat-help-pro"),value:w,onChange:a=>l({tuesdayEnd:a}),placeholder:(0,p.__)("24:00","chat-help-pro")})]}),(0,n.jsxs)(o.PanelBody,{title:(0,p.__)("Wednesday","chat-help-pro"),initialOpen:!1,children:[(0,n.jsx)(b,{label:(0,p.__)("Start Time","chat-help-pro"),value:G,onChange:a=>l({wednesdayStart:a}),placeholder:(0,p.__)("00:00","chat-help-pro")}),(0,n.jsx)(b,{label:(0,p.__)("End Time","chat-help-pro"),value:N,onChange:a=>l({wednesdayEnd:a}),placeholder:(0,p.__)("24:00","chat-help-pro")})]}),(0,n.jsxs)(o.PanelBody,{title:(0,p.__)("Thursday","chat-help-pro"),initialOpen:!1,children:[(0,n.jsx)(b,{label:(0,p.__)("Start Time","chat-help-pro"),value:I,onChange:a=>l({thursdayStart:a}),placeholder:(0,p.__)("00:00","chat-help-pro")}),(0,n.jsx)(b,{label:(0,p.__)("End Time","chat-help-pro"),value:R,onChange:a=>l({thursdayEnd:a}),placeholder:(0,p.__)("24:00","chat-help-pro")})]}),(0,n.jsxs)(o.PanelBody,{title:(0,p.__)("Friday","chat-help-pro"),initialOpen:!1,children:[(0,n.jsx)(b,{label:(0,p.__)("Start Time","chat-help-pro"),value:$,onChange:a=>l({fridayStart:a}),placeholder:(0,p.__)("00:00","chat-help-pro")}),(0,n.jsx)(b,{label:(0,p.__)("End Time","chat-help-pro"),value:U,onChange:a=>l({fridayEnd:a}),placeholder:(0,p.__)("24:00","chat-help-pro")})]}),(0,n.jsxs)(o.PanelBody,{title:(0,p.__)("Saturday","chat-help-pro"),initialOpen:!1,children:[(0,n.jsx)(b,{label:(0,p.__)("Start Time","chat-help-pro"),value:K,onChange:a=>l({saturdayStart:a}),placeholder:(0,p.__)("00:00","chat-help-pro")}),(0,n.jsx)(b,{label:(0,p.__)("End Time","chat-help-pro"),value:H,onChange:a=>l({saturdayEnd:a}),placeholder:(0,p.__)("24:00","chat-help-pro")})]}),(0,n.jsxs)(o.PanelBody,{title:(0,p.__)("Sunday","chat-help-pro"),initialOpen:!1,children:[(0,n.jsx)(b,{label:(0,p.__)("Start Time","chat-help-pro"),value:D,onChange:a=>l({sundayStart:a}),placeholder:(0,p.__)("00:00","chat-help-pro")}),(0,n.jsx)(b,{label:(0,p.__)("End Time","chat-help-pro"),value:L,onChange:a=>l({sundayEnd:a}),placeholder:(0,p.__)("24:00","chat-help-pro")})]})]}),(0,n.jsxs)(o.PanelBody,{title:(0,p.__)("Appearance settings","chat-help-pro"),initialOpen:!1,children:[(0,n.jsx)(s,{label:(0,p.__)("Visibility on","chat-help-pro"),value:C,options:ia.map((({value:a,label:e})=>({value:a,label:e}))),onChange:a=>{l({visibility:a})}}),(0,n.jsx)(s,{label:(0,p.__)("Size","chat-help-pro"),value:r,options:ea.map((({value:a,label:e})=>({value:a,label:e}))),onChange:a=>{l({buttonSize:a})}}),(0,n.jsx)(s,{label:(0,p.__)("Border Radius","chat-help-pro"),value:h,options:ra.map((({value:a,label:e})=>({value:a,label:e}))),onChange:a=>{l({borderRadius:a})}}),(0,n.jsxs)(o.__experimentalSpacer,{children:[(0,n.jsx)(o.__experimentalHeading,{children:(0,p.__)("Padding","chat-help-pro")}),(0,n.jsx)(A,{label:(0,p.__)("Top","chat-help-pro"),value:z,onChange:a=>{l({topPadding:a})},min:5,max:100}),(0,n.jsx)(A,{label:(0,p.__)("Right","chat-help-pro"),value:O,onChange:a=>{l({rightPadding:a})},min:5,max:100}),(0,n.jsx)(A,{label:(0,p.__)("Bottom","chat-help-pro"),value:V,onChange:a=>{l({bottomPadding:a})},min:5,max:100}),(0,n.jsx)(A,{label:(0,p.__)("Left","chat-help-pro"),value:J,onChange:a=>{l({leftPadding:a})},min:5,max:100})]})]})]}),(0,n.jsx)(t.BlockControls,{children:(0,n.jsx)(t.AlignmentToolbar,{value:y,onChange:q})}),(0,n.jsx)("div",{className:`button-wrapper whelp-editor ${Q}`,children:(0,n.jsxs)("div",{...(0,t.useBlockProps)({className:`avatar-active ${aa} ${r} ${h} ${C}`}),style:{"--padding":`${z}px ${O}px ${V}px ${J}px`},"data-btnavailablety":`{ "monday":"${x}-${j}", "tuesday":"${B}-${w}", "wednesday":"${G}-${N}", "thursday":"${I}-${R}", "friday":"${$}-${U}", "saturday":"${K}-${H}", "sunday":"${D}-${L}" }`,"data-timezone":k,children:[(0,n.jsx)("img",{src:M||u,alt:"agent"}),(0,n.jsxs)("div",{className:"info-wrapper",children:[(0,n.jsx)(t.RichText,{onChange:a=>{l({info:a})},value:d,placeholder:(0,p.__)("Robert / Sales Support","chat-help-pro"),tagName:"p",allowedFormats:[],className:"info"}),(0,n.jsx)(t.RichText,{onChange:a=>{l({title:a})},value:g,placeholder:(0,p.__)("How can I help you?","chat-help-pro"),tagName:"p",allowedFormats:[],className:"title"}),(0,n.jsx)(t.RichText,{onChange:Y,value:f,placeholder:(0,p.__)("I am online","chat-help-pro"),tagName:"p",allowedFormats:[],className:"online"}),(0,n.jsx)(t.RichText,{onChange:Y,value:E,placeholder:(0,p.__)("I'm not available","chat-help-pro"),tagName:"p",allowedFormats:[],className:"offline"})]})]})})]})]})},save:function({attributes:a}){const{buttonSize:e,borderRadius:l,buttonType:r,text:i,info:o,title:c,online:p,offline:h,textAlignment:u,buttonLinkTarget:s,visibility:b,border:A,iconTarget:v,imageUrl:d,numberInput:g,timeZone:f,mondayStart:E,mondayEnd:y,tuesdayStart:T,tuesdayEnd:C,wednesdayStart:P,wednesdayEnd:S,thursdayStart:M,thursdayEnd:k,fridayStart:x,fridayEnd:j,saturdayStart:B,saturdayEnd:w,sundayStart:G,sundayEnd:N,topPadding:I,rightPadding:R,bottomPadding:$,leftPadding:U}=a,K=_()(`wHelpButtons-align-${u}`),H=_()("wHelp-button-4 wHelp-btn-bg"),D=_()("wHelpButtons wHelp-button-4 wHelp-btn-bg");return(0,n.jsx)(n.Fragment,{children:"basic-button"===r?(0,n.jsx)("div",{className:`button-wrapper ${K}`,children:(0,n.jsxs)("a",{...t.useBlockProps.save({className:`${H} ${e} ${l} ${b} ${A}`}),style:{"--padding":`${I}px ${R}px ${$}px ${U}px`},href:`https://wa.me/${g}`,rel:"noopener noreferrer",target:s?"_blank":"_self",children:[v&&(0,n.jsx)("span",{className:"dashicons dashicons-whatsapp"}),(0,n.jsx)(t.RichText.Content,{tagName:"span",value:i})]})}):(0,n.jsx)("div",{className:`button-wrapper ${K}`,children:(0,n.jsxs)("div",{...t.useBlockProps.save({className:`${D} ${e} ${l} ${b}`}),style:{"--padding":`${I}px ${R}px ${$}px ${U}px`},"data-btnavailablety":`{ "monday":"${E}-${y}", "tuesday":"${T}-${C}", "wednesday":"${P}-${S}", "thursday":"${M}-${k}", "friday":"${x}-${j}", "saturday":"${B}-${w}", "sunday":"${G}-${N}" }`,"data-timezone":f,children:[(0,n.jsx)("img",{src:d||m,alt:"agent"}),(0,n.jsxs)("div",{className:"info-wrapper",children:[(0,n.jsx)(t.RichText.Content,{value:o,tagName:"p",className:"info"}),(0,n.jsx)(t.RichText.Content,{value:c,tagName:"p",className:"title"}),(0,n.jsx)(t.RichText.Content,{value:p,tagName:"p",className:"online"}),(0,n.jsx)(t.RichText.Content,{value:h,tagName:"p",className:"offline"})]}),(0,n.jsx)("a",{href:`https://wa.me/${g}`,rel:"noopener noreferrer",target:s?"_blank":"_self"})]})})})}})},403:(a,e,l)=>{"use strict";a.exports=l.p+"images/user.65223f50.jpg"},942:(a,e)=>{var l;!function(){"use strict";var r={}.hasOwnProperty;function i(){for(var a="",e=0;e<arguments.length;e++){var l=arguments[e];l&&(a=o(a,t(l)))}return a}function t(a){if("string"==typeof a||"number"==typeof a)return a;if("object"!=typeof a)return"";if(Array.isArray(a))return i.apply(null,a);if(a.toString!==Object.prototype.toString&&!a.toString.toString().includes("[native code]"))return a.toString();var e="";for(var l in a)r.call(a,l)&&a[l]&&(e=o(e,l));return e}function o(a,e){return e?a?a+" "+e:a+e:a}a.exports?(i.default=i,a.exports=i):void 0===(l=function(){return i}.apply(e,[]))||(a.exports=l)}()}},l={};function r(a){var i=l[a];if(void 0!==i)return i.exports;var t=l[a]={exports:{}};return e[a](t,t.exports,r),t.exports}r.m=e,a=[],r.O=(e,l,i,t)=>{if(!l){var o=1/0;for(_=0;_<a.length;_++){for(var[l,i,t]=a[_],c=!0,p=0;p<l.length;p++)(!1&t||o>=t)&&Object.keys(r.O).every((a=>r.O[a](l[p])))?l.splice(p--,1):(c=!1,t<o&&(o=t));if(c){a.splice(_--,1);var h=i();void 0!==h&&(e=h)}}return e}t=t||0;for(var _=a.length;_>0&&a[_-1][2]>t;_--)a[_]=a[_-1];a[_]=[l,i,t]},r.n=a=>{var e=a&&a.__esModule?()=>a.default:()=>a;return r.d(e,{a:e}),e},r.d=(a,e)=>{for(var l in e)r.o(e,l)&&!r.o(a,l)&&Object.defineProperty(a,l,{enumerable:!0,get:e[l]})},r.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(a){if("object"==typeof window)return window}}(),r.o=(a,e)=>Object.prototype.hasOwnProperty.call(a,e),(()=>{var a;r.g.importScripts&&(a=r.g.location+"");var e=r.g.document;if(!a&&e&&(e.currentScript&&"SCRIPT"===e.currentScript.tagName.toUpperCase()&&(a=e.currentScript.src),!a)){var l=e.getElementsByTagName("script");if(l.length)for(var i=l.length-1;i>-1&&(!a||!/^http(s?):/.test(a));)a=l[i--].src}if(!a)throw new Error("Automatic publicPath is not supported in this browser");a=a.replace(/#.*$/,"").replace(/\?.*$/,"").replace(/\/[^\/]+$/,"/"),r.p=a})(),(()=>{var a={57:0,350:0};r.O.j=e=>0===a[e];var e=(e,l)=>{var i,t,[o,c,p]=l,h=0;if(o.some((e=>0!==a[e]))){for(i in c)r.o(c,i)&&(r.m[i]=c[i]);if(p)var _=p(r)}for(e&&e(l);h<o.length;h++)t=o[h],r.o(a,t)&&a[t]&&a[t][0](),a[t]=0;return r.O(_)},l=globalThis.webpackChunkwhatsapp_button=globalThis.webpackChunkwhatsapp_button||[];l.forEach(e.bind(null,0)),l.push=e.bind(null,l.push.bind(l))})();var i=r.O(void 0,[350],(()=>r(679)));i=r.O(i)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./block.json":
+/*!********************!*\
+  !*** ./block.json ***!
+  \********************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"create-block/whatsapp-button","title":"WhatsApp Button","category":"whatsapp-block","icon":"whatsapp","description":"WhatsApp button block for WhatsHelp plugin.","textdomain":"chat-help","editorScript":"file:./build/index.js","editorStyle":"file:./build/index.css","supports":{"html":false,"color":{"background":true,"text":true,"gradients":true,"hover":true},"spacing":{},"typography":{}},"example":{"attributes":{"text":"How can I help you?","gradients":"red-to-blue","links":true}},"attributes":{"text":{"type":"string","default":"How can I help you?"},"info":{"type":"string","default":"Robert / Sales Support"},"title":{"type":"string","default":"How can I help you?"},"online":{"type":"string","default":"I am online"},"offline":{"type":"string","default":"I am offline"},"buttonType":{"type":"string","default":"basic-button"},"buttonSize":{"type":"string","default":"size-normal"},"borderRadius":{"type":"string","default":"border-radius-rounded"},"topPadding":{"type":"number","default":7},"rightPadding":{"type":"number","default":12},"bottomPadding":{"type":"number","default":7},"leftPadding":{"type":"number","default":12},"visibility":{"type":"string","default":""},"textAlignment":{"type":"string","default":"left"},"iconTarget":{"type":"boolean","default":false},"buttonLinkTarget":{"type":"boolean","default":false},"numberInput":{"type":"string","default":""},"prefilledMessageInput":{"type":"string","default":""},"imageUrl":{"type":"string","default":""},"timeZone":{"type":"string","default":""},"mondayStart":{"type":"string","default":"00:01"},"mondayEnd":{"type":"string","default":"23:59"},"tuesdayStart":{"type":"string","default":"00:01"},"tuesdayEnd":{"type":"string","default":"23:59"},"wednesdayStart":{"type":"string","default":"00:01"},"wednesdayEnd":{"type":"string","default":"23:59"},"thursdayStart":{"type":"string","default":"00:01"},"thursdayEnd":{"type":"string","default":"23:59"},"fridayStart":{"type":"string","default":"00:01"},"fridayEnd":{"type":"string","default":"23:59"},"saturdayStart":{"type":"string","default":"00:01"},"saturdayEnd":{"type":"string","default":"23:59"},"sundayStart":{"type":"string","default":"00:01"},"sundayEnd":{"type":"string","default":"05:00"}}}');
+
+/***/ }),
+
+/***/ "./node_modules/classnames/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/classnames/index.js ***!
+  \******************************************/
+/***/ ((module, exports) => {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = '';
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (arg) {
+				classes = appendClass(classes, parseValue(arg));
+			}
+		}
+
+		return classes;
+	}
+
+	function parseValue (arg) {
+		if (typeof arg === 'string' || typeof arg === 'number') {
+			return arg;
+		}
+
+		if (typeof arg !== 'object') {
+			return '';
+		}
+
+		if (Array.isArray(arg)) {
+			return classNames.apply(null, arg);
+		}
+
+		if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+			return arg.toString();
+		}
+
+		var classes = '';
+
+		for (var key in arg) {
+			if (hasOwn.call(arg, key) && arg[key]) {
+				classes = appendClass(classes, key);
+			}
+		}
+
+		return classes;
+	}
+
+	function appendClass (value, newClass) {
+		if (!newClass) {
+			return value;
+		}
+	
+		if (value) {
+			return value + ' ' + newClass;
+		}
+	
+		return value + newClass;
+	}
+
+	if ( true && module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return classNames;
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else // removed by dead control flow
+{}
+}());
+
+
+/***/ }),
+
+/***/ "./src/edit.js":
+/*!*********************!*\
+  !*** ./src/edit.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+
+
+const agentImage = __webpack_require__(/*! ./images/user.jpg */ "./src/images/user.jpg");
+const {
+  SelectControl,
+  TextControl,
+  RangeControl
+} = wp.components;
+const timezones = [{
+  value: 'Africa/Abidjan',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Abidjan', 'chat-help')
+}, {
+  value: 'Africa/Accra',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Accra', 'chat-help')
+}, {
+  value: 'Africa/Addis_Ababa',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Addis_Ababa', 'chat-help')
+}, {
+  value: 'Africa/Algiers',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Algiers', 'chat-help')
+}, {
+  value: 'Africa/Asmara',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Asmara', 'chat-help')
+}, {
+  value: 'Africa/Asmera',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Asmera', 'chat-help')
+}, {
+  value: 'Africa/Bamako',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Bamako', 'chat-help')
+}, {
+  value: 'Africa/Bangui',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Bangui', 'chat-help')
+}, {
+  value: 'Africa/Banjul',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Banjul', 'chat-help')
+}, {
+  value: 'Africa/Bissau',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Bissau', 'chat-help')
+}, {
+  value: 'Africa/Blantyre',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Blantyre', 'chat-help')
+}, {
+  value: 'Africa/Brazzaville',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Brazzaville', 'chat-help')
+}, {
+  value: 'Africa/Bujumbura',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Bujumbura', 'chat-help')
+}, {
+  value: 'Africa/Cairo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Cairo', 'chat-help')
+}, {
+  value: 'Africa/Casablanca',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Casablanca', 'chat-help')
+}, {
+  value: 'Africa/Ceuta',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Ceuta', 'chat-help')
+}, {
+  value: 'Africa/Conakry',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Conakry', 'chat-help')
+}, {
+  value: 'Africa/Dakar',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Dakar', 'chat-help')
+}, {
+  value: 'Africa/Dar_es_Salaam',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Dar_es_Salaam', 'chat-help')
+}, {
+  value: 'Africa/Djibouti',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Djibouti', 'chat-help')
+}, {
+  value: 'Africa/Douala',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Douala', 'chat-help')
+}, {
+  value: 'Africa/El_Aaiun',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/El_Aaiun', 'chat-help')
+}, {
+  value: 'Africa/Freetown',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Freetown', 'chat-help')
+}, {
+  value: 'Africa/Gaborone',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Gaborone', 'chat-help')
+}, {
+  value: 'Africa/Harare',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Harare', 'chat-help')
+}, {
+  value: 'Africa/Johannesburg',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Johannesburg', 'chat-help')
+}, {
+  value: 'Africa/Juba',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Juba', 'chat-help')
+}, {
+  value: 'Africa/Kampala',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Kampala', 'chat-help')
+}, {
+  value: 'Africa/Khartoum',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Khartoum', 'chat-help')
+}, {
+  value: 'Africa/Kigali',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Kigali', 'chat-help')
+}, {
+  value: 'Africa/Kinshasa',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Kinshasa', 'chat-help')
+}, {
+  value: 'Africa/Lagos',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Lagos', 'chat-help')
+}, {
+  value: 'Africa/Libreville',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Libreville', 'chat-help')
+}, {
+  value: 'Africa/Lome',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Lome', 'chat-help')
+}, {
+  value: 'Africa/Luanda',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Luanda', 'chat-help')
+}, {
+  value: 'Africa/Lubumbashi',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Lubumbashi', 'chat-help')
+}, {
+  value: 'Africa/Lusaka',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Lusaka', 'chat-help')
+}, {
+  value: 'Africa/Malabo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Malabo', 'chat-help')
+}, {
+  value: 'Africa/Maputo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Maputo', 'chat-help')
+}, {
+  value: 'Africa/Maseru',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Maseru', 'chat-help')
+}, {
+  value: 'Africa/Mbabane',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Mbabane', 'chat-help')
+}, {
+  value: 'Africa/Mogadishu',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Mogadishu', 'chat-help')
+}, {
+  value: 'Africa/Monrovia',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Monrovia', 'chat-help')
+}, {
+  value: 'Africa/Nairobi',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Nairobi', 'chat-help')
+}, {
+  value: 'Africa/Ndjamena',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Ndjamena', 'chat-help')
+}, {
+  value: 'Africa/Niamey',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Niamey', 'chat-help')
+}, {
+  value: 'Africa/Nouakchott',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Nouakchott', 'chat-help')
+}, {
+  value: 'Africa/Ouagadougou',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Ouagadougou', 'chat-help')
+}, {
+  value: 'Africa/Porto-Novo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Porto-Novo', 'chat-help')
+}, {
+  value: 'Africa/Sao_Tome',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Sao_Tome', 'chat-help')
+}, {
+  value: 'Africa/Timbuktu',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Timbuktu', 'chat-help')
+}, {
+  value: 'Africa/Tripoli',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Tripoli', 'chat-help')
+}, {
+  value: 'Africa/Tunis',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Tunis', 'chat-help')
+}, {
+  value: 'Africa/Windhoek',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Africa/Windhoek', 'chat-help')
+}, {
+  value: 'America/Adak',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Adak', 'chat-help')
+}, {
+  value: 'America/Anchorage',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Anchorage', 'chat-help')
+}, {
+  value: 'America/Anguilla',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Anguilla', 'chat-help')
+}, {
+  value: 'America/Antigua',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Antigua', 'chat-help')
+}, {
+  value: 'America/Araguaina',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Araguaina', 'chat-help')
+}, {
+  value: 'America/Argentina/Buenos_Aires',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/Buenos_Aires', 'chat-help')
+}, {
+  value: 'America/Argentina/Catamarca',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/Catamarca', 'chat-help')
+}, {
+  value: 'America/Argentina/ComodRivadavia',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/ComodRivadavia', 'chat-help')
+}, {
+  value: 'America/Argentina/Cordoba',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/Cordoba', 'chat-help')
+}, {
+  value: 'America/Argentina/Jujuy',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/Jujuy', 'chat-help')
+}, {
+  value: 'America/Argentina/La_Rioja',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/La_Rioja', 'chat-help')
+}, {
+  value: 'America/Argentina/Mendoza',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/Mendoza', 'chat-help')
+}, {
+  value: 'America/Argentina/Rio_Gallegos',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/Rio_Gallegos', 'chat-help')
+}, {
+  value: 'America/Argentina/Salta',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/Salta', 'chat-help')
+}, {
+  value: 'America/Argentina/San_Juan',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/San_Juan', 'chat-help')
+}, {
+  value: 'America/Argentina/San_Luis',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/San_Luis', 'chat-help')
+}, {
+  value: 'America/Argentina/Tucuman',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/Tucuman', 'chat-help')
+}, {
+  value: 'America/Argentina/Ushuaia',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Argentina/Ushuaia', 'chat-help')
+}, {
+  value: 'America/Aruba',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Aruba', 'chat-help')
+}, {
+  value: 'America/Asuncion',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Asuncion', 'chat-help')
+}, {
+  value: 'America/Atikokan',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Atikokan', 'chat-help')
+}, {
+  value: 'America/Atka',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Atka', 'chat-help')
+}, {
+  value: 'America/Bahia',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Bahia', 'chat-help')
+}, {
+  value: 'America/Bahia_Banderas',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Bahia_Banderas', 'chat-help')
+}, {
+  value: 'America/Barbados',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Barbados', 'chat-help')
+}, {
+  value: 'America/Belem',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Belem', 'chat-help')
+}, {
+  value: 'America/Belize',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Belize', 'chat-help')
+}, {
+  value: 'America/Blanc-Sablon',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Blanc-Sablon', 'chat-help')
+}, {
+  value: 'America/Boa_Vista',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Boa_Vista', 'chat-help')
+}, {
+  value: 'America/Bogota',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Bogota', 'chat-help')
+}, {
+  value: 'America/Boise',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Boise', 'chat-help')
+}, {
+  value: 'America/Buenos_Aires',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Buenos_Aires', 'chat-help')
+}, {
+  value: 'America/Cambridge_Bay',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Cambridge_Bay', 'chat-help')
+}, {
+  value: 'America/Campo_Grande',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Campo_Grande', 'chat-help')
+}, {
+  value: 'America/Cancun',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Cancun', 'chat-help')
+}, {
+  value: 'America/Caracas',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Caracas', 'chat-help')
+}, {
+  value: 'America/Catamarca',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Catamarca', 'chat-help')
+}, {
+  value: 'America/Cayenne',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Cayenne', 'chat-help')
+}, {
+  value: 'America/Cayman',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Cayman', 'chat-help')
+}, {
+  value: 'America/Chicago',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Chicago', 'chat-help')
+}, {
+  value: 'America/Chihuahua',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Chihuahua', 'chat-help')
+}, {
+  value: 'America/Coral_Harbour',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Coral_Harbour', 'chat-help')
+}, {
+  value: 'America/Cordoba',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Cordoba', 'chat-help')
+}, {
+  value: 'America/Costa_Rica',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Costa_Rica', 'chat-help')
+}, {
+  value: 'America/Creston',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Creston', 'chat-help')
+}, {
+  value: 'America/Cuiaba',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Cuiaba', 'chat-help')
+}, {
+  value: 'America/Curacao',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Curacao', 'chat-help')
+}, {
+  value: 'America/Danmarkshavn',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Danmarkshavn', 'chat-help')
+}, {
+  value: 'America/Dawson',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Dawson', 'chat-help')
+}, {
+  value: 'America/Dawson_Creek',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Dawson_Creek', 'chat-help')
+}, {
+  value: 'America/Denver',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Denver', 'chat-help')
+}, {
+  value: 'America/Detroit',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Detroit', 'chat-help')
+}, {
+  value: 'America/Dominica',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Dominica', 'chat-help')
+}, {
+  value: 'America/Edmonton',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Edmonton', 'chat-help')
+}, {
+  value: 'America/Eirunepe',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Eirunepe', 'chat-help')
+}, {
+  value: 'America/El_Salvador',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/El_Salvador', 'chat-help')
+}, {
+  value: 'America/Ensenada',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Ensenada', 'chat-help')
+}, {
+  value: 'America/Fort_Nelson',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Fort_Nelson', 'chat-help')
+}, {
+  value: 'America/Fort_Wayne',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Fort_Wayne', 'chat-help')
+}, {
+  value: 'America/Fortaleza',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Fortaleza', 'chat-help')
+}, {
+  value: 'America/Glace_Bay',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Glace_Bay', 'chat-help')
+}, {
+  value: 'America/Godthab',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Godthab', 'chat-help')
+}, {
+  value: 'America/Goose_Bay',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Goose_Bay', 'chat-help')
+}, {
+  value: 'America/Grand_Turk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Grand_Turk', 'chat-help')
+}, {
+  value: 'America/Grenada',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Grenada', 'chat-help')
+}, {
+  value: 'America/Guadeloupe',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Guadeloupe', 'chat-help')
+}, {
+  value: 'America/Guatemala',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Guatemala', 'chat-help')
+}, {
+  value: 'America/Guayaquil',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Guayaquil', 'chat-help')
+}, {
+  value: 'America/Guyana',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Guyana', 'chat-help')
+}, {
+  value: 'America/Halifax',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Halifax', 'chat-help')
+}, {
+  value: 'America/Havana',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Havana', 'chat-help')
+}, {
+  value: 'America/Hermosillo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Hermosillo', 'chat-help')
+}, {
+  value: 'America/Indiana/Indianapolis',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Indiana/Indianapolis', 'chat-help')
+}, {
+  value: 'America/Indiana/Knox',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Indiana/Knox', 'chat-help')
+}, {
+  value: 'America/Indiana/Marengo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Indiana/Marengo', 'chat-help')
+}, {
+  value: 'America/Indiana/Petersburg',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Indiana/Petersburg', 'chat-help')
+}, {
+  value: 'America/Indiana/Tell_City',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Indiana/Tell_City', 'chat-help')
+}, {
+  value: 'America/Indiana/Vevay',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Indiana/Vevay', 'chat-help')
+}, {
+  value: 'America/Indiana/Vincennes',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Indiana/Vincennes', 'chat-help')
+}, {
+  value: 'America/Indiana/Winamac',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Indiana/Winamac', 'chat-help')
+}, {
+  value: 'America/Indianapolis',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Indianapolis', 'chat-help')
+}, {
+  value: 'America/Inuvik',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Inuvik', 'chat-help')
+}, {
+  value: 'America/Iqaluit',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Iqaluit', 'chat-help')
+}, {
+  value: 'America/Jamaica',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Jamaica', 'chat-help')
+}, {
+  value: 'America/Jujuy',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Jujuy', 'chat-help')
+}, {
+  value: 'America/Juneau',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Juneau', 'chat-help')
+}, {
+  value: 'America/Kentucky/Louisville',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Kentucky/Louisville', 'chat-help')
+}, {
+  value: 'America/Kentucky/Monticello',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Kentucky/Monticello', 'chat-help')
+}, {
+  value: 'America/Knox_IN',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Knox_IN', 'chat-help')
+}, {
+  value: 'America/Kralendijk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Kralendijk', 'chat-help')
+}, {
+  value: 'America/La_Paz',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/La_Paz', 'chat-help')
+}, {
+  value: 'America/Lima',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Lima', 'chat-help')
+}, {
+  value: 'America/Los_Angeles',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Los_Angeles', 'chat-help')
+}, {
+  value: 'America/Louisville',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Louisville', 'chat-help')
+}, {
+  value: 'America/Lower_Princes',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Lower_Princes', 'chat-help')
+}, {
+  value: 'America/Maceio',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Maceio', 'chat-help')
+}, {
+  value: 'America/Managua',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Managua', 'chat-help')
+}, {
+  value: 'America/Manaus',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Manaus', 'chat-help')
+}, {
+  value: 'America/Marigot',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Marigot', 'chat-help')
+}, {
+  value: 'America/Martinique',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Martinique', 'chat-help')
+}, {
+  value: 'America/Matamoros',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Matamoros', 'chat-help')
+}, {
+  value: 'America/Mazatlan',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Mazatlan', 'chat-help')
+}, {
+  value: 'America/Mendoza',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Mendoza', 'chat-help')
+}, {
+  value: 'America/Menominee',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Menominee', 'chat-help')
+}, {
+  value: 'America/Merida',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Merida', 'chat-help')
+}, {
+  value: 'America/Metlakatla',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Metlakatla', 'chat-help')
+}, {
+  value: 'America/Mexico_City',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Mexico_City', 'chat-help')
+}, {
+  value: 'America/Miquelon',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Miquelon', 'chat-help')
+}, {
+  value: 'America/Moncton',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Moncton', 'chat-help')
+}, {
+  value: 'America/Monterrey',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Monterrey', 'chat-help')
+}, {
+  value: 'America/Montevideo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Montevideo', 'chat-help')
+}, {
+  value: 'America/Montreal',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Montreal', 'chat-help')
+}, {
+  value: 'America/Montserrat',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Montserrat', 'chat-help')
+}, {
+  value: 'America/Nassau',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Nassau', 'chat-help')
+}, {
+  value: 'America/New_York',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/New_York', 'chat-help')
+}, {
+  value: 'America/Nipigon',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Nipigon', 'chat-help')
+}, {
+  value: 'America/Nome',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Nome', 'chat-help')
+}, {
+  value: 'America/Noronha',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Noronha', 'chat-help')
+}, {
+  value: 'America/North_Dakota/Beulah',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/North_Dakota/Beulah', 'chat-help')
+}, {
+  value: 'America/North_Dakota/Center',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/North_Dakota/Center', 'chat-help')
+}, {
+  value: 'America/North_Dakota/New_Salem',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/North_Dakota/New_Salem', 'chat-help')
+}, {
+  value: 'America/Ojinaga',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Ojinaga', 'chat-help')
+}, {
+  value: 'America/Panama',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Panama', 'chat-help')
+}, {
+  value: 'America/Pangnirtung',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Pangnirtung', 'chat-help')
+}, {
+  value: 'America/Paramaribo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Paramaribo', 'chat-help')
+}, {
+  value: 'America/Phoenix',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Phoenix', 'chat-help')
+}, {
+  value: 'America/Port-au-Prince',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Port-au-Prince', 'chat-help')
+}, {
+  value: 'America/Port_of_Spain',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Port_of_Spain', 'chat-help')
+}, {
+  value: 'America/Porto_Acre',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Porto_Acre', 'chat-help')
+}, {
+  value: 'America/Porto_Velho',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Porto_Velho', 'chat-help')
+}, {
+  value: 'America/Puerto_Rico',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Puerto_Rico', 'chat-help')
+}, {
+  value: 'America/Punta_Arenas',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Punta_Arenas', 'chat-help')
+}, {
+  value: 'America/Rainy_River',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Rainy_River', 'chat-help')
+}, {
+  value: 'America/Rankin_Inlet',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Rankin_Inlet', 'chat-help')
+}, {
+  value: 'America/Recife',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Recife', 'chat-help')
+}, {
+  value: 'America/Regina',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Regina', 'chat-help')
+}, {
+  value: 'America/Resolute',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Resolute', 'chat-help')
+}, {
+  value: 'America/Rio_Branco',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Rio_Branco', 'chat-help')
+}, {
+  value: 'America/Rosario',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Rosario', 'chat-help')
+}, {
+  value: 'America/Santa_Isabel',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Santa_Isabel', 'chat-help')
+}, {
+  value: 'America/Santarem',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Santarem', 'chat-help')
+}, {
+  value: 'America/Santiago',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Santiago', 'chat-help')
+}, {
+  value: 'America/Santo_Domingo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Santo_Domingo', 'chat-help')
+}, {
+  value: 'America/Sao_Paulo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Sao_Paulo', 'chat-help')
+}, {
+  value: 'America/Scoresbysund',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Scoresbysund', 'chat-help')
+}, {
+  value: 'America/Shiprock',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Shiprock', 'chat-help')
+}, {
+  value: 'America/Sitka',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Sitka', 'chat-help')
+}, {
+  value: 'America/St_Barthelemy',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/St_Barthelemy', 'chat-help')
+}, {
+  value: 'America/St_Johns',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/St_Johns', 'chat-help')
+}, {
+  value: 'America/St_Kitts',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/St_Kitts', 'chat-help')
+}, {
+  value: 'America/St_Lucia',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/St_Lucia', 'chat-help')
+}, {
+  value: 'America/St_Thomas',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/St_Thomas', 'chat-help')
+}, {
+  value: 'America/St_Vincent',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/St_Vincent', 'chat-help')
+}, {
+  value: 'America/Swift_Current',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Swift_Current', 'chat-help')
+}, {
+  value: 'America/Tegucigalpa',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Tegucigalpa', 'chat-help')
+}, {
+  value: 'America/Thule',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Thule', 'chat-help')
+}, {
+  value: 'America/Thunder_Bay',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Thunder_Bay', 'chat-help')
+}, {
+  value: 'America/Tijuana',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Tijuana', 'chat-help')
+}, {
+  value: 'America/Toronto',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Toronto', 'chat-help')
+}, {
+  value: 'America/Tortola',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Tortola', 'chat-help')
+}, {
+  value: 'America/Vancouver',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Vancouver', 'chat-help')
+}, {
+  value: 'America/Virgin',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Virgin', 'chat-help')
+}, {
+  value: 'America/Whitehorse',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Whitehorse', 'chat-help')
+}, {
+  value: 'America/Winnipeg',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Winnipeg', 'chat-help')
+}, {
+  value: 'America/Yakutat',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Yakutat', 'chat-help')
+}, {
+  value: 'America/Yellowknife',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('America/Yellowknife', 'chat-help')
+}, {
+  value: 'Antarctica/Casey',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Antarctica/Casey', 'chat-help')
+}, {
+  value: 'Antarctica/Davis',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Antarctica/Davis', 'chat-help')
+}, {
+  value: 'Antarctica/DumontDUrville',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Antarctica/DumontDUrville', 'chat-help')
+}, {
+  value: 'Antarctica/Macquarie',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Antarctica/Macquarie', 'chat-help')
+}, {
+  value: 'Antarctica/Mawson',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Antarctica/Mawson', 'chat-help')
+}, {
+  value: 'Antarctica/McMurdo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Antarctica/McMurdo', 'chat-help')
+}, {
+  value: 'Antarctica/Palmer',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Antarctica/Palmer', 'chat-help')
+}, {
+  value: 'Antarctica/Rothera',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Antarctica/Rothera', 'chat-help')
+}, {
+  value: 'Antarctica/South_Pole',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Antarctica/South_Pole', 'chat-help')
+}, {
+  value: 'Antarctica/Syowa',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Antarctica/Syowa', 'chat-help')
+}, {
+  value: 'Antarctica/Troll',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Antarctica/Troll', 'chat-help')
+}, {
+  value: 'Antarctica/Vostok',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Antarctica/Vostok', 'chat-help')
+}, {
+  value: 'Arctic/Longyearbyen',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Arctic/Longyearbyen', 'chat-help')
+}, {
+  value: 'Asia/Aden',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Aden', 'chat-help')
+}, {
+  value: 'Asia/Almaty',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Almaty', 'chat-help')
+}, {
+  value: 'Asia/Amman',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Amman', 'chat-help')
+}, {
+  value: 'Asia/Anadyr',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Anadyr', 'chat-help')
+}, {
+  value: 'Asia/Aqtau',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Aqtau', 'chat-help')
+}, {
+  value: 'Asia/Aqtobe',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Aqtobe', 'chat-help')
+}, {
+  value: 'Asia/Ashgabat',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Ashgabat', 'chat-help')
+}, {
+  value: 'Asia/Ashkhabad',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Ashkhabad', 'chat-help')
+}, {
+  value: 'Asia/Atyrau',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Atyrau', 'chat-help')
+}, {
+  value: 'Asia/Baghdad',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Baghdad', 'chat-help')
+}, {
+  value: 'Asia/Bahrain',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Bahrain', 'chat-help')
+}, {
+  value: 'Asia/Baku',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Baku', 'chat-help')
+}, {
+  value: 'Asia/Bangkok',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Bangkok', 'chat-help')
+}, {
+  value: 'Asia/Barnaul',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Barnaul', 'chat-help')
+}, {
+  value: 'Asia/Beirut',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Beirut', 'chat-help')
+}, {
+  value: 'Asia/Bishkek',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Bishkek', 'chat-help')
+}, {
+  value: 'Asia/Brunei',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Brunei', 'chat-help')
+}, {
+  value: 'Asia/Calcutta',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Calcutta', 'chat-help')
+}, {
+  value: 'Asia/Chita',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Chita', 'chat-help')
+}, {
+  value: 'Asia/Choibalsan',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Choibalsan', 'chat-help')
+}, {
+  value: 'Asia/Chongqing',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Chongqing', 'chat-help')
+}, {
+  value: 'Asia/Chungking',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Chungking', 'chat-help')
+}, {
+  value: 'Asia/Colombo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Colombo', 'chat-help')
+}, {
+  value: 'Asia/Dacca',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Dacca', 'chat-help')
+}, {
+  value: 'Asia/Damascus',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Damascus', 'chat-help')
+}, {
+  value: 'Asia/Dhaka',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Dhaka', 'chat-help')
+}, {
+  value: 'Asia/Dili',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Dili', 'chat-help')
+}, {
+  value: 'Asia/Dubai',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Dubai', 'chat-help')
+}, {
+  value: 'Asia/Dushanbe',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Dushanbe', 'chat-help')
+}, {
+  value: 'Asia/Famagusta',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Famagusta', 'chat-help')
+}, {
+  value: 'Asia/Gaza',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Gaza', 'chat-help')
+}, {
+  value: 'Asia/Harbin',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Harbin', 'chat-help')
+}, {
+  value: 'Asia/Hebron',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Hebron', 'chat-help')
+}, {
+  value: 'Asia/Ho_Chi_Minh',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Ho_Chi_Minh', 'chat-help')
+}, {
+  value: 'Asia/Hong_Kong',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Hong_Kong', 'chat-help')
+}, {
+  value: 'Asia/Hovd',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Hovd', 'chat-help')
+}, {
+  value: 'Asia/Irkutsk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Irkutsk', 'chat-help')
+}, {
+  value: 'Asia/Istanbul',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Istanbul', 'chat-help')
+}, {
+  value: 'Asia/Jakarta',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Jakarta', 'chat-help')
+}, {
+  value: 'Asia/Jayapura',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Jayapura', 'chat-help')
+}, {
+  value: 'Asia/Jerusalem',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Jerusalem', 'chat-help')
+}, {
+  value: 'Asia/Kabul',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Kabul', 'chat-help')
+}, {
+  value: 'Asia/Kamchatka',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Kamchatka', 'chat-help')
+}, {
+  value: 'Asia/Karachi',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Karachi', 'chat-help')
+}, {
+  value: 'Asia/Kashgar',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Kashgar', 'chat-help')
+}, {
+  value: 'Asia/Kathmandu',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Kathmandu', 'chat-help')
+}, {
+  value: 'Asia/Katmandu',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Katmandu', 'chat-help')
+}, {
+  value: 'Asia/Khandyga',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Khandyga', 'chat-help')
+}, {
+  value: 'Asia/Kolkata',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Kolkata', 'chat-help')
+}, {
+  value: 'Asia/Krasnoyarsk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Krasnoyarsk', 'chat-help')
+}, {
+  value: 'Asia/Kuala_Lumpur',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Kuala_Lumpur', 'chat-help')
+}, {
+  value: 'Asia/Kuching',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Kuching', 'chat-help')
+}, {
+  value: 'Asia/Kuwait',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Kuwait', 'chat-help')
+}, {
+  value: 'Asia/Macao',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Macao', 'chat-help')
+}, {
+  value: 'Asia/Macau',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Macau', 'chat-help')
+}, {
+  value: 'Asia/Magadan',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Magadan', 'chat-help')
+}, {
+  value: 'Asia/Makassar',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Makassar', 'chat-help')
+}, {
+  value: 'Asia/Manila',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Manila', 'chat-help')
+}, {
+  value: 'Asia/Muscat',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Muscat', 'chat-help')
+}, {
+  value: 'Asia/Nicosia',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Nicosia', 'chat-help')
+}, {
+  value: 'Asia/Novokuznetsk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Novokuznetsk', 'chat-help')
+}, {
+  value: 'Asia/Novosibirsk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Novosibirsk', 'chat-help')
+}, {
+  value: 'Asia/Omsk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Omsk', 'chat-help')
+}, {
+  value: 'Asia/Oral',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Oral', 'chat-help')
+}, {
+  value: 'Asia/Phnom_Penh',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Phnom_Penh', 'chat-help')
+}, {
+  value: 'Asia/Pontianak',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Pontianak', 'chat-help')
+}, {
+  value: 'Asia/Pyongyang',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Pyongyang', 'chat-help')
+}, {
+  value: 'Asia/Qatar',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Qatar', 'chat-help')
+}, {
+  value: 'Asia/Qyzylorda',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Qyzylorda', 'chat-help')
+}, {
+  value: 'Asia/Rangoon',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Rangoon', 'chat-help')
+}, {
+  value: 'Asia/Riyadh',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Riyadh', 'chat-help')
+}, {
+  value: 'Asia/Saigon',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Saigon', 'chat-help')
+}, {
+  value: 'Asia/Sakhalin',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Sakhalin', 'chat-help')
+}, {
+  value: 'Asia/Samarkand',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Samarkand', 'chat-help')
+}, {
+  value: 'Asia/Seoul',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Seoul', 'chat-help')
+}, {
+  value: 'Asia/Shanghai',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Shanghai', 'chat-help')
+}, {
+  value: 'Asia/Singapore',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Singapore', 'chat-help')
+}, {
+  value: 'Asia/Srednekolymsk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Srednekolymsk', 'chat-help')
+}, {
+  value: 'Asia/Taipei',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Taipei', 'chat-help')
+}, {
+  value: 'Asia/Tashkent',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Tashkent', 'chat-help')
+}, {
+  value: 'Asia/Tbilisi',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Tbilisi', 'chat-help')
+}, {
+  value: 'Asia/Tehran',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Tehran', 'chat-help')
+}, {
+  value: 'Asia/Tel_Aviv',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Tel_Aviv', 'chat-help')
+}, {
+  value: 'Asia/Thimbu',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Thimbu', 'chat-help')
+}, {
+  value: 'Asia/Thimphu',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Thimphu', 'chat-help')
+}, {
+  value: 'Asia/Tokyo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Tokyo', 'chat-help')
+}, {
+  value: 'Asia/Tomsk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Tomsk', 'chat-help')
+}, {
+  value: 'Asia/Ujung_Pandang',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Ujung_Pandang', 'chat-help')
+}, {
+  value: 'Asia/Ulaanbaatar',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Ulaanbaatar', 'chat-help')
+}, {
+  value: 'Asia/Ulan_Bator',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Ulan_Bator', 'chat-help')
+}, {
+  value: 'Asia/Urumqi',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Urumqi', 'chat-help')
+}, {
+  value: 'Asia/Ust-Nera',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Ust-Nera', 'chat-help')
+}, {
+  value: 'Asia/Vientiane',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Vientiane', 'chat-help')
+}, {
+  value: 'Asia/Vladivostok',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Vladivostok', 'chat-help')
+}, {
+  value: 'Asia/Yakutsk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Yakutsk', 'chat-help')
+}, {
+  value: 'Asia/Yangon',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Yangon', 'chat-help')
+}, {
+  value: 'Asia/Yekaterinburg',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Yekaterinburg', 'chat-help')
+}, {
+  value: 'Asia/Yerevan',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Asia/Yerevan', 'chat-help')
+}, {
+  value: 'Atlantic/Azores',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Atlantic/Azores', 'chat-help')
+}, {
+  value: 'Atlantic/Bermuda',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Atlantic/Bermuda', 'chat-help')
+}, {
+  value: 'Atlantic/Canary',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Atlantic/Canary', 'chat-help')
+}, {
+  value: 'Atlantic/Cape_Verde',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Atlantic/Cape_Verde', 'chat-help')
+}, {
+  value: 'Atlantic/Faeroe',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Atlantic/Faeroe', 'chat-help')
+}, {
+  value: 'Atlantic/Faroe',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Atlantic/Faroe', 'chat-help')
+}, {
+  value: 'Atlantic/Jan_Mayen',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Atlantic/Jan_Mayen', 'chat-help')
+}, {
+  value: 'Atlantic/Madeira',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Atlantic/Madeira', 'chat-help')
+}, {
+  value: 'Atlantic/Reykjavik',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Atlantic/Reykjavik', 'chat-help')
+}, {
+  value: 'Atlantic/South_Georgia',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Atlantic/South_Georgia', 'chat-help')
+}, {
+  value: 'Atlantic/St_Helena',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Atlantic/St_Helena', 'chat-help')
+}, {
+  value: 'Atlantic/Stanley',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Atlantic/Stanley', 'chat-help')
+}, {
+  value: 'Australia/ACT',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/ACT', 'chat-help')
+}, {
+  value: 'Australia/Adelaide',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Adelaide', 'chat-help')
+}, {
+  value: 'Australia/Brisbane',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Brisbane', 'chat-help')
+}, {
+  value: 'Australia/Broken_Hill',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Broken_Hill', 'chat-help')
+}, {
+  value: 'Australia/Canberra',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Canberra', 'chat-help')
+}, {
+  value: 'Australia/Currie',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Currie', 'chat-help')
+}, {
+  value: 'Australia/Darwin',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Darwin', 'chat-help')
+}, {
+  value: 'Australia/Eucla',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Eucla', 'chat-help')
+}, {
+  value: 'Australia/Hobart',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Hobart', 'chat-help')
+}, {
+  value: 'Australia/LHI',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/LHI', 'chat-help')
+}, {
+  value: 'Australia/Lindeman',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Lindeman', 'chat-help')
+}, {
+  value: 'Australia/Lord_Howe',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Lord_Howe', 'chat-help')
+}, {
+  value: 'Australia/Melbourne',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Melbourne', 'chat-help')
+}, {
+  value: 'Australia/NSW',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/NSW', 'chat-help')
+}, {
+  value: 'Australia/North',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/North', 'chat-help')
+}, {
+  value: 'Australia/Perth',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Perth', 'chat-help')
+}, {
+  value: 'Australia/Queensland',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Queensland', 'chat-help')
+}, {
+  value: 'Australia/South',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/South', 'chat-help')
+}, {
+  value: 'Australia/Sydney',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Sydney', 'chat-help')
+}, {
+  value: 'Australia/Tasmania',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Tasmania', 'chat-help')
+}, {
+  value: 'Australia/Victoria',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Victoria', 'chat-help')
+}, {
+  value: 'Australia/West',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/West', 'chat-help')
+}, {
+  value: 'Australia/Yancowinna',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Australia/Yancowinna', 'chat-help')
+}, {
+  value: 'Brazil/Acre',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Brazil/Acre', 'chat-help')
+}, {
+  value: 'Brazil/DeNoronha',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Brazil/DeNoronha', 'chat-help')
+}, {
+  value: 'Brazil/East',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Brazil/East', 'chat-help')
+}, {
+  value: 'Brazil/West',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Brazil/West', 'chat-help')
+}, {
+  value: 'CET',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('CET', 'chat-help')
+}, {
+  value: 'CST6CDT',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('CST6CDT', 'chat-help')
+}, {
+  value: 'Canada/Atlantic',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Canada/Atlantic', 'chat-help')
+}, {
+  value: 'Canada/Central',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Canada/Central', 'chat-help')
+}, {
+  value: 'Canada/Eastern',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Canada/Eastern', 'chat-help')
+}, {
+  value: 'Canada/Mountain',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Canada/Mountain', 'chat-help')
+}, {
+  value: 'Canada/Newfoundland',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Canada/Newfoundland', 'chat-help')
+}, {
+  value: 'Canada/Pacific',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Canada/Pacific', 'chat-help')
+}, {
+  value: 'Canada/Saskatchewan',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Canada/Saskatchewan', 'chat-help')
+}, {
+  value: 'Canada/Yukon',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Canada/Yukon', 'chat-help')
+}, {
+  value: 'Chile/Continental',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Chile/Continental', 'chat-help')
+}, {
+  value: 'Chile/EasterIsland',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Chile/EasterIsland', 'chat-help')
+}, {
+  value: 'Cuba',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Cuba', 'chat-help')
+}, {
+  value: 'EET',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('EET', 'chat-help')
+}, {
+  value: 'EST',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('EST', 'chat-help')
+}, {
+  value: 'EST5EDT',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('EST5EDT', 'chat-help')
+}, {
+  value: 'Egypt',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Egypt', 'chat-help')
+}, {
+  value: 'Eire',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Eire', 'chat-help')
+}, {
+  value: 'Etc/GMT',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT', 'chat-help')
+}, {
+  value: 'Etc/GMT+0',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+0', 'chat-help')
+}, {
+  value: 'Etc/GMT+1',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+1', 'chat-help')
+}, {
+  value: 'Etc/GMT+10',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+10', 'chat-help')
+}, {
+  value: 'Etc/GMT+11',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+11', 'chat-help')
+}, {
+  value: 'Etc/GMT+12',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+12', 'chat-help')
+}, {
+  value: 'Etc/GMT+2',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+2', 'chat-help')
+}, {
+  value: 'Etc/GMT+3',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+3', 'chat-help')
+}, {
+  value: 'Etc/GMT+4',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+4', 'chat-help')
+}, {
+  value: 'Etc/GMT+5',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+5', 'chat-help')
+}, {
+  value: 'Etc/GMT+6',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+6', 'chat-help')
+}, {
+  value: 'Etc/GMT+7',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+7', 'chat-help')
+}, {
+  value: 'Etc/GMT+8',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+8', 'chat-help')
+}, {
+  value: 'Etc/GMT+9',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT+9', 'chat-help')
+}, {
+  value: 'Etc/GMT-0',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-0', 'chat-help')
+}, {
+  value: 'Etc/GMT-1',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-1', 'chat-help')
+}, {
+  value: 'Etc/GMT-10',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-10', 'chat-help')
+}, {
+  value: 'Etc/GMT-11',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-11', 'chat-help')
+}, {
+  value: 'Etc/GMT-12',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-12', 'chat-help')
+}, {
+  value: 'Etc/GMT-13',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-13', 'chat-help')
+}, {
+  value: 'Etc/GMT-14',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-14', 'chat-help')
+}, {
+  value: 'Etc/GMT-2',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-2', 'chat-help')
+}, {
+  value: 'Etc/GMT-3',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-3', 'chat-help')
+}, {
+  value: 'Etc/GMT-4',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-4', 'chat-help')
+}, {
+  value: 'Etc/GMT-5',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-5', 'chat-help')
+}, {
+  value: 'Etc/GMT-6',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-6', 'chat-help')
+}, {
+  value: 'Etc/GMT-7',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-7', 'chat-help')
+}, {
+  value: 'Etc/GMT-8',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-8', 'chat-help')
+}, {
+  value: 'Etc/GMT-9',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT-9', 'chat-help')
+}, {
+  value: 'Etc/GMT0',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/GMT0', 'chat-help')
+}, {
+  value: 'Etc/Greenwich',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/Greenwich', 'chat-help')
+}, {
+  value: 'Etc/UCT',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/UCT', 'chat-help')
+}, {
+  value: 'Etc/UTC',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/UTC', 'chat-help')
+}, {
+  value: 'Etc/Universal',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/Universal', 'chat-help')
+}, {
+  value: 'Etc/Zulu',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Etc/Zulu', 'chat-help')
+}, {
+  value: 'Europe/Amsterdam',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Amsterdam', 'chat-help')
+}, {
+  value: 'Europe/Andorra',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Andorra', 'chat-help')
+}, {
+  value: 'Europe/Astrakhan',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Astrakhan', 'chat-help')
+}, {
+  value: 'Europe/Athens',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Athens', 'chat-help')
+}, {
+  value: 'Europe/Belfast',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Belfast', 'chat-help')
+}, {
+  value: 'Europe/Belgrade',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Belgrade', 'chat-help')
+}, {
+  value: 'Europe/Berlin',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Berlin', 'chat-help')
+}, {
+  value: 'Europe/Bratislava',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Bratislava', 'chat-help')
+}, {
+  value: 'Europe/Brussels',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Brussels', 'chat-help')
+}, {
+  value: 'Europe/Bucharest',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Bucharest', 'chat-help')
+}, {
+  value: 'Europe/Budapest',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Budapest', 'chat-help')
+}, {
+  value: 'Europe/Busingen',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Busingen', 'chat-help')
+}, {
+  value: 'Europe/Chisinau',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Chisinau', 'chat-help')
+}, {
+  value: 'Europe/Copenhagen',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Copenhagen', 'chat-help')
+}, {
+  value: 'Europe/Dublin',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Dublin', 'chat-help')
+}, {
+  value: 'Europe/Gibraltar',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Gibraltar', 'chat-help')
+}, {
+  value: 'Europe/Guernsey',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Guernsey', 'chat-help')
+}, {
+  value: 'Europe/Helsinki',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Helsinki', 'chat-help')
+}, {
+  value: 'Europe/Isle_of_Man',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Isle_of_Man', 'chat-help')
+}, {
+  value: 'Europe/Istanbul',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Istanbul', 'chat-help')
+}, {
+  value: 'Europe/Jersey',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Jersey', 'chat-help')
+}, {
+  value: 'Europe/Kaliningrad',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Kaliningrad', 'chat-help')
+}, {
+  value: 'Europe/Kiev',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Kiev', 'chat-help')
+}, {
+  value: 'Europe/Kirov',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Kirov', 'chat-help')
+}, {
+  value: 'Europe/Lisbon',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Lisbon', 'chat-help')
+}, {
+  value: 'Europe/Ljubljana',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Ljubljana', 'chat-help')
+}, {
+  value: 'Europe/London',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/London', 'chat-help')
+}, {
+  value: 'Europe/Luxembourg',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Luxembourg', 'chat-help')
+}, {
+  value: 'Europe/Madrid',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Madrid', 'chat-help')
+}, {
+  value: 'Europe/Malta',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Malta', 'chat-help')
+}, {
+  value: 'Europe/Mariehamn',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Mariehamn', 'chat-help')
+}, {
+  value: 'Europe/Minsk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Minsk', 'chat-help')
+}, {
+  value: 'Europe/Monaco',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Monaco', 'chat-help')
+}, {
+  value: 'Europe/Moscow',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Moscow', 'chat-help')
+}, {
+  value: 'Europe/Nicosia',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Nicosia', 'chat-help')
+}, {
+  value: 'Europe/Oslo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Oslo', 'chat-help')
+}, {
+  value: 'Europe/Paris',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Paris', 'chat-help')
+}, {
+  value: 'Europe/Podgorica',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Podgorica', 'chat-help')
+}, {
+  value: 'Europe/Prague',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Prague', 'chat-help')
+}, {
+  value: 'Europe/Riga',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Riga', 'chat-help')
+}, {
+  value: 'Europe/Rome',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Rome', 'chat-help')
+}, {
+  value: 'Europe/Samara',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Samara', 'chat-help')
+}, {
+  value: 'Europe/San_Marino',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/San_Marino', 'chat-help')
+}, {
+  value: 'Europe/Sarajevo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Sarajevo', 'chat-help')
+}, {
+  value: 'Europe/Saratov',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Saratov', 'chat-help')
+}, {
+  value: 'Europe/Simferopol',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Simferopol', 'chat-help')
+}, {
+  value: 'Europe/Skopje',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Skopje', 'chat-help')
+}, {
+  value: 'Europe/Sofia',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Sofia', 'chat-help')
+}, {
+  value: 'Europe/Stockholm',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Stockholm', 'chat-help')
+}, {
+  value: 'Europe/Tallinn',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Tallinn', 'chat-help')
+}, {
+  value: 'Europe/Tirane',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Tirane', 'chat-help')
+}, {
+  value: 'Europe/Tiraspol',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Tiraspol', 'chat-help')
+}, {
+  value: 'Europe/Ulyanovsk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Ulyanovsk', 'chat-help')
+}, {
+  value: 'Europe/Uzhgorod',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Uzhgorod', 'chat-help')
+}, {
+  value: 'Europe/Vaduz',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Vaduz', 'chat-help')
+}, {
+  value: 'Europe/Vatican',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Vatican', 'chat-help')
+}, {
+  value: 'Europe/Vienna',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Vienna', 'chat-help')
+}, {
+  value: 'Europe/Vilnius',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Vilnius', 'chat-help')
+}, {
+  value: 'Europe/Volgograd',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Volgograd', 'chat-help')
+}, {
+  value: 'Europe/Warsaw',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Warsaw', 'chat-help')
+}, {
+  value: 'Europe/Zagreb',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Zagreb', 'chat-help')
+}, {
+  value: 'Europe/Zaporozhye',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Zaporozhye', 'chat-help')
+}, {
+  value: 'Europe/Zurich',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Europe/Zurich', 'chat-help')
+}, {
+  value: 'GB',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('GB', 'chat-help')
+}, {
+  value: 'GB-Eire',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('GB-Eire', 'chat-help')
+}, {
+  value: 'GMT',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('GMT', 'chat-help')
+}, {
+  value: 'GMT+0',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('GMT+0', 'chat-help')
+}, {
+  value: 'GMT-0',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('GMT-0', 'chat-help')
+}, {
+  value: 'GMT0',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('GMT0', 'chat-help')
+}, {
+  value: 'Greenwich',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Greenwich', 'chat-help')
+}, {
+  value: 'HST',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('HST', 'chat-help')
+}, {
+  value: 'Hongkong',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Hongkong', 'chat-help')
+}, {
+  value: 'Iceland',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Iceland', 'chat-help')
+}, {
+  value: 'Indian/Antananarivo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Indian/Antananarivo', 'chat-help')
+}, {
+  value: 'Indian/Chagos',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Indian/Chagos', 'chat-help')
+}, {
+  value: 'Indian/Christmas',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Indian/Christmas', 'chat-help')
+}, {
+  value: 'Indian/Cocos',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Indian/Cocos', 'chat-help')
+}, {
+  value: 'Indian/Comoro',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Indian/Comoro', 'chat-help')
+}, {
+  value: 'Indian/Kerguelen',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Indian/Kerguelen', 'chat-help')
+}, {
+  value: 'Indian/Mahe',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Indian/Mahe', 'chat-help')
+}, {
+  value: 'Indian/Maldives',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Indian/Maldives', 'chat-help')
+}, {
+  value: 'Indian/Mauritius',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Indian/Mauritius', 'chat-help')
+}, {
+  value: 'Indian/Mayotte',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Indian/Mayotte', 'chat-help')
+}, {
+  value: 'Indian/Reunion',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Indian/Reunion', 'chat-help')
+}, {
+  value: 'Iran',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Iran', 'chat-help')
+}, {
+  value: 'Israel',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Israel', 'chat-help')
+}, {
+  value: 'Jamaica',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Jamaica', 'chat-help')
+}, {
+  value: 'Japan',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Japan', 'chat-help')
+}, {
+  value: 'Kwajalein',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Kwajalein', 'chat-help')
+}, {
+  value: 'Libya',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Libya', 'chat-help')
+}, {
+  value: 'MET',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('MET', 'chat-help')
+}, {
+  value: 'MST',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('MST', 'chat-help')
+}, {
+  value: 'MST7MDT',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('MST7MDT', 'chat-help')
+}, {
+  value: 'Mexico/BajaNorte',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Mexico/BajaNorte', 'chat-help')
+}, {
+  value: 'Mexico/BajaSur',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Mexico/BajaSur', 'chat-help')
+}, {
+  value: 'Mexico/General',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Mexico/General', 'chat-help')
+}, {
+  value: 'NZ',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('NZ', 'chat-help')
+}, {
+  value: 'NZ-CHAT',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('NZ-CHAT', 'chat-help')
+}, {
+  value: 'Navajo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Navajo', 'chat-help')
+}, {
+  value: 'PRC',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('PRC', 'chat-help')
+}, {
+  value: 'PST8PDT',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('PST8PDT', 'chat-help')
+}, {
+  value: 'Pacific/Apia',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Apia', 'chat-help')
+}, {
+  value: 'Pacific/Auckland',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Auckland', 'chat-help')
+}, {
+  value: 'Pacific/Bougainville',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Bougainville', 'chat-help')
+}, {
+  value: 'Pacific/Chatham',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Chatham', 'chat-help')
+}, {
+  value: 'Pacific/Chuuk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Chuuk', 'chat-help')
+}, {
+  value: 'Pacific/Easter',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Easter', 'chat-help')
+}, {
+  value: 'Pacific/Efate',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Efate', 'chat-help')
+}, {
+  value: 'Pacific/Enderbury',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Enderbury', 'chat-help')
+}, {
+  value: 'Pacific/Fakaofo',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Fakaofo', 'chat-help')
+}, {
+  value: 'Pacific/Fiji',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Fiji', 'chat-help')
+}, {
+  value: 'Pacific/Funafuti',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Funafuti', 'chat-help')
+}, {
+  value: 'Pacific/Galapagos',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Galapagos', 'chat-help')
+}, {
+  value: 'Pacific/Gambier',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Gambier', 'chat-help')
+}, {
+  value: 'Pacific/Guadalcanal',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Guadalcanal', 'chat-help')
+}, {
+  value: 'Pacific/Guam',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Guam', 'chat-help')
+}, {
+  value: 'Pacific/Honolulu',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Honolulu', 'chat-help')
+}, {
+  value: 'Pacific/Johnston',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Johnston', 'chat-help')
+}, {
+  value: 'Pacific/Kiritimati',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Kiritimati', 'chat-help')
+}, {
+  value: 'Pacific/Kosrae',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Kosrae', 'chat-help')
+}, {
+  value: 'Pacific/Kwajalein',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Kwajalein', 'chat-help')
+}, {
+  value: 'Pacific/Majuro',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Majuro', 'chat-help')
+}, {
+  value: 'Pacific/Marquesas',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Marquesas', 'chat-help')
+}, {
+  value: 'Pacific/Midway',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Midway', 'chat-help')
+}, {
+  value: 'Pacific/Nauru',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Nauru', 'chat-help')
+}, {
+  value: 'Pacific/Niue',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Niue', 'chat-help')
+}, {
+  value: 'Pacific/Norfolk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Norfolk', 'chat-help')
+}, {
+  value: 'Pacific/Noumea',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Noumea', 'chat-help')
+}, {
+  value: 'Pacific/Pago_Pago',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Pago_Pago', 'chat-help')
+}, {
+  value: 'Pacific/Palau',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Palau', 'chat-help')
+}, {
+  value: 'Pacific/Pitcairn',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Pitcairn', 'chat-help')
+}, {
+  value: 'Pacific/Pohnpei',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Pohnpei', 'chat-help')
+}, {
+  value: 'Pacific/Ponape',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Ponape', 'chat-help')
+}, {
+  value: 'Pacific/Port_Moresby',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Port_Moresby', 'chat-help')
+}, {
+  value: 'Pacific/Rarotonga',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Rarotonga', 'chat-help')
+}, {
+  value: 'Pacific/Saipan',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Saipan', 'chat-help')
+}, {
+  value: 'Pacific/Samoa',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Samoa', 'chat-help')
+}, {
+  value: 'Pacific/Tahiti',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Tahiti', 'chat-help')
+}, {
+  value: 'Pacific/Tarawa',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Tarawa', 'chat-help')
+}, {
+  value: 'Pacific/Tongatapu',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Tongatapu', 'chat-help')
+}, {
+  value: 'Pacific/Truk',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Truk', 'chat-help')
+}, {
+  value: 'Pacific/Wake',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Wake', 'chat-help')
+}, {
+  value: 'Pacific/Wallis',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Wallis', 'chat-help')
+}, {
+  value: 'Pacific/Yap',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pacific/Yap', 'chat-help')
+}, {
+  value: 'Poland',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Poland', 'chat-help')
+}, {
+  value: 'Portugal',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Portugal', 'chat-help')
+}, {
+  value: 'ROC',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('ROC', 'chat-help')
+}, {
+  value: 'ROK',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('ROK', 'chat-help')
+}, {
+  value: 'Singapore',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Singapore', 'chat-help')
+}, {
+  value: 'Turkey',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Turkey', 'chat-help')
+}, {
+  value: 'UCT',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('UCT', 'chat-help')
+}, {
+  value: 'US/Alaska',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/Alaska', 'chat-help')
+}, {
+  value: 'US/Aleutian',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/Aleutian', 'chat-help')
+}, {
+  value: 'US/Arizona',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/Arizona', 'chat-help')
+}, {
+  value: 'US/Central',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/Central', 'chat-help')
+}, {
+  value: 'US/East-Indiana',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/East-Indiana', 'chat-help')
+}, {
+  value: 'US/Eastern',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/Eastern', 'chat-help')
+}, {
+  value: 'US/Hawaii',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/Hawaii', 'chat-help')
+}, {
+  value: 'US/Indiana-Starke',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/Indiana-Starke', 'chat-help')
+}, {
+  value: 'US/Michigan',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/Michigan', 'chat-help')
+}, {
+  value: 'US/Mountain',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/Mountain', 'chat-help')
+}, {
+  value: 'US/Pacific',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/Pacific', 'chat-help')
+}, {
+  value: 'US/Pacific-New',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/Pacific-New', 'chat-help')
+}, {
+  value: 'US/Samoa',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('US/Samoa', 'chat-help')
+}, {
+  value: 'UTC',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('UTC', 'chat-help')
+}, {
+  value: 'Universal',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Universal', 'chat-help')
+}, {
+  value: 'W-SU',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('W-SU', 'chat-help')
+}, {
+  value: 'WET',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('WET', 'chat-help')
+}, {
+  value: 'Zulu',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Zulu', 'chat-help')
+}];
+function Edit(props) {
+  const {
+    attributes,
+    setAttributes
+  } = props;
+  const {
+    buttonSize,
+    buttonType,
+    borderRadius,
+    text,
+    info,
+    title,
+    online,
+    offline,
+    textAlignment,
+    iconTarget,
+    visibility,
+    buttonLinkTarget,
+    numberInput,
+    prefilledMessageInput,
+    imageUrl,
+    timeZone,
+    mondayStart,
+    mondayEnd,
+    tuesdayStart,
+    tuesdayEnd,
+    wednesdayStart,
+    wednesdayEnd,
+    thursdayStart,
+    thursdayEnd,
+    fridayStart,
+    fridayEnd,
+    saturdayStart,
+    saturdayEnd,
+    sundayStart,
+    sundayEnd,
+    topPadding,
+    rightPadding,
+    bottomPadding,
+    leftPadding
+  } = attributes;
+  const [filteredOptions, setFilteredOptions] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(timezones);
+  function onInputChange(value) {
+    setFilteredOptions(timezones.filter(timezone => timezone.label.toLowerCase().includes(value.toLowerCase())));
+  }
+  function onFontSizeChange(value) {
+    setAttributes({
+      timeZone: value
+    });
+  }
+  const onSelectImage = image => {
+    setAttributes({
+      imageUrl: image.url
+    });
+  };
+  const onChangeAlignment = newAlignment => {
+    setAttributes({
+      textAlignment: newAlignment
+    });
+  };
+  const onChangeText = newText => {
+    setAttributes({
+      text: newText
+    });
+  };
+  const advancedBtnInfo = newInfo => {
+    setAttributes({
+      info: newInfo
+    });
+  };
+  const advancedBtnTitle = newTitle => {
+    setAttributes({
+      title: newTitle
+    });
+  };
+  const advancedBtnOnlineBadge = newOnline => {
+    setAttributes({
+      online: newOnline
+    });
+  };
+  const onIconTarget = onIconTargets => {
+    setAttributes({
+      iconTarget: onIconTargets
+    });
+  };
+  const onButtonLinkTarget = newLinkTarget => {
+    setAttributes({
+      buttonLinkTarget: newLinkTarget
+    });
+  };
+  const textClasses = classnames__WEBPACK_IMPORTED_MODULE_4___default()(`wHelpButtons-align-${textAlignment}`);
+  const basicBtn = classnames__WEBPACK_IMPORTED_MODULE_4___default()(`wHelp-button-4 wHelp-btn-bg`);
+  const classes = classnames__WEBPACK_IMPORTED_MODULE_4___default()(`wHelpButtons wHelp-button-4 wHelp-btn-bg`);
+  const buttonSizeOptions = [{
+    value: 'size-small',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Small', 'chat-help')
+  }, {
+    value: 'size-medium',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Medium', 'chat-help')
+  }, {
+    value: 'size-large',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Large', 'chat-help')
+  }];
+  const buttonTypeOptions = [{
+    value: 'basic-button',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Basic Button', 'chat-help')
+  }, {
+    value: 'advance-button',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Advance Button', 'chat-help')
+  }];
+  const borderRadiusOptions = [{
+    value: 'border-squared',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Squared', 'chat-help')
+  }, {
+    value: 'wHelp-btn-rounded',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Rounded', 'chat-help')
+  }];
+  const visibilityOn = [{
+    value: '',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Everywhere', 'chat-help')
+  }, {
+    value: 'wHelp-desktop-only',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Desktop only', 'chat-help')
+  }, {
+    value: 'wHelp-tablet-only',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Tablets only', 'chat-help')
+  }, {
+    value: 'wHelp-mobile-tablet-only',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Mobile and tablets', 'chat-help')
+  }, {
+    value: 'wHelp-mobile-only',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Mobile only', 'chat-help')
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Type', 'chat-help'),
+          value: buttonType,
+          options: buttonTypeOptions.map(({
+            value,
+            label
+          }) => ({
+            value,
+            label
+          })),
+          onChange: newButton => {
+            setAttributes({
+              buttonType: newButton
+            });
+          }
+        })
+      })
+    }), buttonType === 'basic-button' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('WhatsApp Number', 'chat-help'),
+          initialOpen: false,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Number', 'chat-help'),
+            value: numberInput,
+            onChange: val => setAttributes({
+              numberInput: val
+            }),
+            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add your contact number including country code eg: +880123456789', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pre-filled Message', 'chat-help-pro'),
+            value: prefilledMessageInput,
+            onChange: val => setAttributes({
+              prefilledMessageInput: val
+            }),
+            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Write a friendly, pre-filled message users will see when they click the chat bubble. Example: "Hi! I have a question about your services." This saves them time—and makes starting a conversation feel effortless.', 'chat-help-pro')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Open link in new window', 'chat-help'),
+            checked: buttonLinkTarget,
+            onChange: onButtonLinkTarget
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Style', 'chat-help'),
+          initialOpen: false,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Text', 'chat-help'),
+            value: text,
+            onChange: val => setAttributes({
+              text: val
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Size', 'chat-help'),
+            value: buttonSize,
+            options: buttonSizeOptions.map(({
+              value,
+              label
+            }) => ({
+              value,
+              label
+            })),
+            onChange: newSize => {
+              setAttributes({
+                buttonSize: newSize
+              });
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Radius', 'chat-help'),
+            value: borderRadius,
+            options: borderRadiusOptions.map(({
+              value,
+              label
+            }) => ({
+              value,
+              label
+            })),
+            onChange: newSize => {
+              setAttributes({
+                borderRadius: newSize
+              });
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Visibility on', 'chat-help'),
+            value: visibility,
+            options: visibilityOn.map(({
+              value,
+              label
+            }) => ({
+              value,
+              label
+            })),
+            onChange: newSize => {
+              setAttributes({
+                visibility: newSize
+              });
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalHeading, {
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Padding', 'chat-help')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Top', 'chat-help'),
+              value: topPadding,
+              onChange: paddings => {
+                setAttributes({
+                  topPadding: paddings
+                });
+              },
+              min: 5,
+              max: 100
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Right', 'chat-help'),
+              value: rightPadding,
+              onChange: paddings => {
+                setAttributes({
+                  rightPadding: paddings
+                });
+              },
+              min: 5,
+              max: 100
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Bottom', 'chat-help'),
+              value: bottomPadding,
+              onChange: paddings => {
+                setAttributes({
+                  bottomPadding: paddings
+                });
+              },
+              min: 5,
+              max: 100
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Left', 'chat-help'),
+              value: leftPadding,
+              onChange: paddings => {
+                setAttributes({
+                  leftPadding: paddings
+                });
+              },
+              min: 5,
+              max: 100
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Icon', 'chat-help'),
+          initialOpen: false,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add Icon', 'chat-help'),
+            checked: iconTarget,
+            onChange: onIconTarget
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.BlockControls, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.AlignmentToolbar, {
+          value: textAlignment,
+          onChange: onChangeAlignment
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: `button-wrapper whelp-editor ${textClasses}`,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
+          ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+            className: `${basicBtn} ${buttonSize} ${borderRadius} ${visibility}`
+          }),
+          style: {
+            '--padding': `${topPadding}px ${rightPadding}px ${bottomPadding}px ${leftPadding}px`
+          },
+          children: [iconTarget && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+            className: "dashicons dashicons-whatsapp"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+            onChange: onChangeText,
+            value: text,
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('How can I help you?', 'chat-help'),
+            tagName: "span",
+            allowedFormats: []
+          })]
+        })
+      })]
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('General Settings', 'chat-help'),
+          initialOpen: false,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Number', 'chat-help'),
+            value: numberInput,
+            onChange: val => setAttributes({
+              numberInput: val
+            }),
+            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add your contact number including country code eg: +880123456789', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pre-filled Message', 'chat-help-pro'),
+            value: prefilledMessageInput,
+            onChange: val => setAttributes({
+              prefilledMessageInput: val
+            }),
+            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Write a friendly, pre-filled message users will see when they click the chat bubble. Example: "Hi! I have a question about your services." This saves them time—and makes starting a conversation feel effortless.', 'chat-help-pro')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Open link in new window', 'chat-help'),
+            checked: buttonLinkTarget,
+            onChange: onButtonLinkTarget
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Agent Image', 'chat-help'),
+            onSelect: onSelectImage,
+            allowedTypes: ['image'],
+            render: ({
+              open
+            }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+              onClick: open,
+              style: {
+                marginBottom: '20px',
+                fontSize: '16px'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                style: {
+                  marginRight: '5px'
+                },
+                className: "dashicons dashicons-cloud-upload"
+              }), ' ', "Agent photo"]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Agent Info', 'chat-help'),
+            value: info,
+            onChange: val => setAttributes({
+              info: val
+            }),
+            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Write agent name & agent title', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Label', 'chat-help'),
+            value: title,
+            onChange: val => setAttributes({
+              title: val
+            }),
+            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add custom button label', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Online Badge Text', 'chat-help'),
+            value: online,
+            onChange: val => setAttributes({
+              online: val
+            }),
+            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add custom badget text when user in online.', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Offline Badge Text', 'chat-help'),
+            value: offline,
+            onChange: val => setAttributes({
+              offline: val
+            }),
+            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add custom badget text when user in offline.', 'chat-help')
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Chat Settings', 'chat-help'),
+          initialOpen: false,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ComboboxControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Timezone', 'chat-help'),
+            value: timeZone,
+            options: filteredOptions,
+            onChange: onFontSizeChange,
+            onInputChange: onInputChange,
+            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('When using the date and time from the user browser you can transform it to your current timezone (in case your user is in a different timezone)', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Monthday', 'chat-help'),
+            initialOpen: false,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+              value: mondayStart,
+              onChange: val => setAttributes({
+                mondayStart: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+              value: mondayEnd,
+              onChange: val => setAttributes({
+                mondayEnd: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Tuesday', 'chat-help'),
+            initialOpen: false,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+              value: tuesdayStart,
+              onChange: val => setAttributes({
+                tuesdayStart: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+              value: tuesdayEnd,
+              onChange: val => setAttributes({
+                tuesdayEnd: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Wednesday', 'chat-help'),
+            initialOpen: false,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+              value: wednesdayStart,
+              onChange: val => setAttributes({
+                wednesdayStart: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+              value: wednesdayEnd,
+              onChange: val => setAttributes({
+                wednesdayEnd: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Thursday', 'chat-help'),
+            initialOpen: false,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+              value: thursdayStart,
+              onChange: val => setAttributes({
+                thursdayStart: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+              value: thursdayEnd,
+              onChange: val => setAttributes({
+                thursdayEnd: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Friday', 'chat-help'),
+            initialOpen: false,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+              value: fridayStart,
+              onChange: val => setAttributes({
+                fridayStart: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+              value: fridayEnd,
+              onChange: val => setAttributes({
+                fridayEnd: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Saturday', 'chat-help'),
+            initialOpen: false,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+              value: saturdayStart,
+              onChange: val => setAttributes({
+                saturdayStart: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+              value: saturdayEnd,
+              onChange: val => setAttributes({
+                saturdayEnd: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Sunday', 'chat-help'),
+            initialOpen: false,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+              value: sundayStart,
+              onChange: val => setAttributes({
+                sundayStart: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+              value: sundayEnd,
+              onChange: val => setAttributes({
+                sundayEnd: val
+              }),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Appearance settings', 'chat-help'),
+          initialOpen: false,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Visibility on', 'chat-help'),
+            value: visibility,
+            options: visibilityOn.map(({
+              value,
+              label
+            }) => ({
+              value,
+              label
+            })),
+            onChange: newSize => {
+              setAttributes({
+                visibility: newSize
+              });
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Size', 'chat-help'),
+            value: buttonSize,
+            options: buttonSizeOptions.map(({
+              value,
+              label
+            }) => ({
+              value,
+              label
+            })),
+            onChange: newSize => {
+              setAttributes({
+                buttonSize: newSize
+              });
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Radius', 'chat-help'),
+            value: borderRadius,
+            options: borderRadiusOptions.map(({
+              value,
+              label
+            }) => ({
+              value,
+              label
+            })),
+            onChange: newSize => {
+              setAttributes({
+                borderRadius: newSize
+              });
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalHeading, {
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Padding', 'chat-help')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Top', 'chat-help'),
+              value: topPadding,
+              onChange: paddings => {
+                setAttributes({
+                  topPadding: paddings
+                });
+              },
+              min: 5,
+              max: 100
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Right', 'chat-help'),
+              value: rightPadding,
+              onChange: paddings => {
+                setAttributes({
+                  rightPadding: paddings
+                });
+              },
+              min: 5,
+              max: 100
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Bottom', 'chat-help'),
+              value: bottomPadding,
+              onChange: paddings => {
+                setAttributes({
+                  bottomPadding: paddings
+                });
+              },
+              min: 5,
+              max: 100
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Left', 'chat-help'),
+              value: leftPadding,
+              onChange: paddings => {
+                setAttributes({
+                  leftPadding: paddings
+                });
+              },
+              min: 5,
+              max: 100
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.BlockControls, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.AlignmentToolbar, {
+          value: textAlignment,
+          onChange: onChangeAlignment
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: `button-wrapper whelp-editor ${textClasses}`,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+            className: `avatar-active ${classes} ${buttonSize} ${borderRadius} ${visibility}`
+          }),
+          style: {
+            '--padding': `${topPadding}px ${rightPadding}px ${bottomPadding}px ${leftPadding}px`
+          },
+          "data-btnavailablety": `{ "monday":"${mondayStart}-${mondayEnd}", "tuesday":"${tuesdayStart}-${tuesdayEnd}", "wednesday":"${wednesdayStart}-${wednesdayEnd}", "thursday":"${thursdayStart}-${thursdayEnd}", "friday":"${fridayStart}-${fridayEnd}", "saturday":"${saturdayStart}-${saturdayEnd}", "sunday":"${sundayStart}-${sundayEnd}" }`,
+          "data-timezone": timeZone,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+            src: imageUrl ? imageUrl : agentImage,
+            alt: "agent"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            className: "info-wrapper",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+              onChange: advancedBtnInfo,
+              value: info,
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Robert / Sales Support', 'chat-help'),
+              tagName: "p",
+              allowedFormats: [],
+              className: "info"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+              onChange: advancedBtnTitle,
+              value: title,
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('How can I help you?', 'chat-help'),
+              tagName: "p",
+              allowedFormats: [],
+              className: "title"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+              onChange: advancedBtnOnlineBadge,
+              value: online,
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('I am online', 'chat-help'),
+              tagName: "p",
+              allowedFormats: [],
+              className: "online"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+              onChange: advancedBtnOnlineBadge,
+              value: offline,
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("I'm not available", 'chat-help'),
+              tagName: "p",
+              allowedFormats: [],
+              className: "offline"
+            })]
+          })]
+        })
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/editor.scss":
+/*!*************************!*\
+  !*** ./src/editor.scss ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/images/user.jpg":
+/*!*****************************!*\
+  !*** ./src/images/user.jpg ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/user.65223f50.jpg";
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../block.json */ "./block.json");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/save.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+
+
+
+
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_1__.name, {
+  edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./src/save.js":
+/*!*********************!*\
+  !*** ./src/save.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ save)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const agentImage = __webpack_require__(/*! ./images/user.jpg */ "./src/images/user.jpg");
+function save({
+  attributes
+}) {
+  const {
+    buttonSize,
+    borderRadius,
+    buttonType,
+    text,
+    info,
+    title,
+    online,
+    offline,
+    textAlignment,
+    buttonLinkTarget,
+    visibility,
+    border,
+    iconTarget,
+    imageUrl,
+    numberInput,
+    prefilledMessageInput,
+    timeZone,
+    mondayStart,
+    mondayEnd,
+    tuesdayStart,
+    tuesdayEnd,
+    wednesdayStart,
+    wednesdayEnd,
+    thursdayStart,
+    thursdayEnd,
+    fridayStart,
+    fridayEnd,
+    saturdayStart,
+    saturdayEnd,
+    sundayStart,
+    sundayEnd,
+    topPadding,
+    rightPadding,
+    bottomPadding,
+    leftPadding
+  } = attributes;
+  const textClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`wHelpButtons-align-${textAlignment}`);
+  const basicBtn = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`wHelp-button-4 wHelp-btn-bg`);
+  const classes = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`wHelpButtons wHelp-button-4 wHelp-btn-bg`);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: buttonType === 'basic-button' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: `button-wrapper ${textClasses}`,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
+        ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
+          className: `${basicBtn} ${buttonSize} ${borderRadius} ${visibility} ${border}`
+        }),
+        style: {
+          '--padding': `${topPadding}px ${rightPadding}px ${bottomPadding}px ${leftPadding}px`
+        },
+        href: `https://wa.me/${numberInput}?text=${prefilledMessageInput}`,
+        rel: "noopener noreferrer",
+        target: buttonLinkTarget ? '_blank' : '_self',
+        children: [iconTarget && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "dashicons dashicons-whatsapp"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+          tagName: "span",
+          value: text
+        })]
+      })
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: `button-wrapper ${textClasses}`,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
+          className: `${classes} ${buttonSize} ${borderRadius} ${visibility}`
+        }),
+        style: {
+          '--padding': `${topPadding}px ${rightPadding}px ${bottomPadding}px ${leftPadding}px`
+        },
+        "data-btnavailablety": `{ "monday":"${mondayStart}-${mondayEnd}", "tuesday":"${tuesdayStart}-${tuesdayEnd}", "wednesday":"${wednesdayStart}-${wednesdayEnd}", "thursday":"${thursdayStart}-${thursdayEnd}", "friday":"${fridayStart}-${fridayEnd}", "saturday":"${saturdayStart}-${saturdayEnd}", "sunday":"${sundayStart}-${sundayEnd}" }`,
+        "data-timezone": timeZone,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          src: imageUrl ? imageUrl : agentImage,
+          alt: "agent"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "info-wrapper",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+            value: info,
+            tagName: "p",
+            className: "info"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+            value: title,
+            tagName: "p",
+            className: "title"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+            value: online,
+            tagName: "p",
+            className: "online"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+            value: offline,
+            tagName: "p",
+            className: "offline"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+          href: `https://wa.me/${numberInput}?text=${prefilledMessageInput}`,
+          rel: "noopener noreferrer",
+          target: buttonLinkTarget ? '_blank' : '_self'
+        })]
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/style.scss":
+/*!************************!*\
+  !*** ./src/style.scss ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "@wordpress/block-editor":
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["blockEditor"];
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["element"];
+
+/***/ }),
+
+/***/ "@wordpress/i18n":
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["i18n"];
+
+/***/ }),
+
+/***/ "react/jsx-runtime":
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["ReactJSXRuntime"];
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"index": 0,
+/******/ 			"./style-index": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkwhatsapp_button"] = globalThis["webpackChunkwhatsapp_button"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], () => (__webpack_require__("./src/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map

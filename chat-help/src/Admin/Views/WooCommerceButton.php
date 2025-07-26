@@ -74,6 +74,7 @@ class WooCommerceButton
                                     'id' => 'wooCommerce_button_type_of_whatsapp',
                                     'type' => 'radio',
                                     'class' => 'chat_help_type_of_whatsapp',
+                                    'inline' => true,
                                     'title' => esc_html__('Type of Whatsapp', 'chat-help'),
                                     'title_help' => '<div class="chat-help-info-label">' . esc_html__('Select "Number" to receive direct messages or "Group" to let people join your WhatsApp group.', 'chat-help') . '</div>',
                                     'inline' => true,
@@ -109,8 +110,9 @@ class WooCommerceButton
                                 array(
                                     'id' => 'wooCommerce_button_message',
                                     'type' => 'textarea',
-                                    'title' => esc_html__('Predefined Text', 'chat-help'),
-                                    'desc' => esc_html__('Available tags – {siteURL}, {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus}, {ip}', 'chat-help'),
+                                    'title' => esc_html__('Pre-filled Message', 'chat-help'),
+                                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Write a friendly, pre-filled message users will see when they click the chat button. Example: “Hi! I have a question about your product {prudctName}.” This saves them time—and makes starting a conversation feel effortless.', 'chat-help') . '</div>',
+                                    'desc' => __('Woocommerce Vars - {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} <br> Global Vars - {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> ', 'chat-help'),
                                     'dependency' =>  array(
                                         array('wooCommerce_button_type_of_whatsapp',   '==', 'number', 'visible'),
                                     ),

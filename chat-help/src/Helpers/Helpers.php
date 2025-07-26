@@ -191,50 +191,171 @@ class Helpers
 		}
 	}
 
-	public static function whatsAppUrl($whatsapp_number, $type_of_whatsapp = '', $whatsapp_group = '', $url_for_desktop = '', $url_for_mobile = '', $message = '')
+	/**
+	 * WhatsApp URL
+	 *
+	 * @return string
+	 */
+	public static function whatsAppUrl($whatsapp_number, $type_of_whatsapp = 'number', $whatsapp_group = '', $url_for_desktop = '', $url_for_mobile = '', $message = '')
 	{
 		// Detect the device type based on the User-Agent - Check if 'HTTP_USER_AGENT' exists in $_SERVER before using it
 		$user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? sanitize_text_field(wp_unslash($_SERVER['HTTP_USER_AGENT'])) : '';
+
 		if ($type_of_whatsapp === 'number') {
 			if (wp_is_mobile() || preg_match('/iPhone|Android|iPod|iPad|webOS|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/', $user_agent)) {
 				if ($url_for_mobile == 'protocol') {
 					$url = 'whatsapp://send?phone=' . $whatsapp_number;
-					if (!empty($message) && is_product()) {
+					if (!empty($message)) {
 						$url .= '&text=' . rawurlencode($message);
 					}
 				} else {
 					$url = 'https://wa.me/' . $whatsapp_number;
-					if (!empty($message) && is_product()) {
+					if (!empty($message)) {
 						$url .= '?text=' . rawurlencode($message);
 					}
 				}
 			} else {
 				if ($url_for_desktop == 'api') {
 					$url = 'https://wa.me/' . $whatsapp_number;
-					if (!empty($message) && is_product()) {
+					if (!empty($message)) {
 						$url .= '?text=' . rawurlencode($message);
 					}
 				} else {
 					$url = 'https://web.whatsapp.com/send?phone=' . $whatsapp_number;
-					if (!empty($message) && is_product()) {
+					if (!empty($message)) {
 						$url .= '&text=' . rawurlencode($message);
 					}
 				}
 			}
 		} else {
-			if (!empty($whatsapp_group)) {
-				$url = $whatsapp_group;
-				if (!empty($message) && is_product()) {
-					$url .= '?text=' . rawurlencode($message);
-				}
+			$url = $whatsapp_group;
+		}
+		return $url;
+	}
+
+	/**
+	 * WooCommerce Product instanceof
+	 *
+	 * @return null
+	 */
+	private static function is_valid_wc_product($product) {
+		return $product instanceof \WC_Product;
+	}
+
+	/**
+	 * Global replacement vars
+	 *
+	 * @return string
+	 */
+
+	public static function replacement_vars($message, $form = false, $formData = '', $product_id = null, $override_currentURL = '', $override_currentTitle = '')
+	{
+		// vars for all types
+		global $wp;
+		if ($product_id) {
+			$product = wc_get_product($product_id); // Manually load product object
+		} else {
+			global $product;
+		}
+		$remove = function () {
+			return '-';
+		};
+		add_filter('document_title_separator', $remove);
+		$title = wp_get_document_title();
+		remove_filter('document_title_separator', $remove);
+		$siteTitle = get_bloginfo('name');
+		$currentTitle = $override_currentTitle ?: $title;
+		$siteURL = get_site_url();
+		$currentURL = $override_currentURL ?: home_url($wp->request);
+		$siteEmail = get_bloginfo('admin_email');
+		$date    = date('F j, Y, H:i (h:i A) (\G\M\T O)');
+		$ip = esc_sql(sanitize_text_field($_SERVER['REMOTE_ADDR']));
+
+		// 🔁 Define a list of conditional tag rules
+		$conditional_blocks = [
+			'PRODUCT' => self::is_valid_wc_product($product),
+			'NOT_PRODUCT' => !self::is_valid_wc_product($product),
+			'LOGGEDIN' => is_user_logged_in(),
+			'NOT_LOGGEDIN' => !is_user_logged_in(),
+		];
+
+		// 🔄 Loop through each block and apply conditional logic
+		foreach ($conditional_blocks as $key => $condition) {
+			$pattern = '/\{' . $key . '_START\}(.*?)\{' . $key . '_END\}/s';
+			if ($condition) {
+				// Keep content inside block
+				$message = preg_replace_callback($pattern, function ($matches) {
+					return $matches[1];
+				}, $message);
 			} else {
-				$url = 'https://wa.me/' . $whatsapp_number;
-				if (!empty($message) && is_product()) {
-					$url .= '?text=' . rawurlencode($message);
-				}
+				// Remove entire block
+				$message = preg_replace($pattern, '', $message);
 			}
 		}
 
-		return $url;
+
+		$variables = array('{siteTitle}', '{currentTitle}', '{siteURL}', '{currentURL}', '{siteEmail}', '{date}','{ip}');
+        $values = array($siteTitle, $currentTitle, $siteURL, $currentURL, $siteEmail, $date, $ip);
+		if (!self::is_valid_wc_product($product)) {
+    $product = null;
+}
+
+       if (self::is_valid_wc_product($product)) {
+			$productName = $product->get_name();
+			$productSlug = $product->get_slug();
+			$productPrice = $product->get_price();
+			$productRegularPrice = $product->get_regular_price();
+			$productSalePrice = $product->get_sale_price();
+			$productSku = $product->get_sku();
+			$productStockStatus = $product->get_stock_status();
+			$product_variables = array('{productName}', '{productSlug}', '{productPrice}', '{productRegularPrice}', '{productSalePrice}', '{productSku}', '{productStockStatus}');
+			$product_values = array($productName, $productSlug, $productPrice, $productRegularPrice, $productSalePrice, $productSku, $productStockStatus);
+			$variables = array_merge($variables,$product_variables);
+			$values = array_merge($values,$product_values);
+  		}
+
+		if ($form) {
+			$fields_label = [];
+			$fields_data = [];
+			$field_index = 1;
+			$options = get_option('cwp_option');
+			$form_editor = isset($options['form_editor']) ? $options['form_editor'] : '';
+			foreach ($form_editor as $field_id => $form_field) {
+				$field_name = isset($form_field['field_select']) ? $form_field['field_select'] : '';
+				switch ($field_name) {
+					case 'text':
+						$field_label = isset($form_field['label']) ? $form_field['label'] : '';
+						$fields_label['label_' . $field_index] = $field_label;
+						$fields_data['text_' . $field_index] = sanitize_text_field($formData['chat_help_text_' . $field_id] ?? '');
+						break;
+					case 'textarea':
+						$field_label = isset($form_field['label']) ? $form_field['label'] : '';
+						$fields_label['label_' . $field_index] = $field_label;
+						$fields_data['textarea_' . $field_index] = sanitize_textarea_field($formData['chat_help_textarea_' . $field_id] ?? '');
+				}
+				$field_index++;
+			}
+
+			$form_fields = '';
+			foreach ($fields_label as $key => $label) {
+				$index = str_replace('label_', '', $key);
+				foreach ($fields_data as $data_key => $value) {
+					if (strpos($data_key, "_$index") !== false) {
+						$form_fields .= "$label: $value, ";
+						break;
+					}
+				}
+			}
+			$form_fields = rtrim($form_fields, ', ');
+			foreach ($fields_data as $key => $value) {
+				$variables[] = '{' . $key . '}';
+				$values[] = $value;
+			}
+			$variables[] = '{form_fields}';
+			$values[] = $form_fields;
+		}
+
+		$replace_vars = trim(str_replace($variables, $values, $message));
+		return $replace_vars;
 	}
 }

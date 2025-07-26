@@ -63,32 +63,15 @@ class WooButton
         $bubble_button_border_radius_unit = isset($bubble_button_border_radius['unit']) ? $bubble_button_border_radius['unit'] : 'px';
         $border_radius = $bubble_button_border_radius_top . $bubble_button_border_radius_unit . ' ' . $bubble_button_border_radius_right . $bubble_button_border_radius_unit . ' ' . $bubble_button_border_radius_bottom . $bubble_button_border_radius_unit . ' ' . $bubble_button_border_radius_left . $bubble_button_border_radius_unit;
 
-        global $product;
-        if (! $product || ! is_a($product, 'WC_Product')) {
-            return false;
-        }
-
-        $productName = $product->get_name();
-        $productSku = $product->get_sku();
-        $productSlug = $product->get_slug();
-        $productPrice = $product->get_price();
-        $productRegularPrice = $product->get_regular_price();
-        $productSalePrice = $product->get_sale_price();
-        $productStockStatus = $product->get_stock_status();
-        $ip = esc_sql(sanitize_text_field($_SERVER['REMOTE_ADDR']));
-        $siteURL = get_site_url();
-
-        $variables = array('{siteURL}', '{productName}', '{productSlug}', '{productSku}', '{productPrice}', '{productRegularPrice}', '{productSalePrice}', '{productStockStatus}', '{ip}');
-        $values = array($siteURL, $productName, $productSlug, $productSku, $productPrice, $productRegularPrice, $productSalePrice, $productStockStatus, $ip);
-        $message = trim(str_replace($variables, $values, isset($options['wooCommerce_button_message']) ? $options['wooCommerce_button_message'] : ''));
-
         $url_for_desktop = isset($options['url_for_desktop']) ? $options['url_for_desktop'] : '';
         $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
+        $message = isset($options['wooCommerce_button_message']) ? $options['wooCommerce_button_message'] : '';
+        $message = Helpers::replacement_vars($message);
         $url = Helpers::whatsAppUrl($wooCommerce_button_number, $wooCommerce_button_type_of_whatsapp, $wooCommerce_button_group, $url_for_desktop, $url_for_mobile, $message);
         $open_in_new_tab = isset($options['open_in_new_tab']) ? $options['open_in_new_tab'] : '';
         $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
 
-        echo '<a style="--padding: ' . esc_attr($padding) . '; --radius: ' . esc_attr($border_radius) . ';--margin: ' . esc_attr($margin) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_url($url) . '" class="bubble wHelp-btn-bg wooCommerce_button ' . esc_attr($wooCommerce_button_visibility) . '">';
+        echo '<a style="--padding: ' . esc_attr($padding) . '; --radius: ' . esc_attr($border_radius) . ';--margin: ' . esc_attr($margin) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" class="bubble wHelp-btn-bg wooCommerce_button ' . esc_attr($wooCommerce_button_visibility) . '">';
         if ($wooCommerce_button_icon) {
             echo '<i class="' . esc_attr($wooCommerce_button_icon_open) . '"></i>';
         }

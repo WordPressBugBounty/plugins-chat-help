@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 2.2.12
+Stable tag: 2.2.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,12 +14,33 @@ WhatsApp Chat🔥 Unlimited customer support tool that allows visitors to engage
 
 **WhatsApp Chat Help** allows you to add an interactive WhatsApp chat bubble, WooCommerce WhatsApp buttons on product loops and single product pages, and WhatsApp shortcode buttons anywhere on your website. This makes it easy for your visitors to quickly connect with you or your support team via WhatsApp or WhatsApp Business—and even join your WhatsApp group directly.
 
+Now with **Smart Prefilled Messages and Conditional Tags** — personalize every interaction with dynamic content like `{siteTitle}`, `{productName}`, `{ip}`, `{date}`, and more. Show or hide parts of your message based on page type or login status using tags like `{PRODUCT_START}...{PRODUCT_END}`, `{LOGGEDIN_START}...{LOGGEDIN_END}`, etc. Perfect for both WooCommerce and non-WooCommerce sites.
+
 You can create visually appealing and highly interactive chat bubbles that grab your visitors' attention and encourage them to reach out instantly. This not only builds trust in the minds of your customers but also helps convert them into leads faster than traditional methods. 
 
 **👁️[Plugin Demo](https://chathelp.themeatelier.net/) | 📖 [Documentation](https://docs.themeatelier.net/docs/whatsapp-chat-help-pro/overview/) | 🚀[Pro Version](https://chathelp.themeatelier.net/pricing/) | 👩🏼‍💻[Support](https://wordpress.org/support/plugin/chat-help/) | 🌟[Rate this plugin](https://wordpress.org/support/plugin/chat-help/reviews/#new-post)**
 
-https://youtu.be/RNwVAoGQssI
+== Live Demo Pages ==
 
+Explore how different layouts and features look in action:
+
+**🧩 Floating Layouts**  
+- [Single Form](https://chathelp.themeatelier.net/single-form/)  
+- [Single Agent](https://chathelp.themeatelier.net/single-agent/)  
+- [Multi Agent](https://chathelp.themeatelier.net/multi-agents/)  
+- [Simple Button](https://chathelp.themeatelier.net/simple-button/)  
+- [Advanced Button](https://chathelp.themeatelier.net/advance-button/)  
+
+**🔘 Buttons**  
+- [Button Shortcode](https://chathelp.themeatelier.net/button-shortcode/)  
+- [Button Block](https://chathelp.themeatelier.net/button-block/)  
+
+**🛒 WooCommerce Integration**  
+- [WooCommerce Product Page Button](https://chathelp.themeatelier.net/woocommerce-product-page-button/)  
+- [Shop Page (Product Loop)](https://chathelp.themeatelier.net/shop/)  
+- [Single Product Example](https://chathelp.themeatelier.net/product/golden-lamps/)
+
+https://youtu.be/RNwVAoGQssI
 
 ## 👉 Why You Should Use WhatsApp Chat Help ##
 	
@@ -80,13 +101,36 @@ Add WhatsApp buttons to **WooCommerce product pages**, allowing potential custom
 Drag-and-drop support with a dedicated **Elementor widget** packed with customization options.
 
 #### 🧱 Gutenberg Block Support  
-Use the built-in **Gutenberg block** to insert and customize WhatsApp buttons with ease.
+Add buttons with the built-in **Gutenberg block**.
 
 #### 🧑‍💻 Custom CSS & JS  
-Add your own **CSS and JavaScript** directly from the plugin settings—no need to modify theme or plugin files.
+Add **custom styles and scripts** from the plugin.
 
 #### 💾 Settings Backup & Import  
-Export and import your plugin settings for easy replication across multiple websites.
+Export/import plugin settings with ease.
+
+
+#### 🧠 Smart Variables & Conditional Messaging  
+Use dynamic variables like `{siteTitle}`, `{productName}`, `{ip}`, `{date}` in your messages. Wrap parts of your message with conditional tags like `{PRODUCT_START}...{PRODUCT_END}` or `{LOGGEDIN_START}...{LOGGEDIN_END}` to display content based on page type or user status.
+
+## Smart Variables Reference ##
+
+**Global Variables:**  
+`{siteTitle}`, `{siteEmail}`, `{siteURL}`, `{currentURL}`, `{currentTitle}`, `{ip}`, `{date}`
+
+**WooCommerce Product Variables:**  
+`{productName}`, `{productSlug}`, `{productSku}`, `{productPrice}`, `{productRegularPrice}`, `{productSalePrice}`, `{productStockStatus}`
+
+**Conditional Wrappers:**  
+Use these in prefilled messages or agent messages:
+
+- `{PRODUCT_START}` ... `{PRODUCT_END}`  
+- `{NOT_PRODUCT_START}` ... `{NOT_PRODUCT_END}`  
+- `{LOGGEDIN_START}` ... `{LOGGEDIN_END}`  
+- `{NOT_LOGGEDIN_START}` ... `{NOT_LOGGEDIN_END}`
+
+[More details in the Documentation →](https://docs.themeatelier.net/docs/whatsapp-chat-help-pro/overview/)
+
 
 ### 🔧 **Additional Features**
 
@@ -217,6 +261,13 @@ Yes. The plugin is totally translation ready. If it's not support in your langua
 7. Gutenberg Button Block
 
 == Changelog ==
+= 2.2.13 - July 26, 2025 =
+* New: Smart Prefilled Message support with variables and conditional logic — works across all layouts (WooCommerce, Shortcodes, Buttons, Blocks).
+* New: Conditional Smart Variables now supported in "Message Agents" field for Single Agent layout.
+* New: Added `[chat_help]` shortcode to place buttons anywhere.
+* Update: Codebase cleanup for better performance and readability.
+* Update: WooCommerce button now remains hidden unless WhatsApp number or group link is configured.
+
 = 2.2.12 - July 09, 2025 =
 New: Live test option for whatapp number and group url.
 New: Condition for predefined text for WooCommerce buttons.
@@ -426,5 +477,4 @@ Added: Agent photo type field.
 * Initial release
 
 == Upgrade Notice ==
-
 It’s recommended to have a backup of your website before hitting the update button.

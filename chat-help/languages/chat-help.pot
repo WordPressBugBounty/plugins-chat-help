@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-09 13:40+0000\n"
+"POT-Creation-Date: 2025-07-26 11:10+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "👑 Upgrade to Pro!"
 msgstr ""
 
-#: src/Admin/Admin.php:118, src/Frontend/Templates/FormTemplate.php:91, src/Frontend/Templates/SingleTemplate.php:88
+#: src/Admin/Admin.php:118, src/Frontend/Templates/FormTemplate.php:87, src/Frontend/Templates/SingleTemplate.php:88
 msgid "Chat Help"
 msgstr ""
 
@@ -188,7 +188,7 @@ msgstr ""
 msgid "Time based availablity for agents"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:579, src/Admin/Views/General.php:368
+#: src/Admin/HelpPage/Help.php:579, src/Admin/Views/General.php:383
 msgid "GDPR Compliance"
 msgstr ""
 
@@ -200,7 +200,7 @@ msgstr ""
 msgid "Icons For Circle Button"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:604, src/Admin/Views/General.php:767
+#: src/Admin/HelpPage/Help.php:604, src/Admin/Views/General.php:785
 msgid "Transition Effect for Circle Icon"
 msgstr ""
 
@@ -392,571 +392,583 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: src/Admin/Views/General.php:102, src/Admin/Views/WooCommerceButton.php:77
+#: src/Admin/Views/General.php:102, src/Admin/Views/WooCommerceButton.php:78
 msgid "Type of Whatsapp"
 msgstr ""
 
-#: src/Admin/Views/General.php:103, src/Admin/Views/WooCommerceButton.php:78
+#: src/Admin/Views/General.php:103, src/Admin/Views/WooCommerceButton.php:79
 msgid "Select \"Number\" to receive direct messages or \"Group\" to let people join your WhatsApp group."
 msgstr ""
 
-#: src/Admin/Views/General.php:106, src/Admin/Views/WooCommerceButton.php:81
+#: src/Admin/Views/General.php:106, src/Admin/Views/WooCommerceButton.php:82
 msgid "Number"
 msgstr ""
 
-#: src/Admin/Views/General.php:107, src/Admin/Views/WooCommerceButton.php:82
+#: src/Admin/Views/General.php:107, src/Admin/Views/WooCommerceButton.php:83
 msgid "Group"
 msgstr ""
 
-#: src/Admin/Views/General.php:120, src/Admin/Views/WooCommerceButton.php:90
+#: src/Admin/Views/General.php:120, src/Admin/Views/WooCommerceButton.php:91
 msgid "WhatsApp Number"
 msgstr ""
 
-#: src/Admin/Views/General.php:121, src/Admin/Views/WooCommerceButton.php:92
+#: src/Admin/Views/General.php:121, src/Admin/Views/WooCommerceButton.php:93
 msgid "Add your WhatsApp number including country code. eg: +880123456189"
 msgstr ""
 
-#: src/Admin/Views/General.php:137, src/Admin/Views/WooCommerceButton.php:102
+#: src/Admin/Views/General.php:122
+msgid "WhatsApp number in international format."
+msgstr ""
+
+#: src/Admin/Views/General.php:138, src/Admin/Views/General.php:582, src/Admin/Views/WooCommerceButton.php:113
+msgid "Pre-filled Message"
+msgstr ""
+
+#: src/Admin/Views/General.php:139
+msgid "Write a friendly, pre-filled message users will see when they click the chat bubble. Example: “Hi! I have a question about your services.” This saves them time—and makes starting a conversation feel effortless."
+msgstr ""
+
+#: src/Admin/Views/General.php:140, src/Admin/Views/General.php:413
+msgid "Global Vars:  {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> {PRODUCT_START} WooCommerce Vars: {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} {PRODUCT_END} <br> <b>Conditional Blocks:</b>  {PRODUCT_START} ... {PRODUCT_END},  {NOT_PRODUCT_START} ... {NOT_PRODUCT_END},  {LOGGEDIN_START} ... {LOGGEDIN_END},  {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}"
+msgstr ""
+
+#: src/Admin/Views/General.php:151, src/Admin/Views/WooCommerceButton.php:103
 msgid "WhatsApp Group"
 msgstr ""
 
-#: src/Admin/Views/General.php:139, src/Admin/Views/WooCommerceButton.php:103
+#: src/Admin/Views/General.php:153, src/Admin/Views/WooCommerceButton.php:104
 msgid "Invite your visitors to join into your whatapp group."
 msgstr ""
 
-#: src/Admin/Views/General.php:152, src/Frontend/elementor-widgets/elementor-widget.php:177
+#: src/Admin/Views/General.php:167, src/Frontend/elementor-widgets/elementor-widget.php:192
 msgid "Timezone"
 msgstr ""
 
-#: src/Admin/Views/General.php:153, src/Frontend/elementor-widgets/elementor-widget.php:178
+#: src/Admin/Views/General.php:168, src/Frontend/elementor-widgets/elementor-widget.php:193
 msgid "When using the date and time from the user browser you can transform it to your current timezone (in case your user is in a different timezone)"
 msgstr ""
 
-#: src/Admin/Views/General.php:155, src/Frontend/elementor-widgets/elementor-widget.php:184
+#: src/Admin/Views/General.php:170, src/Frontend/elementor-widgets/elementor-widget.php:199
 msgid "Select timezone"
 msgstr ""
 
-#: src/Admin/Views/General.php:163
+#: src/Admin/Views/General.php:178
 msgid "Availablity"
 msgstr ""
 
-#: src/Admin/Views/General.php:164
+#: src/Admin/Views/General.php:179
 msgid "24-hour Time without PM:AM\" eg: From 00:00 to 23:59. If you are offline for any specefic full day use 00:00 and 00:00 in From and To value."
 msgstr ""
 
-#: src/Admin/Views/General.php:169, src/Frontend/elementor-widgets/elementor-widget.php:785
+#: src/Admin/Views/General.php:184, src/Frontend/elementor-widgets/elementor-widget.php:800
 msgid "Sunday"
 msgstr ""
 
-#: src/Admin/Views/General.php:186, src/Frontend/elementor-widgets/elementor-widget.php:825
+#: src/Admin/Views/General.php:201, src/Frontend/elementor-widgets/elementor-widget.php:840
 msgid "Monday"
 msgstr ""
 
-#: src/Admin/Views/General.php:203, src/Frontend/elementor-widgets/elementor-widget.php:864
+#: src/Admin/Views/General.php:218, src/Frontend/elementor-widgets/elementor-widget.php:879
 msgid "Tuesday"
 msgstr ""
 
-#: src/Admin/Views/General.php:220, src/Frontend/elementor-widgets/elementor-widget.php:903
+#: src/Admin/Views/General.php:235, src/Frontend/elementor-widgets/elementor-widget.php:918
 msgid "Wednesday"
 msgstr ""
 
-#: src/Admin/Views/General.php:238, src/Frontend/elementor-widgets/elementor-widget.php:942
+#: src/Admin/Views/General.php:253, src/Frontend/elementor-widgets/elementor-widget.php:957
 msgid "Thursday"
 msgstr ""
 
-#: src/Admin/Views/General.php:256, src/Frontend/elementor-widgets/elementor-widget.php:981
+#: src/Admin/Views/General.php:271, src/Frontend/elementor-widgets/elementor-widget.php:996
 msgid "Friday"
 msgstr ""
 
-#: src/Admin/Views/General.php:274, src/Frontend/elementor-widgets/elementor-widget.php:1019
+#: src/Admin/Views/General.php:289, src/Frontend/elementor-widgets/elementor-widget.php:1034
 msgid "Saturday"
 msgstr ""
 
-#: src/Admin/Views/General.php:297
+#: src/Admin/Views/General.php:312
 msgid "Agent Photo Type"
 msgstr ""
 
-#: src/Admin/Views/General.php:298
+#: src/Admin/Views/General.php:313
 msgid "Select agent photo type."
 msgstr ""
 
-#: src/Admin/Views/General.php:301, src/Admin/Framework/fields/typography/typography.php:121, src/Admin/Framework/fields/typography/typography.php:134, src/Admin/Framework/fields/typography/typography.php:147, src/Admin/Framework/fields/typography/typography.php:162, src/Admin/Framework/fields/typography/typography.php:178, src/Admin/Framework/fields/typography/typography.php:191, src/Admin/Framework/fields/typography/typography.php:205, src/Admin/Framework/fields/typography/typography.php:223
+#: src/Admin/Views/General.php:316, src/Admin/Framework/fields/typography/typography.php:121, src/Admin/Framework/fields/typography/typography.php:134, src/Admin/Framework/fields/typography/typography.php:147, src/Admin/Framework/fields/typography/typography.php:162, src/Admin/Framework/fields/typography/typography.php:178, src/Admin/Framework/fields/typography/typography.php:191, src/Admin/Framework/fields/typography/typography.php:205, src/Admin/Framework/fields/typography/typography.php:223
 msgid "Default"
 msgstr ""
 
-#: src/Admin/Views/General.php:304, src/Admin/Views/General.php:433, src/Admin/Views/General.php:647, src/Admin/Views/General.php:682, src/Admin/Views/General.php:719, src/Admin/Views/General.php:754
+#: src/Admin/Views/General.php:319, src/Admin/Views/General.php:449, src/Admin/Views/General.php:665, src/Admin/Views/General.php:700, src/Admin/Views/General.php:737, src/Admin/Views/General.php:772
 msgid "Custom"
 msgstr ""
 
-#: src/Admin/Views/General.php:307, src/Admin/Framework/fields/border/border.php:59, src/Admin/Framework/fields/typography/typography.php:201, src/Admin/Framework/fields/typography/typography.php:215
+#: src/Admin/Views/General.php:322, src/Admin/Framework/fields/border/border.php:59, src/Admin/Framework/fields/typography/typography.php:201, src/Admin/Framework/fields/typography/typography.php:215
 msgid "None"
 msgstr ""
 
-#: src/Admin/Views/General.php:318
+#: src/Admin/Views/General.php:333
 msgid "Agent Photo"
 msgstr ""
 
-#: src/Admin/Views/General.php:319, src/Admin/Views/General.php:331, src/Admin/Views/General.php:341, src/Admin/Views/General.php:351, src/Admin/Views/General.php:369, src/Admin/Views/General.php:386, src/Admin/Views/General.php:396, src/Admin/Views/General.php:438, src/Admin/Views/General.php:447, src/Admin/Views/General.php:601, src/Admin/Views/General.php:652, src/Admin/Views/General.php:724, src/Admin/Views/General.php:759, src/Admin/Views/General.php:798, src/Admin/Views/General.php:816, src/Admin/Views/General.php:832, src/Admin/Views/General.php:1098
+#: src/Admin/Views/General.php:334, src/Admin/Views/General.php:346, src/Admin/Views/General.php:356, src/Admin/Views/General.php:366, src/Admin/Views/General.php:384, src/Admin/Views/General.php:401, src/Admin/Views/General.php:411, src/Admin/Views/General.php:454, src/Admin/Views/General.php:463, src/Admin/Views/General.php:619, src/Admin/Views/General.php:670, src/Admin/Views/General.php:742, src/Admin/Views/General.php:777, src/Admin/Views/General.php:816, src/Admin/Views/General.php:834, src/Admin/Views/General.php:850, src/Admin/Views/General.php:1116
 msgid "Preview Image"
 msgstr ""
 
-#: src/Admin/Views/General.php:319
+#: src/Admin/Views/General.php:334
 msgid "Add agent photo to show in the bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:321
+#: src/Admin/Views/General.php:336
 msgid "Upload or select an image from media library."
 msgstr ""
 
-#: src/Admin/Views/General.php:330
+#: src/Admin/Views/General.php:345
 msgid "Agent Name"
 msgstr ""
 
-#: src/Admin/Views/General.php:331
+#: src/Admin/Views/General.php:346
 msgid "Add your/agent name for shying in bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:332
+#: src/Admin/Views/General.php:347
 msgid "John Doe"
 msgstr ""
 
-#: src/Admin/Views/General.php:340
+#: src/Admin/Views/General.php:355
 msgid "Subtitle"
 msgstr ""
 
-#: src/Admin/Views/General.php:341
+#: src/Admin/Views/General.php:356
 msgid "Add subtitle to show under agent name."
 msgstr ""
 
-#: src/Admin/Views/General.php:342
+#: src/Admin/Views/General.php:357
 msgid "Typically replies within a day"
 msgstr ""
 
-#: src/Admin/Views/General.php:350
+#: src/Admin/Views/General.php:365
 msgid "Bubble Header Content Position"
 msgstr ""
 
-#: src/Admin/Views/General.php:355, src/Frontend/elementor-widgets/elementor-widget.php:1319, src/Admin/Framework/fields/typography/typography.php:173
+#: src/Admin/Views/General.php:370, src/Frontend/elementor-widgets/elementor-widget.php:1353, src/Admin/Framework/fields/typography/typography.php:173
 msgid "Left"
 msgstr ""
 
-#: src/Admin/Views/General.php:358, src/Frontend/elementor-widgets/elementor-widget.php:1323, src/Admin/Framework/fields/typography/typography.php:174
+#: src/Admin/Views/General.php:373, src/Frontend/elementor-widgets/elementor-widget.php:1357, src/Admin/Framework/fields/typography/typography.php:174
 msgid "Center"
 msgstr ""
 
-#: src/Admin/Views/General.php:369
+#: src/Admin/Views/General.php:384
 msgid "Turn ON enabling GDPR compliance checkbox."
 msgstr ""
 
-#: src/Admin/Views/General.php:377
+#: src/Admin/Views/General.php:392
 msgid "GDPR Compliance Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:378
+#: src/Admin/Views/General.php:393
 msgid "Change default GDPR compliance text."
 msgstr ""
 
-#: src/Admin/Views/General.php:385
+#: src/Admin/Views/General.php:400
 msgid "Current Time"
 msgstr ""
 
-#: src/Admin/Views/General.php:386
+#: src/Admin/Views/General.php:401
 msgid "Show message before current time."
 msgstr ""
 
-#: src/Admin/Views/General.php:395
+#: src/Admin/Views/General.php:410
 msgid "Message From Agent"
 msgstr ""
 
-#: src/Admin/Views/General.php:396
+#: src/Admin/Views/General.php:411
 msgid "Add add custom message for shoeing in message box."
 msgstr ""
 
-#: src/Admin/Views/General.php:397
+#: src/Admin/Views/General.php:412
 msgid "Hello, Welcome to the site. Please click below button for chating me throught WhatsApp."
 msgstr ""
 
-#: src/Admin/Views/General.php:405
+#: src/Admin/Views/General.php:421
 msgid "Icon For Send Message Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:426
+#: src/Admin/Views/General.php:442
 msgid "No Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:429, src/Admin/Views/General.php:643, src/Admin/Views/General.php:678, src/Admin/Views/General.php:715, src/Admin/Views/General.php:750
+#: src/Admin/Views/General.php:445, src/Admin/Views/General.php:661, src/Admin/Views/General.php:696, src/Admin/Views/General.php:733, src/Admin/Views/General.php:768
 msgid "Native"
 msgstr ""
 
-#: src/Admin/Views/General.php:438
+#: src/Admin/Views/General.php:454
 msgid "Change icon for adding before send message button text."
 msgstr ""
 
-#: src/Admin/Views/General.php:446
+#: src/Admin/Views/General.php:462
 msgid "Send Message Button Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:447
+#: src/Admin/Views/General.php:463
 msgid "Add send message button text."
 msgstr ""
 
-#: src/Admin/Views/General.php:448
+#: src/Admin/Views/General.php:464
 msgid "Send a message"
 msgstr ""
 
-#: src/Admin/Views/General.php:454
+#: src/Admin/Views/General.php:472
 msgid "Forms"
 msgstr ""
 
-#: src/Admin/Views/General.php:460, src/Admin/Views/General.php:472
+#: src/Admin/Views/General.php:478, src/Admin/Views/General.php:490
 msgid "Form Fields"
 msgstr ""
 
-#: src/Admin/Views/General.php:464
+#: src/Admin/Views/General.php:482
 msgid "Want to unlock the full potential of Form Fields? <a target=\"_blank\" href=\"https://chathelp.themeatelier.net/pricing/\"><b>Upgrade To Pro!</b></a>"
 msgstr ""
 
-#: src/Admin/Views/General.php:474
+#: src/Admin/Views/General.php:492
 msgid "Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:475
+#: src/Admin/Views/General.php:493
 msgid "Email (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:476
+#: src/Admin/Views/General.php:494
 msgid "Phone Number (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:477
+#: src/Admin/Views/General.php:495
 msgid "Textarea"
 msgstr ""
 
-#: src/Admin/Views/General.php:478
+#: src/Admin/Views/General.php:496
 msgid "Select (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:489, src/Admin/Views/General.php:490
+#: src/Admin/Views/General.php:507, src/Admin/Views/General.php:508
 msgid "Field Label"
 msgstr ""
 
-#: src/Admin/Views/General.php:495
+#: src/Admin/Views/General.php:513
 msgid "Placeholder"
 msgstr ""
 
-#: src/Admin/Views/General.php:496
+#: src/Admin/Views/General.php:514
 msgid "E.g. placeholder"
 msgstr ""
 
-#: src/Admin/Views/General.php:501
+#: src/Admin/Views/General.php:519
 msgid "Select Options"
 msgstr ""
 
-#: src/Admin/Views/General.php:507
+#: src/Admin/Views/General.php:525
 msgid "Option"
 msgstr ""
 
-#: src/Admin/Views/General.php:515
+#: src/Admin/Views/General.php:533
 msgid "Required"
 msgstr ""
 
-#: src/Admin/Views/General.php:522
+#: src/Admin/Views/General.php:540
 msgid "Custom Validation Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:529
+#: src/Admin/Views/General.php:547
 msgid "Name"
 msgstr ""
 
-#: src/Admin/Views/General.php:530
+#: src/Admin/Views/General.php:548
 msgid "Your Name?"
 msgstr ""
 
-#: src/Admin/Views/General.php:535
+#: src/Admin/Views/General.php:553
 msgid "Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:536
+#: src/Admin/Views/General.php:554
 msgid "Your Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:545
+#: src/Admin/Views/General.php:563
 msgid "Input label"
 msgstr ""
 
-#: src/Admin/Views/General.php:546
+#: src/Admin/Views/General.php:564
 msgid "Turn Show input label."
 msgstr ""
 
-#: src/Admin/Views/General.php:547, src/Admin/Views/General.php:611, src/Admin/Views/General.php:804, src/Admin/Views/WooCommerceButton.php:42, src/Admin/Views/WooCommerceButton.php:125
+#: src/Admin/Views/General.php:565, src/Admin/Views/General.php:629, src/Admin/Views/General.php:822, src/Admin/Views/WooCommerceButton.php:42, src/Admin/Views/WooCommerceButton.php:127
 msgid "Show"
 msgstr ""
 
-#: src/Admin/Views/General.php:548, src/Admin/Views/General.php:612, src/Admin/Views/General.php:807, src/Admin/Views/WooCommerceButton.php:43, src/Admin/Views/WooCommerceButton.php:126
+#: src/Admin/Views/General.php:566, src/Admin/Views/General.php:630, src/Admin/Views/General.php:825, src/Admin/Views/WooCommerceButton.php:43, src/Admin/Views/WooCommerceButton.php:128
 msgid "Hide"
 msgstr ""
 
-#: src/Admin/Views/General.php:555
+#: src/Admin/Views/General.php:573
 msgid "Loading Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:556
+#: src/Admin/Views/General.php:574
 msgid "Add send message loading text."
 msgstr ""
 
-#: src/Admin/Views/General.php:557
+#: src/Admin/Views/General.php:575
 msgid "Redirecting..."
 msgstr ""
 
-#: src/Admin/Views/General.php:564
-msgid "Message Template"
-msgstr ""
-
-#: src/Admin/Views/General.php:565
+#: src/Admin/Views/General.php:583
 msgid "Customize your message templates based on the information you need. You can recive all form fields data using {form_fields} or use separate important variables from below this field."
 msgstr ""
 
-#: src/Admin/Views/General.php:573
+#: src/Admin/Views/General.php:591
 msgid "Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:579
+#: src/Admin/Views/General.php:597
 msgid "Button Style"
 msgstr ""
 
-#: src/Admin/Views/General.php:600, src/Admin/Views/WooCommerceButton.php:142
+#: src/Admin/Views/General.php:618, src/Admin/Views/WooCommerceButton.php:144
 msgid "Button Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:601, src/Admin/Views/WooCommerceButton.php:143
+#: src/Admin/Views/General.php:619, src/Admin/Views/WooCommerceButton.php:145
 msgid "Change text to show in button."
 msgstr ""
 
-#: src/Admin/Views/General.php:602
+#: src/Admin/Views/General.php:620
 msgid "How may I help you?"
 msgstr ""
 
-#: src/Admin/Views/General.php:610, src/Admin/Views/WooCommerceButton.php:123
+#: src/Admin/Views/General.php:628, src/Admin/Views/WooCommerceButton.php:125
 msgid "Show/Hide Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:622, src/Admin/Views/General.php:694, src/Admin/Views/WooCommerceButton.php:134
+#: src/Admin/Views/General.php:640, src/Admin/Views/General.php:712, src/Admin/Views/WooCommerceButton.php:136
 msgid "Icon For Circle Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:652, src/Admin/Views/General.php:724, src/Admin/Views/WooCommerceButton.php:135
+#: src/Admin/Views/General.php:670, src/Admin/Views/General.php:742, src/Admin/Views/WooCommerceButton.php:137
 msgid "Change icon for circle button."
 msgstr ""
 
-#: src/Admin/Views/General.php:660, src/Admin/Views/General.php:732
+#: src/Admin/Views/General.php:678, src/Admin/Views/General.php:750
 msgid "Icon For Circle Button Close "
 msgstr ""
 
-#: src/Admin/Views/General.php:687, src/Admin/Views/General.php:759
+#: src/Admin/Views/General.php:705, src/Admin/Views/General.php:777
 msgid "Change icon for circle button close."
 msgstr ""
 
-#: src/Admin/Views/General.php:769, src/Admin/Views/General.php:1047
+#: src/Admin/Views/General.php:787, src/Admin/Views/General.php:1065
 msgid "Fade"
 msgstr ""
 
-#: src/Admin/Views/General.php:770
+#: src/Admin/Views/General.php:788
 msgid "Slide down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:771
+#: src/Admin/Views/General.php:789
 msgid "Rotate (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:772, src/Admin/Views/General.php:1060
+#: src/Admin/Views/General.php:790, src/Admin/Views/General.php:1078
 msgid "Slide Up (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:783, src/Admin/Views/WooCommerceButton.php:149
+#: src/Admin/Views/General.php:801, src/Admin/Views/WooCommerceButton.php:151
 msgid "Button Padding"
 msgstr ""
 
-#: src/Admin/Views/General.php:784
+#: src/Admin/Views/General.php:802
 msgid "Change button padding"
 msgstr ""
 
-#: src/Admin/Views/General.php:797
+#: src/Admin/Views/General.php:815
 msgid "Button Tooltip"
 msgstr ""
 
-#: src/Admin/Views/General.php:798
+#: src/Admin/Views/General.php:816
 msgid "Show button tooltip."
 msgstr ""
 
-#: src/Admin/Views/General.php:801
+#: src/Admin/Views/General.php:819
 msgid "On Hover"
 msgstr ""
 
-#: src/Admin/Views/General.php:815
+#: src/Admin/Views/General.php:833
 msgid "Button Tooltip Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:816
+#: src/Admin/Views/General.php:834
 msgid "Set button tooltip text."
 msgstr ""
 
-#: src/Admin/Views/General.php:817
+#: src/Admin/Views/General.php:835
 msgid "Need Help? Chat with us"
 msgstr ""
 
-#: src/Admin/Views/General.php:823
+#: src/Admin/Views/General.php:841
 msgid "Button Tooltip Background"
 msgstr ""
 
-#: src/Admin/Views/General.php:824
+#: src/Admin/Views/General.php:842
 msgid "Set button tooltip background color."
 msgstr ""
 
-#: src/Admin/Views/General.php:831
+#: src/Admin/Views/General.php:849
 msgid "Button Tooltip Width"
 msgstr ""
 
-#: src/Admin/Views/General.php:832
+#: src/Admin/Views/General.php:850
 msgid "Set bubble button tooltip width."
 msgstr ""
 
-#: src/Admin/Views/General.php:843, src/Admin/Views/WooCommerceButton.php:191
+#: src/Admin/Views/General.php:861, src/Admin/Views/WooCommerceButton.php:193
 msgid "Visibility"
 msgstr ""
 
-#: src/Admin/Views/General.php:850
+#: src/Admin/Views/General.php:868
 msgid "Visibility By"
 msgstr ""
 
-#: src/Admin/Views/General.php:851
+#: src/Admin/Views/General.php:869
 msgid "Check the option(s) to visibility by different options."
 msgstr ""
 
-#: src/Admin/Views/General.php:853, src/Admin/Views/General.php:870, src/Admin/Views/General.php:891
+#: src/Admin/Views/General.php:871, src/Admin/Views/General.php:888, src/Admin/Views/General.php:909
 msgid "Theme Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:854, src/Admin/Views/General.php:913, src/Admin/Views/General.php:934
+#: src/Admin/Views/General.php:872, src/Admin/Views/General.php:931, src/Admin/Views/General.php:952
 msgid "Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:855
+#: src/Admin/Views/General.php:873
 msgid "Posts (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:856
+#: src/Admin/Views/General.php:874
 msgid "Products (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:857
+#: src/Admin/Views/General.php:875
 msgid "Post Categories (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:858
+#: src/Admin/Views/General.php:876
 msgid "Post Tags (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:859
+#: src/Admin/Views/General.php:877
 msgid "Porduct Categories (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:860
+#: src/Admin/Views/General.php:878
 msgid "Porduct Tags (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:876, src/Admin/Views/General.php:919
+#: src/Admin/Views/General.php:894, src/Admin/Views/General.php:937
 msgid "Target"
 msgstr ""
 
-#: src/Admin/Views/General.php:878, src/Admin/Views/General.php:921
+#: src/Admin/Views/General.php:896, src/Admin/Views/General.php:939
 msgid "Include"
 msgstr ""
 
-#: src/Admin/Views/General.php:879, src/Admin/Views/General.php:922
+#: src/Admin/Views/General.php:897, src/Admin/Views/General.php:940
 msgid "Exclude"
 msgstr ""
 
-#: src/Admin/Views/General.php:885
+#: src/Admin/Views/General.php:903
 msgid "All Theme Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:893
+#: src/Admin/Views/General.php:911
 msgid "Blog Page"
 msgstr ""
 
-#: src/Admin/Views/General.php:894
+#: src/Admin/Views/General.php:912
 msgid "404 Page"
 msgstr ""
 
-#: src/Admin/Views/General.php:895
+#: src/Admin/Views/General.php:913
 msgid "Search Page"
 msgstr ""
 
-#: src/Admin/Views/General.php:928
+#: src/Admin/Views/General.php:946
 msgid "All Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:942
+#: src/Admin/Views/General.php:960
 msgid "You don't have any pages available."
 msgstr ""
 
-#: src/Admin/Views/General.php:954
+#: src/Admin/Views/General.php:972
 msgid "Device Visibility"
 msgstr ""
 
-#: src/Admin/Views/General.php:955
+#: src/Admin/Views/General.php:973
 msgid "Everywhere = All kind of devices."
 msgstr ""
 
-#: src/Admin/Views/General.php:955
+#: src/Admin/Views/General.php:973
 msgid "Deskop Only = 991px bigger devices."
 msgstr ""
 
-#: src/Admin/Views/General.php:955
+#: src/Admin/Views/General.php:973
 msgid "Tablet Only = 576px - 991px devices."
 msgstr ""
 
-#: src/Admin/Views/General.php:955
+#: src/Admin/Views/General.php:973
 msgid "Mobile Only = Less than 576px devices."
 msgstr ""
 
-#: src/Admin/Views/General.php:959, src/Admin/Views/WooCommerceButton.php:201, src/Frontend/elementor-widgets/elementor-widget.php:1070
+#: src/Admin/Views/General.php:977, src/Admin/Views/WooCommerceButton.php:203, src/Frontend/elementor-widgets/elementor-widget.php:1085
 msgid "Everywhere"
 msgstr ""
 
-#: src/Admin/Views/General.php:962, src/Admin/Views/WooCommerceButton.php:204
+#: src/Admin/Views/General.php:980, src/Admin/Views/WooCommerceButton.php:206
 msgid "Desktop Only"
 msgstr ""
 
-#: src/Admin/Views/General.php:965, src/Admin/Views/WooCommerceButton.php:207
+#: src/Admin/Views/General.php:983, src/Admin/Views/WooCommerceButton.php:209
 msgid "Tablet Only"
 msgstr ""
 
-#: src/Admin/Views/General.php:968, src/Admin/Views/WooCommerceButton.php:210
+#: src/Admin/Views/General.php:986, src/Admin/Views/WooCommerceButton.php:212
 msgid "Mobile Only"
 msgstr ""
 
-#: src/Admin/Views/General.php:976, src/Admin/Views/Shortcode.php:78, src/Admin/Views/WooCommerceButton.php:219
+#: src/Admin/Views/General.php:994, src/Admin/Views/Shortcode.php:78, src/Admin/Views/WooCommerceButton.php:221
 msgid "Webhooks"
 msgstr ""
 
-#: src/Admin/Views/General.php:987, src/Admin/Views/Shortcode.php:88, src/Admin/Views/WooCommerceButton.php:229
+#: src/Admin/Views/General.php:1005, src/Admin/Views/Shortcode.php:88, src/Admin/Views/WooCommerceButton.php:231
 msgid "Webhook URL"
 msgstr ""
 
-#: src/Admin/Views/General.php:988
+#: src/Admin/Views/General.php:1006
 msgid "Clicking on the WhatsApp floating button or multi agents triggers this Webhook URL."
 msgstr ""
 
-#: src/Admin/Views/General.php:994, src/Admin/Views/Shortcode.php:96, src/Admin/Views/WooCommerceButton.php:237
+#: src/Admin/Views/General.php:1012, src/Admin/Views/Shortcode.php:96, src/Admin/Views/WooCommerceButton.php:239
 msgid "Add Values"
 msgstr ""
 
-#: src/Admin/Views/General.php:1000, src/Admin/Views/Shortcode.php:102, src/Admin/Views/WooCommerceButton.php:243
+#: src/Admin/Views/General.php:1018, src/Admin/Views/Shortcode.php:102, src/Admin/Views/WooCommerceButton.php:245
 msgid "Add Value"
 msgstr ""
 
-#: src/Admin/Views/General.php:1003
+#: src/Admin/Views/General.php:1021
 msgid ""
 "<p><b>Dynamic Variables:</b> {title}, {number}, {site_url}, {current_url}, {date}, {ip}</p>\n"
 "<h4>Retrieving Values from Cookies and URL Parameters</h4>\n"
@@ -968,187 +980,187 @@ msgid ""
 "<p><b>Example:</b> [[ _ga ]]</p>"
 msgstr ""
 
-#: src/Admin/Views/General.php:1015
+#: src/Admin/Views/General.php:1033
 msgid "Others"
 msgstr ""
 
-#: src/Admin/Views/General.php:1022
+#: src/Admin/Views/General.php:1040
 msgid "Auto Open Popup"
 msgstr ""
 
-#: src/Admin/Views/General.php:1023
+#: src/Admin/Views/General.php:1041
 msgid "Turn ON for open popup automatically."
 msgstr ""
 
-#: src/Admin/Views/General.php:1032
+#: src/Admin/Views/General.php:1050
 msgid "Auto Open Popup Timeout"
 msgstr ""
 
-#: src/Admin/Views/General.php:1033
+#: src/Admin/Views/General.php:1051
 msgid "Timeout value for opening popup after second."
 msgstr ""
 
-#: src/Admin/Views/General.php:1045
+#: src/Admin/Views/General.php:1063
 msgid "Select Animation For Bubble"
 msgstr ""
 
-#: src/Admin/Views/General.php:1048
+#: src/Admin/Views/General.php:1066
 msgid "Fade Right"
 msgstr ""
 
-#: src/Admin/Views/General.php:1049
+#: src/Admin/Views/General.php:1067
 msgid "Fade Down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1050
+#: src/Admin/Views/General.php:1068
 msgid "Fade In Scale (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1051
+#: src/Admin/Views/General.php:1069
 msgid "Rotation (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1052
+#: src/Admin/Views/General.php:1070
 msgid "Slide Fall (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1053
+#: src/Admin/Views/General.php:1071
 msgid "Slide Down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1054
+#: src/Admin/Views/General.php:1072
 msgid "Ease Down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1055
+#: src/Admin/Views/General.php:1073
 msgid "Rotate Left (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1056
+#: src/Admin/Views/General.php:1074
 msgid "Flip Horizontal (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1057
+#: src/Admin/Views/General.php:1075
 msgid "Flip Vertical (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1058
+#: src/Admin/Views/General.php:1076
 msgid "Flip Up (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1059
+#: src/Admin/Views/General.php:1077
 msgid "Super Scaled (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1061
+#: src/Admin/Views/General.php:1079
 msgid "Random (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1071
+#: src/Admin/Views/General.php:1089
 msgid "Select Bubble Layout Mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:1075
+#: src/Admin/Views/General.php:1093
 msgid "Light mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:1078
+#: src/Admin/Views/General.php:1096
 msgid "Dark mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:1082
+#: src/Admin/Views/General.php:1100
 msgid "Night mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:1090
+#: src/Admin/Views/General.php:1108
 msgid "Alternative Bubble Switcher"
 msgstr ""
 
-#: src/Admin/Views/General.php:1092
+#: src/Admin/Views/General.php:1110
 msgid "Enter comma-separated CSS class or ID selectors to treat them as bubble switch."
 msgstr ""
 
-#: src/Admin/Views/General.php:1097
+#: src/Admin/Views/General.php:1115
 msgid "Color Settings"
 msgstr ""
 
-#: src/Admin/Views/General.php:1098
+#: src/Admin/Views/General.php:1116
 msgid "Change Brand Colors."
 msgstr ""
 
-#: src/Admin/Views/General.php:1100
+#: src/Admin/Views/General.php:1118
 msgid "Primary"
 msgstr ""
 
-#: src/Admin/Views/General.php:1101
+#: src/Admin/Views/General.php:1119
 msgid "Secondary"
 msgstr ""
 
-#: src/Admin/Views/General.php:1111
+#: src/Admin/Views/General.php:1129
 msgid "Button Positioning"
 msgstr ""
 
-#: src/Admin/Views/General.php:1116, src/Admin/Views/General.php:1212
+#: src/Admin/Views/General.php:1134, src/Admin/Views/General.php:1230
 msgid "Bubble Position"
 msgstr ""
 
-#: src/Admin/Views/General.php:1120, src/Admin/Views/General.php:1216, src/Admin/Views/General.php:1312, src/Admin/Framework/fields/background/background.php:172
+#: src/Admin/Views/General.php:1138, src/Admin/Views/General.php:1234, src/Admin/Views/General.php:1330, src/Admin/Framework/fields/background/background.php:172
 msgid "Right Bottom"
 msgstr ""
 
-#: src/Admin/Views/General.php:1123, src/Admin/Views/General.php:1219, src/Admin/Views/General.php:1315, src/Admin/Framework/fields/background/background.php:166
+#: src/Admin/Views/General.php:1141, src/Admin/Views/General.php:1237, src/Admin/Views/General.php:1333, src/Admin/Framework/fields/background/background.php:166
 msgid "Left Bottom"
 msgstr ""
 
-#: src/Admin/Views/General.php:1126, src/Admin/Views/General.php:1222, src/Admin/Views/General.php:1318
+#: src/Admin/Views/General.php:1144, src/Admin/Views/General.php:1240, src/Admin/Views/General.php:1336
 msgid "Right Middle"
 msgstr ""
 
-#: src/Admin/Views/General.php:1130, src/Admin/Views/General.php:1226, src/Admin/Views/General.php:1322
+#: src/Admin/Views/General.php:1148, src/Admin/Views/General.php:1244, src/Admin/Views/General.php:1340
 msgid "Left Middle"
 msgstr ""
 
-#: src/Admin/Views/General.php:1139, src/Admin/Views/General.php:1236, src/Admin/Views/General.php:1332
+#: src/Admin/Views/General.php:1157, src/Admin/Views/General.php:1254, src/Admin/Views/General.php:1350
 msgid "Margin From Right Bottom"
 msgstr ""
 
-#: src/Admin/Views/General.php:1153, src/Admin/Views/General.php:1250, src/Admin/Views/General.php:1346
+#: src/Admin/Views/General.php:1171, src/Admin/Views/General.php:1268, src/Admin/Views/General.php:1364
 msgid "Margin From Left Bottom"
 msgstr ""
 
-#: src/Admin/Views/General.php:1167, src/Admin/Views/General.php:1264, src/Admin/Views/General.php:1360
+#: src/Admin/Views/General.php:1185, src/Admin/Views/General.php:1282, src/Admin/Views/General.php:1378
 msgid "Margin From Right Middle"
 msgstr ""
 
-#: src/Admin/Views/General.php:1181, src/Admin/Views/General.php:1278, src/Admin/Views/General.php:1374
+#: src/Admin/Views/General.php:1199, src/Admin/Views/General.php:1296, src/Admin/Views/General.php:1392
 msgid "Margin From Left Middle"
 msgstr ""
 
-#: src/Admin/Views/General.php:1194
+#: src/Admin/Views/General.php:1212
 msgid "Different Positioning on Tablet"
 msgstr ""
 
-#: src/Admin/Views/General.php:1202
+#: src/Admin/Views/General.php:1220
 msgid "Use Different Positioning For Tablet Devices"
 msgstr ""
 
-#: src/Admin/Views/General.php:1203, src/Admin/Views/General.php:1299, src/Frontend/elementor-widgets/elementor-widget.php:1260, src/Frontend/elementor-widgets/elementor-widget.php:1306
+#: src/Admin/Views/General.php:1221, src/Admin/Views/General.php:1317, src/Frontend/elementor-widgets/elementor-widget.php:1294, src/Frontend/elementor-widgets/elementor-widget.php:1340
 msgid "Yes"
 msgstr ""
 
-#: src/Admin/Views/General.php:1204, src/Admin/Views/General.php:1300, src/Frontend/elementor-widgets/elementor-widget.php:1261, src/Frontend/elementor-widgets/elementor-widget.php:1307
+#: src/Admin/Views/General.php:1222, src/Admin/Views/General.php:1318, src/Frontend/elementor-widgets/elementor-widget.php:1295, src/Frontend/elementor-widgets/elementor-widget.php:1341
 msgid "No"
 msgstr ""
 
-#: src/Admin/Views/General.php:1291
+#: src/Admin/Views/General.php:1309
 msgid "Different Positioning on Mobile"
 msgstr ""
 
-#: src/Admin/Views/General.php:1298
+#: src/Admin/Views/General.php:1316
 msgid "Use Different Positioning for Mobile Devices"
 msgstr ""
 
-#: src/Admin/Views/General.php:1308
+#: src/Admin/Views/General.php:1326
 msgid "Bubble position"
 msgstr ""
 
@@ -1160,2359 +1172,2359 @@ msgstr ""
 msgid "LICENSE"
 msgstr ""
 
-#: src/Admin/Views/Options.php:34, src/Frontend/elementor-widgets/elementor-widget.php:185
+#: src/Admin/Views/Options.php:34, src/Frontend/elementor-widgets/elementor-widget.php:200
 msgid "Africa/Abidjan"
 msgstr ""
 
-#: src/Admin/Views/Options.php:35, src/Frontend/elementor-widgets/elementor-widget.php:186
+#: src/Admin/Views/Options.php:35, src/Frontend/elementor-widgets/elementor-widget.php:201
 msgid "Africa/Accra"
 msgstr ""
 
-#: src/Admin/Views/Options.php:36, src/Frontend/elementor-widgets/elementor-widget.php:187
+#: src/Admin/Views/Options.php:36, src/Frontend/elementor-widgets/elementor-widget.php:202
 msgid "Africa/Addis_Ababa"
 msgstr ""
 
-#: src/Admin/Views/Options.php:37, src/Frontend/elementor-widgets/elementor-widget.php:188
+#: src/Admin/Views/Options.php:37, src/Frontend/elementor-widgets/elementor-widget.php:203
 msgid "Africa/Algiers"
 msgstr ""
 
-#: src/Admin/Views/Options.php:38, src/Frontend/elementor-widgets/elementor-widget.php:189
+#: src/Admin/Views/Options.php:38, src/Frontend/elementor-widgets/elementor-widget.php:204
 msgid "Africa/Asmara"
 msgstr ""
 
-#: src/Admin/Views/Options.php:39, src/Frontend/elementor-widgets/elementor-widget.php:190
+#: src/Admin/Views/Options.php:39, src/Frontend/elementor-widgets/elementor-widget.php:205
 msgid "Africa/Asmera"
 msgstr ""
 
-#: src/Admin/Views/Options.php:40, src/Frontend/elementor-widgets/elementor-widget.php:191
+#: src/Admin/Views/Options.php:40, src/Frontend/elementor-widgets/elementor-widget.php:206
 msgid "Africa/Bamako"
 msgstr ""
 
-#: src/Admin/Views/Options.php:41, src/Frontend/elementor-widgets/elementor-widget.php:192
+#: src/Admin/Views/Options.php:41, src/Frontend/elementor-widgets/elementor-widget.php:207
 msgid "Africa/Bangui"
 msgstr ""
 
-#: src/Admin/Views/Options.php:42, src/Frontend/elementor-widgets/elementor-widget.php:193
+#: src/Admin/Views/Options.php:42, src/Frontend/elementor-widgets/elementor-widget.php:208
 msgid "Africa/Banjul"
 msgstr ""
 
-#: src/Admin/Views/Options.php:43, src/Frontend/elementor-widgets/elementor-widget.php:194
+#: src/Admin/Views/Options.php:43, src/Frontend/elementor-widgets/elementor-widget.php:209
 msgid "Africa/Bissau"
 msgstr ""
 
-#: src/Admin/Views/Options.php:44, src/Frontend/elementor-widgets/elementor-widget.php:195
+#: src/Admin/Views/Options.php:44, src/Frontend/elementor-widgets/elementor-widget.php:210
 msgid "Africa/Blantyre"
 msgstr ""
 
-#: src/Admin/Views/Options.php:45, src/Frontend/elementor-widgets/elementor-widget.php:196
+#: src/Admin/Views/Options.php:45, src/Frontend/elementor-widgets/elementor-widget.php:211
 msgid "Africa/Brazzaville"
 msgstr ""
 
-#: src/Admin/Views/Options.php:46, src/Frontend/elementor-widgets/elementor-widget.php:197
+#: src/Admin/Views/Options.php:46, src/Frontend/elementor-widgets/elementor-widget.php:212
 msgid "Africa/Bujumbura"
 msgstr ""
 
-#: src/Admin/Views/Options.php:47, src/Frontend/elementor-widgets/elementor-widget.php:198
+#: src/Admin/Views/Options.php:47, src/Frontend/elementor-widgets/elementor-widget.php:213
 msgid "Africa/Cairo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:48, src/Frontend/elementor-widgets/elementor-widget.php:199
+#: src/Admin/Views/Options.php:48, src/Frontend/elementor-widgets/elementor-widget.php:214
 msgid "Africa/Casablanca"
 msgstr ""
 
-#: src/Admin/Views/Options.php:49, src/Frontend/elementor-widgets/elementor-widget.php:200
+#: src/Admin/Views/Options.php:49, src/Frontend/elementor-widgets/elementor-widget.php:215
 msgid "Africa/Ceuta"
 msgstr ""
 
-#: src/Admin/Views/Options.php:50, src/Frontend/elementor-widgets/elementor-widget.php:201
+#: src/Admin/Views/Options.php:50, src/Frontend/elementor-widgets/elementor-widget.php:216
 msgid "Africa/Conakry"
 msgstr ""
 
-#: src/Admin/Views/Options.php:51, src/Frontend/elementor-widgets/elementor-widget.php:202
+#: src/Admin/Views/Options.php:51, src/Frontend/elementor-widgets/elementor-widget.php:217
 msgid "Africa/Dakar"
 msgstr ""
 
-#: src/Admin/Views/Options.php:52, src/Frontend/elementor-widgets/elementor-widget.php:203
+#: src/Admin/Views/Options.php:52, src/Frontend/elementor-widgets/elementor-widget.php:218
 msgid "Africa/Dar_es_Salaam"
 msgstr ""
 
-#: src/Admin/Views/Options.php:53, src/Frontend/elementor-widgets/elementor-widget.php:204
+#: src/Admin/Views/Options.php:53, src/Frontend/elementor-widgets/elementor-widget.php:219
 msgid "Africa/Djibouti"
 msgstr ""
 
-#: src/Admin/Views/Options.php:54, src/Frontend/elementor-widgets/elementor-widget.php:205
+#: src/Admin/Views/Options.php:54, src/Frontend/elementor-widgets/elementor-widget.php:220
 msgid "Africa/Douala"
 msgstr ""
 
-#: src/Admin/Views/Options.php:55, src/Frontend/elementor-widgets/elementor-widget.php:206
+#: src/Admin/Views/Options.php:55, src/Frontend/elementor-widgets/elementor-widget.php:221
 msgid "Africa/El_Aaiun"
 msgstr ""
 
-#: src/Admin/Views/Options.php:56, src/Frontend/elementor-widgets/elementor-widget.php:207
+#: src/Admin/Views/Options.php:56, src/Frontend/elementor-widgets/elementor-widget.php:222
 msgid "Africa/Freetown"
 msgstr ""
 
-#: src/Admin/Views/Options.php:57, src/Frontend/elementor-widgets/elementor-widget.php:208
+#: src/Admin/Views/Options.php:57, src/Frontend/elementor-widgets/elementor-widget.php:223
 msgid "Africa/Gaborone"
 msgstr ""
 
-#: src/Admin/Views/Options.php:58, src/Frontend/elementor-widgets/elementor-widget.php:209
+#: src/Admin/Views/Options.php:58, src/Frontend/elementor-widgets/elementor-widget.php:224
 msgid "Africa/Harare"
 msgstr ""
 
-#: src/Admin/Views/Options.php:59, src/Frontend/elementor-widgets/elementor-widget.php:210
+#: src/Admin/Views/Options.php:59, src/Frontend/elementor-widgets/elementor-widget.php:225
 msgid "Africa/Johannesburg"
 msgstr ""
 
-#: src/Admin/Views/Options.php:60, src/Frontend/elementor-widgets/elementor-widget.php:211
+#: src/Admin/Views/Options.php:60, src/Frontend/elementor-widgets/elementor-widget.php:226
 msgid "Africa/Juba"
 msgstr ""
 
-#: src/Admin/Views/Options.php:61, src/Frontend/elementor-widgets/elementor-widget.php:212
+#: src/Admin/Views/Options.php:61, src/Frontend/elementor-widgets/elementor-widget.php:227
 msgid "Africa/Kampala"
 msgstr ""
 
-#: src/Admin/Views/Options.php:62, src/Frontend/elementor-widgets/elementor-widget.php:213
+#: src/Admin/Views/Options.php:62, src/Frontend/elementor-widgets/elementor-widget.php:228
 msgid "Africa/Khartoum"
 msgstr ""
 
-#: src/Admin/Views/Options.php:63, src/Frontend/elementor-widgets/elementor-widget.php:214
+#: src/Admin/Views/Options.php:63, src/Frontend/elementor-widgets/elementor-widget.php:229
 msgid "Africa/Kigali"
 msgstr ""
 
-#: src/Admin/Views/Options.php:64, src/Frontend/elementor-widgets/elementor-widget.php:215
+#: src/Admin/Views/Options.php:64, src/Frontend/elementor-widgets/elementor-widget.php:230
 msgid "Africa/Kinshasa"
 msgstr ""
 
-#: src/Admin/Views/Options.php:65, src/Frontend/elementor-widgets/elementor-widget.php:216
+#: src/Admin/Views/Options.php:65, src/Frontend/elementor-widgets/elementor-widget.php:231
 msgid "Africa/Lagos"
 msgstr ""
 
-#: src/Admin/Views/Options.php:66, src/Frontend/elementor-widgets/elementor-widget.php:217
+#: src/Admin/Views/Options.php:66, src/Frontend/elementor-widgets/elementor-widget.php:232
 msgid "Africa/Libreville"
 msgstr ""
 
-#: src/Admin/Views/Options.php:67, src/Frontend/elementor-widgets/elementor-widget.php:218
+#: src/Admin/Views/Options.php:67, src/Frontend/elementor-widgets/elementor-widget.php:233
 msgid "Africa/Lome"
 msgstr ""
 
-#: src/Admin/Views/Options.php:68, src/Frontend/elementor-widgets/elementor-widget.php:219
+#: src/Admin/Views/Options.php:68, src/Frontend/elementor-widgets/elementor-widget.php:234
 msgid "Africa/Luanda"
 msgstr ""
 
-#: src/Admin/Views/Options.php:69, src/Frontend/elementor-widgets/elementor-widget.php:220
+#: src/Admin/Views/Options.php:69, src/Frontend/elementor-widgets/elementor-widget.php:235
 msgid "Africa/Lubumbashi"
 msgstr ""
 
-#: src/Admin/Views/Options.php:70, src/Frontend/elementor-widgets/elementor-widget.php:221
+#: src/Admin/Views/Options.php:70, src/Frontend/elementor-widgets/elementor-widget.php:236
 msgid "Africa/Lusaka"
 msgstr ""
 
-#: src/Admin/Views/Options.php:71, src/Frontend/elementor-widgets/elementor-widget.php:222
+#: src/Admin/Views/Options.php:71, src/Frontend/elementor-widgets/elementor-widget.php:237
 msgid "Africa/Malabo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:72, src/Frontend/elementor-widgets/elementor-widget.php:223
+#: src/Admin/Views/Options.php:72, src/Frontend/elementor-widgets/elementor-widget.php:238
 msgid "Africa/Maputo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:73, src/Frontend/elementor-widgets/elementor-widget.php:224
+#: src/Admin/Views/Options.php:73, src/Frontend/elementor-widgets/elementor-widget.php:239
 msgid "Africa/Maseru"
 msgstr ""
 
-#: src/Admin/Views/Options.php:74, src/Frontend/elementor-widgets/elementor-widget.php:225
+#: src/Admin/Views/Options.php:74, src/Frontend/elementor-widgets/elementor-widget.php:240
 msgid "Africa/Mbabane"
 msgstr ""
 
-#: src/Admin/Views/Options.php:75, src/Frontend/elementor-widgets/elementor-widget.php:226
+#: src/Admin/Views/Options.php:75, src/Frontend/elementor-widgets/elementor-widget.php:241
 msgid "Africa/Mogadishu"
 msgstr ""
 
-#: src/Admin/Views/Options.php:76, src/Frontend/elementor-widgets/elementor-widget.php:227
+#: src/Admin/Views/Options.php:76, src/Frontend/elementor-widgets/elementor-widget.php:242
 msgid "Africa/Monrovia"
 msgstr ""
 
-#: src/Admin/Views/Options.php:77, src/Frontend/elementor-widgets/elementor-widget.php:228
+#: src/Admin/Views/Options.php:77, src/Frontend/elementor-widgets/elementor-widget.php:243
 msgid "Africa/Nairobi"
 msgstr ""
 
-#: src/Admin/Views/Options.php:78, src/Frontend/elementor-widgets/elementor-widget.php:229
+#: src/Admin/Views/Options.php:78, src/Frontend/elementor-widgets/elementor-widget.php:244
 msgid "Africa/Ndjamena"
 msgstr ""
 
-#: src/Admin/Views/Options.php:79, src/Frontend/elementor-widgets/elementor-widget.php:230
+#: src/Admin/Views/Options.php:79, src/Frontend/elementor-widgets/elementor-widget.php:245
 msgid "Africa/Niamey"
 msgstr ""
 
-#: src/Admin/Views/Options.php:80, src/Frontend/elementor-widgets/elementor-widget.php:231
+#: src/Admin/Views/Options.php:80, src/Frontend/elementor-widgets/elementor-widget.php:246
 msgid "Africa/Nouakchott"
 msgstr ""
 
-#: src/Admin/Views/Options.php:81, src/Frontend/elementor-widgets/elementor-widget.php:232
+#: src/Admin/Views/Options.php:81, src/Frontend/elementor-widgets/elementor-widget.php:247
 msgid "Africa/Ouagadougou"
 msgstr ""
 
-#: src/Admin/Views/Options.php:82, src/Frontend/elementor-widgets/elementor-widget.php:233
+#: src/Admin/Views/Options.php:82, src/Frontend/elementor-widgets/elementor-widget.php:248
 msgid "Africa/Porto-Novo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:83, src/Frontend/elementor-widgets/elementor-widget.php:234
+#: src/Admin/Views/Options.php:83, src/Frontend/elementor-widgets/elementor-widget.php:249
 msgid "Africa/Sao_Tome"
 msgstr ""
 
-#: src/Admin/Views/Options.php:84, src/Frontend/elementor-widgets/elementor-widget.php:235
+#: src/Admin/Views/Options.php:84, src/Frontend/elementor-widgets/elementor-widget.php:250
 msgid "Africa/Timbuktu"
 msgstr ""
 
-#: src/Admin/Views/Options.php:85, src/Frontend/elementor-widgets/elementor-widget.php:236
+#: src/Admin/Views/Options.php:85, src/Frontend/elementor-widgets/elementor-widget.php:251
 msgid "Africa/Tripoli"
 msgstr ""
 
-#: src/Admin/Views/Options.php:86, src/Frontend/elementor-widgets/elementor-widget.php:237
+#: src/Admin/Views/Options.php:86, src/Frontend/elementor-widgets/elementor-widget.php:252
 msgid "Africa/Tunis"
 msgstr ""
 
-#: src/Admin/Views/Options.php:87, src/Frontend/elementor-widgets/elementor-widget.php:238
+#: src/Admin/Views/Options.php:87, src/Frontend/elementor-widgets/elementor-widget.php:253
 msgid "Africa/Windhoek"
 msgstr ""
 
-#: src/Admin/Views/Options.php:88, src/Frontend/elementor-widgets/elementor-widget.php:239
+#: src/Admin/Views/Options.php:88, src/Frontend/elementor-widgets/elementor-widget.php:254
 msgid "America/Adak"
 msgstr ""
 
-#: src/Admin/Views/Options.php:89, src/Frontend/elementor-widgets/elementor-widget.php:240
+#: src/Admin/Views/Options.php:89, src/Frontend/elementor-widgets/elementor-widget.php:255
 msgid "America/Anchorage"
 msgstr ""
 
-#: src/Admin/Views/Options.php:90, src/Frontend/elementor-widgets/elementor-widget.php:241
+#: src/Admin/Views/Options.php:90, src/Frontend/elementor-widgets/elementor-widget.php:256
 msgid "America/Anguilla"
 msgstr ""
 
-#: src/Admin/Views/Options.php:91, src/Frontend/elementor-widgets/elementor-widget.php:242
+#: src/Admin/Views/Options.php:91, src/Frontend/elementor-widgets/elementor-widget.php:257
 msgid "America/Antigua"
 msgstr ""
 
-#: src/Admin/Views/Options.php:92, src/Admin/Views/Options.php:137, src/Admin/Views/Options.php:139, src/Frontend/elementor-widgets/elementor-widget.php:243, src/Frontend/elementor-widgets/elementor-widget.php:288, src/Frontend/elementor-widgets/elementor-widget.php:290
+#: src/Admin/Views/Options.php:92, src/Admin/Views/Options.php:137, src/Admin/Views/Options.php:139, src/Frontend/elementor-widgets/elementor-widget.php:258, src/Frontend/elementor-widgets/elementor-widget.php:303, src/Frontend/elementor-widgets/elementor-widget.php:305
 msgid "America/Araguaina"
 msgstr ""
 
-#: src/Admin/Views/Options.php:93, src/Frontend/elementor-widgets/elementor-widget.php:244
+#: src/Admin/Views/Options.php:93, src/Frontend/elementor-widgets/elementor-widget.php:259
 msgid "America/Argentina/Buenos_Aires"
 msgstr ""
 
-#: src/Admin/Views/Options.php:94, src/Frontend/elementor-widgets/elementor-widget.php:245
+#: src/Admin/Views/Options.php:94, src/Frontend/elementor-widgets/elementor-widget.php:260
 msgid "America/Argentina/Catamarca"
 msgstr ""
 
-#: src/Admin/Views/Options.php:95, src/Frontend/elementor-widgets/elementor-widget.php:246
+#: src/Admin/Views/Options.php:95, src/Frontend/elementor-widgets/elementor-widget.php:261
 msgid "America/Argentina/ComodRivadavia"
 msgstr ""
 
-#: src/Admin/Views/Options.php:96, src/Frontend/elementor-widgets/elementor-widget.php:247
+#: src/Admin/Views/Options.php:96, src/Frontend/elementor-widgets/elementor-widget.php:262
 msgid "America/Argentina/Cordoba"
 msgstr ""
 
-#: src/Admin/Views/Options.php:97, src/Frontend/elementor-widgets/elementor-widget.php:248
+#: src/Admin/Views/Options.php:97, src/Frontend/elementor-widgets/elementor-widget.php:263
 msgid "America/Argentina/Jujuy"
 msgstr ""
 
-#: src/Admin/Views/Options.php:98, src/Frontend/elementor-widgets/elementor-widget.php:249
+#: src/Admin/Views/Options.php:98, src/Frontend/elementor-widgets/elementor-widget.php:264
 msgid "America/Argentina/La_Rioja"
 msgstr ""
 
-#: src/Admin/Views/Options.php:99, src/Frontend/elementor-widgets/elementor-widget.php:250
+#: src/Admin/Views/Options.php:99, src/Frontend/elementor-widgets/elementor-widget.php:265
 msgid "America/Argentina/Mendoza"
 msgstr ""
 
-#: src/Admin/Views/Options.php:100, src/Frontend/elementor-widgets/elementor-widget.php:251
+#: src/Admin/Views/Options.php:100, src/Frontend/elementor-widgets/elementor-widget.php:266
 msgid "America/Argentina/Rio_Gallegos"
 msgstr ""
 
-#: src/Admin/Views/Options.php:101, src/Frontend/elementor-widgets/elementor-widget.php:252
+#: src/Admin/Views/Options.php:101, src/Frontend/elementor-widgets/elementor-widget.php:267
 msgid "America/Argentina/Salta"
 msgstr ""
 
-#: src/Admin/Views/Options.php:102, src/Frontend/elementor-widgets/elementor-widget.php:253
+#: src/Admin/Views/Options.php:102, src/Frontend/elementor-widgets/elementor-widget.php:268
 msgid "America/Argentina/San_Juan"
 msgstr ""
 
-#: src/Admin/Views/Options.php:103, src/Frontend/elementor-widgets/elementor-widget.php:254
+#: src/Admin/Views/Options.php:103, src/Frontend/elementor-widgets/elementor-widget.php:269
 msgid "America/Argentina/San_Luis"
 msgstr ""
 
-#: src/Admin/Views/Options.php:104, src/Frontend/elementor-widgets/elementor-widget.php:255
+#: src/Admin/Views/Options.php:104, src/Frontend/elementor-widgets/elementor-widget.php:270
 msgid "America/Argentina/Tucuman"
 msgstr ""
 
-#: src/Admin/Views/Options.php:105, src/Frontend/elementor-widgets/elementor-widget.php:256
+#: src/Admin/Views/Options.php:105, src/Frontend/elementor-widgets/elementor-widget.php:271
 msgid "America/Argentina/Ushuaia"
 msgstr ""
 
-#: src/Admin/Views/Options.php:106, src/Frontend/elementor-widgets/elementor-widget.php:257
+#: src/Admin/Views/Options.php:106, src/Frontend/elementor-widgets/elementor-widget.php:272
 msgid "America/Aruba"
 msgstr ""
 
-#: src/Admin/Views/Options.php:107, src/Frontend/elementor-widgets/elementor-widget.php:258
+#: src/Admin/Views/Options.php:107, src/Frontend/elementor-widgets/elementor-widget.php:273
 msgid "America/Asuncion"
 msgstr ""
 
-#: src/Admin/Views/Options.php:108, src/Frontend/elementor-widgets/elementor-widget.php:259
+#: src/Admin/Views/Options.php:108, src/Frontend/elementor-widgets/elementor-widget.php:274
 msgid "America/Atikokan"
 msgstr ""
 
-#: src/Admin/Views/Options.php:109, src/Frontend/elementor-widgets/elementor-widget.php:260
+#: src/Admin/Views/Options.php:109, src/Frontend/elementor-widgets/elementor-widget.php:275
 msgid "America/Atka"
 msgstr ""
 
-#: src/Admin/Views/Options.php:110, src/Frontend/elementor-widgets/elementor-widget.php:261
+#: src/Admin/Views/Options.php:110, src/Frontend/elementor-widgets/elementor-widget.php:276
 msgid "America/Bahia"
 msgstr ""
 
-#: src/Admin/Views/Options.php:111, src/Frontend/elementor-widgets/elementor-widget.php:262
+#: src/Admin/Views/Options.php:111, src/Frontend/elementor-widgets/elementor-widget.php:277
 msgid "America/Bahia_Banderas"
 msgstr ""
 
-#: src/Admin/Views/Options.php:112, src/Frontend/elementor-widgets/elementor-widget.php:263
+#: src/Admin/Views/Options.php:112, src/Frontend/elementor-widgets/elementor-widget.php:278
 msgid "America/Barbados"
 msgstr ""
 
-#: src/Admin/Views/Options.php:113, src/Frontend/elementor-widgets/elementor-widget.php:264
+#: src/Admin/Views/Options.php:113, src/Frontend/elementor-widgets/elementor-widget.php:279
 msgid "America/Belem"
 msgstr ""
 
-#: src/Admin/Views/Options.php:114, src/Frontend/elementor-widgets/elementor-widget.php:265
+#: src/Admin/Views/Options.php:114, src/Frontend/elementor-widgets/elementor-widget.php:280
 msgid "America/Belize"
 msgstr ""
 
-#: src/Admin/Views/Options.php:115, src/Frontend/elementor-widgets/elementor-widget.php:266
+#: src/Admin/Views/Options.php:115, src/Frontend/elementor-widgets/elementor-widget.php:281
 msgid "America/Blanc-Sablon"
 msgstr ""
 
-#: src/Admin/Views/Options.php:116, src/Frontend/elementor-widgets/elementor-widget.php:267
+#: src/Admin/Views/Options.php:116, src/Frontend/elementor-widgets/elementor-widget.php:282
 msgid "America/Boa_Vista"
 msgstr ""
 
-#: src/Admin/Views/Options.php:117, src/Frontend/elementor-widgets/elementor-widget.php:268
+#: src/Admin/Views/Options.php:117, src/Frontend/elementor-widgets/elementor-widget.php:283
 msgid "America/Bogota"
 msgstr ""
 
-#: src/Admin/Views/Options.php:118, src/Frontend/elementor-widgets/elementor-widget.php:269
+#: src/Admin/Views/Options.php:118, src/Frontend/elementor-widgets/elementor-widget.php:284
 msgid "America/Boise"
 msgstr ""
 
-#: src/Admin/Views/Options.php:119, src/Frontend/elementor-widgets/elementor-widget.php:270
+#: src/Admin/Views/Options.php:119, src/Frontend/elementor-widgets/elementor-widget.php:285
 msgid "America/Buenos_Aires"
 msgstr ""
 
-#: src/Admin/Views/Options.php:120, src/Frontend/elementor-widgets/elementor-widget.php:271
+#: src/Admin/Views/Options.php:120, src/Frontend/elementor-widgets/elementor-widget.php:286
 msgid "America/Cambridge_Bay"
 msgstr ""
 
-#: src/Admin/Views/Options.php:121, src/Frontend/elementor-widgets/elementor-widget.php:272
+#: src/Admin/Views/Options.php:121, src/Frontend/elementor-widgets/elementor-widget.php:287
 msgid "America/Campo_Grande"
 msgstr ""
 
-#: src/Admin/Views/Options.php:122, src/Frontend/elementor-widgets/elementor-widget.php:273
+#: src/Admin/Views/Options.php:122, src/Frontend/elementor-widgets/elementor-widget.php:288
 msgid "America/Cancun"
 msgstr ""
 
-#: src/Admin/Views/Options.php:123, src/Frontend/elementor-widgets/elementor-widget.php:274
+#: src/Admin/Views/Options.php:123, src/Frontend/elementor-widgets/elementor-widget.php:289
 msgid "America/Caracas"
 msgstr ""
 
-#: src/Admin/Views/Options.php:124, src/Frontend/elementor-widgets/elementor-widget.php:275
+#: src/Admin/Views/Options.php:124, src/Frontend/elementor-widgets/elementor-widget.php:290
 msgid "America/Catamarca"
 msgstr ""
 
-#: src/Admin/Views/Options.php:125, src/Frontend/elementor-widgets/elementor-widget.php:276
+#: src/Admin/Views/Options.php:125, src/Frontend/elementor-widgets/elementor-widget.php:291
 msgid "America/Cayenne"
 msgstr ""
 
-#: src/Admin/Views/Options.php:126, src/Frontend/elementor-widgets/elementor-widget.php:277
+#: src/Admin/Views/Options.php:126, src/Frontend/elementor-widgets/elementor-widget.php:292
 msgid "America/Cayman"
 msgstr ""
 
-#: src/Admin/Views/Options.php:127, src/Frontend/elementor-widgets/elementor-widget.php:278
+#: src/Admin/Views/Options.php:127, src/Frontend/elementor-widgets/elementor-widget.php:293
 msgid "America/Chicago"
 msgstr ""
 
-#: src/Admin/Views/Options.php:128, src/Frontend/elementor-widgets/elementor-widget.php:279
+#: src/Admin/Views/Options.php:128, src/Frontend/elementor-widgets/elementor-widget.php:294
 msgid "America/Chihuahua"
 msgstr ""
 
-#: src/Admin/Views/Options.php:129, src/Frontend/elementor-widgets/elementor-widget.php:280
+#: src/Admin/Views/Options.php:129, src/Frontend/elementor-widgets/elementor-widget.php:295
 msgid "America/Coral_Harbour"
 msgstr ""
 
-#: src/Admin/Views/Options.php:130, src/Frontend/elementor-widgets/elementor-widget.php:281
+#: src/Admin/Views/Options.php:130, src/Frontend/elementor-widgets/elementor-widget.php:296
 msgid "America/Cordoba"
 msgstr ""
 
-#: src/Admin/Views/Options.php:131, src/Frontend/elementor-widgets/elementor-widget.php:282
+#: src/Admin/Views/Options.php:131, src/Frontend/elementor-widgets/elementor-widget.php:297
 msgid "America/Costa_Rica"
 msgstr ""
 
-#: src/Admin/Views/Options.php:132, src/Frontend/elementor-widgets/elementor-widget.php:283
+#: src/Admin/Views/Options.php:132, src/Frontend/elementor-widgets/elementor-widget.php:298
 msgid "America/Creston"
 msgstr ""
 
-#: src/Admin/Views/Options.php:133, src/Frontend/elementor-widgets/elementor-widget.php:284
+#: src/Admin/Views/Options.php:133, src/Frontend/elementor-widgets/elementor-widget.php:299
 msgid "America/Cuiaba"
 msgstr ""
 
-#: src/Admin/Views/Options.php:134, src/Frontend/elementor-widgets/elementor-widget.php:285
+#: src/Admin/Views/Options.php:134, src/Frontend/elementor-widgets/elementor-widget.php:300
 msgid "America/Curacao"
 msgstr ""
 
-#: src/Admin/Views/Options.php:135, src/Frontend/elementor-widgets/elementor-widget.php:286
+#: src/Admin/Views/Options.php:135, src/Frontend/elementor-widgets/elementor-widget.php:301
 msgid "America/Danmarkshavn"
 msgstr ""
 
-#: src/Admin/Views/Options.php:136, src/Frontend/elementor-widgets/elementor-widget.php:287
+#: src/Admin/Views/Options.php:136, src/Frontend/elementor-widgets/elementor-widget.php:302
 msgid "America/Dawson"
 msgstr ""
 
-#: src/Admin/Views/Options.php:138, src/Frontend/elementor-widgets/elementor-widget.php:289
+#: src/Admin/Views/Options.php:138, src/Frontend/elementor-widgets/elementor-widget.php:304
 msgid "America/Denver"
 msgstr ""
 
-#: src/Admin/Views/Options.php:140, src/Frontend/elementor-widgets/elementor-widget.php:291
+#: src/Admin/Views/Options.php:140, src/Frontend/elementor-widgets/elementor-widget.php:306
 msgid "America/Dominica"
 msgstr ""
 
-#: src/Admin/Views/Options.php:141, src/Frontend/elementor-widgets/elementor-widget.php:292
+#: src/Admin/Views/Options.php:141, src/Frontend/elementor-widgets/elementor-widget.php:307
 msgid "America/Edmonton"
 msgstr ""
 
-#: src/Admin/Views/Options.php:142, src/Frontend/elementor-widgets/elementor-widget.php:293
+#: src/Admin/Views/Options.php:142, src/Frontend/elementor-widgets/elementor-widget.php:308
 msgid "America/Eirunepe"
 msgstr ""
 
-#: src/Admin/Views/Options.php:143, src/Frontend/elementor-widgets/elementor-widget.php:294
+#: src/Admin/Views/Options.php:143, src/Frontend/elementor-widgets/elementor-widget.php:309
 msgid "America/El_Salvador"
 msgstr ""
 
-#: src/Admin/Views/Options.php:144, src/Frontend/elementor-widgets/elementor-widget.php:295
+#: src/Admin/Views/Options.php:144, src/Frontend/elementor-widgets/elementor-widget.php:310
 msgid "America/Ensenada"
 msgstr ""
 
-#: src/Admin/Views/Options.php:145, src/Frontend/elementor-widgets/elementor-widget.php:296
+#: src/Admin/Views/Options.php:145, src/Frontend/elementor-widgets/elementor-widget.php:311
 msgid "America/Fort_Nelson"
 msgstr ""
 
-#: src/Admin/Views/Options.php:146, src/Frontend/elementor-widgets/elementor-widget.php:297
+#: src/Admin/Views/Options.php:146, src/Frontend/elementor-widgets/elementor-widget.php:312
 msgid "America/Fort_Wayne"
 msgstr ""
 
-#: src/Admin/Views/Options.php:147, src/Frontend/elementor-widgets/elementor-widget.php:298
+#: src/Admin/Views/Options.php:147, src/Frontend/elementor-widgets/elementor-widget.php:313
 msgid "America/Fortaleza"
 msgstr ""
 
-#: src/Admin/Views/Options.php:148, src/Frontend/elementor-widgets/elementor-widget.php:299
+#: src/Admin/Views/Options.php:148, src/Frontend/elementor-widgets/elementor-widget.php:314
 msgid "America/Glace_Bay"
 msgstr ""
 
-#: src/Admin/Views/Options.php:149, src/Frontend/elementor-widgets/elementor-widget.php:300
+#: src/Admin/Views/Options.php:149, src/Frontend/elementor-widgets/elementor-widget.php:315
 msgid "America/Godthab"
 msgstr ""
 
-#: src/Admin/Views/Options.php:150, src/Frontend/elementor-widgets/elementor-widget.php:301
+#: src/Admin/Views/Options.php:150, src/Frontend/elementor-widgets/elementor-widget.php:316
 msgid "America/Goose_Bay"
 msgstr ""
 
-#: src/Admin/Views/Options.php:151, src/Frontend/elementor-widgets/elementor-widget.php:302
+#: src/Admin/Views/Options.php:151, src/Frontend/elementor-widgets/elementor-widget.php:317
 msgid "America/Grand_Turk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:152, src/Frontend/elementor-widgets/elementor-widget.php:303
+#: src/Admin/Views/Options.php:152, src/Frontend/elementor-widgets/elementor-widget.php:318
 msgid "America/Grenada"
 msgstr ""
 
-#: src/Admin/Views/Options.php:153, src/Frontend/elementor-widgets/elementor-widget.php:304
+#: src/Admin/Views/Options.php:153, src/Frontend/elementor-widgets/elementor-widget.php:319
 msgid "America/Guadeloupe"
 msgstr ""
 
-#: src/Admin/Views/Options.php:154, src/Frontend/elementor-widgets/elementor-widget.php:305
+#: src/Admin/Views/Options.php:154, src/Frontend/elementor-widgets/elementor-widget.php:320
 msgid "America/Guatemala"
 msgstr ""
 
-#: src/Admin/Views/Options.php:155, src/Frontend/elementor-widgets/elementor-widget.php:306
+#: src/Admin/Views/Options.php:155, src/Frontend/elementor-widgets/elementor-widget.php:321
 msgid "America/Guayaquil"
 msgstr ""
 
-#: src/Admin/Views/Options.php:156, src/Frontend/elementor-widgets/elementor-widget.php:307
+#: src/Admin/Views/Options.php:156, src/Frontend/elementor-widgets/elementor-widget.php:322
 msgid "America/Guyana"
 msgstr ""
 
-#: src/Admin/Views/Options.php:157, src/Frontend/elementor-widgets/elementor-widget.php:308
+#: src/Admin/Views/Options.php:157, src/Frontend/elementor-widgets/elementor-widget.php:323
 msgid "America/Halifax"
 msgstr ""
 
-#: src/Admin/Views/Options.php:158, src/Frontend/elementor-widgets/elementor-widget.php:309
+#: src/Admin/Views/Options.php:158, src/Frontend/elementor-widgets/elementor-widget.php:324
 msgid "America/Havana"
 msgstr ""
 
-#: src/Admin/Views/Options.php:159, src/Frontend/elementor-widgets/elementor-widget.php:310
+#: src/Admin/Views/Options.php:159, src/Frontend/elementor-widgets/elementor-widget.php:325
 msgid "America/Hermosillo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:160, src/Frontend/elementor-widgets/elementor-widget.php:311
+#: src/Admin/Views/Options.php:160, src/Frontend/elementor-widgets/elementor-widget.php:326
 msgid "Indiana/Indianapolis"
 msgstr ""
 
-#: src/Admin/Views/Options.php:161, src/Frontend/elementor-widgets/elementor-widget.php:312
+#: src/Admin/Views/Options.php:161, src/Frontend/elementor-widgets/elementor-widget.php:327
 msgid "America/Indiana/Knox"
 msgstr ""
 
-#: src/Admin/Views/Options.php:162, src/Frontend/elementor-widgets/elementor-widget.php:313
+#: src/Admin/Views/Options.php:162, src/Frontend/elementor-widgets/elementor-widget.php:328
 msgid "America/Indiana/Marengo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:163, src/Frontend/elementor-widgets/elementor-widget.php:314
+#: src/Admin/Views/Options.php:163, src/Frontend/elementor-widgets/elementor-widget.php:329
 msgid "America/Indiana/Petersburg"
 msgstr ""
 
-#: src/Admin/Views/Options.php:164, src/Frontend/elementor-widgets/elementor-widget.php:315
+#: src/Admin/Views/Options.php:164, src/Frontend/elementor-widgets/elementor-widget.php:330
 msgid "America/Indiana/Tell_City"
 msgstr ""
 
-#: src/Admin/Views/Options.php:165, src/Frontend/elementor-widgets/elementor-widget.php:316
+#: src/Admin/Views/Options.php:165, src/Frontend/elementor-widgets/elementor-widget.php:331
 msgid "America/Indiana/Vevay"
 msgstr ""
 
-#: src/Admin/Views/Options.php:166, src/Frontend/elementor-widgets/elementor-widget.php:317
+#: src/Admin/Views/Options.php:166, src/Frontend/elementor-widgets/elementor-widget.php:332
 msgid "America/Indiana/Vincennes"
 msgstr ""
 
-#: src/Admin/Views/Options.php:167, src/Frontend/elementor-widgets/elementor-widget.php:318
+#: src/Admin/Views/Options.php:167, src/Frontend/elementor-widgets/elementor-widget.php:333
 msgid "America/Indiana/Winamac"
 msgstr ""
 
-#: src/Admin/Views/Options.php:168, src/Frontend/elementor-widgets/elementor-widget.php:319
+#: src/Admin/Views/Options.php:168, src/Frontend/elementor-widgets/elementor-widget.php:334
 msgid "America/Indianapolis"
 msgstr ""
 
-#: src/Admin/Views/Options.php:169, src/Frontend/elementor-widgets/elementor-widget.php:320
+#: src/Admin/Views/Options.php:169, src/Frontend/elementor-widgets/elementor-widget.php:335
 msgid "America/Inuvik"
 msgstr ""
 
-#: src/Admin/Views/Options.php:170, src/Frontend/elementor-widgets/elementor-widget.php:321
+#: src/Admin/Views/Options.php:170, src/Frontend/elementor-widgets/elementor-widget.php:336
 msgid "America/Iqaluit"
 msgstr ""
 
-#: src/Admin/Views/Options.php:171, src/Frontend/elementor-widgets/elementor-widget.php:322
+#: src/Admin/Views/Options.php:171, src/Frontend/elementor-widgets/elementor-widget.php:337
 msgid "America/Jamaica"
 msgstr ""
 
-#: src/Admin/Views/Options.php:172, src/Frontend/elementor-widgets/elementor-widget.php:323
+#: src/Admin/Views/Options.php:172, src/Frontend/elementor-widgets/elementor-widget.php:338
 msgid "America/Jujuy"
 msgstr ""
 
-#: src/Admin/Views/Options.php:173, src/Frontend/elementor-widgets/elementor-widget.php:324
+#: src/Admin/Views/Options.php:173, src/Frontend/elementor-widgets/elementor-widget.php:339
 msgid "America/Juneau"
 msgstr ""
 
-#: src/Admin/Views/Options.php:174, src/Frontend/elementor-widgets/elementor-widget.php:325
+#: src/Admin/Views/Options.php:174, src/Frontend/elementor-widgets/elementor-widget.php:340
 msgid "America/Kentucky/Louisville"
 msgstr ""
 
-#: src/Admin/Views/Options.php:175, src/Frontend/elementor-widgets/elementor-widget.php:326
+#: src/Admin/Views/Options.php:175, src/Frontend/elementor-widgets/elementor-widget.php:341
 msgid "America/Kentucky/Monticello"
 msgstr ""
 
-#: src/Admin/Views/Options.php:176, src/Frontend/elementor-widgets/elementor-widget.php:327
+#: src/Admin/Views/Options.php:176, src/Frontend/elementor-widgets/elementor-widget.php:342
 msgid "America/Knox_IN"
 msgstr ""
 
-#: src/Admin/Views/Options.php:177, src/Frontend/elementor-widgets/elementor-widget.php:328
+#: src/Admin/Views/Options.php:177, src/Frontend/elementor-widgets/elementor-widget.php:343
 msgid "America/Kralendijk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:178, src/Frontend/elementor-widgets/elementor-widget.php:329
+#: src/Admin/Views/Options.php:178, src/Frontend/elementor-widgets/elementor-widget.php:344
 msgid "America/La_Paz"
 msgstr ""
 
-#: src/Admin/Views/Options.php:179, src/Frontend/elementor-widgets/elementor-widget.php:330
+#: src/Admin/Views/Options.php:179, src/Frontend/elementor-widgets/elementor-widget.php:345
 msgid "America/Lima"
 msgstr ""
 
-#: src/Admin/Views/Options.php:180, src/Frontend/elementor-widgets/elementor-widget.php:331
+#: src/Admin/Views/Options.php:180, src/Frontend/elementor-widgets/elementor-widget.php:346
 msgid "America/Los_Angeles"
 msgstr ""
 
-#: src/Admin/Views/Options.php:181, src/Frontend/elementor-widgets/elementor-widget.php:332
+#: src/Admin/Views/Options.php:181, src/Frontend/elementor-widgets/elementor-widget.php:347
 msgid "America/Louisville"
 msgstr ""
 
-#: src/Admin/Views/Options.php:182, src/Frontend/elementor-widgets/elementor-widget.php:333
+#: src/Admin/Views/Options.php:182, src/Frontend/elementor-widgets/elementor-widget.php:348
 msgid "America/Lower_Princes"
 msgstr ""
 
-#: src/Admin/Views/Options.php:183, src/Frontend/elementor-widgets/elementor-widget.php:334
+#: src/Admin/Views/Options.php:183, src/Frontend/elementor-widgets/elementor-widget.php:349
 msgid "America/Maceio"
 msgstr ""
 
-#: src/Admin/Views/Options.php:184, src/Frontend/elementor-widgets/elementor-widget.php:335
+#: src/Admin/Views/Options.php:184, src/Frontend/elementor-widgets/elementor-widget.php:350
 msgid "America/Managua"
 msgstr ""
 
-#: src/Admin/Views/Options.php:185, src/Frontend/elementor-widgets/elementor-widget.php:336
+#: src/Admin/Views/Options.php:185, src/Frontend/elementor-widgets/elementor-widget.php:351
 msgid "America/Manaus"
 msgstr ""
 
-#: src/Admin/Views/Options.php:186, src/Frontend/elementor-widgets/elementor-widget.php:337
+#: src/Admin/Views/Options.php:186, src/Frontend/elementor-widgets/elementor-widget.php:352
 msgid "America/Marigot"
 msgstr ""
 
-#: src/Admin/Views/Options.php:187, src/Frontend/elementor-widgets/elementor-widget.php:338
+#: src/Admin/Views/Options.php:187, src/Frontend/elementor-widgets/elementor-widget.php:353
 msgid "America/Martinique"
 msgstr ""
 
-#: src/Admin/Views/Options.php:188, src/Frontend/elementor-widgets/elementor-widget.php:339
+#: src/Admin/Views/Options.php:188, src/Frontend/elementor-widgets/elementor-widget.php:354
 msgid "America/Matamoros"
 msgstr ""
 
-#: src/Admin/Views/Options.php:189, src/Frontend/elementor-widgets/elementor-widget.php:340
+#: src/Admin/Views/Options.php:189, src/Frontend/elementor-widgets/elementor-widget.php:355
 msgid "America/Mazatlan"
 msgstr ""
 
-#: src/Admin/Views/Options.php:190, src/Frontend/elementor-widgets/elementor-widget.php:341
+#: src/Admin/Views/Options.php:190, src/Frontend/elementor-widgets/elementor-widget.php:356
 msgid "America/Mendoza"
 msgstr ""
 
-#: src/Admin/Views/Options.php:191, src/Frontend/elementor-widgets/elementor-widget.php:342
+#: src/Admin/Views/Options.php:191, src/Frontend/elementor-widgets/elementor-widget.php:357
 msgid "America/Menominee"
 msgstr ""
 
-#: src/Admin/Views/Options.php:192, src/Frontend/elementor-widgets/elementor-widget.php:343
+#: src/Admin/Views/Options.php:192, src/Frontend/elementor-widgets/elementor-widget.php:358
 msgid "America/Merida"
 msgstr ""
 
-#: src/Admin/Views/Options.php:193, src/Frontend/elementor-widgets/elementor-widget.php:344
+#: src/Admin/Views/Options.php:193, src/Frontend/elementor-widgets/elementor-widget.php:359
 msgid "America/Metlakatla"
 msgstr ""
 
-#: src/Admin/Views/Options.php:194, src/Frontend/elementor-widgets/elementor-widget.php:345
+#: src/Admin/Views/Options.php:194, src/Frontend/elementor-widgets/elementor-widget.php:360
 msgid "America/Mexico_City"
 msgstr ""
 
-#: src/Admin/Views/Options.php:195, src/Frontend/elementor-widgets/elementor-widget.php:346
+#: src/Admin/Views/Options.php:195, src/Frontend/elementor-widgets/elementor-widget.php:361
 msgid "America/Miquelon"
 msgstr ""
 
-#: src/Admin/Views/Options.php:196, src/Frontend/elementor-widgets/elementor-widget.php:347
+#: src/Admin/Views/Options.php:196, src/Frontend/elementor-widgets/elementor-widget.php:362
 msgid "America/Moncton"
 msgstr ""
 
-#: src/Admin/Views/Options.php:197, src/Frontend/elementor-widgets/elementor-widget.php:348
+#: src/Admin/Views/Options.php:197, src/Frontend/elementor-widgets/elementor-widget.php:363
 msgid "America/Monterrey"
 msgstr ""
 
-#: src/Admin/Views/Options.php:198, src/Frontend/elementor-widgets/elementor-widget.php:349
+#: src/Admin/Views/Options.php:198, src/Frontend/elementor-widgets/elementor-widget.php:364
 msgid "America/Montevideo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:199, src/Frontend/elementor-widgets/elementor-widget.php:350
+#: src/Admin/Views/Options.php:199, src/Frontend/elementor-widgets/elementor-widget.php:365
 msgid "America/Montreal"
 msgstr ""
 
-#: src/Admin/Views/Options.php:200, src/Frontend/elementor-widgets/elementor-widget.php:351
+#: src/Admin/Views/Options.php:200, src/Frontend/elementor-widgets/elementor-widget.php:366
 msgid "America/Montserrat"
 msgstr ""
 
-#: src/Admin/Views/Options.php:201, src/Frontend/elementor-widgets/elementor-widget.php:352
+#: src/Admin/Views/Options.php:201, src/Frontend/elementor-widgets/elementor-widget.php:367
 msgid "America/Nassau"
 msgstr ""
 
-#: src/Admin/Views/Options.php:202, src/Frontend/elementor-widgets/elementor-widget.php:353
+#: src/Admin/Views/Options.php:202, src/Frontend/elementor-widgets/elementor-widget.php:368
 msgid "America/New_York"
 msgstr ""
 
-#: src/Admin/Views/Options.php:203, src/Frontend/elementor-widgets/elementor-widget.php:354
+#: src/Admin/Views/Options.php:203, src/Frontend/elementor-widgets/elementor-widget.php:369
 msgid "America/Nipigon"
 msgstr ""
 
-#: src/Admin/Views/Options.php:204, src/Frontend/elementor-widgets/elementor-widget.php:355
+#: src/Admin/Views/Options.php:204, src/Frontend/elementor-widgets/elementor-widget.php:370
 msgid "America/Nome"
 msgstr ""
 
-#: src/Admin/Views/Options.php:205, src/Frontend/elementor-widgets/elementor-widget.php:356
+#: src/Admin/Views/Options.php:205, src/Frontend/elementor-widgets/elementor-widget.php:371
 msgid "America/Noronha"
 msgstr ""
 
-#: src/Admin/Views/Options.php:206, src/Frontend/elementor-widgets/elementor-widget.php:357
+#: src/Admin/Views/Options.php:206, src/Frontend/elementor-widgets/elementor-widget.php:372
 msgid "America/North_Dakota/Beulah"
 msgstr ""
 
-#: src/Admin/Views/Options.php:207, src/Frontend/elementor-widgets/elementor-widget.php:358
+#: src/Admin/Views/Options.php:207, src/Frontend/elementor-widgets/elementor-widget.php:373
 msgid "America/North_Dakota/Center"
 msgstr ""
 
-#: src/Admin/Views/Options.php:208, src/Frontend/elementor-widgets/elementor-widget.php:359
+#: src/Admin/Views/Options.php:208, src/Frontend/elementor-widgets/elementor-widget.php:374
 msgid "America/North_Dakota/New_Salem"
 msgstr ""
 
-#: src/Admin/Views/Options.php:209, src/Frontend/elementor-widgets/elementor-widget.php:360
+#: src/Admin/Views/Options.php:209, src/Frontend/elementor-widgets/elementor-widget.php:375
 msgid "America/Ojinaga"
 msgstr ""
 
-#: src/Admin/Views/Options.php:210, src/Frontend/elementor-widgets/elementor-widget.php:361
+#: src/Admin/Views/Options.php:210, src/Frontend/elementor-widgets/elementor-widget.php:376
 msgid "America/Panama"
 msgstr ""
 
-#: src/Admin/Views/Options.php:211, src/Frontend/elementor-widgets/elementor-widget.php:362
+#: src/Admin/Views/Options.php:211, src/Frontend/elementor-widgets/elementor-widget.php:377
 msgid "America/Pangnirtung"
 msgstr ""
 
-#: src/Admin/Views/Options.php:212, src/Frontend/elementor-widgets/elementor-widget.php:363
+#: src/Admin/Views/Options.php:212, src/Frontend/elementor-widgets/elementor-widget.php:378
 msgid "America/Paramaribo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:213, src/Frontend/elementor-widgets/elementor-widget.php:364
+#: src/Admin/Views/Options.php:213, src/Frontend/elementor-widgets/elementor-widget.php:379
 msgid "America/Phoenix"
 msgstr ""
 
-#: src/Admin/Views/Options.php:214, src/Frontend/elementor-widgets/elementor-widget.php:365
+#: src/Admin/Views/Options.php:214, src/Frontend/elementor-widgets/elementor-widget.php:380
 msgid "America/Port-au-Prince"
 msgstr ""
 
-#: src/Admin/Views/Options.php:215, src/Frontend/elementor-widgets/elementor-widget.php:366
+#: src/Admin/Views/Options.php:215, src/Frontend/elementor-widgets/elementor-widget.php:381
 msgid "America/Port_of_Spain"
 msgstr ""
 
-#: src/Admin/Views/Options.php:216, src/Frontend/elementor-widgets/elementor-widget.php:367
+#: src/Admin/Views/Options.php:216, src/Frontend/elementor-widgets/elementor-widget.php:382
 msgid "America/Porto_Acre"
 msgstr ""
 
-#: src/Admin/Views/Options.php:217, src/Frontend/elementor-widgets/elementor-widget.php:368
+#: src/Admin/Views/Options.php:217, src/Frontend/elementor-widgets/elementor-widget.php:383
 msgid "America/Porto_Velho"
 msgstr ""
 
-#: src/Admin/Views/Options.php:218, src/Frontend/elementor-widgets/elementor-widget.php:369
+#: src/Admin/Views/Options.php:218, src/Frontend/elementor-widgets/elementor-widget.php:384
 msgid "America/Puerto_Rico"
 msgstr ""
 
-#: src/Admin/Views/Options.php:219, src/Frontend/elementor-widgets/elementor-widget.php:370
+#: src/Admin/Views/Options.php:219, src/Frontend/elementor-widgets/elementor-widget.php:385
 msgid "America/Punta_Arenas"
 msgstr ""
 
-#: src/Admin/Views/Options.php:220, src/Frontend/elementor-widgets/elementor-widget.php:371
+#: src/Admin/Views/Options.php:220, src/Frontend/elementor-widgets/elementor-widget.php:386
 msgid "America/Rainy_River"
 msgstr ""
 
-#: src/Admin/Views/Options.php:221, src/Frontend/elementor-widgets/elementor-widget.php:372
+#: src/Admin/Views/Options.php:221, src/Frontend/elementor-widgets/elementor-widget.php:387
 msgid "America/Rankin_Inlet"
 msgstr ""
 
-#: src/Admin/Views/Options.php:222, src/Frontend/elementor-widgets/elementor-widget.php:373
+#: src/Admin/Views/Options.php:222, src/Frontend/elementor-widgets/elementor-widget.php:388
 msgid "America/Recife"
 msgstr ""
 
-#: src/Admin/Views/Options.php:223, src/Frontend/elementor-widgets/elementor-widget.php:374
+#: src/Admin/Views/Options.php:223, src/Frontend/elementor-widgets/elementor-widget.php:389
 msgid "America/Regina"
 msgstr ""
 
-#: src/Admin/Views/Options.php:224, src/Frontend/elementor-widgets/elementor-widget.php:375
+#: src/Admin/Views/Options.php:224, src/Frontend/elementor-widgets/elementor-widget.php:390
 msgid "America/Resolute"
 msgstr ""
 
-#: src/Admin/Views/Options.php:225, src/Frontend/elementor-widgets/elementor-widget.php:376
+#: src/Admin/Views/Options.php:225, src/Frontend/elementor-widgets/elementor-widget.php:391
 msgid "America/Rio_Branco"
 msgstr ""
 
-#: src/Admin/Views/Options.php:226, src/Frontend/elementor-widgets/elementor-widget.php:377
+#: src/Admin/Views/Options.php:226, src/Frontend/elementor-widgets/elementor-widget.php:392
 msgid "America/Rosario"
 msgstr ""
 
-#: src/Admin/Views/Options.php:227, src/Frontend/elementor-widgets/elementor-widget.php:378
+#: src/Admin/Views/Options.php:227, src/Frontend/elementor-widgets/elementor-widget.php:393
 msgid "America/Santa_Isabel"
 msgstr ""
 
-#: src/Admin/Views/Options.php:228, src/Frontend/elementor-widgets/elementor-widget.php:379
+#: src/Admin/Views/Options.php:228, src/Frontend/elementor-widgets/elementor-widget.php:394
 msgid "America/Santarem"
 msgstr ""
 
-#: src/Admin/Views/Options.php:229, src/Frontend/elementor-widgets/elementor-widget.php:380
+#: src/Admin/Views/Options.php:229, src/Frontend/elementor-widgets/elementor-widget.php:395
 msgid "America/Santiago"
 msgstr ""
 
-#: src/Admin/Views/Options.php:230, src/Frontend/elementor-widgets/elementor-widget.php:381
+#: src/Admin/Views/Options.php:230, src/Frontend/elementor-widgets/elementor-widget.php:396
 msgid "America/Santo_Domingo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:231, src/Frontend/elementor-widgets/elementor-widget.php:382
+#: src/Admin/Views/Options.php:231, src/Frontend/elementor-widgets/elementor-widget.php:397
 msgid "America/Sao_Paulo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:232, src/Frontend/elementor-widgets/elementor-widget.php:383
+#: src/Admin/Views/Options.php:232, src/Frontend/elementor-widgets/elementor-widget.php:398
 msgid "America/Scoresbysund"
 msgstr ""
 
-#: src/Admin/Views/Options.php:233, src/Frontend/elementor-widgets/elementor-widget.php:384
+#: src/Admin/Views/Options.php:233, src/Frontend/elementor-widgets/elementor-widget.php:399
 msgid "America/Shiprock"
 msgstr ""
 
-#: src/Admin/Views/Options.php:234, src/Frontend/elementor-widgets/elementor-widget.php:385
+#: src/Admin/Views/Options.php:234, src/Frontend/elementor-widgets/elementor-widget.php:400
 msgid "America/Sitka"
 msgstr ""
 
-#: src/Admin/Views/Options.php:235, src/Frontend/elementor-widgets/elementor-widget.php:386
+#: src/Admin/Views/Options.php:235, src/Frontend/elementor-widgets/elementor-widget.php:401
 msgid "America/St_Barthelemy"
 msgstr ""
 
-#: src/Admin/Views/Options.php:236, src/Frontend/elementor-widgets/elementor-widget.php:387
+#: src/Admin/Views/Options.php:236, src/Frontend/elementor-widgets/elementor-widget.php:402
 msgid "America/St_Johns"
 msgstr ""
 
-#: src/Admin/Views/Options.php:237, src/Frontend/elementor-widgets/elementor-widget.php:388
+#: src/Admin/Views/Options.php:237, src/Frontend/elementor-widgets/elementor-widget.php:403
 msgid "America/St_Kitts"
 msgstr ""
 
-#: src/Admin/Views/Options.php:238, src/Frontend/elementor-widgets/elementor-widget.php:389
+#: src/Admin/Views/Options.php:238, src/Frontend/elementor-widgets/elementor-widget.php:404
 msgid "America/St_Lucia"
 msgstr ""
 
-#: src/Admin/Views/Options.php:239, src/Frontend/elementor-widgets/elementor-widget.php:390
+#: src/Admin/Views/Options.php:239, src/Frontend/elementor-widgets/elementor-widget.php:405
 msgid "America/St_Thomas"
 msgstr ""
 
-#: src/Admin/Views/Options.php:240, src/Frontend/elementor-widgets/elementor-widget.php:391
+#: src/Admin/Views/Options.php:240, src/Frontend/elementor-widgets/elementor-widget.php:406
 msgid "America/St_Vincent"
 msgstr ""
 
-#: src/Admin/Views/Options.php:241, src/Frontend/elementor-widgets/elementor-widget.php:392
+#: src/Admin/Views/Options.php:241, src/Frontend/elementor-widgets/elementor-widget.php:407
 msgid "America/Swift_Current"
 msgstr ""
 
-#: src/Admin/Views/Options.php:242, src/Frontend/elementor-widgets/elementor-widget.php:393
+#: src/Admin/Views/Options.php:242, src/Frontend/elementor-widgets/elementor-widget.php:408
 msgid "America/Tegucigalpa"
 msgstr ""
 
-#: src/Admin/Views/Options.php:243, src/Frontend/elementor-widgets/elementor-widget.php:394
+#: src/Admin/Views/Options.php:243, src/Frontend/elementor-widgets/elementor-widget.php:409
 msgid "America/Thule"
 msgstr ""
 
-#: src/Admin/Views/Options.php:244, src/Frontend/elementor-widgets/elementor-widget.php:395
+#: src/Admin/Views/Options.php:244, src/Frontend/elementor-widgets/elementor-widget.php:410
 msgid "America/Thunder_Bay"
 msgstr ""
 
-#: src/Admin/Views/Options.php:245, src/Frontend/elementor-widgets/elementor-widget.php:396
+#: src/Admin/Views/Options.php:245, src/Frontend/elementor-widgets/elementor-widget.php:411
 msgid "America/Tijuana"
 msgstr ""
 
-#: src/Admin/Views/Options.php:246, src/Frontend/elementor-widgets/elementor-widget.php:397
+#: src/Admin/Views/Options.php:246, src/Frontend/elementor-widgets/elementor-widget.php:412
 msgid "America/Toronto"
 msgstr ""
 
-#: src/Admin/Views/Options.php:247, src/Frontend/elementor-widgets/elementor-widget.php:398
+#: src/Admin/Views/Options.php:247, src/Frontend/elementor-widgets/elementor-widget.php:413
 msgid "America/Tortola"
 msgstr ""
 
-#: src/Admin/Views/Options.php:248, src/Frontend/elementor-widgets/elementor-widget.php:399
+#: src/Admin/Views/Options.php:248, src/Frontend/elementor-widgets/elementor-widget.php:414
 msgid "America/Vancouver"
 msgstr ""
 
-#: src/Admin/Views/Options.php:249, src/Frontend/elementor-widgets/elementor-widget.php:400
+#: src/Admin/Views/Options.php:249, src/Frontend/elementor-widgets/elementor-widget.php:415
 msgid "America/Virgin"
 msgstr ""
 
-#: src/Admin/Views/Options.php:250, src/Frontend/elementor-widgets/elementor-widget.php:401
+#: src/Admin/Views/Options.php:250, src/Frontend/elementor-widgets/elementor-widget.php:416
 msgid "America/Whitehorse"
 msgstr ""
 
-#: src/Admin/Views/Options.php:251, src/Frontend/elementor-widgets/elementor-widget.php:402
+#: src/Admin/Views/Options.php:251, src/Frontend/elementor-widgets/elementor-widget.php:417
 msgid "America/Winnipeg"
 msgstr ""
 
-#: src/Admin/Views/Options.php:252, src/Frontend/elementor-widgets/elementor-widget.php:403
+#: src/Admin/Views/Options.php:252, src/Frontend/elementor-widgets/elementor-widget.php:418
 msgid "America/Yakutat"
 msgstr ""
 
-#: src/Admin/Views/Options.php:253, src/Frontend/elementor-widgets/elementor-widget.php:404
+#: src/Admin/Views/Options.php:253, src/Frontend/elementor-widgets/elementor-widget.php:419
 msgid "America/Yellowknife"
 msgstr ""
 
-#: src/Admin/Views/Options.php:254, src/Frontend/elementor-widgets/elementor-widget.php:405
+#: src/Admin/Views/Options.php:254, src/Frontend/elementor-widgets/elementor-widget.php:420
 msgid "Antarctica/Casey"
 msgstr ""
 
-#: src/Admin/Views/Options.php:255, src/Frontend/elementor-widgets/elementor-widget.php:406
+#: src/Admin/Views/Options.php:255, src/Frontend/elementor-widgets/elementor-widget.php:421
 msgid "Antarctica/Davis"
 msgstr ""
 
-#: src/Admin/Views/Options.php:256, src/Frontend/elementor-widgets/elementor-widget.php:407
+#: src/Admin/Views/Options.php:256, src/Frontend/elementor-widgets/elementor-widget.php:422
 msgid "Antarctica/DumontDUrville"
 msgstr ""
 
-#: src/Admin/Views/Options.php:257, src/Frontend/elementor-widgets/elementor-widget.php:408
+#: src/Admin/Views/Options.php:257, src/Frontend/elementor-widgets/elementor-widget.php:423
 msgid "Antarctica/Macquarie"
 msgstr ""
 
-#: src/Admin/Views/Options.php:258, src/Frontend/elementor-widgets/elementor-widget.php:409
+#: src/Admin/Views/Options.php:258, src/Frontend/elementor-widgets/elementor-widget.php:424
 msgid "Antarctica/Mawson"
 msgstr ""
 
-#: src/Admin/Views/Options.php:259, src/Frontend/elementor-widgets/elementor-widget.php:410
+#: src/Admin/Views/Options.php:259, src/Frontend/elementor-widgets/elementor-widget.php:425
 msgid "Antarctica/McMurdo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:260, src/Frontend/elementor-widgets/elementor-widget.php:411
+#: src/Admin/Views/Options.php:260, src/Frontend/elementor-widgets/elementor-widget.php:426
 msgid "Antarctica/Palmer"
 msgstr ""
 
-#: src/Admin/Views/Options.php:261, src/Frontend/elementor-widgets/elementor-widget.php:412
+#: src/Admin/Views/Options.php:261, src/Frontend/elementor-widgets/elementor-widget.php:427
 msgid "Antarctica/Rothera"
 msgstr ""
 
-#: src/Admin/Views/Options.php:262, src/Frontend/elementor-widgets/elementor-widget.php:413
+#: src/Admin/Views/Options.php:262, src/Frontend/elementor-widgets/elementor-widget.php:428
 msgid "Antarctica/South_Pole"
 msgstr ""
 
-#: src/Admin/Views/Options.php:263, src/Frontend/elementor-widgets/elementor-widget.php:414
+#: src/Admin/Views/Options.php:263, src/Frontend/elementor-widgets/elementor-widget.php:429
 msgid "Antarctica/Syowa"
 msgstr ""
 
-#: src/Admin/Views/Options.php:264, src/Frontend/elementor-widgets/elementor-widget.php:415
+#: src/Admin/Views/Options.php:264, src/Frontend/elementor-widgets/elementor-widget.php:430
 msgid "Antarctica/Troll"
 msgstr ""
 
-#: src/Admin/Views/Options.php:265, src/Frontend/elementor-widgets/elementor-widget.php:416
+#: src/Admin/Views/Options.php:265, src/Frontend/elementor-widgets/elementor-widget.php:431
 msgid "Antarctica/Vostok"
 msgstr ""
 
-#: src/Admin/Views/Options.php:266, src/Frontend/elementor-widgets/elementor-widget.php:417
+#: src/Admin/Views/Options.php:266, src/Frontend/elementor-widgets/elementor-widget.php:432
 msgid "Arctic/Longyearbyen"
 msgstr ""
 
-#: src/Admin/Views/Options.php:267, src/Frontend/elementor-widgets/elementor-widget.php:418
+#: src/Admin/Views/Options.php:267, src/Frontend/elementor-widgets/elementor-widget.php:433
 msgid "Asia/Aden"
 msgstr ""
 
-#: src/Admin/Views/Options.php:268, src/Frontend/elementor-widgets/elementor-widget.php:419
+#: src/Admin/Views/Options.php:268, src/Frontend/elementor-widgets/elementor-widget.php:434
 msgid "Asia/Almaty"
 msgstr ""
 
-#: src/Admin/Views/Options.php:269, src/Frontend/elementor-widgets/elementor-widget.php:420
+#: src/Admin/Views/Options.php:269, src/Frontend/elementor-widgets/elementor-widget.php:435
 msgid "Asia/Amman"
 msgstr ""
 
-#: src/Admin/Views/Options.php:270, src/Frontend/elementor-widgets/elementor-widget.php:421
+#: src/Admin/Views/Options.php:270, src/Frontend/elementor-widgets/elementor-widget.php:436
 msgid "Asia/Anadyr"
 msgstr ""
 
-#: src/Admin/Views/Options.php:271, src/Frontend/elementor-widgets/elementor-widget.php:422
+#: src/Admin/Views/Options.php:271, src/Frontend/elementor-widgets/elementor-widget.php:437
 msgid "Asia/Aqtau"
 msgstr ""
 
-#: src/Admin/Views/Options.php:272, src/Frontend/elementor-widgets/elementor-widget.php:423
+#: src/Admin/Views/Options.php:272, src/Frontend/elementor-widgets/elementor-widget.php:438
 msgid "Asia/Aqtobe"
 msgstr ""
 
-#: src/Admin/Views/Options.php:273, src/Frontend/elementor-widgets/elementor-widget.php:424
+#: src/Admin/Views/Options.php:273, src/Frontend/elementor-widgets/elementor-widget.php:439
 msgid "Asia/Ashgabat"
 msgstr ""
 
-#: src/Admin/Views/Options.php:274, src/Frontend/elementor-widgets/elementor-widget.php:425
+#: src/Admin/Views/Options.php:274, src/Frontend/elementor-widgets/elementor-widget.php:440
 msgid "Asia/Ashkhabad"
 msgstr ""
 
-#: src/Admin/Views/Options.php:275, src/Frontend/elementor-widgets/elementor-widget.php:426
+#: src/Admin/Views/Options.php:275, src/Frontend/elementor-widgets/elementor-widget.php:441
 msgid "Asia/Atyrau"
 msgstr ""
 
-#: src/Admin/Views/Options.php:276, src/Frontend/elementor-widgets/elementor-widget.php:427
+#: src/Admin/Views/Options.php:276, src/Frontend/elementor-widgets/elementor-widget.php:442
 msgid "Asia/Baghdad"
 msgstr ""
 
-#: src/Admin/Views/Options.php:277, src/Frontend/elementor-widgets/elementor-widget.php:428
+#: src/Admin/Views/Options.php:277, src/Frontend/elementor-widgets/elementor-widget.php:443
 msgid "Asia/Bahrain"
 msgstr ""
 
-#: src/Admin/Views/Options.php:278, src/Frontend/elementor-widgets/elementor-widget.php:429
+#: src/Admin/Views/Options.php:278, src/Frontend/elementor-widgets/elementor-widget.php:444
 msgid "Asia/Baku"
 msgstr ""
 
-#: src/Admin/Views/Options.php:279, src/Frontend/elementor-widgets/elementor-widget.php:430
+#: src/Admin/Views/Options.php:279, src/Frontend/elementor-widgets/elementor-widget.php:445
 msgid "Asia/Bangkok"
 msgstr ""
 
-#: src/Admin/Views/Options.php:280, src/Frontend/elementor-widgets/elementor-widget.php:431
+#: src/Admin/Views/Options.php:280, src/Frontend/elementor-widgets/elementor-widget.php:446
 msgid "Asia/Barnaul"
 msgstr ""
 
-#: src/Admin/Views/Options.php:281, src/Frontend/elementor-widgets/elementor-widget.php:432
+#: src/Admin/Views/Options.php:281, src/Frontend/elementor-widgets/elementor-widget.php:447
 msgid "Asia/Beirut"
 msgstr ""
 
-#: src/Admin/Views/Options.php:282, src/Frontend/elementor-widgets/elementor-widget.php:433
+#: src/Admin/Views/Options.php:282, src/Frontend/elementor-widgets/elementor-widget.php:448
 msgid "Asia/Bishkek"
 msgstr ""
 
-#: src/Admin/Views/Options.php:283, src/Frontend/elementor-widgets/elementor-widget.php:434
+#: src/Admin/Views/Options.php:283, src/Frontend/elementor-widgets/elementor-widget.php:449
 msgid "Asia/Brunei"
 msgstr ""
 
-#: src/Admin/Views/Options.php:284, src/Frontend/elementor-widgets/elementor-widget.php:435
+#: src/Admin/Views/Options.php:284, src/Frontend/elementor-widgets/elementor-widget.php:450
 msgid "Asia/Calcutta"
 msgstr ""
 
-#: src/Admin/Views/Options.php:285, src/Frontend/elementor-widgets/elementor-widget.php:436
+#: src/Admin/Views/Options.php:285, src/Frontend/elementor-widgets/elementor-widget.php:451
 msgid "Asia/Chita"
 msgstr ""
 
-#: src/Admin/Views/Options.php:286, src/Frontend/elementor-widgets/elementor-widget.php:437
+#: src/Admin/Views/Options.php:286, src/Frontend/elementor-widgets/elementor-widget.php:452
 msgid "Asia/Choibalsan"
 msgstr ""
 
-#: src/Admin/Views/Options.php:287, src/Frontend/elementor-widgets/elementor-widget.php:438
+#: src/Admin/Views/Options.php:287, src/Frontend/elementor-widgets/elementor-widget.php:453
 msgid "Asia/Chongqing"
 msgstr ""
 
-#: src/Admin/Views/Options.php:288, src/Frontend/elementor-widgets/elementor-widget.php:439
+#: src/Admin/Views/Options.php:288, src/Frontend/elementor-widgets/elementor-widget.php:454
 msgid "Asia/Chungking"
 msgstr ""
 
-#: src/Admin/Views/Options.php:289, src/Frontend/elementor-widgets/elementor-widget.php:440
+#: src/Admin/Views/Options.php:289, src/Frontend/elementor-widgets/elementor-widget.php:455
 msgid "Asia/Colombo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:290, src/Frontend/elementor-widgets/elementor-widget.php:441
+#: src/Admin/Views/Options.php:290, src/Frontend/elementor-widgets/elementor-widget.php:456
 msgid "Asia/Dacca"
 msgstr ""
 
-#: src/Admin/Views/Options.php:291, src/Frontend/elementor-widgets/elementor-widget.php:442
+#: src/Admin/Views/Options.php:291, src/Frontend/elementor-widgets/elementor-widget.php:457
 msgid "Asia/Damascus"
 msgstr ""
 
-#: src/Admin/Views/Options.php:292, src/Frontend/elementor-widgets/elementor-widget.php:443
+#: src/Admin/Views/Options.php:292, src/Frontend/elementor-widgets/elementor-widget.php:458
 msgid "Asia/Dhaka"
 msgstr ""
 
-#: src/Admin/Views/Options.php:293, src/Frontend/elementor-widgets/elementor-widget.php:444
+#: src/Admin/Views/Options.php:293, src/Frontend/elementor-widgets/elementor-widget.php:459
 msgid "Asia/Dili"
 msgstr ""
 
-#: src/Admin/Views/Options.php:294, src/Frontend/elementor-widgets/elementor-widget.php:445
+#: src/Admin/Views/Options.php:294, src/Frontend/elementor-widgets/elementor-widget.php:460
 msgid "Asia/Dubai"
 msgstr ""
 
-#: src/Admin/Views/Options.php:295, src/Frontend/elementor-widgets/elementor-widget.php:446
+#: src/Admin/Views/Options.php:295, src/Frontend/elementor-widgets/elementor-widget.php:461
 msgid "Asia/Dushanbe"
 msgstr ""
 
-#: src/Admin/Views/Options.php:296, src/Frontend/elementor-widgets/elementor-widget.php:447
+#: src/Admin/Views/Options.php:296, src/Frontend/elementor-widgets/elementor-widget.php:462
 msgid "Asia/Famagusta"
 msgstr ""
 
-#: src/Admin/Views/Options.php:297, src/Frontend/elementor-widgets/elementor-widget.php:448
+#: src/Admin/Views/Options.php:297, src/Frontend/elementor-widgets/elementor-widget.php:463
 msgid "Asia/Gaza"
 msgstr ""
 
-#: src/Admin/Views/Options.php:298, src/Frontend/elementor-widgets/elementor-widget.php:449
+#: src/Admin/Views/Options.php:298, src/Frontend/elementor-widgets/elementor-widget.php:464
 msgid "Asia/Harbin"
 msgstr ""
 
-#: src/Admin/Views/Options.php:299, src/Frontend/elementor-widgets/elementor-widget.php:450
+#: src/Admin/Views/Options.php:299, src/Frontend/elementor-widgets/elementor-widget.php:465
 msgid "Asia/Hebron"
 msgstr ""
 
-#: src/Admin/Views/Options.php:300, src/Frontend/elementor-widgets/elementor-widget.php:451
+#: src/Admin/Views/Options.php:300, src/Frontend/elementor-widgets/elementor-widget.php:466
 msgid "Asia/Ho_Chi_Minh"
 msgstr ""
 
-#: src/Admin/Views/Options.php:301, src/Frontend/elementor-widgets/elementor-widget.php:452
+#: src/Admin/Views/Options.php:301, src/Frontend/elementor-widgets/elementor-widget.php:467
 msgid "Asia/Hong_Kong"
 msgstr ""
 
-#: src/Admin/Views/Options.php:302, src/Frontend/elementor-widgets/elementor-widget.php:453
+#: src/Admin/Views/Options.php:302, src/Frontend/elementor-widgets/elementor-widget.php:468
 msgid "Asia/Hovd"
 msgstr ""
 
-#: src/Admin/Views/Options.php:303, src/Frontend/elementor-widgets/elementor-widget.php:454
+#: src/Admin/Views/Options.php:303, src/Frontend/elementor-widgets/elementor-widget.php:469
 msgid "Asia/Irkutsk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:304, src/Frontend/elementor-widgets/elementor-widget.php:455
+#: src/Admin/Views/Options.php:304, src/Frontend/elementor-widgets/elementor-widget.php:470
 msgid "Asia/Istanbul"
 msgstr ""
 
-#: src/Admin/Views/Options.php:305, src/Frontend/elementor-widgets/elementor-widget.php:456
+#: src/Admin/Views/Options.php:305, src/Frontend/elementor-widgets/elementor-widget.php:471
 msgid "Asia/Jakarta"
 msgstr ""
 
-#: src/Admin/Views/Options.php:306, src/Frontend/elementor-widgets/elementor-widget.php:457
+#: src/Admin/Views/Options.php:306, src/Frontend/elementor-widgets/elementor-widget.php:472
 msgid "Asia/Jayapura"
 msgstr ""
 
-#: src/Admin/Views/Options.php:307, src/Frontend/elementor-widgets/elementor-widget.php:458
+#: src/Admin/Views/Options.php:307, src/Frontend/elementor-widgets/elementor-widget.php:473
 msgid "Asia/Jerusalem"
 msgstr ""
 
-#: src/Admin/Views/Options.php:308, src/Frontend/elementor-widgets/elementor-widget.php:459
+#: src/Admin/Views/Options.php:308, src/Frontend/elementor-widgets/elementor-widget.php:474
 msgid "Asia/Kabul"
 msgstr ""
 
-#: src/Admin/Views/Options.php:309, src/Frontend/elementor-widgets/elementor-widget.php:460
+#: src/Admin/Views/Options.php:309, src/Frontend/elementor-widgets/elementor-widget.php:475
 msgid "Asia/Kamchatka"
 msgstr ""
 
-#: src/Admin/Views/Options.php:310, src/Frontend/elementor-widgets/elementor-widget.php:461
+#: src/Admin/Views/Options.php:310, src/Frontend/elementor-widgets/elementor-widget.php:476
 msgid "Asia/Karachi"
 msgstr ""
 
-#: src/Admin/Views/Options.php:311, src/Frontend/elementor-widgets/elementor-widget.php:462
+#: src/Admin/Views/Options.php:311, src/Frontend/elementor-widgets/elementor-widget.php:477
 msgid "Asia/Kashgar"
 msgstr ""
 
-#: src/Admin/Views/Options.php:312, src/Frontend/elementor-widgets/elementor-widget.php:463
+#: src/Admin/Views/Options.php:312, src/Frontend/elementor-widgets/elementor-widget.php:478
 msgid "Asia/Kathmandu"
 msgstr ""
 
-#: src/Admin/Views/Options.php:313, src/Frontend/elementor-widgets/elementor-widget.php:464
+#: src/Admin/Views/Options.php:313, src/Frontend/elementor-widgets/elementor-widget.php:479
 msgid "Asia/Katmandu"
 msgstr ""
 
-#: src/Admin/Views/Options.php:314, src/Frontend/elementor-widgets/elementor-widget.php:465
+#: src/Admin/Views/Options.php:314, src/Frontend/elementor-widgets/elementor-widget.php:480
 msgid "Asia/Khandyga"
 msgstr ""
 
-#: src/Admin/Views/Options.php:315, src/Frontend/elementor-widgets/elementor-widget.php:466
+#: src/Admin/Views/Options.php:315, src/Frontend/elementor-widgets/elementor-widget.php:481
 msgid "Asia/Kolkata"
 msgstr ""
 
-#: src/Admin/Views/Options.php:316, src/Frontend/elementor-widgets/elementor-widget.php:467
+#: src/Admin/Views/Options.php:316, src/Frontend/elementor-widgets/elementor-widget.php:482
 msgid "Asia/Krasnoyarsk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:317, src/Frontend/elementor-widgets/elementor-widget.php:468
+#: src/Admin/Views/Options.php:317, src/Frontend/elementor-widgets/elementor-widget.php:483
 msgid "Asia/Kuala_Lumpur"
 msgstr ""
 
-#: src/Admin/Views/Options.php:318, src/Frontend/elementor-widgets/elementor-widget.php:469
+#: src/Admin/Views/Options.php:318, src/Frontend/elementor-widgets/elementor-widget.php:484
 msgid "Asia/Kuching"
 msgstr ""
 
-#: src/Admin/Views/Options.php:319, src/Frontend/elementor-widgets/elementor-widget.php:470
+#: src/Admin/Views/Options.php:319, src/Frontend/elementor-widgets/elementor-widget.php:485
 msgid "Asia/Kuwait"
 msgstr ""
 
-#: src/Admin/Views/Options.php:320, src/Frontend/elementor-widgets/elementor-widget.php:471
+#: src/Admin/Views/Options.php:320, src/Frontend/elementor-widgets/elementor-widget.php:486
 msgid "Asia/Macao"
 msgstr ""
 
-#: src/Admin/Views/Options.php:321, src/Frontend/elementor-widgets/elementor-widget.php:472
+#: src/Admin/Views/Options.php:321, src/Frontend/elementor-widgets/elementor-widget.php:487
 msgid "Asia/Macau"
 msgstr ""
 
-#: src/Admin/Views/Options.php:322, src/Frontend/elementor-widgets/elementor-widget.php:473
+#: src/Admin/Views/Options.php:322, src/Frontend/elementor-widgets/elementor-widget.php:488
 msgid "Asia/Magadan"
 msgstr ""
 
-#: src/Admin/Views/Options.php:323, src/Frontend/elementor-widgets/elementor-widget.php:474
+#: src/Admin/Views/Options.php:323, src/Frontend/elementor-widgets/elementor-widget.php:489
 msgid "Asia/Makassar"
 msgstr ""
 
-#: src/Admin/Views/Options.php:324, src/Frontend/elementor-widgets/elementor-widget.php:475
+#: src/Admin/Views/Options.php:324, src/Frontend/elementor-widgets/elementor-widget.php:490
 msgid "Asia/Manila"
 msgstr ""
 
-#: src/Admin/Views/Options.php:325, src/Frontend/elementor-widgets/elementor-widget.php:476
+#: src/Admin/Views/Options.php:325, src/Frontend/elementor-widgets/elementor-widget.php:491
 msgid "Asia/Muscat"
 msgstr ""
 
-#: src/Admin/Views/Options.php:326, src/Frontend/elementor-widgets/elementor-widget.php:477
+#: src/Admin/Views/Options.php:326, src/Frontend/elementor-widgets/elementor-widget.php:492
 msgid "Asia/Nicosia"
 msgstr ""
 
-#: src/Admin/Views/Options.php:327, src/Frontend/elementor-widgets/elementor-widget.php:478
+#: src/Admin/Views/Options.php:327, src/Frontend/elementor-widgets/elementor-widget.php:493
 msgid "Asia/Novokuznetsk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:328, src/Frontend/elementor-widgets/elementor-widget.php:479
+#: src/Admin/Views/Options.php:328, src/Frontend/elementor-widgets/elementor-widget.php:494
 msgid "Asia/Novosibirsk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:329, src/Frontend/elementor-widgets/elementor-widget.php:480
+#: src/Admin/Views/Options.php:329, src/Frontend/elementor-widgets/elementor-widget.php:495
 msgid "Asia/Omsk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:330, src/Frontend/elementor-widgets/elementor-widget.php:481
+#: src/Admin/Views/Options.php:330, src/Frontend/elementor-widgets/elementor-widget.php:496
 msgid "Asia/Oral"
 msgstr ""
 
-#: src/Admin/Views/Options.php:331, src/Frontend/elementor-widgets/elementor-widget.php:482
+#: src/Admin/Views/Options.php:331, src/Frontend/elementor-widgets/elementor-widget.php:497
 msgid "Asia/Phnom_Penh"
 msgstr ""
 
-#: src/Admin/Views/Options.php:332, src/Frontend/elementor-widgets/elementor-widget.php:483
+#: src/Admin/Views/Options.php:332, src/Frontend/elementor-widgets/elementor-widget.php:498
 msgid "Asia/Pontianak"
 msgstr ""
 
-#: src/Admin/Views/Options.php:333, src/Frontend/elementor-widgets/elementor-widget.php:484
+#: src/Admin/Views/Options.php:333, src/Frontend/elementor-widgets/elementor-widget.php:499
 msgid "Asia/Pyongyang"
 msgstr ""
 
-#: src/Admin/Views/Options.php:334, src/Frontend/elementor-widgets/elementor-widget.php:485
+#: src/Admin/Views/Options.php:334, src/Frontend/elementor-widgets/elementor-widget.php:500
 msgid "Asia/Qatar"
 msgstr ""
 
-#: src/Admin/Views/Options.php:335, src/Frontend/elementor-widgets/elementor-widget.php:486
+#: src/Admin/Views/Options.php:335, src/Frontend/elementor-widgets/elementor-widget.php:501
 msgid "Asia/Qyzylorda"
 msgstr ""
 
-#: src/Admin/Views/Options.php:336, src/Frontend/elementor-widgets/elementor-widget.php:487
+#: src/Admin/Views/Options.php:336, src/Frontend/elementor-widgets/elementor-widget.php:502
 msgid "Asia/Rangoon"
 msgstr ""
 
-#: src/Admin/Views/Options.php:337, src/Frontend/elementor-widgets/elementor-widget.php:488
+#: src/Admin/Views/Options.php:337, src/Frontend/elementor-widgets/elementor-widget.php:503
 msgid "Asia/Riyadh"
 msgstr ""
 
-#: src/Admin/Views/Options.php:338, src/Frontend/elementor-widgets/elementor-widget.php:489
+#: src/Admin/Views/Options.php:338, src/Frontend/elementor-widgets/elementor-widget.php:504
 msgid "Asia/Saigon"
 msgstr ""
 
-#: src/Admin/Views/Options.php:339, src/Frontend/elementor-widgets/elementor-widget.php:490
+#: src/Admin/Views/Options.php:339, src/Frontend/elementor-widgets/elementor-widget.php:505
 msgid "Asia/Sakhalin"
 msgstr ""
 
-#: src/Admin/Views/Options.php:340, src/Frontend/elementor-widgets/elementor-widget.php:491
+#: src/Admin/Views/Options.php:340, src/Frontend/elementor-widgets/elementor-widget.php:506
 msgid "Asia/Samarkand"
 msgstr ""
 
-#: src/Admin/Views/Options.php:341, src/Frontend/elementor-widgets/elementor-widget.php:492
+#: src/Admin/Views/Options.php:341, src/Frontend/elementor-widgets/elementor-widget.php:507
 msgid "Asia/Seoul"
 msgstr ""
 
-#: src/Admin/Views/Options.php:342, src/Frontend/elementor-widgets/elementor-widget.php:493
+#: src/Admin/Views/Options.php:342, src/Frontend/elementor-widgets/elementor-widget.php:508
 msgid "Asia/Shanghai"
 msgstr ""
 
-#: src/Admin/Views/Options.php:343, src/Frontend/elementor-widgets/elementor-widget.php:494
+#: src/Admin/Views/Options.php:343, src/Frontend/elementor-widgets/elementor-widget.php:509
 msgid "Asia/Singapore"
 msgstr ""
 
-#: src/Admin/Views/Options.php:344, src/Frontend/elementor-widgets/elementor-widget.php:495
+#: src/Admin/Views/Options.php:344, src/Frontend/elementor-widgets/elementor-widget.php:510
 msgid "Asia/Srednekolymsk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:345, src/Frontend/elementor-widgets/elementor-widget.php:496
+#: src/Admin/Views/Options.php:345, src/Frontend/elementor-widgets/elementor-widget.php:511
 msgid "Asia/Taipei"
 msgstr ""
 
-#: src/Admin/Views/Options.php:346, src/Frontend/elementor-widgets/elementor-widget.php:497
+#: src/Admin/Views/Options.php:346, src/Frontend/elementor-widgets/elementor-widget.php:512
 msgid "Asia/Tashkent"
 msgstr ""
 
-#: src/Admin/Views/Options.php:347, src/Frontend/elementor-widgets/elementor-widget.php:498
+#: src/Admin/Views/Options.php:347, src/Frontend/elementor-widgets/elementor-widget.php:513
 msgid "Asia/Tbilisi"
 msgstr ""
 
-#: src/Admin/Views/Options.php:348, src/Frontend/elementor-widgets/elementor-widget.php:499
+#: src/Admin/Views/Options.php:348, src/Frontend/elementor-widgets/elementor-widget.php:514
 msgid "Asia/Tehran"
 msgstr ""
 
-#: src/Admin/Views/Options.php:349, src/Frontend/elementor-widgets/elementor-widget.php:500
+#: src/Admin/Views/Options.php:349, src/Frontend/elementor-widgets/elementor-widget.php:515
 msgid "Asia/Tel_Aviv"
 msgstr ""
 
-#: src/Admin/Views/Options.php:350, src/Frontend/elementor-widgets/elementor-widget.php:501
+#: src/Admin/Views/Options.php:350, src/Frontend/elementor-widgets/elementor-widget.php:516
 msgid "Asia/Thimbu"
 msgstr ""
 
-#: src/Admin/Views/Options.php:351, src/Frontend/elementor-widgets/elementor-widget.php:502
+#: src/Admin/Views/Options.php:351, src/Frontend/elementor-widgets/elementor-widget.php:517
 msgid "Asia/Thimphu"
 msgstr ""
 
-#: src/Admin/Views/Options.php:352, src/Frontend/elementor-widgets/elementor-widget.php:503
+#: src/Admin/Views/Options.php:352, src/Frontend/elementor-widgets/elementor-widget.php:518
 msgid "Asia/Tokyo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:353, src/Frontend/elementor-widgets/elementor-widget.php:504
+#: src/Admin/Views/Options.php:353, src/Frontend/elementor-widgets/elementor-widget.php:519
 msgid "Asia/Tomsk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:354, src/Frontend/elementor-widgets/elementor-widget.php:505
+#: src/Admin/Views/Options.php:354, src/Frontend/elementor-widgets/elementor-widget.php:520
 msgid "Asia/Ujung_Pandang"
 msgstr ""
 
-#: src/Admin/Views/Options.php:355, src/Frontend/elementor-widgets/elementor-widget.php:506
+#: src/Admin/Views/Options.php:355, src/Frontend/elementor-widgets/elementor-widget.php:521
 msgid "Asia/Ulaanbaatar"
 msgstr ""
 
-#: src/Admin/Views/Options.php:356, src/Frontend/elementor-widgets/elementor-widget.php:507
+#: src/Admin/Views/Options.php:356, src/Frontend/elementor-widgets/elementor-widget.php:522
 msgid "Asia/Ulan_Bator"
 msgstr ""
 
-#: src/Admin/Views/Options.php:357, src/Frontend/elementor-widgets/elementor-widget.php:508
+#: src/Admin/Views/Options.php:357, src/Frontend/elementor-widgets/elementor-widget.php:523
 msgid "Asia/Urumqi"
 msgstr ""
 
-#: src/Admin/Views/Options.php:358, src/Frontend/elementor-widgets/elementor-widget.php:509
+#: src/Admin/Views/Options.php:358, src/Frontend/elementor-widgets/elementor-widget.php:524
 msgid "Asia/Ust-Nera"
 msgstr ""
 
-#: src/Admin/Views/Options.php:359, src/Frontend/elementor-widgets/elementor-widget.php:510
+#: src/Admin/Views/Options.php:359, src/Frontend/elementor-widgets/elementor-widget.php:525
 msgid "Asia/Vientiane"
 msgstr ""
 
-#: src/Admin/Views/Options.php:360, src/Frontend/elementor-widgets/elementor-widget.php:511
+#: src/Admin/Views/Options.php:360, src/Frontend/elementor-widgets/elementor-widget.php:526
 msgid "Asia/Vladivostok"
 msgstr ""
 
-#: src/Admin/Views/Options.php:361, src/Frontend/elementor-widgets/elementor-widget.php:512
+#: src/Admin/Views/Options.php:361, src/Frontend/elementor-widgets/elementor-widget.php:527
 msgid "Asia/Yakutsk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:362, src/Frontend/elementor-widgets/elementor-widget.php:513
+#: src/Admin/Views/Options.php:362, src/Frontend/elementor-widgets/elementor-widget.php:528
 msgid "Asia/Yangon"
 msgstr ""
 
-#: src/Admin/Views/Options.php:363, src/Frontend/elementor-widgets/elementor-widget.php:514
+#: src/Admin/Views/Options.php:363, src/Frontend/elementor-widgets/elementor-widget.php:529
 msgid "Asia/Yekaterinburg"
 msgstr ""
 
-#: src/Admin/Views/Options.php:364, src/Frontend/elementor-widgets/elementor-widget.php:515
+#: src/Admin/Views/Options.php:364, src/Frontend/elementor-widgets/elementor-widget.php:530
 msgid "Asia/Yerevan"
 msgstr ""
 
-#: src/Admin/Views/Options.php:365, src/Frontend/elementor-widgets/elementor-widget.php:516
+#: src/Admin/Views/Options.php:365, src/Frontend/elementor-widgets/elementor-widget.php:531
 msgid "Atlantic/Azores"
 msgstr ""
 
-#: src/Admin/Views/Options.php:366, src/Frontend/elementor-widgets/elementor-widget.php:517
+#: src/Admin/Views/Options.php:366, src/Frontend/elementor-widgets/elementor-widget.php:532
 msgid "Atlantic/Bermuda"
 msgstr ""
 
-#: src/Admin/Views/Options.php:367, src/Frontend/elementor-widgets/elementor-widget.php:518
+#: src/Admin/Views/Options.php:367, src/Frontend/elementor-widgets/elementor-widget.php:533
 msgid "Atlantic/Canary"
 msgstr ""
 
-#: src/Admin/Views/Options.php:368, src/Frontend/elementor-widgets/elementor-widget.php:519
+#: src/Admin/Views/Options.php:368, src/Frontend/elementor-widgets/elementor-widget.php:534
 msgid "Atlantic/Cape_Verde"
 msgstr ""
 
-#: src/Admin/Views/Options.php:369, src/Frontend/elementor-widgets/elementor-widget.php:520
+#: src/Admin/Views/Options.php:369, src/Frontend/elementor-widgets/elementor-widget.php:535
 msgid "Atlantic/Faeroe"
 msgstr ""
 
-#: src/Admin/Views/Options.php:370, src/Frontend/elementor-widgets/elementor-widget.php:521
+#: src/Admin/Views/Options.php:370, src/Frontend/elementor-widgets/elementor-widget.php:536
 msgid "Atlantic/Faroe"
 msgstr ""
 
-#: src/Admin/Views/Options.php:371, src/Frontend/elementor-widgets/elementor-widget.php:522
+#: src/Admin/Views/Options.php:371, src/Frontend/elementor-widgets/elementor-widget.php:537
 msgid "Atlantic/Jan_Mayen"
 msgstr ""
 
-#: src/Admin/Views/Options.php:372, src/Frontend/elementor-widgets/elementor-widget.php:523
+#: src/Admin/Views/Options.php:372, src/Frontend/elementor-widgets/elementor-widget.php:538
 msgid "Atlantic/Madeira"
 msgstr ""
 
-#: src/Admin/Views/Options.php:373, src/Frontend/elementor-widgets/elementor-widget.php:524
+#: src/Admin/Views/Options.php:373, src/Frontend/elementor-widgets/elementor-widget.php:539
 msgid "Atlantic/Reykjavik"
 msgstr ""
 
-#: src/Admin/Views/Options.php:374, src/Frontend/elementor-widgets/elementor-widget.php:525
+#: src/Admin/Views/Options.php:374, src/Frontend/elementor-widgets/elementor-widget.php:540
 msgid "Atlantic/South_Georgia"
 msgstr ""
 
-#: src/Admin/Views/Options.php:375, src/Frontend/elementor-widgets/elementor-widget.php:526
+#: src/Admin/Views/Options.php:375, src/Frontend/elementor-widgets/elementor-widget.php:541
 msgid "Atlantic/St_Helena"
 msgstr ""
 
-#: src/Admin/Views/Options.php:376, src/Frontend/elementor-widgets/elementor-widget.php:527
+#: src/Admin/Views/Options.php:376, src/Frontend/elementor-widgets/elementor-widget.php:542
 msgid "Atlantic/Stanley"
 msgstr ""
 
-#: src/Admin/Views/Options.php:377, src/Frontend/elementor-widgets/elementor-widget.php:528
+#: src/Admin/Views/Options.php:377, src/Frontend/elementor-widgets/elementor-widget.php:543
 msgid "Australia/ACT"
 msgstr ""
 
-#: src/Admin/Views/Options.php:378, src/Frontend/elementor-widgets/elementor-widget.php:529
+#: src/Admin/Views/Options.php:378, src/Frontend/elementor-widgets/elementor-widget.php:544
 msgid "Australia/Adelaide"
 msgstr ""
 
-#: src/Admin/Views/Options.php:379, src/Frontend/elementor-widgets/elementor-widget.php:530
+#: src/Admin/Views/Options.php:379, src/Frontend/elementor-widgets/elementor-widget.php:545
 msgid "Australia/Brisbane"
 msgstr ""
 
-#: src/Admin/Views/Options.php:380, src/Frontend/elementor-widgets/elementor-widget.php:531
+#: src/Admin/Views/Options.php:380, src/Frontend/elementor-widgets/elementor-widget.php:546
 msgid "Asia/Broken_Hill"
 msgstr ""
 
-#: src/Admin/Views/Options.php:381, src/Frontend/elementor-widgets/elementor-widget.php:532
+#: src/Admin/Views/Options.php:381, src/Frontend/elementor-widgets/elementor-widget.php:547
 msgid "Australia/Canberra"
 msgstr ""
 
-#: src/Admin/Views/Options.php:382, src/Frontend/elementor-widgets/elementor-widget.php:533
+#: src/Admin/Views/Options.php:382, src/Frontend/elementor-widgets/elementor-widget.php:548
 msgid "Australia/Currie"
 msgstr ""
 
-#: src/Admin/Views/Options.php:383, src/Frontend/elementor-widgets/elementor-widget.php:534
+#: src/Admin/Views/Options.php:383, src/Frontend/elementor-widgets/elementor-widget.php:549
 msgid "Australia/Darwin"
 msgstr ""
 
-#: src/Admin/Views/Options.php:384, src/Frontend/elementor-widgets/elementor-widget.php:535
+#: src/Admin/Views/Options.php:384, src/Frontend/elementor-widgets/elementor-widget.php:550
 msgid "Australia/Eucla"
 msgstr ""
 
-#: src/Admin/Views/Options.php:385, src/Frontend/elementor-widgets/elementor-widget.php:536
+#: src/Admin/Views/Options.php:385, src/Frontend/elementor-widgets/elementor-widget.php:551
 msgid "Australia/Hobart"
 msgstr ""
 
-#: src/Admin/Views/Options.php:386, src/Frontend/elementor-widgets/elementor-widget.php:537
+#: src/Admin/Views/Options.php:386, src/Frontend/elementor-widgets/elementor-widget.php:552
 msgid "Australia/LHI"
 msgstr ""
 
-#: src/Admin/Views/Options.php:387, src/Frontend/elementor-widgets/elementor-widget.php:538
+#: src/Admin/Views/Options.php:387, src/Frontend/elementor-widgets/elementor-widget.php:553
 msgid "Australia/Lindeman"
 msgstr ""
 
-#: src/Admin/Views/Options.php:388, src/Frontend/elementor-widgets/elementor-widget.php:539
+#: src/Admin/Views/Options.php:388, src/Frontend/elementor-widgets/elementor-widget.php:554
 msgid "Australia/Lord_Howe"
 msgstr ""
 
-#: src/Admin/Views/Options.php:389, src/Frontend/elementor-widgets/elementor-widget.php:540
+#: src/Admin/Views/Options.php:389, src/Frontend/elementor-widgets/elementor-widget.php:555
 msgid "Australia/Melbourne"
 msgstr ""
 
-#: src/Admin/Views/Options.php:390, src/Frontend/elementor-widgets/elementor-widget.php:541
+#: src/Admin/Views/Options.php:390, src/Frontend/elementor-widgets/elementor-widget.php:556
 msgid "Australia/NSW"
 msgstr ""
 
-#: src/Admin/Views/Options.php:391, src/Frontend/elementor-widgets/elementor-widget.php:542
+#: src/Admin/Views/Options.php:391, src/Frontend/elementor-widgets/elementor-widget.php:557
 msgid "Australia/North"
 msgstr ""
 
-#: src/Admin/Views/Options.php:392, src/Frontend/elementor-widgets/elementor-widget.php:543
+#: src/Admin/Views/Options.php:392, src/Frontend/elementor-widgets/elementor-widget.php:558
 msgid "Australia/Perth"
 msgstr ""
 
-#: src/Admin/Views/Options.php:393, src/Frontend/elementor-widgets/elementor-widget.php:544
+#: src/Admin/Views/Options.php:393, src/Frontend/elementor-widgets/elementor-widget.php:559
 msgid "Australia/Queensland"
 msgstr ""
 
-#: src/Admin/Views/Options.php:394, src/Frontend/elementor-widgets/elementor-widget.php:545
+#: src/Admin/Views/Options.php:394, src/Frontend/elementor-widgets/elementor-widget.php:560
 msgid "Australia/South"
 msgstr ""
 
-#: src/Admin/Views/Options.php:395, src/Frontend/elementor-widgets/elementor-widget.php:546
+#: src/Admin/Views/Options.php:395, src/Frontend/elementor-widgets/elementor-widget.php:561
 msgid "Australia/Sydney"
 msgstr ""
 
-#: src/Admin/Views/Options.php:396, src/Frontend/elementor-widgets/elementor-widget.php:547
+#: src/Admin/Views/Options.php:396, src/Frontend/elementor-widgets/elementor-widget.php:562
 msgid "Australia/Tasmania"
 msgstr ""
 
-#: src/Admin/Views/Options.php:397, src/Frontend/elementor-widgets/elementor-widget.php:548
+#: src/Admin/Views/Options.php:397, src/Frontend/elementor-widgets/elementor-widget.php:563
 msgid "Australia/Victoria"
 msgstr ""
 
-#: src/Admin/Views/Options.php:398, src/Frontend/elementor-widgets/elementor-widget.php:549
+#: src/Admin/Views/Options.php:398, src/Frontend/elementor-widgets/elementor-widget.php:564
 msgid "Australia/West"
 msgstr ""
 
-#: src/Admin/Views/Options.php:399, src/Frontend/elementor-widgets/elementor-widget.php:550
+#: src/Admin/Views/Options.php:399, src/Frontend/elementor-widgets/elementor-widget.php:565
 msgid "Australia/Yancowinna"
 msgstr ""
 
-#: src/Admin/Views/Options.php:400, src/Frontend/elementor-widgets/elementor-widget.php:551
+#: src/Admin/Views/Options.php:400, src/Frontend/elementor-widgets/elementor-widget.php:566
 msgid "Brazil/Acre"
 msgstr ""
 
-#: src/Admin/Views/Options.php:401, src/Frontend/elementor-widgets/elementor-widget.php:552
+#: src/Admin/Views/Options.php:401, src/Frontend/elementor-widgets/elementor-widget.php:567
 msgid "Brazil/DeNoronha"
 msgstr ""
 
-#: src/Admin/Views/Options.php:402, src/Frontend/elementor-widgets/elementor-widget.php:553
+#: src/Admin/Views/Options.php:402, src/Frontend/elementor-widgets/elementor-widget.php:568
 msgid "Brazil/East"
 msgstr ""
 
-#: src/Admin/Views/Options.php:403, src/Frontend/elementor-widgets/elementor-widget.php:554
+#: src/Admin/Views/Options.php:403, src/Frontend/elementor-widgets/elementor-widget.php:569
 msgid "Brazil/West"
 msgstr ""
 
-#: src/Admin/Views/Options.php:404, src/Frontend/elementor-widgets/elementor-widget.php:555
+#: src/Admin/Views/Options.php:404, src/Frontend/elementor-widgets/elementor-widget.php:570
 msgid "CET"
 msgstr ""
 
-#: src/Admin/Views/Options.php:405, src/Frontend/elementor-widgets/elementor-widget.php:556
+#: src/Admin/Views/Options.php:405, src/Frontend/elementor-widgets/elementor-widget.php:571
 msgid "CST6CDT"
 msgstr ""
 
-#: src/Admin/Views/Options.php:406, src/Frontend/elementor-widgets/elementor-widget.php:557
+#: src/Admin/Views/Options.php:406, src/Frontend/elementor-widgets/elementor-widget.php:572
 msgid "Canada/Atlantic"
 msgstr ""
 
-#: src/Admin/Views/Options.php:407, src/Frontend/elementor-widgets/elementor-widget.php:558
+#: src/Admin/Views/Options.php:407, src/Frontend/elementor-widgets/elementor-widget.php:573
 msgid "Canada/Central"
 msgstr ""
 
-#: src/Admin/Views/Options.php:408, src/Frontend/elementor-widgets/elementor-widget.php:559
+#: src/Admin/Views/Options.php:408, src/Frontend/elementor-widgets/elementor-widget.php:574
 msgid "Canada/Eastern"
 msgstr ""
 
-#: src/Admin/Views/Options.php:409, src/Frontend/elementor-widgets/elementor-widget.php:560
+#: src/Admin/Views/Options.php:409, src/Frontend/elementor-widgets/elementor-widget.php:575
 msgid "Canada/Mountain"
 msgstr ""
 
-#: src/Admin/Views/Options.php:410, src/Frontend/elementor-widgets/elementor-widget.php:561
+#: src/Admin/Views/Options.php:410, src/Frontend/elementor-widgets/elementor-widget.php:576
 msgid "Canada/Newfoundland"
 msgstr ""
 
-#: src/Admin/Views/Options.php:411, src/Frontend/elementor-widgets/elementor-widget.php:562
+#: src/Admin/Views/Options.php:411, src/Frontend/elementor-widgets/elementor-widget.php:577
 msgid "Canada/Pacific"
 msgstr ""
 
-#: src/Admin/Views/Options.php:412, src/Frontend/elementor-widgets/elementor-widget.php:563
+#: src/Admin/Views/Options.php:412, src/Frontend/elementor-widgets/elementor-widget.php:578
 msgid "Canada/Saskatchewan"
 msgstr ""
 
-#: src/Admin/Views/Options.php:413, src/Frontend/elementor-widgets/elementor-widget.php:564
+#: src/Admin/Views/Options.php:413, src/Frontend/elementor-widgets/elementor-widget.php:579
 msgid "Canada/Yukon"
 msgstr ""
 
-#: src/Admin/Views/Options.php:414, src/Frontend/elementor-widgets/elementor-widget.php:565
+#: src/Admin/Views/Options.php:414, src/Frontend/elementor-widgets/elementor-widget.php:580
 msgid "Chile/Continental"
 msgstr ""
 
-#: src/Admin/Views/Options.php:415, src/Frontend/elementor-widgets/elementor-widget.php:566
+#: src/Admin/Views/Options.php:415, src/Frontend/elementor-widgets/elementor-widget.php:581
 msgid "Chile/EasterIsland"
 msgstr ""
 
-#: src/Admin/Views/Options.php:416, src/Frontend/elementor-widgets/elementor-widget.php:567
+#: src/Admin/Views/Options.php:416, src/Frontend/elementor-widgets/elementor-widget.php:582
 msgid "Cuba"
 msgstr ""
 
-#: src/Admin/Views/Options.php:417, src/Frontend/elementor-widgets/elementor-widget.php:568
+#: src/Admin/Views/Options.php:417, src/Frontend/elementor-widgets/elementor-widget.php:583
 msgid "EET"
 msgstr ""
 
-#: src/Admin/Views/Options.php:418, src/Frontend/elementor-widgets/elementor-widget.php:569
+#: src/Admin/Views/Options.php:418, src/Frontend/elementor-widgets/elementor-widget.php:584
 msgid "EST"
 msgstr ""
 
-#: src/Admin/Views/Options.php:419, src/Frontend/elementor-widgets/elementor-widget.php:570
+#: src/Admin/Views/Options.php:419, src/Frontend/elementor-widgets/elementor-widget.php:585
 msgid "EST5EDT"
 msgstr ""
 
-#: src/Admin/Views/Options.php:420, src/Frontend/elementor-widgets/elementor-widget.php:571
+#: src/Admin/Views/Options.php:420, src/Frontend/elementor-widgets/elementor-widget.php:586
 msgid "Egypt"
 msgstr ""
 
-#: src/Admin/Views/Options.php:421, src/Frontend/elementor-widgets/elementor-widget.php:572
+#: src/Admin/Views/Options.php:421, src/Frontend/elementor-widgets/elementor-widget.php:587
 msgid "Eire"
 msgstr ""
 
-#: src/Admin/Views/Options.php:422, src/Frontend/elementor-widgets/elementor-widget.php:573
+#: src/Admin/Views/Options.php:422, src/Frontend/elementor-widgets/elementor-widget.php:588
 msgid "Etc/GMT"
 msgstr ""
 
-#: src/Admin/Views/Options.php:423, src/Frontend/elementor-widgets/elementor-widget.php:574
+#: src/Admin/Views/Options.php:423, src/Frontend/elementor-widgets/elementor-widget.php:589
 msgid "Etc/GMT+0"
 msgstr ""
 
-#: src/Admin/Views/Options.php:424, src/Frontend/elementor-widgets/elementor-widget.php:575
+#: src/Admin/Views/Options.php:424, src/Frontend/elementor-widgets/elementor-widget.php:590
 msgid "Etc/GMT+1"
 msgstr ""
 
-#: src/Admin/Views/Options.php:425, src/Frontend/elementor-widgets/elementor-widget.php:576
+#: src/Admin/Views/Options.php:425, src/Frontend/elementor-widgets/elementor-widget.php:591
 msgid "Etc/GMT+10"
 msgstr ""
 
-#: src/Admin/Views/Options.php:426, src/Frontend/elementor-widgets/elementor-widget.php:577
+#: src/Admin/Views/Options.php:426, src/Frontend/elementor-widgets/elementor-widget.php:592
 msgid "Etc/GMT+11"
 msgstr ""
 
-#: src/Admin/Views/Options.php:427, src/Frontend/elementor-widgets/elementor-widget.php:578
+#: src/Admin/Views/Options.php:427, src/Frontend/elementor-widgets/elementor-widget.php:593
 msgid "Etc/GMT+12"
 msgstr ""
 
-#: src/Admin/Views/Options.php:428, src/Frontend/elementor-widgets/elementor-widget.php:579
+#: src/Admin/Views/Options.php:428, src/Frontend/elementor-widgets/elementor-widget.php:594
 msgid "Etc/GMT+2"
 msgstr ""
 
-#: src/Admin/Views/Options.php:429, src/Frontend/elementor-widgets/elementor-widget.php:580
+#: src/Admin/Views/Options.php:429, src/Frontend/elementor-widgets/elementor-widget.php:595
 msgid "Etc/GMT+3"
 msgstr ""
 
-#: src/Admin/Views/Options.php:430, src/Frontend/elementor-widgets/elementor-widget.php:581
+#: src/Admin/Views/Options.php:430, src/Frontend/elementor-widgets/elementor-widget.php:596
 msgid "Etc/GMT+4"
 msgstr ""
 
-#: src/Admin/Views/Options.php:431, src/Frontend/elementor-widgets/elementor-widget.php:582
+#: src/Admin/Views/Options.php:431, src/Frontend/elementor-widgets/elementor-widget.php:597
 msgid "Etc/GMT+5"
 msgstr ""
 
-#: src/Admin/Views/Options.php:432, src/Frontend/elementor-widgets/elementor-widget.php:583
+#: src/Admin/Views/Options.php:432, src/Frontend/elementor-widgets/elementor-widget.php:598
 msgid "Etc/GMT+6"
 msgstr ""
 
-#: src/Admin/Views/Options.php:433, src/Frontend/elementor-widgets/elementor-widget.php:584
+#: src/Admin/Views/Options.php:433, src/Frontend/elementor-widgets/elementor-widget.php:599
 msgid "Etc/GMT+7"
 msgstr ""
 
-#: src/Admin/Views/Options.php:434, src/Frontend/elementor-widgets/elementor-widget.php:585
+#: src/Admin/Views/Options.php:434, src/Frontend/elementor-widgets/elementor-widget.php:600
 msgid "Etc/GMT+8"
 msgstr ""
 
-#: src/Admin/Views/Options.php:435, src/Frontend/elementor-widgets/elementor-widget.php:586
+#: src/Admin/Views/Options.php:435, src/Frontend/elementor-widgets/elementor-widget.php:601
 msgid "Etc/GMT+9"
 msgstr ""
 
-#: src/Admin/Views/Options.php:436, src/Frontend/elementor-widgets/elementor-widget.php:587
+#: src/Admin/Views/Options.php:436, src/Frontend/elementor-widgets/elementor-widget.php:602
 msgid "Etc/GMT-0"
 msgstr ""
 
-#: src/Admin/Views/Options.php:437, src/Frontend/elementor-widgets/elementor-widget.php:588
+#: src/Admin/Views/Options.php:437, src/Frontend/elementor-widgets/elementor-widget.php:603
 msgid "Etc/GMT-1"
 msgstr ""
 
-#: src/Admin/Views/Options.php:438, src/Frontend/elementor-widgets/elementor-widget.php:589
+#: src/Admin/Views/Options.php:438, src/Frontend/elementor-widgets/elementor-widget.php:604
 msgid "Etc/GMT-10"
 msgstr ""
 
-#: src/Admin/Views/Options.php:439, src/Frontend/elementor-widgets/elementor-widget.php:590
+#: src/Admin/Views/Options.php:439, src/Frontend/elementor-widgets/elementor-widget.php:605
 msgid "Etc/GMT-11"
 msgstr ""
 
-#: src/Admin/Views/Options.php:440, src/Frontend/elementor-widgets/elementor-widget.php:591
+#: src/Admin/Views/Options.php:440, src/Frontend/elementor-widgets/elementor-widget.php:606
 msgid "Etc/GMT-12"
 msgstr ""
 
-#: src/Admin/Views/Options.php:441, src/Frontend/elementor-widgets/elementor-widget.php:592
+#: src/Admin/Views/Options.php:441, src/Frontend/elementor-widgets/elementor-widget.php:607
 msgid "Etc/GMT-13"
 msgstr ""
 
-#: src/Admin/Views/Options.php:442, src/Frontend/elementor-widgets/elementor-widget.php:593
+#: src/Admin/Views/Options.php:442, src/Frontend/elementor-widgets/elementor-widget.php:608
 msgid "Etc/GMT-14"
 msgstr ""
 
-#: src/Admin/Views/Options.php:443, src/Frontend/elementor-widgets/elementor-widget.php:594
+#: src/Admin/Views/Options.php:443, src/Frontend/elementor-widgets/elementor-widget.php:609
 msgid "Etc/GMT-2"
 msgstr ""
 
-#: src/Admin/Views/Options.php:444, src/Frontend/elementor-widgets/elementor-widget.php:595
+#: src/Admin/Views/Options.php:444, src/Frontend/elementor-widgets/elementor-widget.php:610
 msgid "Etc/GMT-3"
 msgstr ""
 
-#: src/Admin/Views/Options.php:445, src/Frontend/elementor-widgets/elementor-widget.php:596
+#: src/Admin/Views/Options.php:445, src/Frontend/elementor-widgets/elementor-widget.php:611
 msgid "Etc/GMT-4"
 msgstr ""
 
-#: src/Admin/Views/Options.php:446, src/Frontend/elementor-widgets/elementor-widget.php:597
+#: src/Admin/Views/Options.php:446, src/Frontend/elementor-widgets/elementor-widget.php:612
 msgid "Etc/GMT-5"
 msgstr ""
 
-#: src/Admin/Views/Options.php:447, src/Frontend/elementor-widgets/elementor-widget.php:598
+#: src/Admin/Views/Options.php:447, src/Frontend/elementor-widgets/elementor-widget.php:613
 msgid "Etc/GMT-6"
 msgstr ""
 
-#: src/Admin/Views/Options.php:448, src/Frontend/elementor-widgets/elementor-widget.php:599
+#: src/Admin/Views/Options.php:448, src/Frontend/elementor-widgets/elementor-widget.php:614
 msgid "Etc/GMT-7"
 msgstr ""
 
-#: src/Admin/Views/Options.php:449, src/Frontend/elementor-widgets/elementor-widget.php:600
+#: src/Admin/Views/Options.php:449, src/Frontend/elementor-widgets/elementor-widget.php:615
 msgid "Etc/GMT-8"
 msgstr ""
 
-#: src/Admin/Views/Options.php:450, src/Frontend/elementor-widgets/elementor-widget.php:601
+#: src/Admin/Views/Options.php:450, src/Frontend/elementor-widgets/elementor-widget.php:616
 msgid "Etc/GMT-9"
 msgstr ""
 
-#: src/Admin/Views/Options.php:451, src/Frontend/elementor-widgets/elementor-widget.php:602
+#: src/Admin/Views/Options.php:451, src/Frontend/elementor-widgets/elementor-widget.php:617
 msgid "Etc/GMT0"
 msgstr ""
 
-#: src/Admin/Views/Options.php:452, src/Frontend/elementor-widgets/elementor-widget.php:603
+#: src/Admin/Views/Options.php:452, src/Frontend/elementor-widgets/elementor-widget.php:618
 msgid "Etc/Greenwich"
 msgstr ""
 
-#: src/Admin/Views/Options.php:453, src/Frontend/elementor-widgets/elementor-widget.php:604
+#: src/Admin/Views/Options.php:453, src/Frontend/elementor-widgets/elementor-widget.php:619
 msgid "Etc/UCT"
 msgstr ""
 
-#: src/Admin/Views/Options.php:454, src/Frontend/elementor-widgets/elementor-widget.php:605
+#: src/Admin/Views/Options.php:454, src/Frontend/elementor-widgets/elementor-widget.php:620
 msgid "Etc/UTC"
 msgstr ""
 
-#: src/Admin/Views/Options.php:455, src/Frontend/elementor-widgets/elementor-widget.php:606
+#: src/Admin/Views/Options.php:455, src/Frontend/elementor-widgets/elementor-widget.php:621
 msgid "Etc/Universal"
 msgstr ""
 
-#: src/Admin/Views/Options.php:456, src/Frontend/elementor-widgets/elementor-widget.php:607
+#: src/Admin/Views/Options.php:456, src/Frontend/elementor-widgets/elementor-widget.php:622
 msgid "Etc/Zulu"
 msgstr ""
 
-#: src/Admin/Views/Options.php:457, src/Frontend/elementor-widgets/elementor-widget.php:608
+#: src/Admin/Views/Options.php:457, src/Frontend/elementor-widgets/elementor-widget.php:623
 msgid "Europe/Amsterdam"
 msgstr ""
 
-#: src/Admin/Views/Options.php:458, src/Frontend/elementor-widgets/elementor-widget.php:609
+#: src/Admin/Views/Options.php:458, src/Frontend/elementor-widgets/elementor-widget.php:624
 msgid "Europe/Andorra"
 msgstr ""
 
-#: src/Admin/Views/Options.php:459, src/Frontend/elementor-widgets/elementor-widget.php:610
+#: src/Admin/Views/Options.php:459, src/Frontend/elementor-widgets/elementor-widget.php:625
 msgid "Europe/Astrakhan"
 msgstr ""
 
-#: src/Admin/Views/Options.php:460, src/Frontend/elementor-widgets/elementor-widget.php:611
+#: src/Admin/Views/Options.php:460, src/Frontend/elementor-widgets/elementor-widget.php:626
 msgid "Europe/Athens"
 msgstr ""
 
-#: src/Admin/Views/Options.php:461, src/Frontend/elementor-widgets/elementor-widget.php:612
+#: src/Admin/Views/Options.php:461, src/Frontend/elementor-widgets/elementor-widget.php:627
 msgid "Europe/Belfast"
 msgstr ""
 
-#: src/Admin/Views/Options.php:462, src/Frontend/elementor-widgets/elementor-widget.php:613
+#: src/Admin/Views/Options.php:462, src/Frontend/elementor-widgets/elementor-widget.php:628
 msgid "Europe/Belgrade"
 msgstr ""
 
-#: src/Admin/Views/Options.php:463, src/Frontend/elementor-widgets/elementor-widget.php:614
+#: src/Admin/Views/Options.php:463, src/Frontend/elementor-widgets/elementor-widget.php:629
 msgid "Europe/Berlin"
 msgstr ""
 
-#: src/Admin/Views/Options.php:464, src/Frontend/elementor-widgets/elementor-widget.php:615
+#: src/Admin/Views/Options.php:464, src/Frontend/elementor-widgets/elementor-widget.php:630
 msgid "Europe/Bratislava"
 msgstr ""
 
-#: src/Admin/Views/Options.php:465, src/Frontend/elementor-widgets/elementor-widget.php:616
+#: src/Admin/Views/Options.php:465, src/Frontend/elementor-widgets/elementor-widget.php:631
 msgid "Europe/Brussels"
 msgstr ""
 
-#: src/Admin/Views/Options.php:466, src/Frontend/elementor-widgets/elementor-widget.php:617
+#: src/Admin/Views/Options.php:466, src/Frontend/elementor-widgets/elementor-widget.php:632
 msgid "Europe/Bucharest"
 msgstr ""
 
-#: src/Admin/Views/Options.php:467, src/Frontend/elementor-widgets/elementor-widget.php:618
+#: src/Admin/Views/Options.php:467, src/Frontend/elementor-widgets/elementor-widget.php:633
 msgid "Europe/Budapest"
 msgstr ""
 
-#: src/Admin/Views/Options.php:468, src/Frontend/elementor-widgets/elementor-widget.php:619
+#: src/Admin/Views/Options.php:468, src/Frontend/elementor-widgets/elementor-widget.php:634
 msgid "Europe/Busingen"
 msgstr ""
 
-#: src/Admin/Views/Options.php:469, src/Frontend/elementor-widgets/elementor-widget.php:620
+#: src/Admin/Views/Options.php:469, src/Frontend/elementor-widgets/elementor-widget.php:635
 msgid "Europe/Chisinau"
 msgstr ""
 
-#: src/Admin/Views/Options.php:470, src/Frontend/elementor-widgets/elementor-widget.php:621
+#: src/Admin/Views/Options.php:470, src/Frontend/elementor-widgets/elementor-widget.php:636
 msgid "Europe/Copenhagen"
 msgstr ""
 
-#: src/Admin/Views/Options.php:471, src/Frontend/elementor-widgets/elementor-widget.php:622
+#: src/Admin/Views/Options.php:471, src/Frontend/elementor-widgets/elementor-widget.php:637
 msgid "Europe/Dublin"
 msgstr ""
 
-#: src/Admin/Views/Options.php:472, src/Frontend/elementor-widgets/elementor-widget.php:623
+#: src/Admin/Views/Options.php:472, src/Frontend/elementor-widgets/elementor-widget.php:638
 msgid "Europe/Gibraltar"
 msgstr ""
 
-#: src/Admin/Views/Options.php:473, src/Frontend/elementor-widgets/elementor-widget.php:624
+#: src/Admin/Views/Options.php:473, src/Frontend/elementor-widgets/elementor-widget.php:639
 msgid "Europe/Guernsey"
 msgstr ""
 
-#: src/Admin/Views/Options.php:474, src/Frontend/elementor-widgets/elementor-widget.php:625
+#: src/Admin/Views/Options.php:474, src/Frontend/elementor-widgets/elementor-widget.php:640
 msgid "Europe/Helsinki"
 msgstr ""
 
-#: src/Admin/Views/Options.php:475, src/Frontend/elementor-widgets/elementor-widget.php:626
+#: src/Admin/Views/Options.php:475, src/Frontend/elementor-widgets/elementor-widget.php:641
 msgid "Europe/Isle_of_Man"
 msgstr ""
 
-#: src/Admin/Views/Options.php:476, src/Frontend/elementor-widgets/elementor-widget.php:627
+#: src/Admin/Views/Options.php:476, src/Frontend/elementor-widgets/elementor-widget.php:642
 msgid "Europe/Istanbul"
 msgstr ""
 
-#: src/Admin/Views/Options.php:477, src/Frontend/elementor-widgets/elementor-widget.php:628
+#: src/Admin/Views/Options.php:477, src/Frontend/elementor-widgets/elementor-widget.php:643
 msgid "Europe/Jersey"
 msgstr ""
 
-#: src/Admin/Views/Options.php:478, src/Frontend/elementor-widgets/elementor-widget.php:629
+#: src/Admin/Views/Options.php:478, src/Frontend/elementor-widgets/elementor-widget.php:644
 msgid "Europe/Kaliningrad"
 msgstr ""
 
-#: src/Admin/Views/Options.php:479, src/Frontend/elementor-widgets/elementor-widget.php:630
+#: src/Admin/Views/Options.php:479, src/Frontend/elementor-widgets/elementor-widget.php:645
 msgid "Europe/Kiev"
 msgstr ""
 
-#: src/Admin/Views/Options.php:480, src/Frontend/elementor-widgets/elementor-widget.php:631
+#: src/Admin/Views/Options.php:480, src/Frontend/elementor-widgets/elementor-widget.php:646
 msgid "Europe/Kirov"
 msgstr ""
 
-#: src/Admin/Views/Options.php:481, src/Frontend/elementor-widgets/elementor-widget.php:632
+#: src/Admin/Views/Options.php:481, src/Frontend/elementor-widgets/elementor-widget.php:647
 msgid "Europe/Lisbon"
 msgstr ""
 
-#: src/Admin/Views/Options.php:482, src/Frontend/elementor-widgets/elementor-widget.php:633
+#: src/Admin/Views/Options.php:482, src/Frontend/elementor-widgets/elementor-widget.php:648
 msgid "Europe/Ljubljana"
 msgstr ""
 
-#: src/Admin/Views/Options.php:483, src/Frontend/elementor-widgets/elementor-widget.php:634
+#: src/Admin/Views/Options.php:483, src/Frontend/elementor-widgets/elementor-widget.php:649
 msgid "Europe/London"
 msgstr ""
 
-#: src/Admin/Views/Options.php:484, src/Frontend/elementor-widgets/elementor-widget.php:635
+#: src/Admin/Views/Options.php:484, src/Frontend/elementor-widgets/elementor-widget.php:650
 msgid "Europe/Luxembourg"
 msgstr ""
 
-#: src/Admin/Views/Options.php:485, src/Frontend/elementor-widgets/elementor-widget.php:636
+#: src/Admin/Views/Options.php:485, src/Frontend/elementor-widgets/elementor-widget.php:651
 msgid "Europe/Madrid"
 msgstr ""
 
-#: src/Admin/Views/Options.php:486, src/Frontend/elementor-widgets/elementor-widget.php:637
+#: src/Admin/Views/Options.php:486, src/Frontend/elementor-widgets/elementor-widget.php:652
 msgid "Europe/Malta"
 msgstr ""
 
-#: src/Admin/Views/Options.php:487, src/Frontend/elementor-widgets/elementor-widget.php:638
+#: src/Admin/Views/Options.php:487, src/Frontend/elementor-widgets/elementor-widget.php:653
 msgid "Europe/Mariehamn"
 msgstr ""
 
-#: src/Admin/Views/Options.php:488, src/Frontend/elementor-widgets/elementor-widget.php:639
+#: src/Admin/Views/Options.php:488, src/Frontend/elementor-widgets/elementor-widget.php:654
 msgid "Europe/Minsk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:489, src/Frontend/elementor-widgets/elementor-widget.php:640
+#: src/Admin/Views/Options.php:489, src/Frontend/elementor-widgets/elementor-widget.php:655
 msgid "Europe/Monaco"
 msgstr ""
 
-#: src/Admin/Views/Options.php:490, src/Frontend/elementor-widgets/elementor-widget.php:641
+#: src/Admin/Views/Options.php:490, src/Frontend/elementor-widgets/elementor-widget.php:656
 msgid "Europe/Moscow"
 msgstr ""
 
-#: src/Admin/Views/Options.php:491, src/Frontend/elementor-widgets/elementor-widget.php:642
+#: src/Admin/Views/Options.php:491, src/Frontend/elementor-widgets/elementor-widget.php:657
 msgid "Europe/Nicosia"
 msgstr ""
 
-#: src/Admin/Views/Options.php:492, src/Frontend/elementor-widgets/elementor-widget.php:643
+#: src/Admin/Views/Options.php:492, src/Frontend/elementor-widgets/elementor-widget.php:658
 msgid "Europe/Oslo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:493, src/Frontend/elementor-widgets/elementor-widget.php:644
+#: src/Admin/Views/Options.php:493, src/Frontend/elementor-widgets/elementor-widget.php:659
 msgid "Europe/Paris"
 msgstr ""
 
-#: src/Admin/Views/Options.php:494, src/Frontend/elementor-widgets/elementor-widget.php:645
+#: src/Admin/Views/Options.php:494, src/Frontend/elementor-widgets/elementor-widget.php:660
 msgid "Europe/Podgorica"
 msgstr ""
 
-#: src/Admin/Views/Options.php:495, src/Frontend/elementor-widgets/elementor-widget.php:646
+#: src/Admin/Views/Options.php:495, src/Frontend/elementor-widgets/elementor-widget.php:661
 msgid "Europe/Prague"
 msgstr ""
 
-#: src/Admin/Views/Options.php:496, src/Frontend/elementor-widgets/elementor-widget.php:647
+#: src/Admin/Views/Options.php:496, src/Frontend/elementor-widgets/elementor-widget.php:662
 msgid "Europe/Riga"
 msgstr ""
 
-#: src/Admin/Views/Options.php:497, src/Frontend/elementor-widgets/elementor-widget.php:648
+#: src/Admin/Views/Options.php:497, src/Frontend/elementor-widgets/elementor-widget.php:663
 msgid "Europe/Rome"
 msgstr ""
 
-#: src/Admin/Views/Options.php:498, src/Frontend/elementor-widgets/elementor-widget.php:649
+#: src/Admin/Views/Options.php:498, src/Frontend/elementor-widgets/elementor-widget.php:664
 msgid "Europe/Samara"
 msgstr ""
 
-#: src/Admin/Views/Options.php:499, src/Frontend/elementor-widgets/elementor-widget.php:650
+#: src/Admin/Views/Options.php:499, src/Frontend/elementor-widgets/elementor-widget.php:665
 msgid "Europe/San_Marino"
 msgstr ""
 
-#: src/Admin/Views/Options.php:500, src/Frontend/elementor-widgets/elementor-widget.php:651
+#: src/Admin/Views/Options.php:500, src/Frontend/elementor-widgets/elementor-widget.php:666
 msgid "Europe/Sarajevo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:501, src/Frontend/elementor-widgets/elementor-widget.php:652
+#: src/Admin/Views/Options.php:501, src/Frontend/elementor-widgets/elementor-widget.php:667
 msgid "Europe/Saratov"
 msgstr ""
 
-#: src/Admin/Views/Options.php:502, src/Frontend/elementor-widgets/elementor-widget.php:653
+#: src/Admin/Views/Options.php:502, src/Frontend/elementor-widgets/elementor-widget.php:668
 msgid "Europe/Simferopol"
 msgstr ""
 
-#: src/Admin/Views/Options.php:503, src/Frontend/elementor-widgets/elementor-widget.php:654
+#: src/Admin/Views/Options.php:503, src/Frontend/elementor-widgets/elementor-widget.php:669
 msgid "Europe/Skopje"
 msgstr ""
 
-#: src/Admin/Views/Options.php:504, src/Frontend/elementor-widgets/elementor-widget.php:655
+#: src/Admin/Views/Options.php:504, src/Frontend/elementor-widgets/elementor-widget.php:670
 msgid "Europe/Sofia"
 msgstr ""
 
-#: src/Admin/Views/Options.php:505, src/Frontend/elementor-widgets/elementor-widget.php:656
+#: src/Admin/Views/Options.php:505, src/Frontend/elementor-widgets/elementor-widget.php:671
 msgid "Europe/Stockholm"
 msgstr ""
 
-#: src/Admin/Views/Options.php:506, src/Frontend/elementor-widgets/elementor-widget.php:657
+#: src/Admin/Views/Options.php:506, src/Frontend/elementor-widgets/elementor-widget.php:672
 msgid "Europe/Tallinn"
 msgstr ""
 
-#: src/Admin/Views/Options.php:507, src/Frontend/elementor-widgets/elementor-widget.php:658
+#: src/Admin/Views/Options.php:507, src/Frontend/elementor-widgets/elementor-widget.php:673
 msgid "Europe/Tirane"
 msgstr ""
 
-#: src/Admin/Views/Options.php:508, src/Frontend/elementor-widgets/elementor-widget.php:659
+#: src/Admin/Views/Options.php:508, src/Frontend/elementor-widgets/elementor-widget.php:674
 msgid "Europe/Tiraspol"
 msgstr ""
 
-#: src/Admin/Views/Options.php:509, src/Frontend/elementor-widgets/elementor-widget.php:660
+#: src/Admin/Views/Options.php:509, src/Frontend/elementor-widgets/elementor-widget.php:675
 msgid "Europe/Ulyanovsk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:510, src/Frontend/elementor-widgets/elementor-widget.php:661
+#: src/Admin/Views/Options.php:510, src/Frontend/elementor-widgets/elementor-widget.php:676
 msgid "Europe/Uzhgorod"
 msgstr ""
 
-#: src/Admin/Views/Options.php:511, src/Frontend/elementor-widgets/elementor-widget.php:662
+#: src/Admin/Views/Options.php:511, src/Frontend/elementor-widgets/elementor-widget.php:677
 msgid "Europe/Vaduz"
 msgstr ""
 
-#: src/Admin/Views/Options.php:512, src/Frontend/elementor-widgets/elementor-widget.php:663
+#: src/Admin/Views/Options.php:512, src/Frontend/elementor-widgets/elementor-widget.php:678
 msgid "Europe/Vatican"
 msgstr ""
 
-#: src/Admin/Views/Options.php:513, src/Frontend/elementor-widgets/elementor-widget.php:664
+#: src/Admin/Views/Options.php:513, src/Frontend/elementor-widgets/elementor-widget.php:679
 msgid "Europe/Vienna"
 msgstr ""
 
-#: src/Admin/Views/Options.php:514, src/Frontend/elementor-widgets/elementor-widget.php:665
+#: src/Admin/Views/Options.php:514, src/Frontend/elementor-widgets/elementor-widget.php:680
 msgid "Europe/Vilnius"
 msgstr ""
 
-#: src/Admin/Views/Options.php:515, src/Frontend/elementor-widgets/elementor-widget.php:666
+#: src/Admin/Views/Options.php:515, src/Frontend/elementor-widgets/elementor-widget.php:681
 msgid "Europe/Volgograd"
 msgstr ""
 
-#: src/Admin/Views/Options.php:516, src/Frontend/elementor-widgets/elementor-widget.php:667
+#: src/Admin/Views/Options.php:516, src/Frontend/elementor-widgets/elementor-widget.php:682
 msgid "Europe/Warsaw"
 msgstr ""
 
-#: src/Admin/Views/Options.php:517, src/Frontend/elementor-widgets/elementor-widget.php:668
+#: src/Admin/Views/Options.php:517, src/Frontend/elementor-widgets/elementor-widget.php:683
 msgid "Europe/Zagreb"
 msgstr ""
 
-#: src/Admin/Views/Options.php:518, src/Frontend/elementor-widgets/elementor-widget.php:669
+#: src/Admin/Views/Options.php:518, src/Frontend/elementor-widgets/elementor-widget.php:684
 msgid "Europe/Zaporozhye"
 msgstr ""
 
-#: src/Admin/Views/Options.php:519, src/Frontend/elementor-widgets/elementor-widget.php:670
+#: src/Admin/Views/Options.php:519, src/Frontend/elementor-widgets/elementor-widget.php:685
 msgid "Europe/Zurich"
 msgstr ""
 
-#: src/Admin/Views/Options.php:520, src/Frontend/elementor-widgets/elementor-widget.php:671
+#: src/Admin/Views/Options.php:520, src/Frontend/elementor-widgets/elementor-widget.php:686
 msgid "GB"
 msgstr ""
 
-#: src/Admin/Views/Options.php:521, src/Frontend/elementor-widgets/elementor-widget.php:672
+#: src/Admin/Views/Options.php:521, src/Frontend/elementor-widgets/elementor-widget.php:687
 msgid "GB-Eire"
 msgstr ""
 
-#: src/Admin/Views/Options.php:522, src/Frontend/elementor-widgets/elementor-widget.php:673
+#: src/Admin/Views/Options.php:522, src/Frontend/elementor-widgets/elementor-widget.php:688
 msgid "GMT"
 msgstr ""
 
-#: src/Admin/Views/Options.php:523, src/Frontend/elementor-widgets/elementor-widget.php:674
+#: src/Admin/Views/Options.php:523, src/Frontend/elementor-widgets/elementor-widget.php:689
 msgid "GMT+0"
 msgstr ""
 
-#: src/Admin/Views/Options.php:524, src/Frontend/elementor-widgets/elementor-widget.php:675
+#: src/Admin/Views/Options.php:524, src/Frontend/elementor-widgets/elementor-widget.php:690
 msgid "GMT-0"
 msgstr ""
 
-#: src/Admin/Views/Options.php:525, src/Frontend/elementor-widgets/elementor-widget.php:676
+#: src/Admin/Views/Options.php:525, src/Frontend/elementor-widgets/elementor-widget.php:691
 msgid "GMT0"
 msgstr ""
 
-#: src/Admin/Views/Options.php:526, src/Frontend/elementor-widgets/elementor-widget.php:677
+#: src/Admin/Views/Options.php:526, src/Frontend/elementor-widgets/elementor-widget.php:692
 msgid "Greenwich"
 msgstr ""
 
-#: src/Admin/Views/Options.php:527, src/Frontend/elementor-widgets/elementor-widget.php:678
+#: src/Admin/Views/Options.php:527, src/Frontend/elementor-widgets/elementor-widget.php:693
 msgid "HST"
 msgstr ""
 
-#: src/Admin/Views/Options.php:528, src/Frontend/elementor-widgets/elementor-widget.php:679
+#: src/Admin/Views/Options.php:528, src/Frontend/elementor-widgets/elementor-widget.php:694
 msgid "Hongkong"
 msgstr ""
 
-#: src/Admin/Views/Options.php:529, src/Frontend/elementor-widgets/elementor-widget.php:680
+#: src/Admin/Views/Options.php:529, src/Frontend/elementor-widgets/elementor-widget.php:695
 msgid "Iceland"
 msgstr ""
 
-#: src/Admin/Views/Options.php:530, src/Frontend/elementor-widgets/elementor-widget.php:681
+#: src/Admin/Views/Options.php:530, src/Frontend/elementor-widgets/elementor-widget.php:696
 msgid "Indian/Antananarivo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:531, src/Frontend/elementor-widgets/elementor-widget.php:682
+#: src/Admin/Views/Options.php:531, src/Frontend/elementor-widgets/elementor-widget.php:697
 msgid "Indian/Chagos"
 msgstr ""
 
-#: src/Admin/Views/Options.php:532, src/Frontend/elementor-widgets/elementor-widget.php:683
+#: src/Admin/Views/Options.php:532, src/Frontend/elementor-widgets/elementor-widget.php:698
 msgid "Indian/Christmas"
 msgstr ""
 
-#: src/Admin/Views/Options.php:533, src/Frontend/elementor-widgets/elementor-widget.php:684
+#: src/Admin/Views/Options.php:533, src/Frontend/elementor-widgets/elementor-widget.php:699
 msgid "Indian/Cocos"
 msgstr ""
 
-#: src/Admin/Views/Options.php:534, src/Frontend/elementor-widgets/elementor-widget.php:685
+#: src/Admin/Views/Options.php:534, src/Frontend/elementor-widgets/elementor-widget.php:700
 msgid "Indian/Comoro"
 msgstr ""
 
-#: src/Admin/Views/Options.php:535, src/Frontend/elementor-widgets/elementor-widget.php:686
+#: src/Admin/Views/Options.php:535, src/Frontend/elementor-widgets/elementor-widget.php:701
 msgid "Indian/Kerguelen"
 msgstr ""
 
-#: src/Admin/Views/Options.php:536, src/Frontend/elementor-widgets/elementor-widget.php:687
+#: src/Admin/Views/Options.php:536, src/Frontend/elementor-widgets/elementor-widget.php:702
 msgid "Indian/Mahe"
 msgstr ""
 
-#: src/Admin/Views/Options.php:537, src/Frontend/elementor-widgets/elementor-widget.php:688
+#: src/Admin/Views/Options.php:537, src/Frontend/elementor-widgets/elementor-widget.php:703
 msgid "Indian/Maldives"
 msgstr ""
 
-#: src/Admin/Views/Options.php:538, src/Frontend/elementor-widgets/elementor-widget.php:689
+#: src/Admin/Views/Options.php:538, src/Frontend/elementor-widgets/elementor-widget.php:704
 msgid "Indian/Mauritius"
 msgstr ""
 
-#: src/Admin/Views/Options.php:539, src/Frontend/elementor-widgets/elementor-widget.php:690
+#: src/Admin/Views/Options.php:539, src/Frontend/elementor-widgets/elementor-widget.php:705
 msgid "Indian/Mayotte"
 msgstr ""
 
-#: src/Admin/Views/Options.php:540, src/Frontend/elementor-widgets/elementor-widget.php:691
+#: src/Admin/Views/Options.php:540, src/Frontend/elementor-widgets/elementor-widget.php:706
 msgid "Indian/Reunion"
 msgstr ""
 
-#: src/Admin/Views/Options.php:541, src/Frontend/elementor-widgets/elementor-widget.php:692
+#: src/Admin/Views/Options.php:541, src/Frontend/elementor-widgets/elementor-widget.php:707
 msgid "Iran"
 msgstr ""
 
-#: src/Admin/Views/Options.php:542, src/Frontend/elementor-widgets/elementor-widget.php:693
+#: src/Admin/Views/Options.php:542, src/Frontend/elementor-widgets/elementor-widget.php:708
 msgid "Israel"
 msgstr ""
 
-#: src/Admin/Views/Options.php:543, src/Frontend/elementor-widgets/elementor-widget.php:694
+#: src/Admin/Views/Options.php:543, src/Frontend/elementor-widgets/elementor-widget.php:709
 msgid "Jamaica"
 msgstr ""
 
-#: src/Admin/Views/Options.php:544, src/Frontend/elementor-widgets/elementor-widget.php:695
+#: src/Admin/Views/Options.php:544, src/Frontend/elementor-widgets/elementor-widget.php:710
 msgid "Japan"
 msgstr ""
 
-#: src/Admin/Views/Options.php:545, src/Frontend/elementor-widgets/elementor-widget.php:696
+#: src/Admin/Views/Options.php:545, src/Frontend/elementor-widgets/elementor-widget.php:711
 msgid "Kwajalein"
 msgstr ""
 
-#: src/Admin/Views/Options.php:546, src/Frontend/elementor-widgets/elementor-widget.php:697
+#: src/Admin/Views/Options.php:546, src/Frontend/elementor-widgets/elementor-widget.php:712
 msgid "Libya"
 msgstr ""
 
-#: src/Admin/Views/Options.php:547, src/Frontend/elementor-widgets/elementor-widget.php:698
+#: src/Admin/Views/Options.php:547, src/Frontend/elementor-widgets/elementor-widget.php:713
 msgid "MET"
 msgstr ""
 
-#: src/Admin/Views/Options.php:548, src/Frontend/elementor-widgets/elementor-widget.php:699
+#: src/Admin/Views/Options.php:548, src/Frontend/elementor-widgets/elementor-widget.php:714
 msgid "MST"
 msgstr ""
 
-#: src/Admin/Views/Options.php:549, src/Frontend/elementor-widgets/elementor-widget.php:700
+#: src/Admin/Views/Options.php:549, src/Frontend/elementor-widgets/elementor-widget.php:715
 msgid "MST7MDT"
 msgstr ""
 
-#: src/Admin/Views/Options.php:550, src/Frontend/elementor-widgets/elementor-widget.php:701
+#: src/Admin/Views/Options.php:550, src/Frontend/elementor-widgets/elementor-widget.php:716
 msgid "Mexico/BajaNorte"
 msgstr ""
 
-#: src/Admin/Views/Options.php:551, src/Frontend/elementor-widgets/elementor-widget.php:702
+#: src/Admin/Views/Options.php:551, src/Frontend/elementor-widgets/elementor-widget.php:717
 msgid "Mexico/BajaSur"
 msgstr ""
 
-#: src/Admin/Views/Options.php:552, src/Frontend/elementor-widgets/elementor-widget.php:703
+#: src/Admin/Views/Options.php:552, src/Frontend/elementor-widgets/elementor-widget.php:718
 msgid "Mexico/General"
 msgstr ""
 
-#: src/Admin/Views/Options.php:553, src/Frontend/elementor-widgets/elementor-widget.php:704
+#: src/Admin/Views/Options.php:553, src/Frontend/elementor-widgets/elementor-widget.php:719
 msgid "NZ"
 msgstr ""
 
-#: src/Admin/Views/Options.php:554, src/Frontend/elementor-widgets/elementor-widget.php:705
+#: src/Admin/Views/Options.php:554, src/Frontend/elementor-widgets/elementor-widget.php:720
 msgid "NZ-CHAT"
 msgstr ""
 
-#: src/Admin/Views/Options.php:555, src/Frontend/elementor-widgets/elementor-widget.php:706
+#: src/Admin/Views/Options.php:555, src/Frontend/elementor-widgets/elementor-widget.php:721
 msgid "Navajo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:556, src/Frontend/elementor-widgets/elementor-widget.php:707
+#: src/Admin/Views/Options.php:556, src/Frontend/elementor-widgets/elementor-widget.php:722
 msgid "PRC"
 msgstr ""
 
-#: src/Admin/Views/Options.php:557, src/Frontend/elementor-widgets/elementor-widget.php:708
+#: src/Admin/Views/Options.php:557, src/Frontend/elementor-widgets/elementor-widget.php:723
 msgid "PST8PDT"
 msgstr ""
 
-#: src/Admin/Views/Options.php:558, src/Frontend/elementor-widgets/elementor-widget.php:709
+#: src/Admin/Views/Options.php:558, src/Frontend/elementor-widgets/elementor-widget.php:724
 msgid "Pacific/Apia"
 msgstr ""
 
-#: src/Admin/Views/Options.php:559, src/Frontend/elementor-widgets/elementor-widget.php:710
+#: src/Admin/Views/Options.php:559, src/Frontend/elementor-widgets/elementor-widget.php:725
 msgid "Pacific/Auckland"
 msgstr ""
 
-#: src/Admin/Views/Options.php:560, src/Frontend/elementor-widgets/elementor-widget.php:711
+#: src/Admin/Views/Options.php:560, src/Frontend/elementor-widgets/elementor-widget.php:726
 msgid "Pacific/Bougainville"
 msgstr ""
 
-#: src/Admin/Views/Options.php:561, src/Frontend/elementor-widgets/elementor-widget.php:712
+#: src/Admin/Views/Options.php:561, src/Frontend/elementor-widgets/elementor-widget.php:727
 msgid "Pacific/Chatham"
 msgstr ""
 
-#: src/Admin/Views/Options.php:562, src/Frontend/elementor-widgets/elementor-widget.php:713
+#: src/Admin/Views/Options.php:562, src/Frontend/elementor-widgets/elementor-widget.php:728
 msgid "Pacific/Chuuk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:563, src/Frontend/elementor-widgets/elementor-widget.php:714
+#: src/Admin/Views/Options.php:563, src/Frontend/elementor-widgets/elementor-widget.php:729
 msgid "Pacific/Easter"
 msgstr ""
 
-#: src/Admin/Views/Options.php:564, src/Frontend/elementor-widgets/elementor-widget.php:715
+#: src/Admin/Views/Options.php:564, src/Frontend/elementor-widgets/elementor-widget.php:730
 msgid "Pacific/Efate"
 msgstr ""
 
-#: src/Admin/Views/Options.php:565, src/Frontend/elementor-widgets/elementor-widget.php:716
+#: src/Admin/Views/Options.php:565, src/Frontend/elementor-widgets/elementor-widget.php:731
 msgid "Pacific/Enderbury"
 msgstr ""
 
-#: src/Admin/Views/Options.php:566, src/Frontend/elementor-widgets/elementor-widget.php:717
+#: src/Admin/Views/Options.php:566, src/Frontend/elementor-widgets/elementor-widget.php:732
 msgid "Pacific/Fakaofo"
 msgstr ""
 
-#: src/Admin/Views/Options.php:567, src/Frontend/elementor-widgets/elementor-widget.php:718
+#: src/Admin/Views/Options.php:567, src/Frontend/elementor-widgets/elementor-widget.php:733
 msgid "Pacific/Fiji"
 msgstr ""
 
-#: src/Admin/Views/Options.php:568, src/Frontend/elementor-widgets/elementor-widget.php:719
+#: src/Admin/Views/Options.php:568, src/Frontend/elementor-widgets/elementor-widget.php:734
 msgid "Pacific/Funafuti"
 msgstr ""
 
-#: src/Admin/Views/Options.php:569, src/Frontend/elementor-widgets/elementor-widget.php:720
+#: src/Admin/Views/Options.php:569, src/Frontend/elementor-widgets/elementor-widget.php:735
 msgid "Pacific/Galapagos"
 msgstr ""
 
-#: src/Admin/Views/Options.php:570, src/Frontend/elementor-widgets/elementor-widget.php:721
+#: src/Admin/Views/Options.php:570, src/Frontend/elementor-widgets/elementor-widget.php:736
 msgid "Pacific/Gambier"
 msgstr ""
 
-#: src/Admin/Views/Options.php:571, src/Frontend/elementor-widgets/elementor-widget.php:722
+#: src/Admin/Views/Options.php:571, src/Frontend/elementor-widgets/elementor-widget.php:737
 msgid "Pacific/Guadalcanal"
 msgstr ""
 
-#: src/Admin/Views/Options.php:572, src/Frontend/elementor-widgets/elementor-widget.php:723
+#: src/Admin/Views/Options.php:572, src/Frontend/elementor-widgets/elementor-widget.php:738
 msgid "Pacific/Guam"
 msgstr ""
 
-#: src/Admin/Views/Options.php:573, src/Frontend/elementor-widgets/elementor-widget.php:724
+#: src/Admin/Views/Options.php:573, src/Frontend/elementor-widgets/elementor-widget.php:739
 msgid "Pacific/Honolulu"
 msgstr ""
 
-#: src/Admin/Views/Options.php:574, src/Frontend/elementor-widgets/elementor-widget.php:725
+#: src/Admin/Views/Options.php:574, src/Frontend/elementor-widgets/elementor-widget.php:740
 msgid "Pacific/Johnston"
 msgstr ""
 
-#: src/Admin/Views/Options.php:575, src/Frontend/elementor-widgets/elementor-widget.php:726
+#: src/Admin/Views/Options.php:575, src/Frontend/elementor-widgets/elementor-widget.php:741
 msgid "Pacific/Kiritimati"
 msgstr ""
 
-#: src/Admin/Views/Options.php:576, src/Frontend/elementor-widgets/elementor-widget.php:727
+#: src/Admin/Views/Options.php:576, src/Frontend/elementor-widgets/elementor-widget.php:742
 msgid "Pacific/Kosrae"
 msgstr ""
 
-#: src/Admin/Views/Options.php:577, src/Frontend/elementor-widgets/elementor-widget.php:728
+#: src/Admin/Views/Options.php:577, src/Frontend/elementor-widgets/elementor-widget.php:743
 msgid "Pacific/Kwajalein"
 msgstr ""
 
-#: src/Admin/Views/Options.php:578, src/Frontend/elementor-widgets/elementor-widget.php:729
+#: src/Admin/Views/Options.php:578, src/Frontend/elementor-widgets/elementor-widget.php:744
 msgid "Pacific/Majuro"
 msgstr ""
 
-#: src/Admin/Views/Options.php:579, src/Frontend/elementor-widgets/elementor-widget.php:730
+#: src/Admin/Views/Options.php:579, src/Frontend/elementor-widgets/elementor-widget.php:745
 msgid "Pacific/Marquesas"
 msgstr ""
 
-#: src/Admin/Views/Options.php:580, src/Frontend/elementor-widgets/elementor-widget.php:731
+#: src/Admin/Views/Options.php:580, src/Frontend/elementor-widgets/elementor-widget.php:746
 msgid "Pacific/Midway"
 msgstr ""
 
-#: src/Admin/Views/Options.php:581, src/Frontend/elementor-widgets/elementor-widget.php:732
+#: src/Admin/Views/Options.php:581, src/Frontend/elementor-widgets/elementor-widget.php:747
 msgid "Pacific/Nauru"
 msgstr ""
 
-#: src/Admin/Views/Options.php:582, src/Frontend/elementor-widgets/elementor-widget.php:733
+#: src/Admin/Views/Options.php:582, src/Frontend/elementor-widgets/elementor-widget.php:748
 msgid "Pacific/Niue"
 msgstr ""
 
-#: src/Admin/Views/Options.php:583, src/Frontend/elementor-widgets/elementor-widget.php:734
+#: src/Admin/Views/Options.php:583, src/Frontend/elementor-widgets/elementor-widget.php:749
 msgid "Pacific/Norfolk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:584, src/Frontend/elementor-widgets/elementor-widget.php:735
+#: src/Admin/Views/Options.php:584, src/Frontend/elementor-widgets/elementor-widget.php:750
 msgid "Pacific/Noumea"
 msgstr ""
 
-#: src/Admin/Views/Options.php:585, src/Frontend/elementor-widgets/elementor-widget.php:736
+#: src/Admin/Views/Options.php:585, src/Frontend/elementor-widgets/elementor-widget.php:751
 msgid "Pacific/Pago_Pago"
 msgstr ""
 
-#: src/Admin/Views/Options.php:586, src/Frontend/elementor-widgets/elementor-widget.php:737
+#: src/Admin/Views/Options.php:586, src/Frontend/elementor-widgets/elementor-widget.php:752
 msgid "Pacific/Palau"
 msgstr ""
 
-#: src/Admin/Views/Options.php:587, src/Frontend/elementor-widgets/elementor-widget.php:738
+#: src/Admin/Views/Options.php:587, src/Frontend/elementor-widgets/elementor-widget.php:753
 msgid "Pacific/Pitcairn"
 msgstr ""
 
-#: src/Admin/Views/Options.php:588, src/Frontend/elementor-widgets/elementor-widget.php:739
+#: src/Admin/Views/Options.php:588, src/Frontend/elementor-widgets/elementor-widget.php:754
 msgid "Pacific/Pohnpei"
 msgstr ""
 
-#: src/Admin/Views/Options.php:589, src/Frontend/elementor-widgets/elementor-widget.php:740
+#: src/Admin/Views/Options.php:589, src/Frontend/elementor-widgets/elementor-widget.php:755
 msgid "Pacific/Ponape"
 msgstr ""
 
-#: src/Admin/Views/Options.php:590, src/Frontend/elementor-widgets/elementor-widget.php:741
+#: src/Admin/Views/Options.php:590, src/Frontend/elementor-widgets/elementor-widget.php:756
 msgid "Pacific/Port_Moresby"
 msgstr ""
 
-#: src/Admin/Views/Options.php:591, src/Frontend/elementor-widgets/elementor-widget.php:742
+#: src/Admin/Views/Options.php:591, src/Frontend/elementor-widgets/elementor-widget.php:757
 msgid "Pacific/Rarotonga"
 msgstr ""
 
-#: src/Admin/Views/Options.php:592, src/Frontend/elementor-widgets/elementor-widget.php:743
+#: src/Admin/Views/Options.php:592, src/Frontend/elementor-widgets/elementor-widget.php:758
 msgid "Pacific/Saipan"
 msgstr ""
 
-#: src/Admin/Views/Options.php:593, src/Frontend/elementor-widgets/elementor-widget.php:744
+#: src/Admin/Views/Options.php:593, src/Frontend/elementor-widgets/elementor-widget.php:759
 msgid "Pacific/Samoa"
 msgstr ""
 
-#: src/Admin/Views/Options.php:594, src/Frontend/elementor-widgets/elementor-widget.php:745
+#: src/Admin/Views/Options.php:594, src/Frontend/elementor-widgets/elementor-widget.php:760
 msgid "Pacific/Tahiti"
 msgstr ""
 
-#: src/Admin/Views/Options.php:595, src/Frontend/elementor-widgets/elementor-widget.php:746
+#: src/Admin/Views/Options.php:595, src/Frontend/elementor-widgets/elementor-widget.php:761
 msgid "Pacific/Tarawa"
 msgstr ""
 
-#: src/Admin/Views/Options.php:596, src/Frontend/elementor-widgets/elementor-widget.php:747
+#: src/Admin/Views/Options.php:596, src/Frontend/elementor-widgets/elementor-widget.php:762
 msgid "Pacific/Tongatapu"
 msgstr ""
 
-#: src/Admin/Views/Options.php:597, src/Frontend/elementor-widgets/elementor-widget.php:748
+#: src/Admin/Views/Options.php:597, src/Frontend/elementor-widgets/elementor-widget.php:763
 msgid "Pacific/Truk"
 msgstr ""
 
-#: src/Admin/Views/Options.php:598, src/Frontend/elementor-widgets/elementor-widget.php:749
+#: src/Admin/Views/Options.php:598, src/Frontend/elementor-widgets/elementor-widget.php:764
 msgid "Pacific/Wake"
 msgstr ""
 
-#: src/Admin/Views/Options.php:599, src/Frontend/elementor-widgets/elementor-widget.php:750
+#: src/Admin/Views/Options.php:599, src/Frontend/elementor-widgets/elementor-widget.php:765
 msgid "Pacific/Wallis"
 msgstr ""
 
-#: src/Admin/Views/Options.php:600, src/Frontend/elementor-widgets/elementor-widget.php:751
+#: src/Admin/Views/Options.php:600, src/Frontend/elementor-widgets/elementor-widget.php:766
 msgid "Pacific/Yap"
 msgstr ""
 
-#: src/Admin/Views/Options.php:601, src/Frontend/elementor-widgets/elementor-widget.php:752
+#: src/Admin/Views/Options.php:601, src/Frontend/elementor-widgets/elementor-widget.php:767
 msgid "Poland"
 msgstr ""
 
-#: src/Admin/Views/Options.php:602, src/Frontend/elementor-widgets/elementor-widget.php:753
+#: src/Admin/Views/Options.php:602, src/Frontend/elementor-widgets/elementor-widget.php:768
 msgid "Portugal"
 msgstr ""
 
-#: src/Admin/Views/Options.php:603, src/Frontend/elementor-widgets/elementor-widget.php:754
+#: src/Admin/Views/Options.php:603, src/Frontend/elementor-widgets/elementor-widget.php:769
 msgid "ROC"
 msgstr ""
 
-#: src/Admin/Views/Options.php:604, src/Frontend/elementor-widgets/elementor-widget.php:755
+#: src/Admin/Views/Options.php:604, src/Frontend/elementor-widgets/elementor-widget.php:770
 msgid "ROK"
 msgstr ""
 
-#: src/Admin/Views/Options.php:605, src/Frontend/elementor-widgets/elementor-widget.php:756
+#: src/Admin/Views/Options.php:605, src/Frontend/elementor-widgets/elementor-widget.php:771
 msgid "Singapore"
 msgstr ""
 
-#: src/Admin/Views/Options.php:606, src/Frontend/elementor-widgets/elementor-widget.php:757
+#: src/Admin/Views/Options.php:606, src/Frontend/elementor-widgets/elementor-widget.php:772
 msgid "Turkey"
 msgstr ""
 
-#: src/Admin/Views/Options.php:607, src/Frontend/elementor-widgets/elementor-widget.php:758
+#: src/Admin/Views/Options.php:607, src/Frontend/elementor-widgets/elementor-widget.php:773
 msgid "UCT"
 msgstr ""
 
-#: src/Admin/Views/Options.php:608, src/Frontend/elementor-widgets/elementor-widget.php:759
+#: src/Admin/Views/Options.php:608, src/Frontend/elementor-widgets/elementor-widget.php:774
 msgid "US/Alaska"
 msgstr ""
 
-#: src/Admin/Views/Options.php:609, src/Frontend/elementor-widgets/elementor-widget.php:760
+#: src/Admin/Views/Options.php:609, src/Frontend/elementor-widgets/elementor-widget.php:775
 msgid "US/Aleutian"
 msgstr ""
 
-#: src/Admin/Views/Options.php:610, src/Frontend/elementor-widgets/elementor-widget.php:761
+#: src/Admin/Views/Options.php:610, src/Frontend/elementor-widgets/elementor-widget.php:776
 msgid "US/Arizona"
 msgstr ""
 
-#: src/Admin/Views/Options.php:611, src/Frontend/elementor-widgets/elementor-widget.php:762
+#: src/Admin/Views/Options.php:611, src/Frontend/elementor-widgets/elementor-widget.php:777
 msgid "US/Central"
 msgstr ""
 
-#: src/Admin/Views/Options.php:612, src/Frontend/elementor-widgets/elementor-widget.php:763
+#: src/Admin/Views/Options.php:612, src/Frontend/elementor-widgets/elementor-widget.php:778
 msgid "US/East-Indiana"
 msgstr ""
 
-#: src/Admin/Views/Options.php:613, src/Frontend/elementor-widgets/elementor-widget.php:764
+#: src/Admin/Views/Options.php:613, src/Frontend/elementor-widgets/elementor-widget.php:779
 msgid "US/Eastern"
 msgstr ""
 
-#: src/Admin/Views/Options.php:614, src/Frontend/elementor-widgets/elementor-widget.php:765
+#: src/Admin/Views/Options.php:614, src/Frontend/elementor-widgets/elementor-widget.php:780
 msgid "US/Hawaii"
 msgstr ""
 
-#: src/Admin/Views/Options.php:615, src/Frontend/elementor-widgets/elementor-widget.php:766
+#: src/Admin/Views/Options.php:615, src/Frontend/elementor-widgets/elementor-widget.php:781
 msgid "US/Indiana-Starke"
 msgstr ""
 
-#: src/Admin/Views/Options.php:616, src/Frontend/elementor-widgets/elementor-widget.php:767
+#: src/Admin/Views/Options.php:616, src/Frontend/elementor-widgets/elementor-widget.php:782
 msgid "US/Michigan"
 msgstr ""
 
-#: src/Admin/Views/Options.php:617, src/Frontend/elementor-widgets/elementor-widget.php:768
+#: src/Admin/Views/Options.php:617, src/Frontend/elementor-widgets/elementor-widget.php:783
 msgid "US/Mountain"
 msgstr ""
 
-#: src/Admin/Views/Options.php:618, src/Frontend/elementor-widgets/elementor-widget.php:769
+#: src/Admin/Views/Options.php:618, src/Frontend/elementor-widgets/elementor-widget.php:784
 msgid "US/Pacific"
 msgstr ""
 
-#: src/Admin/Views/Options.php:619, src/Frontend/elementor-widgets/elementor-widget.php:770
+#: src/Admin/Views/Options.php:619, src/Frontend/elementor-widgets/elementor-widget.php:785
 msgid "US/Pacific-New"
 msgstr ""
 
-#: src/Admin/Views/Options.php:620, src/Frontend/elementor-widgets/elementor-widget.php:771
+#: src/Admin/Views/Options.php:620, src/Frontend/elementor-widgets/elementor-widget.php:786
 msgid "US/Samoa"
 msgstr ""
 
-#: src/Admin/Views/Options.php:621, src/Frontend/elementor-widgets/elementor-widget.php:772
+#: src/Admin/Views/Options.php:621, src/Frontend/elementor-widgets/elementor-widget.php:787
 msgid "UTC"
 msgstr ""
 
-#: src/Admin/Views/Options.php:622, src/Frontend/elementor-widgets/elementor-widget.php:773
+#: src/Admin/Views/Options.php:622, src/Frontend/elementor-widgets/elementor-widget.php:788
 msgid "Universal"
 msgstr ""
 
-#: src/Admin/Views/Options.php:623, src/Frontend/elementor-widgets/elementor-widget.php:774
+#: src/Admin/Views/Options.php:623, src/Frontend/elementor-widgets/elementor-widget.php:789
 msgid "W-SU"
 msgstr ""
 
-#: src/Admin/Views/Options.php:624, src/Frontend/elementor-widgets/elementor-widget.php:775
+#: src/Admin/Views/Options.php:624, src/Frontend/elementor-widgets/elementor-widget.php:790
 msgid "WET"
 msgstr ""
 
@@ -3544,11 +3556,11 @@ msgstr ""
 msgid "Copy This Shortcode and Paste it in Any Pages/Posts/Widget. Edit Values as You Need."
 msgstr ""
 
-#: src/Admin/Views/Shortcode.php:89, src/Admin/Views/WooCommerceButton.php:230
+#: src/Admin/Views/Shortcode.php:89, src/Admin/Views/WooCommerceButton.php:232
 msgid "Clicking on the WhatsApp shortcode buttons triggers this Webhook URL."
 msgstr ""
 
-#: src/Admin/Views/Shortcode.php:105, src/Admin/Views/WooCommerceButton.php:246
+#: src/Admin/Views/Shortcode.php:105, src/Admin/Views/WooCommerceButton.php:248
 msgid ""
 "<p><b>Dynamic Variables:</b> {title}, {number}, {site_url}, {current_url}, {date}, {ip}</p>\n"
 "										<h4>Retrieving Values from Cookies and URL Parameters</h4>\n"
@@ -3568,7 +3580,7 @@ msgstr ""
 msgid "WooCommerce Button"
 msgstr ""
 
-#: src/Admin/Views/WooCommerceButton.php:41, src/Admin/Views/WooCommerceButton.php:124
+#: src/Admin/Views/WooCommerceButton.php:41, src/Admin/Views/WooCommerceButton.php:126
 msgid "Show chat whatsapp button on single product page."
 msgstr ""
 
@@ -3592,35 +3604,35 @@ msgstr ""
 msgid "After Cart"
 msgstr ""
 
-#: src/Admin/Views/WooCommerceButton.php:112
-msgid "Predefined Text"
+#: src/Admin/Views/WooCommerceButton.php:114
+msgid "Write a friendly, pre-filled message users will see when they click the chat button. Example: “Hi! I have a question about your product {prudctName}.” This saves them time—and makes starting a conversation feel effortless."
 msgstr ""
 
-#: src/Admin/Views/WooCommerceButton.php:113
-msgid "Available tags – {siteURL}, {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus}, {ip}"
+#: src/Admin/Views/WooCommerceButton.php:115
+msgid "Woocommerce Vars - {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} <br> Global Vars - {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> "
 msgstr ""
 
-#: src/Admin/Views/WooCommerceButton.php:150
+#: src/Admin/Views/WooCommerceButton.php:152
 msgid "Change button padding."
 msgstr ""
 
-#: src/Admin/Views/WooCommerceButton.php:162
+#: src/Admin/Views/WooCommerceButton.php:164
 msgid "Button Margin"
 msgstr ""
 
-#: src/Admin/Views/WooCommerceButton.php:163
+#: src/Admin/Views/WooCommerceButton.php:165
 msgid "Change button margin."
 msgstr ""
 
-#: src/Admin/Views/WooCommerceButton.php:175
+#: src/Admin/Views/WooCommerceButton.php:177
 msgid "Button Border Radius"
 msgstr ""
 
-#: src/Admin/Views/WooCommerceButton.php:176
+#: src/Admin/Views/WooCommerceButton.php:178
 msgid "Change button border radius."
 msgstr ""
 
-#: src/Admin/Views/WooCommerceButton.php:197
+#: src/Admin/Views/WooCommerceButton.php:199
 msgid "Button Visibility"
 msgstr ""
 
@@ -3641,206 +3653,218 @@ msgid "Add your whatsapp number including country code. eg: +880123456189"
 msgstr ""
 
 #: src/Frontend/elementor-widgets/elementor-widget.php:65
+msgid "Pre-defeined Message"
+msgstr ""
+
+#: src/Frontend/elementor-widgets/elementor-widget.php:66
+msgid "Global Vars - {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br>Woocommerce Vars - {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus}<br><b>NOTE: WooCommerce vars will work only single product pages.</b>"
+msgstr ""
+
+#: src/Frontend/elementor-widgets/elementor-widget.php:69
+msgid "Hi! I have a question about your services."
+msgstr ""
+
+#: src/Frontend/elementor-widgets/elementor-widget.php:76
 msgid "Style"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:70
+#: src/Frontend/elementor-widgets/elementor-widget.php:81
 msgid "Advanced button"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:71
+#: src/Frontend/elementor-widgets/elementor-widget.php:82
 msgid "Basic button"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:80
+#: src/Frontend/elementor-widgets/elementor-widget.php:91
 msgid "Agent photo"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:81
+#: src/Frontend/elementor-widgets/elementor-widget.php:92
 msgid "Add agent photo to show in button."
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:96
+#: src/Frontend/elementor-widgets/elementor-widget.php:107
 msgid "Agent name"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:97
+#: src/Frontend/elementor-widgets/elementor-widget.php:108
 msgid "Write agent name to show in button."
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:100, src/Frontend/Shortcode/CustomShortcode.php:26
+#: src/Frontend/elementor-widgets/elementor-widget.php:111, src/Frontend/Shortcode/CustomShortcode.php:26
 msgid "Robert"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:110
+#: src/Frontend/elementor-widgets/elementor-widget.php:121
 msgid "Agent designation"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:111
+#: src/Frontend/elementor-widgets/elementor-widget.php:122
 msgid "Write agent designation to show in button."
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:114, src/Frontend/Shortcode/CustomShortcode.php:27
+#: src/Frontend/elementor-widgets/elementor-widget.php:125, src/Frontend/Shortcode/CustomShortcode.php:27
 msgid "Sales Support"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:124
+#: src/Frontend/elementor-widgets/elementor-widget.php:135
 msgid "Button label"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:125
+#: src/Frontend/elementor-widgets/elementor-widget.php:136
 msgid "Add custom button label."
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:128, src/Frontend/Shortcode/CustomShortcode.php:28
+#: src/Frontend/elementor-widgets/elementor-widget.php:139, src/Frontend/Shortcode/CustomShortcode.php:28
 msgid "How can I help you?"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:135
+#: src/Frontend/elementor-widgets/elementor-widget.php:150
 msgid "Online badget text"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:136
+#: src/Frontend/elementor-widgets/elementor-widget.php:151
 msgid "Add custom badget text when user in online."
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:139, src/Frontend/Shortcode/CustomShortcode.php:29
+#: src/Frontend/elementor-widgets/elementor-widget.php:154, src/Frontend/Shortcode/CustomShortcode.php:29
 msgid "I'm avaiable"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:149
+#: src/Frontend/elementor-widgets/elementor-widget.php:164
 msgid "Offline badget text"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:150
+#: src/Frontend/elementor-widgets/elementor-widget.php:165
 msgid "Add custom badget text when user in offline."
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:153, src/Frontend/Shortcode/CustomShortcode.php:30
+#: src/Frontend/elementor-widgets/elementor-widget.php:168, src/Frontend/Shortcode/CustomShortcode.php:30
 msgid "I'm offline"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:166
+#: src/Frontend/elementor-widgets/elementor-widget.php:181
 msgid "Chat settings"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:795, src/Frontend/elementor-widgets/elementor-widget.php:834, src/Frontend/elementor-widgets/elementor-widget.php:873, src/Frontend/elementor-widgets/elementor-widget.php:912, src/Frontend/elementor-widgets/elementor-widget.php:951, src/Frontend/elementor-widgets/elementor-widget.php:990, src/Frontend/elementor-widgets/elementor-widget.php:1028
+#: src/Frontend/elementor-widgets/elementor-widget.php:810, src/Frontend/elementor-widgets/elementor-widget.php:849, src/Frontend/elementor-widgets/elementor-widget.php:888, src/Frontend/elementor-widgets/elementor-widget.php:927, src/Frontend/elementor-widgets/elementor-widget.php:966, src/Frontend/elementor-widgets/elementor-widget.php:1005, src/Frontend/elementor-widgets/elementor-widget.php:1043
 msgid "Start time"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:808, src/Frontend/elementor-widgets/elementor-widget.php:847, src/Frontend/elementor-widgets/elementor-widget.php:886, src/Frontend/elementor-widgets/elementor-widget.php:925, src/Frontend/elementor-widgets/elementor-widget.php:964, src/Frontend/elementor-widgets/elementor-widget.php:1003, src/Frontend/elementor-widgets/elementor-widget.php:1041
+#: src/Frontend/elementor-widgets/elementor-widget.php:823, src/Frontend/elementor-widgets/elementor-widget.php:862, src/Frontend/elementor-widgets/elementor-widget.php:901, src/Frontend/elementor-widgets/elementor-widget.php:940, src/Frontend/elementor-widgets/elementor-widget.php:979, src/Frontend/elementor-widgets/elementor-widget.php:1018, src/Frontend/elementor-widgets/elementor-widget.php:1056
 msgid "End time"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1057
+#: src/Frontend/elementor-widgets/elementor-widget.php:1072
 msgid "Appearance settings"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1065
+#: src/Frontend/elementor-widgets/elementor-widget.php:1080
 msgid "Visibility on"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1071
+#: src/Frontend/elementor-widgets/elementor-widget.php:1086
 msgid "Desktops only"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1072
+#: src/Frontend/elementor-widgets/elementor-widget.php:1087
 msgid "Tablets only"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1073
+#: src/Frontend/elementor-widgets/elementor-widget.php:1088
 msgid "Mobile and tablets"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1074
+#: src/Frontend/elementor-widgets/elementor-widget.php:1089
 msgid "Mobile only"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1083
+#: src/Frontend/elementor-widgets/elementor-widget.php:1098
 msgid "Size"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1088
+#: src/Frontend/elementor-widgets/elementor-widget.php:1103
 msgid "Small"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1089
+#: src/Frontend/elementor-widgets/elementor-widget.php:1104
 msgid "Medium"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1090
+#: src/Frontend/elementor-widgets/elementor-widget.php:1105
 msgid "Large"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1098
+#: src/Frontend/elementor-widgets/elementor-widget.php:1113
 msgid "Backgound color"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1110
+#: src/Frontend/elementor-widgets/elementor-widget.php:1125
 msgid "Hover backgound color"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1122
+#: src/Frontend/elementor-widgets/elementor-widget.php:1137
 msgid "Text color"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1134
+#: src/Frontend/elementor-widgets/elementor-widget.php:1149
 msgid "Hover text color"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1148, src/Frontend/elementor-widgets/elementor-widget.php:1152
+#: src/Frontend/elementor-widgets/elementor-widget.php:1182, src/Frontend/elementor-widgets/elementor-widget.php:1186
 msgid "Border"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1175, src/Frontend/elementor-widgets/elementor-widget.php:1180
+#: src/Frontend/elementor-widgets/elementor-widget.php:1209, src/Frontend/elementor-widgets/elementor-widget.php:1214
 msgid "Hover border"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1202
+#: src/Frontend/elementor-widgets/elementor-widget.php:1236
 msgid "Change icon"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1228
+#: src/Frontend/elementor-widgets/elementor-widget.php:1262
 msgid "Icon color"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1243
+#: src/Frontend/elementor-widgets/elementor-widget.php:1277
 msgid "Icon hover color"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1258
+#: src/Frontend/elementor-widgets/elementor-widget.php:1292
 msgid "Want bg in icon?"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1272
+#: src/Frontend/elementor-widgets/elementor-widget.php:1306
 msgid "Icon bg color"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1288
+#: src/Frontend/elementor-widgets/elementor-widget.php:1322
 msgid "Icon hover bg color"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1304
+#: src/Frontend/elementor-widgets/elementor-widget.php:1338
 msgid "Rounded?"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1315
+#: src/Frontend/elementor-widgets/elementor-widget.php:1349
 msgid "Alignment"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1327, src/Admin/Framework/fields/typography/typography.php:175
+#: src/Frontend/elementor-widgets/elementor-widget.php:1361, src/Admin/Framework/fields/typography/typography.php:175
 msgid "Right"
 msgstr ""
 
-#: src/Frontend/Shortcode/CustomShortcode.php:31
-msgid "+8801813381520"
+#: src/Frontend/Shortcode/CustomShortcode.php:32
+msgid "Hi! I have a question about your service."
 msgstr ""
 
-#: src/Frontend/Shortcode/CustomShortcode.php:36, src/Frontend/Shortcode/CustomShortcode.php:37, src/Frontend/Shortcode/CustomShortcode.php:38, src/Frontend/Shortcode/CustomShortcode.php:39, src/Frontend/Shortcode/CustomShortcode.php:40, src/Frontend/Shortcode/CustomShortcode.php:41, src/Frontend/Shortcode/CustomShortcode.php:42
+#: src/Frontend/Shortcode/CustomShortcode.php:37, src/Frontend/Shortcode/CustomShortcode.php:38, src/Frontend/Shortcode/CustomShortcode.php:39, src/Frontend/Shortcode/CustomShortcode.php:40, src/Frontend/Shortcode/CustomShortcode.php:41, src/Frontend/Shortcode/CustomShortcode.php:42, src/Frontend/Shortcode/CustomShortcode.php:43
 msgid "00:00-23:59"
 msgstr ""
 
-#: src/Frontend/Templates/FormTemplate.php:91, src/Frontend/Templates/SingleTemplate.php:88
+#: src/Frontend/Templates/FormTemplate.php:87, src/Frontend/Templates/SingleTemplate.php:88
 msgid "Powered by"
 msgstr ""
 

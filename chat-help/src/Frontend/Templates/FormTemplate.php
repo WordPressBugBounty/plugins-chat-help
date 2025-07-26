@@ -57,7 +57,6 @@ class FormTemplate
 		$color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
 		$primary = isset($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
 		$secondary = isset($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
-
 		$bubble_visibility = isset($options['bubble-visibility']) ? $options['bubble-visibility'] : 'everywhere';
 		// Method implementation goes here.
 		if ('random' === $select_animation) :
@@ -74,16 +73,13 @@ class FormTemplate
 		} elseif ($bubble_style === 'night') {
 			echo 'night-mode ';
 		}
-
 		// Add position-specific class if position is 'left'.
 		if ('left' === $bubble_position) {
 			echo 'wHelp-left';
 		}
-
 		echo 'chat-availability" data-timezone="' . esc_attr($select_timezone) . '" data-availability="' . esc_attr($user_availability) . '">';
 		echo wp_kses_post($bubble_type); ?>
 		<div class="wHelp__popup animation<?php echo esc_attr($animation) ?> ">
-
 			<?php
 			include Helpers::chat_help_locate_template('items/single-template-header.php');
 			include Helpers::chat_help_locate_template('items/form.php');

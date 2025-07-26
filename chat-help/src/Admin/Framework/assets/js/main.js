@@ -3859,11 +3859,10 @@
 
     // Append static values
     fields.push(
-      "Date: {date}",
-      "IP Address: {ip}",
-      "Site URL: {siteURL}",
-      "Current URL: {current_url}"
-    );
+  "Global Vars: {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date}",
+  "{PRODUCT_START} WooCommerce Vars: {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} {PRODUCT_END}",
+  "<b>Conditional Blocks:</b> {PRODUCT_START} ... {PRODUCT_END}, {NOT_PRODUCT_START} ... {NOT_PRODUCT_END}, {LOGGEDIN_START} ... {LOGGEDIN_END}, {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}"
+);
     return fields.join("<br>");
   };
 

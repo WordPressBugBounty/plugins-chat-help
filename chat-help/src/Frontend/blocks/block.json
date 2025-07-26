@@ -97,6 +97,10 @@
 			"type": "string",
 			"default": ""
 		},
+		"prefilledMessageInput": {
+			"type": "string",
+			"default": ""
+		},
 		"imageUrl": {
 			"type": "string",
 			"default": ""

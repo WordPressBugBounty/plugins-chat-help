@@ -14,7 +14,6 @@
  */
 
 namespace ThemeAtelier\ChatHelp\Frontend\Templates\items;
-
 use ThemeAtelier\ChatHelp\Helpers\Helpers;
 
 /**
@@ -28,7 +27,6 @@ class Buttons
 {
     public static function buttons($options)
     {
-        // Default Options
         $chat_type = $options['chat_layout'] ?? 'form';
         $open_in_new_tab = isset($options['open_in_new_tab']) ? $options['open_in_new_tab'] : '';
         $button_style = $options['opt-button-style'] ?? '1';
@@ -48,23 +46,22 @@ class Buttons
         if ($tooltip_enabled == 'on_hover') {
             $tooltip_class = 'hover_tooltip';
         }
-
+        $type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
+        $whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
+        $whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
+        $url_for_desktop = isset($options['url_for_desktop']) ? $options['url_for_desktop'] : '';
+        $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
+        $message = isset($options['prefilled_message']) ? $options['prefilled_message'] : '';
+        $message = Helpers::replacement_vars($message);
+        $url = Helpers::whatsAppUrl($whatsapp_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message); 
+        $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
         // Keep Button Style 1 as Is
         if ($button_style === '1') {
             $bubble_type = '<div class="wHelp-bubble circle-bubble circle-animation-' . esc_attr($circle_animation) . ' wHelp_' . $chat_type . ' ' . esc_attr($chat_type) . ' ' . esc_attr($tooltip_class) . '" style="--color-primary: ' . esc_attr($primary) . ';--color-secondary: ' . esc_attr($secondary) . ';">';
             $bubble_type .= '<span class="open-icon"><i class="' . esc_attr($circle_button_icon_1) . '"></i></span>';
             $bubble_type .= '<span class="close-icon"><i class="' . esc_attr($circle_button_close_1) . '"></i></span>';
             if ($chat_type == 'button') {
-                $type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
-                $whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
-                $whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
-
-                $url_for_desktop = isset($options['url_for_desktop']) ? $options['url_for_desktop'] : '';
-                $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
-                $url = Helpers::whatsAppUrl($whatsapp_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile);
-
-                $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
-                $bubble_type .= '<a href="' . esc_url($url) . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link"></a>';
+                $bubble_type .= '<a href="' . esc_attr($url) . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link"></a>';
             }
             if ($tooltip_enabled != 'hide' && !empty($tooltip_text)) {
                 $bubble_type .= '<span class="tooltip_text">' . wp_kses_post($tooltip_text) . '</span>';
@@ -84,7 +81,6 @@ class Buttons
         }
 
         $base_classes = 'wHelp-bubble bubble ';
-
         switch ($button_style) {
             case '2':
                 $style_classes = 'wHelp-btn-bg';
@@ -123,18 +119,9 @@ class Buttons
             $bubble_type .= '<span class="tooltip_text">' . wp_kses_post($tooltip_text) . '</span>';
         }
         if ($chat_type === 'button') {
-            $type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
-            $whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
-            $whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
-
-            $url_for_desktop = isset($options['url_for_desktop']) ? $options['url_for_desktop'] : '';
-            $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
-            $url = Helpers::whatsAppUrl($whatsapp_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile);
-            $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
-            $bubble_type .= '<a href="' . $url . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link"></a>';
+            $bubble_type .= '<a href="' . esc_attr($url) . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link"></a>';
         }
         $bubble_type .= '</div>';
-
         return $bubble_type;
     }
 }

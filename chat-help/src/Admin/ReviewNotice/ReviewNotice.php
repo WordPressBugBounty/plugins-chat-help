@@ -48,7 +48,7 @@ class ReviewNotice
             add_option('chat_help_review_notice_dismiss', $review);
         } else {
             // Check if it has been dismissed or not.
-            if ((isset($review['dismissed']) && ! $review['dismissed']) && (isset($review['time']) && (($review['time'] + (DAY_IN_SECONDS * 0)) <= $time))) {
+            if ((isset($review['dismissed']) && ! $review['dismissed']) && (isset($review['time']) && (($review['time'] + (DAY_IN_SECONDS * 3)) <= $time))) {
                 $load = true;
             }
         }

@@ -55,7 +55,7 @@ class Shortcode
 									array(
 										'id'    => 'advance_button_shortcode',
 										'type'    => 'shortcode',
-										'shortcode_text'    => '[ctw style="1" primary_color="#118c7e" secondary_color="#0b5a51" padding="7px 18px 7px 10px" number="+8801849687969" timezone="Asia/Dhaka" photo="' . CHAT_HELP_DIR_URL . 'src/assets/image/user.webp" name="Jhon" designation="Techinical support" label="How can I help you?" online="I am online" offline="I am offline" visibility="wHelp-show-everywhere" sizes="wHelp-btn-lg" sunday="00:00-23:59" monday="23:00-23:59" tuesday="00:00-23:59" wednesday="00:00-23:59" thursday="00:00-23:59" friday="00:00-23:59" saturday="00:00-23:59"]',
+										'shortcode_text'    => '[chat_help style="1" primary_color="#118c7e" secondary_color="#0b5a51" padding="10px 18px 10px 18px" number="+8801849687969" message="Hi! I have a question about your service." timezone="Asia/Dhaka" photo="' . CHAT_HELP_DIR_URL . 'src/assets/image/user.webp" name="Jhon" designation="Techinical support" label="How can I help you?" online="I am online" offline="I am offline" visibility="wHelp-show-everywhere" sizes="wHelp-btn-lg" sunday="00:00-23:59" monday="00:00-23:59" tuesday="00:00-23:59" wednesday="00:00-23:59" thursday="00:00-23:59" friday="00:00-23:59" saturday="00:00-23:59"]',
 										'title' => esc_html__('Shortcode', 'chat-help'),
 										'title_help'       => '<div class="chat-help-info-label">' . __('Copy This Shortcode and Paste it in Any Pages/Posts/Widget. Edit Values as You Need.', 'chat-help') . '</div>',
 										'dependency' => array('opt-shortcode-select', 'any', '1'),
@@ -64,7 +64,7 @@ class Shortcode
 									array(
 										'id'    => 'simple_button_shortcode',
 										'type'    => 'shortcode',
-										'shortcode_text'    => '[ctw style="2" primary_color="#118c7e" secondary_color="#0b5a51" padding="7px 18px 7px 10px" number="+8801849687969" label="How can I help you?" visibility="wHelp-show-everywhere" sizes="wHelp-btn-lg"]',
+										'shortcode_text'    => '[chat_help style="2" primary_color="#118c7e" secondary_color="#0b5a51" padding="10px 18px 10px 18px" number="+8801849687969" message="Hi! I have a question about your service." label="How can I help you?" visibility="wHelp-show-everywhere" sizes="wHelp-btn-lg"]',
 										'title' => esc_html__('Shortcode', 'chat-help'),
 										'title_help'       => '<div class="chat-help-info-label">' . __('Copy This Shortcode and Paste it in Any Pages/Posts/Widget. Edit Values as You Need.', 'chat-help') . '</div>',
 										'dependency' => array('opt-shortcode-select', 'any', '2'),

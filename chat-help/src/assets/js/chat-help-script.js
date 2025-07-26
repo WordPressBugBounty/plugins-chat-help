@@ -31,6 +31,8 @@ const wHelpPopupContent = document.querySelectorAll(".wHelp__popup__content");
 const wHelpButtons = document.querySelectorAll(".wHelpButtons");
 const chatAvailability = document.querySelector(".chat-availability");
 
+
+
 // Configuration from external script
 const { autoShowPopup, autoOpenPopupTimeout } = whatshelp_frontend_script;
 
@@ -232,34 +234,33 @@ if (chatAvailability) {
       if(!form.valid()) {
         return;
       }
-
+        
       wHelpCheckButton.forEach((btn) => {
         if (!btn.classList.contains("condition__checked")) {
           const chatAvailableTime = JSON.parse(
             chatAvailability?.getAttribute("data-availability")
-          );
+          );          
           if (chatAvailableTime) {
             const now = moment();
             const available = isAvailable(chatAvailableTime, now);
             if (available.isAvailable) {
 
               const formData = $(this).serialize();
-
-              const form = $(this);
-              if (!form.valid()) {
-                return;
-              }
-
+              const currentUrl = window.location.href;
+              const currentTitle = document.title;
               let button = whatsappForm.getAttribute("data-button");
               let loading = whatsappForm.getAttribute("data-loading");
-
+              let productAttr = whatsappForm.getAttribute("data-product_attr");
+              // Whatsapp form handler
               $.post(
                 frontend_scripts.ajaxurl,
                 {
                   action: "handle_form_submission",
                   data: formData,
+                  product_id: productAttr,
                   nonce: frontend_scripts.nonce,
-                  current_url: window.location.href,
+                  current_url: currentUrl,
+                  current_title: currentTitle,
                 },
                 (response) => {
                   if (response.success) {

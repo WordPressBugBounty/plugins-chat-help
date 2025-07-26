@@ -432,6 +432,7 @@
   }
 }
 [class*=wHelp-button-] {
+  text-decoration: none !important;
   padding: var(--padding);
   border: none;
   color: var(--color-dark);
@@ -451,7 +452,6 @@
 [class*=wHelp-button-] i {
   font-size: 20px;
   transition: all 0.3s;
-  margin-left: -5px;
   color: var(--color-primary);
 }
 [class*=wHelp-button-]:hover {
@@ -1058,7 +1058,7 @@
 .bubble:focus, .bubble:active {
   background-color: var(--color-light);
   border: 1px solid var(--color-primary);
-  padding: 5px 10px;
+  padding: var(--padding);
   color: var(--color-primary);
 }
 .bubble:hover {
