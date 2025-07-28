@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 2.2.13
+Stable tag: 2.2.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -261,6 +261,11 @@ Yes. The plugin is totally translation ready. If it's not support in your langua
 7. Gutenberg Button Block
 
 == Changelog ==
+= 2.2.14 - July 28, 2025 =
+Fixed: Issue where the second tab was hidden when the Single Form layout was not selected.
+Fixed: Button hover background not updating when GDPR mode is enabled.
+Added: Default animation class applied when switching from Pro to Free version.
+
 = 2.2.13 - July 26, 2025 =
 * New: Smart Prefilled Message support with variables and conditional logic — works across all layouts (WooCommerce, Shortcodes, Buttons, Blocks).
 * New: Conditional Smart Variables now supported in "Message Agents" field for Single Agent layout.

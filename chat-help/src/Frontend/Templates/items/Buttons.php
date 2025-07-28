@@ -36,7 +36,7 @@ class Buttons
         $circle_button_close_1 = $options['circle-button-close-1'] ?? 'icofont-close';
         $tooltip_enabled = $options['bubble_button_tooltip'] ?? true;
         $tooltip_text = $options['bubble_button_tooltip_text'] ?? 'Need Help? <strong>Chat with us</strong>';
-        $circle_animation = $options['circle-animation'] ?? '3';
+        $circle_animation = !empty($options['circle-animation']) ? $options['circle-animation'] : '3';
         $button_label = $options['bubble-text'] ?? '';
         $disable_icon = $options['disable-button-icon'] ?? true;
         $color_settings = $options['color_settings'] ?? '';

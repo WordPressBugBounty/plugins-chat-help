@@ -27,12 +27,12 @@
 
   // Carousel Layout.
   if (chat_help_get_layout_value !== "form") {
-    $(".chat-help-content .chat-help-section_tab-nav a:nth-child(2)").hide();
-    $(".chat-help-content .chat-help-section_tab-nav a:nth-child(1)").trigger(
+    $(".chat-help-content .floating_chat .chat-help-section_tab-nav a:nth-child(2)").hide();
+    $(".chat-help-content .floating_chat .chat-help-section_tab-nav a:nth-child(1)").trigger(
       "click"
     );
   } else {
-    $(".chat-help-content .chat-help-section_tab-nav a:nth-child(2)").show();
+    $(".chat-help-content .floating_chat .chat-help-section_tab-nav a:nth-child(2)").show();
   }
 
   /**
@@ -43,12 +43,12 @@
 
     // Carousel Layout.
     if (chat_help_get_layout_value !== "form") {
-      $(".chat-help-content .chat-help-section_tab-nav a:nth-child(2)").hide();
-      $(".chat-help-content .chat-help-section_tab-nav a:nth-child(1)").trigger(
+      $(".chat-help-content .floating_chat .chat-help-section_tab-nav a:nth-child(2)").hide();
+      $(".chat-help-content .floating_chat .chat-help-section_tab-nav a:nth-child(1)").trigger(
         "click"
       );
     } else {
-      $(".chat-help-content .chat-help-section_tab-nav a:nth-child(2)").show();
+      $(".chat-help-content .floating_chat .chat-help-section_tab-nav a:nth-child(2)").show();
     }
   });
 

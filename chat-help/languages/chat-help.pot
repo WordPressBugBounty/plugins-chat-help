@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-26 11:10+0000\n"
+"POT-Creation-Date: 2025-07-28 04:57+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: chat-whatsapp.php:63
+#: chat-whatsapp.php:62
 msgid "Whatsapp block"
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "👑 Upgrade to Pro!"
 msgstr ""
 
-#: src/Admin/Admin.php:118, src/Frontend/Templates/FormTemplate.php:87, src/Frontend/Templates/SingleTemplate.php:88
+#: src/Admin/Admin.php:118, src/Frontend/Templates/FormTemplate.php:85, src/Frontend/Templates/SingleTemplate.php:88
 msgid "Chat Help"
 msgstr ""
 
@@ -188,7 +188,7 @@ msgstr ""
 msgid "Time based availablity for agents"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:579, src/Admin/Views/General.php:383
+#: src/Admin/HelpPage/Help.php:579, src/Admin/Views/General.php:384
 msgid "GDPR Compliance"
 msgstr ""
 
@@ -200,7 +200,7 @@ msgstr ""
 msgid "Icons For Circle Button"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:604, src/Admin/Views/General.php:785
+#: src/Admin/HelpPage/Help.php:604, src/Admin/Views/General.php:786
 msgid "Transition Effect for Circle Icon"
 msgstr ""
 
@@ -356,619 +356,619 @@ msgstr ""
 msgid "FLOATING CHAT"
 msgstr ""
 
-#: src/Admin/Views/General.php:38
+#: src/Admin/Views/General.php:39
 msgid "Floating Chat Layout"
 msgstr ""
 
-#: src/Admin/Views/General.php:43
+#: src/Admin/Views/General.php:44
 msgid "No Floating Chat"
 msgstr ""
 
-#: src/Admin/Views/General.php:48
+#: src/Admin/Views/General.php:49
 msgid "Single Form"
 msgstr ""
 
-#: src/Admin/Views/General.php:54
+#: src/Admin/Views/General.php:55
 msgid "Single Agent"
 msgstr ""
 
-#: src/Admin/Views/General.php:60
+#: src/Admin/Views/General.php:61
 msgid "Simple Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:66
+#: src/Admin/Views/General.php:67
 msgid "Advance Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:73
+#: src/Admin/Views/General.php:74
 msgid "Multi Agents"
 msgstr ""
 
-#: src/Admin/Views/General.php:84
+#: src/Admin/Views/General.php:85
 msgid "With 'No Floating Chat' option, you won't be able to use the floating chat feature. However, you can still access and enjoy other functionalities such as the WooCommerce button, shortcodes, and button blocks provided by the plugin."
 msgstr ""
 
-#: src/Admin/Views/General.php:94
+#: src/Admin/Views/General.php:95
 msgid "General"
 msgstr ""
 
-#: src/Admin/Views/General.php:102, src/Admin/Views/WooCommerceButton.php:78
+#: src/Admin/Views/General.php:103, src/Admin/Views/WooCommerceButton.php:78
 msgid "Type of Whatsapp"
 msgstr ""
 
-#: src/Admin/Views/General.php:103, src/Admin/Views/WooCommerceButton.php:79
+#: src/Admin/Views/General.php:104, src/Admin/Views/WooCommerceButton.php:79
 msgid "Select \"Number\" to receive direct messages or \"Group\" to let people join your WhatsApp group."
 msgstr ""
 
-#: src/Admin/Views/General.php:106, src/Admin/Views/WooCommerceButton.php:82
+#: src/Admin/Views/General.php:107, src/Admin/Views/WooCommerceButton.php:82
 msgid "Number"
 msgstr ""
 
-#: src/Admin/Views/General.php:107, src/Admin/Views/WooCommerceButton.php:83
+#: src/Admin/Views/General.php:108, src/Admin/Views/WooCommerceButton.php:83
 msgid "Group"
 msgstr ""
 
-#: src/Admin/Views/General.php:120, src/Admin/Views/WooCommerceButton.php:91
+#: src/Admin/Views/General.php:121, src/Admin/Views/WooCommerceButton.php:91
 msgid "WhatsApp Number"
 msgstr ""
 
-#: src/Admin/Views/General.php:121, src/Admin/Views/WooCommerceButton.php:93
+#: src/Admin/Views/General.php:122, src/Admin/Views/WooCommerceButton.php:93
 msgid "Add your WhatsApp number including country code. eg: +880123456189"
 msgstr ""
 
-#: src/Admin/Views/General.php:122
+#: src/Admin/Views/General.php:123
 msgid "WhatsApp number in international format."
 msgstr ""
 
-#: src/Admin/Views/General.php:138, src/Admin/Views/General.php:582, src/Admin/Views/WooCommerceButton.php:113
+#: src/Admin/Views/General.php:139, src/Admin/Views/General.php:583, src/Admin/Views/WooCommerceButton.php:113
 msgid "Pre-filled Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:139
+#: src/Admin/Views/General.php:140
 msgid "Write a friendly, pre-filled message users will see when they click the chat bubble. Example: “Hi! I have a question about your services.” This saves them time—and makes starting a conversation feel effortless."
 msgstr ""
 
-#: src/Admin/Views/General.php:140, src/Admin/Views/General.php:413
+#: src/Admin/Views/General.php:141, src/Admin/Views/General.php:414
 msgid "Global Vars:  {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> {PRODUCT_START} WooCommerce Vars: {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} {PRODUCT_END} <br> <b>Conditional Blocks:</b>  {PRODUCT_START} ... {PRODUCT_END},  {NOT_PRODUCT_START} ... {NOT_PRODUCT_END},  {LOGGEDIN_START} ... {LOGGEDIN_END},  {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}"
 msgstr ""
 
-#: src/Admin/Views/General.php:151, src/Admin/Views/WooCommerceButton.php:103
+#: src/Admin/Views/General.php:152, src/Admin/Views/WooCommerceButton.php:103
 msgid "WhatsApp Group"
 msgstr ""
 
-#: src/Admin/Views/General.php:153, src/Admin/Views/WooCommerceButton.php:104
+#: src/Admin/Views/General.php:154, src/Admin/Views/WooCommerceButton.php:104
 msgid "Invite your visitors to join into your whatapp group."
 msgstr ""
 
-#: src/Admin/Views/General.php:167, src/Frontend/elementor-widgets/elementor-widget.php:192
+#: src/Admin/Views/General.php:168, src/Frontend/elementor-widgets/elementor-widget.php:192
 msgid "Timezone"
 msgstr ""
 
-#: src/Admin/Views/General.php:168, src/Frontend/elementor-widgets/elementor-widget.php:193
+#: src/Admin/Views/General.php:169, src/Frontend/elementor-widgets/elementor-widget.php:193
 msgid "When using the date and time from the user browser you can transform it to your current timezone (in case your user is in a different timezone)"
 msgstr ""
 
-#: src/Admin/Views/General.php:170, src/Frontend/elementor-widgets/elementor-widget.php:199
+#: src/Admin/Views/General.php:171, src/Frontend/elementor-widgets/elementor-widget.php:199
 msgid "Select timezone"
 msgstr ""
 
-#: src/Admin/Views/General.php:178
+#: src/Admin/Views/General.php:179
 msgid "Availablity"
 msgstr ""
 
-#: src/Admin/Views/General.php:179
+#: src/Admin/Views/General.php:180
 msgid "24-hour Time without PM:AM\" eg: From 00:00 to 23:59. If you are offline for any specefic full day use 00:00 and 00:00 in From and To value."
 msgstr ""
 
-#: src/Admin/Views/General.php:184, src/Frontend/elementor-widgets/elementor-widget.php:800
+#: src/Admin/Views/General.php:185, src/Frontend/elementor-widgets/elementor-widget.php:800
 msgid "Sunday"
 msgstr ""
 
-#: src/Admin/Views/General.php:201, src/Frontend/elementor-widgets/elementor-widget.php:840
+#: src/Admin/Views/General.php:202, src/Frontend/elementor-widgets/elementor-widget.php:840
 msgid "Monday"
 msgstr ""
 
-#: src/Admin/Views/General.php:218, src/Frontend/elementor-widgets/elementor-widget.php:879
+#: src/Admin/Views/General.php:219, src/Frontend/elementor-widgets/elementor-widget.php:879
 msgid "Tuesday"
 msgstr ""
 
-#: src/Admin/Views/General.php:235, src/Frontend/elementor-widgets/elementor-widget.php:918
+#: src/Admin/Views/General.php:236, src/Frontend/elementor-widgets/elementor-widget.php:918
 msgid "Wednesday"
 msgstr ""
 
-#: src/Admin/Views/General.php:253, src/Frontend/elementor-widgets/elementor-widget.php:957
+#: src/Admin/Views/General.php:254, src/Frontend/elementor-widgets/elementor-widget.php:957
 msgid "Thursday"
 msgstr ""
 
-#: src/Admin/Views/General.php:271, src/Frontend/elementor-widgets/elementor-widget.php:996
+#: src/Admin/Views/General.php:272, src/Frontend/elementor-widgets/elementor-widget.php:996
 msgid "Friday"
 msgstr ""
 
-#: src/Admin/Views/General.php:289, src/Frontend/elementor-widgets/elementor-widget.php:1034
+#: src/Admin/Views/General.php:290, src/Frontend/elementor-widgets/elementor-widget.php:1034
 msgid "Saturday"
 msgstr ""
 
-#: src/Admin/Views/General.php:312
+#: src/Admin/Views/General.php:313
 msgid "Agent Photo Type"
 msgstr ""
 
-#: src/Admin/Views/General.php:313
+#: src/Admin/Views/General.php:314
 msgid "Select agent photo type."
 msgstr ""
 
-#: src/Admin/Views/General.php:316, src/Admin/Framework/fields/typography/typography.php:121, src/Admin/Framework/fields/typography/typography.php:134, src/Admin/Framework/fields/typography/typography.php:147, src/Admin/Framework/fields/typography/typography.php:162, src/Admin/Framework/fields/typography/typography.php:178, src/Admin/Framework/fields/typography/typography.php:191, src/Admin/Framework/fields/typography/typography.php:205, src/Admin/Framework/fields/typography/typography.php:223
+#: src/Admin/Views/General.php:317, src/Admin/Framework/fields/typography/typography.php:121, src/Admin/Framework/fields/typography/typography.php:134, src/Admin/Framework/fields/typography/typography.php:147, src/Admin/Framework/fields/typography/typography.php:162, src/Admin/Framework/fields/typography/typography.php:178, src/Admin/Framework/fields/typography/typography.php:191, src/Admin/Framework/fields/typography/typography.php:205, src/Admin/Framework/fields/typography/typography.php:223
 msgid "Default"
 msgstr ""
 
-#: src/Admin/Views/General.php:319, src/Admin/Views/General.php:449, src/Admin/Views/General.php:665, src/Admin/Views/General.php:700, src/Admin/Views/General.php:737, src/Admin/Views/General.php:772
+#: src/Admin/Views/General.php:320, src/Admin/Views/General.php:450, src/Admin/Views/General.php:666, src/Admin/Views/General.php:701, src/Admin/Views/General.php:738, src/Admin/Views/General.php:773
 msgid "Custom"
 msgstr ""
 
-#: src/Admin/Views/General.php:322, src/Admin/Framework/fields/border/border.php:59, src/Admin/Framework/fields/typography/typography.php:201, src/Admin/Framework/fields/typography/typography.php:215
+#: src/Admin/Views/General.php:323, src/Admin/Framework/fields/border/border.php:59, src/Admin/Framework/fields/typography/typography.php:201, src/Admin/Framework/fields/typography/typography.php:215
 msgid "None"
 msgstr ""
 
-#: src/Admin/Views/General.php:333
+#: src/Admin/Views/General.php:334
 msgid "Agent Photo"
 msgstr ""
 
-#: src/Admin/Views/General.php:334, src/Admin/Views/General.php:346, src/Admin/Views/General.php:356, src/Admin/Views/General.php:366, src/Admin/Views/General.php:384, src/Admin/Views/General.php:401, src/Admin/Views/General.php:411, src/Admin/Views/General.php:454, src/Admin/Views/General.php:463, src/Admin/Views/General.php:619, src/Admin/Views/General.php:670, src/Admin/Views/General.php:742, src/Admin/Views/General.php:777, src/Admin/Views/General.php:816, src/Admin/Views/General.php:834, src/Admin/Views/General.php:850, src/Admin/Views/General.php:1116
+#: src/Admin/Views/General.php:335, src/Admin/Views/General.php:347, src/Admin/Views/General.php:357, src/Admin/Views/General.php:367, src/Admin/Views/General.php:385, src/Admin/Views/General.php:402, src/Admin/Views/General.php:412, src/Admin/Views/General.php:455, src/Admin/Views/General.php:464, src/Admin/Views/General.php:620, src/Admin/Views/General.php:671, src/Admin/Views/General.php:743, src/Admin/Views/General.php:778, src/Admin/Views/General.php:817, src/Admin/Views/General.php:835, src/Admin/Views/General.php:851, src/Admin/Views/General.php:1117
 msgid "Preview Image"
 msgstr ""
 
-#: src/Admin/Views/General.php:334
+#: src/Admin/Views/General.php:335
 msgid "Add agent photo to show in the bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:336
+#: src/Admin/Views/General.php:337
 msgid "Upload or select an image from media library."
 msgstr ""
 
-#: src/Admin/Views/General.php:345
+#: src/Admin/Views/General.php:346
 msgid "Agent Name"
 msgstr ""
 
-#: src/Admin/Views/General.php:346
+#: src/Admin/Views/General.php:347
 msgid "Add your/agent name for shying in bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:347
+#: src/Admin/Views/General.php:348
 msgid "John Doe"
 msgstr ""
 
-#: src/Admin/Views/General.php:355
+#: src/Admin/Views/General.php:356
 msgid "Subtitle"
 msgstr ""
 
-#: src/Admin/Views/General.php:356
+#: src/Admin/Views/General.php:357
 msgid "Add subtitle to show under agent name."
 msgstr ""
 
-#: src/Admin/Views/General.php:357
+#: src/Admin/Views/General.php:358
 msgid "Typically replies within a day"
 msgstr ""
 
-#: src/Admin/Views/General.php:365
+#: src/Admin/Views/General.php:366
 msgid "Bubble Header Content Position"
 msgstr ""
 
-#: src/Admin/Views/General.php:370, src/Frontend/elementor-widgets/elementor-widget.php:1353, src/Admin/Framework/fields/typography/typography.php:173
+#: src/Admin/Views/General.php:371, src/Frontend/elementor-widgets/elementor-widget.php:1353, src/Admin/Framework/fields/typography/typography.php:173
 msgid "Left"
 msgstr ""
 
-#: src/Admin/Views/General.php:373, src/Frontend/elementor-widgets/elementor-widget.php:1357, src/Admin/Framework/fields/typography/typography.php:174
+#: src/Admin/Views/General.php:374, src/Frontend/elementor-widgets/elementor-widget.php:1357, src/Admin/Framework/fields/typography/typography.php:174
 msgid "Center"
 msgstr ""
 
-#: src/Admin/Views/General.php:384
+#: src/Admin/Views/General.php:385
 msgid "Turn ON enabling GDPR compliance checkbox."
 msgstr ""
 
-#: src/Admin/Views/General.php:392
+#: src/Admin/Views/General.php:393
 msgid "GDPR Compliance Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:393
+#: src/Admin/Views/General.php:394
 msgid "Change default GDPR compliance text."
 msgstr ""
 
-#: src/Admin/Views/General.php:400
+#: src/Admin/Views/General.php:401
 msgid "Current Time"
 msgstr ""
 
-#: src/Admin/Views/General.php:401
+#: src/Admin/Views/General.php:402
 msgid "Show message before current time."
 msgstr ""
 
-#: src/Admin/Views/General.php:410
+#: src/Admin/Views/General.php:411
 msgid "Message From Agent"
 msgstr ""
 
-#: src/Admin/Views/General.php:411
+#: src/Admin/Views/General.php:412
 msgid "Add add custom message for shoeing in message box."
 msgstr ""
 
-#: src/Admin/Views/General.php:412
+#: src/Admin/Views/General.php:413
 msgid "Hello, Welcome to the site. Please click below button for chating me throught WhatsApp."
 msgstr ""
 
-#: src/Admin/Views/General.php:421
+#: src/Admin/Views/General.php:422
 msgid "Icon For Send Message Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:442
+#: src/Admin/Views/General.php:443
 msgid "No Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:445, src/Admin/Views/General.php:661, src/Admin/Views/General.php:696, src/Admin/Views/General.php:733, src/Admin/Views/General.php:768
+#: src/Admin/Views/General.php:446, src/Admin/Views/General.php:662, src/Admin/Views/General.php:697, src/Admin/Views/General.php:734, src/Admin/Views/General.php:769
 msgid "Native"
 msgstr ""
 
-#: src/Admin/Views/General.php:454
+#: src/Admin/Views/General.php:455
 msgid "Change icon for adding before send message button text."
 msgstr ""
 
-#: src/Admin/Views/General.php:462
+#: src/Admin/Views/General.php:463
 msgid "Send Message Button Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:463
+#: src/Admin/Views/General.php:464
 msgid "Add send message button text."
 msgstr ""
 
-#: src/Admin/Views/General.php:464
+#: src/Admin/Views/General.php:465
 msgid "Send a message"
 msgstr ""
 
-#: src/Admin/Views/General.php:472
-msgid "Forms"
+#: src/Admin/Views/General.php:473
+msgid "Form"
 msgstr ""
 
-#: src/Admin/Views/General.php:478, src/Admin/Views/General.php:490
+#: src/Admin/Views/General.php:479, src/Admin/Views/General.php:491
 msgid "Form Fields"
 msgstr ""
 
-#: src/Admin/Views/General.php:482
+#: src/Admin/Views/General.php:483
 msgid "Want to unlock the full potential of Form Fields? <a target=\"_blank\" href=\"https://chathelp.themeatelier.net/pricing/\"><b>Upgrade To Pro!</b></a>"
 msgstr ""
 
-#: src/Admin/Views/General.php:492
+#: src/Admin/Views/General.php:493
 msgid "Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:493
+#: src/Admin/Views/General.php:494
 msgid "Email (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:494
+#: src/Admin/Views/General.php:495
 msgid "Phone Number (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:495
+#: src/Admin/Views/General.php:496
 msgid "Textarea"
 msgstr ""
 
-#: src/Admin/Views/General.php:496
+#: src/Admin/Views/General.php:497
 msgid "Select (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:507, src/Admin/Views/General.php:508
+#: src/Admin/Views/General.php:508, src/Admin/Views/General.php:509
 msgid "Field Label"
 msgstr ""
 
-#: src/Admin/Views/General.php:513
+#: src/Admin/Views/General.php:514
 msgid "Placeholder"
 msgstr ""
 
-#: src/Admin/Views/General.php:514
+#: src/Admin/Views/General.php:515
 msgid "E.g. placeholder"
 msgstr ""
 
-#: src/Admin/Views/General.php:519
+#: src/Admin/Views/General.php:520
 msgid "Select Options"
 msgstr ""
 
-#: src/Admin/Views/General.php:525
+#: src/Admin/Views/General.php:526
 msgid "Option"
 msgstr ""
 
-#: src/Admin/Views/General.php:533
+#: src/Admin/Views/General.php:534
 msgid "Required"
 msgstr ""
 
-#: src/Admin/Views/General.php:540
+#: src/Admin/Views/General.php:541
 msgid "Custom Validation Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:547
+#: src/Admin/Views/General.php:548
 msgid "Name"
 msgstr ""
 
-#: src/Admin/Views/General.php:548
+#: src/Admin/Views/General.php:549
 msgid "Your Name?"
 msgstr ""
 
-#: src/Admin/Views/General.php:553
+#: src/Admin/Views/General.php:554
 msgid "Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:554
+#: src/Admin/Views/General.php:555
 msgid "Your Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:563
+#: src/Admin/Views/General.php:564
 msgid "Input label"
 msgstr ""
 
-#: src/Admin/Views/General.php:564
+#: src/Admin/Views/General.php:565
 msgid "Turn Show input label."
 msgstr ""
 
-#: src/Admin/Views/General.php:565, src/Admin/Views/General.php:629, src/Admin/Views/General.php:822, src/Admin/Views/WooCommerceButton.php:42, src/Admin/Views/WooCommerceButton.php:127
+#: src/Admin/Views/General.php:566, src/Admin/Views/General.php:630, src/Admin/Views/General.php:823, src/Admin/Views/WooCommerceButton.php:42, src/Admin/Views/WooCommerceButton.php:127
 msgid "Show"
 msgstr ""
 
-#: src/Admin/Views/General.php:566, src/Admin/Views/General.php:630, src/Admin/Views/General.php:825, src/Admin/Views/WooCommerceButton.php:43, src/Admin/Views/WooCommerceButton.php:128
+#: src/Admin/Views/General.php:567, src/Admin/Views/General.php:631, src/Admin/Views/General.php:826, src/Admin/Views/WooCommerceButton.php:43, src/Admin/Views/WooCommerceButton.php:128
 msgid "Hide"
 msgstr ""
 
-#: src/Admin/Views/General.php:573
+#: src/Admin/Views/General.php:574
 msgid "Loading Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:574
+#: src/Admin/Views/General.php:575
 msgid "Add send message loading text."
 msgstr ""
 
-#: src/Admin/Views/General.php:575
+#: src/Admin/Views/General.php:576
 msgid "Redirecting..."
 msgstr ""
 
-#: src/Admin/Views/General.php:583
+#: src/Admin/Views/General.php:584
 msgid "Customize your message templates based on the information you need. You can recive all form fields data using {form_fields} or use separate important variables from below this field."
 msgstr ""
 
-#: src/Admin/Views/General.php:591
+#: src/Admin/Views/General.php:592
 msgid "Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:597
+#: src/Admin/Views/General.php:598
 msgid "Button Style"
 msgstr ""
 
-#: src/Admin/Views/General.php:618, src/Admin/Views/WooCommerceButton.php:144
+#: src/Admin/Views/General.php:619, src/Admin/Views/WooCommerceButton.php:144
 msgid "Button Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:619, src/Admin/Views/WooCommerceButton.php:145
+#: src/Admin/Views/General.php:620, src/Admin/Views/WooCommerceButton.php:145
 msgid "Change text to show in button."
 msgstr ""
 
-#: src/Admin/Views/General.php:620
+#: src/Admin/Views/General.php:621
 msgid "How may I help you?"
 msgstr ""
 
-#: src/Admin/Views/General.php:628, src/Admin/Views/WooCommerceButton.php:125
+#: src/Admin/Views/General.php:629, src/Admin/Views/WooCommerceButton.php:125
 msgid "Show/Hide Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:640, src/Admin/Views/General.php:712, src/Admin/Views/WooCommerceButton.php:136
+#: src/Admin/Views/General.php:641, src/Admin/Views/General.php:713, src/Admin/Views/WooCommerceButton.php:136
 msgid "Icon For Circle Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:670, src/Admin/Views/General.php:742, src/Admin/Views/WooCommerceButton.php:137
+#: src/Admin/Views/General.php:671, src/Admin/Views/General.php:743, src/Admin/Views/WooCommerceButton.php:137
 msgid "Change icon for circle button."
 msgstr ""
 
-#: src/Admin/Views/General.php:678, src/Admin/Views/General.php:750
+#: src/Admin/Views/General.php:679, src/Admin/Views/General.php:751
 msgid "Icon For Circle Button Close "
 msgstr ""
 
-#: src/Admin/Views/General.php:705, src/Admin/Views/General.php:777
+#: src/Admin/Views/General.php:706, src/Admin/Views/General.php:778
 msgid "Change icon for circle button close."
 msgstr ""
 
-#: src/Admin/Views/General.php:787, src/Admin/Views/General.php:1065
+#: src/Admin/Views/General.php:788, src/Admin/Views/General.php:1066
 msgid "Fade"
 msgstr ""
 
-#: src/Admin/Views/General.php:788
+#: src/Admin/Views/General.php:789
 msgid "Slide down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:789
+#: src/Admin/Views/General.php:790
 msgid "Rotate (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:790, src/Admin/Views/General.php:1078
+#: src/Admin/Views/General.php:791, src/Admin/Views/General.php:1079
 msgid "Slide Up (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:801, src/Admin/Views/WooCommerceButton.php:151
+#: src/Admin/Views/General.php:802, src/Admin/Views/WooCommerceButton.php:151
 msgid "Button Padding"
 msgstr ""
 
-#: src/Admin/Views/General.php:802
+#: src/Admin/Views/General.php:803
 msgid "Change button padding"
 msgstr ""
 
-#: src/Admin/Views/General.php:815
+#: src/Admin/Views/General.php:816
 msgid "Button Tooltip"
 msgstr ""
 
-#: src/Admin/Views/General.php:816
+#: src/Admin/Views/General.php:817
 msgid "Show button tooltip."
 msgstr ""
 
-#: src/Admin/Views/General.php:819
+#: src/Admin/Views/General.php:820
 msgid "On Hover"
 msgstr ""
 
-#: src/Admin/Views/General.php:833
+#: src/Admin/Views/General.php:834
 msgid "Button Tooltip Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:834
+#: src/Admin/Views/General.php:835
 msgid "Set button tooltip text."
 msgstr ""
 
-#: src/Admin/Views/General.php:835
+#: src/Admin/Views/General.php:836
 msgid "Need Help? Chat with us"
 msgstr ""
 
-#: src/Admin/Views/General.php:841
+#: src/Admin/Views/General.php:842
 msgid "Button Tooltip Background"
 msgstr ""
 
-#: src/Admin/Views/General.php:842
+#: src/Admin/Views/General.php:843
 msgid "Set button tooltip background color."
 msgstr ""
 
-#: src/Admin/Views/General.php:849
+#: src/Admin/Views/General.php:850
 msgid "Button Tooltip Width"
 msgstr ""
 
-#: src/Admin/Views/General.php:850
+#: src/Admin/Views/General.php:851
 msgid "Set bubble button tooltip width."
 msgstr ""
 
-#: src/Admin/Views/General.php:861, src/Admin/Views/WooCommerceButton.php:193
+#: src/Admin/Views/General.php:862, src/Admin/Views/WooCommerceButton.php:193
 msgid "Visibility"
 msgstr ""
 
-#: src/Admin/Views/General.php:868
+#: src/Admin/Views/General.php:869
 msgid "Visibility By"
 msgstr ""
 
-#: src/Admin/Views/General.php:869
+#: src/Admin/Views/General.php:870
 msgid "Check the option(s) to visibility by different options."
 msgstr ""
 
-#: src/Admin/Views/General.php:871, src/Admin/Views/General.php:888, src/Admin/Views/General.php:909
+#: src/Admin/Views/General.php:872, src/Admin/Views/General.php:889, src/Admin/Views/General.php:910
 msgid "Theme Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:872, src/Admin/Views/General.php:931, src/Admin/Views/General.php:952
+#: src/Admin/Views/General.php:873, src/Admin/Views/General.php:932, src/Admin/Views/General.php:953
 msgid "Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:873
+#: src/Admin/Views/General.php:874
 msgid "Posts (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:874
+#: src/Admin/Views/General.php:875
 msgid "Products (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:875
+#: src/Admin/Views/General.php:876
 msgid "Post Categories (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:876
+#: src/Admin/Views/General.php:877
 msgid "Post Tags (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:877
+#: src/Admin/Views/General.php:878
 msgid "Porduct Categories (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:878
+#: src/Admin/Views/General.php:879
 msgid "Porduct Tags (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:894, src/Admin/Views/General.php:937
+#: src/Admin/Views/General.php:895, src/Admin/Views/General.php:938
 msgid "Target"
 msgstr ""
 
-#: src/Admin/Views/General.php:896, src/Admin/Views/General.php:939
+#: src/Admin/Views/General.php:897, src/Admin/Views/General.php:940
 msgid "Include"
 msgstr ""
 
-#: src/Admin/Views/General.php:897, src/Admin/Views/General.php:940
+#: src/Admin/Views/General.php:898, src/Admin/Views/General.php:941
 msgid "Exclude"
 msgstr ""
 
-#: src/Admin/Views/General.php:903
+#: src/Admin/Views/General.php:904
 msgid "All Theme Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:911
+#: src/Admin/Views/General.php:912
 msgid "Blog Page"
 msgstr ""
 
-#: src/Admin/Views/General.php:912
+#: src/Admin/Views/General.php:913
 msgid "404 Page"
 msgstr ""
 
-#: src/Admin/Views/General.php:913
+#: src/Admin/Views/General.php:914
 msgid "Search Page"
 msgstr ""
 
-#: src/Admin/Views/General.php:946
+#: src/Admin/Views/General.php:947
 msgid "All Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:960
+#: src/Admin/Views/General.php:961
 msgid "You don't have any pages available."
 msgstr ""
 
-#: src/Admin/Views/General.php:972
+#: src/Admin/Views/General.php:973
 msgid "Device Visibility"
 msgstr ""
 
-#: src/Admin/Views/General.php:973
+#: src/Admin/Views/General.php:974
 msgid "Everywhere = All kind of devices."
 msgstr ""
 
-#: src/Admin/Views/General.php:973
+#: src/Admin/Views/General.php:974
 msgid "Deskop Only = 991px bigger devices."
 msgstr ""
 
-#: src/Admin/Views/General.php:973
+#: src/Admin/Views/General.php:974
 msgid "Tablet Only = 576px - 991px devices."
 msgstr ""
 
-#: src/Admin/Views/General.php:973
+#: src/Admin/Views/General.php:974
 msgid "Mobile Only = Less than 576px devices."
 msgstr ""
 
-#: src/Admin/Views/General.php:977, src/Admin/Views/WooCommerceButton.php:203, src/Frontend/elementor-widgets/elementor-widget.php:1085
+#: src/Admin/Views/General.php:978, src/Admin/Views/WooCommerceButton.php:203, src/Frontend/elementor-widgets/elementor-widget.php:1085
 msgid "Everywhere"
 msgstr ""
 
-#: src/Admin/Views/General.php:980, src/Admin/Views/WooCommerceButton.php:206
+#: src/Admin/Views/General.php:981, src/Admin/Views/WooCommerceButton.php:206
 msgid "Desktop Only"
 msgstr ""
 
-#: src/Admin/Views/General.php:983, src/Admin/Views/WooCommerceButton.php:209
+#: src/Admin/Views/General.php:984, src/Admin/Views/WooCommerceButton.php:209
 msgid "Tablet Only"
 msgstr ""
 
-#: src/Admin/Views/General.php:986, src/Admin/Views/WooCommerceButton.php:212
+#: src/Admin/Views/General.php:987, src/Admin/Views/WooCommerceButton.php:212
 msgid "Mobile Only"
 msgstr ""
 
-#: src/Admin/Views/General.php:994, src/Admin/Views/Shortcode.php:78, src/Admin/Views/WooCommerceButton.php:221
+#: src/Admin/Views/General.php:995, src/Admin/Views/Shortcode.php:78, src/Admin/Views/WooCommerceButton.php:221
 msgid "Webhooks"
 msgstr ""
 
-#: src/Admin/Views/General.php:1005, src/Admin/Views/Shortcode.php:88, src/Admin/Views/WooCommerceButton.php:231
+#: src/Admin/Views/General.php:1006, src/Admin/Views/Shortcode.php:88, src/Admin/Views/WooCommerceButton.php:231
 msgid "Webhook URL"
 msgstr ""
 
-#: src/Admin/Views/General.php:1006
+#: src/Admin/Views/General.php:1007
 msgid "Clicking on the WhatsApp floating button or multi agents triggers this Webhook URL."
 msgstr ""
 
-#: src/Admin/Views/General.php:1012, src/Admin/Views/Shortcode.php:96, src/Admin/Views/WooCommerceButton.php:239
+#: src/Admin/Views/General.php:1013, src/Admin/Views/Shortcode.php:96, src/Admin/Views/WooCommerceButton.php:239
 msgid "Add Values"
 msgstr ""
 
-#: src/Admin/Views/General.php:1018, src/Admin/Views/Shortcode.php:102, src/Admin/Views/WooCommerceButton.php:245
+#: src/Admin/Views/General.php:1019, src/Admin/Views/Shortcode.php:102, src/Admin/Views/WooCommerceButton.php:245
 msgid "Add Value"
 msgstr ""
 
-#: src/Admin/Views/General.php:1021
+#: src/Admin/Views/General.php:1022
 msgid ""
 "<p><b>Dynamic Variables:</b> {title}, {number}, {site_url}, {current_url}, {date}, {ip}</p>\n"
 "<h4>Retrieving Values from Cookies and URL Parameters</h4>\n"
@@ -980,187 +980,187 @@ msgid ""
 "<p><b>Example:</b> [[ _ga ]]</p>"
 msgstr ""
 
-#: src/Admin/Views/General.php:1033
+#: src/Admin/Views/General.php:1034
 msgid "Others"
 msgstr ""
 
-#: src/Admin/Views/General.php:1040
+#: src/Admin/Views/General.php:1041
 msgid "Auto Open Popup"
 msgstr ""
 
-#: src/Admin/Views/General.php:1041
+#: src/Admin/Views/General.php:1042
 msgid "Turn ON for open popup automatically."
 msgstr ""
 
-#: src/Admin/Views/General.php:1050
+#: src/Admin/Views/General.php:1051
 msgid "Auto Open Popup Timeout"
 msgstr ""
 
-#: src/Admin/Views/General.php:1051
+#: src/Admin/Views/General.php:1052
 msgid "Timeout value for opening popup after second."
 msgstr ""
 
-#: src/Admin/Views/General.php:1063
+#: src/Admin/Views/General.php:1064
 msgid "Select Animation For Bubble"
 msgstr ""
 
-#: src/Admin/Views/General.php:1066
+#: src/Admin/Views/General.php:1067
 msgid "Fade Right"
 msgstr ""
 
-#: src/Admin/Views/General.php:1067
+#: src/Admin/Views/General.php:1068
 msgid "Fade Down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1068
+#: src/Admin/Views/General.php:1069
 msgid "Fade In Scale (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1069
+#: src/Admin/Views/General.php:1070
 msgid "Rotation (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1070
+#: src/Admin/Views/General.php:1071
 msgid "Slide Fall (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1071
+#: src/Admin/Views/General.php:1072
 msgid "Slide Down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1072
+#: src/Admin/Views/General.php:1073
 msgid "Ease Down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1073
+#: src/Admin/Views/General.php:1074
 msgid "Rotate Left (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1074
+#: src/Admin/Views/General.php:1075
 msgid "Flip Horizontal (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1075
+#: src/Admin/Views/General.php:1076
 msgid "Flip Vertical (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1076
+#: src/Admin/Views/General.php:1077
 msgid "Flip Up (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1077
+#: src/Admin/Views/General.php:1078
 msgid "Super Scaled (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1079
+#: src/Admin/Views/General.php:1080
 msgid "Random (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1089
+#: src/Admin/Views/General.php:1090
 msgid "Select Bubble Layout Mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:1093
+#: src/Admin/Views/General.php:1094
 msgid "Light mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:1096
+#: src/Admin/Views/General.php:1097
 msgid "Dark mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:1100
+#: src/Admin/Views/General.php:1101
 msgid "Night mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:1108
+#: src/Admin/Views/General.php:1109
 msgid "Alternative Bubble Switcher"
 msgstr ""
 
-#: src/Admin/Views/General.php:1110
+#: src/Admin/Views/General.php:1111
 msgid "Enter comma-separated CSS class or ID selectors to treat them as bubble switch."
 msgstr ""
 
-#: src/Admin/Views/General.php:1115
+#: src/Admin/Views/General.php:1116
 msgid "Color Settings"
 msgstr ""
 
-#: src/Admin/Views/General.php:1116
+#: src/Admin/Views/General.php:1117
 msgid "Change Brand Colors."
 msgstr ""
 
-#: src/Admin/Views/General.php:1118
+#: src/Admin/Views/General.php:1119
 msgid "Primary"
 msgstr ""
 
-#: src/Admin/Views/General.php:1119
+#: src/Admin/Views/General.php:1120
 msgid "Secondary"
 msgstr ""
 
-#: src/Admin/Views/General.php:1129
+#: src/Admin/Views/General.php:1130
 msgid "Button Positioning"
 msgstr ""
 
-#: src/Admin/Views/General.php:1134, src/Admin/Views/General.php:1230
+#: src/Admin/Views/General.php:1135, src/Admin/Views/General.php:1231
 msgid "Bubble Position"
 msgstr ""
 
-#: src/Admin/Views/General.php:1138, src/Admin/Views/General.php:1234, src/Admin/Views/General.php:1330, src/Admin/Framework/fields/background/background.php:172
+#: src/Admin/Views/General.php:1139, src/Admin/Views/General.php:1235, src/Admin/Views/General.php:1331, src/Admin/Framework/fields/background/background.php:172
 msgid "Right Bottom"
 msgstr ""
 
-#: src/Admin/Views/General.php:1141, src/Admin/Views/General.php:1237, src/Admin/Views/General.php:1333, src/Admin/Framework/fields/background/background.php:166
+#: src/Admin/Views/General.php:1142, src/Admin/Views/General.php:1238, src/Admin/Views/General.php:1334, src/Admin/Framework/fields/background/background.php:166
 msgid "Left Bottom"
 msgstr ""
 
-#: src/Admin/Views/General.php:1144, src/Admin/Views/General.php:1240, src/Admin/Views/General.php:1336
+#: src/Admin/Views/General.php:1145, src/Admin/Views/General.php:1241, src/Admin/Views/General.php:1337
 msgid "Right Middle"
 msgstr ""
 
-#: src/Admin/Views/General.php:1148, src/Admin/Views/General.php:1244, src/Admin/Views/General.php:1340
+#: src/Admin/Views/General.php:1149, src/Admin/Views/General.php:1245, src/Admin/Views/General.php:1341
 msgid "Left Middle"
 msgstr ""
 
-#: src/Admin/Views/General.php:1157, src/Admin/Views/General.php:1254, src/Admin/Views/General.php:1350
+#: src/Admin/Views/General.php:1158, src/Admin/Views/General.php:1255, src/Admin/Views/General.php:1351
 msgid "Margin From Right Bottom"
 msgstr ""
 
-#: src/Admin/Views/General.php:1171, src/Admin/Views/General.php:1268, src/Admin/Views/General.php:1364
+#: src/Admin/Views/General.php:1172, src/Admin/Views/General.php:1269, src/Admin/Views/General.php:1365
 msgid "Margin From Left Bottom"
 msgstr ""
 
-#: src/Admin/Views/General.php:1185, src/Admin/Views/General.php:1282, src/Admin/Views/General.php:1378
+#: src/Admin/Views/General.php:1186, src/Admin/Views/General.php:1283, src/Admin/Views/General.php:1379
 msgid "Margin From Right Middle"
 msgstr ""
 
-#: src/Admin/Views/General.php:1199, src/Admin/Views/General.php:1296, src/Admin/Views/General.php:1392
+#: src/Admin/Views/General.php:1200, src/Admin/Views/General.php:1297, src/Admin/Views/General.php:1393
 msgid "Margin From Left Middle"
 msgstr ""
 
-#: src/Admin/Views/General.php:1212
+#: src/Admin/Views/General.php:1213
 msgid "Different Positioning on Tablet"
 msgstr ""
 
-#: src/Admin/Views/General.php:1220
+#: src/Admin/Views/General.php:1221
 msgid "Use Different Positioning For Tablet Devices"
 msgstr ""
 
-#: src/Admin/Views/General.php:1221, src/Admin/Views/General.php:1317, src/Frontend/elementor-widgets/elementor-widget.php:1294, src/Frontend/elementor-widgets/elementor-widget.php:1340
+#: src/Admin/Views/General.php:1222, src/Admin/Views/General.php:1318, src/Frontend/elementor-widgets/elementor-widget.php:1294, src/Frontend/elementor-widgets/elementor-widget.php:1340
 msgid "Yes"
 msgstr ""
 
-#: src/Admin/Views/General.php:1222, src/Admin/Views/General.php:1318, src/Frontend/elementor-widgets/elementor-widget.php:1295, src/Frontend/elementor-widgets/elementor-widget.php:1341
+#: src/Admin/Views/General.php:1223, src/Admin/Views/General.php:1319, src/Frontend/elementor-widgets/elementor-widget.php:1295, src/Frontend/elementor-widgets/elementor-widget.php:1341
 msgid "No"
 msgstr ""
 
-#: src/Admin/Views/General.php:1309
+#: src/Admin/Views/General.php:1310
 msgid "Different Positioning on Mobile"
 msgstr ""
 
-#: src/Admin/Views/General.php:1316
+#: src/Admin/Views/General.php:1317
 msgid "Use Different Positioning for Mobile Devices"
 msgstr ""
 
-#: src/Admin/Views/General.php:1326
+#: src/Admin/Views/General.php:1327
 msgid "Bubble position"
 msgstr ""
 
@@ -3864,7 +3864,7 @@ msgstr ""
 msgid "00:00-23:59"
 msgstr ""
 
-#: src/Frontend/Templates/FormTemplate.php:87, src/Frontend/Templates/SingleTemplate.php:88
+#: src/Frontend/Templates/FormTemplate.php:85, src/Frontend/Templates/SingleTemplate.php:88
 msgid "Powered by"
 msgstr ""
 

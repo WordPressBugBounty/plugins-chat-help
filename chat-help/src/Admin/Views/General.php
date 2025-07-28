@@ -31,6 +31,7 @@ class General
             array(
                 'title' => esc_html__('FLOATING CHAT', 'chat-help'),
                 'icon' => 'icofont-brand-whatsapp',
+                'class' => 'floating_chat',
                 'fields' => array(
                     array(
                         'id' => 'chat_layout',
@@ -469,7 +470,7 @@ class General
                                 )
                             ),
                             array(
-                                'title' => esc_html__('Forms', 'chat-help'),
+                                'title' => esc_html__('Form', 'chat-help'),
                                 'icon'  => 'icofont-envelope-open',
                                 'fields' => array(
                                     array(
@@ -1078,7 +1079,7 @@ class General
                                             '13'    => esc_html__('Slide Up (Pro)', 'chat-help'),
                                             'random' => esc_html__('Random (Pro)', 'chat-help'),
                                         ),
-                                        'default'     => 'random',
+                                        'default'     => '14',
                                         'dependency' => array('chat_layout', '!=', 'button', 'any'),
                                     ),
 

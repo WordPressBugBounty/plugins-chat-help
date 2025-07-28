@@ -979,8 +979,9 @@
 .wHelp .condition__checked a {
   display: none;
 }
-.wHelp .condition__checked:focus {
-  background-color: var(--color-primary);
+.wHelp .condition__checked:hover, .wHelp .condition__checked:focus {
+  background-color: var(--color-offline);
+  cursor: not-allowed !important;
 }
 .wHelp-multi .condition__checked {
   background-color: var(--color-message);
@@ -988,6 +989,10 @@
 }
 .wHelp-multi .condition__checked a {
   display: none;
+}
+.wHelp-multi .condition__checked:hover, .wHelp-multi .condition__checked:focus {
+  background-color: var(--color-offline);
+  cursor: not-allowed !important;
 }
 
 @media screen and (max-width: 991px) {

@@ -62,11 +62,9 @@ class FormTemplate
 		if ('random' === $select_animation) :
 			$animation = $random;
 		else :
-			$animation = $select_animation;
+			$animation = !empty($select_animation) ? $select_animation : '14';
 		endif;
-
 		echo '<div class="wHelp ' . esc_attr($bubble_position) . ' wHelp-' . esc_attr($bubble_visibility) . '-only ';
-
 		// Add bubble style classes based on the 'bubble-style' option.
 		if ($bubble_style === 'dark') {
 			echo 'dark-mode ';
