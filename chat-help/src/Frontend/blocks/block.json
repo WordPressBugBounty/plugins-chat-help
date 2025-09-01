@@ -53,6 +53,10 @@
 			"type": "string",
 			"default": "basic-button"
 		},
+		"whatsappType": {
+			"type": "string",
+			"default": "number"
+		},
 		"buttonSize": {
 			"type": "string",
 			"default": "size-normal"
@@ -91,15 +95,19 @@
 		},
 		"buttonLinkTarget": {
 			"type": "boolean",
-			"default": false
+			"default": true
 		},
 		"numberInput": {
 			"type": "string",
 			"default": ""
 		},
-		"prefilledMessageInput": {
+		"groupInput": {
 			"type": "string",
 			"default": ""
+		},
+		"prefilledMessageInput": {
+			"type": "string",
+			"default": "Hi! I have a question about your services."
 		},
 		"imageUrl": {
 			"type": "string",

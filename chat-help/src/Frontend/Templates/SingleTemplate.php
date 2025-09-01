@@ -57,6 +57,16 @@ class SingleTemplate
 		$secondary = isset($color_settings['secondary']) ? $color_settings['secondary'] : '#118c7e';
 
 		$bubble_visibility = isset($options['bubble-visibility']) ? $options['bubble-visibility'] : 'everywhere';
+		$type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
+		$whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
+		$whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
+
+		if ($type_of_whatsapp === 'group') {
+			$gaAnalyticsAttr = 'data-group=' . $whatsapp_group . '';
+		} else {
+			$gaAnalyticsAttr = 'data-number=' . $whatsapp_number . '';
+		}
+		
 		// Method implementation goes here.
 		if ('random' === $select_animation) :
 			$animation = $random;
@@ -85,7 +95,7 @@ class SingleTemplate
 			include Helpers::chat_help_locate_template('items/single-template-header.php');
 			include Helpers::chat_help_locate_template('items/agent-message.php');
 			?>
-			<span style="display:block!important" class="wcp-branding"><?php echo esc_html__('Powered by', 'chat-help'); ?> <a style="color:#fff!important;display:inline-block!important;" target="_blank" href="https://chathelp.themeatelier.net"><strong style="font-weight:bold!important;"><?php echo esc_html__('Chat Help', 'chat-help'); ?></strong></a></span>
+			<span style="display:block!important" class="wcp-branding"><?php echo esc_html__('Powered by', 'chat-help'); ?> <a style="color:#fff!important;display:inline-block!important;" target="_blank" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) . 'pricing/' ?>"><strong style="font-weight:bold!important;"><?php echo esc_html__('Chat Help', 'chat-help'); ?></strong></a></span>
 		</div>
 		</div>
 <?php

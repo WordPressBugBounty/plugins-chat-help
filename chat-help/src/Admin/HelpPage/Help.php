@@ -60,6 +60,7 @@ class Help
      * @var array
      */
     protected static $not_show_plugin_list = array('chat-help','better-chat-support',
+        'bizreview',    
         'chat-help',
         'chat-viber',
         'chat-telegram',
@@ -129,12 +130,13 @@ class Help
             );
             $request = array(
                 'action'  => 'query_plugins',
-                'timeout' => 30,
+                'timeout' => 0,
                 'request' => serialize($args),
             );
             // https://codex.wordpress.org/WordPress.org_API.
             $url      = 'http://api.wordpress.org/plugins/info/1.0/';
             $response = wp_remote_post($url, array('body' => $request));
+
 
             if (! is_wp_error($response)) {
 
@@ -181,17 +183,21 @@ class Help
                         $image_type = 'jpg';
                         break;
                     case 'chat-help':
-                    case 'darkify':
                         $image_type = 'gif';
+                        break;
+                    case 'darkify':
+                        $image_type = 'gif?rev=3301202';
                         break;
                 }
 
+             
                 $details_link = network_admin_url('plugin-install.php?tab=plugin-information&amp;plugin=' . $plugin['slug'] . '&amp;TB_iframe=true&amp;width=600&amp;height=550');
 ?>
                 <div class="plugin-card <?php echo esc_attr($plugin_slug); ?>" id="<?php echo esc_attr($plugin_slug); ?>">
                     <div class="plugin-card-top">
                         <div class="name column-name">
                             <h3>
+                                
                                 <a class="thickbox" title="<?php echo esc_attr($plugin['name']); ?>"
                                     href="<?php echo esc_url($details_link); ?>">
                                     <?php echo esc_html($plugin['name']); ?>
@@ -401,7 +407,7 @@ class Help
                         </div>
                         <div class="header_nav_right">
                             <div class="header_nav_right_menu">
-                                <a target="_blank" href="https://chathelp.themeatelier.net/pricing/"><?php echo esc_html__('🚀 Upgrading To Pro!', 'chat-help') ?></a>
+                                <a target="_blank" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) ?>pricing/"><?php echo esc_html__('🚀 Upgrading To Pro!', 'chat-help') ?></a>
                             </div>
                         </div>
                     </div>
@@ -454,18 +460,18 @@ class Help
                             </li>
                             <li>
                                 <a target="_blank" class="chat_btn_secondary"
-                                    href="https://chathelp.themeatelier.net/"><?php echo esc_html__('Live Demo', 'chat-help') ?></a>
+                                    href="<?php echo esc_url(CHAT_HELP_DEMO_URL) ?>"><?php echo esc_html__('Live Demo', 'chat-help') ?></a>
                             </li>
                             <li>
                                 <a target="_blank" class="chat_btn_secondary arrow-btn"
-                                    href="https://chathelp.themeatelier.net/pricing/"><?php echo esc_html__('Upgrade To Pro', 'chat-help') ?>
+                                    href="<?php echo esc_url(CHAT_HELP_DEMO_URL) ?>pricing/"><?php echo esc_html__('Upgrade To Pro', 'chat-help') ?>
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div class="section_quick_help">
                         <div class="quick_help_wrapper">
-                            <a target="_blank" href="https://docs.themeatelier.net/docs/whatsapp-chat-help-pro/overview" class="quick_help_item">
+                            <a target="_blank" href="https://wpchathelp.com/docs/" class="quick_help_item">
                                 <div class="quick_help_item_icon"><i class="icofont-file-alt"></i></div>
                                 <div class="quick_help_item_content">
                                     <h4 class="quick_help_item_title">
@@ -680,15 +686,15 @@ class Help
                             </span>
                             <div class="themeatelier-upgrade-to-pro-btn">
                                 <div class="themeatelier-action-btn">
-                                    <a target="_blank" href="https://chathelp.themeatelier.net/pricing/" class="chat_btn_primary">
+                                    <a target="_blank" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) ?>pricing/" class="chat_btn_primary">
                                         <?php echo esc_html__('Upgrade to Pro Now!', 'chat-help'); ?>
                                     </a>
                                     <span class="themeatelier-small-paragraph">
                                         <?php echo sprintf(esc_html__('14-Day No-Questions-Asked %s', 'chat-help'), '<a target="_blank" href="https://themeatelier.net/refund-policy/">' . esc_html__('Refund Policy', 'chat-help') . '</a>'); ?>
                                     </span>
                                 </div>
-                                <a target="_blank" class="chat_btn_secondary" href="https://chathelp.themeatelier.net/features/"><?php echo esc_html__('See All Features', 'chat-help'); ?></a>
-                                <a target="_blank" class="chat_btn_secondary" href="https://chathelp.themeatelier.net/."><?php echo esc_html__('Pro Live Demo', 'chat-help'); ?></a>
+                                <a target="_blank" class="chat_btn_secondary" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) ?>features/"><?php echo esc_html__('See All Features', 'chat-help'); ?></a>
+                                <a target="_blank" class="chat_btn_secondary" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) ?>."><?php echo esc_html__('Pro Live Demo', 'chat-help'); ?></a>
                             </div>
                         </div>
                     
@@ -768,7 +774,7 @@ class Help
                                     View Details 
                                     <i class="icofont-long-arrow-right"></i>
                                 </div>
-                                <img src="<?php echo esc_url(CHAT_HELP_DIR_URL . 'src/Admin/HelpPage/assets/images/thumbnail-1.jpg') ?>" alt="logo">
+                                <img src="<?php echo esc_url(CHAT_HELP_DIR_URL . 'src/Admin/HelpPage/assets/images/chat-help.png') ?>" alt="logo">
                                 <h4>WhatsApp Chat Help - Chat Support Plugin For WordPress</h4>
                                 <p>Whatsapp chat support is a WordPress plugin that allows website owners to easily add a WhatsApp chat button to their website.</p>
                             </a>

@@ -50,8 +50,8 @@ if (! class_exists('CHAT_HELP_Field_license')) {
 			echo '<div class="darkify-license text-center">';
 			echo '<h3>' . esc_html__('You\'re using Chat Help Lite - No License Needed. Enjoy! 🙂', 'chat-help') . '</h3>';
 
-			echo '<p>'. esc_html__('Upgrade to Chat Help Pro and unlock all the features.', 'chat-help') . '</p>';
-			echo '<a href="https://chathelp.themeatelier.net/pricing/" target="_blank" class="button-secondary">'. esc_html__('Upgrade To Pro Now', 'chat-help') . '</a>';
+			echo '<p>'. __('Unlock all Chat Help Pro features – now with up to 70% early bird off! <br> Click the button below to redeem your exclusive discount.', 'chat-help') . '</p>';
+			echo '<a href="'. CHAT_HELP_DEMO_URL .'pricing/" target="_blank" class="button-secondary">'. esc_html__('Upgrade To Pro Now', 'chat-help') . '</a>';
 
 			echo '</div>';
 			echo wp_kses_post($this->field_after());

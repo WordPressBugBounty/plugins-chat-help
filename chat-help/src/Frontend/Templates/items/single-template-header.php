@@ -16,10 +16,10 @@ use ThemeAtelier\ChatHelp\Helpers\Helpers;
     <?php include Helpers::chat_help_locate_template('items/thumbnail.php'); ?>
     <div class="info">
         <?php if ($agent_name) : ?>
-            <h4 class="info__name"><?php echo esc_html($agent_name); ?></h4>
+            <div class="info__name"><?php echo esc_html($agent_name); ?></div>
         <?php endif;
         if ($agent_subtitle) : ?>
-            <p class="info__title"><?php echo esc_html($agent_subtitle); ?></p>
+            <div class="info__title"><?php echo esc_html($agent_subtitle); ?></div>
         <?php endif; ?>
     </div>
 </div>

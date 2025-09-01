@@ -113,6 +113,43 @@ class Frontend
         $auto_open_popup_timeout = isset($options['auto_open_popup_timeout']) ? $options['auto_open_popup_timeout'] : 0;
         $open_in_new_tab         = isset($options['open_in_new_tab']) ? $options['open_in_new_tab'] : '';
         $open_in_new_tab         = $open_in_new_tab ? '_blank' : '_self';
+
+        $google_analytics = isset($options['google_analytics']) ? $options['google_analytics'] : '';
+        $event_name = isset($options['event_name']) ? $options['event_name'] : '';
+        $google_analytics_parameter = isset($options['google_analytics_parameter']) ? $options['google_analytics_parameter'] : array();
+        $analytics_parameter = [];
+        $analytics_parameter['google_analytics'] = $google_analytics;
+        $analytics_parameter['event_name'] = $event_name;
+        $whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
+        $site_title      = get_bloginfo('name'); // WordPress site title
+        $current_title = wp_get_document_title();
+        $current_url     = home_url(add_query_arg(null, null)); // Current full URL
+
+
+        foreach ($google_analytics_parameter as &$param) {
+            if (isset($param['event_parameter_value']) && is_string($param['event_parameter_value'])) {
+                $value = $param['event_parameter_value'];
+
+                // Handle {number}, {title}, {url}
+                switch ($param['event_parameter']) {
+                    case 'title':
+                        $value = $site_title;
+                        break;
+                    case 'current_title':
+                        $value = $current_title;
+                        break;
+                    case 'url':
+                        $value = $current_url;
+                        break;
+                }
+
+                $param['event_parameter_value'] = $value;
+            }
+        }
+        unset($param);
+
+        $analytics_parameter['google_analytics_parameter'] = $google_analytics_parameter;
+
         wp_enqueue_style('ico-font');
         wp_enqueue_style('chat-help-style');
         $custom_css = '';
@@ -127,9 +164,11 @@ class Frontend
         wp_enqueue_script('moment-timezone-with-data');
         wp_enqueue_script('jquery_validate');
         wp_enqueue_script('chat-help-script');
+
         $frontend_scripts = array(
             'autoShowPopup'        => $auto_show_popup,
             'autoOpenPopupTimeout' => $auto_open_popup_timeout,
+            'analytics_parameter'  => $analytics_parameter,
         );
         wp_localize_script('chat-help-script', 'whatshelp_frontend_script', $frontend_scripts);
         if (! empty($wa_custom_js)) {

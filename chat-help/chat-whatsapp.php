@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: 	Chat Help
-Plugin URI: 	https://chathelp.themeatelier.net/
+Plugin URI: 	https://wpchathelp.com/
 Description: 	WhatsApp 💬 Chat Help 🔥 Unlimited customer support tool that allows visitors to engage using "WhatsApp" or "WhatsApp Business". WhatsApp button included.
-Version: 		2.2.14
+Version: 		3.0.0
 Author:         ThemeAtelier
 Author URI:     https://themeatelier.net/
 License:        GPL-2.0+
@@ -14,7 +14,7 @@ Domain Path:    /languages
 Network:        true
 RequiresWP:     4.0
 RequiresPHP:    7.0
-UpdateURI:      https://chathelp.themeatelier.net/
+UpdateURI:      https://wpchathelp.com/
 */
 
 // Block Direct access
@@ -25,12 +25,13 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use ThemeAtelier\ChatHelp\ChatHelp;
 
-define('CHAT_HELP_VERSION', '2.2.14');
+define('CHAT_HELP_VERSION', '3.0.0');
 define('CHAT_HELP_FILE', __FILE__);
 define('CHAT_HELP_DIRNAME', dirname(__FILE__));
 define('CHAT_HELP_DIR_PATH', plugin_dir_path(__FILE__));
 define('CHAT_HELP_DIR_URL', plugin_dir_url(__FILE__));
 define('CHAT_HELP_BASENAME', plugin_basename(__FILE__));
+define('CHAT_HELP_DEMO_URL', 'https://wpchathelp.com/');
 
 function chat_help_run()
 {

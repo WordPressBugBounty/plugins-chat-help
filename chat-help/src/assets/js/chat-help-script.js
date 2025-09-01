@@ -22,16 +22,54 @@ const wHelpMulti = document.querySelectorAll(".wHelp-multi");
 const wHelpButton = document.querySelector(".wHelp_button");
 const wHelpBubble = document.querySelectorAll(".wHelp-bubble");
 const wHelpCurrentTime = document.querySelector(".current-time");
-const wHelpUserAvailability = document.querySelectorAll(".wHelpUserAvailability");
-const wHelpMultiPopupContent = document.querySelector(".wHelp-multi__popup__content");
+const wHelpUserAvailability = document.querySelectorAll(
+  ".wHelpUserAvailability"
+);
+const wHelpMultiPopupContent = document.querySelector(
+  ".wHelp-multi__popup__content"
+);
 const wHelpCheckboxDiv = document.querySelectorAll(".wHelp--checkbox");
 const wHelpCheckbox = document.querySelectorAll(".wHelp__checkbox");
 const wHelpCheckButton = document.querySelectorAll(".wHelp__send-message");
 const wHelpPopupContent = document.querySelectorAll(".wHelp__popup__content");
 const wHelpButtons = document.querySelectorAll(".wHelpButtons");
-const chatAvailability = document.querySelector(".chat-availability");
+const wHelpChatAvailability = document.querySelector(".chat-availability");
 
+let analytics_parameter =
+  whatshelp_frontend_script.analytics_parameter.google_analytics_parameter;
+let event_name = whatshelp_frontend_script.analytics_parameter.event_name;
 
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".chat_help_analytics").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      let number = this.getAttribute("data-number") || "";
+      let group = this.getAttribute("data-group") || "";
+
+      // Deep clone the analytics_parameter to avoid overwriting original
+      let eventData = JSON.parse(JSON.stringify(analytics_parameter));
+
+      eventData.forEach((param) => {
+        if (param.event_parameter === "number") {
+          param.event_parameter_value = number;
+        } else if (param.event_parameter === "group") {
+          param.event_parameter_value = group;
+        }
+      });
+
+      // Build GA params object
+      let ga_prams = {};
+      eventData.forEach((param) => {
+        ga_prams[param.event_parameter] = param.event_parameter_value;
+      });
+      console.log('ga_prams', ga_prams);
+
+      // Send GA event
+      if (typeof gtag !== "undefined") {
+        gtag("event", event_name, ga_prams);
+      }
+    });
+  });
+});
 
 // Configuration from external script
 const { autoShowPopup, autoOpenPopupTimeout } = whatshelp_frontend_script;
@@ -41,7 +79,6 @@ if (wHelpCurrentTime) {
   const today = new Date();
   wHelpCurrentTime.innerText = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
 }
-
 
 /******************** 02. OPEN BUTTON ********************/
 const toggleChatBtn = () => {
@@ -94,7 +131,7 @@ function isAvailable(available, now) {
     if (available.hasOwnProperty(key)) {
       if (get_day_of_week(key) == now.day()) {
         let timeRange = available[key].split("-");
-        let start = moment.tz(timeRange[0], "HH:mm", now.tz());  // Apply the same timezone
+        let start = moment.tz(timeRange[0], "HH:mm", now.tz()); // Apply the same timezone
         let end = moment.tz(timeRange[1], "HH:mm", now.tz());
 
         // Align start/end to the same date as `now`
@@ -134,14 +171,14 @@ function get_day_of_week(name) {
 
 /******************** 06. MULTI USER AVAILABILITY ********************/
 const handleUserAvailability = () => {
-  const searchInfo =
+  const wHelpSearchInfo =
     wHelpMultiPopupContent?.getAttribute("data-search") === "true";
   const isGrid = document
     .querySelector(".wHelp-multi")
     ?.classList.contains("wHelp-grid");
 
   if (wHelpUserAvailability.length) {
-    if (searchInfo) wHelpMultiPopupContent.classList.add("wHelp-search");
+    if (wHelpSearchInfo) wHelpMultiPopupContent.classList.add("wHelp-search");
     if (wHelpUserAvailability.length > (isGrid ? 4 : 3))
       wHelpMultiPopupContent.classList.add("wHelp-scroll");
 
@@ -191,31 +228,43 @@ const updateButtonAvailability = () => {
     const availability = isAvailable(availableTimes, now);
     if (availability.isAvailable) {
       item.classList.add("avatar-active");
+      item.classList.add("chat_help_analytics");
       item.classList.remove("avatar-inactive");
     } else {
       item.classList.add("avatar-inactive");
       item.classList.remove("avatar-active");
+      item.classList.remove("chat_help_analytics");
     }
   });
 };
 updateButtonAvailability();
 
 /******************** 09. SINGLE CHAT AVAILABILITY ********************/
-if (chatAvailability) {
+if (wHelpChatAvailability) {
   const chatAvailableTime = JSON.parse(
-    chatAvailability.getAttribute("data-availability")
+    wHelpChatAvailability.getAttribute("data-availability")
   );
-  const timezone = chatAvailability.getAttribute("data-timezone");
-  
+  const timezone = wHelpChatAvailability.getAttribute("data-timezone");
+
   const now = timezone ? moment().tz(timezone) : moment();
   const availability = isAvailable(chatAvailableTime, now);
 
   if (availability.isAvailable) {
-    chatAvailability.classList.add("avatar-active");
-    chatAvailability.classList.remove("avatar-inactive");
+    wHelpChatAvailability.classList.add("avatar-active");
+    wHelpChatAvailability.classList.add("chat_help_analytics");
+    wHelpChatAvailability.classList.remove("avatar-inactive");
+    wHelpCheckButton.forEach((whatsappForm) => {
+      whatsappForm.classList.add("chat_help_analytics");
+      wHelpChatAvailability.classList.remove("chat_help_analytics");
+    });
   } else {
-    chatAvailability.classList.add("avatar-inactive");
-    chatAvailability.classList.remove("avatar-active");
+    wHelpCheckButton.forEach((whatsappForm) => {
+      whatsappForm.classList.remove("chat_help_analytics");
+      wHelpChatAvailability.classList.add("chat_help_analytics");
+    });
+    wHelpChatAvailability.classList.add("avatar-inactive");
+    wHelpChatAvailability.classList.remove("avatar-active");
+    wHelpChatAvailability.classList.remove("chat_help_analytics");
   }
 }
 
@@ -231,20 +280,19 @@ if (chatAvailability) {
       e.preventDefault();
 
       const form = $(this);
-      if(!form.valid()) {
+      if (!form.valid()) {
         return;
       }
-        
+
       wHelpCheckButton.forEach((btn) => {
         if (!btn.classList.contains("condition__checked")) {
           const chatAvailableTime = JSON.parse(
-            chatAvailability?.getAttribute("data-availability")
-          );          
+            wHelpChatAvailability?.getAttribute("data-availability")
+          );
           if (chatAvailableTime) {
             const now = moment();
             const available = isAvailable(chatAvailableTime, now);
             if (available.isAvailable) {
-
               const formData = $(this).serialize();
               const currentUrl = window.location.href;
               const currentTitle = document.title;
@@ -266,10 +314,13 @@ if (chatAvailability) {
                   if (response.success) {
                     submit_btn.innerHTML = loading;
                     setTimeout(function () {
-                      window.open(response.data.whatsAppURL, frontend_scripts.open_in_new_tab);
+                      window.open(
+                        response.data.whatsAppURL,
+                        frontend_scripts.open_in_new_tab
+                      );
                       form[0].reset();
                       submit_btn.innerHTML = button;
-                    }, 2000);
+                    }, 100);
                   } else {
                     alert("Error processing request.");
                   }
@@ -291,7 +342,6 @@ const autoShowPopupFunc = () => {
 if (autoOpenPopupTimeout > 0)
   setTimeout(autoShowPopupFunc, autoOpenPopupTimeout * 1000);
 else autoShowPopupFunc();
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);

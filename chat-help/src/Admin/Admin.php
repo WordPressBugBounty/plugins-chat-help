@@ -100,7 +100,7 @@ class Admin
 		);
 
 		do_action('chat_help_recommended_page_menu');
-		add_submenu_page('chat-help', __('👑 Upgrade to Pro!', 'chat-help'), sprintf('<span class="chat-help-get-pro-text">%s</span>', __('👑 Upgrade to Pro!', 'chat-help')), 'manage_options', 'https://chathelp.themeatelier.net/pricing/');
+		add_submenu_page('chat-help', __('👑 Upgrade to Pro (70% Off)', 'chat-help'), sprintf('<span class="chat-help-get-pro-text">%s</span>', __('👑 Upgrade to Pro (70% Off)', 'chat-help')), 'manage_options', CHAT_HELP_DEMO_URL . 'pricing/');
 		do_action('chat_help_after_upgrade_pro_menu');
 	}
 
@@ -125,7 +125,7 @@ class Admin
 
 				<div class="chat_help__help--footer">
 					<a class="button button-primary" href="<?php echo esc_url(get_admin_url()) . '/admin.php?page=chat-help'; ?>"><?php echo esc_html__('Go to settings page', 'chat-help') ?></a>
-					<a target="_blank" class="button button-secondary" href="https://chathelp.themeatelier.net/pricing/"><?php echo esc_html__('Upgrade to pro', 'chat-help') ?></a>
+					<a target="_blank" class="button button-secondary" href="<?php echo esc_attr(CHAT_HELP_DEMO_URL) ?>pricing/"><?php echo esc_html__('Upgrade to pro', 'chat-help') ?></a>
 				</div>
 
 			</div>
@@ -139,7 +139,7 @@ class Admin
 		$new_links = array(
 			sprintf('<a href="%s">%s</a>', esc_url(admin_url('admin.php?page=chat-help')), esc_html__('Settings', 'chat-help')),
 			sprintf('<a target="_blank" href="%s">%s</a>', 'https://wordpress.org/support/plugin/chat-help/', esc_html__('Support', 'chat-help')),
-			sprintf('<a style="font-weight: bold;color:#118c7e" target="_blank" href="%s">%s</a>', 'https://chathelp.themeatelier.net/pricing/', esc_html__('Go Pro', 'chat-help')),
+			sprintf('<a style="font-weight: bold;color:#118c7e" target="_blank" href="%s">%s</a>', CHAT_HELP_DEMO_URL . 'pricing/', esc_html__('Go Pro', 'chat-help')),
 		);
 
 		return array_merge($new_links, $links);

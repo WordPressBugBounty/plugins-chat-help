@@ -71,7 +71,13 @@ class WooButton
         $open_in_new_tab = isset($options['open_in_new_tab']) ? $options['open_in_new_tab'] : '';
         $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
 
-        echo '<a style="--padding: ' . esc_attr($padding) . '; --radius: ' . esc_attr($border_radius) . ';--margin: ' . esc_attr($margin) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" class="bubble wHelp-btn-bg wooCommerce_button ' . esc_attr($wooCommerce_button_visibility) . '">';
+        if ($wooCommerce_button_type_of_whatsapp === 'group') {
+            $gaAnalyticsAttr = 'data-group=' . $wooCommerce_button_group . '';
+        } else {
+            $gaAnalyticsAttr = 'data-number=' . $wooCommerce_button_number . '';
+        }
+
+        echo '<a style="--padding: ' . esc_attr($padding) . '; --radius: ' . esc_attr($border_radius) . ';--margin: ' . esc_attr($margin) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" '. esc_attr($gaAnalyticsAttr) .' class="chat_help_analytics bubble wHelp-btn-bg wooCommerce_button ' . esc_attr($wooCommerce_button_visibility) . '">';
         if ($wooCommerce_button_icon) {
             echo '<i class="' . esc_attr($wooCommerce_button_icon_open) . '"></i>';
         }

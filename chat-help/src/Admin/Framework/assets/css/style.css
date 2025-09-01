@@ -617,10 +617,10 @@ span.chat-help-help.chat-help-title-help {
   margin-top: 10px;
   display: inline-block;
   line-height: 34px;
-  background-color: #118c7e;
+  background-color: #1a74e4;
   border-radius: 3px;
   padding: 0 12px;
-  font-size: 11px;
+  font-size: 12px;
   text-transform: capitalize;
   text-decoration: none;
   color: #fff;
@@ -630,16 +630,16 @@ span.chat-help-help.chat-help-title-help {
 
 .chat-help-tooltip .tooltip_btn_secondary {
   background-color: transparent;
-  border: 2px solid #118c7e;
+  border: 2px solid #1a74e4;
   line-height: 32px;
-  color: #118c7e;
+  color: #1a74e4;
   margin-left: 10px;
 }
 
 .chat-help-tooltip .tooltip_btn_primary:hover,
 .chat-help-tooltip .tooltip_btn_secondary:hover {
-  background-color: #118c7e;
-  border-color: #118c7e;
+  background-color: #1a74e4;
+  border-color: #1a74e4;
   color: #ffffff;
 }
 
@@ -1000,14 +1000,14 @@ span.tooltip-icon {
   min-height: 0;
   font-size: 100%;
   user-select: none;
-  border: 1px solid #e5e5e5;
-  background-color: #fafafa;
+  border: 1px solid #98d7d0;
+  background-color: #f0fdfa;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
   transition: border-color 0.15s;
 }
 .chat-help-field-accordion .chat-help-accordion-title:active, .chat-help-field-accordion .chat-help-accordion-title:hover, .chat-help-field-accordion .chat-help-accordion-title:focus {
   outline: none;
-  border-color: #999;
+  border-color: #199e83;
 }
 .chat-help-field-accordion .chat-help-accordion-title .chat-help--icon {
   width: 20px;
@@ -1021,7 +1021,7 @@ span.tooltip-icon {
 .chat-help-field-accordion .chat-help-accordion-content {
   display: none;
   padding: 0;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #98d7d0;
   border-top: none;
   background-color: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
@@ -1526,7 +1526,7 @@ span.tooltip-icon {
   display: block;
 }
 .chat-help-field-group .chat-help-cloneable-content {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #98d7d0;
   background-color: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 }
@@ -1542,13 +1542,13 @@ span.tooltip-icon {
   padding: 15px 65px 15px 10px;
   min-height: 0;
   font-size: 100%;
-  border: 1px solid #e5e5e5;
-  background-color: #fafafa;
+  border: 1px solid #98d7d0;
+  background-color: #f0fdfa;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
   transition: border-color 0.15s;
 }
 .chat-help-field-group .chat-help-cloneable-title:active, .chat-help-field-group .chat-help-cloneable-title:hover, .chat-help-field-group .chat-help-cloneable-title:focus {
-  border-color: #999;
+  border-color: #199e83;
   outline: none;
 }
 .chat-help-field-group .chat-help-cloneable-helper {
@@ -2272,7 +2272,7 @@ span.tooltip-icon {
  * 03. 29. Field: tabbed
  */
 .chat-help-field-tabbed .chat-help-tabbed-content {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #98d7d0;
   background-color: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 }
@@ -2292,8 +2292,8 @@ span.tooltip-icon {
   text-decoration: none;
   color: #444;
   font-weight: 600;
-  border: 1px solid #e5e5e5;
-  background-color: #f3f3f3;
+  border: 1px solid #98d7d0;
+  background-color: #f0fdfa;
   transition: all 0.2s;
 }
 .chat-help-field-tabbed .chat-help-tabbed-nav a:hover {
@@ -2356,7 +2356,7 @@ span.tooltip-icon {
   color: #343434;
   font-weight: 600;
   background: #f0fdfa;
-  border-bottom: 1px solid #8396a2;
+  border-bottom: 1px solid #98d7d0;
   transition: all 0.2s;
   overflow: hidden;
   font-size: 13px;
@@ -5549,7 +5549,7 @@ width: calc(100% - 0px);
 margin-top: 15px;
 }
 .chat-help-field.chat-help-layout-preset .chat-help-fieldset img{
-  width: 100%;
+  width: 120px;
 }
 .chat-help-layout-preset .chat-help--sibling:first-child{
 margin-left: 0px;
@@ -5586,7 +5586,6 @@ margin-left: 0px;
 
 .chat-help-field-layout_preset .chat-help--image img {
   color: #7b8898;
-  margin-right: 10px;
   outline: solid 2px transparent;
   border-radius: 5px;
   cursor: pointer;
@@ -5729,7 +5728,7 @@ margin-left: 0px;
  }
  .only-for-pro .chat-help-fieldset input, .only-for-pro .chat-help-repeater-add {
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.5;
  }
 
  .chat-help-header-left{
@@ -6024,6 +6023,8 @@ span.tooltip-icon {
   color: #5e6e7d;
   padding: 2px 8px;
   font-size: 10px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 #adminmenu #toplevel_page_chat-help li:nth-child(4) a {
   color: #f9be48;
@@ -6108,4 +6109,34 @@ span.tooltip-icon {
 .chat-help-wrapper .button-primary {
   background-color: #1a74e4;
   border-color: #1a74e4;
+}
+
+/**
+* Google Analytics Repeater.
+*/
+.chat-help-field-repeater.google_analytics_repeater .chat-help-repeater-wrapper .chat-help-repeater-item {
+	display: grid;
+	grid-template-columns: 9fr 1fr;
+}
+.chat-help-field-repeater.google_analytics_repeater .chat-help-repeater-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.chat-help-field-repeater.google_analytics_repeater .chat-help-repeater-content .chat-help-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 15px;
+}
+.chat-help-field-repeater.google_analytics_repeater .chat-help-repeater-content .chat-help-field .chat-help-title,
+.chat-help-field-repeater.google_analytics_repeater .chat-help-repeater-content .chat-help-field .chat-help-fieldset {
+  width: 100%;
+}
+.chat-help-field-repeater.google_analytics_repeater .chat-help-repeater-helper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.google_analytics_repeater.only-for-pro .chat-help-repeater-wrapper {
+  opacity: 0.5;
 }

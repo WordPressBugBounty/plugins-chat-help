@@ -36,6 +36,7 @@ if ($gdpr_enable) : ?>
     class="wHelp__send-message <?php echo $gdpr_enable ? 'condition__checked' : ''; ?>"
     target="_blank"
     type="submit"
+    <?php echo esc_attr($gaAnalyticsAttr) ?>
     style="--color-primary: <?php echo esc_attr($primary); ?>;--color-secondary: <?php echo esc_attr($secondary); ?>;">
 
     <?php

@@ -58,6 +58,7 @@ class FormTemplate
 		$primary = isset($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
 		$secondary = isset($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
 		$bubble_visibility = isset($options['bubble-visibility']) ? $options['bubble-visibility'] : 'everywhere';
+
 		// Method implementation goes here.
 		if ('random' === $select_animation) :
 			$animation = $random;
@@ -82,7 +83,7 @@ class FormTemplate
 			include Helpers::chat_help_locate_template('items/single-template-header.php');
 			include Helpers::chat_help_locate_template('items/form.php');
 			?>
-			<span style="display:block!important" class="wcp-branding"><?php echo esc_html__('Powered by', 'chat-help'); ?> <a target="_blank" href="https://chathelp.themeatelier.net/pricing/"><strong><?php echo esc_html__('Chat Help', 'chat-help'); ?></strong></a></span>
+			<span style="display:block!important" class="wcp-branding"><?php echo esc_html__('Powered by', 'chat-help'); ?> <a target="_blank" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) . 'pricing/' ?>"><strong><?php echo esc_html__('Chat Help', 'chat-help'); ?></strong></a></span>
 		</div>
 		</div>
 <?php

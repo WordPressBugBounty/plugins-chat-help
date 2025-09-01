@@ -71,6 +71,12 @@
   left: 50%;
   top: 50%;
 }
+.wHelp-bubble[class*=circle-animation-].circle-animation-1 .open-icon {
+  transform: translate(-50%, -50%);
+}
+.wHelp-bubble[class*=circle-animation-].circle-animation-1 .close-icon {
+  transform: scale(0.7);
+}
 .wHelp-bubble[class*=circle-animation-].circle-animation-3 .open-icon {
   transform: translate(-50%, -50%);
 }
@@ -86,6 +92,12 @@
 }
 .wHelp-show .wHelp-bubble[class*=circle-animation-] .close-icon {
   opacity: 1;
+}
+.wHelp-show .wHelp-bubble[class*=circle-animation-].circle-animation-1 .open-icon {
+  transform: scale(0.7);
+}
+.wHelp-show .wHelp-bubble[class*=circle-animation-].circle-animation-1 .close-icon {
+  transform: scale(1) translate(-50%, -50%);
 }
 
 .wHelp {
@@ -1063,7 +1075,6 @@
 .bubble:focus, .bubble:active {
   background-color: var(--color-light);
   border: 1px solid var(--color-primary);
-  padding: var(--padding);
   color: var(--color-primary);
 }
 .bubble:hover {
@@ -1147,8 +1158,8 @@
   transform: scale(0.7);
 }
 .bubble__icon.bubble-animation3 .bubble__icon--open {
-  left: 11px;
-  top: -1px;
+  left: 10px;
+  top: 0px;
 }
 .bubble__icon.bubble-animation3 .bubble__icon--close {
   right: 10px;
@@ -1218,7 +1229,7 @@
   transform: translate(-40%, -150%);
 }
 .wHelp-show .bubble__icon.bubble-animation4 .bubble__icon--close {
-  transform: translate(-35%, -67%);
+  transform: translate(-35%, -55%);
 }
 
 .wHelp-button-2.wHelp-btn-bg i {

@@ -15,6 +15,15 @@ $agent_message_placeholder_text = isset($options['agent-message-placeholder-text
 $before_chat_icon = isset($options['before-chat-icon']) ? $options['before-chat-icon'] : 'icofont-brand-whatsapp';
 $chat_button_text = isset($options['chat-button-text']) ? $options['chat-button-text'] : __('Send a message', 'text-domain');
 $chat_loading_text = isset($options['chat-button-loading-text']) ? $options['chat-button-loading-text'] : 'Redirecting...';
+$type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
+$whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
+$whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
+
+if ($type_of_whatsapp === 'group') {
+    $gaAnalyticsAttr = 'data-group=' . $whatsapp_group . '';
+} else {
+    $gaAnalyticsAttr = 'data-number=' . $whatsapp_number . '';
+}
 
 $form_editor = isset($options['form_editor']) ? $options['form_editor'] : '';
 global $product;
@@ -62,7 +71,8 @@ if ($product) {
     <?php endif; ?>
     <button
         type="submit"
-        class="wHelp__send-message <?php echo $gdpr_enable ? 'condition__checked' : ''; ?>"
+        class="wHelp__send-message <?php echo $gdpr_enable ? 'condition__checked' : ''; ?>" 
+        <?php echo esc_attr($gaAnalyticsAttr) ?>
         target="_blank">
         <?php
         if ($before_chat_icon === 'no_icon') {

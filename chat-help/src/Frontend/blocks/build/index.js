@@ -8,7 +8,7 @@
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"create-block/whatsapp-button","title":"WhatsApp Button","category":"whatsapp-block","icon":"whatsapp","description":"WhatsApp button block for WhatsHelp plugin.","textdomain":"chat-help","editorScript":"file:./build/index.js","editorStyle":"file:./build/index.css","supports":{"html":false,"color":{"background":true,"text":true,"gradients":true,"hover":true},"spacing":{},"typography":{}},"example":{"attributes":{"text":"How can I help you?","gradients":"red-to-blue","links":true}},"attributes":{"text":{"type":"string","default":"How can I help you?"},"info":{"type":"string","default":"Robert / Sales Support"},"title":{"type":"string","default":"How can I help you?"},"online":{"type":"string","default":"I am online"},"offline":{"type":"string","default":"I am offline"},"buttonType":{"type":"string","default":"basic-button"},"buttonSize":{"type":"string","default":"size-normal"},"borderRadius":{"type":"string","default":"border-radius-rounded"},"topPadding":{"type":"number","default":7},"rightPadding":{"type":"number","default":12},"bottomPadding":{"type":"number","default":7},"leftPadding":{"type":"number","default":12},"visibility":{"type":"string","default":""},"textAlignment":{"type":"string","default":"left"},"iconTarget":{"type":"boolean","default":false},"buttonLinkTarget":{"type":"boolean","default":false},"numberInput":{"type":"string","default":""},"prefilledMessageInput":{"type":"string","default":""},"imageUrl":{"type":"string","default":""},"timeZone":{"type":"string","default":""},"mondayStart":{"type":"string","default":"00:01"},"mondayEnd":{"type":"string","default":"23:59"},"tuesdayStart":{"type":"string","default":"00:01"},"tuesdayEnd":{"type":"string","default":"23:59"},"wednesdayStart":{"type":"string","default":"00:01"},"wednesdayEnd":{"type":"string","default":"23:59"},"thursdayStart":{"type":"string","default":"00:01"},"thursdayEnd":{"type":"string","default":"23:59"},"fridayStart":{"type":"string","default":"00:01"},"fridayEnd":{"type":"string","default":"23:59"},"saturdayStart":{"type":"string","default":"00:01"},"saturdayEnd":{"type":"string","default":"23:59"},"sundayStart":{"type":"string","default":"00:01"},"sundayEnd":{"type":"string","default":"05:00"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"create-block/whatsapp-button","title":"WhatsApp Button","category":"whatsapp-block","icon":"whatsapp","description":"WhatsApp button block for WhatsHelp plugin.","textdomain":"chat-help","editorScript":"file:./build/index.js","editorStyle":"file:./build/index.css","supports":{"html":false,"color":{"background":true,"text":true,"gradients":true,"hover":true},"spacing":{},"typography":{}},"example":{"attributes":{"text":"How can I help you?","gradients":"red-to-blue","links":true}},"attributes":{"text":{"type":"string","default":"How can I help you?"},"info":{"type":"string","default":"Robert / Sales Support"},"title":{"type":"string","default":"How can I help you?"},"online":{"type":"string","default":"I am online"},"offline":{"type":"string","default":"I am offline"},"buttonType":{"type":"string","default":"basic-button"},"whatsappType":{"type":"string","default":"number"},"buttonSize":{"type":"string","default":"size-normal"},"borderRadius":{"type":"string","default":"border-radius-rounded"},"topPadding":{"type":"number","default":7},"rightPadding":{"type":"number","default":12},"bottomPadding":{"type":"number","default":7},"leftPadding":{"type":"number","default":12},"visibility":{"type":"string","default":""},"textAlignment":{"type":"string","default":"left"},"iconTarget":{"type":"boolean","default":false},"buttonLinkTarget":{"type":"boolean","default":true},"numberInput":{"type":"string","default":""},"groupInput":{"type":"string","default":""},"prefilledMessageInput":{"type":"string","default":"Hi! I have a question about your services."},"imageUrl":{"type":"string","default":""},"timeZone":{"type":"string","default":""},"mondayStart":{"type":"string","default":"00:01"},"mondayEnd":{"type":"string","default":"23:59"},"tuesdayStart":{"type":"string","default":"00:01"},"tuesdayEnd":{"type":"string","default":"23:59"},"wednesdayStart":{"type":"string","default":"00:01"},"wednesdayEnd":{"type":"string","default":"23:59"},"thursdayStart":{"type":"string","default":"00:01"},"thursdayEnd":{"type":"string","default":"23:59"},"fridayStart":{"type":"string","default":"00:01"},"fridayEnd":{"type":"string","default":"23:59"},"saturdayStart":{"type":"string","default":"00:01"},"saturdayEnd":{"type":"string","default":"23:59"},"sundayStart":{"type":"string","default":"00:01"},"sundayEnd":{"type":"string","default":"05:00"}}}');
 
 /***/ }),
 
@@ -1931,7 +1931,9 @@ function Edit(props) {
     iconTarget,
     visibility,
     buttonLinkTarget,
+    whatsappType,
     numberInput,
+    groupInput,
     prefilledMessageInput,
     imageUrl,
     timeZone,
@@ -2023,6 +2025,13 @@ function Edit(props) {
     value: 'advance-button',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Advance Button', 'chat-help')
   }];
+  const typeOfWhatsapp = [{
+    value: 'number',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Number', 'chat-help')
+  }, {
+    value: 'group',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Group', 'chat-help')
+  }];
   const borderRadiusOptions = [{
     value: 'border-squared',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Squared', 'chat-help')
@@ -2048,186 +2057,28 @@ function Edit(props) {
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Type', 'chat-help'),
           value: buttonType,
-          options: buttonTypeOptions.map(({
-            value,
-            label
-          }) => ({
-            value,
-            label
-          })),
-          onChange: newButton => {
-            setAttributes({
-              buttonType: newButton
-            });
-          }
-        })
-      })
-    }), buttonType === 'basic-button' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('WhatsApp Number', 'chat-help'),
-          initialOpen: false,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Number', 'chat-help'),
-            value: numberInput,
-            onChange: val => setAttributes({
-              numberInput: val
-            }),
-            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add your contact number including country code eg: +880123456789', 'chat-help')
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pre-filled Message', 'chat-help-pro'),
-            value: prefilledMessageInput,
-            onChange: val => setAttributes({
-              prefilledMessageInput: val
-            }),
-            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Write a friendly, pre-filled message users will see when they click the chat bubble. Example: "Hi! I have a question about your services." This saves them time—and makes starting a conversation feel effortless.', 'chat-help-pro')
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Open link in new window', 'chat-help'),
-            checked: buttonLinkTarget,
-            onChange: onButtonLinkTarget
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Style', 'chat-help'),
-          initialOpen: false,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Text', 'chat-help'),
-            value: text,
-            onChange: val => setAttributes({
-              text: val
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Size', 'chat-help'),
-            value: buttonSize,
-            options: buttonSizeOptions.map(({
-              value,
-              label
-            }) => ({
-              value,
-              label
-            })),
-            onChange: newSize => {
-              setAttributes({
-                buttonSize: newSize
-              });
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Radius', 'chat-help'),
-            value: borderRadius,
-            options: borderRadiusOptions.map(({
-              value,
-              label
-            }) => ({
-              value,
-              label
-            })),
-            onChange: newSize => {
-              setAttributes({
-                borderRadius: newSize
-              });
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Visibility on', 'chat-help'),
-            value: visibility,
-            options: visibilityOn.map(({
-              value,
-              label
-            }) => ({
-              value,
-              label
-            })),
-            onChange: newSize => {
-              setAttributes({
-                visibility: newSize
-              });
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalHeading, {
-              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Padding', 'chat-help')
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Top', 'chat-help'),
-              value: topPadding,
-              onChange: paddings => {
-                setAttributes({
-                  topPadding: paddings
-                });
-              },
-              min: 5,
-              max: 100
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Right', 'chat-help'),
-              value: rightPadding,
-              onChange: paddings => {
-                setAttributes({
-                  rightPadding: paddings
-                });
-              },
-              min: 5,
-              max: 100
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Bottom', 'chat-help'),
-              value: bottomPadding,
-              onChange: paddings => {
-                setAttributes({
-                  bottomPadding: paddings
-                });
-              },
-              min: 5,
-              max: 100
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Left', 'chat-help'),
-              value: leftPadding,
-              onChange: paddings => {
-                setAttributes({
-                  leftPadding: paddings
-                });
-              },
-              min: 5,
-              max: 100
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Icon', 'chat-help'),
-          initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add Icon', 'chat-help'),
-            checked: iconTarget,
-            onChange: onIconTarget
+          options: buttonTypeOptions,
+          onChange: newButton => setAttributes({
+            buttonType: newButton
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Type of Whatsapp', 'chat-help'),
+          value: whatsappType,
+          options: typeOfWhatsapp,
+          onChange: val => setAttributes({
+            whatsappType: val
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.BlockControls, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.AlignmentToolbar, {
-          value: textAlignment,
-          onChange: onChangeAlignment
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: `button-wrapper whelp-editor ${textClasses}`,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
-          ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
-            className: `${basicBtn} ${buttonSize} ${borderRadius} ${visibility}`
-          }),
-          style: {
-            '--padding': `${topPadding}px ${rightPadding}px ${bottomPadding}px ${leftPadding}px`
-          },
-          children: [iconTarget && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-            className: "dashicons dashicons-whatsapp"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-            onChange: onChangeText,
-            value: text,
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('How can I help you?', 'chat-help'),
-            tagName: "span",
-            allowedFormats: []
-          })]
-        })
-      })]
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('General Settings', 'chat-help'),
-          initialOpen: false,
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('General Settings', 'chat-help'),
+        initialOpen: false,
+        children: [whatsappType === 'number' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Number', 'chat-help'),
             value: numberInput,
@@ -2236,17 +2087,23 @@ function Edit(props) {
             }),
             help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add your contact number including country code eg: +880123456789', 'chat-help')
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextareaControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pre-filled Message', 'chat-help-pro'),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pre-filled Message', 'chat-help'),
             value: prefilledMessageInput,
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Hi! I have a question about your services.', 'chat-help'),
             onChange: val => setAttributes({
               prefilledMessageInput: val
             }),
-            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Write a friendly, pre-filled message users will see when they click the chat bubble. Example: "Hi! I have a question about your services." This saves them time—and makes starting a conversation feel effortless.', 'chat-help-pro')
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Open link in new window', 'chat-help'),
-            checked: buttonLinkTarget,
-            onChange: onButtonLinkTarget
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
+            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Write a friendly, pre-filled message users will see when they click the chat bubble. Example: “Hi! I have a question about your services.” This saves them time—and makes starting a conversation feel effortless.', 'chat-help')
+          })]
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Group', 'chat-help'),
+          value: groupInput,
+          onChange: val => setAttributes({
+            groupInput: val
+          }),
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add your contact group link', 'chat-help')
+        }), buttonType === 'advance-button' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Agent Image', 'chat-help'),
             onSelect: onSelectImage,
             allowedTypes: ['image'],
@@ -2294,290 +2151,305 @@ function Edit(props) {
             }),
             help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add custom badget text when user in offline.', 'chat-help')
           })]
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Text', 'chat-help'),
+          value: text,
+          onChange: val => setAttributes({
+            text: val
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Open link in new window', 'chat-help'),
+          checked: buttonLinkTarget,
+          onChange: onButtonLinkTarget
+        })]
+      }), buttonType === 'advance-button' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Chat Settings', 'chat-help'),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ComboboxControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Timezone', 'chat-help'),
+          value: timeZone,
+          options: filteredOptions,
+          onChange: onFontSizeChange,
+          onInputChange: onInputChange,
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('When using the date and time from the user browser you can transform it to your current timezone (in case your user is in a different timezone)', 'chat-help')
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Chat Settings', 'chat-help'),
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Monthday', 'chat-help'),
           initialOpen: false,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ComboboxControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Timezone', 'chat-help'),
-            value: timeZone,
-            options: filteredOptions,
-            onChange: onFontSizeChange,
-            onInputChange: onInputChange,
-            help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('When using the date and time from the user browser you can transform it to your current timezone (in case your user is in a different timezone)', 'chat-help')
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Monthday', 'chat-help'),
-            initialOpen: false,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
-              value: mondayStart,
-              onChange: val => setAttributes({
-                mondayStart: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
-              value: mondayEnd,
-              onChange: val => setAttributes({
-                mondayEnd: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Tuesday', 'chat-help'),
-            initialOpen: false,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
-              value: tuesdayStart,
-              onChange: val => setAttributes({
-                tuesdayStart: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
-              value: tuesdayEnd,
-              onChange: val => setAttributes({
-                tuesdayEnd: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Wednesday', 'chat-help'),
-            initialOpen: false,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
-              value: wednesdayStart,
-              onChange: val => setAttributes({
-                wednesdayStart: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
-              value: wednesdayEnd,
-              onChange: val => setAttributes({
-                wednesdayEnd: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Thursday', 'chat-help'),
-            initialOpen: false,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
-              value: thursdayStart,
-              onChange: val => setAttributes({
-                thursdayStart: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
-              value: thursdayEnd,
-              onChange: val => setAttributes({
-                thursdayEnd: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Friday', 'chat-help'),
-            initialOpen: false,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
-              value: fridayStart,
-              onChange: val => setAttributes({
-                fridayStart: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
-              value: fridayEnd,
-              onChange: val => setAttributes({
-                fridayEnd: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Saturday', 'chat-help'),
-            initialOpen: false,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
-              value: saturdayStart,
-              onChange: val => setAttributes({
-                saturdayStart: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
-              value: saturdayEnd,
-              onChange: val => setAttributes({
-                saturdayEnd: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Sunday', 'chat-help'),
-            initialOpen: false,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
-              value: sundayStart,
-              onChange: val => setAttributes({
-                sundayStart: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
-              value: sundayEnd,
-              onChange: val => setAttributes({
-                sundayEnd: val
-              }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
-            })]
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+            value: mondayStart,
+            onChange: val => setAttributes({
+              mondayStart: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+            value: mondayEnd,
+            onChange: val => setAttributes({
+              mondayEnd: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Appearance settings', 'chat-help'),
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Tuesday', 'chat-help'),
           initialOpen: false,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Visibility on', 'chat-help'),
-            value: visibility,
-            options: visibilityOn.map(({
-              value,
-              label
-            }) => ({
-              value,
-              label
-            })),
-            onChange: newSize => {
-              setAttributes({
-                visibility: newSize
-              });
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Size', 'chat-help'),
-            value: buttonSize,
-            options: buttonSizeOptions.map(({
-              value,
-              label
-            }) => ({
-              value,
-              label
-            })),
-            onChange: newSize => {
-              setAttributes({
-                buttonSize: newSize
-              });
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Radius', 'chat-help'),
-            value: borderRadius,
-            options: borderRadiusOptions.map(({
-              value,
-              label
-            }) => ({
-              value,
-              label
-            })),
-            onChange: newSize => {
-              setAttributes({
-                borderRadius: newSize
-              });
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalHeading, {
-              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Padding', 'chat-help')
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Top', 'chat-help'),
-              value: topPadding,
-              onChange: paddings => {
-                setAttributes({
-                  topPadding: paddings
-                });
-              },
-              min: 5,
-              max: 100
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Right', 'chat-help'),
-              value: rightPadding,
-              onChange: paddings => {
-                setAttributes({
-                  rightPadding: paddings
-                });
-              },
-              min: 5,
-              max: 100
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Bottom', 'chat-help'),
-              value: bottomPadding,
-              onChange: paddings => {
-                setAttributes({
-                  bottomPadding: paddings
-                });
-              },
-              min: 5,
-              max: 100
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Left', 'chat-help'),
-              value: leftPadding,
-              onChange: paddings => {
-                setAttributes({
-                  leftPadding: paddings
-                });
-              },
-              min: 5,
-              max: 100
-            })]
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+            value: tuesdayStart,
+            onChange: val => setAttributes({
+              tuesdayStart: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+            value: tuesdayEnd,
+            onChange: val => setAttributes({
+              tuesdayEnd: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Wednesday', 'chat-help'),
+          initialOpen: false,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+            value: wednesdayStart,
+            onChange: val => setAttributes({
+              wednesdayStart: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+            value: wednesdayEnd,
+            onChange: val => setAttributes({
+              wednesdayEnd: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Thursday', 'chat-help'),
+          initialOpen: false,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+            value: thursdayStart,
+            onChange: val => setAttributes({
+              thursdayStart: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+            value: thursdayEnd,
+            onChange: val => setAttributes({
+              thursdayEnd: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Friday', 'chat-help'),
+          initialOpen: false,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+            value: fridayStart,
+            onChange: val => setAttributes({
+              fridayStart: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+            value: fridayEnd,
+            onChange: val => setAttributes({
+              fridayEnd: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Saturday', 'chat-help'),
+          initialOpen: false,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+            value: saturdayStart,
+            onChange: val => setAttributes({
+              saturdayStart: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+            value: saturdayEnd,
+            onChange: val => setAttributes({
+              saturdayEnd: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Sunday', 'chat-help'),
+          initialOpen: false,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Start Time', 'chat-help'),
+            value: sundayStart,
+            onChange: val => setAttributes({
+              sundayStart: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('00:00', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TextControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('End Time', 'chat-help'),
+            value: sundayEnd,
+            onChange: val => setAttributes({
+              sundayEnd: val
+            }),
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('24:00', 'chat-help')
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.BlockControls, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.AlignmentToolbar, {
-          value: textAlignment,
-          onChange: onChangeAlignment
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: `button-wrapper whelp-editor ${textClasses}`,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-          ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
-            className: `avatar-active ${classes} ${buttonSize} ${borderRadius} ${visibility}`
-          }),
-          style: {
-            '--padding': `${topPadding}px ${rightPadding}px ${bottomPadding}px ${leftPadding}px`
-          },
-          "data-btnavailablety": `{ "monday":"${mondayStart}-${mondayEnd}", "tuesday":"${tuesdayStart}-${tuesdayEnd}", "wednesday":"${wednesdayStart}-${wednesdayEnd}", "thursday":"${thursdayStart}-${thursdayEnd}", "friday":"${fridayStart}-${fridayEnd}", "saturday":"${saturdayStart}-${saturdayEnd}", "sunday":"${sundayStart}-${sundayEnd}" }`,
-          "data-timezone": timeZone,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-            src: imageUrl ? imageUrl : agentImage,
-            alt: "agent"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-            className: "info-wrapper",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-              onChange: advancedBtnInfo,
-              value: info,
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Robert / Sales Support', 'chat-help'),
-              tagName: "p",
-              allowedFormats: [],
-              className: "info"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-              onChange: advancedBtnTitle,
-              value: title,
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('How can I help you?', 'chat-help'),
-              tagName: "p",
-              allowedFormats: [],
-              className: "title"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-              onChange: advancedBtnOnlineBadge,
-              value: online,
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('I am online', 'chat-help'),
-              tagName: "p",
-              allowedFormats: [],
-              className: "online"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-              onChange: advancedBtnOnlineBadge,
-              value: offline,
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("I'm not available", 'chat-help'),
-              tagName: "p",
-              allowedFormats: [],
-              className: "offline"
-            })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Style', 'chat-help'),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Visibility on', 'chat-help'),
+          value: visibility,
+          options: visibilityOn,
+          onChange: newSize => setAttributes({
+            visibility: newSize
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Size', 'chat-help'),
+          value: buttonSize,
+          options: buttonSizeOptions,
+          onChange: newSize => setAttributes({
+            buttonSize: newSize
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Radius', 'chat-help'),
+          value: borderRadius,
+          options: borderRadiusOptions,
+          onChange: newSize => setAttributes({
+            borderRadius: newSize
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalSpacer, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalHeading, {
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Padding', 'chat-help')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Top', 'chat-help'),
+            value: topPadding,
+            onChange: paddings => {
+              setAttributes({
+                topPadding: paddings
+              });
+            },
+            min: 5,
+            max: 100
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Right', 'chat-help'),
+            value: rightPadding,
+            onChange: paddings => {
+              setAttributes({
+                rightPadding: paddings
+              });
+            },
+            min: 5,
+            max: 100
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Bottom', 'chat-help'),
+            value: bottomPadding,
+            onChange: paddings => {
+              setAttributes({
+                bottomPadding: paddings
+              });
+            },
+            min: 5,
+            max: 100
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(RangeControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Left', 'chat-help'),
+            value: leftPadding,
+            onChange: paddings => {
+              setAttributes({
+                leftPadding: paddings
+              });
+            },
+            min: 5,
+            max: 100
           })]
-        })
+        })]
       })]
+    }), buttonType === 'basic-button' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Icon', 'chat-help'),
+        initialOpen: false,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add Icon', 'chat-help'),
+          checked: iconTarget,
+          onChange: onIconTarget
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.BlockControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.AlignmentToolbar, {
+        value: textAlignment,
+        onChange: onChangeAlignment
+      })
+    }), buttonType === 'basic-button' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: `button-wrapper whelp-editor ${textClasses}`,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
+        ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+          className: `${basicBtn} ${buttonSize} ${borderRadius} ${visibility}`
+        }),
+        style: {
+          '--padding': `${topPadding}px ${rightPadding}px ${bottomPadding}px ${leftPadding}px`
+        },
+        children: [iconTarget && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+          className: "dashicons dashicons-whatsapp"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+          onChange: onChangeText,
+          value: text,
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('How can I help you?', 'chat-help'),
+          tagName: "span",
+          allowedFormats: []
+        })]
+      })
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: `button-wrapper whelp-editor ${textClasses}`,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+          className: `avatar-active ${classes} ${buttonSize} ${borderRadius} ${visibility}`
+        }),
+        style: {
+          '--padding': `${topPadding}px ${rightPadding}px ${bottomPadding}px ${leftPadding}px`
+        },
+        "data-btnavailablety": `{ "monday":"${mondayStart}-${mondayEnd}", "tuesday":"${tuesdayStart}-${tuesdayEnd}", "wednesday":"${wednesdayStart}-${wednesdayEnd}", "thursday":"${thursdayStart}-${thursdayEnd}", "friday":"${fridayStart}-${fridayEnd}", "saturday":"${saturdayStart}-${saturdayEnd}", "sunday":"${sundayStart}-${sundayEnd}" }`,
+        "data-timezone": timeZone,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+          src: imageUrl ? imageUrl : agentImage,
+          alt: "agent"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "info-wrapper",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+            onChange: advancedBtnInfo,
+            value: info,
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Robert / Sales Support', 'chat-help'),
+            tagName: "p",
+            allowedFormats: [],
+            className: "info"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+            onChange: advancedBtnTitle,
+            value: title,
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('How can I help you?', 'chat-help'),
+            tagName: "p",
+            allowedFormats: [],
+            className: "title"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+            onChange: advancedBtnOnlineBadge,
+            value: online,
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('I am online', 'chat-help'),
+            tagName: "p",
+            allowedFormats: [],
+            className: "online"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+            onChange: advancedBtnOnlineBadge,
+            value: offline,
+            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("I'm not available", 'chat-help'),
+            tagName: "p",
+            allowedFormats: [],
+            className: "offline"
+          })]
+        })]
+      })
     })]
   });
 }
@@ -2675,7 +2547,9 @@ function save({
     border,
     iconTarget,
     imageUrl,
+    whatsappType,
     numberInput,
+    groupInput,
     prefilledMessageInput,
     timeZone,
     mondayStart,
@@ -2698,7 +2572,7 @@ function save({
     leftPadding
   } = attributes;
   const textClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`wHelpButtons-align-${textAlignment}`);
-  const basicBtn = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`wHelp-button-4 wHelp-btn-bg`);
+  const basicBtn = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`chat_help_analytics wHelp-button-4 wHelp-btn-bg`);
   const classes = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`wHelpButtons wHelp-button-4 wHelp-btn-bg`);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: buttonType === 'basic-button' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -2710,7 +2584,12 @@ function save({
         style: {
           '--padding': `${topPadding}px ${rightPadding}px ${bottomPadding}px ${leftPadding}px`
         },
-        href: `https://wa.me/${numberInput}?text=${prefilledMessageInput}`,
+        ...(whatsappType === 'number' ? {
+          'data-number': numberInput
+        } : {
+          'data-group': groupInput
+        }),
+        href: whatsappType === 'number' ? `https://wa.me/${numberInput}?text=${prefilledMessageInput}` : `${groupInput}`,
         rel: "noopener noreferrer",
         target: buttonLinkTarget ? '_blank' : '_self',
         children: [iconTarget && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
@@ -2731,6 +2610,11 @@ function save({
         },
         "data-btnavailablety": `{ "monday":"${mondayStart}-${mondayEnd}", "tuesday":"${tuesdayStart}-${tuesdayEnd}", "wednesday":"${wednesdayStart}-${wednesdayEnd}", "thursday":"${thursdayStart}-${thursdayEnd}", "friday":"${fridayStart}-${fridayEnd}", "saturday":"${saturdayStart}-${saturdayEnd}", "sunday":"${sundayStart}-${sundayEnd}" }`,
         "data-timezone": timeZone,
+        ...(whatsappType === 'number' ? {
+          'data-number': numberInput
+        } : {
+          'data-group': groupInput
+        }),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
           src: imageUrl ? imageUrl : agentImage,
           alt: "agent"
@@ -2754,7 +2638,7 @@ function save({
             className: "offline"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-          href: `https://wa.me/${numberInput}?text=${prefilledMessageInput}`,
+          href: whatsappType === 'number' ? `https://wa.me/${numberInput}?text=${prefilledMessageInput}` : `${groupInput}`,
           rel: "noopener noreferrer",
           target: buttonLinkTarget ? '_blank' : '_self'
         })]

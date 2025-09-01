@@ -33,92 +33,60 @@ class Shortcode
 			array(
 				'title'  => esc_html__('SHORTCODES', 'chat-help'),
 				'icon'   => 'icofont-code-alt',
-
 				'fields' => array(
 					array(
-						'type' => 'section_tab',
-						'tabs' => array(
-							array(
-								'title' => esc_html__('Pick Shortcodes', 'chat-help'),
-								'icon'  => 'icofont-code-alt',
-								'fields' => array(
-									array(
-										'id'      => 'opt-shortcode-select',
-										'type'    => 'image_select',
-										'title'   => esc_html__('Select Button Style', 'chat-help'),
-										'options' => array(
-											'1' => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/button-with-info.svg',
-											'2' => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/button2.svg',
-										),
-										'default' => '1',
-									),
-									array(
-										'id'    => 'advance_button_shortcode',
-										'type'    => 'shortcode',
-										'shortcode_text'    => '[chat_help style="1" primary_color="#118c7e" secondary_color="#0b5a51" padding="10px 18px 10px 18px" number="+8801849687969" message="Hi! I have a question about your service." timezone="Asia/Dhaka" photo="' . CHAT_HELP_DIR_URL . 'src/assets/image/user.webp" name="Jhon" designation="Techinical support" label="How can I help you?" online="I am online" offline="I am offline" visibility="wHelp-show-everywhere" sizes="wHelp-btn-lg" sunday="00:00-23:59" monday="00:00-23:59" tuesday="00:00-23:59" wednesday="00:00-23:59" thursday="00:00-23:59" friday="00:00-23:59" saturday="00:00-23:59"]',
-										'title' => esc_html__('Shortcode', 'chat-help'),
-										'title_help'       => '<div class="chat-help-info-label">' . __('Copy This Shortcode and Paste it in Any Pages/Posts/Widget. Edit Values as You Need.', 'chat-help') . '</div>',
-										'dependency' => array('opt-shortcode-select', 'any', '1'),
-									),
+                        'id'      => 'opt-shortcode-select',
+                        'type'    => 'layout_preset',
+                        'title'     => esc_html__('Select Button Style', 'chat-help'),
+                        'title_help' =>
+                        '<div class="chat-help-info-label">' .
+                            esc_html__('Choose between Simple or Advanced button styles for the shortcode. The Advanced style supports agent details (photo, name, designation), while the Simple style is a basic WhatsApp button.', 'chat-help') .
+                            '</div>' .
+                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'button-shortcode/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
+                            ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/shortcodes/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
 
-									array(
-										'id'    => 'simple_button_shortcode',
-										'type'    => 'shortcode',
-										'shortcode_text'    => '[chat_help style="2" primary_color="#118c7e" secondary_color="#0b5a51" padding="10px 18px 10px 18px" number="+8801849687969" message="Hi! I have a question about your service." label="How can I help you?" visibility="wHelp-show-everywhere" sizes="wHelp-btn-lg"]',
-										'title' => esc_html__('Shortcode', 'chat-help'),
-										'title_help'       => '<div class="chat-help-info-label">' . __('Copy This Shortcode and Paste it in Any Pages/Posts/Widget. Edit Values as You Need.', 'chat-help') . '</div>',
-										'dependency' => array('opt-shortcode-select', 'any', '2'),
-									),
+                        'options' => array(
+                            '1' => array(
+                                'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/button-with-info.svg',
+                                'text'            => esc_html__('Advance Button', 'chat-help'),
+                                'option_demo_url' => CHAT_HELP_DEMO_URL . 'button-shortcode#btn_demo',
+                            ),
+                            '2' => array(
+                                'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/button2.svg',
+                                'text'            => esc_html__('Simple Button', 'chat-help'),
+                                'option_demo_url' => CHAT_HELP_DEMO_URL . 'button-shortcode#simple-button',
+                            ),
+                        ),
+                        'default' => '1',
+                    ),
 
-								),
-							),
+                    array(
+                        'id'    => 'advance_button_shortcode',
+                        'type'  => 'shortcode',
+                        'title' => esc_html__('Shortcode', 'chat-help'),
+                        'title_help' =>
+                        '<div class="chat-help-info-label">' .
+                            esc_html__('Copy this shortcode and paste it into any page, post, or widget area. You can also edit its attributes to customize the output.', 'chat-help') .
+                            '</div>' .
+                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'button-shortcode/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
+                            ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/shortcodes/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
 
+                        'dependency' => array('opt-shortcode-select', 'any', '1'),
+                        'shortcode_text'    => '[chat_help style="1" primary_color="#118c7e" secondary_color="#0b5a51" padding="10px 18px 10px 18px" type_of_whatsapp="number" number="+880123456789" group="" message="Hi! I have a question about your service." timezone="Asia/Dhaka" photo="' . CHAT_HELP_DIR_URL . 'src/assets/image/user.webp" name="Jhon" designation="Techinical support" label="How can I help you?" online="I am online" offline="I am offline" visibility="wHelp-show-everywhere" sizes="wHelp-btn-lg" sunday="00:00-23:59" monday="00:00-23:59" tuesday="00:00-23:59" wednesday="00:00-23:59" thursday="00:00-23:59" friday="00:00-23:59" saturday="00:00-23:59"]',
+                    ),
+                    array(
+                        'id'    => 'simple_button_shortcode',
+                        'type'  => 'shortcode',
+                        'title' => esc_html__('Shortcode', 'chat-help'),
+                        'title_help' =>
+                        '<div class="chat-help-info-label">' .
+                            esc_html__('Copy this shortcode and paste it into any page, post, or widget area. You can also edit its attributes to customize the output.', 'chat-help') .
+                            '</div>' .
+                            ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/simple-shortcode/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
 
-							array(
-								'title' => esc_html__('Webhooks', 'chat-help'),
-								'icon'  => 'icofont-connection',
-								'fields' => array(
-									array(
-										'type'    => 'subheading',
-										'content' => 'Webhooks are automated HTTP POST requests that instantly transmit data to a specified URL when triggered by specific events. This allows applications to communicate in real time without requiring manual input. <a target="_blank" href="https://docs.themeatelier.net/docs/whatsapp-chat-help/shortcode/">Check WebHooks Documentation</a>',
-									),
-									array(
-										'id' => 'shortcode_webhook_url',
-										'type' => 'text',
-										'title' => esc_html__('Webhook URL', 'chat-help'),
-										'title_help' => '<div class="chat-help-info-label">' . esc_html__('Clicking on the WhatsApp shortcode buttons triggers this Webhook URL.', 'chat-help') . '</div>',
-										'class'      => 'only-for-pro',
-									),
-
-									array(
-										'id' => 'shortcode_webhook_values',
-										'type' => 'repeater',
-										'title' => esc_html__('Add Values', 'chat-help'),
-										'class'      => 'only-for-pro',
-										'fields' => array(
-											array(
-												'id'    => 'webhook_value',
-												'type'  => 'text',
-												'title' => esc_html__('Add Value', 'chat-help'),
-											),
-										),
-										'desc'  => __('<p><b>Dynamic Variables:</b> {title}, {number}, {site_url}, {current_url}, {date}, {ip}</p>
-										<h4>Retrieving Values from Cookies and URL Parameters</h4>
-							   
-										<p><b>Fetch URL Parameter Values: </b>To extract values from URL parameters, enclose the parameter name in single square brackets [ ]. If the parameter is missing, a blank value is returned.</p>
-										<p><b>Example:</b> [gclid], [utm_source]</p>
-					
-										<p><b>Fetch Cookie Values:</b>To extract values from cookies, enclose the cookie name in double square brackets [[ ]]. If the cookie is missing, a blank value is returned.</p>
-										<p><b>Example:</b> [[ _ga ]]</p>', 'chat-help'),
-									),
-
-
-								),
-							),
-
-						),
-					),
-
+                        'dependency' => array('opt-shortcode-select', 'any', '2'),
+                        'shortcode_text'    => '[chat_help style="2" primary_color="#118c7e" secondary_color="#0b5a51" padding="10px 18px 10px 18px" type_of_whatsapp="number" number="+880123456789" group="" message="Hi! I have a question about your service." label="How can I help you?" visibility="wHelp-show-everywhere" sizes="wHelp-btn-lg"]',
+                    ),
 				)
 
 			)
