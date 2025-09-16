@@ -565,11 +565,32 @@ class Help
 
                                 <li class="themeatelier-body">
                                     <span class="themeatelier-title">
+                                        <?php echo esc_html__('List All Leads Inside Leads Menu', 'chat-help'); ?>
+                                    </span>
+                                    <span class="themeatelier-free themeatelier-check-icon"></span>
+                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
+                                </li>
+                                <li class="themeatelier-body">
+                                    <span class="themeatelier-title">
+                                        <?php echo esc_html__('Export Leads As CSV', 'chat-help'); ?>
+                                    </span>
+                                    <span class="themeatelier-free themeatelier-close-icon"></span>
+                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
+                                </li>
+                                <li class="themeatelier-body">
+                                    <span class="themeatelier-title">
+                                        <?php echo esc_html__('Advanced Filtering For Leads', 'chat-help'); ?>
+                                    </span>
+                                    <span class="themeatelier-free themeatelier-check-icon"></span>
+                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
+                                </li>
+                                <li class="themeatelier-body">
+                                    <span class="themeatelier-title">
                                         <?php echo esc_html__('Transform it to your current timezone', 'chat-help'); ?>
                                        
                                     </span>
                                     <span class="themeatelier-free themeatelier-check-icon"></span>
-                                    <span class="themeatelier-free themeatelier-check-icon"></span>
+                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
                                 </li>
 
                                 <li class="themeatelier-body">
@@ -583,10 +604,17 @@ class Help
                                 <li class="themeatelier-body">
                                     <span class="themeatelier-title">
                                         <?php echo esc_html__('GDPR Compliance', 'chat-help'); ?>
-                                       
+                                        
                                     </span>
                                     <span class="themeatelier-free themeatelier-check-icon"></span>
                                     <span class="themeatelier-free themeatelier-check-icon"></span>
+                                </li>
+                                <li class="themeatelier-body">
+                                    <span class="themeatelier-title">
+                                        <?php echo esc_html__('Footer Content Change Option', 'chat-help'); ?>
+                                    </span>
+                                    <span class="themeatelier-free themeatelier-close-icon"></span>
+                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
                                 </li>
 
                                 <li class="themeatelier-body">
@@ -629,6 +657,13 @@ class Help
                                     </span>
                                     <span class="themeatelier-free"><b>5</b></span>
                                     <span class="themeatelier-pro"><b>2000+</b></span>
+                                </li>
+                                <li class="themeatelier-body">
+                                    <span class="themeatelier-title">
+                                        <?php echo esc_html__('Send Button Color Option', 'chat-help'); ?>
+                                    </span>
+                                    <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
+                                    <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
                                 </li>
 
                                 <li class="themeatelier-body">

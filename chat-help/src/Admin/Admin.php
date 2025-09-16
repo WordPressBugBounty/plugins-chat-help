@@ -16,6 +16,7 @@ namespace ThemeAtelier\ChatHelp\Admin;
 use ThemeAtelier\ChatHelp\Admin\Views\Options;
 use ThemeAtelier\ChatHelp\Admin\TADiscountPage\TADiscountPage;
 use ThemeAtelier\ChatHelp\Admin\DBUpdates;
+use ThemeAtelier\ChatHelp\Admin\Leads;
 
 /**
  * The admin class
@@ -66,6 +67,9 @@ class Admin
 		add_filter('plugin_action_links_' . CHAT_HELP_BASENAME, array($this, 'chat_help_action_links'));
 		new TADiscountPage();
 		new DBUpdates();
+		
+		
+		new Leads();
 	}
 
 	/**
@@ -100,7 +104,7 @@ class Admin
 		);
 
 		do_action('chat_help_recommended_page_menu');
-		add_submenu_page('chat-help', __('👑 Upgrade to Pro (70% Off)', 'chat-help'), sprintf('<span class="chat-help-get-pro-text">%s</span>', __('👑 Upgrade to Pro (70% Off)', 'chat-help')), 'manage_options', CHAT_HELP_DEMO_URL . 'pricing/');
+		add_submenu_page('chat-help', __('70% EARLYBIRD OFF', 'chat-help'), sprintf('<span style="color:#FFCC4D;font-weight:bold;" class="chat-help-get-pro-text">%s</span>', __('70% EARLYBIRD OFF', 'chat-help')), 'manage_options', CHAT_HELP_DEMO_URL . 'pricing/');
 		do_action('chat_help_after_upgrade_pro_menu');
 	}
 
@@ -132,7 +136,6 @@ class Admin
 		</div>
 <?php }
 
-	// Plugin settings in plugin list
 	// Plugin settings in plugin list
 	public function chat_help_action_links(array $links)
 	{

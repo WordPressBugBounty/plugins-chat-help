@@ -2614,7 +2614,7 @@
             $buttons.prop("disabled", true);
 
             window.wp.ajax
-              .post("CHAT_HELP_" + $panel.data("unique") + "_ajax_save", {
+              .post("chat_help_" + $panel.data("unique") + "_ajax_save", {
                 data: $("#chat-help-form").serializeJSON_chat_help(),
               })
               .done(function (response) {

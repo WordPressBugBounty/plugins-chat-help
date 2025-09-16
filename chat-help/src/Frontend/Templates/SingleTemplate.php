@@ -52,14 +52,14 @@ class SingleTemplate
 		$agent_photo 	= isset($options['agent-photo']) ? $options['agent-photo'] : '';
 		$agent_name 	= isset($options['agent-name']) ? $options['agent-name'] : 'John Doe';
 		$agent_subtitle = isset($options['agent-subtitle']) ? $options['agent-subtitle'] : 'Typically replies within a day';
-		$color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
-		$primary = isset($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-		$secondary = isset($color_settings['secondary']) ? $color_settings['secondary'] : '#118c7e';
-
 		$bubble_visibility = isset($options['bubble-visibility']) ? $options['bubble-visibility'] : 'everywhere';
 		$type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
 		$whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
 		$whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
+		$color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
+		$primary = isset($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
+		$secondary = isset($color_settings['secondary']) ? $color_settings['secondary'] : '#118c7e';
+
 
 		if ($type_of_whatsapp === 'group') {
 			$gaAnalyticsAttr = 'data-group=' . $whatsapp_group . '';
@@ -95,7 +95,11 @@ class SingleTemplate
 			include Helpers::chat_help_locate_template('items/single-template-header.php');
 			include Helpers::chat_help_locate_template('items/agent-message.php');
 			?>
-			<span style="display:block!important" class="wcp-branding"><?php echo esc_html__('Powered by', 'chat-help'); ?> <a style="color:#fff!important;display:inline-block!important;" target="_blank" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) . 'pricing/' ?>"><strong style="font-weight:bold!important;"><?php echo esc_html__('Chat Help', 'chat-help'); ?></strong></a></span>
+			<?php if ($footer_content && $footer_content_text) {
+			?>
+				<span style="display:block!important" class="wcp-branding"><?php echo wp_kses_post($footer_content_text); ?></span>
+			<?php
+			} ?>
 		</div>
 		</div>
 <?php

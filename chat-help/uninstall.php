@@ -23,7 +23,7 @@ if (! defined('WP_UNINSTALL_PLUGIN')) {
  */
 function chat_help_delete_plugin_data()
 {
-
+	global $wpdb;
 	// Delete plugin option settings.
 	$options = [
 		'cwp_option',
@@ -37,6 +37,10 @@ function chat_help_delete_plugin_data()
 		delete_option($option_name);       // Delete regular option.
 		delete_site_option($option_name); // Delete multisite option.
 	}
+
+	// delete leads table
+	$table_name = $wpdb->prefix . 'chat_help_leads';
+	$wpdb->query("DROP TABLE IF EXISTS `$table_name`");
 }
 
 // Load WPTP file.

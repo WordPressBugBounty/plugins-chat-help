@@ -113,7 +113,7 @@ if (! class_exists('Chat_Help_Options')) {
 
       add_action('admin_menu', array($this, 'add_admin_menu'));
       add_action('admin_bar_menu', array($this, 'add_admin_bar_menu'), $this->args['admin_bar_menu_priority']);
-      add_action('wp_ajax_CHAT_HELP_' . $this->unique . '_ajax_save', array($this, 'ajax_save'));
+      add_action('wp_ajax_chat_help_' . $this->unique . '_ajax_save', array($this, 'ajax_save'));
 
       if ($this->args['database'] === 'network' && ! empty($this->args['show_in_network'])) {
         add_action('network_admin_menu', array($this, 'add_admin_menu'));
@@ -345,15 +345,15 @@ if (! class_exists('Chat_Help_Options')) {
           }
         }
 
-        $data = apply_filters("CHAT_HELP_{$this->unique}_save", $data, $this);
+        $data = apply_filters("chat_help_{$this->unique}_save", $data, $this);
 
-        do_action("CHAT_HELP_{$this->unique}_save_before", $data, $this);
+        do_action("chat_help_{$this->unique}_save_before", $data, $this);
 
         $this->options = $data;
 
         $this->save_options($data);
 
-        do_action("CHAT_HELP_{$this->unique}_save_after", $data, $this);
+        do_action("chat_help_{$this->unique}_save_after", $data, $this);
 
         return true;
       }
@@ -375,7 +375,7 @@ if (! class_exists('Chat_Help_Options')) {
         update_option($this->unique, $data);
       }
 
-      do_action("CHAT_HELP_{$this->unique}_saved", $data, $this);
+      do_action("chat_help_{$this->unique}_saved", $data, $this);
     }
 
     // get options from database
@@ -677,7 +677,7 @@ if (! class_exists('Chat_Help_Options')) {
 
       echo '</div>';
 
-      do_action('CHAT_HELP_options_after');
+      do_action('chat_help_options_after');
     }
   }
 }

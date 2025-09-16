@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 3.0.0
+Stable tag: 3.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,9 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 - **Single Form Builder**: Collect visitor details before chat with text/textarea fields, labels, placeholders, validation messages, and required fields.
 - **Multiple WhatsApp Types Supported**: Personal, Business, or Group — all formats supported in floating chats and buttons.
 - **Smart Pre-Filled Messages**: Ready-to-send messages with global variables (`{siteTitle}`, `{currentURL}`, `{date}`, `{ip}`) and WooCommerce variables (`{productName}`, `{productPrice}`, `{stockStatus}`). Conditional tags like `{PRODUCT_START}...{PRODUCT_END}` and `{LOGGEDIN_START}...{LOGGEDIN_END}` make messages dynamic.
+
+- **Leads Management**: Collect, search, filter, export, and analyze all chat leads with full form data and rich metadata — right from your WordPress dashboard.
+
 
 ### 🛒 Ecommerce & Integration
 - **WooCommerce Integration**: Add WhatsApp buttons before/after Add to Cart. Auto-pull SKU, price, sale, and stock details. Engage customers directly from product or shop pages.
@@ -155,6 +158,11 @@ Yes. The plugin is totally translation ready. If it's not support in your langua
 7. Gutenberg Button Block
 
 == Changelog ==
+= 3.1.0 - September 15, 2025 =
+Added: Leads Management – view, filter, and manage leads directly from the dashboard.
+Fixed: Elementor loading issue.
+Fixed: Minor CSS issues.
+
 = 3.0.0 - August 30, 2025 =
 Update: WhatsApp button block settings for better customization.
 Added: Google Analytics for enhanced tracking and insights.

@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-30 15:46+0000\n"
+"POT-Creation-Date: 2025-09-16 13:36+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -18,36 +18,168 @@ msgstr ""
 msgid "Whatsapp block"
 msgstr ""
 
-#: src/Admin/Admin.php:93, src/Admin/Admin.php:94
+#: src/Admin/Admin.php:97, src/Admin/Admin.php:98
 msgid "WhatsApp Chat"
 msgstr ""
 
-#: src/Admin/Admin.php:103, src/Admin/Admin.php:103
-msgid "👑 Upgrade to Pro (70% Off)"
+#: src/Admin/Admin.php:107, src/Admin/Admin.php:107
+msgid "70% EARLYBIRD OFF"
 msgstr ""
 
-#: src/Admin/Admin.php:118, src/Admin/Views/Advanced.php:127, src/Frontend/Templates/FormTemplate.php:86, src/Frontend/Templates/SingleTemplate.php:98
+#: src/Admin/Admin.php:122, src/Admin/Views/Advanced.php:127, src/Frontend/Templates/FormTemplate.php:86
 msgid "Chat Help"
 msgstr ""
 
-#: src/Admin/Admin.php:127
+#: src/Admin/Admin.php:131
 msgid "Go to settings page"
 msgstr ""
 
-#: src/Admin/Admin.php:128
+#: src/Admin/Admin.php:132
 msgid "Upgrade to pro"
 msgstr ""
 
-#: src/Admin/Admin.php:140
+#: src/Admin/Admin.php:143
 msgid "Settings"
 msgstr ""
 
-#: src/Admin/Admin.php:141
+#: src/Admin/Admin.php:144
 msgid "Support"
 msgstr ""
 
-#: src/Admin/Admin.php:142
+#: src/Admin/Admin.php:145
 msgid "Go Pro"
+msgstr ""
+
+#: src/Admin/Leads.php:51, src/Admin/Leads.php:269
+msgid "Leads"
+msgstr ""
+
+#: src/Admin/Leads.php:52
+msgid "Leads <span class=\"update-plugins\" style=\"background:#d63638;color:#fff;border-radius:3px;padding:1px 4px;font-size:10px;vertical-align:middle;float:right;\">NEW</span>"
+msgstr ""
+
+#: src/Admin/Leads.php:270
+msgid "All Email"
+msgstr ""
+
+#: src/Admin/Leads.php:271
+msgid "Pending Verification"
+msgstr ""
+
+#: src/Admin/Leads.php:272
+msgid "Verified"
+msgstr ""
+
+#: src/Admin/Leads.php:273
+msgid "Resend"
+msgstr ""
+
+#: src/Admin/Leads.php:274
+msgid "You can resend again within"
+msgstr ""
+
+#: src/Admin/Leads.php:275
+msgid "All Domain"
+msgstr ""
+
+#: src/Admin/Leads.php:276
+msgid "All Extension"
+msgstr ""
+
+#: src/Admin/Leads.php:277
+msgid "Search"
+msgstr ""
+
+#: src/Admin/Leads.php:278
+msgid "Loading..."
+msgstr ""
+
+#: src/Admin/Leads.php:279
+msgid "Delete Lead"
+msgstr ""
+
+#: src/Admin/Leads.php:280
+msgid "Are you sure you want to delete this lead?"
+msgstr ""
+
+#: src/Admin/Leads.php:281, src/Admin/Framework/Classes/Chat_Help_Metabox.php:282
+msgid "Cancel"
+msgstr ""
+
+#: src/Admin/Leads.php:282
+msgid "Yes, Delete"
+msgstr ""
+
+#: src/Admin/Leads.php:283
+msgid "Lead(s) deleted successfully!"
+msgstr ""
+
+#: src/Admin/Leads.php:284
+msgid "Delete failed!"
+msgstr ""
+
+#: src/Admin/Leads.php:285
+msgid "Failed to delete lead"
+msgstr ""
+
+#: src/Admin/Leads.php:286
+msgid "Export"
+msgstr ""
+
+#: src/Admin/Leads.php:287
+msgid "Action"
+msgstr ""
+
+#: src/Admin/Leads.php:288
+msgid "Date"
+msgstr ""
+
+#: src/Admin/Leads.php:289
+msgid "Showing"
+msgstr ""
+
+#: src/Admin/Leads.php:290
+msgid "Per page"
+msgstr ""
+
+#: src/Admin/Leads.php:291
+msgid "Page"
+msgstr ""
+
+#: src/Admin/Leads.php:292
+msgid "Others Information"
+msgstr ""
+
+#: src/Admin/Leads.php:293
+msgid "Form Submitted Data"
+msgstr ""
+
+#: src/Admin/Leads.php:294
+msgid "Show More"
+msgstr ""
+
+#: src/Admin/Leads.php:295
+msgid "Show Less"
+msgstr ""
+
+#: src/Admin/Leads.php:296
+msgid "All"
+msgstr ""
+
+#: src/Admin/Leads.php:297
+msgid "of"
+msgstr ""
+
+#: src/Admin/Leads.php:298
+msgid "Copied!"
+msgstr ""
+
+#: src/Admin/Leads.php:299
+msgid "No leads to export"
+msgstr ""
+
+#: src/Admin/Leads.php:300
+msgid "No leads found."
 msgstr ""
 
 #: src/Admin/HelpPage/Help.php:230
@@ -108,7 +240,7 @@ msgstr ""
 msgid "Plugin Settings"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:463, src/Admin/Views/General.php:164, src/Admin/Views/General.php:311, src/Admin/Views/General.php:338, src/Admin/Views/General.php:353, src/Admin/Views/General.php:567, src/Admin/Views/General.php:583, src/Admin/Views/General.php:596, src/Admin/Views/General.php:610, src/Admin/Views/General.php:624, src/Admin/Views/General.php:849, src/Admin/Views/General.php:862, src/Admin/Views/General.php:981, src/Admin/Views/General.php:1000, src/Admin/Views/General.php:1017, src/Admin/Views/General.php:1036, src/Admin/Views/General.php:1053, src/Admin/Views/General.php:1069, src/Admin/Views/General.php:1146, src/Admin/Views/General.php:1192, src/Admin/Views/General.php:1206, src/Admin/Views/General.php:1222, src/Admin/Views/General.php:1244, src/Admin/Views/General.php:1272, src/Admin/Views/General.php:1290, src/Admin/Views/General.php:1308, src/Admin/Views/General.php:1352, src/Admin/Views/General.php:1366, src/Admin/Views/General.php:1381, src/Admin/Views/General.php:1421, src/Admin/Views/General.php:1435, src/Admin/Views/General.php:1451, src/Admin/Views/General.php:1494, src/Admin/Views/General.php:1508, src/Admin/Views/General.php:1524, src/Admin/Views/General.php:1563, src/Admin/Views/General.php:1577, src/Admin/Views/General.php:1592, src/Admin/Views/General.php:1614, src/Admin/Views/General.php:1636, src/Admin/Views/General.php:1656, src/Admin/Views/General.php:1670, src/Admin/Views/General.php:1685, src/Admin/Views/General.php:1703, src/Admin/Views/General.php:1723, src/Admin/Views/General.php:1745, src/Admin/Views/General.php:1762, src/Admin/Views/General.php:1778, src/Admin/Views/General.php:1794, src/Admin/Views/General.php:1810, src/Admin/Views/General.php:1824, src/Admin/Views/General.php:1850, src/Admin/Views/General.php:1880, src/Admin/Views/General.php:1901, src/Admin/Views/General.php:1922, src/Admin/Views/General.php:1943, src/Admin/Views/General.php:1965, src/Admin/Views/General.php:1981, src/Admin/Views/General.php:2039, src/Admin/Views/General.php:2071, src/Admin/Views/General.php:2114, src/Admin/Views/Shortcode.php:45, src/Admin/Views/Shortcode.php:71, src/Admin/Views/WooCommerceButton.php:44, src/Admin/Views/WooCommerceButton.php:64, src/Admin/Views/WooCommerceButton.php:139, src/Admin/Views/WooCommerceButton.php:158, src/Admin/Views/WooCommerceButton.php:173, src/Admin/Views/WooCommerceButton.php:187, src/Admin/Views/WooCommerceButton.php:208, src/Admin/Views/WooCommerceButton.php:229, src/Admin/Views/WooCommerceButton.php:249
+#: src/Admin/HelpPage/Help.php:463, src/Admin/Views/General.php:164, src/Admin/Views/General.php:311, src/Admin/Views/General.php:338, src/Admin/Views/General.php:359, src/Admin/Views/General.php:374, src/Admin/Views/General.php:588, src/Admin/Views/General.php:604, src/Admin/Views/General.php:617, src/Admin/Views/General.php:631, src/Admin/Views/General.php:645, src/Admin/Views/General.php:870, src/Admin/Views/General.php:883, src/Admin/Views/General.php:1002, src/Admin/Views/General.php:1021, src/Admin/Views/General.php:1038, src/Admin/Views/General.php:1057, src/Admin/Views/General.php:1074, src/Admin/Views/General.php:1090, src/Admin/Views/General.php:1167, src/Admin/Views/General.php:1213, src/Admin/Views/General.php:1227, src/Admin/Views/General.php:1243, src/Admin/Views/General.php:1280, src/Admin/Views/General.php:1308, src/Admin/Views/General.php:1326, src/Admin/Views/General.php:1344, src/Admin/Views/General.php:1388, src/Admin/Views/General.php:1402, src/Admin/Views/General.php:1417, src/Admin/Views/General.php:1457, src/Admin/Views/General.php:1471, src/Admin/Views/General.php:1487, src/Admin/Views/General.php:1530, src/Admin/Views/General.php:1544, src/Admin/Views/General.php:1560, src/Admin/Views/General.php:1599, src/Admin/Views/General.php:1613, src/Admin/Views/General.php:1628, src/Admin/Views/General.php:1650, src/Admin/Views/General.php:1672, src/Admin/Views/General.php:1692, src/Admin/Views/General.php:1706, src/Admin/Views/General.php:1721, src/Admin/Views/General.php:1739, src/Admin/Views/General.php:1759, src/Admin/Views/General.php:1781, src/Admin/Views/General.php:1798, src/Admin/Views/General.php:1814, src/Admin/Views/General.php:1830, src/Admin/Views/General.php:1846, src/Admin/Views/General.php:1860, src/Admin/Views/General.php:1886, src/Admin/Views/General.php:1916, src/Admin/Views/General.php:1937, src/Admin/Views/General.php:1958, src/Admin/Views/General.php:1979, src/Admin/Views/General.php:2001, src/Admin/Views/General.php:2017, src/Admin/Views/General.php:2075, src/Admin/Views/General.php:2107, src/Admin/Views/General.php:2150, src/Admin/Views/Shortcode.php:45, src/Admin/Views/Shortcode.php:71, src/Admin/Views/WooCommerceButton.php:44, src/Admin/Views/WooCommerceButton.php:64, src/Admin/Views/WooCommerceButton.php:139, src/Admin/Views/WooCommerceButton.php:158, src/Admin/Views/WooCommerceButton.php:173, src/Admin/Views/WooCommerceButton.php:187, src/Admin/Views/WooCommerceButton.php:208, src/Admin/Views/WooCommerceButton.php:229, src/Admin/Views/WooCommerceButton.php:249
 msgid "Live Demo"
 msgstr ""
 
@@ -181,122 +313,142 @@ msgid "Single form layout's forms fields"
 msgstr ""
 
 #: src/Admin/HelpPage/Help.php:568
+msgid "List All Leads Inside Leads Menu"
+msgstr ""
+
+#: src/Admin/HelpPage/Help.php:575
+msgid "Export Leads As CSV"
+msgstr ""
+
+#: src/Admin/HelpPage/Help.php:582
+msgid "Advanced Filtering For Leads"
+msgstr ""
+
+#: src/Admin/HelpPage/Help.php:589
 msgid "Transform it to your current timezone"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:577
+#: src/Admin/HelpPage/Help.php:598
 msgid "Time based availablity for agents"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:585, src/Admin/Views/General.php:1091
+#: src/Admin/HelpPage/Help.php:606, src/Admin/Views/General.php:1112
 msgid "GDPR Compliance"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:594
+#: src/Admin/HelpPage/Help.php:614
+msgid "Footer Content Change Option"
+msgstr ""
+
+#: src/Admin/HelpPage/Help.php:622
 msgid "Icons For Send Message Button"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:602
+#: src/Admin/HelpPage/Help.php:630
 msgid "Icons For Circle Button"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:610, src/Admin/Views/General.php:1587
+#: src/Admin/HelpPage/Help.php:638, src/Admin/Views/General.php:1623
 msgid "Transition Effect for Circle Icon"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:618
+#: src/Admin/HelpPage/Help.php:646
 msgid "Visibility by option(s)"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:627
+#: src/Admin/HelpPage/Help.php:655
 msgid "Icons For Circle Button Close"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:636
+#: src/Admin/HelpPage/Help.php:663
+msgid "Send Button Color Option"
+msgstr ""
+
+#: src/Admin/HelpPage/Help.php:671
 msgid "Webhooks Intregation"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:644
+#: src/Admin/HelpPage/Help.php:679
 msgid "Dark and Night Layout Mode"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:653
+#: src/Admin/HelpPage/Help.php:688
 msgid "Right and Middle for Bubble"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:662
+#: src/Admin/HelpPage/Help.php:697
 msgid "Shortcode Buttons"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:668
+#: src/Admin/HelpPage/Help.php:703
 msgid "WooCommerce Buttons"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:674
+#: src/Admin/HelpPage/Help.php:709
 msgid "Gutenberg Button Blocks"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:683
+#: src/Admin/HelpPage/Help.php:718
 msgid "Upgrade To PRO & Enjoy Advanced Features!"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:685
+#: src/Admin/HelpPage/Help.php:720
 msgid "Already, %s people are using Whatsapp Chat Help on their websites to create beautiful showcases, why won’t you!"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:690
+#: src/Admin/HelpPage/Help.php:725
 msgid "Upgrade to Pro Now!"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:693
+#: src/Admin/HelpPage/Help.php:728
 msgid "14-Day No-Questions-Asked %s"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:693
+#: src/Admin/HelpPage/Help.php:728
 msgid "Refund Policy"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:696
+#: src/Admin/HelpPage/Help.php:731
 msgid "See All Features"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:697
+#: src/Admin/HelpPage/Help.php:732
 msgid "Pro Live Demo"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:704
+#: src/Admin/HelpPage/Help.php:739
 msgid "NO NEED TO TAKE OUR WORD FOR IT"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:705
+#: src/Admin/HelpPage/Help.php:740
 msgid "Our Users Love Whatsapp Chat Help Pro!"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:710
+#: src/Admin/HelpPage/Help.php:745
 msgid "The plugin is really easy to use for its good admin UI also the support is very responsive. I got my answer with a solution within a few hours."
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:715, src/Admin/HelpPage/Help.php:718
+#: src/Admin/HelpPage/Help.php:750, src/Admin/HelpPage/Help.php:753
 msgid "Crowandravener"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:727
+#: src/Admin/HelpPage/Help.php:762
 msgid "This plugin has so many essential features what exactly filled my needs! Amazing!"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:732, src/Admin/HelpPage/Help.php:735
+#: src/Admin/HelpPage/Help.php:767, src/Admin/HelpPage/Help.php:770
 msgid "PROJECTS4"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:744
+#: src/Admin/HelpPage/Help.php:779
 msgid "Support is very fast and friedly"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:749
+#: src/Admin/HelpPage/Help.php:784
 msgid "User Asiegle"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:752
+#: src/Admin/HelpPage/Help.php:787
 msgid "Asiegle"
 msgstr ""
 
@@ -316,7 +468,7 @@ msgstr ""
 msgid "Enable this option to completely remove all Chat Help plugin data when the plugin is deleted from your site."
 msgstr ""
 
-#: src/Admin/Views/Advanced.php:53, src/Admin/Views/Advanced.php:70, src/Admin/Views/Advanced.php:85, src/Admin/Views/Advanced.php:101, src/Admin/Views/Advanced.php:120, src/Admin/Views/Advanced.php:132, src/Admin/Views/Advanced.php:146, src/Admin/Views/Advanced.php:214, src/Admin/Views/Advanced.php:227, src/Admin/Views/Advanced.php:278, src/Admin/Views/Advanced.php:294, src/Admin/Views/Advanced.php:313, src/Admin/Views/General.php:164, src/Admin/Views/General.php:180, src/Admin/Views/General.php:206, src/Admin/Views/General.php:221, src/Admin/Views/General.php:234, src/Admin/Views/General.php:249, src/Admin/Views/General.php:259, src/Admin/Views/General.php:272, src/Admin/Views/General.php:286, src/Admin/Views/General.php:312, src/Admin/Views/General.php:323, src/Admin/Views/General.php:339, src/Admin/Views/General.php:354, src/Admin/Views/General.php:375, src/Admin/Views/General.php:376, src/Admin/Views/General.php:410, src/Admin/Views/General.php:426, src/Admin/Views/General.php:568, src/Admin/Views/General.php:584, src/Admin/Views/General.php:597, src/Admin/Views/General.php:611, src/Admin/Views/General.php:625, src/Admin/Views/General.php:675, src/Admin/Views/General.php:697, src/Admin/Views/General.php:713, src/Admin/Views/General.php:850, src/Admin/Views/General.php:863, src/Admin/Views/General.php:961, src/Admin/Views/General.php:982, src/Admin/Views/General.php:1001, src/Admin/Views/General.php:1018, src/Admin/Views/General.php:1037, src/Admin/Views/General.php:1054, src/Admin/Views/General.php:1070, src/Admin/Views/General.php:1097, src/Admin/Views/General.php:1113, src/Admin/Views/General.php:1129, src/Admin/Views/General.php:1147, src/Admin/Views/General.php:1193, src/Admin/Views/General.php:1207, src/Admin/Views/General.php:1223, src/Admin/Views/General.php:1245, src/Admin/Views/General.php:1273, src/Admin/Views/General.php:1291, src/Admin/Views/General.php:1309, src/Admin/Views/General.php:1353, src/Admin/Views/General.php:1367, src/Admin/Views/General.php:1382, src/Admin/Views/General.php:1422, src/Admin/Views/General.php:1436, src/Admin/Views/General.php:1452, src/Admin/Views/General.php:1495, src/Admin/Views/General.php:1509, src/Admin/Views/General.php:1525, src/Admin/Views/General.php:1564, src/Admin/Views/General.php:1578, src/Admin/Views/General.php:1593, src/Admin/Views/General.php:1615, src/Admin/Views/General.php:1637, src/Admin/Views/General.php:1657, src/Admin/Views/General.php:1671, src/Admin/Views/General.php:1686, src/Admin/Views/General.php:1704, src/Admin/Views/General.php:1724, src/Admin/Views/General.php:1746, src/Admin/Views/General.php:1763, src/Admin/Views/General.php:1779, src/Admin/Views/General.php:1795, src/Admin/Views/General.php:1811, src/Admin/Views/General.php:1825, src/Admin/Views/General.php:1851, src/Admin/Views/General.php:1881, src/Admin/Views/General.php:1902, src/Admin/Views/General.php:1923, src/Admin/Views/General.php:1944, src/Admin/Views/General.php:1966, src/Admin/Views/General.php:1982, src/Admin/Views/General.php:2004, src/Admin/Views/General.php:2020, src/Admin/Views/General.php:2040, src/Admin/Views/General.php:2072, src/Admin/Views/General.php:2098, src/Admin/Views/General.php:2115, src/Admin/Views/General.php:2135, src/Admin/Views/General.php:2172, src/Admin/Views/General.php:2192, src/Admin/Views/General.php:2223, src/Admin/Views/General.php:2238, src/Admin/Views/General.php:2249, src/Admin/Views/General.php:2282, src/Admin/Views/General.php:2297, src/Admin/Views/General.php:2308, src/Admin/Views/General.php:2341, src/Admin/Views/General.php:2356, src/Admin/Views/General.php:2367, src/Admin/Views/General.php:2399, src/Admin/Views/General.php:2414, src/Admin/Views/General.php:2425, src/Admin/Views/General.php:2460, src/Admin/Views/General.php:2475, src/Admin/Views/General.php:2487, src/Admin/Views/General.php:2519, src/Admin/Views/General.php:2534, src/Admin/Views/General.php:2545, src/Admin/Views/General.php:2577, src/Admin/Views/General.php:2592, src/Admin/Views/General.php:2603, src/Admin/Views/General.php:2638, src/Admin/Views/General.php:2653, src/Admin/Views/General.php:2664, src/Admin/Views/Shortcode.php:46, src/Admin/Views/Shortcode.php:72, src/Admin/Views/Shortcode.php:85, src/Admin/Views/WooCommerceButton.php:45, src/Admin/Views/WooCommerceButton.php:65, src/Admin/Views/WooCommerceButton.php:120, src/Admin/Views/WooCommerceButton.php:140, src/Admin/Views/WooCommerceButton.php:159, src/Admin/Views/WooCommerceButton.php:174, src/Admin/Views/WooCommerceButton.php:188, src/Admin/Views/WooCommerceButton.php:209, src/Admin/Views/WooCommerceButton.php:230, src/Admin/Views/WooCommerceButton.php:250
+#: src/Admin/Views/Advanced.php:53, src/Admin/Views/Advanced.php:70, src/Admin/Views/Advanced.php:85, src/Admin/Views/Advanced.php:101, src/Admin/Views/Advanced.php:120, src/Admin/Views/Advanced.php:132, src/Admin/Views/Advanced.php:146, src/Admin/Views/Advanced.php:214, src/Admin/Views/Advanced.php:227, src/Admin/Views/Advanced.php:278, src/Admin/Views/Advanced.php:294, src/Admin/Views/Advanced.php:313, src/Admin/Views/General.php:164, src/Admin/Views/General.php:180, src/Admin/Views/General.php:206, src/Admin/Views/General.php:221, src/Admin/Views/General.php:234, src/Admin/Views/General.php:249, src/Admin/Views/General.php:259, src/Admin/Views/General.php:272, src/Admin/Views/General.php:286, src/Admin/Views/General.php:312, src/Admin/Views/General.php:323, src/Admin/Views/General.php:341, src/Admin/Views/General.php:360, src/Admin/Views/General.php:375, src/Admin/Views/General.php:396, src/Admin/Views/General.php:397, src/Admin/Views/General.php:431, src/Admin/Views/General.php:447, src/Admin/Views/General.php:589, src/Admin/Views/General.php:605, src/Admin/Views/General.php:618, src/Admin/Views/General.php:632, src/Admin/Views/General.php:646, src/Admin/Views/General.php:696, src/Admin/Views/General.php:718, src/Admin/Views/General.php:734, src/Admin/Views/General.php:871, src/Admin/Views/General.php:884, src/Admin/Views/General.php:982, src/Admin/Views/General.php:1003, src/Admin/Views/General.php:1022, src/Admin/Views/General.php:1039, src/Admin/Views/General.php:1058, src/Admin/Views/General.php:1075, src/Admin/Views/General.php:1091, src/Admin/Views/General.php:1118, src/Admin/Views/General.php:1134, src/Admin/Views/General.php:1150, src/Admin/Views/General.php:1168, src/Admin/Views/General.php:1214, src/Admin/Views/General.php:1228, src/Admin/Views/General.php:1244, src/Admin/Views/General.php:1258, src/Admin/Views/General.php:1281, src/Admin/Views/General.php:1309, src/Admin/Views/General.php:1327, src/Admin/Views/General.php:1345, src/Admin/Views/General.php:1389, src/Admin/Views/General.php:1403, src/Admin/Views/General.php:1418, src/Admin/Views/General.php:1458, src/Admin/Views/General.php:1472, src/Admin/Views/General.php:1488, src/Admin/Views/General.php:1531, src/Admin/Views/General.php:1545, src/Admin/Views/General.php:1561, src/Admin/Views/General.php:1600, src/Admin/Views/General.php:1614, src/Admin/Views/General.php:1629, src/Admin/Views/General.php:1651, src/Admin/Views/General.php:1673, src/Admin/Views/General.php:1693, src/Admin/Views/General.php:1707, src/Admin/Views/General.php:1722, src/Admin/Views/General.php:1740, src/Admin/Views/General.php:1760, src/Admin/Views/General.php:1782, src/Admin/Views/General.php:1799, src/Admin/Views/General.php:1815, src/Admin/Views/General.php:1831, src/Admin/Views/General.php:1847, src/Admin/Views/General.php:1861, src/Admin/Views/General.php:1887, src/Admin/Views/General.php:1917, src/Admin/Views/General.php:1938, src/Admin/Views/General.php:1959, src/Admin/Views/General.php:1980, src/Admin/Views/General.php:2002, src/Admin/Views/General.php:2018, src/Admin/Views/General.php:2040, src/Admin/Views/General.php:2056, src/Admin/Views/General.php:2076, src/Admin/Views/General.php:2108, src/Admin/Views/General.php:2134, src/Admin/Views/General.php:2151, src/Admin/Views/General.php:2173, src/Admin/Views/General.php:2189, src/Admin/Views/General.php:2226, src/Admin/Views/General.php:2246, src/Admin/Views/General.php:2277, src/Admin/Views/General.php:2292, src/Admin/Views/General.php:2303, src/Admin/Views/General.php:2336, src/Admin/Views/General.php:2351, src/Admin/Views/General.php:2362, src/Admin/Views/General.php:2395, src/Admin/Views/General.php:2410, src/Admin/Views/General.php:2421, src/Admin/Views/General.php:2453, src/Admin/Views/General.php:2468, src/Admin/Views/General.php:2479, src/Admin/Views/General.php:2514, src/Admin/Views/General.php:2529, src/Admin/Views/General.php:2541, src/Admin/Views/General.php:2573, src/Admin/Views/General.php:2588, src/Admin/Views/General.php:2599, src/Admin/Views/General.php:2631, src/Admin/Views/General.php:2646, src/Admin/Views/General.php:2657, src/Admin/Views/General.php:2692, src/Admin/Views/General.php:2707, src/Admin/Views/General.php:2718, src/Admin/Views/Shortcode.php:46, src/Admin/Views/Shortcode.php:72, src/Admin/Views/Shortcode.php:85, src/Admin/Views/WooCommerceButton.php:45, src/Admin/Views/WooCommerceButton.php:65, src/Admin/Views/WooCommerceButton.php:120, src/Admin/Views/WooCommerceButton.php:140, src/Admin/Views/WooCommerceButton.php:159, src/Admin/Views/WooCommerceButton.php:174, src/Admin/Views/WooCommerceButton.php:188, src/Admin/Views/WooCommerceButton.php:209, src/Admin/Views/WooCommerceButton.php:230, src/Admin/Views/WooCommerceButton.php:250
 msgid "Open Docs"
 msgstr ""
 
@@ -505,7 +657,7 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: src/Admin/Views/General.php:109, src/Admin/Views/General.php:637, src/Admin/Views/WooCommerceButton.php:74
+#: src/Admin/Views/General.php:109, src/Admin/Views/General.php:658, src/Admin/Views/WooCommerceButton.php:74
 msgid "WhatsApp Type"
 msgstr ""
 
@@ -513,7 +665,7 @@ msgstr ""
 msgid "Select “Number” to receive direct messages, or “Group” to let people join your WhatsApp group."
 msgstr ""
 
-#: src/Admin/Views/General.php:110, src/Admin/Views/General.php:638, src/Admin/Views/WooCommerceButton.php:79
+#: src/Admin/Views/General.php:110, src/Admin/Views/General.php:659, src/Admin/Views/WooCommerceButton.php:79
 msgid "Detailed explanation"
 msgstr ""
 
@@ -529,7 +681,7 @@ msgstr ""
 msgid "Enter WhatsApp number with country code (e.g., +10123456189)."
 msgstr ""
 
-#: src/Admin/Views/General.php:147, src/Admin/Views/General.php:659, src/Admin/Views/WooCommerceButton.php:104
+#: src/Admin/Views/General.php:147, src/Admin/Views/General.php:680, src/Admin/Views/WooCommerceButton.php:104
 msgid "WhatsApp Group"
 msgstr ""
 
@@ -681,11 +833,11 @@ msgstr ""
 msgid "Show or hide labels above form fields."
 msgstr ""
 
-#: src/Admin/Views/General.php:313, src/Admin/Views/General.php:1284, src/Admin/Views/General.php:1641, src/Admin/Views/WooCommerceButton.php:47, src/Admin/Views/WooCommerceButton.php:141
+#: src/Admin/Views/General.php:313, src/Admin/Views/General.php:1320, src/Admin/Views/General.php:1677, src/Admin/Views/WooCommerceButton.php:47, src/Admin/Views/WooCommerceButton.php:141
 msgid "Show"
 msgstr ""
 
-#: src/Admin/Views/General.php:314, src/Admin/Views/General.php:1285, src/Admin/Views/General.php:1642, src/Admin/Views/WooCommerceButton.php:48, src/Admin/Views/WooCommerceButton.php:142
+#: src/Admin/Views/General.php:314, src/Admin/Views/General.php:1321, src/Admin/Views/General.php:1678, src/Admin/Views/WooCommerceButton.php:48, src/Admin/Views/WooCommerceButton.php:142
 msgid "Hide"
 msgstr ""
 
@@ -701,1247 +853,1287 @@ msgstr ""
 msgid "Use {form_fields} to include all fields, or insert specific variables (e.g., {text_1}, {textarea_2}) for more control."
 msgstr ""
 
-#: src/Admin/Views/General.php:336
-msgid "Current Time"
+#: src/Admin/Views/General.php:332
+msgid "Leads (Form Submissions)"
 msgstr ""
 
-#: src/Admin/Views/General.php:337
-msgid "Enable to display the current time before the agent’s message."
+#: src/Admin/Views/General.php:335
+msgid "Enable this option to store submitted form data as leads."
 msgstr ""
 
-#: src/Admin/Views/General.php:342, src/Admin/Framework/fields/sorter/sorter.php:21
-msgid "Enabled"
-msgstr ""
-
-#: src/Admin/Views/General.php:343, src/Admin/Framework/fields/sorter/sorter.php:22
-msgid "Disabled"
-msgstr ""
-
-#: src/Admin/Views/General.php:351
-msgid "Message From Agent"
-msgstr ""
-
-#: src/Admin/Views/General.php:352
-msgid "Add a custom message to display inside the agent’s message box."
-msgstr ""
-
-#: src/Admin/Views/General.php:355
-msgid "Hello 👋 Welcome to {siteTitle}! Click the button below to start chatting with us on WhatsApp."
-msgstr ""
-
-#: src/Admin/Views/General.php:356
-msgid "Global Vars:  {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> {PRODUCT_START} WooCommerce Vars: {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} {PRODUCT_END} <br> <b>Conditional Blocks:</b>  {PRODUCT_START} ... {PRODUCT_END},  {NOT_PRODUCT_START} ... {NOT_PRODUCT_END},  {LOGGEDIN_START} ... {LOGGEDIN_END},  {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}"
-msgstr ""
-
-#: src/Admin/Views/General.php:366, src/Admin/Views/General.php:670, src/Admin/Views/WooCommerceButton.php:115
-msgid "Pre-filled Message"
-msgstr ""
-
-#: src/Admin/Views/General.php:369
-msgid "Write a friendly, pre-filled message that appears when users click the chat bubble."
-msgstr ""
-
-#: src/Admin/Views/General.php:371
-msgid "Example: \"Hi! I have a question about your services.\""
-msgstr ""
-
-#: src/Admin/Views/General.php:373
-msgid "You can also insert dynamic variables as needed."
-msgstr ""
-
-#: src/Admin/Views/General.php:378, src/Admin/Views/WooCommerceButton.php:123
-msgid "Global Vars:"
-msgstr ""
-
-#: src/Admin/Views/General.php:379, src/Admin/Views/WooCommerceButton.php:122
-msgid "WooCommerce Vars:"
-msgstr ""
-
-#: src/Admin/Views/General.php:380, src/Admin/Views/WooCommerceButton.php:123
-msgid "Conditional Blocks:"
-msgstr ""
-
-#: src/Admin/Views/General.php:382
-msgid "Hello! I have a question about {currentTitle}."
-msgstr ""
-
-#: src/Admin/Views/General.php:397, src/Admin/Views/General.php:424, src/Admin/Views/General.php:708
-msgid "Availability"
-msgstr ""
-
-#: src/Admin/Views/General.php:408, src/Admin/Views/General.php:692, src/Frontend/elementor-widgets/elementor-widget.php:261
-msgid "Timezone"
-msgstr ""
-
-#: src/Admin/Views/General.php:409
-msgid "Select your local timezone. Availability schedules will be applied based on this timezone."
-msgstr ""
-
-#: src/Admin/Views/General.php:412, src/Admin/Views/General.php:700
-msgid "Select Timezone"
-msgstr ""
-
-#: src/Admin/Views/General.php:425
-msgid "Set your daily availability using 24-hour format (e.g., 09:00 to 18:00). To mark a full day as offline, set both From and To values to 00:00."
-msgstr ""
-
-#: src/Admin/Views/General.php:434, src/Admin/Views/General.php:718, src/Frontend/elementor-widgets/elementor-widget.php:868
-msgid "Sunday"
-msgstr ""
-
-#: src/Admin/Views/General.php:451, src/Admin/Views/General.php:735, src/Frontend/elementor-widgets/elementor-widget.php:907
-msgid "Monday"
-msgstr ""
-
-#: src/Admin/Views/General.php:468, src/Admin/Views/General.php:752, src/Frontend/elementor-widgets/elementor-widget.php:946
-msgid "Tuesday"
-msgstr ""
-
-#: src/Admin/Views/General.php:485, src/Admin/Views/General.php:769, src/Frontend/elementor-widgets/elementor-widget.php:985
-msgid "Wednesday"
-msgstr ""
-
-#: src/Admin/Views/General.php:503, src/Admin/Views/General.php:787, src/Frontend/elementor-widgets/elementor-widget.php:1024
-msgid "Thursday"
-msgstr ""
-
-#: src/Admin/Views/General.php:521, src/Admin/Views/General.php:805, src/Frontend/elementor-widgets/elementor-widget.php:1063
-msgid "Friday"
-msgstr ""
-
-#: src/Admin/Views/General.php:539, src/Admin/Views/General.php:823, src/Frontend/elementor-widgets/elementor-widget.php:1101
-msgid "Saturday"
-msgstr ""
-
-#: src/Admin/Views/General.php:565
-msgid "Show Search Field"
-msgstr ""
-
-#: src/Admin/Views/General.php:566
-msgid "Show or hide the search box. This helps visitors quickly find an agent when you have many agents."
-msgstr ""
-
-#: src/Admin/Views/General.php:570, src/Admin/Views/General.php:1968, src/Admin/Views/General.php:1984, src/Admin/Views/General.php:2005, src/Frontend/elementor-widgets/elementor-widget.php:238, src/Frontend/elementor-widgets/elementor-widget.php:1361, src/Frontend/elementor-widgets/elementor-widget.php:1407
-msgid "Yes"
-msgstr ""
-
-#: src/Admin/Views/General.php:571, src/Admin/Views/General.php:1969, src/Admin/Views/General.php:1985, src/Admin/Views/General.php:2006, src/Frontend/elementor-widgets/elementor-widget.php:239, src/Frontend/elementor-widgets/elementor-widget.php:1362, src/Frontend/elementor-widgets/elementor-widget.php:1408
-msgid "No"
-msgstr ""
-
-#: src/Admin/Views/General.php:580
-msgid "Chat Agents"
-msgstr ""
-
-#: src/Admin/Views/General.php:582
-msgid "Add and manage your chat agents. Each agent can have a name, photo, WhatsApp type (number or group), pre-filled message, timezone, availability, designation, and custom online/offline text. You can add as many agents as you need."
-msgstr ""
-
-#: src/Admin/Views/General.php:591, src/Admin/Views/General.php:994
-msgid "Agent Name"
-msgstr ""
-
-#: src/Admin/Views/General.php:594
-msgid "Enter the agent’s name."
-msgstr ""
-
-#: src/Admin/Views/General.php:605
-msgid "Agent Designation"
-msgstr ""
-
-#: src/Admin/Views/General.php:608
-msgid "Enter the agent’s designation or role (e.g., Sales Manager, Support Agent)."
-msgstr ""
-
-#: src/Admin/Views/General.php:619, src/Admin/Views/General.php:975
-msgid "Agent Photo"
-msgstr ""
-
-#: src/Admin/Views/General.php:622
-msgid "Upload or select an image to use as the agent’s photo."
-msgstr ""
-
-#: src/Admin/Views/General.php:638
-msgid "Select \"Number\" to receive direct messages or \"Group\" to let people join your WhatsApp group."
-msgstr ""
-
-#: src/Admin/Views/General.php:649
-msgid "WhatsApp Number for Agent"
-msgstr ""
-
-#: src/Admin/Views/General.php:652, src/Admin/Views/WooCommerceButton.php:94
-msgid "Add your WhatsApp number including country code. eg: +880123456189"
-msgstr ""
-
-#: src/Admin/Views/General.php:662
-msgid "Invite your visitors to join into your whatapp group."
-msgstr ""
-
-#: src/Admin/Views/General.php:673
-msgid "Write a friendly, pre-filled message that will appear when users start a chat with this agent. Example: “Hi! I have a question about your services.”"
-msgstr ""
-
-#: src/Admin/Views/General.php:695
-msgid "Select the agent’s timezone. This ensures availability times are shown correctly, even if the user is in a different timezone."
-msgstr ""
-
-#: src/Admin/Views/General.php:711
-msgid "Set the agent’s available hours using 24-hour format (e.g., From 00:00 to 23:59). To mark a full day as unavailable, use 00:00 for both From and To values."
-msgstr ""
-
-#: src/Admin/Views/General.php:844
-msgid "Agent Online Text"
-msgstr ""
-
-#: src/Admin/Views/General.php:847
-msgid "Set the text that will be shown when the agent is available/online (e.g., “I am Online”)."
-msgstr ""
-
-#: src/Admin/Views/General.php:857
-msgid "Agent Offline Text"
-msgstr ""
-
-#: src/Admin/Views/General.php:860
-msgid "Set the text that will be shown when the agent is unavailable/offline (e.g., “I am Offline”)."
-msgstr ""
-
-#: src/Admin/Views/General.php:869
-msgid "Sarah C. Patrick"
-msgstr ""
-
-#: src/Admin/Views/General.php:871, src/Admin/Views/General.php:882, src/Admin/Views/General.php:893, src/Admin/Views/General.php:904, src/Admin/Views/General.php:915, src/Admin/Views/General.php:926
-msgid "+8801123456588"
-msgstr ""
-
-#: src/Admin/Views/General.php:872, src/Admin/Views/General.php:927
-msgid "Technical support"
-msgstr ""
-
-#: src/Admin/Views/General.php:873, src/Admin/Views/General.php:884, src/Admin/Views/General.php:895, src/Admin/Views/General.php:906, src/Admin/Views/General.php:917, src/Admin/Views/General.php:928
-msgid "I am online"
-msgstr ""
-
-#: src/Admin/Views/General.php:874, src/Admin/Views/General.php:885, src/Admin/Views/General.php:896, src/Admin/Views/General.php:907, src/Admin/Views/General.php:918, src/Admin/Views/General.php:929
-msgid "I am offline"
-msgstr ""
-
-#: src/Admin/Views/General.php:880
-msgid "Patricia J. Hunt"
-msgstr ""
-
-#: src/Admin/Views/General.php:883
-msgid "Marketing support"
-msgstr ""
-
-#: src/Admin/Views/General.php:891
-msgid "Frederic M. Tune"
-msgstr ""
-
-#: src/Admin/Views/General.php:894
-msgid "Sales support"
-msgstr ""
-
-#: src/Admin/Views/General.php:902, src/Admin/Views/General.php:913
-msgid "Douglas A. Smith"
-msgstr ""
-
-#: src/Admin/Views/General.php:905
-msgid "Product manager"
-msgstr ""
-
-#: src/Admin/Views/General.php:916
-msgid "Support Manager"
-msgstr ""
-
-#: src/Admin/Views/General.php:924
-msgid "Garland D. Homer"
-msgstr ""
-
-#: src/Admin/Views/General.php:940
-msgid "Header & Footer"
-msgstr ""
-
-#: src/Admin/Views/General.php:946
-msgid "Box Header"
-msgstr ""
-
-#: src/Admin/Views/General.php:953
-msgid "Agent Photo Type"
-msgstr ""
-
-#: src/Admin/Views/General.php:956
-msgid "Choose how the agent photo is displayed:"
-msgstr ""
-
-#: src/Admin/Views/General.php:958
-msgid "Use the plugin’s built-in photo."
-msgstr ""
-
-#: src/Admin/Views/General.php:959
-msgid "Upload your own image."
-msgstr ""
-
-#: src/Admin/Views/General.php:960
-msgid "No photo will be shown."
-msgstr ""
-
-#: src/Admin/Views/General.php:963, src/Admin/Framework/fields/typography/typography.php:121, src/Admin/Framework/fields/typography/typography.php:134, src/Admin/Framework/fields/typography/typography.php:147, src/Admin/Framework/fields/typography/typography.php:162, src/Admin/Framework/fields/typography/typography.php:178, src/Admin/Framework/fields/typography/typography.php:191, src/Admin/Framework/fields/typography/typography.php:205, src/Admin/Framework/fields/typography/typography.php:223
-msgid "Default"
-msgstr ""
-
-#: src/Admin/Views/General.php:964, src/Admin/Views/General.php:1176, src/Admin/Views/General.php:1335, src/Admin/Views/General.php:1405, src/Admin/Views/General.php:1478, src/Admin/Views/General.php:1548
-msgid "Custom"
-msgstr ""
-
-#: src/Admin/Views/General.php:965, src/Admin/Framework/fields/border/border.php:59, src/Admin/Framework/fields/typography/typography.php:201, src/Admin/Framework/fields/typography/typography.php:215
-msgid "None"
-msgstr ""
-
-#: src/Admin/Views/General.php:979
-msgid "Upload an agent photo to display inside the chat bubble."
-msgstr ""
-
-#: src/Admin/Views/General.php:983
-msgid "Upload or select an image from the media library."
-msgstr ""
-
-#: src/Admin/Views/General.php:998
-msgid "Enter the agent’s name to display inside the chat bubble."
-msgstr ""
-
-#: src/Admin/Views/General.php:1003, src/Admin/Views/General.php:1748
-msgid "John Doe"
-msgstr ""
-
-#: src/Admin/Views/General.php:1011
-msgid "Subtitle"
-msgstr ""
-
-#: src/Admin/Views/General.php:1015
-msgid "Enter a subtitle to display below the agent’s name in the chat bubble."
-msgstr ""
-
-#: src/Admin/Views/General.php:1019
-msgid "Typically replies within a day"
-msgstr ""
-
-#: src/Admin/Views/General.php:1030
-msgid "Bubble Title"
-msgstr ""
-
-#: src/Admin/Views/General.php:1034
-msgid "Enter the main title text to display at the top of the chat bubble."
-msgstr ""
-
-#: src/Admin/Views/General.php:1038
-msgid "Need Help? Send a WhatsApp message now"
-msgstr ""
-
-#: src/Admin/Views/General.php:1047
-msgid "Bubble Subtitle"
-msgstr ""
-
-#: src/Admin/Views/General.php:1051
-msgid "Enter a subtitle to display below the main title inside the chat bubble."
-msgstr ""
-
-#: src/Admin/Views/General.php:1055
-msgid "Click one of our representatives below"
-msgstr ""
-
-#: src/Admin/Views/General.php:1063
-msgid "Bubble Header Content Position"
-msgstr ""
-
-#: src/Admin/Views/General.php:1067
-msgid "Choose the alignment for the header content."
-msgstr ""
-
-#: src/Admin/Views/General.php:1074, src/Frontend/elementor-widgets/elementor-widget.php:1420, src/Admin/Framework/fields/typography/typography.php:173
-msgid "Left"
-msgstr ""
-
-#: src/Admin/Views/General.php:1075, src/Frontend/elementor-widgets/elementor-widget.php:1424, src/Admin/Framework/fields/typography/typography.php:174
-msgid "Center"
-msgstr ""
-
-#: src/Admin/Views/General.php:1083
-msgid "Box Footer"
-msgstr ""
-
-#: src/Admin/Views/General.php:1095
-msgid "Enable a GDPR compliance checkbox for user consent before sending a message."
-msgstr ""
-
-#: src/Admin/Views/General.php:1098
+#: src/Admin/Views/General.php:343, src/Admin/Views/General.php:1119, src/Admin/Views/General.php:1259
 msgid "Enable"
 msgstr ""
 
-#: src/Admin/Views/General.php:1099
+#: src/Admin/Views/General.php:344, src/Admin/Views/General.php:1120, src/Admin/Views/General.php:1260
 msgid "Disable"
 msgstr ""
 
-#: src/Admin/Views/General.php:1108
+#: src/Admin/Views/General.php:357
+msgid "Current Time"
+msgstr ""
+
+#: src/Admin/Views/General.php:358
+msgid "Enable to display the current time before the agent’s message."
+msgstr ""
+
+#: src/Admin/Views/General.php:363, src/Admin/Framework/fields/sorter/sorter.php:21
+msgid "Enabled"
+msgstr ""
+
+#: src/Admin/Views/General.php:364, src/Admin/Framework/fields/sorter/sorter.php:22
+msgid "Disabled"
+msgstr ""
+
+#: src/Admin/Views/General.php:372
+msgid "Message From Agent"
+msgstr ""
+
+#: src/Admin/Views/General.php:373
+msgid "Add a custom message to display inside the agent’s message box."
+msgstr ""
+
+#: src/Admin/Views/General.php:376
+msgid "Hello 👋 Welcome to {siteTitle}! Click the button below to start chatting with us on WhatsApp."
+msgstr ""
+
+#: src/Admin/Views/General.php:377
+msgid "Global Vars:  {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> {PRODUCT_START} WooCommerce Vars: {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} {PRODUCT_END} <br> <b>Conditional Blocks:</b>  {PRODUCT_START} ... {PRODUCT_END},  {NOT_PRODUCT_START} ... {NOT_PRODUCT_END},  {LOGGEDIN_START} ... {LOGGEDIN_END},  {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}"
+msgstr ""
+
+#: src/Admin/Views/General.php:387, src/Admin/Views/General.php:691, src/Admin/Views/WooCommerceButton.php:115
+msgid "Pre-filled Message"
+msgstr ""
+
+#: src/Admin/Views/General.php:390
+msgid "Write a friendly, pre-filled message that appears when users click the chat bubble."
+msgstr ""
+
+#: src/Admin/Views/General.php:392
+msgid "Example: \"Hi! I have a question about your services.\""
+msgstr ""
+
+#: src/Admin/Views/General.php:394
+msgid "You can also insert dynamic variables as needed."
+msgstr ""
+
+#: src/Admin/Views/General.php:399, src/Admin/Views/WooCommerceButton.php:123
+msgid "Global Vars:"
+msgstr ""
+
+#: src/Admin/Views/General.php:400, src/Admin/Views/WooCommerceButton.php:122
+msgid "WooCommerce Vars:"
+msgstr ""
+
+#: src/Admin/Views/General.php:401, src/Admin/Views/WooCommerceButton.php:123
+msgid "Conditional Blocks:"
+msgstr ""
+
+#: src/Admin/Views/General.php:403
+msgid "Hello! I have a question about {currentTitle}."
+msgstr ""
+
+#: src/Admin/Views/General.php:418, src/Admin/Views/General.php:445, src/Admin/Views/General.php:729
+msgid "Availability"
+msgstr ""
+
+#: src/Admin/Views/General.php:429, src/Admin/Views/General.php:713, src/Frontend/elementor-widgets/elementor-widget.php:261
+msgid "Timezone"
+msgstr ""
+
+#: src/Admin/Views/General.php:430
+msgid "Select your local timezone. Availability schedules will be applied based on this timezone."
+msgstr ""
+
+#: src/Admin/Views/General.php:433, src/Admin/Views/General.php:721
+msgid "Select Timezone"
+msgstr ""
+
+#: src/Admin/Views/General.php:446
+msgid "Set your daily availability using 24-hour format (e.g., 09:00 to 18:00). To mark a full day as offline, set both From and To values to 00:00."
+msgstr ""
+
+#: src/Admin/Views/General.php:455, src/Admin/Views/General.php:739, src/Frontend/elementor-widgets/elementor-widget.php:868
+msgid "Sunday"
+msgstr ""
+
+#: src/Admin/Views/General.php:472, src/Admin/Views/General.php:756, src/Frontend/elementor-widgets/elementor-widget.php:907
+msgid "Monday"
+msgstr ""
+
+#: src/Admin/Views/General.php:489, src/Admin/Views/General.php:773, src/Frontend/elementor-widgets/elementor-widget.php:946
+msgid "Tuesday"
+msgstr ""
+
+#: src/Admin/Views/General.php:506, src/Admin/Views/General.php:790, src/Frontend/elementor-widgets/elementor-widget.php:985
+msgid "Wednesday"
+msgstr ""
+
+#: src/Admin/Views/General.php:524, src/Admin/Views/General.php:808, src/Frontend/elementor-widgets/elementor-widget.php:1024
+msgid "Thursday"
+msgstr ""
+
+#: src/Admin/Views/General.php:542, src/Admin/Views/General.php:826, src/Frontend/elementor-widgets/elementor-widget.php:1063
+msgid "Friday"
+msgstr ""
+
+#: src/Admin/Views/General.php:560, src/Admin/Views/General.php:844, src/Frontend/elementor-widgets/elementor-widget.php:1101
+msgid "Saturday"
+msgstr ""
+
+#: src/Admin/Views/General.php:586
+msgid "Show Search Field"
+msgstr ""
+
+#: src/Admin/Views/General.php:587
+msgid "Show or hide the search box. This helps visitors quickly find an agent when you have many agents."
+msgstr ""
+
+#: src/Admin/Views/General.php:591, src/Admin/Views/General.php:2004, src/Admin/Views/General.php:2020, src/Admin/Views/General.php:2041, src/Frontend/elementor-widgets/elementor-widget.php:238, src/Frontend/elementor-widgets/elementor-widget.php:1361, src/Frontend/elementor-widgets/elementor-widget.php:1407
+msgid "Yes"
+msgstr ""
+
+#: src/Admin/Views/General.php:592, src/Admin/Views/General.php:2005, src/Admin/Views/General.php:2021, src/Admin/Views/General.php:2042, src/Frontend/elementor-widgets/elementor-widget.php:239, src/Frontend/elementor-widgets/elementor-widget.php:1362, src/Frontend/elementor-widgets/elementor-widget.php:1408
+msgid "No"
+msgstr ""
+
+#: src/Admin/Views/General.php:601
+msgid "Chat Agents"
+msgstr ""
+
+#: src/Admin/Views/General.php:603
+msgid "Add and manage your chat agents. Each agent can have a name, photo, WhatsApp type (number or group), pre-filled message, timezone, availability, designation, and custom online/offline text. You can add as many agents as you need."
+msgstr ""
+
+#: src/Admin/Views/General.php:612, src/Admin/Views/General.php:1015
+msgid "Agent Name"
+msgstr ""
+
+#: src/Admin/Views/General.php:615
+msgid "Enter the agent’s name."
+msgstr ""
+
+#: src/Admin/Views/General.php:626
+msgid "Agent Designation"
+msgstr ""
+
+#: src/Admin/Views/General.php:629
+msgid "Enter the agent’s designation or role (e.g., Sales Manager, Support Agent)."
+msgstr ""
+
+#: src/Admin/Views/General.php:640, src/Admin/Views/General.php:996
+msgid "Agent Photo"
+msgstr ""
+
+#: src/Admin/Views/General.php:643
+msgid "Upload or select an image to use as the agent’s photo."
+msgstr ""
+
+#: src/Admin/Views/General.php:659
+msgid "Select \"Number\" to receive direct messages or \"Group\" to let people join your WhatsApp group."
+msgstr ""
+
+#: src/Admin/Views/General.php:670
+msgid "WhatsApp Number for Agent"
+msgstr ""
+
+#: src/Admin/Views/General.php:673, src/Admin/Views/WooCommerceButton.php:94
+msgid "Add your WhatsApp number including country code. eg: +880123456189"
+msgstr ""
+
+#: src/Admin/Views/General.php:683
+msgid "Invite your visitors to join into your whatapp group."
+msgstr ""
+
+#: src/Admin/Views/General.php:694
+msgid "Write a friendly, pre-filled message that will appear when users start a chat with this agent. Example: “Hi! I have a question about your services.”"
+msgstr ""
+
+#: src/Admin/Views/General.php:716
+msgid "Select the agent’s timezone. This ensures availability times are shown correctly, even if the user is in a different timezone."
+msgstr ""
+
+#: src/Admin/Views/General.php:732
+msgid "Set the agent’s available hours using 24-hour format (e.g., From 00:00 to 23:59). To mark a full day as unavailable, use 00:00 for both From and To values."
+msgstr ""
+
+#: src/Admin/Views/General.php:865
+msgid "Agent Online Text"
+msgstr ""
+
+#: src/Admin/Views/General.php:868
+msgid "Set the text that will be shown when the agent is available/online (e.g., “I am Online”)."
+msgstr ""
+
+#: src/Admin/Views/General.php:878
+msgid "Agent Offline Text"
+msgstr ""
+
+#: src/Admin/Views/General.php:881
+msgid "Set the text that will be shown when the agent is unavailable/offline (e.g., “I am Offline”)."
+msgstr ""
+
+#: src/Admin/Views/General.php:890
+msgid "Sarah C. Patrick"
+msgstr ""
+
+#: src/Admin/Views/General.php:892, src/Admin/Views/General.php:903, src/Admin/Views/General.php:914, src/Admin/Views/General.php:925, src/Admin/Views/General.php:936, src/Admin/Views/General.php:947
+msgid "+8801123456588"
+msgstr ""
+
+#: src/Admin/Views/General.php:893, src/Admin/Views/General.php:948
+msgid "Technical support"
+msgstr ""
+
+#: src/Admin/Views/General.php:894, src/Admin/Views/General.php:905, src/Admin/Views/General.php:916, src/Admin/Views/General.php:927, src/Admin/Views/General.php:938, src/Admin/Views/General.php:949
+msgid "I am online"
+msgstr ""
+
+#: src/Admin/Views/General.php:895, src/Admin/Views/General.php:906, src/Admin/Views/General.php:917, src/Admin/Views/General.php:928, src/Admin/Views/General.php:939, src/Admin/Views/General.php:950
+msgid "I am offline"
+msgstr ""
+
+#: src/Admin/Views/General.php:901
+msgid "Patricia J. Hunt"
+msgstr ""
+
+#: src/Admin/Views/General.php:904
+msgid "Marketing support"
+msgstr ""
+
+#: src/Admin/Views/General.php:912
+msgid "Frederic M. Tune"
+msgstr ""
+
+#: src/Admin/Views/General.php:915
+msgid "Sales support"
+msgstr ""
+
+#: src/Admin/Views/General.php:923, src/Admin/Views/General.php:934
+msgid "Douglas A. Smith"
+msgstr ""
+
+#: src/Admin/Views/General.php:926
+msgid "Product manager"
+msgstr ""
+
+#: src/Admin/Views/General.php:937
+msgid "Support Manager"
+msgstr ""
+
+#: src/Admin/Views/General.php:945
+msgid "Garland D. Homer"
+msgstr ""
+
+#: src/Admin/Views/General.php:961
+msgid "Header & Footer"
+msgstr ""
+
+#: src/Admin/Views/General.php:967
+msgid "Box Header"
+msgstr ""
+
+#: src/Admin/Views/General.php:974
+msgid "Agent Photo Type"
+msgstr ""
+
+#: src/Admin/Views/General.php:977
+msgid "Choose how the agent photo is displayed:"
+msgstr ""
+
+#: src/Admin/Views/General.php:979
+msgid "Use the plugin’s built-in photo."
+msgstr ""
+
+#: src/Admin/Views/General.php:980
+msgid "Upload your own image."
+msgstr ""
+
+#: src/Admin/Views/General.php:981
+msgid "No photo will be shown."
+msgstr ""
+
+#: src/Admin/Views/General.php:984, src/Admin/Framework/fields/typography/typography.php:121, src/Admin/Framework/fields/typography/typography.php:134, src/Admin/Framework/fields/typography/typography.php:147, src/Admin/Framework/fields/typography/typography.php:162, src/Admin/Framework/fields/typography/typography.php:178, src/Admin/Framework/fields/typography/typography.php:191, src/Admin/Framework/fields/typography/typography.php:205, src/Admin/Framework/fields/typography/typography.php:223
+msgid "Default"
+msgstr ""
+
+#: src/Admin/Views/General.php:985, src/Admin/Views/General.php:1197, src/Admin/Views/General.php:1371, src/Admin/Views/General.php:1441, src/Admin/Views/General.php:1514, src/Admin/Views/General.php:1584
+msgid "Custom"
+msgstr ""
+
+#: src/Admin/Views/General.php:986, src/Admin/Framework/fields/border/border.php:59, src/Admin/Framework/fields/typography/typography.php:201, src/Admin/Framework/fields/typography/typography.php:215
+msgid "None"
+msgstr ""
+
+#: src/Admin/Views/General.php:1000
+msgid "Upload an agent photo to display inside the chat bubble."
+msgstr ""
+
+#: src/Admin/Views/General.php:1004
+msgid "Upload or select an image from the media library."
+msgstr ""
+
+#: src/Admin/Views/General.php:1019
+msgid "Enter the agent’s name to display inside the chat bubble."
+msgstr ""
+
+#: src/Admin/Views/General.php:1024, src/Admin/Views/General.php:1784
+msgid "John Doe"
+msgstr ""
+
+#: src/Admin/Views/General.php:1032
+msgid "Subtitle"
+msgstr ""
+
+#: src/Admin/Views/General.php:1036
+msgid "Enter a subtitle to display below the agent’s name in the chat bubble."
+msgstr ""
+
+#: src/Admin/Views/General.php:1040
+msgid "Typically replies within a day"
+msgstr ""
+
+#: src/Admin/Views/General.php:1051
+msgid "Bubble Title"
+msgstr ""
+
+#: src/Admin/Views/General.php:1055
+msgid "Enter the main title text to display at the top of the chat bubble."
+msgstr ""
+
+#: src/Admin/Views/General.php:1059
+msgid "Need Help? Send a WhatsApp message now"
+msgstr ""
+
+#: src/Admin/Views/General.php:1068
+msgid "Bubble Subtitle"
+msgstr ""
+
+#: src/Admin/Views/General.php:1072
+msgid "Enter a subtitle to display below the main title inside the chat bubble."
+msgstr ""
+
+#: src/Admin/Views/General.php:1076
+msgid "Click one of our representatives below"
+msgstr ""
+
+#: src/Admin/Views/General.php:1084
+msgid "Bubble Header Content Position"
+msgstr ""
+
+#: src/Admin/Views/General.php:1088
+msgid "Choose the alignment for the header content."
+msgstr ""
+
+#: src/Admin/Views/General.php:1095, src/Frontend/elementor-widgets/elementor-widget.php:1420, src/Admin/Framework/fields/typography/typography.php:173
+msgid "Left"
+msgstr ""
+
+#: src/Admin/Views/General.php:1096, src/Frontend/elementor-widgets/elementor-widget.php:1424, src/Admin/Framework/fields/typography/typography.php:174
+msgid "Center"
+msgstr ""
+
+#: src/Admin/Views/General.php:1104
+msgid "Box Footer"
+msgstr ""
+
+#: src/Admin/Views/General.php:1116
+msgid "Enable a GDPR compliance checkbox for user consent before sending a message."
+msgstr ""
+
+#: src/Admin/Views/General.php:1129
 msgid "GDPR Compliance Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:1111
+#: src/Admin/Views/General.php:1132
 msgid "Customize the GDPR compliance text shown with the consent checkbox."
 msgstr ""
 
-#: src/Admin/Views/General.php:1114
+#: src/Admin/Views/General.php:1135
 msgid "Please accept our <a href=\"#\">privacy policy</a> before starting a conversation."
 msgstr ""
 
-#: src/Admin/Views/General.php:1123
+#: src/Admin/Views/General.php:1144
 msgid "Loading Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:1127
+#: src/Admin/Views/General.php:1148
 msgid "Enter the loading text shown while the message is being sent or redirecting."
 msgstr ""
 
-#: src/Admin/Views/General.php:1130
+#: src/Admin/Views/General.php:1151
 msgid "Redirecting..."
 msgstr ""
 
-#: src/Admin/Views/General.php:1140
+#: src/Admin/Views/General.php:1161
 msgid "Icon for Send Message Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:1144
+#: src/Admin/Views/General.php:1165
 msgid "Select an icon to display before the send message button text."
 msgstr ""
 
-#: src/Admin/Views/General.php:1169
+#: src/Admin/Views/General.php:1190
 msgid "No Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:1172, src/Admin/Views/General.php:1331, src/Admin/Views/General.php:1401, src/Admin/Views/General.php:1474, src/Admin/Views/General.php:1544
+#: src/Admin/Views/General.php:1193, src/Admin/Views/General.php:1367, src/Admin/Views/General.php:1437, src/Admin/Views/General.php:1510, src/Admin/Views/General.php:1580
 msgid "Native"
 msgstr ""
 
-#: src/Admin/Views/General.php:1187
+#: src/Admin/Views/General.php:1208
 msgid "Send Message Native Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:1190
+#: src/Admin/Views/General.php:1211
 msgid "Choose a native icon from the built-in library of 2000+ icons to display before the send message button text."
 msgstr ""
 
-#: src/Admin/Views/General.php:1201
+#: src/Admin/Views/General.php:1222
 msgid "Send Message Custom Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:1204
+#: src/Admin/Views/General.php:1225
 msgid "Upload or select a custom icon from your media library to display before the send message button text."
 msgstr ""
 
-#: src/Admin/Views/General.php:1216
+#: src/Admin/Views/General.php:1237
 msgid "Send Message Button Label"
 msgstr ""
 
-#: src/Admin/Views/General.php:1220
+#: src/Admin/Views/General.php:1241
 msgid "Enter the text to display on the send message button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1224
+#: src/Admin/Views/General.php:1245
 msgid "Send Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:1233
+#: src/Admin/Views/General.php:1253
+msgid "Footer Content"
+msgstr ""
+
+#: src/Admin/Views/General.php:1256
+msgid "Enable or disable the footer text below the chat box. You can also replace the default text with your own custom message."
+msgstr ""
+
+#: src/Admin/Views/General.php:1269
 msgid "Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:1239
+#: src/Admin/Views/General.php:1275
 msgid "Floating Button Style"
 msgstr ""
 
-#: src/Admin/Views/General.php:1242
+#: src/Admin/Views/General.php:1278
 msgid "Choose a style for the floating chat button from the available design options."
 msgstr ""
 
-#: src/Admin/Views/General.php:1266, src/Admin/Views/General.php:1772
+#: src/Admin/Views/General.php:1302, src/Admin/Views/General.php:1808
 msgid "Button Label"
 msgstr ""
 
-#: src/Admin/Views/General.php:1270
+#: src/Admin/Views/General.php:1306
 msgid "Enter the text to display inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1274, src/Admin/Views/WooCommerceButton.php:175
+#: src/Admin/Views/General.php:1310, src/Admin/Views/WooCommerceButton.php:175
 msgid "How may I help you?"
 msgstr ""
 
-#: src/Admin/Views/General.php:1283, src/Admin/Views/WooCommerceButton.php:134
+#: src/Admin/Views/General.php:1319, src/Admin/Views/WooCommerceButton.php:134
 msgid "Show/Hide Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:1288
+#: src/Admin/Views/General.php:1324
 msgid "Toggle whether to display an icon inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1302
+#: src/Admin/Views/General.php:1338
 msgid "Icon for Circle Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:1306
+#: src/Admin/Views/General.php:1342
 msgid "Select an icon to display inside the circular chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1347
+#: src/Admin/Views/General.php:1383
 msgid "Circle Button Native Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:1350
+#: src/Admin/Views/General.php:1386
 msgid "Choose a native icon from the built-in library of 2000+ icons to display inside the circular chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1361
+#: src/Admin/Views/General.php:1397
 msgid "Circle Button Custom Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:1364
+#: src/Admin/Views/General.php:1400
 msgid "Upload or select a custom icon from your media library to display inside the circular chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1376
+#: src/Admin/Views/General.php:1412
 msgid "Icon for Circle Button Close"
 msgstr ""
 
-#: src/Admin/Views/General.php:1379
+#: src/Admin/Views/General.php:1415
 msgid "Select the icon to display when the circular chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/General.php:1416
+#: src/Admin/Views/General.php:1452
 msgid "Circle Button Native Close Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:1419
+#: src/Admin/Views/General.php:1455
 msgid "Choose a native icon from the built-in library to display when the circular chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/General.php:1430
+#: src/Admin/Views/General.php:1466
 msgid "Circle Button Custom Close Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:1433
+#: src/Admin/Views/General.php:1469
 msgid "Upload or select a custom icon from your media library to display when the circular chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/General.php:1445, src/Admin/Views/WooCommerceButton.php:153
+#: src/Admin/Views/General.php:1481, src/Admin/Views/WooCommerceButton.php:153
 msgid "Icon for Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:1449
+#: src/Admin/Views/General.php:1485
 msgid "Select an icon to display inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1489
+#: src/Admin/Views/General.php:1525
 msgid "Button Native Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:1492
+#: src/Admin/Views/General.php:1528
 msgid "Choose a native icon from the built-in library of 2000+ icons to display inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1503
+#: src/Admin/Views/General.php:1539
 msgid "Button Custom Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:1506
+#: src/Admin/Views/General.php:1542
 msgid "Upload or select a custom icon from your media library to display inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1518
+#: src/Admin/Views/General.php:1554
 msgid "Icon for Button Close"
 msgstr ""
 
-#: src/Admin/Views/General.php:1522
+#: src/Admin/Views/General.php:1558
 msgid "Select the icon to display when the floating chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/General.php:1558
+#: src/Admin/Views/General.php:1594
 msgid "Button Native Close Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:1561
+#: src/Admin/Views/General.php:1597
 msgid "Choose a native icon from the built-in library to display when the floating chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/General.php:1572
+#: src/Admin/Views/General.php:1608
 msgid "Button Custom Close Icon"
 msgstr ""
 
-#: src/Admin/Views/General.php:1575
+#: src/Admin/Views/General.php:1611
 msgid "Upload or select a custom icon from your media library to display when the floating chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/General.php:1590
+#: src/Admin/Views/General.php:1626
 msgid "Select the animation effect used when toggling the circular chat button between open and close states."
 msgstr ""
 
-#: src/Admin/Views/General.php:1595
+#: src/Admin/Views/General.php:1631
 msgid "Slide Down"
 msgstr ""
 
-#: src/Admin/Views/General.php:1596, src/Admin/Views/General.php:2042
+#: src/Admin/Views/General.php:1632, src/Admin/Views/General.php:2078
 msgid "Fade"
 msgstr ""
 
-#: src/Admin/Views/General.php:1597
+#: src/Admin/Views/General.php:1633
 msgid "Rotate (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1598, src/Admin/Views/General.php:2055
+#: src/Admin/Views/General.php:1634, src/Admin/Views/General.php:2091
 msgid "Slide Up (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1609, src/Admin/Views/WooCommerceButton.php:182
+#: src/Admin/Views/General.php:1645, src/Admin/Views/WooCommerceButton.php:182
 msgid "Button Padding"
 msgstr ""
 
-#: src/Admin/Views/General.php:1612
+#: src/Admin/Views/General.php:1648
 msgid "Adjust the inner spacing (padding) of the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1630
+#: src/Admin/Views/General.php:1666
 msgid "Button Tooltip"
 msgstr ""
 
-#: src/Admin/Views/General.php:1634
+#: src/Admin/Views/General.php:1670
 msgid "Enable and customize the tooltip text that appears when hovering over the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1640
+#: src/Admin/Views/General.php:1676
 msgid "On Hover"
 msgstr ""
 
-#: src/Admin/Views/General.php:1650
+#: src/Admin/Views/General.php:1686
 msgid "Button Tooltip Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:1654
+#: src/Admin/Views/General.php:1690
 msgid "Enter the text that will appear inside the tooltip when hovering over the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1658
+#: src/Admin/Views/General.php:1694
 msgid "Need Help? Chat with us"
 msgstr ""
 
-#: src/Admin/Views/General.php:1665
+#: src/Admin/Views/General.php:1701
 msgid "Button Tooltip Background"
 msgstr ""
 
-#: src/Admin/Views/General.php:1668
+#: src/Admin/Views/General.php:1704
 msgid "Choose the background color for the tooltip that appears when hovering over the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1679
+#: src/Admin/Views/General.php:1715
 msgid "Button Tooltip Width"
 msgstr ""
 
-#: src/Admin/Views/General.php:1683
+#: src/Admin/Views/General.php:1719
 msgid "Set the maximum width of the tooltip that appears when hovering over the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1698
+#: src/Admin/Views/General.php:1734
 msgid "Advanced Button Style"
 msgstr ""
 
-#: src/Admin/Views/General.php:1701
+#: src/Admin/Views/General.php:1737
 msgid "Select a style for the advanced chat button layout. Choose between filled or outlined button designs."
 msgstr ""
 
-#: src/Admin/Views/General.php:1717
+#: src/Admin/Views/General.php:1753
 msgid "Button Agent Photo"
 msgstr ""
 
-#: src/Admin/Views/General.php:1721
+#: src/Admin/Views/General.php:1757
 msgid "Upload an agent photo to display inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1739
+#: src/Admin/Views/General.php:1775
 msgid "Button Agent Name"
 msgstr ""
 
-#: src/Admin/Views/General.php:1743
+#: src/Admin/Views/General.php:1779
 msgid "Enter the agent name to display inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1756
+#: src/Admin/Views/General.php:1792
 msgid "Button Agent Designation"
 msgstr ""
 
-#: src/Admin/Views/General.php:1760
+#: src/Admin/Views/General.php:1796
 msgid "Enter the agent’s designation or role to display below the agent name inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1765, src/Frontend/elementor-widgets/elementor-widget.php:188, src/Frontend/Shortcode/CustomShortcode.php:27
+#: src/Admin/Views/General.php:1801, src/Frontend/elementor-widgets/elementor-widget.php:188, src/Frontend/Shortcode/CustomShortcode.php:27
 msgid "Sales Support"
 msgstr ""
 
-#: src/Admin/Views/General.php:1776
+#: src/Admin/Views/General.php:1812
 msgid "Enter the text label to display inside the advanced chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1780
+#: src/Admin/Views/General.php:1816
 msgid "How Can I Help You?"
 msgstr ""
 
-#: src/Admin/Views/General.php:1788
+#: src/Admin/Views/General.php:1824
 msgid "Online Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:1792
+#: src/Admin/Views/General.php:1828
 msgid "Set the text to display when the agent is online and available for chat."
 msgstr ""
 
-#: src/Admin/Views/General.php:1796
+#: src/Admin/Views/General.php:1832
 msgid "I Am Online"
 msgstr ""
 
-#: src/Admin/Views/General.php:1804
+#: src/Admin/Views/General.php:1840
 msgid "Offline Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:1808
+#: src/Admin/Views/General.php:1844
 msgid "Set the text to display when the agent is offline or unavailable for chat."
 msgstr ""
 
-#: src/Admin/Views/General.php:1812
+#: src/Admin/Views/General.php:1848
 msgid "I Am Offline"
 msgstr ""
 
-#: src/Admin/Views/General.php:1819
+#: src/Admin/Views/General.php:1855
 msgid "Advanced Button Padding"
 msgstr ""
 
-#: src/Admin/Views/General.php:1822
+#: src/Admin/Views/General.php:1858
 msgid "Adjust the inner spacing (padding) of the advanced chat button for better alignment and appearance."
 msgstr ""
 
-#: src/Admin/Views/General.php:1840
+#: src/Admin/Views/General.php:1876
 msgid "Positioning"
 msgstr ""
 
-#: src/Admin/Views/General.php:1845
+#: src/Admin/Views/General.php:1881
 msgid "Bubble Position"
 msgstr ""
 
-#: src/Admin/Views/General.php:1848
+#: src/Admin/Views/General.php:1884
 msgid "Select the screen position where the floating chat button will appear."
 msgstr ""
 
-#: src/Admin/Views/General.php:1854
+#: src/Admin/Views/General.php:1890
 msgid "Bottom Right"
 msgstr ""
 
-#: src/Admin/Views/General.php:1857
+#: src/Admin/Views/General.php:1893
 msgid "Bottom Left"
 msgstr ""
 
-#: src/Admin/Views/General.php:1860
+#: src/Admin/Views/General.php:1896
 msgid "Middle Right"
 msgstr ""
 
-#: src/Admin/Views/General.php:1864
+#: src/Admin/Views/General.php:1900
 msgid "Middle Left"
 msgstr ""
 
-#: src/Admin/Views/General.php:1875
+#: src/Admin/Views/General.php:1911
 msgid "Margin from Bottom Right"
 msgstr ""
 
-#: src/Admin/Views/General.php:1878
+#: src/Admin/Views/General.php:1914
 msgid "Set the margin (spacing) of the floating chat button from the bottom and right edges of the screen. Adjust to reposition the button as needed."
 msgstr ""
 
-#: src/Admin/Views/General.php:1896
+#: src/Admin/Views/General.php:1932
 msgid "Margin from Bottom Left"
 msgstr ""
 
-#: src/Admin/Views/General.php:1899
+#: src/Admin/Views/General.php:1935
 msgid "Set the margin (spacing) of the floating chat button from the bottom and left edges of the screen. Adjust to reposition the button as needed."
 msgstr ""
 
-#: src/Admin/Views/General.php:1917
+#: src/Admin/Views/General.php:1953
 msgid "Margin from Middle Right"
 msgstr ""
 
-#: src/Admin/Views/General.php:1920
+#: src/Admin/Views/General.php:1956
 msgid "Set the margin (spacing) of the floating chat button from the right edge of the screen when positioned in the middle. Adjust to fine-tune its placement."
 msgstr ""
 
-#: src/Admin/Views/General.php:1938
+#: src/Admin/Views/General.php:1974
 msgid "Margin from Middle Left"
 msgstr ""
 
-#: src/Admin/Views/General.php:1941
+#: src/Admin/Views/General.php:1977
 msgid "Set the margin (spacing) of the floating chat button from the left edge of the screen when positioned in the middle. Adjust to fine-tune its placement."
 msgstr ""
 
-#: src/Admin/Views/General.php:1960
+#: src/Admin/Views/General.php:1996
 msgid "Different Positioning for Tablet Devices"
 msgstr ""
 
-#: src/Admin/Views/General.php:1963
+#: src/Admin/Views/General.php:1999
 msgid "Enable this option to set a custom bubble position specifically for tablet devices. Useful for optimizing layout and user experience on medium screens."
 msgstr ""
 
-#: src/Admin/Views/General.php:1976
+#: src/Admin/Views/General.php:2012
 msgid "Different Positioning for Mobile Devices"
 msgstr ""
 
-#: src/Admin/Views/General.php:1979
+#: src/Admin/Views/General.php:2015
 msgid "Enable this option to set a custom chat bubble position specifically for mobile devices. Useful for optimizing layout and usability on smaller screens."
 msgstr ""
 
-#: src/Admin/Views/General.php:1992, src/Frontend/elementor-widgets/elementor-widget.php:139
+#: src/Admin/Views/General.php:2028, src/Frontend/elementor-widgets/elementor-widget.php:139
 msgid "Style"
 msgstr ""
 
-#: src/Admin/Views/General.php:1999
+#: src/Admin/Views/General.php:2035
 msgid "Auto Open Popup"
 msgstr ""
 
-#: src/Admin/Views/General.php:2002
+#: src/Admin/Views/General.php:2038
 msgid "Enable this option to automatically open the chat popup when the page loads. Useful for drawing visitor attention without requiring a click."
 msgstr ""
 
-#: src/Admin/Views/General.php:2015
+#: src/Admin/Views/General.php:2051
 msgid "Auto Open Popup Timeout"
 msgstr ""
 
-#: src/Admin/Views/General.php:2018
+#: src/Admin/Views/General.php:2054
 msgid "Set the delay (in seconds) before the chat popup automatically opens after the page loads."
 msgstr ""
 
-#: src/Admin/Views/General.php:2027
+#: src/Admin/Views/General.php:2063
 msgid "ms"
 msgstr ""
 
-#: src/Admin/Views/General.php:2034
+#: src/Admin/Views/General.php:2070
 msgid "Select Animation for Bubble"
 msgstr ""
 
-#: src/Admin/Views/General.php:2037
+#: src/Admin/Views/General.php:2073
 msgid "Choose an animation style for how the chat bubble appears on the screen. You can pick a specific effect or select \"Random\" to apply a different animation each time."
 msgstr ""
 
-#: src/Admin/Views/General.php:2043
+#: src/Admin/Views/General.php:2079
 msgid "Fade Right"
 msgstr ""
 
-#: src/Admin/Views/General.php:2044
+#: src/Admin/Views/General.php:2080
 msgid "Fade Down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2045
+#: src/Admin/Views/General.php:2081
 msgid "Ease Down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2046
+#: src/Admin/Views/General.php:2082
 msgid "Fade In Scale (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2047
+#: src/Admin/Views/General.php:2083
 msgid "Rotation (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2048
+#: src/Admin/Views/General.php:2084
 msgid "Slide Fall (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2049
+#: src/Admin/Views/General.php:2085
 msgid "Slide Down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2050
+#: src/Admin/Views/General.php:2086
 msgid "Rotate Left (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2051
+#: src/Admin/Views/General.php:2087
 msgid "Flip Horizontal (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2052
+#: src/Admin/Views/General.php:2088
 msgid "Flip Vertical (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2053
+#: src/Admin/Views/General.php:2089
 msgid "Flip Up (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2054
+#: src/Admin/Views/General.php:2090
 msgid "Super Scaled (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2056
+#: src/Admin/Views/General.php:2092
 msgid "Random (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2066
+#: src/Admin/Views/General.php:2102
 msgid "Select Bubble Layout Mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:2069
+#: src/Admin/Views/General.php:2105
 msgid "Choose a color mode for the chat bubble. This controls the overall appearance and theme style of the bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:2075
+#: src/Admin/Views/General.php:2111
 msgid "Light Mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:2078
+#: src/Admin/Views/General.php:2114
 msgid "Dark Mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:2082
+#: src/Admin/Views/General.php:2118
 msgid "Night Mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:2093
+#: src/Admin/Views/General.php:2129
 msgid "Custom Bubble Trigger"
 msgstr ""
 
-#: src/Admin/Views/General.php:2096
+#: src/Admin/Views/General.php:2132
 msgid "Add custom CSS selectors (e.g., .classname, #idname) that can also act as triggers to open the chat bubble. Useful when you want other elements on your site to open the chat besides the default button."
 msgstr ""
 
-#: src/Admin/Views/General.php:2099
+#: src/Admin/Views/General.php:2135
 msgid ".classname, #idname"
 msgstr ""
 
-#: src/Admin/Views/General.php:2106
+#: src/Admin/Views/General.php:2142
 msgid "Color Settings"
 msgstr ""
 
-#: src/Admin/Views/General.php:2109
+#: src/Admin/Views/General.php:2145
 msgid "Preview Image"
 msgstr ""
 
-#: src/Admin/Views/General.php:2112
+#: src/Admin/Views/General.php:2148
 msgid "Set your brand colors for the chat bubble. Adjust the Primary and Secondary colors to match your site style."
 msgstr ""
 
-#: src/Admin/Views/General.php:2117
+#: src/Admin/Views/General.php:2153
 msgid "Primary"
 msgstr ""
 
-#: src/Admin/Views/General.php:2118
+#: src/Admin/Views/General.php:2154
 msgid "Secondary"
 msgstr ""
 
-#: src/Admin/Views/General.php:2130
+#: src/Admin/Views/General.php:2166
+msgid "Send Button"
+msgstr ""
+
+#: src/Admin/Views/General.php:2171
+msgid "Choose the colors for the send button."
+msgstr ""
+
+#: src/Admin/Views/General.php:2175, src/Admin/Framework/fields/background/background.php:280
+msgid "Color"
+msgstr ""
+
+#: src/Admin/Views/General.php:2176
+msgid "Hover Color"
+msgstr ""
+
+#: src/Admin/Views/General.php:2177
+msgid "Background"
+msgstr ""
+
+#: src/Admin/Views/General.php:2178
+msgid "Hover Background"
+msgstr ""
+
+#: src/Admin/Views/General.php:2184
 msgid "Typography"
 msgstr ""
 
-#: src/Admin/Views/General.php:2133
+#: src/Admin/Views/General.php:2187
 msgid "Select the font family and weight for your chat bubble text. Adjust these options to keep the widget consistent with your site’s typography."
 msgstr ""
 
-#: src/Admin/Views/General.php:2151
+#: src/Admin/Views/General.php:2205
 msgid "Others"
 msgstr ""
 
-#: src/Admin/Views/General.php:2158
+#: src/Admin/Views/General.php:2212
 msgid "Visiblity"
 msgstr ""
 
-#: src/Admin/Views/General.php:2164
+#: src/Admin/Views/General.php:2218
 msgid "Device Visibility"
 msgstr ""
 
-#: src/Admin/Views/General.php:2167
+#: src/Admin/Views/General.php:2221
 msgid "Everywhere:"
 msgstr ""
 
-#: src/Admin/Views/General.php:2167
+#: src/Admin/Views/General.php:2221
 msgid "Visible on all devices."
 msgstr ""
 
-#: src/Admin/Views/General.php:2168
+#: src/Admin/Views/General.php:2222
 msgid "Desktop Only:"
 msgstr ""
 
-#: src/Admin/Views/General.php:2168
+#: src/Admin/Views/General.php:2222
 msgid "Visible on devices wider than 991px."
 msgstr ""
 
-#: src/Admin/Views/General.php:2169
+#: src/Admin/Views/General.php:2223
 msgid "Tablet Only:"
 msgstr ""
 
-#: src/Admin/Views/General.php:2169
+#: src/Admin/Views/General.php:2223
 msgid "Visible on devices between 576px and 991px."
 msgstr ""
 
-#: src/Admin/Views/General.php:2170
+#: src/Admin/Views/General.php:2224
 msgid "Mobile Only:"
 msgstr ""
 
-#: src/Admin/Views/General.php:2170
+#: src/Admin/Views/General.php:2224
 msgid "Visible on devices smaller than 576px."
 msgstr ""
 
-#: src/Admin/Views/General.php:2174, src/Admin/Views/WooCommerceButton.php:252, src/Frontend/elementor-widgets/elementor-widget.php:1152
+#: src/Admin/Views/General.php:2228, src/Admin/Views/WooCommerceButton.php:252, src/Frontend/elementor-widgets/elementor-widget.php:1152
 msgid "Everywhere"
 msgstr ""
 
-#: src/Admin/Views/General.php:2175, src/Admin/Views/WooCommerceButton.php:253
+#: src/Admin/Views/General.php:2229, src/Admin/Views/WooCommerceButton.php:253
 msgid "Desktop Only"
 msgstr ""
 
-#: src/Admin/Views/General.php:2176, src/Admin/Views/WooCommerceButton.php:254
+#: src/Admin/Views/General.php:2230, src/Admin/Views/WooCommerceButton.php:254
 msgid "Tablet Only"
 msgstr ""
 
-#: src/Admin/Views/General.php:2177, src/Admin/Views/WooCommerceButton.php:255
+#: src/Admin/Views/General.php:2231, src/Admin/Views/WooCommerceButton.php:255
 msgid "Mobile Only"
 msgstr ""
 
-#: src/Admin/Views/General.php:2187
+#: src/Admin/Views/General.php:2241
 msgid "Visibility By"
 msgstr ""
 
-#: src/Admin/Views/General.php:2190
+#: src/Admin/Views/General.php:2244
 msgid "Select where the chat bubble should be visible. You can enable it by specific content types such as pages, posts, products, categories, or tags."
 msgstr ""
 
-#: src/Admin/Views/General.php:2194, src/Admin/Views/General.php:2213, src/Admin/Views/General.php:2244
+#: src/Admin/Views/General.php:2248, src/Admin/Views/General.php:2267, src/Admin/Views/General.php:2298
 msgid "Theme Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:2195, src/Admin/Views/General.php:2272, src/Admin/Views/General.php:2303
+#: src/Admin/Views/General.php:2249, src/Admin/Views/General.php:2326, src/Admin/Views/General.php:2357
 msgid "Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:2196
+#: src/Admin/Views/General.php:2250
 msgid "Posts (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2197
+#: src/Admin/Views/General.php:2251
 msgid "Products (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2198
+#: src/Admin/Views/General.php:2252
 msgid "Post Categories (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2199
+#: src/Admin/Views/General.php:2253
 msgid "Post Tags (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2200
+#: src/Admin/Views/General.php:2254
 msgid "Product Categories (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2201
+#: src/Admin/Views/General.php:2255
 msgid "Product Tags (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2218, src/Admin/Views/General.php:2277, src/Admin/Views/General.php:2336, src/Admin/Views/General.php:2394, src/Admin/Views/General.php:2455, src/Admin/Views/General.php:2514, src/Admin/Views/General.php:2572, src/Admin/Views/General.php:2633
+#: src/Admin/Views/General.php:2272, src/Admin/Views/General.php:2331, src/Admin/Views/General.php:2390, src/Admin/Views/General.php:2448, src/Admin/Views/General.php:2509, src/Admin/Views/General.php:2568, src/Admin/Views/General.php:2626, src/Admin/Views/General.php:2687
 msgid "Target"
 msgstr ""
 
-#: src/Admin/Views/General.php:2221
+#: src/Admin/Views/General.php:2275
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected items."
 msgstr ""
 
-#: src/Admin/Views/General.php:2225, src/Admin/Views/General.php:2284, src/Admin/Views/General.php:2343, src/Admin/Views/General.php:2401, src/Admin/Views/General.php:2462, src/Admin/Views/General.php:2521, src/Admin/Views/General.php:2579, src/Admin/Views/General.php:2640
+#: src/Admin/Views/General.php:2279, src/Admin/Views/General.php:2338, src/Admin/Views/General.php:2397, src/Admin/Views/General.php:2455, src/Admin/Views/General.php:2516, src/Admin/Views/General.php:2575, src/Admin/Views/General.php:2633, src/Admin/Views/General.php:2694
 msgid "Include"
 msgstr ""
 
-#: src/Admin/Views/General.php:2226, src/Admin/Views/General.php:2285, src/Admin/Views/General.php:2344, src/Admin/Views/General.php:2402, src/Admin/Views/General.php:2463, src/Admin/Views/General.php:2522, src/Admin/Views/General.php:2580, src/Admin/Views/General.php:2641
+#: src/Admin/Views/General.php:2280, src/Admin/Views/General.php:2339, src/Admin/Views/General.php:2398, src/Admin/Views/General.php:2456, src/Admin/Views/General.php:2517, src/Admin/Views/General.php:2576, src/Admin/Views/General.php:2634, src/Admin/Views/General.php:2695
 msgid "Exclude"
 msgstr ""
 
-#: src/Admin/Views/General.php:2233
+#: src/Admin/Views/General.php:2287
 msgid "All Theme Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:2236
+#: src/Admin/Views/General.php:2290
 msgid "Enable this option to apply the chat bubble visibility rule to all theme pages at once, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/General.php:2247
+#: src/Admin/Views/General.php:2301
 msgid "Select a specific theme page where the chat bubble visibility rule should apply. Options include Blog, 404, or Search pages."
 msgstr ""
 
-#: src/Admin/Views/General.php:2251
+#: src/Admin/Views/General.php:2305
 msgid "Blog Page"
 msgstr ""
 
-#: src/Admin/Views/General.php:2252
+#: src/Admin/Views/General.php:2306
 msgid "404 Page"
 msgstr ""
 
-#: src/Admin/Views/General.php:2253
+#: src/Admin/Views/General.php:2307
 msgid "Search Page"
 msgstr ""
 
-#: src/Admin/Views/General.php:2280
+#: src/Admin/Views/General.php:2334
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected pages."
 msgstr ""
 
-#: src/Admin/Views/General.php:2292
+#: src/Admin/Views/General.php:2346
 msgid "All Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:2295
+#: src/Admin/Views/General.php:2349
 msgid "Enable this option to apply the chat bubble visibility rule to all pages across your site, instead of selecting individual pages."
 msgstr ""
 
-#: src/Admin/Views/General.php:2306
+#: src/Admin/Views/General.php:2360
 msgid "Select one or more specific pages where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/General.php:2317
+#: src/Admin/Views/General.php:2371
 msgid "You don't have any pages available."
 msgstr ""
 
-#: src/Admin/Views/General.php:2331, src/Admin/Views/General.php:2362
+#: src/Admin/Views/General.php:2385, src/Admin/Views/General.php:2416
 msgid "Posts"
 msgstr ""
 
-#: src/Admin/Views/General.php:2339
+#: src/Admin/Views/General.php:2393
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected posts."
 msgstr ""
 
-#: src/Admin/Views/General.php:2351
+#: src/Admin/Views/General.php:2405
 msgid "All Posts"
 msgstr ""
 
-#: src/Admin/Views/General.php:2354
+#: src/Admin/Views/General.php:2408
 msgid "Enable this option to apply the chat bubble visibility rule to all posts across your site, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/General.php:2365
+#: src/Admin/Views/General.php:2419
 msgid "Select one or more specific posts where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/General.php:2375
+#: src/Admin/Views/General.php:2429
 msgid "You don't have any posts available."
 msgstr ""
 
-#: src/Admin/Views/General.php:2389, src/Admin/Views/General.php:2420
+#: src/Admin/Views/General.php:2443, src/Admin/Views/General.php:2474
 msgid "Products"
 msgstr ""
 
-#: src/Admin/Views/General.php:2397
+#: src/Admin/Views/General.php:2451
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected products."
 msgstr ""
 
-#: src/Admin/Views/General.php:2409
+#: src/Admin/Views/General.php:2463
 msgid "All Products"
 msgstr ""
 
-#: src/Admin/Views/General.php:2412
+#: src/Admin/Views/General.php:2466
 msgid "Enable this option to apply the chat bubble visibility rule to all products across your store, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/General.php:2423
+#: src/Admin/Views/General.php:2477
 msgid "Select one or more specific products where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/General.php:2436
+#: src/Admin/Views/General.php:2490
 msgid "You don't have any products available."
 msgstr ""
 
-#: src/Admin/Views/General.php:2450, src/Admin/Views/General.php:2482
+#: src/Admin/Views/General.php:2504, src/Admin/Views/General.php:2536
 msgid "Post Categories"
 msgstr ""
 
-#: src/Admin/Views/General.php:2458
+#: src/Admin/Views/General.php:2512
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected post categories."
 msgstr ""
 
-#: src/Admin/Views/General.php:2470
+#: src/Admin/Views/General.php:2524
 msgid "All Post Categories"
 msgstr ""
 
-#: src/Admin/Views/General.php:2473
+#: src/Admin/Views/General.php:2527
 msgid "Enable this option to apply the chat bubble visibility rule to all post categories, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/General.php:2485
+#: src/Admin/Views/General.php:2539
 msgid "Select one or more specific post categories where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/General.php:2495
+#: src/Admin/Views/General.php:2549
 msgid "You don't have any post categories available."
 msgstr ""
 
-#: src/Admin/Views/General.php:2509, src/Admin/Views/General.php:2540
+#: src/Admin/Views/General.php:2563, src/Admin/Views/General.php:2594
 msgid "Post Tags"
 msgstr ""
 
-#: src/Admin/Views/General.php:2517
+#: src/Admin/Views/General.php:2571
 msgid "Choose whether to include or exclude the selected post tags from displaying the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:2529
+#: src/Admin/Views/General.php:2583
 msgid "All Post Tags"
 msgstr ""
 
-#: src/Admin/Views/General.php:2532
+#: src/Admin/Views/General.php:2586
 msgid "Enable this option to apply the chat bubble visibility rule to all post tags, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/General.php:2543
+#: src/Admin/Views/General.php:2597
 msgid "Select one or more specific post tags where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/General.php:2553
+#: src/Admin/Views/General.php:2607
 msgid "You don't have any post tags available."
 msgstr ""
 
-#: src/Admin/Views/General.php:2567, src/Admin/Views/General.php:2598
+#: src/Admin/Views/General.php:2621, src/Admin/Views/General.php:2652
 msgid "Product Categories"
 msgstr ""
 
-#: src/Admin/Views/General.php:2575
+#: src/Admin/Views/General.php:2629
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected product categories."
 msgstr ""
 
-#: src/Admin/Views/General.php:2587
+#: src/Admin/Views/General.php:2641
 msgid "All Product Categories"
 msgstr ""
 
-#: src/Admin/Views/General.php:2590
+#: src/Admin/Views/General.php:2644
 msgid "Enable this option to apply the chat bubble visibility rule to all product categories, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/General.php:2601
+#: src/Admin/Views/General.php:2655
 msgid "Select one or more specific product categories where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/General.php:2614
+#: src/Admin/Views/General.php:2668
 msgid "You don't have any product category available."
 msgstr ""
 
-#: src/Admin/Views/General.php:2628, src/Admin/Views/General.php:2659
+#: src/Admin/Views/General.php:2682, src/Admin/Views/General.php:2713
 msgid "Product Tags"
 msgstr ""
 
-#: src/Admin/Views/General.php:2636
+#: src/Admin/Views/General.php:2690
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected product tags."
 msgstr ""
 
-#: src/Admin/Views/General.php:2648
+#: src/Admin/Views/General.php:2702
 msgid "All Product Tags"
 msgstr ""
 
-#: src/Admin/Views/General.php:2651
+#: src/Admin/Views/General.php:2705
 msgid "Enable this option to apply the chat bubble visibility rule to all product tags, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/General.php:2662
+#: src/Admin/Views/General.php:2716
 msgid "Select one or more specific product tags where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/General.php:2675
+#: src/Admin/Views/General.php:2729
 msgid "You don't have any product tags available."
 msgstr ""
 
@@ -4673,7 +4865,7 @@ msgstr ""
 msgid "00:00-23:59"
 msgstr ""
 
-#: src/Frontend/Templates/FormTemplate.php:86, src/Frontend/Templates/SingleTemplate.php:98
+#: src/Frontend/Templates/FormTemplate.php:86
 msgid "Powered by"
 msgstr ""
 
@@ -4711,10 +4903,6 @@ msgstr ""
 
 #: src/Admin/Framework/Classes/Chat_Help_Metabox.php:282
 msgid "update post"
-msgstr ""
-
-#: src/Admin/Framework/Classes/Chat_Help_Metabox.php:282
-msgid "Cancel"
 msgstr ""
 
 #: src/Admin/Framework/Classes/Chat_Help_Options.php:176
@@ -4971,10 +5159,6 @@ msgstr ""
 
 #: src/Admin/Framework/fields/background/background.php:279
 msgid "Saturation"
-msgstr ""
-
-#: src/Admin/Framework/fields/background/background.php:280
-msgid "Color"
 msgstr ""
 
 #: src/Admin/Framework/fields/background/background.php:281

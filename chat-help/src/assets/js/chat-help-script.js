@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
       eventData.forEach((param) => {
         ga_prams[param.event_parameter] = param.event_parameter_value;
       });
-      console.log('ga_prams', ga_prams);
+
 
       // Send GA event
       if (typeof gtag !== "undefined") {
@@ -284,6 +284,46 @@ if (wHelpChatAvailability) {
         return;
       }
 
+      function getBrowserName() {
+        const userAgent = navigator.userAgent;
+
+        if (userAgent.indexOf("Firefox") > -1) {
+          return "Firefox";
+        } else if (userAgent.indexOf("SamsungBrowser") > -1) {
+          return "Samsung Internet";
+        } else if (
+          userAgent.indexOf("Opera") > -1 ||
+          userAgent.indexOf("OPR") > -1
+        ) {
+          return "Opera";
+        } else if (userAgent.indexOf("Edg") > -1) {
+          return "Edge";
+        } else if (userAgent.indexOf("Chrome") > -1) {
+          return "Chrome";
+        } else if (userAgent.indexOf("Safari") > -1) {
+          return "Safari";
+        } else {
+          return "Unknown";
+        }
+      }
+
+      let userData = {
+        device: /Mobi|Android/i.test(navigator.userAgent)
+          ? "Mobile"
+          : "Desktop",
+        browser: getBrowserName(), // function from earlier
+        platform: navigator.platform,
+        screen: screen.width + "x" + screen.height,
+        language: navigator.language,
+        vendor: navigator.vendor,
+        url: window.location.href,
+        referrer: document.referrer,
+      };
+
+      const chatHelpUserInfo = localStorage.getItem("chat_help_user_information");
+      const ipInfo = chatHelpUserInfo ? JSON.parse(chatHelpUserInfo) : {};
+      const userInfo = { ...userData, ...ipInfo };
+
       wHelpCheckButton.forEach((btn) => {
         if (!btn.classList.contains("condition__checked")) {
           const chatAvailableTime = JSON.parse(
@@ -299,12 +339,14 @@ if (wHelpChatAvailability) {
               let button = whatsappForm.getAttribute("data-button");
               let loading = whatsappForm.getAttribute("data-loading");
               let productAttr = whatsappForm.getAttribute("data-product_attr");
+
               // Whatsapp form handler
               $.post(
                 frontend_scripts.ajaxurl,
                 {
                   action: "handle_form_submission",
                   data: formData,
+                  userInfo,
                   product_id: productAttr,
                   nonce: frontend_scripts.nonce,
                   current_url: currentUrl,
@@ -361,3 +403,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+
+/******************** 12. USER INFORMATION ********************/
+  async function userInformation() {
+    const url = "https://ipwhois.app/json/";
+    try {
+      const response = await fetch(url);
+      const result = await response.json();
+      localStorage.setItem("chat_help_user_information", JSON.stringify(result));
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+  userInformation();

@@ -70,13 +70,13 @@ class Frontend
         $woo_group = isset($options['wooCommerce_button_group']) ? $options['wooCommerce_button_group'] : '';
 
         if ($wooCommerce_button) {
-            if('number' === $type_of_whatsapp_woo && !empty($woo_number) || ('group' === $type_of_whatsapp_woo && !empty($woo_group))){
+            if ('number' === $type_of_whatsapp_woo && !empty($woo_number) || ('group' === $type_of_whatsapp_woo && !empty($woo_group))) {
                 add_action("woocommerce_{$button_position}_add_to_cart_form", array($wooButton, 'woo_button'));
             }
         }
 
         add_filter('kses_allowed_protocols', [$this, 'allow_whatsapp_protocol']);
-        
+
         add_action('wp_head', array($this, 'chat_help_header_script'), 1);
         add_action('login_head', array($this, 'chat_help_header_script'), 1);
         add_action('register_head', array($this, 'chat_help_header_script'), 1);
@@ -208,18 +208,18 @@ class Frontend
         $type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
         $opt_number = isset($options['opt-number']) ? $options['opt-number'] : '';
         $opt_group = isset($options['opt-group']) ? $options['opt-group'] : '';
- 
+
         switch ($chat_type) {
             case 'off':
                 break;
             case 'button':
-                if (('number' === $type_of_whatsapp && !empty($opt_number) || ('group' === $type_of_whatsapp && !empty($opt_group)) )) {
+                if (('number' === $type_of_whatsapp && !empty($opt_number) || ('group' === $type_of_whatsapp && !empty($opt_group)))) {
                     ButtonTemplate::buttonTemplate($options, $bubble_type);
                 }
                 break;
             case 'agent':
-      
-                if ( ('number' === $type_of_whatsapp && !empty($opt_number) || ('group' === $type_of_whatsapp && !empty($opt_group)) )) {
+
+                if (('number' === $type_of_whatsapp && !empty($opt_number) || ('group' === $type_of_whatsapp && !empty($opt_group)))) {
                     SingleTemplate::singleTemplate($options, $bubble_type, $random, $whatsapp_message_template);
                 }
                 break;
@@ -240,6 +240,7 @@ class Frontend
             wp_send_json_error('Invalid nonce');
             wp_die();
         }
+
         parse_str($_POST['data'], $formData);
         $product_id = isset($_POST['product_id']) ? sanitize_text_field($_POST['product_id']) : '';
         $current_url = isset($_POST['current_url']) ? sanitize_url($_POST['current_url']) : '';
@@ -249,9 +250,42 @@ class Frontend
         $url_for_desktop = isset($options['url_for_desktop']) ? $options['url_for_desktop'] : '';
         $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
         $template = isset($options['whatsapp_message_template']) ? $options['whatsapp_message_template'] : '';
-        $form = true;         
+        $chat_help_leads = isset($options['chat_help_leads']) ? $options['chat_help_leads'] : true;
+
+        $form = true;
         $message = Helpers::replacement_vars($template, $form, $formData, $product_id, $current_url, $current_title);
-        $url = Helpers::whatsAppUrl( $agent_number,  $type_of_whatsapp = 'number', $whatsapp_group == '', $url_for_desktop, $url_for_mobile, $message);
+        $url = Helpers::whatsAppUrl($agent_number,  $type_of_whatsapp = 'number', $whatsapp_group = '', $url_for_desktop, $url_for_mobile, $message);
+
+        if ($chat_help_leads) {
+            $userInfo = isset($_POST['userInfo']) && is_array($_POST['userInfo']) ? array_map('sanitize_text_field', $_POST['userInfo']) : [];
+
+            $current_user_id    = get_current_user_id();
+            if ($current_user_id) {
+                $current_user = get_userdata($current_user_id);
+                if ($current_user) {
+                    $extraUserData = [
+                        'wp_user_id'    => $current_user->ID,
+                        'wp_username'   => $current_user->user_login,
+                        'wp_first_name' => get_user_meta($current_user->ID, 'first_name', true),
+                        'wp_last_name'  => get_user_meta($current_user->ID, 'last_name', true),
+                        'wp_email'      => $current_user->user_email,
+                    ];
+                    $userInfo = array_merge($userInfo, $extraUserData);
+                }
+            }
+
+            global $wpdb;
+            $tableUsers = $wpdb->prefix . 'chat_help_leads';
+            $wpdb->insert(
+                $tableUsers,
+                [
+                    'field'     => maybe_serialize($formData),
+                    'meta'      => maybe_serialize($userInfo),
+                ],
+                ['%s', '%s']
+            );
+        }
+
         wp_send_json_success(array('whatsAppURL' => $url));
         wp_die();
     }

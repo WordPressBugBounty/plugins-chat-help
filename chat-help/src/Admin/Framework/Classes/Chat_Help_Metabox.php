@@ -373,9 +373,9 @@ if ( ! class_exists( 'Chat_Help_Metabox' ) ) {
 
       }
 
-      $data = apply_filters( "CHAT_HELP_{$this->unique}_save", $data, $post_id, $this );
+      $data = apply_filters( "chat_help_{$this->unique}_save", $data, $post_id, $this );
 
-      do_action( "CHAT_HELP_{$this->unique}_save_before", $data, $post_id, $this );
+      do_action( "chat_help_{$this->unique}_save_before", $data, $post_id, $this );
 
       if ( empty( $data ) || ! empty( $request['_reset'] ) ) {
 
@@ -400,14 +400,14 @@ if ( ! class_exists( 'Chat_Help_Metabox' ) ) {
         }
 
         if ( ! empty( $errors ) ) {
-          update_post_meta( $post_id, '_CHAT_HELP_errors_'. $this->unique, $errors );
+          update_post_meta( $post_id, '_chat_help_errors_'. $this->unique, $errors );
         }
 
       }
 
-      do_action( "CHAT_HELP_{$this->unique}_saved", $data, $post_id, $this );
+      do_action( "chat_help_{$this->unique}_saved", $data, $post_id, $this );
 
-      do_action( "CHAT_HELP_{$this->unique}_save_after", $data, $post_id, $this );
+      do_action( "chat_help_{$this->unique}_save_after", $data, $post_id, $this );
 
     }
   }

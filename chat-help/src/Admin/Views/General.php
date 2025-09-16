@@ -326,6 +326,27 @@ class General
                                         'dependency' => array('chat_layout', '==', 'form', 'any'),
                                     ),
 
+                                    array(
+                                        'id'         => 'chat_help_leads',
+                                        'type'       => 'switcher',
+                                        'title'      => esc_html__('Leads (Form Submissions)', 'chat-help'),
+                                        'title_help' =>
+                                        '<div class="chat-help-info-label">' .
+                                            esc_html__('Enable this option to store submitted form data as leads.', 'chat-help') .
+                                            '</div>' .
+                                            '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1#leads">' .
+                                            esc_html__('Live Demo', 'chat-help') .
+                                            '</a>' .
+                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/leads-management/?ref=1">' .
+                                            esc_html__('Open Docs', 'chat-help') .
+                                            '</a>',
+                                        'text_on'    => esc_html__('Enable', 'chat-help'),
+                                        'text_off'   => esc_html__('Disable', 'chat-help'),
+                                        'text_width' => 100,
+                                        'default'   => true,
+                                        'dependency' => array('chat_layout', 'any', 'form', 'any'),
+                                    ),
+
                                     /************************************
                                      * SINGLE AGENT WITHOUT FORM
                                      *************************************/
@@ -1225,7 +1246,22 @@ class General
 
                                         'dependency' => array('chat_layout', 'any', 'form,agent', 'any'),
                                     ),
-
+                                    array(
+                                        'id' => 'footer_content',
+                                        'type' => 'switcher',
+                                        'class' => 'switcher_pro_only',
+                                        'title' => esc_html__('Footer Content', 'chat-help'),
+                                        'title_help' =>
+                                        '<div class="chat-help-info-label">' .
+                                            esc_html__('Enable or disable the footer text below the chat box. You can also replace the default text with your own custom message.', 'chat-help') .
+                                            '</div>' .
+                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/header-and-footer/?ref=1#box-footer">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'text_on' => esc_html__('Enable', 'chat-help'),
+                                        'text_off' => esc_html__('Disable', 'chat-help'),
+                                        'text_width' => 100,
+                                        'default' => true,
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_grid', 'any'),
+                                    ),
                                 )
                             ),
 
@@ -2123,7 +2159,25 @@ class General
                                             'secondary' => '#0b5a51',
                                         ),
                                     ),
-
+                                    array(
+                                        'id'        => 'send_button_color',
+                                        'type'      => 'color_group',
+                                        'class'      => 'color_group_pro_only',
+                                        'title' => esc_html__('Send Button', 'chat-help'),
+                                        'desc' => __('Unlock full customization of the Send Button colors with the  <a style="font-weight:bold;text-decoration:underline;font-style:italic;" href="'. CHAT_HELP_DEMO_URL .'pricing" target="_blank" class="chat-help-upgrade-link">' . esc_html__('Pro version.', 'chat-help') . '</a>', 'chat-help'),
+                                        
+                                        'title_help' =>
+                                        '<div class="chat-help-info-label">' .
+                                            esc_html__('Choose the colors for the send button.', 'chat-help') .
+                                            '</div>' .
+                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            'options' => array(
+                                                'color'   => esc_html__('Color', 'chat-help'),
+                                                'hover_color' => esc_html__('Hover Color', 'chat-help'),
+                                                'background'   => esc_html__('Background', 'chat-help'),
+                                                'hover_background' => esc_html__('Hover Background', 'chat-help'),
+                                            ),
+                                    ),
                                     array(
                                         'id'       => 'chat_help_typography',
                                         'type'     => 'typography',

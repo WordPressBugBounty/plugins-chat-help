@@ -1,6 +1,6 @@
 <?php
 
-use ThemeAtelier\ChatHelpPro\Helpers\Helpers;
+use ThemeAtelier\ChatHelp\Helpers\Helpers;
 // Exit if accessed directly.
 if (! defined('ABSPATH')) {
     exit;
@@ -156,7 +156,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 'type'        => \Elementor\Controls_Manager::MEDIA,
                 'label_block' => true,
                 'default'     => array(
-                    'url' => CHAT_HELP_PRO_DIR_URL . 'src/assets/image/user.webp',
+                    'url' => CHAT_HELP_DIR_URL . 'src/assets/image/user.webp',
                 ),
                 'condition'   => array(
                     'style' => '1',

@@ -238,7 +238,8 @@ class Helpers
 	 *
 	 * @return null
 	 */
-	private static function is_valid_wc_product($product) {
+	private static function is_valid_wc_product($product)
+	{
 		return $product instanceof \WC_Product;
 	}
 
@@ -294,13 +295,13 @@ class Helpers
 		}
 
 
-		$variables = array('{siteTitle}', '{currentTitle}', '{siteURL}', '{currentURL}', '{siteEmail}', '{date}','{ip}');
-        $values = array($siteTitle, $currentTitle, $siteURL, $currentURL, $siteEmail, $date, $ip);
+		$variables = array('{siteTitle}', '{currentTitle}', '{siteURL}', '{currentURL}', '{siteEmail}', '{date}', '{ip}');
+		$values = array($siteTitle, $currentTitle, $siteURL, $currentURL, $siteEmail, $date, $ip);
 		if (!self::is_valid_wc_product($product)) {
-    $product = null;
-}
+			$product = null;
+		}
 
-       if (self::is_valid_wc_product($product)) {
+		if (self::is_valid_wc_product($product)) {
 			$productName = $product->get_name();
 			$productSlug = $product->get_slug();
 			$productPrice = $product->get_price();
@@ -310,9 +311,9 @@ class Helpers
 			$productStockStatus = $product->get_stock_status();
 			$product_variables = array('{productName}', '{productSlug}', '{productPrice}', '{productRegularPrice}', '{productSalePrice}', '{productSku}', '{productStockStatus}');
 			$product_values = array($productName, $productSlug, $productPrice, $productRegularPrice, $productSalePrice, $productSku, $productStockStatus);
-			$variables = array_merge($variables,$product_variables);
-			$values = array_merge($values,$product_values);
-  		}
+			$variables = array_merge($variables, $product_variables);
+			$values = array_merge($values, $product_values);
+		}
 
 		if ($form) {
 			$fields_label = [];
@@ -326,12 +327,15 @@ class Helpers
 					case 'text':
 						$field_label = isset($form_field['label']) ? $form_field['label'] : '';
 						$fields_label['label_' . $field_index] = $field_label;
-						$fields_data['text_' . $field_index] = sanitize_text_field($formData['chat_help_text_' . $field_id] ?? '');
+
+						$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_text_' . esc_attr($field_id));
+						$fields_data['text_' . $field_index] = sanitize_text_field($formData[$dynamic_id] ?? '');
 						break;
 					case 'textarea':
 						$field_label = isset($form_field['label']) ? $form_field['label'] : '';
 						$fields_label['label_' . $field_index] = $field_label;
-						$fields_data['textarea_' . $field_index] = sanitize_textarea_field($formData['chat_help_textarea_' . $field_id] ?? '');
+						$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_textarea_' . esc_attr($field_id));
+						$fields_data['textarea_' . $field_index] = sanitize_textarea_field($formData[$dynamic_id] ?? '');
 				}
 				$field_index++;
 			}
@@ -357,5 +361,40 @@ class Helpers
 
 		$replace_vars = trim(str_replace($variables, $values, $message));
 		return $replace_vars;
+	}
+
+	/**
+	 * Generate a safe, unique field ID from a label.
+	 *
+	 * Converts to lowercase, replaces spaces with underscores, removes special chars,
+	 * and appends a suffix if the same key already exists.
+	 *
+	 * @param string $label Field label.
+	 * @param string $fallback Fallback ID if label is empty.
+	 * @return string Safe, unique field ID.
+	 */
+	public static function generate_safe_field_id($label, $fallback = '')
+	{
+		static $used_keys = [];
+
+		if (!empty($label)) {
+			// make safe key
+			$key = strtolower(trim($label));
+			$key = preg_replace('/\s+/', '_', $key);          // spaces → underscore
+			$key = preg_replace('/[^a-z0-9_]/', '', $key);   // remove special chars
+
+			// handle duplicates
+			if (isset($used_keys[$key])) {
+				$used_keys[$key]++;
+				$key .= '_' . $used_keys[$key];
+			} else {
+				$used_keys[$key] = 0; // first occurrence
+			}
+
+			return $key;
+		}
+
+		// fallback if label empty
+		return $fallback;
 	}
 }

@@ -6140,3 +6140,7 @@ span.tooltip-icon {
 .google_analytics_repeater.only-for-pro .chat-help-repeater-wrapper {
   opacity: 0.5;
 }
+.color_group_pro_only .chat-help-fieldset .chat-help-field-color {
+  opacity: 0.6;
+  pointer-events: none;
+}
