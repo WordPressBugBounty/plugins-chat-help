@@ -1,5 +1,7 @@
 <?php
-
+if (! defined('ABSPATH')) {
+    die;
+} // Cannot access directly.
 /**
  * Chat Whatsapp Pro Agent Message.
  *
@@ -7,11 +9,11 @@
  * @subpackage chat-help/src/Frontend
  */
 
-use ThemeAtelier\ChatHelp\Helpers\Helpers;
+use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 
 ?>
 <div class="wHelp__popup--header 
-    <?php echo $header_content_position === 'center' ? 'header-center' : ''; ?>" 
+    <?php echo $header_content_position === 'center' ? 'header-center' : ''; ?>"
     style="--color-primary: <?php echo esc_attr($primary); ?>;--color-secondary: <?php echo esc_attr($secondary); ?>;">
     <?php include Helpers::chat_help_locate_template('items/thumbnail.php'); ?>
     <div class="info">

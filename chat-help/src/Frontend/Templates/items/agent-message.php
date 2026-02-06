@@ -1,5 +1,7 @@
 <?php
-
+if (! defined('ABSPATH')) {
+    die;
+} // Cannot access directly.
 /**
  * Chat Whatsapp Agent Message.
  *
@@ -7,7 +9,7 @@
  * @subpackage chat-help/src/Frontend
  */
 
-use ThemeAtelier\ChatHelp\Helpers\Helpers;
+use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 
 $open_in_new_tab = isset($options['open_in_new_tab']) ? $options['open_in_new_tab'] : '';
 echo '<div class="wHelp__popup__content">';
@@ -15,9 +17,9 @@ if ($show_current_time) {
     echo '<div class="current-time"></div>';
 }
 if ($agent_message) : ?>
-<?php 
+    <?php
     $replaced_message = Helpers::replacement_vars($agent_message);
-?>
+    ?>
     <div class="sms">
         <div class="sms__text">
             <p>
@@ -37,7 +39,7 @@ if ($gdpr_enable) : ?>
     target="_blank"
     type="submit"
     <?php echo esc_attr($gaAnalyticsAttr) ?>
-    style="--color-primary: <?php echo esc_attr($primary); ?>;--color-secondary: <?php echo esc_attr($secondary); ?>;">
+    style="--wHelp-color-primary: <?php echo esc_attr($background) ?>;--wHelp-color-secondary:<?php echo esc_attr($hover_background) ?>;--text-color: <?php echo esc_attr($color) ?>;--text-hover-color: <?php echo esc_attr($hover_color) ?>">
 
     <?php
     if ($before_chat_icon === 'no_icon') {
@@ -58,10 +60,10 @@ if ($gdpr_enable) : ?>
     $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
     $message = isset($options['prefilled_message']) ? $options['prefilled_message'] : '';
     $message = Helpers::replacement_vars($message);
-    $url = Helpers::whatsAppUrl( $whatsapp_number,  $type_of_whatsapp,$whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
+    $url = Helpers::whatsAppUrl($whatsapp_number,  $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
 
     $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
-    echo '<a href="' . esc_attr($url) . '" target="' . $open_in_new_tab . '"></a>';
+    echo '<a href="' . esc_attr($url) . '" target="' . esc_attr($open_in_new_tab) . '"></a>';
     ?>
 </div>
 </div>

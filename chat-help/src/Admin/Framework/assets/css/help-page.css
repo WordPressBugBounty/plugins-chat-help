@@ -547,11 +547,11 @@
 .lite_vs_pro_page .chat_testimonial_content::after {
   content: "";
   position: absolute;
-  bottom: -13px;
+  bottom: -14px;
   left: 40px;
   width: 25px;
   height: 15px;
-  background-color: #fff;
+  background-color: #f1f1f1;
   clip-path: polygon(0 0, 50% 100%, 100% 0);
 }
 .lite_vs_pro_page .chat_testimonial_content p {
@@ -633,12 +633,14 @@
 }
 .about-page .themeatelier-our-plugin-list-box img {
   width: 80px;
+  border-radius: 5px;
 }
 .about-page .themeatelier-our-plugin-list-box h4 {
   font-size: 18px;
   font-weight: 600;
   margin: 15px 0;
   color: #1d2327;
+  line-height: 22px;
 }
 .about-page .themeatelier-our-plugin-list-box p {
   font-size: 14px;

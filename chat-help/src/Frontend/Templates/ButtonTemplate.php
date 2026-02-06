@@ -3,7 +3,7 @@
 /**
  * Single Template Class
  *
- * This class handles the single template functionality for Chat Help.
+ * This class handles the single template functionality for ChatHelp.
  *
  * @link       https://themeatelier.net
  * @since      1.0.0
@@ -15,7 +15,7 @@
 
 namespace ThemeAtelier\ChatHelp\Frontend\Templates;
 
-use ThemeAtelier\ChatHelp\Helpers\Helpers;
+use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 
 /**
  * Class ButtonTemplate
@@ -33,7 +33,7 @@ class ButtonTemplate
 	 *
 	 * @since 1.0.0
 	 */
-	public static function buttonTemplate($options, $bubble_type)
+	public static function buttonTemplate($options, $bubble_type, $unique_id)
 	{
 		$optAvailablity = isset($options['opt-availablity']) ? $options['opt-availablity'] : '';
 		$user_availability = Helpers::user_availability($optAvailablity);
@@ -44,7 +44,7 @@ class ButtonTemplate
 		$whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
 		$whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
 
-		echo '<div class="wHelp ' . esc_attr($bubble_position) . ' wHelp-' . esc_attr($bubble_visibility) . '-only ';
+		echo '<div id="' . esc_attr($unique_id) . '" class="wHelp_bubble no_bubble wHelp ' . esc_attr($bubble_position) . ' wHelp-' . esc_attr($bubble_visibility) . '-only ';
 
 		// Add bubble style classes based on the 'bubble-style' option.
 		if ($bubble_style === 'dark') {

@@ -14,10 +14,13 @@
 namespace ThemeAtelier\ChatHelp\Admin;
 
 use ThemeAtelier\ChatHelp\Admin\Views\Options;
-use ThemeAtelier\ChatHelp\Admin\TADiscountPage\TADiscountPage;
 use ThemeAtelier\ChatHelp\Admin\DBUpdates;
 use ThemeAtelier\ChatHelp\Admin\Leads;
+use ThemeAtelier\ChatHelp\Admin\ReviewNotice\ThemeAtelier_Offer_Banner;
 
+if (! defined('ABSPATH')) {
+	die;
+} // Cannot access directly.
 /**
  * The admin class
  */
@@ -62,14 +65,31 @@ class Admin
 		$this->plugin_slug = $plugin_slug;
 		$this->version     = $version;
 		$this->min         = defined('WP_DEBUG') && WP_DEBUG ? '' : '.min';
-		Options::options('cwp_option');
 		add_action('admin_menu', array($this, 'add_plugin_page'));
-		add_filter('plugin_action_links_' . CHAT_HELP_BASENAME, array($this, 'chat_help_action_links'));
-		new TADiscountPage();
+		add_action('after_setup_theme', array($this, 'initialize_options'));
+		add_filter( 'admin_footer_text', array( $this, 'admin_footer' ), 1, 2 );
+		
 		new DBUpdates();
-		
-		
 		new Leads();
+
+		if ( ! defined( 'THEMEATELIER_OFFER_BANNER_LOADED' ) ) {
+            define( 'THEMEATELIER_OFFER_BANNER_LOADED', true );
+             ThemeAtelier_Offer_Banner::instance();
+         }
+
+		$active_plugins = get_option('active_plugins');
+        foreach ($active_plugins as $active_plugin) {
+            $_temp = strpos($active_plugin, 'chat-whatsapp.php');
+            if (false != $_temp) {
+                add_filter('plugin_action_links_' . CHAT_HELP_BASENAME, array($this, 'chat_help_action_links'));
+                add_filter( 'plugin_row_meta', array( $this, 'after_chat_help_row_meta' ), 10, 4 );
+            }
+        }
+	}
+
+	public function initialize_options()
+	{
+		Options::options('cwp_option');
 	}
 
 	/**
@@ -87,7 +107,7 @@ class Admin
 		wp_enqueue_style('admin');
 
 		// Review notice CSS
-        wp_enqueue_style('chat-help-review-notice', CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/css/review-notice' . $min . '.css', array(), CHAT_HELP_VERSION, 'all');
+		wp_enqueue_style('chat-help-review-notice', CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/css/review-notice' . $min . '.css', array(), CHAT_HELP_VERSION, 'all');
 	}
 
 	public function add_plugin_page()
@@ -100,12 +120,12 @@ class Admin
 			'chat-help',
 			array($this, 'chat_help_settings'),
 			'dashicons-whatsapp',
-			9
+			58
 		);
 
 		do_action('chat_help_recommended_page_menu');
-		add_submenu_page('chat-help', __('70% EARLYBIRD OFF', 'chat-help'), sprintf('<span style="color:#FFCC4D;font-weight:bold;" class="chat-help-get-pro-text">%s</span>', __('70% EARLYBIRD OFF', 'chat-help')), 'manage_options', CHAT_HELP_DEMO_URL . 'pricing/');
-		do_action('chat_help_after_upgrade_pro_menu');
+		add_submenu_page('chat-help', __('Upgrade To Premium', 'chat-help'), sprintf('<span style="color:#35b747; font-weight: bold;" class="chat-help-get-pro-text">%s</span>', __('Upgrade To Pro! 👑', 'chat-help')), 'manage_options', CHAT_HELP_DEMO_URL . 'pricing/?utm_source=chat_help_plugin&utm_medium=submenu_page&utm_campaign=regular');
+		
 	}
 
 	/**
@@ -113,28 +133,6 @@ class Admin
 	 */
 	public function chat_help_settings() {}
 
-	public function chat_help_get_help_callback()
-	{
-?>
-		<div class="wrap">
-			<div class="chat-help-help-wrapper">
-				<div class="chat_help__help--header">
-					<h3><?php echo esc_html__('Chat Help', 'chat-help') ?> <span><?php echo esc_html(CHAT_HELP_VERSION) ?></span></h3>
-					<?php echo wp_kses_post('Thank you for installing <strong>Chat Help</strong> plugin! This video will help you get started with the plugin.', 'chat-help') ?>
-				</div>
-
-				<div class="chat_help__help--video">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/OrnL0DSvjeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-				</div>
-
-				<div class="chat_help__help--footer">
-					<a class="button button-primary" href="<?php echo esc_url(get_admin_url()) . '/admin.php?page=chat-help'; ?>"><?php echo esc_html__('Go to settings page', 'chat-help') ?></a>
-					<a target="_blank" class="button button-secondary" href="<?php echo esc_attr(CHAT_HELP_DEMO_URL) ?>pricing/"><?php echo esc_html__('Upgrade to pro', 'chat-help') ?></a>
-				</div>
-
-			</div>
-		</div>
-<?php }
 
 	// Plugin settings in plugin list
 	public function chat_help_action_links(array $links)
@@ -142,9 +140,53 @@ class Admin
 		$new_links = array(
 			sprintf('<a href="%s">%s</a>', esc_url(admin_url('admin.php?page=chat-help')), esc_html__('Settings', 'chat-help')),
 			sprintf('<a target="_blank" href="%s">%s</a>', 'https://wordpress.org/support/plugin/chat-help/', esc_html__('Support', 'chat-help')),
-			sprintf('<a style="font-weight: bold;color:#118c7e" target="_blank" href="%s">%s</a>', CHAT_HELP_DEMO_URL . 'pricing/', esc_html__('Go Pro', 'chat-help')),
 		);
 
+		 $links[] = sprintf( '<a style="font-weight: bold;color:#35b747" target="_blank" href="https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=action_link&utm_campaign=new_year_regular">%s</a>', esc_html__( 'Go Pro!', 'chat-help' ));
+
 		return array_merge($new_links, $links);
+	}
+
+    /**
+	 * Add plugin row meta link.
+	 *
+	 * @since 2.0
+	 *
+	 * @param array  $plugin_meta .
+	 * @param string $file .
+	 *
+	 * @return array
+	 */
+	public function after_chat_help_row_meta( $plugin_meta, $file ) {
+
+		if ( CHAT_HELP_BASENAME === $file ) {
+			$plugin_meta[] = '<a href="'.CHAT_HELP_DEMO_URL.'" target="_blank">' . __( 'Live Demo', 'chat-help' ) . '</a>';
+		}
+
+		return $plugin_meta;
+	}
+
+	/**
+	 * Review Text.
+	 *
+	 * @param string $text text.
+	 *
+	 * @return string
+	 */
+	public function admin_footer( $text ) {
+
+		$screen = get_current_screen();
+		if ( 'toplevel_page_chat-help' === $screen->id || 'whatsapp-chat_page_leads' === $screen->id ) {
+			$text = sprintf(
+				/* translators: 1: start strong tag, 2: close strong tag. 3: start link 4: close link */
+				__( '<i>Enjoying %1$sWhatsApp ChatHelp?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊</i>', 'chat-help' ),
+				'<strong>',
+				'</strong>',
+				'<span class="greet-footer-text-star">★★★★★</span> <a href="https://wordpress.org/support/plugin/chat-help/reviews/#new-post" target="_blank">',
+				'</a>'
+			);
+		}
+
+		return $text;
 	}
 }

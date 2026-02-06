@@ -57,4 +57,26 @@
 		e.preventDefault();
 	});
 
+
+	document.addEventListener("DOMContentLoaded", function () {
+        const playListItems = document.querySelectorAll(".play_list_item");
+        const iframe = document.querySelector(".video iframe");
+
+        playListItems.forEach(item => {
+            item.addEventListener("click", function () {
+                // Get the video ID from data attribute
+                const videoId = this.getAttribute("data-video_id");
+
+                // Update iframe source
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+
+                // Remove 'active' class from all items
+                playListItems.forEach(el => el.classList.remove("active"));
+
+                // Add 'active' class to clicked item
+                this.classList.add("active");
+            });
+        });
+    });
+
 })(jQuery);

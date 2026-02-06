@@ -629,7 +629,7 @@ class Options {
 		Chat_Help::createOptions(
 			$prefix,
 			array(
-				'menu_title'              => esc_html__( 'WhatsApp Chat Help', 'chat-help' ),
+				'menu_title'              => esc_html__( 'ChatHelp', 'chat-help' ),
 				'menu_slug'               => 'chat-help',
 				'menu_type'               => 'submenu',
 				'show_search'             => false,
@@ -638,7 +638,7 @@ class Options {
 				'show_reset_all'          => false,
 				'show_footer'			  => false,
 				'show_all_options'		  => false,
-				'framework_title'         => esc_html__( 'WhatsApp Chat Help', 'chat-help' ),
+				'framework_title'         => esc_html__( 'ChatHelp', 'chat-help' ),
 				'admin_bar_menu_priority' => 5,
 				'footer_text'             => esc_html__( 'Thank you for using our product', 'chat-help' ),
 				'theme'                   => 'light',
@@ -652,7 +652,7 @@ class Options {
 		WooCommerceButton::options($prefix);
 		Shortcode::options( $prefix );
 		Advanced::options( $prefix );
-		License::options( $prefix );
+		// License::options( $prefix );
 		GetHelp::options( $prefix );
 	}
 }

@@ -1,14 +1,14 @@
-=== Chat Help – Click to Chat Button & Form ===
-Contributors: ThemeAtelier
+=== ChatHelp – Click to Chat Button, Chat to Order, Floating Chat & Form ===
+Contributors: ThemeAtelier, faysal61, shshakib2001, tamimaziz
 Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce whatsapp
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 3.1.0
+Stable tag: 3.1.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WhatsApp Chat🔥 Unlimited customer support tool that allows visitors to engage using "WhatsApp" or "WhatsApp Business". WhatsApp button included.
+Add WhatsApp click to chat with floating chat button, chat to order for WooCommerce, and chat forms to convert visitors into customers.
 
 == Description ==
 
@@ -60,7 +60,7 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 
 ### 🌐 Compatibility & Performance
 - **Elementor & Page Builder Ready**: Works seamlessly with Elementor, Gutenberg, WPBakery, Divi, Beaver Builder, Oxygen, and more.
-- **Multisite & Theme Compatibility**: Flawless across multisite and major themes (Astra, Divi, Kadence, GeneratePress, Avada, Neve, Blocksy, OceanWP, etc.).
+- **Multisite & Theme Compatibility**: Tested across multisite and popular themes (Astra, Divi, Kadence, GeneratePress, Avada, Neve, Blocksy, OceanWP, etc.).
 - **Multilingual Ready**: Translation-ready `.pot` file; compatible with WPML, Polylang, TranslatePress, Weglot, and Loco Translate.
 - **Developer-Friendly**: Clean, modular code for easy extension/customization.
 - **SEO & Performance Optimized**: Lightweight, fast-loading, and coded with SEO best practices.
@@ -114,39 +114,102 @@ https://youtu.be/RNwVAoGQssI
 - **Visibility Control Options**: Fine-tune where and when your chat appears — by templates, pages, posts, products, categories, and tags.
 - **Webhooks Integration**: Connect with external systems and automation tools using custom webhooks.
 
+== Other Plugins from ThemeAtelier ==
+
 == OTHER AMAZING PRODUCTS FROM ThemeAtelier ==
 
-➡️ **[Darkify Dark Mode](https://wordpress.org/plugins/darkify/)** -  Lightweight, customizable WordPress dark mode plugin for a sleek, accessible, and eye-friendly experience on both frontend and admin dashboard.
-
-➡️ **[Eventful – Events Showcase For The Events Calendar](https://wordpress.org/plugins/eventful/)** -  Elevate your event management with this dynamic addon, enhancing ‘The Events Calendar’ with versatile layouts, advanced filtering, and user-friendly features for superior event showcasing.
+➡️ **[WhatsApp Chat Help](https://wordpress.org/plugins/chat-help/)** -  A flexible WhatsApp chat plugin that helps website visitors start instant conversations with you directly from your WordPress site.
 	
-➡️ **[Domain For Sale](https://wordpress.org/plugins/domain-for-sale/)** - Transform your unused domain names into cash with this easy-to-use plugin that provides a professional template, customizable options, and a contact form for effortless selling.
+➡️ **[Eventful – Events Showcase and Filter Bar for The Events Calendar](https://wordpress.org/plugins/eventful/)** -  An event display plugin for The Events Calendar that helps you showcase events in clean, modern, and fully responsive layouts without any coding.
 
-➡️ **[Greet – Video Bubble Warm Welcome Plugin](https://wordpress.org/plugins/greet-bubble/)** - A powerful and user-friendly video bubble plugin for WordPress that provides website owners with the opportunity to create a dynamic and engaging welcome experience for their visitors.
+➡️ **[Greet – Video Bubble Warm Welcome Plugin](https://wordpress.org/plugins/greet-bubble/)** - A video welcome bubble plugin that helps you greet visitors warmly and provide quick contact options to boost engagement.
 
-➡️ **[Eventful for Elementor – Events Showcase For The Events Calendar and Elementor](https://wordpress.org/plugins/eventful-for-elementor/)** -  Elevate your event management with this dynamic addon, enhancing ‘The Events Calendar’ with versatile layouts, advanced filtering, and user-friendly features for superior event showcasing.
+➡️ **[Domain For Sale](https://wordpress.org/plugins/domain-for-sale/)** - A domain listing and offer management plugin that helps you list domains, collect buyer offers, and manage secure sales with escrow payments directly from WordPress.
 
-== FREQUENTLY ASKED QUESTIONS ==
+➡️ **[Eventful for Elementor – Events Showcase For The Events Calendar and Elementor](https://wordpress.org/plugins/eventful-for-elementor/)** -  An Elementor addon for The Events Calendar that lets you design and display events using Elementor widgets with advanced, responsive layouts.
 
-= Where do I get Support? =
+➡️ **[Better Chat Support For Messenger](https://wordpress.org/plugins/better-chat-support/)** -  A Facebook Messenger chat plugin that allows visitors to contact you instantly through Messenger with customizable chat bubbles.
 
-You can contact us trough this channels
-<a href="https://wordpress.org/support/plugin/chat-help/">WordPress Plugin Directory</a> || <a href="https://themeatelier.net/contact/">Website</a> || <a href="https://www.facebook.com/ThemeAtelier/">Facebook Page</a> 
+== Frequently Asked Questions ==
 
-= Can I add more than one agent? =
-Yes. Multiple agents can be added in premium version.
+= Where can I find Chat Help documentation and user guides? =
+For help setting up and configuring Chat Help, please refer to [Getting Started](http://wpchathelp.com/docs/).
 
-= Is this plugin GDPR compatible? =
-Yes, The plugin don’t save any personal data and don’t use cookies. You also have option to show GDPR compliance notice with checkbox so user can agree.
+= Does this plugin support WhatsApp and WhatsApp Business? =
+Yes! Chat Help works with both personal WhatsApp and **WhatsApp Business** accounts. Just enter your phone number to start receiving messages.
 
-= Is it translation ready? =
-Yes. The plugin is totally translation ready. If it's not support in your language you need to edit it with any translation plugin.
+= Can I link to a WhatsApp Group instead of a personal chat? =
+Yes. Chat Help allows you to connect visitors directly to a **[WhatsApp Group](https://wpchathelp.com/docs/single-agent/)** using an invite link. This is useful for communities, support groups, or announcements.
+
+= Does the button use the official WhatsApp API? =
+Chat Help uses the official **wa.me (Click to Chat)** links provided by WhatsApp. No third-party or unofficial APIs are used.
+
+= Is it compatible with WooCommerce product pages? =
+Yes. You can enable a **[WhatsApp chat button on WooCommerce product pages](https://wpchathelp.com/docs/woocommerce-button/)**, allowing customers to ask questions about products directly. This feature can also be used as a **one-click WhatsApp order button**.
+
+= Can I add the WhatsApp button using shortcodes or page builders? =
+Yes. Chat Help supports **[shortcodes](https://wpchathelp.com/docs/shortcodes/)** and popular WordPress page builders such as **[Gutenberg](https://wpchathelp.com/docs/gutenberg-block-button/)** and **[Elementor](https://wpchathelp.com/docs/elementor-whatsapp-button/)**, allowing you to place the WhatsApp button anywhere on your site.
+
+= Can Chat Help save leads from form submissions? =
+Yes. When using the **[Single Form layout](https://wpchathelp.com/single-form/)**, you can optionally enable lead saving. Submitted form data will be stored in your WordPress dashboard under **WhatsApp Chat → Leads**.  
+Learn more about **[WhatsApp Leads Management](https://wpchathelp.com/docs/leads-management/)**.
+
+This feature is optional. Other layouts do not store any user data.
+
+= Can I disable lead saving? =
+Yes. Lead saving is optional and can be enabled or disabled from the **[Single Form layout](https://wpchathelp.com/single-form/)** settings.
+
+= Does Chat Help store chat messages? =
+No. All messages are handled directly by WhatsApp. The plugin does not log or store conversations.
+
+= Is this plugin GDPR compliant? =
+Yes. Chat Help does not use cookies and does not store data by default.  
+If lead saving is enabled in the **[Single Form layout](https://wpchathelp.com/single-form/)**, submitted form data is stored locally in your WordPress database and remains fully under your control.
+
+= Will Chat Help slow down my website? =
+No. Chat Help is lightweight and does not load external scripts unless required, ensuring fast page performance.
+
+= Does this plugin work if WhatsApp is not installed? =
+On desktop, WhatsApp Web will open in the browser. On mobile devices, the WhatsApp app must be installed.
+
+= Is the plugin translation ready? =
+Yes. The plugin is fully translation-ready and supports WordPress translation tools such as WPML, Polylang, or Loco Translate.
+
+= Can I add more than one WhatsApp agent? =
+Yes. Multiple agents are supported in the **[premium version](https://wpchathelp.com/pricing/)**, allowing you to route chats to different team members.
 
 == Installation ==
 
-1. Upload plugin directory to the `/wp-content/plugins/` directory.
-2. Activate the plugin.
-3. Access 'WhatsApp Chat' menu in left panel of your dashboard and configure as you need.
+= AUTOMATIC INSTALLATION (EASIEST WAY) =
+
+* Visit **Plugins > Add New**.
+* Search for **ChatHelp**.
+* Install and activate the ChatHelp plugin.
+
+= MANUAL INSTALLATION =
+
+**Uploading in WordPress Dashboard**
+
+* Download chat-help.zip
+* Navigate to the ‘Add New’ in the plugins dashboard
+* Navigate to the ‘Upload’ area
+* Select chat-help.zip from your computer
+* Click ‘Install Now’
+* Activate the plugin in the Plugin dashboard
+
+**Using FTP**
+
+* Download chat-help.zip
+* Extract the chat-help folder to your computer
+* Upload the chat-help folder to the /wp-content/plugins/ directory
+* Activate the plugin in the Plugin dashboard
+
+= After activation =
+* Go 'WhatsApp Chat' Menu from the left panel of admin
+* Configure settings as you want.
+
+[For basic usage, have a look at ChatHelp quick start guide](https://wpchathelp.com/docs/quick-start-guide/)
+
 
 == Screenshots ==
 1. Single Form
@@ -158,237 +221,289 @@ Yes. The plugin is totally translation ready. If it's not support in your langua
 7. Gutenberg Button Block
 
 == Changelog ==
+= 3.1.13 – 28 January 2026 =
+* Improved: General codebase improvements.
+
+= 3.1.12 – 24 January 2026 =
+* Update: Complete redesign of button styles across all components, including Floating Chat, WooCommerce buttons, Shortcodes, Gutenberg blocks, and Elementor widgets.
+* New: Added several new customization fields for each button to support advanced styling and control.
+* Improved: General codebase optimizations and internal improvements.
+
+= 3.1.11 - 19 January 2026 =
+* Updated: Plugin readme (FAQs and Installation sections).
+* Improved: General codebase improvements.
+
+= 3.1.10 - January 10, 2026 =
+* Fixed: Auto-open popup timeout not triggering correctly.
+* Fixed: Minor CSS styling issues.
+* Added: Button size customization options.
+
+= 3.1.9 - January 05, 2026 =
+* Fixed: Time-based availability issue.
+* Security: Added direct file access protection to all PHP files.
+* Improved: Enhanced overall security and compliance with WordPress.org Plugin Check requirements.
+
+= 3.1.8 - December 30, 2025 =
+* Added: WooCommerce hook options (woocommerce_short_description_after, woocommerce_after_main_content, woocommerce_product_meta_start, woocommerce_product_meta_end, woocommerce_before_single_product_summary, woocommerce_after_single_product_summary) to display WooCommerce buttons.
+
+= 3.1.7 - December 21, 2025 =
+* Fixed: Minor coding issues.
+
+= 3.1.6 - December 15, 2025 =
+* Tested: WordPress 6.9 compatibility.
+* Fixed: RTL CSS issues.
+
+= 3.1.5 - November 28, 2025 =
+* Added: chathelp_whatsapp_number filter to override the global WhatsApp number using post meta (e.g., directory or product phone numbers).
+* Added: Context-aware data (post_id, type, message) when generating WhatsApp URLs.
+* Added: chathelp_whatsapp_url filter to modify the final WhatsApp link.
+* Improved: WhatsApp URL generation for better extensibility without breaking existing behavior.
+* Improved: Device detection and URL formatting for consistent behavior across devices.
+* Improved: Codebase optimizations for performance and stability.
+
+= 3.1.4 - November 12, 2025 =
+* Security: Fixed a critical broken access control vulnerability in the REST API.
+* Security: Ensured all data is sanitized, validated, and escaped.
+
+= 3.1.3 - November 06, 2025 =
+* Added: Button styles for WooCommerce product pages.
+* Updated: Additional button position options for product pages.
+* Updated: Code improvements and compliance with WordPress Plugin Review Guidelines.
+* Fixed: Missing composer.json file when using Composer.
+* Security: Escaped all variables and options before output.
+
+= 3.1.2 - November 03, 2025 =
+* Added: Footer copyright notice in template files.
+
+= 3.1.1 - October 25, 2025 =
+* Tested: WordPress 6.8.3 compatibility.
+* Updated: Codebase improvements.
+
 = 3.1.0 - September 15, 2025 =
-Added: Leads Management – view, filter, and manage leads directly from the dashboard.
-Fixed: Elementor loading issue.
-Fixed: Minor CSS issues.
+* Added: Leads management (view, filter, and manage leads from the dashboard).
+* Fixed: Elementor loading issue.
+* Fixed: Minor CSS issues.
 
 = 3.0.0 - August 30, 2025 =
-Update: WhatsApp button block settings for better customization.
-Added: Google Analytics for enhanced tracking and insights.
-Added: Typography options for floating buttons and bubble.
-Update: Full admin panel enhanced for better user experience.
-Added: Added Demo/Docs link within each field for to understand each field.
+* Updated: WhatsApp button block settings for better customization.
+* Added: Google Analytics integration for enhanced tracking.
+* Added: Typography options for floating buttons and chat bubble.
+* Updated: Admin panel for improved user experience.
+* Added: Demo and documentation links within field descriptions.
 
 = 2.2.14 - July 28, 2025 =
-Fixed: Issue where the second tab was hidden when the Single Form layout was not selected.
-Fixed: Button hover background not updating when GDPR mode is enabled.
-Added: Default animation class applied when switching from Pro to Free version.
+* Fixed: Second tab hidden when the Single Form layout was not selected.
+* Fixed: Button hover background not updating when GDPR mode is enabled.
+* Added: Default animation class applied when switching from Pro to Free.
 
 = 2.2.13 - July 26, 2025 =
-* New: Smart Prefilled Message support with variables and conditional logic — works across all layouts (WooCommerce, Shortcodes, Buttons, Blocks).
-* New: Conditional Smart Variables now supported in "Message Agents" field for Single Agent layout.
-* New: Added `[chat_help]` shortcode to place buttons anywhere.
-* Update: Codebase cleanup for better performance and readability.
-* Update: WooCommerce button now remains hidden unless WhatsApp number or group link is configured.
+* Added: Smart prefilled message support with variables and conditional logic.
+* Added: Conditional smart variables in the Message Agents field.
+* Added: [chat_help] shortcode to place buttons anywhere.
+* Updated: Codebase cleanup for performance and readability.
+* Updated: WooCommerce button visibility logic.
 
 = 2.2.12 - July 09, 2025 =
-New: Live test option for WhatsApp number and group url.
-New: Condition for predefined text for WooCommerce buttons.
-New: Advanced condition for showing floating chat only if number or group link added.
-Fixed: Group option not working issue.
+* Added: Live test option for WhatsApp number and group URL.
+* Added: Predefined text conditions for WooCommerce buttons.
+* Fixed: WhatsApp group option not working.
 
 = 2.2.11 - July 02, 2025 =
-Fixed: PHP warning that occurred during plugin activation.
+* Fixed: PHP warning during plugin activation.
 
 = 2.2.10 - July 01, 2025 =
-New: Added predefined text option for WooCommerce buttons.
-Fixed: Resolved agent photo URL warning.
-Updated: Refreshed admin UI for improved usability.
-Update: Bubble markup for avoiding conflict issue in different themes.
-Update: Gutenberg button block.
+* Added: Predefined text option for WooCommerce buttons.
+* Fixed: Agent photo URL warning.
+* Updated: Admin UI for improved usability.
+* Updated: Bubble markup to prevent theme conflicts.
+* Updated: Gutenberg button block.
 
 = 2.2.9 - May 24, 2025 =
-Added: Agent photo type field.
+* Added: Agent photo type field.
 
 = 2.2.8 - May 17, 2025 =
-* Fixed: URL protocol.
+* Fixed: URL protocol handling.
 
 = 2.2.7 - May 10, 2025 =
-* Fixed: Timezone issues.
+* Fixed: Timezone-related issues.
 
 = 2.2.6 - April 22, 2025 =
-* Fixed: The translation-related warning was found with WP 6.8.
+* Fixed: Translation-related warnings in WordPress 6.8.
 
 = 2.2.5 - April 18, 2025 =
-* Added: Plugin logo on admin panel.
-* Updated: Save & Reset button's UI color to match with plugin.
+* Added: Plugin logo in the admin panel.
+* Updated: Save and Reset button UI colors.
 
 = 2.2.4 - April 08, 2025 =
 * Tested: WordPress 6.8 compatibility.
-* Update: Plugin help page content.
-* Updated: Plugin readme content.
+* Updated: Plugin help page content.
+* Updated: Readme file content.
 
 = 2.2.3 - March 24, 2025 =
-* Added: WhatsApp group option.
-* Added: Redirection option for WhatsApp URL.
+* Added: WhatsApp group support.
+* Added: Redirection option for WhatsApp URLs.
 
 = 2.2.2 - March 20, 2025 =
-* Updated: Plugin admin user experience.
-* Updated some CSS codebase.
+* Updated: Admin user experience.
+* Updated: CSS improvements.
 
-= 2.2.1 - Mar 01, 2024 =
-* Update: New overview video
+= 2.2.1 - March 01, 2024 =
+* Updated: New overview video.
 
-= 2.2.0 - Feb 22, 2024 =
-* Flexibility: Now supports unlimited fields for ultimate customization!
-* Update: Admin options for a more intuitive experience.
+= 2.2.0 - February 22, 2024 =
+* Added: Support for unlimited form fields.
+* Updated: Admin options for improved usability.
 * Tested: WordPress 6.7.2 compatibility.
 
-= 2.1.3 - Feb 05, 2024 =
-* Added: No icon option for send message button.
-* Added: Gutenberg block padding option for simple button.
+= 2.1.3 - February 05, 2024 =
+* Added: No-icon option for send message button.
+* Added: Gutenberg block padding option.
 
-= 2.1.2 - Jan 29, 2024 =
-* Added: Option for turn off floating chat.
-* Fixed: match expression converted to switch for Compatibility.
+= 2.1.2 - January 29, 2024 =
+* Added: Option to disable floating chat.
+* Fixed: match expression converted to switch for compatibility.
 
-= 2.1.1 - Jan 29, 2024 =
-* Added: Gutenberg block padding option for buttons.
-* Update: Updated visibility option with advanced fetures.
-* Update: Icon fields options updated with easy inline pick.
+= 2.1.1 - January 29, 2024 =
+* Added: Gutenberg block padding options.
+* Updated: Visibility options with advanced features.
+* Updated: Icon picker improvements.
 
-= 2.1.0 - Jan 17, 2024 =
-* Added: Single agent floating layout.
+= 2.1.0 - January 17, 2024 =
+* Added: Single-agent floating layout.
 * Added: Simple button floating layout.
-* Updated: Fully re-designed admin panel.
-* Updated: Options title and descriptions.
+* Updated: Fully redesigned admin panel.
+* Updated: Option titles and descriptions.
 
-= 2.0.14 - Nov 16, 2024 =
-* Added: currentURL variable for message template.
-* Added: WooCommerce button for single page.
-* Fixed: Reset functionalities
-* Updated: Default values for different variables.
+= 2.0.14 - November 16, 2024 =
+* Added: currentURL variable for message templates.
+* Added: WooCommerce button for single product pages.
+* Fixed: Reset functionality.
+* Updated: Default variable values.
 
-= 2.0.13 - Nov 05, 2024 =
-* Fixed: Some CSS issue.
+= 2.0.13 - November 05, 2024 =
+* Fixed: Minor CSS issues.
 
-= 2.0.12 - Oct 26, 2024 =
-* Added: Bubble button padding Option.
-* Improved: Some PHP Codebase.
+= 2.0.12 - October 26, 2024 =
+* Added: Bubble button padding option.
+* Improved: PHP codebase.
 
-= 2.0.11 - Oct 21, 2024 =
-* Fixed: Some warnings from PHPCS.
-* Update: Make required form input fields.
-* Improved: Some CSS Codebase.
+= 2.0.11 - October 21, 2024 =
+* Fixed: PHPCS warnings.
+* Updated: Required form input fields.
+* Improved: CSS codebase.
 
-= 2.0.10 - Oct 11, 2024 =
-* Update: Some code structures
+= 2.0.10 - October 11, 2024 =
+* Updated: Code structure improvements.
 
-= 2.0.9 - Oct 04, 2024 =
-* Fixed: Some PHP errors, warning, notices
-* Fixed: Latest PHP 8.1.12 compatible
-* Checked: WordPress 6.6.2 compatiblity
+= 2.0.9 - October 04, 2024 =
+* Fixed: PHP errors, warnings, and notices.
+* Tested: PHP 8.1.12 compatibility.
+* Tested: WordPress 6.6.2 compatibility.
 
-= 2.0.8 - Sep 28, 2024 =
-* Fixed: Tooltip help text strong tag escaping.
+= 2.0.8 - September 28, 2024 =
+* Fixed: Tooltip text escaping.
 * Fixed: Default tooltip width.
 
-= 2.0.7 - Sep 27, 2024 =
-* NEW: Position bubble button from screen with specific dimension.
-* NEW: Added positioning option for floating chatbox.
-* NEW: Added all icon sets from icofont library.
-* NEW: Renamed option tabs names.
-* NEW: Order admin options for better access.
-* NEW: Added button tooltip.
-* Update: Code compatibility.
-* TESTED: WordPress 6.6.2 compatibility.
+= 2.0.7 - September 27, 2024 =
+* Added: Bubble button positioning with custom dimensions.
+* Added: Floating chatbox positioning options.
+* Added: Icon sets from the Icofont library.
+* Updated: Admin option organization.
+* Added: Button tooltips.
+* Tested: WordPress 6.6.2 compatibility.
 
-= 2.0.6 - Sep 05, 2024 =
-* Fix: Shortcode buttons. 
+= 2.0.6 - September 05, 2024 =
+* Fixed: Shortcode button issues.
 
-= 2.0.5 - Sep 05, 2024 =
-* Added: Added advanced tab and moved advanced settings there.
-* Updated: Existing options order for better user experience.
+= 2.0.5 - September 05, 2024 =
+* Added: Advanced settings tab.
+* Updated: Admin option order.
 * Fixed: Button CSS issues.
-* Update: Admin menu position.
+* Updated: Admin menu position.
 
-= 2.0.4 - Sep 05, 2024 =
-* Added: All available pages for include and exclude pages option
+= 2.0.4 - September 05, 2024 =
+* Added: Include/exclude page options.
 
-= 2.0.3  – Sep 03, 2024 =
-* Added: New option for enable/disable button icon on the bubble
-* Added: New option to set paddings for bubble button
+= 2.0.3 - September 03, 2024 =
+* Added: Enable/disable bubble icon option.
+* Added: Bubble button padding settings.
 
-= 2.0.2  – Aug 20, 2024 =
-* Fix: Icons for admin dashboard
-* Added: Exclude/include option for chat bubble on specific pages
+= 2.0.2 - August 20, 2024 =
+* Fixed: Admin dashboard icon issues.
+* Added: Page-specific include/exclude options.
 
-= 2.0.1  – Aug 10, 2024 =
-* Added: Missing icons
-* Fix: Animation CSS for buttons
+= 2.0.1 - August 10, 2024 =
+* Added: Missing icons.
+* Fixed: Button animation CSS.
 
-= 2.0.0  – Aug 08, 2024 =
-* Fix: Update code structure
-* Update: Code compatibility with latest WordPress version
-* Update: Code compatibility with latest PHP version
-* Added: New text field
+= 2.0.0 - August 08, 2024 =
+* Updated: Code structure and compatibility.
+* Added: New text field.
 
 = 1.6.4 =
-* Added placeholder text on original whatsapp message.
+* Added: Placeholder text for WhatsApp messages.
 
 = 1.6.3 =
-* Added options to change Name and Message field placeholder text.
+* Added: Options to customize Name and Message placeholders.
 
 = 1.6.2 =
-* Fixed paragraph font issue for some themes
-* Added plugin compatibility with latest WordPress
+* Fixed: Paragraph font issues in some themes.
+* Added: Compatibility with latest WordPress version.
 
 = 1.6.1 =
-* Fixed font issue for some themes
+* Fixed: Font issues in some themes.
 
 = 1.6.0 =
-* Fixed all errors comes on plugin checker
+* Fixed: All issues reported by Plugin Checker.
 
 = 1.3.9 =
-* Compatibility for WordPress 6.4.3
-* Added help page in admin panel to showcase help video.
+* Added: Compatibility with WordPress 6.4.3.
+* Added: Admin help page with video.
 
 = 1.3.8 =
-* Compatibility for WordPress 6.4.2
-* Added options for custom CSS and JS
-* Improve admin UI for better experience
+* Added: Custom CSS and JS options.
+* Improved: Admin UI.
+* Added: WordPress 6.4.2 compatibility.
 
-= 1.3.7 - Dec 08, 2023 =
-* Improve coding structures
+= 1.3.7 - December 08, 2023 =
+* Improved: Code structure.
 
-= 1.3.6 - Dec 03, 2023 =
-* Update plugin codebase
-* Compatibility for WordPress 6.4.1
+= 1.3.6 - December 03, 2023 =
+* Updated: Plugin codebase.
+* Added: WordPress 6.4.1 compatibility.
 
-= 1.3.5 - Oct 19, 2023 =
-* Added missing strings for translation
-* Updated security
-* Added Compatibility for WordPress 6.3.2
-* Updated deprecated hooks for gutenberg block category
+= 1.3.5 - October 19, 2023 =
+* Added: Missing translation strings.
+* Updated: Security improvements.
+* Updated: Deprecated Gutenberg hooks.
+* Added: WordPress 6.3.2 compatibility.
 
-= 1.3.4 - Jun 09, 2023 =
-* Change plugin display name
-* Change banner text
+= 1.3.4 - June 09, 2023 =
+* Updated: Plugin display name and banner text.
 
-= 1.3.3 - Jun 09, 2023 =
-* WordPress 6.3 compatibility
-* Fixed some CSS to avoid some themes conflict
+= 1.3.3 - June 09, 2023 =
+* Added: WordPress 6.3 compatibility.
+* Fixed: Theme-related CSS conflicts.
 
-= 1.3.1 - Jun 14, 2023 =
-* Auto open popup option
-* Visibility option for bubble
+= 1.3.1 - June 14, 2023 =
+* Added: Auto-open popup option.
+* Added: Bubble visibility controls.
 
-= 1.3.0 - Apr 12, 2023 =
-* Added new block buttons for basic and advanced
-* Added category option for block
-* Added pro version link in plugin setting
+= 1.3.0 - April 12, 2023 =
+* Added: Block buttons (basic and advanced).
+* Added: Block categories.
+* Added: Pro version link in settings.
 
-= 1.2.0 - Mar 09, 2023 =
-* Added - GDPR compliance checkbox 
+= 1.2.0 - March 09, 2023 =
+* Added: GDPR compliance checkbox.
 
-= 1.1.0 - Jan 21, 2022 =
-* Improve - Code Compatibility
-* Added - different bubble button animations
-* Added - Gutenberg block for buttons
+= 1.1.0 - January 21, 2022 =
+* Improved: Code compatibility.
+* Added: Bubble animations.
+* Added: Gutenberg button block.
 
 = 1.0 =
-* Initial release
+* Initial release.
 
 == Upgrade Notice ==
-It’s recommended to have a backup of your website before hitting the update button.
+Update to the latest version for new features, improvements, and bug fixes.

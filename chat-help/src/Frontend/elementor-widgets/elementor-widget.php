@@ -1,6 +1,6 @@
 <?php
 
-use ThemeAtelier\ChatHelp\Helpers\Helpers;
+use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 // Exit if accessed directly.
 if (! defined('ABSPATH')) {
     exit;
@@ -56,6 +56,11 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         return 'eicon-headphones';
     }
 
+    public function get_style_depends(): array
+    {
+        return ['font-awesome'];
+    }
+
     /**
      * Get widget categories.
      *
@@ -84,7 +89,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         $this->add_control(
             'type_of_whatsapp',
             array(
-                'label'       => esc_html__('Type of Whatsapp', 'chat-help'),
+                'label'       => esc_html__('WhatsApp Type', 'chat-help'),
                 'type'        => \Elementor\Controls_Manager::SELECT,
                 'label_block' => false,
                 'default'     => 'number',
@@ -156,7 +161,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 'type'        => \Elementor\Controls_Manager::MEDIA,
                 'label_block' => true,
                 'default'     => array(
-                    'url' => CHAT_HELP_DIR_URL . 'src/assets/image/user.webp',
+                    'url' => CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/user.webp',
                 ),
                 'condition'   => array(
                     'style' => '1',
@@ -165,13 +170,13 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         );
 
         $this->add_control(
-            'agent__name',
+            'button_top_label',
             array(
-                'label'       => esc_html__('Agent name', 'chat-help'),
+                'label'       => esc_html__('Button Top Label', 'chat-help'),
                 'description' => esc_html__('Write agent name to show in button.', 'chat-help'),
                 'type'        => \Elementor\Controls_Manager::TEXT,
                 'label_block' => false,
-                'default'     => esc_html__('Robert', 'chat-help'),
+                'default'     => esc_html__('John / Sales Support', 'chat-help'),
                 'condition'   => array(
                     'style' => '1',
                 ),
@@ -179,23 +184,9 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         );
 
         $this->add_control(
-            'agent__designation',
+            'button_main_label',
             array(
-                'label'       => esc_html__('Agent designation', 'chat-help'),
-                'description' => esc_html__('Write agent designation to show in button.', 'chat-help'),
-                'type'        => \Elementor\Controls_Manager::TEXT,
-                'label_block' => false,
-                'default'     => esc_html__('Sales Support', 'chat-help'),
-                'condition'   => array(
-                    'style' => '1',
-                ),
-            )
-        );
-
-        $this->add_control(
-            'custom__button__label',
-            array(
-                'label'       => esc_html__('Button label', 'chat-help'),
+                'label'       => esc_html__('Button Main label', 'chat-help'),
                 'description' => esc_html__('Add custom button label.', 'chat-help'),
                 'type'        => \Elementor\Controls_Manager::TEXT,
                 'label_block' => true,
@@ -238,7 +229,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 'label_on'     => esc_html__('Yes', 'chat-help'),
                 'label_off'    => esc_html__('No', 'chat-help'),
                 'return_value' => 'yes',
-				'default' => 'yes',
+                'default' => 'yes',
             )
         );
 
@@ -1147,13 +1138,12 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 'label'       => esc_html__('Visibility on', 'chat-help'),
                 'type'        => \Elementor\Controls_Manager::SELECT2,
                 'label_block' => false,
-                'default'     => 'wHelp-show-everywhere',
+                'default'     => '',
                 'options'     => array(
-                    'wHelp-show-everywhere'    => esc_html__('Everywhere', 'chat-help'),
-                    'wHelp-desktop-only'       => esc_html__('Desktops only', 'chat-help'),
-                    'wHelp-tablet-only'        => esc_html__('Tablets only', 'chat-help'),
-                    'wHelp-mobile-tablet-only' => esc_html__('Mobile and tablets', 'chat-help'),
-                    'wHelp-mobile-only'        => esc_html__('Mobile only', 'chat-help'),
+                    ''    => esc_html__('Everywhere', 'chat-help'),
+                    'desktop'       => esc_html__('Desktops only', 'chat-help'),
+                    'tablet'        => esc_html__('Tablets only', 'chat-help'),
+                    'mobile'        => esc_html__('Mobile only', 'chat-help'),
                 ),
 
             )
@@ -1165,11 +1155,11 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 'label'       => esc_html__('Size', 'chat-help'),
                 'type'        => \Elementor\Controls_Manager::SELECT,
                 'label_block' => false,
-                'default'     => 'wHelp-btn-md',
+                'default'     => 'medium',
                 'options'     => array(
-                    'wHelp-btn-sm' => esc_html__('Small', 'chat-help'),
-                    'wHelp-btn-md' => esc_html__('Medium', 'chat-help'),
-                    'wHelp-btn-lg' => esc_html__('Large', 'chat-help'),
+                    'small' => esc_html__('Small', 'chat-help'),
+                    'medium' => esc_html__('Medium', 'chat-help'),
+                    'large' => esc_html__('Large', 'chat-help'),
                 ),
             )
         );
@@ -1177,11 +1167,11 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         $this->add_control(
             'bg__color',
             array(
-                'label'     => esc_html__('Backgound color', 'chat-help'),
+                'label'     => esc_html__('Background color', 'chat-help'),
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'default'   => '#118c7e',
                 'selectors' => array(
-                    '{{WRAPPER}} [class*="wHelp-button-"].wHelp-btn-bg' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn' => 'background-color: {{VALUE}}',
                 ),
             )
         );
@@ -1193,7 +1183,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'default'   => '#0b5a51',
                 'selectors' => array(
-                    '{{WRAPPER}} [class*="wHelp-button-"].wHelp-btn-bg:hover' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn:hover' => 'background-color: {{VALUE}}',
                 ),
             )
         );
@@ -1205,7 +1195,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'default'   => '#ffffff',
                 'selectors' => array(
-                    '{{WRAPPER}} [class*="wHelp-button-"].wHelp-btn-bg' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn' => 'color: {{VALUE}}',
                 ),
             )
         );
@@ -1217,7 +1207,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'default'   => '#ffffff',
                 'selectors' => array(
-                    '{{WRAPPER}} [class*="wHelp-button-"].wHelp-btn-bg:hover' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn:hover' => 'color: {{VALUE}}',
                 ),
             )
         );
@@ -1229,17 +1219,42 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => array('px', '%', 'em'),
                 'selectors'  => array(
-                    '{{WRAPPER}} .wHelpButtons, {{WRAPPER}} .wHelp-button-2' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ),
                 'default' => array(
-                    'top'      => '7',
-                    'right'    => '12',
-                    'bottom'   => '7',
-                    'left'     => '12',
+                    'top'      => '5',
+                    'right'    => '15',
+                    'bottom'   => '5',
+                    'left'     => '6',
                     'unit'     => 'px',
                     'isLinked' => true,
                 ),
             )
+        );
+        $this->add_responsive_control(
+            'border-radius',
+            array(
+                'label'      => esc_html__('Border Radius', 'chat-help'),
+                'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => array('px', '%', 'em'),
+                'selectors'  => array(
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ),
+                'default' => array(
+                    'top'      => '50',
+                    'right'    => '50',
+                    'bottom'   => '50',
+                    'left'     => '50',
+                    'unit'     => 'px',
+                    'isLinked' => true,
+                ),
+            )
+        );
+
+        $this->start_controls_tabs('border_tabs');
+        $this->start_controls_tab(
+            'button_border_normal',
+            ['label' => __('Normal', 'chat-help')]
         );
 
         $this->add_group_control(
@@ -1247,7 +1262,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
             array(
                 'name'           => 'border',
                 'label'          => esc_html__('Border', 'chat-help'),
-                'selector'       => '{{WRAPPER}} .wHelpButtons, {{WRAPPER}} .wHelp-button-2',
+                'selector'       => '{{WRAPPER}} .wHelp_button.wHelp_woo_btn',
                 'fields_options' => array(
                     'border' => array(
                         'label'   => esc_html__('Border', 'chat-help'),
@@ -1255,10 +1270,10 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                     ),
                     'width'  => array(
                         'default' => array(
-                            'top'      => '1',
-                            'right'    => '1',
-                            'bottom'   => '1',
-                            'left'     => '1',
+                            'top'      => '0',
+                            'right'    => '0',
+                            'bottom'   => '0',
+                            'left'     => '0',
                             'isLinked' => false,
                         ),
                     ),
@@ -1269,13 +1284,19 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
             )
         );
 
+        $this->end_controls_tab();
+        $this->start_controls_tab(
+            'button_border_hover',
+            ['label' => __('Hover', 'chat-help')]
+        );
+
         $this->add_group_control(
             \Elementor\Group_Control_Border::get_type(),
             array(
                 'name'           => 'border__hover',
                 'label'          => esc_html__('Hover border', 'chat-help'),
                 'default'        => '#0b5a51',
-                'selector'       => '{{WRAPPER}} .wHelpButtons:hover, {{WRAPPER}} .wHelp-button-2:hover',
+                'selector'       => '{{WRAPPER}} .wHelp_button.wHelp_woo_btn:hover',
                 'fields_options' => array(
                     'border' => array(
                         'label'   => esc_html__('Hover border', 'chat-help'),
@@ -1283,10 +1304,10 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                     ),
                     'width'  => array(
                         'default' => array(
-                            'top'      => '1',
-                            'right'    => '1',
-                            'bottom'   => '1',
-                            'left'     => '1',
+                            'top'      => '0',
+                            'right'    => '0',
+                            'bottom'   => '0',
+                            'left'     => '0',
                             'isLinked' => false,
                         ),
                     ),
@@ -1296,117 +1317,213 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 ),
             )
         );
+        $this->end_controls_tab();
+        $this->end_controls_tabs();
 
-        $this->add_control(
-            'button__icon',
+        $this->add_responsive_control(
+            'icon-border-radius',
             array(
-                'label'       => esc_html__('Change icon', 'chat-help'),
-                'type'        => \Elementor\Controls_Manager::ICONS,
-                'default'     => array(
-                    'value' => 'far fa-envelope-open',
+                'label'      => esc_html__('Icon Border Radius', 'chat-help'),
+                'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => array('px', '%', 'em'),
+                'selectors'  => array(
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn img, {{WRAPPER}} .wHelp_button.wHelp_woo_btn .bubble__icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ),
-                'condition'   => array(
-                    'style' => '2',
-                ),
-                'recommended' => array(
-                    'fa-solid'   => array(
-                        'envelope',
-                        'envelope-open',
-                        'facebook-messenger',
-                    ),
-                    'fa-regular' => array(
-                        'envelope',
-                        'envelope-open',
-                    ),
-
+                'default' => array(
+                    'top'      => '50',
+                    'right'    => '50',
+                    'bottom'   => '50',
+                    'left'     => '50',
+                    'unit'     => 'px',
+                    'isLinked' => true,
                 ),
             )
+        );
+        $this->start_controls_tabs('icon_border_tabs');
+        $this->start_controls_tab(
+            'icon_border_normal',
+            ['label' => __('Normal', 'chat-help')]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            array(
+                'name'           => 'icon_border',
+                'label'          => esc_html__('Icon Border', 'chat-help'),
+                'selector'       => '{{WRAPPER}} .wHelp_button.wHelp_woo_btn img, {{WRAPPER}} .wHelp_button.wHelp_woo_btn .bubble__icon',
+                'fields_options' => array(
+                    'border' => array(
+                        'label'   => esc_html__('Icon Border', 'chat-help'),
+                        'default' => 'solid',
+                    ),
+                    'width'  => array(
+                        'default' => array(
+                            'top'      => '0',
+                            'right'    => '0',
+                            'bottom'   => '0',
+                            'left'     => '0',
+                            'isLinked' => false,
+                        ),
+                    ),
+                    'color'  => array(
+                        'default' => '#ffffff',
+                    ),
+                ),
+            )
+        );
+
+        $this->end_controls_tab();
+
+        /* HOVER */
+        $this->start_controls_tab(
+            'icon_border_hover',
+            ['label' => __('Hover', 'chat-help')]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            array(
+                'name'           => 'icon_border__hover',
+                'label'          => esc_html__('Icon Hover border', 'chat-help'),
+                'selector'       => '{{WRAPPER}} .wHelp_button.wHelp_woo_btn:hover img, {{WRAPPER}} .wHelp_button.wHelp_woo_btn:hover .bubble__icon',
+                'fields_options' => array(
+                    'border' => array(
+                        'label'   => esc_html__('Hover border', 'chat-help'),
+                        'default' => 'solid',
+                    ),
+                    'width'  => array(
+                        'default' => array(
+                            'top'      => '0',
+                            'right'    => '0',
+                            'bottom'   => '0',
+                            'left'     => '0',
+                            'isLinked' => false,
+                        ),
+                    ),
+                    'color'  => array(
+                        'default' => '#ffffff',
+                    ),
+                ),
+            )
+        );
+
+        $this->end_controls_tab();
+        $this->end_controls_tabs();
+
+        $this->add_control(
+            'show__button__icon',
+            array(
+                'label'        => esc_html__('Button Icon', 'chat-help'),
+                'type'         => \Elementor\Controls_Manager::SWITCHER,
+                'label_on'     => esc_html__('Yes', 'chat-help'),
+                'label_off'    => esc_html__('No', 'chat-help'),
+                'condition'    => array(
+                    'style' => '2',
+                ),
+                'default'     => 'yes',
+            )
+        );
+        $this->add_control(
+            'button__icon',
+            [
+                'label' => esc_html__('Change icon', 'chat-help'),
+                'type'  => \Elementor\Controls_Manager::ICONS,
+                'default' => [
+                    'value'   => 'fab fa-whatsapp',
+                    'library' => 'fa-brands',
+                ],
+                'condition' => [
+                    'show__button__icon' => 'yes',
+                    'style' => '2',
+                ],
+                'recommended' => [
+                    'fa-brands' => [
+                        'whatsapp',
+                        'whatsapp-square',
+                    ],
+                ],
+            ]
         );
 
         $this->add_control(
             'icon__color',
             array(
-                'label'     => esc_html__('Icon color', 'chat-help'),
+                'label'     => esc_html__('Icon Color', 'chat-help'),
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'default'   => '#ffffff',
-                'selectors' => array(
-                    '{{WRAPPER}} [class*="wHelp-button-"].wHelp-btn-bg i' => 'color: {{VALUE}}',
-                ),
-                'condition' => array(
+                'condition' => [
+                    'show__button__icon' => 'yes',
                     'style' => '2',
+                ],
+                'selectors' => array(
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn .bubble__icon svg' => 'fill: {{VALUE}}',
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn .bubble__icon i' => 'color: {{VALUE}}',
                 ),
             )
         );
 
         $this->add_control(
-            'icon__color__hover',
+            'icon__color_hover',
             array(
-                'label'     => esc_html__('Icon hover color', 'chat-help'),
+                'label'     => esc_html__('Hover Icon Color', 'chat-help'),
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'default'   => '#ffffff',
-                'selectors' => array(
-                    '{{WRAPPER}} [class*="wHelp-button-"].wHelp-btn-bg:hover i' => 'color: {{VALUE}}',
-                ),
-                'condition' => array(
+                'condition' => [
+                    'show__button__icon' => 'yes',
                     'style' => '2',
+                ],
+                'selectors' => array(
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn:hover .bubble__icon svg' => 'fill: {{VALUE}}',
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn:hover .bubble__icon i' => 'color: {{VALUE}}',
                 ),
             )
         );
+
 
         $this->add_control(
             'show__icon__bg__color',
             array(
-                'label'        => esc_html__('Want bg in icon?', 'chat-help'),
+                'label'        => esc_html__('Icon Background', 'chat-help'),
                 'type'         => \Elementor\Controls_Manager::SWITCHER,
                 'label_on'     => esc_html__('Yes', 'chat-help'),
                 'label_off'    => esc_html__('No', 'chat-help'),
-                'return_value' => 'wHelp-button-3',
                 'condition'    => array(
+                    'show__button__icon' => 'yes',
                     'style' => '2',
                 ),
             )
         );
-
         $this->add_control(
             'icon__bg__color',
             array(
-                'label'     => esc_html__('Icon bg color', 'chat-help'),
-                'type'      => \Elementor\Controls_Manager::COLOR,
-                'default'   => '#fff',
-                'selectors' => array(
-                    '{{WRAPPER}} [class*="wHelp-button-"].wHelp-button-3.wHelp-btn-bg i' => 'background-color: {{VALUE}}',
-                ),
-                'condition' => array(
-                    'style'                 => '2',
-                    'show__icon__bg__color' => 'wHelp-button-3',
-                ),
-            )
-        );
-
-        $this->add_control(
-            'icon__bg__color__hover',
-            array(
-                'label'     => esc_html__('Icon hover bg color', 'chat-help'),
+                'label'     => esc_html__('Background color', 'chat-help'),
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'default'   => '#ffffff',
                 'selectors' => array(
-                    '{{WRAPPER}} [class*="wHelp-button-"].wHelp-button-3.wHelp-btn-bg:hover i' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn .bubble__icon.icon_bg' => 'background-color: {{VALUE}}',
                 ),
-                'condition' => array(
-                    'style'                 => '2',
-                    'show__icon__bg__color' => 'wHelp-button-3',
-                ),
+                'condition' => [
+                    'show__button__icon' => 'yes',
+                    'show__icon__bg__color' => 'yes',
+                    'style' => '2',
+                ],
             )
         );
 
         $this->add_control(
-            'rounded',
+            'icon__bg__color_hover',
             array(
-                'label'        => esc_html__('Rounded?', 'chat-help'),
-                'type'         => \Elementor\Controls_Manager::SWITCHER,
-                'label_on'     => esc_html__('Yes', 'chat-help'),
-                'label_off'    => esc_html__('No', 'chat-help'),
-                'return_value' => 'wHelp-btn-rounded',
+                'label'     => esc_html__('Hover background color', 'chat-help'),
+                'type'      => \Elementor\Controls_Manager::COLOR,
+                'default'   => '#ffffff',
+                'selectors' => array(
+                    '{{WRAPPER}} .wHelp_button.wHelp_woo_btn:hover .bubble__icon.icon_bg' => 'background-color: {{VALUE}}',
+                ),
+                'condition' => [
+                    'show__button__icon' => 'yes',
+                    'show__icon__bg__color' => 'yes',
+                    'style' => '2',
+                ],
             )
         );
 
@@ -1450,15 +1567,14 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         $group      = $settings['group'];
         $timezone   = $settings['timezone'];
         $visibility = $settings['visibility'];
+        $show__button__icon       = isset($settings['show__button__icon']) ? $settings['show__button__icon'] : '';
         $icon       = isset($settings['button__icon']['value']) ? $settings['button__icon']['value'] : '';
-        $rounded    = $settings['rounded'];
         $icon__bg   = $settings['show__icon__bg__color'];
         $sizes      = $settings['button__sizes'];
         $photo      = isset($settings['agent__photo']['url']) ? $settings['agent__photo']['url'] : '';
 
-        $name        = $settings['agent__name'];
-        $designation = $settings['agent__designation'];
-        $label_text   = $settings['custom__button__label'];
+        $button_top_label        = $settings['button_top_label'];
+        $button_main_label   = $settings['button_main_label'];
         $online_text  = $settings['online__text'];
         $offline_text = $settings['offline__text'];
         $open_link_new_window = $settings['open_link_new_window'];
@@ -1482,25 +1598,22 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
 ?>
         <?php if ('1' === $style) : ?>
             <div class="button-wrapper">
-                <div data-number="<?php echo esc_attr($number) ?>" data-group="<?php echo esc_attr($group) ?>" <?php if ($timezone) { ?> data-timezone="<?php echo esc_attr($timezone); ?>" <?php } ?> class="wHelpButtons shortcode_button_webhook wHelp-button-4 wHelp-btn-bg <?php echo esc_attr($visibility); ?> <?php echo esc_attr($rounded); ?> avatar-active <?php echo esc_attr($sizes); ?>" data-btnavailablety='{ "sunday":"<?php echo esc_attr($sunday); ?>", "monday":"<?php echo esc_attr($monday); ?>", "tuesday":"<?php echo esc_attr($tuesday); ?>", "wednesday":"<?php echo esc_attr($wednesday); ?>", "thursday":"<?php echo esc_attr($thursday); ?>", "friday":"<?php echo esc_attr($friday); ?>", "saturday":"<?php echo esc_attr($saturday); ?>" }'>
+                <div data-number="<?php echo esc_attr($number) ?>" data-group="<?php echo esc_attr($group) ?>" <?php if ($timezone) { ?> data-timezone="<?php echo esc_attr($timezone); ?>" <?php } ?> class="wHelp_button wHelp_woo_btn wHelp_button_advance chat_help_analytics wHelpButtons <?php echo esc_attr($visibility); ?> avatar-active <?php echo esc_attr($sizes); ?>" data-availability='{ "sunday":"<?php echo esc_attr($sunday); ?>", "monday":"<?php echo esc_attr($monday); ?>", "tuesday":"<?php echo esc_attr($tuesday); ?>", "wednesday":"<?php echo esc_attr($wednesday); ?>", "thursday":"<?php echo esc_attr($thursday); ?>", "friday":"<?php echo esc_attr($friday); ?>", "saturday":"<?php echo esc_attr($saturday); ?>" }'>
                     <?php if ($photo) { ?>
                         <img src="<?php echo esc_attr($photo); ?>" />
                     <?php } ?>
                     <div class="info-wrapper">
-                        <?php if ($name || $designation) { ?>
+                        <?php if ($button_top_label) { ?>
                             <div class="info">
-                                <?php
-                                if ($name) {
-                                ?>
-                                    <?php echo esc_html($name); ?><?php } ?> <?php if ($designation) { ?> / <?php echo esc_html($designation); ?><?php } ?></div>
-                        <?php } ?>
-                        <?php if ($label_text) { ?>
-                            <div class="title"><?php echo esc_html($label_text); ?></div>
-                        <?php } ?>
-                        <?php if ($online_text) { ?>
+                                <?php echo esc_html($button_top_label); ?></div>
+                        <?php }
+                        if ($button_main_label) { ?>
+                            <div class="wHelp_title"><?php echo esc_html($button_main_label); ?></div>
+                        <?php }
+                        if ($online_text) { ?>
                             <div class="online"><?php echo esc_html($online_text); ?></div>
-                        <?php } ?>
-                        <?php if ($offline_text) { ?>
+                        <?php }
+                        if ($offline_text) { ?>
                             <div class="offline"><?php echo esc_html($offline_text); ?></div>
                         <?php } ?>
                     </div>
@@ -1509,10 +1622,20 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
             </div>
         <?php else : ?>
             <div class="button-wrapper">
-                <a href="<?php echo esc_attr($url); ?>" data-group="<?php echo esc_attr($group) ?>" data-number="<?php echo esc_attr($number) ?>" class="chat_help_analytics shortcode_button_webhook wHelp-button-2 <?php echo esc_attr($icon__bg); ?> wHelp-btn-bg <?php echo esc_attr($visibility); ?> <?php echo esc_attr($rounded); ?> <?php echo esc_attr($sizes); ?>" target="<?php echo esc_attr($open_in_new_tab); ?>">
-                    <i class="<?php echo esc_attr($wHelp_icon); ?>"></i>
-                    <?php if ($label_text) { ?>
-                        <span><?php echo esc_html($label_text); ?></span><?php } ?>
+                <a href="<?php echo esc_attr($url); ?>" data-group="<?php echo esc_attr($group) ?>" data-number="<?php echo esc_attr($number) ?>" class="wHelp_button wHelp_woo_btn chat_help_analytics <?php echo esc_attr($visibility . ' ' . $sizes); ?>" target="<?php echo esc_attr($open_in_new_tab); ?>">
+
+                    <?php
+                    if ($show__button__icon && !empty($icon)) {
+                        echo '<div class="bubble__icon ' . esc_attr($icon__bg == true ? 'icon_bg' : '') . '">';
+                        \Elementor\Icons_Manager::render_icon(
+                            $settings['button__icon'],
+                            ['aria-hidden' => 'true']
+                        );
+                        echo '</div>';
+                    }
+                    ?>
+                    <?php if ($button_main_label) { ?>
+                        <span><?php echo esc_html($button_main_label); ?></span><?php } ?>
                 </a>
             </div>
         <?php endif; ?>

@@ -13,6 +13,12 @@
 
 namespace ThemeAtelier\ChatHelp\Admin;
 
+use WP_REST_Server;
+use WP_REST_Request;
+
+if (! defined('ABSPATH')) {
+    die;
+} // Cannot access directly.
 /**
  * The admin class
  */
@@ -29,15 +35,16 @@ class Leads
     {
         $options = get_option('cwp_option');
         $chat_help_leads    = isset($options['chat_help_leads']) ? $options['chat_help_leads'] : true;
-        if($chat_help_leads) {
+        if ($chat_help_leads) {
             add_action('chat_help_recommended_page_menu', [$this, 'register_chat_help_leads_submenu']);
             add_action('admin_head', array($this, 'chat_help_localize_script'));
             add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'), 100);
             add_action('rest_api_init', [$this, 'register_rest_routes']);
-            
+
             $this->create_chat_help_leads_table();
         }
     }
+
 
     /**
      * Registers the "Leads" submenu page under DFS Templates.
@@ -144,27 +151,10 @@ class Leads
             'chat-help/v1',
             '/leads',
             [
-                'methods'             => 'GET',
+                'methods'             => WP_REST_Server::READABLE,
                 'callback'            => [$this, 'chat_help_leads'],
-                'permission_callback' => '__return_true', // make it public (you can restrict later)
+                'permission_callback' => [$this, 'ch_can_manage_leads'],
             ]
-        );
-        register_rest_route(
-            'chat-help/v1',
-            '/leads/(?P<id>\d+)',
-            [
-                'methods'             => 'GET',
-                'callback'            => [$this, 'get_chat_help_by_id'],
-                'permission_callback' => '__return_true',
-                'args'                => [
-                    'id' => [
-                        'validate_callback' => function ($param, $request, $key) {
-                            return is_numeric($param);
-                        },
-                    ],
-                ],
-            ]
-
         );
 
         // Delete leads by ID
@@ -172,11 +162,9 @@ class Leads
             'chat-help/v1',
             '/leads/(?P<id>\d+)',
             [
-                'methods'             => 'DELETE',
+                'methods'             => WP_REST_Server::DELETABLE,
                 'callback'            => [$this, 'delete_chat_help_leads'],
-                'permission_callback' => function () {
-                    return current_user_can('manage_options'); // restrict to admins
-                },
+                'permission_callback' => [$this, 'ch_can_manage_leads'],
                 'args'                => [
                     'id' => [
                         'validate_callback' => fn($param) => is_numeric($param),
@@ -186,52 +174,13 @@ class Leads
         );
     }
 
-    public function delete_chat_help_leads(\WP_REST_Request $request)
+    /** Write/delete access. */
+    public function ch_can_manage_leads(WP_REST_Request $request): bool
     {
-        global $wpdb;
-        $table_name = $wpdb->prefix . 'chat_help_leads';
-        $id = intval($request['id']);
-
-        $deleted = $wpdb->delete($table_name, ['id' => $id], ['%d']);
-
-        if ($deleted === false) {
-            return new \WP_Error('db_error', 'Failed to delete leads', ['status' => 500]);
-        }
-
-        if ($deleted === 0) {
-            return new \WP_Error('not_found', 'Leads not found', ['status' => 404]);
-        }
-
-        return new \WP_REST_Response(['deleted' => true, 'id' => $id], 200);
+        return is_user_logged_in() && current_user_can(apply_filters('chat_help_leads_capability', 'manage_options'));
     }
 
-    public function get_chat_help_by_id(\WP_REST_Request $request)
-    {
-        global $wpdb;
-        $table_name = $wpdb->prefix . 'chat_help_leads';
-        $id = intval($request['id']);
-        $row = $wpdb->get_row($wpdb->prepare("SELECT * FROM {$table_name} WHERE id = %d", $id), ARRAY_A);
-
-        if (!$row) {
-            return new \WP_Error('not_found', 'Leads not found', ['status' => 404]);
-        }
-
-        if (!empty($row['field'])) {
-            $unserialized = @unserialize($row['field']);
-            if ($unserialized !== false) {
-                $row['field'] = $unserialized;
-            }
-        }
-        if (!empty($row['meta'])) {
-            $unserialized = @unserialize($row['meta']);
-            if ($unserialized !== false) {
-                $row['meta'] = $unserialized;
-            }
-        }
-
-        return new \WP_REST_Response($row, 200);
-    }
-
+    // Chat helo leads callback
     public function chat_help_leads(\WP_REST_Request $request)
     {
         global $wpdb;
@@ -252,9 +201,32 @@ class Leads
                 }
             }
         }
-
         return new \WP_REST_Response($results, 200);
     }
+
+    // Delete leads call back
+
+    public function delete_chat_help_leads(\WP_REST_Request $request)
+    {
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'chat_help_leads';
+        $id = intval($request['id']);
+
+        $deleted = $wpdb->delete($table_name, ['id' => $id], ['%d']);
+
+        if ($deleted === false) {
+            return new \WP_Error('db_error', 'Failed to delete leads', ['status' => 500]);
+        }
+
+        if ($deleted === 0) {
+            return new \WP_Error('not_found', 'Leads not found', ['status' => 404]);
+        }
+
+        return new \WP_REST_Response(['deleted' => true, 'id' => $id], 200);
+    }
+
+
+
 
     /**
      * Returns localized strings for the Leads admin UI.
@@ -266,6 +238,7 @@ class Leads
     public static function chat_help_string()
     {
         return [
+
             'leads' => esc_html__('Leads', 'chat-help'),
             'all_email' => esc_html__('All Email', 'chat-help'),
             'pending_verification' => esc_html__('Pending Verification', 'chat-help'),

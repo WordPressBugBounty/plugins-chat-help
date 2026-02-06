@@ -48,10 +48,10 @@ if (! class_exists('CHAT_HELP_Field_license')) {
 			echo wp_kses_post($this->field_before());
 
 			echo '<div class="darkify-license text-center">';
-			echo '<h3>' . esc_html__('You\'re using Chat Help Lite - No License Needed. Enjoy! 🙂', 'chat-help') . '</h3>';
+			echo '<h3>' . esc_html__('You\'re using ChatHelp Lite - No License Needed. Enjoy! 🙂', 'chat-help') . '</h3>';
 
-			echo '<p>'. __('Unlock all Chat Help Pro features – now with up to 70% early bird off! <br> Click the button below to redeem your exclusive discount.', 'chat-help') . '</p>';
-			echo '<a href="'. CHAT_HELP_DEMO_URL .'pricing/" target="_blank" class="button-secondary">'. esc_html__('Upgrade To Pro Now', 'chat-help') . '</a>';
+			echo '<p>' . esc_html__('Unlock all ChatHelp Pro features – now with up to 80% Black Friday off!', 'chat-help') . ' <br> ' . esc_html__('Click the button below to redeem your exclusive discount.', 'chat-help') . '</p>';
+			echo '<a href="' . esc_attr(CHAT_HELP_DEMO_URL) . 'pricing/" target="_blank" class="button-secondary">' . esc_html__('Upgrade To Pro Now', 'chat-help') . '</a>';
 
 			echo '</div>';
 			echo wp_kses_post($this->field_after());

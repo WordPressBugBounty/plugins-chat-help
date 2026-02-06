@@ -1,0 +1,29 @@
+{
+    "name": "themeatelier/chat-help",
+    "description": "Can easily create Bubble & buttons for reciving whatsapp message from useres in any WordPress site. Gutenberg, Elementor and shortcodes supported.",
+    "type": "wordpress-plugins",
+    "license": "GPL-2.0+",
+    "autoload": {
+        "psr-4": {
+            "ThemeAtelier\\ChatHelp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ThemeAtelier",
+            "email": "themeatelierbd@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.0"
+    },
+    "scripts": {
+        "lint": "phpcs",
+        "lint:fix": "phpcbf"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

@@ -522,7 +522,7 @@ if (! class_exists('Chat_Help_Options')) {
       echo '<div class="chat-help-header-left">';
       echo '<img src="'.esc_url(CHAT_HELP_DIR_URL . 'src/Admin/HelpPage/assets/images/chat-logo.png').'"/>';
       echo '<h1 class="chat-hel-admin-logo">' . esc_html($this->args['framework_title']) . '</h1>';
-      echo '<div class="chat-whatapp-version">V'.CHAT_HELP_VERSION.'</div>';
+      echo '<div class="chat-whatapp-version">V'. esc_html(CHAT_HELP_VERSION) .'</div>';
       echo '</div>';
 
       echo '<div class="chat-help-header-right">';

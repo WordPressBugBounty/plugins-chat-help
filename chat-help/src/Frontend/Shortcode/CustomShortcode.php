@@ -1,40 +1,76 @@
 <?php
 
 /**
+ * Handles the Whatsapp Chat Support functionality.
  *
  * @package    Whatsapp chat support
  * @version    1.0
  * @author     ThemeAtelier
- * @Websites: https://themeatelier.net/
+ * @website    https://themeatelier.net/
  */
 
 namespace ThemeAtelier\ChatHelp\Frontend\Shortcode;
 
 use ThemeAtelier\ChatHelp\Frontend\CustomButtonsTemplates;
 
+/**
+ * Class CustomShortcode
+ *
+ * This class handles the custom shortcode functionality for WhatsApp chat buttons.
+ *
+ * @since 1.0.0
+ */
 class CustomShortcode
 {
+
+
+	/**
+	 * Handles the custom buttons shortcode rendering.
+	 *
+	 * This function is responsible for rendering custom WhatsApp buttons via shortcodes.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string The HTML output for the custom WhatsApp buttons.
+	 */
 	public function ctw_custom_buttons_shortcode($atts)
 	{
+		// Function implementation goes here.
 		$atts = shortcode_atts(
 			array(
 				'style'       => '1',
-				'photo'       => CHAT_HELP_DIR_URL . 'src/assets/image/user.webp',
-				'primary_color'       => '#118c7e',
-				'secondary_color'       => '#0b5a51',
-				'padding'       => '10px 18px 10px 18px',
-				'name'        => esc_html__('Robert', 'chat-help'),
-				'designation' => esc_html__('Sales Support', 'chat-help'),
-				'label'       => esc_html__('How can I help you?', 'chat-help'),
-				'online'      => esc_html__('I\'m avaiable', 'chat-help'),
-				'offline'     => esc_html__('I\'m offline', 'chat-help'),
+				'photo'       => CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/user.webp',
+				'background'       => '#118c7e',
+				'hover_background'     => '#0b5a51',
+				'text_color'       => '#ffffff',
+				'hover_text_color'     => '#ffffff',
+				'icon_color'     => '#118c7e',
+				'hover_icon_color'     => '#0b5a51',
+				'icon_background'     => '#ffffff',
+				'hover_icon_background'     => '#ffffff',
+				'border'	=> '0',
+				'border_style'	=> 'solid',
+				'border_color'	=> '#118c7e',
+				'border_hover_color'	=> '#0b5a51',
+				'icon_border'	=> '0',
+				'icon_border_style'	=> 'solid',
+				'icon_border_color'	=> '#118c7e',
+				'icon_border_hover_color'	=> '#0b5a51',
+				'padding'     => '5px 15px 5px 6px',
+				'top_label'   => esc_html__('John / Technical support', 'chat-help'),
+				'main_label'  => esc_html__('How can I help you?', 'chat-help'),
+				'online'      => esc_html__('I am online', 'chat-help'),
+				'offline'     => esc_html__('I am offline', 'chat-help'),
+				'message'	  => esc_attr__('Hi! I have a question about your service.', 'chat-help'),
 				'type_of_whatsapp'      => 'number',
 				'number'      => '',
-				'group'      => '',
-				'message'		=> esc_attr__('Hi! I have a question about your service.', 'chat-help'),
-				'visibility'  => 'wHelp-show-everywhere',
-				'sizes'       => 'wHelp-btn-md',
-				'rounded'     => 'wHelp-btn-rounded',
+				'group'       => '',
+				'visibility'  => 'everywhere',
+				'sizes'       => 'medium',
+				'icon_bg' 	  => 'yes',
+				'icon' 		  => 'yes',
+				'border_radius'     => '50px',
+				'icon_border_radius'     => '50px',
 				'timezone'    => '',
 				'sunday'      => esc_html__('00:00-23:59', 'chat-help'),
 				'monday'      => esc_html__('00:00-23:59', 'chat-help'),
@@ -43,7 +79,6 @@ class CustomShortcode
 				'thursday'    => esc_html__('00:00-23:59', 'chat-help'),
 				'friday'      => esc_html__('00:00-23:59', 'chat-help'),
 				'saturday'    => esc_html__('00:00-23:59', 'chat-help'),
-				'bg_color' 	  => true,
 			),
 			$atts
 		);

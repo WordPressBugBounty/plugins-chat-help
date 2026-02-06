@@ -21,8 +21,11 @@ use ThemeAtelier\ChatHelp\Frontend\Templates\ButtonTemplate;
 use ThemeAtelier\ChatHelp\Frontend\Templates\FormTemplate;
 use ThemeAtelier\ChatHelp\Frontend\Templates\SingleTemplate;
 use ThemeAtelier\ChatHelp\Frontend\Templates\WooButton;
-use ThemeAtelier\ChatHelp\Helpers\Helpers;
+use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 
+if (! defined('ABSPATH')) {
+    die;
+} // Cannot access directly.
 /**
  * The Frontend class to manage all public facing stuffs.
  *
@@ -47,6 +50,9 @@ class Frontend
      * @var      string    $min   The slug of this plugin.
      */
     private $min;
+
+    public $unique_id;
+
     /**
      * Initialize the class and set its properties.
      *
@@ -56,6 +62,7 @@ class Frontend
      */
     public function __construct()
     {
+        $this->unique_id = uniqid();
         $this->min = defined('WP_DEBUG') && WP_DEBUG ? '' : '.min';
         add_action('wp_footer', array($this, 'chat_help_content'));
         add_action('wp_ajax_handle_form_submission', [$this, 'handle_form_submission']);
@@ -63,7 +70,8 @@ class Frontend
         $wooButton = new WooButton();
         $options = get_option('cwp_option');
         $wooCommerce_button = isset($options['wooCommerce_button']) ? $options['wooCommerce_button'] : '';
-        $button_position = isset($options['wooCommerce_button_position']) ? $options['wooCommerce_button_position'] : 'after';
+        $button_position = isset($options['wooCommerce_button_position']) ? $options['wooCommerce_button_position'] : 'woocommerce_after_add_to_cart_form';
+
 
         $type_of_whatsapp_woo = isset($options['wooCommerce_button_type_of_whatsapp']) ? $options['wooCommerce_button_type_of_whatsapp'] : '';
         $woo_number = isset($options['wooCommerce_button_number']) ? $options['wooCommerce_button_number'] : '';
@@ -71,12 +79,24 @@ class Frontend
 
         if ($wooCommerce_button) {
             if ('number' === $type_of_whatsapp_woo && !empty($woo_number) || ('group' === $type_of_whatsapp_woo && !empty($woo_group))) {
-                add_action("woocommerce_{$button_position}_add_to_cart_form", array($wooButton, 'woo_button'));
+                add_action("{$button_position}", array($wooButton, 'woo_button'));
+            }
+        }
+
+        if ($wooCommerce_button) {
+            if ('woocommerce_short_description_after' == $button_position) {
+                if ('number' === $type_of_whatsapp_woo && !empty($woo_number) || ('group' === $type_of_whatsapp_woo && !empty($woo_group))) {
+                    add_filter('woocommerce_short_description', function ($description) use ($wooButton) {
+                        ob_start();
+                        $wooButton->woo_button(); // echoes
+                        $button_html = ob_get_clean();
+                        return $description . $button_html;
+                    }, 20);
+                }
             }
         }
 
         add_filter('kses_allowed_protocols', [$this, 'allow_whatsapp_protocol']);
-
         add_action('wp_head', array($this, 'chat_help_header_script'), 1);
         add_action('login_head', array($this, 'chat_help_header_script'), 1);
         add_action('register_head', array($this, 'chat_help_header_script'), 1);
@@ -90,7 +110,7 @@ class Frontend
         <script type="text/javascript" class="chat_help_inline_js">
             var alternativeWHelpBubble = "<?php echo esc_attr($alternative_wHelpBubble); ?>";
         </script>
-<?php
+    <?php
     }
 
     public function allow_whatsapp_protocol($protocols)
@@ -153,8 +173,6 @@ class Frontend
         wp_enqueue_style('ico-font');
         wp_enqueue_style('chat-help-style');
         $custom_css = '';
-        include 'dynamic-css/dynamic-css.php';
-
         if ($wa_custom_css) {
             $custom_css .= $wa_custom_css;
         }
@@ -170,7 +188,7 @@ class Frontend
             'autoOpenPopupTimeout' => $auto_open_popup_timeout,
             'analytics_parameter'  => $analytics_parameter,
         );
-        wp_localize_script('chat-help-script', 'whatshelp_frontend_script', $frontend_scripts);
+        wp_localize_script('chat-help-script', 'chat_help_script', $frontend_scripts);
         if (! empty($wa_custom_js)) {
             wp_add_inline_script('chat-help-script', $wa_custom_js);
         }
@@ -187,6 +205,7 @@ class Frontend
 
     public function chat_help_content()
     {
+        $unique_id = "chat_help_button_$this->unique_id";
         $options = get_option('cwp_option');
         $bubble_include_page = isset($options['bubble_include_page']) ? $options['bubble_include_page'] : '';
         $bubble_exclude_page = isset($options['bubble_exclude_page']) ? $options['bubble_exclude_page'] : '';
@@ -199,11 +218,61 @@ class Frontend
 
         $should_display_element = Helpers::should_display_element($options);
         if ($should_display_element) {
-            self::render_chat_template($chat_type, $options, $bubble_type, $random, $whatsapp_message_template);
+            self::render_chat_template($chat_type, $options, $bubble_type, $random, $whatsapp_message_template, $unique_id);
         }
+
+        $bubble_button_tooltip_background = isset($options['bubble_button_tooltip_background']) ? $options['bubble_button_tooltip_background'] : '#f5f7f9';
+        $bubble_button_tooltip_width = isset($options['bubble_button_tooltip_width']) ? $options['bubble_button_tooltip_width'] : 190;
+        // Right
+        $right_bottom              = isset($options['right_bottom']) ? $options['right_bottom'] : array();
+        $right_bottom_value_bottom = isset($right_bottom['bottom']) ? $right_bottom['bottom'] : '25';
+        $right_bottom_value_right  = isset($right_bottom['right']) ? $right_bottom['right'] : '30';
+        $right_bottom_unit         = isset($right_bottom['unit']) ? $right_bottom['unit'] : 'px';
+
+        // Left
+        $left_bottom              = isset($options['left_bottom']) ? $options['left_bottom'] : array();
+        $left_bottom_value_bottom = isset($left_bottom['bottom']) ? $left_bottom['bottom'] : '25';
+        $left_bottom_value_left   = isset($left_bottom['left']) ? $left_bottom['left'] : '30';
+        $left_bottom_unit         = isset($left_bottom['unit']) ? $left_bottom['unit'] : 'px';
+
+        // Right Middle
+        $right_middle             = isset($options['right_middle']) ? $options['right_middle'] : array();
+        $right_middle_value_right = isset($right_middle['right']) ? $right_middle['right'] : '0';
+        $right_middle_unit        = isset($right_middle['unit']) ? $right_middle['unit'] : 'px';
+
+        // Left Middle
+        $left_middle            = isset($options['left_middle']) ? $options['left_middle'] : array();
+        $left_middle_value_left = isset($left_middle['left']) ? $left_middle['left'] : '0';
+        $left_middle_unit       = isset($left_middle['unit']) ? $left_middle['unit'] : 'px';
+
+        // Tablet positioning
+        $enable_tablet_positioning = isset($options['enable-positioning-tablet']) ? $options['enable-positioning-tablet'] : '';
+        $bubble_position_tablet    = isset($options['bubble-position-tablet']) ? $options['bubble-position-tablet'] : 'right_bottom';
+
+        $color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
+        $primary = isset($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
+        $secondary = isset($color_settings['secondary']) ? $color_settings['secondary'] : '#118c7e';
+    ?>
+        <style type="text/css" class="chat_help_inline_css">
+            #chat_help_button_<?php echo esc_attr($this->unique_id); ?> {
+                --right_bottom_value_bottom: <?php echo esc_attr($right_bottom_value_bottom . $right_bottom_unit) ?>;
+                --right_bottom_value_right: <?php echo esc_attr($right_bottom_value_right . $right_bottom_unit) ?>;
+                --left_bottom_value_bottom: <?php echo esc_attr($left_bottom_value_bottom . $left_bottom_unit) ?>;
+                --left_bottom_value_left: <?php echo esc_attr($left_bottom_value_left . $left_bottom_unit) ?>;
+                --right_middle_value_right: <?php echo esc_attr($right_middle_value_right . $right_middle_unit) ?>;
+                --left_middle_value_left: <?php echo esc_attr($left_middle_value_left . $left_middle_unit) ?>;
+                --enable_tablet_positioning: <?php echo esc_attr($enable_tablet_positioning . $bubble_position_tablet) ?>;
+                --bubble_button_tooltip_background: <?php echo esc_attr($bubble_button_tooltip_background) ?>;
+                --bubble_button_tooltip_width: <?php echo esc_attr($bubble_button_tooltip_width) ?>px;
+
+                --wHelp-color-primary: <?php echo esc_attr($primary); ?>;
+                --wHelp-color-secondary: <?php echo esc_attr($secondary); ?>;
+            }
+        </style>
+<?php
     }
 
-    public static function render_chat_template($chat_type, $options, $bubble_type, $random, $whatsapp_message_template)
+    public static function render_chat_template($chat_type, $options, $bubble_type, $random, $whatsapp_message_template, $unique_id)
     {
         $type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
         $opt_number = isset($options['opt-number']) ? $options['opt-number'] : '';
@@ -214,18 +283,18 @@ class Frontend
                 break;
             case 'button':
                 if (('number' === $type_of_whatsapp && !empty($opt_number) || ('group' === $type_of_whatsapp && !empty($opt_group)))) {
-                    ButtonTemplate::buttonTemplate($options, $bubble_type);
+                    ButtonTemplate::buttonTemplate($options, $bubble_type, $unique_id);
                 }
                 break;
             case 'agent':
 
                 if (('number' === $type_of_whatsapp && !empty($opt_number) || ('group' === $type_of_whatsapp && !empty($opt_group)))) {
-                    SingleTemplate::singleTemplate($options, $bubble_type, $random, $whatsapp_message_template);
+                    SingleTemplate::singleTemplate($options, $bubble_type, $random, $whatsapp_message_template, $unique_id);
                 }
                 break;
             case 'form':
                 if (!empty($opt_number)) {
-                    FormTemplate::formTemplate($options, $bubble_type, $random, $whatsapp_message_template);
+                    FormTemplate::formTemplate($options, $bubble_type, $random, $whatsapp_message_template, $unique_id);
                 }
                 break;
 

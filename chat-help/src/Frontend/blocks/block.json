@@ -4,20 +4,13 @@
 	"title": "WhatsApp Button",
 	"category": "whatsapp-block",
 	"icon": "whatsapp",
-	"description": "WhatsApp button block for WhatsHelp plugin.",
+	"description": "WhatsApp Click To Chat & Click To Order Button For ChatHelp Plugin.",
 	"textdomain": "chat-help",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
 	"supports": {
-		"html": false,
-		"color": {
-			"background": true,
-			"text": true,
-			"gradients": true,
-			"hover": true
-		},
-		"spacing": {},
-		"typography": {}
+		"styles": false,
+		"html": false
 	},
 
 	"example": {
@@ -59,27 +52,48 @@
 		},
 		"buttonSize": {
 			"type": "string",
-			"default": "size-normal"
+			"default": "size-medium"
 		},
+		"buttonPadding": {
+			"type": "object",
+			"default": {
+				"top": "5px",
+				"right": "15px",
+				"bottom": "5px",
+				"left": "6px"
+			}
+		},
+		"buttonBorder": {
+			"type": "object",
+			"default": {
+				"color": "#118c7e",
+				"style": "solid",
+				"width": "0px"
+			}
+		},
+		"buttonIconBorder": {
+			"type": "object",
+			"default": {
+				"color": "#ffffff",
+				"style": "solid",
+				"width": "0px"
+			}
+		},
+		"bgColor": { "type": "string", "default": "#118c7e" },
+		"bgHoverColor": { "type": "string", "default": "#0b5a51" },
+		"textColor": { "type": "string", "default": "#ffffff" },
+		"textHoverColor": { "type": "string", "default": "#ffffff" },
+		"iconBgColor": { "type": "string", "default": "#ffffff" },
+		"iconBgHoverColor": { "type": "string", "default": "#ffffff" },
+		"iconColor": { "type": "string", "default": "#118c7e" },
+		"iconHoverColor": { "type": "string", "default": "#0b5a51" },
 		"borderRadius": {
-			"type": "string",
-			"default": "border-radius-rounded"
-		},
-		"topPadding": {
 			"type": "number",
-			"default": 7
+			"default": 50
 		},
-		"rightPadding": {
+		"icon_borderRadius": {
 			"type": "number",
-			"default": 12
-		},
-		"bottomPadding": {
-			"type": "number",
-			"default": 7
-		},
-		"leftPadding": {
-			"type": "number",
-			"default": 12
+			"default": 50
 		},
 		"visibility": {
 			"type": "string",
@@ -90,6 +104,10 @@
 			"default": "left"
 		},
 		"iconTarget": {
+			"type": "boolean",
+			"default": false
+		},
+		"iconBackground": {
 			"type": "boolean",
 			"default": false
 		},

@@ -30,7 +30,8 @@ function chat_help_delete_plugin_data()
 		'chat_help_version',
 		'chat_help_db_version',
 		'chat_help_first_version',
-		'chat_help_activation_date'
+		'chat_help_activation_date',
+		'themeatelier_offer_banner_dismissed_new_year_2026',
 	];
 
 	foreach ($options as $option_name) {

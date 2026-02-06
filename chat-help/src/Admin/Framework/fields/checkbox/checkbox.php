@@ -20,7 +20,7 @@ if ( ! class_exists( 'CHAT_HELP_Field_checkbox' ) ) {
         'inline'         => false,
         'query_args'     => array(),
         'check_all'      => false,
-        'check_all_text' => esc_html__( 'Check/Uncheck All' ),
+        'check_all_text' => esc_html__( 'Check/Uncheck All', 'chat-help' ),
       ) );
 
       $inline_class = ( $args['inline'] ) ? ' class="chat-help--inline-list"' : '';

@@ -42,6 +42,7 @@ class Help
         'eventful'                  => 'eventful.php',
         'eventful-for-elementor'    => 'eventful-for-elementor.php',
         'postify'                   => 'postify.php',
+        'idonate'                   => 'idonate.php',
     );
 
 
@@ -59,8 +60,10 @@ class Help
      *
      * @var array
      */
-    protected static $not_show_plugin_list = array('chat-help','better-chat-support',
-        'bizreview',    
+    protected static $not_show_plugin_list = array(
+        'chat-help',
+        'better-chat-support',
+        'bizreview',
         'chat-help',
         'chat-viber',
         'chat-telegram',
@@ -70,19 +73,20 @@ class Help
         'ask-faq',
         'attentive-security',
         'booklet-booking-system',
-        'postify');
+        'postify',
+        'idonate'
+    );
 
     /**
      * Help page construct function.
      */
     public function __construct()
     {
-       
+
         $page   = isset($_GET['page']) ? sanitize_text_field(wp_unslash($_GET['page'])) : '';
         if ('chat-help' !== $page) {
             return;
         }
-
     }
 
     /**
@@ -190,14 +194,14 @@ class Help
                         break;
                 }
 
-             
+
                 $details_link = network_admin_url('plugin-install.php?tab=plugin-information&amp;plugin=' . $plugin['slug'] . '&amp;TB_iframe=true&amp;width=600&amp;height=550');
 ?>
                 <div class="plugin-card <?php echo esc_attr($plugin_slug); ?>" id="<?php echo esc_attr($plugin_slug); ?>">
                     <div class="plugin-card-top">
                         <div class="name column-name">
                             <h3>
-                                
+
                                 <a class="thickbox" title="<?php echo esc_attr($plugin['name']); ?>"
                                     href="<?php echo esc_url($details_link); ?>">
                                     <?php echo esc_html($plugin['name']); ?>
@@ -342,10 +346,10 @@ class Help
      */
     public function activate_plugin_link($plugin_slug, $plugin_file)
     {
-        return wp_nonce_url( admin_url( 'admin.php?page=chat-help&action=activate&plugin=' . $plugin_slug . '/' . $plugin_file . '#tab=help#recommended' ), 'activate-plugin_' . $plugin_slug . '/' . $plugin_file );
+        return wp_nonce_url(admin_url('admin.php?page=chat-help&action=activate&plugin=' . $plugin_slug . '/' . $plugin_file . '#tab=help#recommended'), 'activate-plugin_' . $plugin_slug . '/' . $plugin_file);
     }
 
-   
+
 
     /**
      * The Chat Help Help Callback.
@@ -421,9 +425,9 @@ class Help
                     <div class="start_page_wrapper">
                         <div class="start_page_nav">
                             <div class="nav_left">
-                                <h2 class="section_title"><?php echo esc_html('Welcome to Whatsapp Chat Help!', 'chat-help') ?><span class="version__badge"><?php echo esc_html(CHAT_HELP_VERSION) ?></span></h2>
+                                <h2 class="section_title"><?php echo esc_html('Welcome to Whatsapp ChatHelp!', 'chat-help') ?><span class="version__badge"><?php echo esc_html(CHAT_HELP_VERSION) ?></span></h2>
                                 <span class="section_subtitle">
-                                    <?php echo esc_html__('Thank you for installing Whatsapp Chat Help! This playlist will help you get started with the
+                                    <?php echo esc_html__('Thank you for installing Whatsapp ChatHelp! This playlist will help you get started with the
                                     plugin. Enjoy!', 'chat-help') ?>
                                 </span>
                             </div>
@@ -435,7 +439,7 @@ class Help
                         <div class="section_video">
                             <div class="video">
                                 <iframe width="724" height="405" src="https://www.youtube.com/embed/RNwVAoGQssI"
-                                    title="WhatsApp Chat Help - Overview" frameborder="0"
+                                    title="WhatsApp ChatHelp - Overview" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
@@ -445,10 +449,30 @@ class Help
                                         <h3>Overview</h3>
                                     </div>
                                     <div class="play_list_item_content">
-                                        <div class="title">WhatsApp Chat Help - Overview</div>
+                                        <div class="title">WhatsApp ChatHelp - Overview</div>
                                         <span>3.19</span>
                                     </div>
                                 </div>
+                                <div class="play_list_item " data-video_id="mQ54JqMpB-g">
+                                    <div class="play_list_item_title">
+                                        <h3>Agent</h3>
+                                    </div>
+                                    <div class="play_list_item_content">
+                                        <div class="title">Single Agent Bubble Layout</div>
+                                        <span>3.19</span>
+                                    </div>
+                                </div>
+
+                                <div class="play_list_item " data-video_id="NPr8ZwUfwPE">
+                                    <div class="play_list_item_title">
+                                        <h3>Pre-Filled</h3>
+                                    </div>
+                                    <div class="play_list_item_content">
+                                        <div class="title">Pre-filled Messages in WhatsApp</div>
+                                        <span>3.01</span>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 
@@ -477,7 +501,7 @@ class Help
                                     <h4 class="quick_help_item_title">
                                         <?php echo esc_html__('Documentation', 'chat-help') ?>
                                     </h4>
-                                    <div class="content"><?php echo esc_html__('Explore Whatsapp Chat Help plugin capabilities in our enriched documentation.', 'chat-help') ?></div>
+                                    <div class="content"><?php echo esc_html__('Explore Whatsapp ChatHelp plugin capabilities in our enriched documentation.', 'chat-help') ?></div>
                                 </div>
                             </a>
                             <a target="_blank" href="https://wordpress.org/support/plugin/chat-help/" class="quick_help_item">
@@ -520,229 +544,245 @@ class Help
             <!-- Lite To Pro Page -->
             <section class="themeatelier__help lite_vs_pro_page tab-content" id="lite-to-pro-tab">
                 <div class="themeatelier-container">
-                        <h2 class="help_page_title">Lite Vs Pro Comparison</h2>
-                        <div class="themeatelier-features">
-                            <ul>
-                                <li class="themeatelier-header">
-                                    <span class="themeatelier-title"><?php echo esc_html__('FEATURES', 'chat-help'); ?></span>
-                                    <span class="themeatelier-free"><?php echo esc_html__('Lite', 'chat-help'); ?></span>
-                                    <span class="themeatelier-pro">🚀<?php echo esc_html__('PRO', 'chat-help'); ?></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title"><?php echo esc_html__('All Free Version Features', 'chat-help'); ?></span>
-                                    <span class="themeatelier-free themeatelier-check-icon"></span>
-                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Amazing Floating Chat Layouts.', 'chat-help'); ?>
-                                        <i class="themeatelier-hot"><?php echo esc_html__('Hot', 'chat-help'); ?></i>
-                                    </span>
-                                    <span class="themeatelier-free"><b>3</b></span>
-                                    <span class="themeatelier-pro"><b>5</b></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Multi-agents layout.', 'chat-help'); ?>
-                                        <i class="themeatelier-hot"><?php echo esc_html__('Hot', 'chat-help'); ?></i>
-                                    </span>
-                                    <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
-                                    <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Advanced button layout.', 'chat-help'); ?>
-                                        <i class="themeatelier-new"><?php echo esc_html__('New', 'chat-help'); ?></i>
-                                    </span>
-                                    <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
-                                    <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title"><?php echo esc_html__('Single form layout\'s forms fields', 'chat-help'); ?><i class="themeatelier-new">New</i><i class="themeatelier-hot"><?php echo esc_html__('Hot', 'chat-help'); ?></i></span>
-                                    <span class="themeatelier-free"><b>2</b></span>
-                                    <span class="themeatelier-pro"><b>Unlimited</b></span>
-                                </li>
+                    <h2 class="help_page_title">Lite Vs Pro Comparison</h2>
+                    <div class="themeatelier-features">
+                        <ul>
+                            <li class="themeatelier-header">
+                                <span class="themeatelier-title"><?php echo esc_html__('FEATURES', 'chat-help'); ?></span>
+                                <span class="themeatelier-free"><?php echo esc_html__('Lite', 'chat-help'); ?></span>
+                                <span class="themeatelier-pro">🚀<?php echo esc_html__('PRO', 'chat-help'); ?></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title"><?php echo esc_html__('All Free Version Features', 'chat-help'); ?></span>
+                                <span class="themeatelier-free themeatelier-check-icon"></span>
+                                <span class="themeatelier-pro themeatelier-check-icon"></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Amazing Floating Chat Layouts.', 'chat-help'); ?>
+                                    <i class="themeatelier-hot"><?php echo esc_html__('Hot', 'chat-help'); ?></i>
+                                </span>
+                                <span class="themeatelier-free"><b>3</b></span>
+                                <span class="themeatelier-pro"><b>5</b></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Multi-agents layout.', 'chat-help'); ?>
+                                    <i class="themeatelier-hot"><?php echo esc_html__('Hot', 'chat-help'); ?></i>
+                                </span>
+                                <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
+                                <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Advanced button layout.', 'chat-help'); ?>
+                                    <i class="themeatelier-new"><?php echo esc_html__('New', 'chat-help'); ?></i>
+                                </span>
+                                <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
+                                <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title"><?php echo esc_html__('Single form layout\'s forms fields', 'chat-help'); ?><i class="themeatelier-new">New</i><i class="themeatelier-hot"><?php echo esc_html__('Hot', 'chat-help'); ?></i></span>
+                                <span class="themeatelier-free"><b>2</b></span>
+                                <span class="themeatelier-pro"><b>Unlimited</b></span>
+                            </li>
 
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('List All Leads Inside Leads Menu', 'chat-help'); ?>
-                                    </span>
-                                    <span class="themeatelier-free themeatelier-check-icon"></span>
-                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Export Leads As CSV', 'chat-help'); ?>
-                                    </span>
-                                    <span class="themeatelier-free themeatelier-close-icon"></span>
-                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Advanced Filtering For Leads', 'chat-help'); ?>
-                                    </span>
-                                    <span class="themeatelier-free themeatelier-check-icon"></span>
-                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Transform it to your current timezone', 'chat-help'); ?>
-                                       
-                                    </span>
-                                    <span class="themeatelier-free themeatelier-check-icon"></span>
-                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
-                                </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('List All Leads Inside Leads Menu', 'chat-help'); ?>
+                                </span>
+                                <span class="themeatelier-free themeatelier-check-icon"></span>
+                                <span class="themeatelier-pro themeatelier-check-icon"></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Export Leads As CSV', 'chat-help'); ?>
+                                </span>
+                                <span class="themeatelier-free themeatelier-close-icon"></span>
+                                <span class="themeatelier-pro themeatelier-check-icon"></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Advanced Filtering For Leads', 'chat-help'); ?>
+                                </span>
+                                <span class="themeatelier-free themeatelier-check-icon"></span>
+                                <span class="themeatelier-pro themeatelier-check-icon"></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Transform it to your current timezone', 'chat-help'); ?>
 
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Time based availablity for agents', 'chat-help'); ?>
-                                       
-                                    </span>
-                                    <span class="themeatelier-free themeatelier-check-icon"></span>
-                                    <span class="themeatelier-free themeatelier-check-icon"></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('GDPR Compliance', 'chat-help'); ?>
-                                        
-                                    </span>
-                                    <span class="themeatelier-free themeatelier-check-icon"></span>
-                                    <span class="themeatelier-free themeatelier-check-icon"></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Footer Content Change Option', 'chat-help'); ?>
-                                    </span>
-                                    <span class="themeatelier-free themeatelier-close-icon"></span>
-                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
-                                </li>
+                                </span>
+                                <span class="themeatelier-free themeatelier-check-icon"></span>
+                                <span class="themeatelier-pro themeatelier-check-icon"></span>
+                            </li>
 
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Icons For Send Message Button', 'chat-help'); ?>
-                                       
-                                    </span>
-                                    <span class="themeatelier-free"><b>6</b></span>
-                                    <span class="themeatelier-pro"><b>2000+</b></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Icons For Circle Button', 'chat-help'); ?>
-                                       
-                                    </span>
-                                    <span class="themeatelier-free"><b>6</b></span>
-                                    <span class="themeatelier-pro"><b>2000+</b></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Transition Effect for Circle Icon', 'chat-help'); ?>
-                                    </span>
-                                    <span class="themeatelier-free"><b>1</b></span>
-                                    <span class="themeatelier-pro"><b>4</b></span>
-                                </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Time based availablity for agents', 'chat-help'); ?>
 
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Visibility by option(s)', 'chat-help'); ?>
-                                    </span>
-                                    <span class="themeatelier-free"><b>2</b></span>
-                                    <span class="themeatelier-pro"><b>8</b></span>
-                                </li>
-                                
+                                </span>
+                                <span class="themeatelier-free themeatelier-check-icon"></span>
+                                <span class="themeatelier-free themeatelier-check-icon"></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('GDPR Compliance', 'chat-help'); ?>
 
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Icons For Circle Button Close', 'chat-help'); ?>
-                                       
-                                    </span>
-                                    <span class="themeatelier-free"><b>5</b></span>
-                                    <span class="themeatelier-pro"><b>2000+</b></span>
-                                </li>
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Send Button Color Option', 'chat-help'); ?>
-                                    </span>
-                                    <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
-                                    <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
-                                </li>
+                                </span>
+                                <span class="themeatelier-free themeatelier-check-icon"></span>
+                                <span class="themeatelier-free themeatelier-check-icon"></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Footer Content Change Option', 'chat-help'); ?>
+                                </span>
+                                <span class="themeatelier-free themeatelier-close-icon"></span>
+                                <span class="themeatelier-pro themeatelier-check-icon"></span>
+                            </li>
 
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Webhooks Intregation', 'chat-help'); ?>
-                                    </span>
-                                    <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
-                                    <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
-                                </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Icons For Send Message Button', 'chat-help'); ?>
 
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Dark and Night Layout Mode', 'chat-help'); ?>
-                                    </span>
-                                    <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
-                                    <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
-                                </li>
+                                </span>
+                                <span class="themeatelier-free"><b>6</b></span>
+                                <span class="themeatelier-pro"><b>2000+</b></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Icons For Circle Button', 'chat-help'); ?>
+
+                                </span>
+                                <span class="themeatelier-free"><b>6</b></span>
+                                <span class="themeatelier-pro"><b>2000+</b></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Transition Effect for Circle Icon', 'chat-help'); ?>
+                                </span>
+                                <span class="themeatelier-free"><b>1</b></span>
+                                <span class="themeatelier-pro"><b>4</b></span>
+                            </li>
+
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Visibility by option(s)', 'chat-help'); ?>
+                                </span>
+                                <span class="themeatelier-free"><b>2</b></span>
+                                <span class="themeatelier-pro"><b>8</b></span>
+                            </li>
 
 
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title">
-                                        <?php echo esc_html__('Right and Middle for Bubble', 'chat-help'); ?>
-                                    </span>
-                                    <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
-                                    <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
-                                </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Icons For Circle Button Close', 'chat-help'); ?>
 
-                                
+                                </span>
+                                <span class="themeatelier-free"><b>5</b></span>
+                                <span class="themeatelier-pro"><b>2000+</b></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Send Button Color Option', 'chat-help'); ?>
+                                </span>
+                                <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
+                                <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
+                            </li>
 
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title"><?php echo esc_html__('Shortcode Buttons', 'chat-help'); ?></span>
-                                    <span class="themeatelier-free themeatelier-check-icon"></span>
-                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
-                                </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Webhooks Intregation', 'chat-help'); ?>
+                                </span>
+                                <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
+                                <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
+                            </li>
 
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title"><?php echo esc_html__('WooCommerce Buttons', 'chat-help'); ?></span>
-                                    <span class="themeatelier-free themeatelier-check-icon"></span>
-                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
-                                </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Dark and Night Layout Mode', 'chat-help'); ?>
+                                </span>
+                                <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
+                                <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
+                            </li>
 
-                                <li class="themeatelier-body">
-                                    <span class="themeatelier-title"><?php echo esc_html__('Gutenberg Button Blocks', 'chat-help'); ?></span>
-                                    <span class="themeatelier-free themeatelier-check-icon"></span>
-                                    <span class="themeatelier-pro themeatelier-check-icon"></span>
-                                </li>
-                               
-                            </ul>
-                        </div>
 
-                        <div class="themeatelier-upgrade-to-pro">
-                            <h2 class="themeatelier-section-title"><?php echo esc_html__('Upgrade To PRO & Enjoy Advanced Features!', 'chat-help'); ?></h2>
-                            <span class="themeatelier-section-subtitle">
-                                <?php echo sprintf(esc_html__('Already, %s people are using Whatsapp Chat Help on their websites to create beautiful showcases, why won’t you!', 'chat-help'), '<b>50000+</b>'); ?>
-                            </span>
-                            <div class="themeatelier-upgrade-to-pro-btn">
-                                <div class="themeatelier-action-btn">
-                                    <a target="_blank" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) ?>pricing/" class="chat_btn_primary">
-                                        <?php echo esc_html__('Upgrade to Pro Now!', 'chat-help'); ?>
-                                    </a>
-                                    <span class="themeatelier-small-paragraph">
-                                        <?php echo sprintf(esc_html__('14-Day No-Questions-Asked %s', 'chat-help'), '<a target="_blank" href="https://themeatelier.net/refund-policy/">' . esc_html__('Refund Policy', 'chat-help') . '</a>'); ?>
-                                    </span>
-                                </div>
-                                <a target="_blank" class="chat_btn_secondary" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) ?>features/"><?php echo esc_html__('See All Features', 'chat-help'); ?></a>
-                                <a target="_blank" class="chat_btn_secondary" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) ?>."><?php echo esc_html__('Pro Live Demo', 'chat-help'); ?></a>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title">
+                                    <?php echo esc_html__('Right and Middle for Bubble', 'chat-help'); ?>
+                                </span>
+                                <span class="themeatelier-free"><span class="themeatelier-free themeatelier-close-icon"></span></span>
+                                <span class="themeatelier-pro"><span class="themeatelier-free themeatelier-check-icon"></span></span>
+                            </li>
+
+
+
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title"><?php echo esc_html__('Shortcode Buttons', 'chat-help'); ?></span>
+                                <span class="themeatelier-free themeatelier-check-icon"></span>
+                                <span class="themeatelier-pro themeatelier-check-icon"></span>
+                            </li>
+
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title"><?php echo esc_html__('WooCommerce Buttons', 'chat-help'); ?></span>
+                                <span class="themeatelier-free themeatelier-check-icon"></span>
+                                <span class="themeatelier-pro themeatelier-check-icon"></span>
+                            </li>
+
+                           <li class="themeatelier-body">
+                                <span class="themeatelier-title"><?php echo esc_html__('WooCommerce Buttons Style', 'chat-help'); ?></span>
+                                <span class="themeatelier-free"><b>2</b></span>
+                                <span class="themeatelier-free"><b>3</b></span>
+                            </li>
+
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title"><?php echo esc_html__('Single Product Button Positions', 'chat-help'); ?></span>
+                                <span class="themeatelier-free"><b>4</b></span>
+                                <span class="themeatelier-free"><b>14</b></span>
+                            </li>
+                            <li class="themeatelier-body">
+                                <span class="themeatelier-title"><?php echo esc_html__('Gutenberg Button Blocks', 'chat-help'); ?></span>
+                                <span class="themeatelier-free themeatelier-check-icon"></span>
+                                <span class="themeatelier-pro themeatelier-check-icon"></span>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="themeatelier-upgrade-to-pro">
+                        <h2 class="themeatelier-section-title"><?php echo esc_html__('Upgrade To PRO & Enjoy Advanced Features!', 'chat-help'); ?></h2>
+                        <span class="themeatelier-section-subtitle">
+                            <?php
+                            // Translators: %s is the number of users using the plugin.
+                            echo sprintf(esc_html__('Already, %s people are using Whatsapp ChatHelp on their websites to create beautiful showcases, why won’t you!', 'chat-help'), '<b>50000+</b>'); ?>
+                        </span>
+                        <div class="themeatelier-upgrade-to-pro-btn">
+                            <div class="themeatelier-action-btn">
+                                <a target="_blank" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) ?>pricing/" class="chat_btn_primary">
+                                    <?php echo esc_html__('Upgrade to Pro Now!', 'chat-help'); ?>
+                                </a>
+                                <span class="themeatelier-small-paragraph">
+                                    <?php 
+                                    // Translators: %s is a link to the refund policy page.
+                                    echo sprintf(esc_html__('14-Day No-Questions-Asked %s', 'chat-help'), '<a target="_blank" href="https://themeatelier.net/refund-policy/">' . esc_html__('Refund Policy', 'chat-help') . '</a>'); ?>
+                                </span>
                             </div>
+                            <a target="_blank" class="chat_btn_secondary" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) ?>features/"><?php echo esc_html__('See All Features', 'chat-help'); ?></a>
+                            <a target="_blank" class="chat_btn_secondary" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) ?>."><?php echo esc_html__('Pro Live Demo', 'chat-help'); ?></a>
                         </div>
-                    
+                    </div>
+
 
                     <div class="chat_testimonial">
                         <div class="chat_testimonial_title_section">
                             <span class="chat_testimonial-subtitle"><?php echo esc_html__('NO NEED TO TAKE OUR WORD FOR IT', 'chat-help'); ?></span>
-                            <h2 class="themeatelier-section-title"><?php echo esc_html__('Our Users Love Whatsapp Chat Help Pro!', 'chat-help'); ?></h2>
+                            <h2 class="themeatelier-section-title"><?php echo esc_html__('Our Users Love Whatsapp ChatHelp!', 'chat-help'); ?></h2>
                         </div>
                         <div class="chat_testimonial_wrap">
+
                             <div class="chat_testimonial_area">
                                 <div class="chat_testimonial_content">
-                                    <p><?php echo esc_html__('The plugin is really easy to use for its good admin UI also the support is very responsive. I got my answer with a solution within a few hours.', 'chat-help'); ?></p>
+                                    <p><?php echo esc_html__('The plugin is really easy to use for it’s good admin UI also the support is very responsive. I got my answer with solution within few hours.', 'chat-help'); ?></p>
                                 </div>
                                 <div class="chat_testimonial-info">
                                     <div class="themeatelier-img">
@@ -757,26 +797,28 @@ class Help
                                     </div>
                                 </div>
                             </div>
+
                             <div class="chat_testimonial_area">
                                 <div class="chat_testimonial_content">
-                                    <p><?php echo esc_html__('This plugin has so many essential features what exactly filled my needs! Amazing!', 'chat-help'); ?></p>
+                                    <p><?php echo esc_html__('I am using this plugin to provide support to my customers through WhatsApp. It’s really effective and they can connect with me very easily using their WhatsApp. They don’t need to save our number manually.', 'chat-help'); ?></p>
                                 </div>
                                 <div class="chat_testimonial-info">
                                     <div class="themeatelier-img">
                                         <img src="<?php echo esc_url(CHAT_HELP_DIR_URL . 'src/Admin/HelpPage/assets/images/user_image.jpg'); ?>"
-                                            alt="<?php echo esc_attr__('PROJECTS4', 'chat-help'); ?>">
+                                            alt="<?php echo esc_attr__('Crowandravener', 'chat-help'); ?>">
                                     </div>
                                     <div class="themeatelier-info">
-                                        <h3><?php echo esc_html__('PROJECTS4', 'chat-help'); ?></h3>
+                                        <h3><?php echo esc_html__('firststepstogether ', 'chat-help'); ?></h3>
                                         <div class="themeatelier-star">
                                             <i>★★★★★</i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="chat_testimonial_area">
                                 <div class="chat_testimonial_content">
-                                    <p><?php echo esc_html__('Support is very fast and friedly', 'chat-help'); ?></p>
+                                    <p><?php echo esc_html__('I requested a Pre-filled Message feature for their plugin, and they implemented it surprisingly fast. I expected it to be a Pro-only feature, but they generously included it in the free version across all chat layouts and button types. Excellent support!', 'chat-help'); ?></p>
                                 </div>
                                 <div class="chat_testimonial-info">
                                     <div class="themeatelier-img">
@@ -784,7 +826,7 @@ class Help
                                             alt="<?php echo esc_attr__('User Asiegle', 'chat-help'); ?>">
                                     </div>
                                     <div class="themeatelier-info">
-                                        <h3><?php echo esc_html__('Asiegle', 'chat-help'); ?></h3>
+                                        <h3><?php echo esc_html__('fhinvention ', 'chat-help'); ?></h3>
                                         <div class="themeatelier-star">
                                             <i>★★★★★</i>
                                         </div>
@@ -799,24 +841,24 @@ class Help
 
             <!-- About Page -->
             <section id="pro-plugins-tab" class="themeatelier__help about-page tab-content">
-            <div class="themeatelier-container">
+                <div class="themeatelier-container">
                     <div class="themeatelier-our-plugin-list">
                         <h2 class="help_page_title">Upgrade your Website with our High-quality Plugins!</h2>
                         <div class="themeatelier-our-plugin-list-wrap">
-                            
+
                             <a target="_blank" class="themeatelier-our-plugin-list-box" href="https://themeatelier.net/downloads/whatsapp-chat-help">
                                 <div class="box_btn">
-                                    View Details 
+                                    View Details
                                     <i class="icofont-long-arrow-right"></i>
                                 </div>
                                 <img src="<?php echo esc_url(CHAT_HELP_DIR_URL . 'src/Admin/HelpPage/assets/images/chat-help.png') ?>" alt="logo">
-                                <h4>WhatsApp Chat Help - Chat Support Plugin For WordPress</h4>
+                                <h4>WhatsApp ChatHelp - Chat Support Plugin For WordPress</h4>
                                 <p>Whatsapp chat support is a WordPress plugin that allows website owners to easily add a WhatsApp chat button to their website.</p>
                             </a>
 
                             <a target="_blank" class="themeatelier-our-plugin-list-box" href="https://themeatelier.net/downloads/darkify/">
                                 <div class="box_btn">
-                                View Details 
+                                    View Details
                                     <i class="icofont-long-arrow-right"></i>
                                 </div>
                                 <img src="<?php echo esc_url(CHAT_HELP_DIR_URL . 'src/Admin/HelpPage/assets/images/darkify.gif') ?>" alt="logo">
@@ -825,7 +867,7 @@ class Help
                             </a>
                             <a target="_blank" class="themeatelier-our-plugin-list-box" href="https://themeatelier.net/downloads/eventful/">
                                 <div class="box_btn">
-                                View Details 
+                                    View Details
                                     <i class="icofont-long-arrow-right"></i>
                                 </div>
                                 <img src="<?php echo esc_url(CHAT_HELP_DIR_URL . 'src/Admin/HelpPage/assets/images/eventful.png') ?>" alt="logo">
@@ -835,7 +877,7 @@ class Help
 
                             <a target="_blank" class="themeatelier-our-plugin-list-box" href="https://themeatelier.net/downloads/greet-bubble/">
                                 <div class="box_btn">
-                                View Details 
+                                    View Details
                                     <i class="icofont-long-arrow-right"></i>
                                 </div>
                                 <img src="<?php echo esc_url(CHAT_HELP_DIR_URL . 'src/Admin/HelpPage/assets/images/greet-logo.png') ?>" alt="logo">
@@ -844,24 +886,24 @@ class Help
                             </a>
                             <a target="_blank" class="themeatelier-our-plugin-list-box" href="https://themeatelier.net/downloads/eventful-for-elementor/">
                                 <div class="box_btn">
-                                View Details 
+                                    View Details
                                     <i class="icofont-long-arrow-right"></i>
                                 </div>
                                 <img src="<?php echo esc_url(CHAT_HELP_DIR_URL . 'src/Admin/HelpPage/assets/images/eventful-for-elementor.png') ?>" alt="logo">
                                 <h4>Eventful for Elementor - Events Showcase for The "The Events Calendar"</h4>
                                 <p>Easily display events from The Events Calendar plugin with Elementor widgets, offering seamless customization and powerful layout options.</p>
                             </a>
-                            
+
                             <a target="_blank" class="themeatelier-our-plugin-list-box" href="https://themeatelier.net/downloads/domain-for-sale/">
                                 <div class="box_btn">
-                                View Details 
+                                    View Details
                                     <i class="icofont-long-arrow-right"></i>
                                 </div>
                                 <img src="<?php echo esc_url(CHAT_HELP_DIR_URL . 'src/Admin/HelpPage/assets/images/thumbnail-2.png') ?>" alt="logo">
                                 <h4>WordPress Domain For Sale Plugin</h4>
                                 <p>The ultimate WordPress plugin for domain sales, appraisals, auctions, and marketplace management.</p>
                             </a>
-                           
+
                         </div>
                     </div>
                 </div>

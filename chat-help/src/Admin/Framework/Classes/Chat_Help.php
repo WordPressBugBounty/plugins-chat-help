@@ -12,6 +12,9 @@
 
 namespace ThemeAtelier\ChatHelp\Admin\Framework\Classes;
 
+if (! defined('ABSPATH')) {
+  die;
+} // Cannot access directly.å
 if (! class_exists('Chat_Help')) {
   class Chat_Help
   {
@@ -454,13 +457,12 @@ if (! class_exists('Chat_Help')) {
       // Check for developer mode
       $min = (self::$premium && SCRIPT_DEBUG) ? '' : '.min';
 
-      // Main style
-      wp_enqueue_style('chat-help', self::include_plugin_url('assets/css/style' . $min . '.css'), array(), self::$version, 'all');
-
       // Main RTL styles
       if (is_rtl()) {
-        wp_enqueue_style('chat-help-rtl', self::include_plugin_url('assets/css/style-rtl' . $min . '.css'), array(), self::$version, 'all');
+        wp_enqueue_style('chat-help', self::include_plugin_url('assets/css/style-rtl' . $min . '.css'), array(), self::$version, 'all');
       }
+      // Main style
+      wp_enqueue_style('chat-help', self::include_plugin_url('assets/css/style' . $min . '.css'), array(), self::$version, 'all');
 
       // Custom style
       wp_enqueue_style('chat-help-help-page', self::include_plugin_url('assets/css/help-page' . $min . '.css'), array(), self::$version, 'all');
@@ -475,6 +477,8 @@ if (! class_exists('Chat_Help')) {
         'color_palette'     => apply_filters('chat_help_color_palette', array()),
         'i18n'              => array(
           'confirm'         => esc_html__('Are you sure?', 'chat-help'),
+
+          /* translators: %s: Minimum number of characters the user must enter */
           'typing_text'     => esc_html__('Please enter %s or more characters', 'chat-help'),
           'searching_text'  => esc_html__('Searching...', 'chat-help'),
           'no_results_text' => esc_html__('No results found.', 'chat-help'),

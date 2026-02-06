@@ -1,6 +1,8 @@
-<?php
+<?php if (! defined('ABSPATH')) {
+	die;
+} // Cannot access directly.
 
-use ThemeAtelier\ChatHelp\Helpers\Helpers;
+use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 
 /**
  * Text.

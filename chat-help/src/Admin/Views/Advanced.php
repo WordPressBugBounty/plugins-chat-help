@@ -144,14 +144,7 @@ class Advanced
 											esc_html__('Define additional parameters to send with your Google Analytics events. Supports variables, URL parameters, and cookies.', 'chat-help') .
 											'</div>' .
 											' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/analytics/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-										'desc'    => __(
-											'<div style="margin-bottom: 10px;"><b>Variables:</b> Use {number}, {group}, {title}, {currentTitle}, {url} to insert the assigned number/group, page title, current title, or current URL.</div>' .
-												'<h4 class="chat-help-info-label" style="margin-bottom: 10px;">' . __('Retrieving Cookies & URL Parameters', 'chat-help') . '</h4>' .
-												'<div style="margin-bottom: 10px;"><b>' . __('URL Parameters:', 'chat-help') . '</b> ' . __('Wrap the parameter name in single square brackets [ ] to insert its value. Missing parameters return blank.', 'chat-help') . '<br />' . __('Example:', 'chat-help') . ' [gclid], [utm_source]</div>' .
-												'<div style="margin-bottom: 10px;"><b>' . __('Cookies:', 'chat-help') . '</b> ' . __('Wrap the cookie name in double square brackets [[ ]] to insert its value. Missing cookies return blank.', 'chat-help') . '<br />' . __('Example:', 'chat-help') . ' [[_ga]]</div>',
-											'chat-help'
-										),
-
+										'desc' => '<div style="margin-bottom: 10px;"><b>' . esc_html__('Variables:', 'chat-help') . '</b> ' . esc_html__('Use {number}, {group}, {title}, {currentTitle}, {url} to insert the assigned number/group, page title, current title, or current URL.', 'chat-help') . '</div><h4 class="chat-help-info-label" style="margin-bottom: 10px;">' . esc_html__('Retrieving Cookies & URL Parameters', 'chat-help') . '</h4><div style="margin-bottom: 10px;"><b>' . esc_html__('URL Parameters:', 'chat-help') . '</b> ' . esc_html__('Wrap the parameter name in single square brackets [ ] to insert its value. Missing parameters return blank.', 'chat-help') . '</div><div style="margin-bottom: 10px;"><b>' . esc_html__('Example:', 'chat-help') . '</b> [gclid], [utm_source]</div><div style="margin-bottom: 10px;"><b>' . esc_html__('Cookies:', 'chat-help') . '</b> ' . esc_html__('Wrap the cookie name in double square brackets [[ ]] to insert its value. Missing cookies return blank.', 'chat-help') . '</div><div style="margin-bottom: 10px;"><b>' . esc_html__('Example:', 'chat-help') . '</b> [[_ga]]</div>',
 										'fields'  => array(
 											array(
 												'id'    => 'parameter_label',
@@ -191,16 +184,11 @@ class Advanced
 									array(
 										'type'    => 'notice',
 										'style'   => 'normal',
-										'content' => __('Webhooks are available in the <strong>Pro version</strong>. Upgrade to unlock real-time integrations and automate workflows. <a href="'. CHAT_HELP_DEMO_URL .'pricing" target="_blank"><b>Upgrade to Pro</b></a>', 'chat-help'),
+										'content' => esc_html__('Webhooks are available in the', 'chat-help') . ' <strong>' . esc_html__('Pro version', 'chat-help') . '</strong>.' . esc_html__(' Upgrade to unlock real-time integrations and automate workflows.', 'chat-help') . '<a href="' . CHAT_HELP_DEMO_URL . 'pricing" target="_blank"><b>' . esc_html__('Upgrade to Pro', 'chat-help') . '</b></a>',
 									),
 									array(
 										'type'    => 'subheading',
-										'content' => sprintf(
-											/* translators: %s: Documentation link */
-											__('Webhooks are automated HTTP POST requests that send data to a specified URL whenever certain events occur. They enable applications to communicate in real time, without the need for manual action. <a class="tooltip_btn_primary" target="_blank" href="%s">Check WebHooks Documentation</a>', 'chat-help'),
-											esc_url(CHAT_HELP_DEMO_URL . 'docs/floating-chat-webhooks/')
-										),
-
+										'content' => esc_html__('Webhooks are automated HTTP POST requests that send data to a specified URL whenever certain events occur. They enable applications to communicate in real time, without the need for manual action. ', 'chat-help') . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/floating-chat-webhooks/">' . esc_html__('Check WebHooks Documentation', 'chat-help') . '</a>',
 									),
 									array(
 										'id' => 'webhook_url',

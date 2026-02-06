@@ -6,8 +6,8 @@
  * @link       https://themeatelier.net
  * @since      1.0.0
  *
- * @package chat-help
- * @subpackage chat-help/src/Admin/Views/WooCommerceButton
+ * @package chat-help-pro
+ * @subpackage chat-help-pro/src/Admin/Views/WooCommerceButton
  * @author     ThemeAtelier<themeatelierbd@gmail.com>
  */
 
@@ -31,40 +31,16 @@ class WooCommerceButton
         //
         Chat_Help::createSection($prefix, array(
             'title'       => esc_html__('WOOCOMMERCE BUTTON', 'chat-help'),
-            'icon'        => 'icofont-shopping-cart',
+            'icon'        => 'icofont-cart',
             'fields'      => array(
                 array(
                     'id'      => 'wooCommerce_button',
                     'type'    => 'switcher',
                     'title'   => esc_html__('WooCommerce Button', 'chat-help'),
-                    'title_help' =>
-                    '<div class="chat-help-info-label">' .
-                        esc_html__('Show or hide the WhatsApp chat button on WooCommerce product pages.', 'chat-help') .
-                        '</div>' .
-                        ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-
+                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Show or hide the WhatsApp chat button on WooCommerce product pages.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                     'text_on' => esc_html__('Show', 'chat-help'),
                     'text_off' => esc_html__('Hide', 'chat-help'),
                     'text_width'    => 80,
-                ),
-
-                array(
-                    'id'    => 'wooCommerce_button_position',
-                    'type'  => 'button_set',
-                    'title'   => esc_html__('Button Position', 'chat-help'),
-                    'options' => array(
-                        'before' => esc_html__('Before Cart Button', 'chat-help'),
-                        'after'  => esc_html__('After Cart Button', 'chat-help'),
-                    ),
-                    'title_help' =>
-                    '<div class="chat-help-info-label">' .
-                        esc_html__('Choose where the WhatsApp button will appear on WooCommerce product pages. Default: After Cart Button.', 'chat-help') .
-                        '</div>' .
-                        ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-
-                    'default'   => 'after',
                 ),
 
                 array(
@@ -72,16 +48,11 @@ class WooCommerceButton
                     'type' => 'radio',
                     'inline' => true,
                     'title' => esc_html__('WhatsApp Type', 'chat-help'),
-                    'title_help' =>
-                    '<div class="chat-help-info-label">' .
-                        esc_html__('Choose how users will connect: select "Number" to receive direct WhatsApp messages, or "Group" to invite users to join your WhatsApp group.', 'chat-help') .
-                        '</div>' .
-                        ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/what-is-the-whatsapp-type-field-and-how-should-i-use-it/?ref=1') . '">' . esc_html__('Detailed explanation', 'chat-help') . '</a>',
+                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Choose how users will connect: select "Number" to receive direct WhatsApp messages, or "Group" to invite users to join your WhatsApp group.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/what-is-the-whatsapp-type-field-and-how-should-i-use-it/?ref=1') . '">' . esc_html__('Detailed explanation', 'chat-help') . '</a>',
                     'options' => array(
                         'number' => esc_html__('Number', 'chat-help'),
                         'group'  => esc_html__('Group', 'chat-help'),
                     ),
-
                     'default' => 'number',
                 ),
                 array(
@@ -113,101 +84,300 @@ class WooCommerceButton
                     'id' => 'wooCommerce_button_message',
                     'type' => 'textarea',
                     'title' => esc_html__('Pre-filled Message', 'chat-help'),
-                    'title_help' =>
-                    '<div class="chat-help-info-label">' .
-                        esc_html__('Write a friendly, pre-filled message that users will see when they click the chat button. Example: “Hi! I have a question about your product {productName}.” This saves them time and makes starting a conversation effortless.', 'chat-help') .
-                        '</div>' .
-                        ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/10-how-can-i-use-dynamic-variables-in-the-woocommerce-button-pre-filled-message/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-                    'desc' =>
-                    '<b>' . esc_html__('WooCommerce Vars:', 'chat-help') . '</b> {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} <br>' .
+                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Write a friendly, pre-filled message that users will see when they click the chat button. Example: “Hi! I have a question about your product {productName}.” This saves them time and makes starting a conversation effortless.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/10-how-can-i-use-dynamic-variables-in-the-woocommerce-button-pre-filled-message/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                    'desc' => '<b>' . esc_html__('WooCommerce Vars:', 'chat-help') . '</b> {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} <br>' .
                         '<b>' . esc_html__('Conditional Blocks:', 'chat-help') . '</b> {PRODUCT_START} ... {PRODUCT_END}, {NOT_PRODUCT_START} ... {NOT_PRODUCT_END}, {LOGGEDIN_START} ... {LOGGEDIN_END}, {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}  <br>' . '<b>' . esc_html__('Global Vars:', 'chat-help') . '</b> {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date}',
                     'default' => "Hello! I’d like to ask about {productName} (SKU: {productSku}) on {siteTitle}.\n{PRODUCT_START}Current price: {productPrice} (regular: {productRegularPrice}, sale: {productSalePrice})\nStock: {productStockStatus}{PRODUCT_END}",
-
                     'dependency' =>  array(
                         array('wooCommerce_button_type_of_whatsapp',   '==', 'number', 'visible'),
                     ),
                 ),
 
                 array(
-                    'id'    => 'wooCommerce_button_icon',
-                    'type'  => 'switcher',
-                    'title'     => esc_html__('Show/Hide Icon', 'chat-help'),
-                    'title_help' =>
-                    '<div class="chat-help-info-label">' .
-                        esc_html__('Toggle the visibility of the WhatsApp chat icon on single product pages.', 'chat-help') .
-                        '</div>' .
-                        ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-                    'text_on'   => esc_html__('Show', 'chat-help'),
-                    'text_off'  => esc_html__('Hide', 'chat-help'),
+                    'id'    => 'wooCommerce_button_position',
+                    'type'  => 'select',
+                    'title'   => esc_html__('Button Position', 'chat-help'),
+                    'options' => array(
+                        'woocommerce_after_add_to_cart_form'  => esc_html__('After Add to Cart Form', 'chat-help'),
+                        'woocommerce_before_add_to_cart_form' => esc_html__('Before Add to Cart Form', 'chat-help'),
+                        'woocommerce_short_description_after' => esc_html__('After Product Short Description', 'chat-help'),
+                        'woocommerce_share'  => esc_html__('Around Product Share Area', 'chat-help'),
+                        'woocommerce_before_main_content' => esc_html__('Before Main Content (Pro)', 'chat-help'),
+                        'woocommerce_before_single_product' => esc_html__('Before Product (Pro)', 'chat-help'),
+                        'woocommerce_before_single_product_summary' => esc_html__('Before Product (Pro)', 'chat-help'),
+                        'woocommerce_single_product_summary' => esc_html__('Product Summary (Pro)', 'chat-help'),
+                        'woocommerce_before_add_to_cart_button' => esc_html__('Before Cart Button (Pro)', 'chat-help'),
+                        'woocommerce_after_add_to_cart_button'  => esc_html__('After Cart Button (Pro)', 'chat-help'),
+                        'woocommerce_product_meta_start' => esc_html__('Before Product Meta (Pro)', 'chat-help'),
+                        'woocommerce_product_meta_end' => esc_html__('After Product Meta (Pro)', 'chat-help'),
+                        'woocommerce_after_single_product'  => esc_html__('After Product (Pro)', 'chat-help'),
+                        'woocommerce_after_single_product_summary'  => esc_html__('After Product Summary (Pro)', 'chat-help'),
+                    ),
+                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Choose where the WhatsApp button will appear on WooCommerce product pages. Default: After Cart Button.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                    'default'   => 'woocommerce_after_add_to_cart_form',
+                ),
 
-                    'default'   => true,
-                    'text_width'    => 80,
+                array(
+                    'id' => 'wooCommerce_button_style',
+                    'type' => 'layout_preset',
+                    'title' => esc_html__('WooCommerce Button Style', 'chat-help'),
+                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Choose a style for the floating chat button from the available design options.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'floating-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
 
+                    'options' => array(
+                        '1' => array(
+                            'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/button-1.svg',
+                            'text'            => esc_html__('Icon', 'chat-help'),
+                            'option_demo_url' => CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1',
+                        ),
+                        '2' => array(
+                            'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/button-2.svg',
+                            'text'            => esc_html__('Simple Button', 'chat-help'),
+                            'option_demo_url' => CHAT_HELP_DEMO_URL . 'product/golden-lamps/?ref=1',
+                        ),
+                        '10' => array(
+                            'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/advance-filled.svg',
+                            'text'            => esc_html__('Advance Button', 'chat-help'),
+                            'option_demo_url' => CHAT_HELP_DEMO_URL . '/product/hand-made-pottery/?ref=1',
+                            'pro_only'        => true,
+                        ),
+                    ),
+                    'default' => '2',
+                ),
+
+
+                // Button text
+                array(
+                    'id' => 'wooCommerce_button_text',
+                    'type' => 'text',
+                    'title' => esc_html__('Button Main Label', 'chat-help'),
+                    'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/button_text.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Enter the text to display inside the floating chat button.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                    'default' => esc_html__('How may I help you?', 'chat-help'),
+                    'dependency' => array('wooCommerce_button_style', '!=', '1', 'any'),
                 ),
 
                 // Circle button icon
                 array(
-                    'id'    => 'wooCommerce_button_icon_open',
-                    'type'  => 'icon',
-                    'title'     => esc_html__('Icon for Button', 'chat-help'),
-                    'title_help' =>
-                    '<div class="chat-help-info-label">' .
-                        esc_html__('Change the icon displayed inside the button.', 'chat-help') .
-                        '</div>' .
-                        ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                    'id' => 'wooCommerce_circle_button_icon',
+                    'type' => 'button_set',
+                    'title' => esc_html__('Icon for Circle Button', 'chat-help'),
+                    'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/circle_icon.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Select an icon to display inside the circular chat button.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_attr(CHAT_HELP_DEMO_URL) . 'docs/woocommerce-button/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
 
+                    'options' => array(
+                        'icofont-brand-whatsapp'    => array(
+                            'option_name' => '<i class="icofont-brand-whatsapp"></i>',
+                        ),
+                        'icofont-whatsapp'    => array(
+                            'option_name' => '<i class="icofont-whatsapp"></i>',
+                        ),
+                        'icofont-live-support'    => array(
+                            'option_name' => '<i class="icofont-live-support"></i>',
+                        ),
+                        'icofont-ui-messaging'    => array(
+                            'option_name' => '<i class="icofont-ui-messaging"></i>',
+                        ),
+                        'icofont-telegram'    => array(
+                            'option_name' => '<i class="icofont-telegram"></i>',
+                        ),
+                        'icofont-life-buoy'    => array(
+                            'option_name' => '<i class="icofont-life-buoy"></i>',
+                        ),
+                        'native'    => array(
+                            'option_name' => esc_html__('Native', 'chat-help'),
+                            'pro_only'  => true,
+                        ),
+                        'custom'    => array(
+                            'option_name' => esc_html__('Custom', 'chat-help'),
+                            'pro_only'  => true,
+                        ),
+                    ),
                     'default' => 'icofont-brand-whatsapp',
-                    'dependency' => array('wooCommerce_button_icon', '==', 'true'),
+                    'dependency' => array('wooCommerce_button_style', '==', '1', 'any'),
+                ),
+
+                // Circle button icon
+                array(
+                    'id' => 'wooCommerce_button_icon_open',
+                    'type' => 'button_set',
+                    'title' => esc_html__('Icon for Button', 'chat-help'),
+                    'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/button_icon.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Select an icon to display inside the floating chat button.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'simple-button/">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                    'options' => array(
+                        'icofont-brand-whatsapp'    => array('option_name' => '<i class="icofont-brand-whatsapp"></i>'),
+                        'icofont-whatsapp'    => array('option_name' => '<i class="icofont-whatsapp"></i>'),
+                        'icofont-live-support'    => array('option_name' => '<i class="icofont-live-support"></i>'),
+                        'icofont-ui-messaging'    => array('option_name' => '<i class="icofont-ui-messaging"></i>'),
+                        'icofont-telegram'    => array('option_name' => '<i class="icofont-telegram"></i>'),
+                        'icofont-life-buoy'    => array('option_name' => '<i class="icofont-life-buoy"></i>'),
+                        'native'    => array(
+                            'option_name' => esc_html__('Native', 'chat-help'),
+                            'pro_only'  => true,
+                        ),
+                        'custom'    => array(
+                            'option_name' => esc_html__('Custom', 'chat-help'),
+                            'pro_only'  => true,
+                        ),
+                        'no_icon'    => array(
+                            'option_name' => esc_html__('No Icon', 'chat-help'),
+                        ),
+                    ),
+                    'default' => 'icofont-brand-whatsapp',
+                    'dependency' => array('wooCommerce_button_style', '==', '2', 'any'),
+                ),
+                array(
+                    'id' => 'wooCommerce_button_size',
+                    'type' => 'button_set',
+                    'title' => esc_html__('Button Size', 'chat-help'),
+                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Select the size of the button.', 'chat-help') . '</div>',
+                    'options' => array(
+                        'small'    => array(
+                            'option_name' => esc_html__('Small', 'chat-help'),
+                        ),
+                        'medium'    => array(
+                            'option_name' => esc_html__('Medium', 'chat-help'),
+                        ),
+                        'large'    => array(
+                            'option_name' => esc_html__('Large', 'chat-help'),
+                        ),
+                    ),
+                    'default' => 'medium',
+                    'dependency' => array('chat_layout', '!=', 'advance_button', 'any'),
+                ),
+                array(
+                    'id'        => 'wooCommerce_icon_color',
+                    'type'      => 'color_group',
+                    'title' => esc_html__('Icon Color', 'chat-help'),
+                    'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/icon_background.jpg') . '" alt=""></div>' .  '<div class="chat-help-info-label">' .
+                        esc_html__('You can define normal and hover colors for the button icon.', 'chat-help') .
+                        '</div>',
+                    'options' => array(
+                        'normal_color'   => esc_html__('Normal Color', 'chat-help'),
+                        'hover_color' => esc_html__('Hover Color', 'chat-help'),
+                    ),
+                    'dependency' => array('wooCommerce_button_style|wooCommerce_button_icon_open', '!=|!=', '10|no_icon', 'any'),
+                ),
+                array(
+                    'id' => 'wooCommerce_icon_bg',
+                    'type' => 'switcher',
+                    'title' => esc_html__('Icon Background', 'chat-help'),
+                    'text_on' => esc_html__('Enable', 'chat-help'),
+                    'text_off' => esc_html__('Disable', 'chat-help'),
+                    'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/icon_background.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' .
+                        esc_html__('Enable/Disable Button Inner Icon Background', 'chat-help') .
+                        '</div>' .
+                        ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'simple-button/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
+                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+
+                    'default' => true,
+                    'text_width' => 90,
+                    'dependency' => array('wooCommerce_button_icon_open|wooCommerce_button_style', '!=|==', 'no_icon|2', 'any'),
+                ),
+                array(
+                    'id'        => 'wooCommerce_icon_bg_color',
+                    'type'      => 'color_group',
+                    'title' => esc_html__('Icon Background Color', 'chat-help'),
+                    'title_help' => '<div class="chat-help-info-label">' .
+                        esc_html__('You can define normal and hover background colors for the button icon.', 'chat-help') .
+                        '</div>',
+                    'options' => array(
+                        'normal_color'   => esc_html__('Normal Color', 'chat-help'),
+                        'hover_color' => esc_html__('Hover Color', 'chat-help'),
+                    ),
+                    'default'   => array(
+                        'normal_color' => '#ffffff',
+                        'hover_color' => '#ffffff',
+                    ),
+                    'dependency' => array('wooCommerce_button_icon_open|wooCommerce_button_style|wooCommerce_icon_bg', '!=|==|==', 'no_icon|2|true', 'any'),
                 ),
 
                 array(
-                    'id'    => 'wooCommerce_button_text',
-                    'type'  => 'text',
-                    'title'     => esc_html__('Button Text', 'chat-help'),
-                    'title_help' =>
-                    '<div class="chat-help-info-label">' .
-                        esc_html__('Set the label text displayed inside the WhatsApp chat button.', 'chat-help') .
+                    'id'        => 'wooCommerce_button_bg',
+                    'type'      => 'color_group',
+                    'title' => esc_html__('Button Background', 'chat-help'),
+                    'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/button_background.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' .
+                        esc_html__('Set your button background color.', 'chat-help') .
                         '</div>' .
-                        ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-                    'default'   => esc_html__('How may I help you?', 'chat-help'),
-
+                        ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
+                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                    'options' => array(
+                        'normal_color'   => esc_html__('Normal Color', 'chat-help'),
+                        'hover_color' => esc_html__('Hover Color', 'chat-help'),
+                    ),
                 ),
-
+                array(
+                    'id'        => 'wooCommerce_button_text_color',
+                    'type'      => 'color_group',
+                    'title' => esc_html__('Button Label Color', 'chat-help'),
+                    'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/button_text_color.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' .
+                        esc_html__('Set your button button label color.', 'chat-help') .
+                        '</div>' .
+                        ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
+                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                    'options' => array(
+                        'normal_color'   => esc_html__('Normal Color', 'chat-help'),
+                        'hover_color' => esc_html__('Hover Color', 'chat-help'),
+                    ),
+                    'dependency' => array('wooCommerce_button_style', '!=', '1', 'any'),
+                ),
+                array(
+                    'id' => 'wooCommerce_button_border',
+                    'type' => 'border',
+                    'title' => esc_html__('Button Border', 'chat-help'),
+                    'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/button_border.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' .
+                        esc_html__('Set border for the floating chat button.', 'chat-help') .
+                        '</div>' .
+                        ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
+                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                    'all'      => true,
+                    'hover_color'      => true,
+                    'border_radius'      => true,
+                    'default'  => array(
+                        'all'   => '0',
+                        'style' => 'solid',
+                        'color' => '',
+                        'hover_color' => '',
+                        'border_radius' => '50',
+                    ),
+                ),
+                array(
+                    'id' => 'wooCommerce_icon_border',
+                    'type' => 'border',
+                    'title' => esc_html__('Icon Border', 'chat-help'),
+                    'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/button_border.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' .
+                        esc_html__('Set border for the floating chat button.', 'chat-help') .
+                        '</div>' .
+                        ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
+                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                    'all'      => true,
+                    'hover_color'      => true,
+                    'border_radius'      => true,
+                    'default'  => array(
+                        'all'   => '0',
+                        'style' => 'solid',
+                        'color' => '#ffffff',
+                        'hover_color' => '#ffffff',
+                        'border_radius' => '50',
+                    ),
+                    'dependency' => array('opt-button-style', '!=', '1', 'any'),
+                ),
                 array(
                     'id'    => 'wooCommerce_button_padding',
                     'type'    => 'spacing',
                     'title'     => esc_html__('Button Padding', 'chat-help'),
-                    'title_help' =>
-                    '<div class="chat-help-info-label">' .
-                        esc_html__('Adjust the inner spacing (padding) of the chat button for better alignment and appearance.', 'chat-help') .
-                        '</div>' .
-                        ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-
+                    'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/button_padding.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Adjust the inner spacing (padding) of the chat button for better alignment and appearance.',  'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                     'default'     => array(
                         'top'       => '5',
                         'right'     => '15',
                         'bottom'    => '5',
-                        'left'      => '15',
+                        'left'      => '6',
                         'unit'      => 'px',
                     ),
-
+                    'dependency' => array('wooCommerce_button_style', '!=', '1', 'any'),
                 ),
 
                 array(
                     'id'    => 'wooCommerce_button_margin',
                     'type'    => 'spacing',
                     'title'     => esc_html__('Button Margin', 'chat-help'),
-                    'title_help' =>
-                    '<div class="chat-help-info-label">' .
-                        esc_html__('Adjust the outer spacing (margin) around the chat button to control its placement.', 'chat-help') .
-                        '</div>' .
-                        ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-
+                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Adjust the outer spacing (margin) around the chat button to control its placement.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                     'default'     => array(
                         'top'       => '0',
                         'right'     => '0',
@@ -215,39 +385,14 @@ class WooCommerceButton
                         'left'      => '0',
                         'unit'      => 'px',
                     ),
-
+                    'output_mode' => 'margin',
                 ),
 
-                array(
-                    'id'    => 'wooCommerce_button_border_radius',
-                    'type'    => 'spacing',
-                    'title'     => esc_html__('Button Border Radius', 'chat-help'),
-                    'title_help' =>
-                    '<div class="chat-help-info-label">' .
-                        esc_html__('Adjust the border radius to control the roundness of the chat button corners.', 'chat-help') .
-                        '</div>' .
-                        ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-
-                    'default'     => array(
-                        'top'       => '5',
-                        'right'     => '5',
-                        'bottom'    => '5',
-                        'left'      => '5',
-                        'unit'      => 'px',
-                    ),
-
-                ),
                 array(
                     'id'      => 'wooCommerce_button_visibility',
                     'type'    => 'button_set',
                     'title'     => esc_html__('Button Visibility', 'chat-help'),
-                    'title_help' =>
-                    '<div class="chat-help-info-label">' .
-                        esc_html__('Control where the chat button is visible. Choose to show it on all devices or restrict it to desktop, tablet, or mobile only.', 'chat-help') .
-                        '</div>' .
-                        ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                        ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Control where the chat button is visible. Choose to show it on all devices or restrict it to desktop, tablet, or mobile only.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'product/round-pendant-lamp/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/woocommerce-button/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                     'options'   => array(
                         'everywhere'  => esc_html__('Everywhere', 'chat-help'),
                         'desktop'     => esc_html__('Desktop Only', 'chat-help'),

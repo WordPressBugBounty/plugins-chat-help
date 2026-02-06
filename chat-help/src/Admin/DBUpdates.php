@@ -13,6 +13,9 @@
 
 namespace ThemeAtelier\ChatHelp\Admin;
 
+if (! defined('ABSPATH')) {
+    die;
+} // Cannot access directly.
 /**
  * The admin class
  */
@@ -26,6 +29,7 @@ class DBUpdates
     private static $updates = array(
         '2.1.0' => 'updates/update-2.1.0.php',
         '2.2.9' => 'updates/update-2.2.9.php',
+        '3.1.12' => 'updates/update-3.1.12.php',
     );
 
     /**

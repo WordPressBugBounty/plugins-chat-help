@@ -15,7 +15,7 @@
 
 namespace ThemeAtelier\ChatHelp\Frontend\Templates;
 
-use ThemeAtelier\ChatHelp\Helpers\Helpers;
+use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 
 /**
  * Class FormTemplate
@@ -33,7 +33,7 @@ class FormTemplate
 	 *
 	 * @since 1.0.0
 	 */
-	public static function formTemplate($options, $bubble_type, $random, $whatsapp_message_template)
+	public static function formTemplate($options, $bubble_type, $random, $whatsapp_message_template, $unique_id)
 	{
 		$optAvailablity = isset($options['opt-availablity']) ? $options['opt-availablity'] : '';
 		$user_availability = Helpers::user_availability($optAvailablity);
@@ -58,6 +58,7 @@ class FormTemplate
 		$primary = isset($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
 		$secondary = isset($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
 		$bubble_visibility = isset($options['bubble-visibility']) ? $options['bubble-visibility'] : 'everywhere';
+		$floating_button_style = isset($options['opt-button-style']) ? $options['opt-button-style'] : '1';
 
 		// Method implementation goes here.
 		if ('random' === $select_animation) :
@@ -65,7 +66,8 @@ class FormTemplate
 		else :
 			$animation = !empty($select_animation) ? $select_animation : '14';
 		endif;
-		echo '<div class="wHelp ' . esc_attr($bubble_position) . ' wHelp-' . esc_attr($bubble_visibility) . '-only ';
+
+		echo '<div id="' . esc_attr($unique_id) . '" class="wHelp_bubble wHelp ' . esc_attr($bubble_position) . ' wHelp-' . esc_attr($bubble_visibility) . '-only ';
 		// Add bubble style classes based on the 'bubble-style' option.
 		if ($bubble_style === 'dark') {
 			echo 'dark-mode ';
@@ -82,8 +84,9 @@ class FormTemplate
 			<?php
 			include Helpers::chat_help_locate_template('items/single-template-header.php');
 			include Helpers::chat_help_locate_template('items/form.php');
+			// include Helpers::chat_help_locate_template('items/template-footer.php');
 			?>
-			<span style="display:block!important" class="wcp-branding"><?php echo esc_html__('Powered by', 'chat-help'); ?> <a target="_blank" href="<?php echo esc_url(CHAT_HELP_DEMO_URL) . 'pricing/' ?>"><strong><?php echo esc_html__('Chat Help', 'chat-help'); ?></strong></a></span>
+
 		</div>
 		</div>
 <?php

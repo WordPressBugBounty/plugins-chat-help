@@ -3999,10 +3999,10 @@
       var cleanNumber = number.replace(/\D/g, '');
       if (cleanNumber.length >= 3) {
         var encodedText = encodeURIComponent("Hello! I'm testing the Chat Help plugin");
-        var link = "https://web.whatsapp.com/send?phone=" + cleanNumber + "&text=" + encodedText;
+        var link = "https://wa.me/send?phone=" + cleanNumber + "&text=" + encodedText;
         $desc.html('Test: <a target="_blank" rel="noopener noreferrer" href="' + link + '">' + cleanNumber + '</a>');
       } else {
-        $desc.text('Phone number in international format. Only numbers.');
+        $desc.text('Enter WhatsApp number with country code (e.g., +10123456189).');
       }
     }
 

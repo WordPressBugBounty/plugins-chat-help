@@ -1,23 +1,33 @@
 <?php
-
+if (! defined('ABSPATH')) {
+    die;
+} // Cannot access directly.
 /**
- * Chat Help Agent Message.
+ * ChatHelp Agent Message.
  *
  * @package    chat-help
  * @subpackage chat-help/src/Frontend
  */
 
-use ThemeAtelier\ChatHelp\Helpers\Helpers;
+use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 
 $gdpr_enable = isset($options['gdpr-enable']) ? $options['gdpr-enable'] : '';
-$agent_name_placeholder_text = isset($options['agent-name-placeholder-text']) ? $options['agent-name-placeholder-text'] : __('Your name?', 'text-domain');
-$agent_message_placeholder_text = isset($options['agent-message-placeholder-text']) ? $options['agent-message-placeholder-text'] : __('Message', 'text-domain');
+$agent_name_placeholder_text = isset($options['agent-name-placeholder-text']) ? $options['agent-name-placeholder-text'] : __('Your name?', 'chat-help');
+$agent_message_placeholder_text = isset($options['agent-message-placeholder-text']) ? $options['agent-message-placeholder-text'] : __('Message', 'chat-help');
 $before_chat_icon = isset($options['before-chat-icon']) ? $options['before-chat-icon'] : 'icofont-brand-whatsapp';
-$chat_button_text = isset($options['chat-button-text']) ? $options['chat-button-text'] : __('Send a message', 'text-domain');
+$chat_button_text = isset($options['chat-button-text']) ? $options['chat-button-text'] : __('Send a message', 'chat-help');
 $chat_loading_text = isset($options['chat-button-loading-text']) ? $options['chat-button-loading-text'] : 'Redirecting...';
 $type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
 $whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
 $whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
+
+$color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
+$primary = isset($color_settings['primary']) ? $color_settings['primary'] : '';
+$secondary = isset($color_settings['secondary']) ? $color_settings['secondary'] : '';
+$color = '#fff';
+$hover_color = '#fff';
+$background = $primary;
+$hover_background = $secondary;
 
 if ($type_of_whatsapp === 'group') {
     $gaAnalyticsAttr = 'data-group=' . $whatsapp_group . '';
@@ -71,7 +81,8 @@ if ($product) {
     <?php endif; ?>
     <button
         type="submit"
-        class="wHelp__send-message <?php echo $gdpr_enable ? 'condition__checked' : ''; ?>" 
+        class="wHelp__send-message <?php echo $gdpr_enable ? 'condition__checked' : ''; ?>"
+        style="--wHelp-color-primary: <?php echo esc_attr($background) ?>;--wHelp-color-secondary:<?php echo esc_attr($hover_background) ?>;--text-color: <?php echo esc_attr($color) ?>;--text-hover-color: <?php echo esc_attr($hover_color) ?>"
         <?php echo esc_attr($gaAnalyticsAttr) ?>
         target="_blank">
         <?php

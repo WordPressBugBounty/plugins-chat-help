@@ -3,7 +3,7 @@
 /**
  * Single Template Class
  *
- * This class handles the single template functionality for Chat Help.
+ * This class handles the single template functionality for ChatHelp.
  *
  * @link       https://themeatelier.net
  * @since      1.0.0
@@ -16,7 +16,7 @@
 
 namespace ThemeAtelier\ChatHelp\Frontend\Templates;
 
-use ThemeAtelier\ChatHelp\Helpers\Helpers;
+use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 
 /**
  * Class SingleTemplate
@@ -34,7 +34,7 @@ class SingleTemplate
 	 *
 	 * @since 1.0.0
 	 */
-	public static function singleTemplate($options, $bubble_type, $random, $whatsapp_message_template)
+	public static function singleTemplate($options, $bubble_type, $random, $whatsapp_message_template, $unique_id)
 	{
 		$optAvailablity 	= isset($options['opt-availablity']) ? $options['opt-availablity'] : '';
 		$user_availability 	= Helpers::user_availability($optAvailablity);
@@ -59,7 +59,11 @@ class SingleTemplate
 		$color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
 		$primary = isset($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
 		$secondary = isset($color_settings['secondary']) ? $color_settings['secondary'] : '#118c7e';
-
+		$send_button_color = isset($options['send_button_color']) ? $options['send_button_color'] : '';
+		$color = '#fff';
+		$hover_color = '#fff';
+		$background = $primary;
+		$hover_background = $secondary;
 
 		if ($type_of_whatsapp === 'group') {
 			$gaAnalyticsAttr = 'data-group=' . $whatsapp_group . '';
@@ -74,7 +78,7 @@ class SingleTemplate
 			$animation = !empty($select_animation) ? $select_animation : '14';
 		endif;
 
-		echo '<div class="wHelp ' . esc_attr($bubble_position) . ' wHelp-' . esc_attr($bubble_visibility) . '-only ';
+		echo '<div id="' . esc_attr($unique_id) . '" class="wHelp_bubble wHelp ' . esc_attr($bubble_position) . ' wHelp-' . esc_attr($bubble_visibility) . '-only ';
 
 		// Add bubble style classes based on the 'bubble-style' option.
 		if ($bubble_style === 'dark') {
@@ -94,12 +98,9 @@ class SingleTemplate
 			<?php
 			include Helpers::chat_help_locate_template('items/single-template-header.php');
 			include Helpers::chat_help_locate_template('items/agent-message.php');
+			// include Helpers::chat_help_locate_template('items/template-footer.php');
 			?>
-			<?php if ($footer_content && $footer_content_text) {
-			?>
-				<span style="display:block!important" class="wcp-branding"><?php echo wp_kses_post($footer_content_text); ?></span>
-			<?php
-			} ?>
+			
 		</div>
 		</div>
 <?php

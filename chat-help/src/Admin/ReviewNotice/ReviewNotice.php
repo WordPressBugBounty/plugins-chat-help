@@ -16,6 +16,9 @@
 
 namespace ThemeAtelier\ChatHelp\Admin\ReviewNotice;
 
+if (! defined('ABSPATH')) {
+    die;
+} // Cannot access directly.
 /**
  * The Helpers class to manage all public facing stuffs.
  *
@@ -60,11 +63,11 @@ class ReviewNotice
 ?>
         <div id="chat-help-review-notice" class="chat-help-review-notice">
             <div class="chat-help-plugin-icon">
-                <img src="<?php echo esc_url(CHAT_HELP_DIR_URL . 'src/Admin/HelpPage/assets/images/chat-logo.png'); ?>" alt="Chat Help">
+                <img src="<?php echo esc_url(CHAT_HELP_DIR_URL . 'src/Admin/HelpPage/assets/images/chat-logo.png'); ?>" alt="ChatHelp">
             </div>
             <div class="chat-help-notice-text">
-                <h3>Enjoying <strong>WhatsApp Chat Help</strong>?</h3>
-                <p>We hope you had a wonderful experience using <strong>WhatsApp Chat Help</strong>. Please take a moment to leave a review on <a href="https://wordpress.org/support/plugin/chat-help/reviews/?filter=5#new-post" target="_blank"><strong>WordPress.org</strong></a>.
+                <h3>Enjoying <strong>WhatsApp ChatHelp</strong>?</h3>
+                <p>We hope you had a wonderful experience using <strong>WhatsApp ChatHelp</strong>. Please take a moment to leave a review on <a href="https://wordpress.org/support/plugin/chat-help/reviews/?filter=5#new-post" target="_blank"><strong>WordPress.org</strong></a>.
                     Your positive review will help us improve. Thank you! 😊</p>
 
                 <p class="chat-help-review-actions">
