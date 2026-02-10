@@ -47,24 +47,26 @@ document.addEventListener("DOMContentLoaded", function () {
       // Deep clone the analytics_parameter to avoid overwriting original
       let eventData = JSON.parse(JSON.stringify(analytics_parameter));
 
-      eventData.forEach((param) => {
-        if (param.event_parameter === "number") {
-          param.event_parameter_value = number;
-        } else if (param.event_parameter === "group") {
-          param.event_parameter_value = group;
+      if(eventData) {
+        eventData.forEach((param) => {
+          if (param.event_parameter === "number") {
+            param.event_parameter_value = number;
+          } else if (param.event_parameter === "group") {
+            param.event_parameter_value = group;
+          }
+        });
+        // Build GA params object
+        let ga_prams = {};
+        eventData.forEach((param) => {
+          ga_prams[param.event_parameter] = param.event_parameter_value;
+        });
+  
+        // Send GA event
+        if (typeof gtag !== "undefined") {
+          gtag("event", event_name, ga_prams);
         }
-      });
-
-      // Build GA params object
-      let ga_prams = {};
-      eventData.forEach((param) => {
-        ga_prams[param.event_parameter] = param.event_parameter_value;
-      });
-
-      // Send GA event
-      if (typeof gtag !== "undefined") {
-        gtag("event", event_name, ga_prams);
       }
+
     });
   });
 });

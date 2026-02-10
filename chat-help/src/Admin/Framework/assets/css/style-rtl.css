@@ -335,7 +335,6 @@ html[dir="rtl"] .chat-help-header-right .chat-help-buttons .button {
   width: 100%;
   height: 80px;
   background-color: #fff;
-  border-radius: 4px;
   box-shadow: 0 0 20px 0 rgba(36, 39, 50, 0.08);
 }
 .chat-help-nav-inline ul li {
@@ -363,6 +362,7 @@ html[dir="rtl"] .chat-help-header-right .chat-help-buttons .button {
  */
 .chat-help-wrapper {
   position: relative;
+  background-color: #fff;
 }
 
 /**
@@ -5807,10 +5807,10 @@ border-color: #1a74e4;
   font-size: 14px;
   font-weight: 500;
   border-left: 1px solid #98d7d0;
-  border-bottom: none !important;
-  background-color: #118c7e !important;
+  border-bottom: none;
+  background-color: #118c7e;
   border-top: 3px solid #118c7e;
-  color: #fff !important;
+  color: #fff;
   background-size: 15px;
   background-repeat: no-repeat;
   background-position: 20px;
@@ -5819,9 +5819,26 @@ border-color: #1a74e4;
 }
 .chat-help-wrapper .chat-help-nav ul li a.chat-help-active {
   position: relative;
-  border-bottom: none !important;
-  background-color: #fff !important;
-  color: #118c7e !important;
+  border-bottom: none;
+  background-color: #fff;
+  color: #118c7e;
+}
+.ch_wooCommerce .chat-help-wrapper .chat-help-nav ul li a {
+  background-color: #f0fdfa;
+  border-bottom: 1px solid #98d7d0;
+  color: #343434;
+  border-top: 0px solid;
+}
+.ch_wooCommerce .chat-help-wrapper .chat-help-nav ul li a.chat-help-active {
+  border-bottom: 1px solid #98d7d0;
+  background-color: #fff;
+  box-shadow: -3px 0 0 0 #199e83 inset;
+}
+
+.chat-help-theme-light.ch_wooCommerce .chat-help-nav-background {
+  background-color: #fff;
+  border-left: 1px solid #98d7d0;
+  border-bottom-right-radius: 5px;
 }
 
 /* Admin Custom CSS */
@@ -5907,32 +5924,6 @@ border-color: #1a74e4;
   align-items: center;
   flex-direction: inherit !important;
 }
-.chat-help-wrapper {
-  margin-top: 30px;
-}
-.chat-help-wrapper .chat-help-nav ul li a {
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 500;
-  border-left: 1px solid #d0c5e1;
-  border-bottom: none !important;
-  background-color: #118c7e !important;
-  border-top: 3px solid #118c7e;
-  color: #fff !important;
-  background-size: 15px;
-  background-repeat: no-repeat;
-  background-position: 20px;
-  padding: 13px 22px 16px;
-  text-transform: uppercase;
-}
-.chat-help-wrapper .chat-help-nav ul li a.chat-help-active {
-  position: relative;
-  border-bottom: none !important;
-  background-color: #fff !important;
-  color: #118c7e !important;
-}
-
 /* Tooltip css */
 .chat-help-help.chat-help-title-help img {
   width: 14px;
@@ -6033,9 +6024,6 @@ span.tooltip-icon {
   font-size: 10px;
   border-top-left-radius: 3px;
   border-bottom-right-radius: 3px;
-}
-#adminmenu #toplevel_page_chat-help li:nth-child(4) a {
-  color: #f9be48;
 }
 
 /*- License activation -*/
@@ -6151,4 +6139,7 @@ span.tooltip-icon {
 .color_group_pro_only .chat-help-fieldset .chat-help-field-color {
   opacity: 0.6;
   pointer-events: none;
+}
+.chat-help-help-page .chat-help-header {
+  display: none;
 }

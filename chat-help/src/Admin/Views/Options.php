@@ -14,11 +14,7 @@
 namespace ThemeAtelier\ChatHelp\Admin\Views;
 
 use ThemeAtelier\ChatHelp\Admin\Views\General;
-use ThemeAtelier\ChatHelp\Admin\Views\Advanced;
-use ThemeAtelier\ChatHelp\Admin\Views\Shortcode;
 use ThemeAtelier\ChatHelp\Admin\Framework\Classes\Chat_Help;
-use ThemeAtelier\ChatHelp\Admin\Views\WooCommerceButton;
-use ThemeAtelier\ChatHelp\Admin\Views\GetHelp;
 
 class Options {
 
@@ -649,10 +645,5 @@ class Options {
 		);
 
 		General::options( $prefix, $timezones );
-		WooCommerceButton::options($prefix);
-		Shortcode::options( $prefix );
-		Advanced::options( $prefix );
-		// License::options( $prefix );
-		GetHelp::options( $prefix );
 	}
 }

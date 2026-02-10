@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 3.1.13
+Stable tag: 3.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -221,6 +221,11 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 7. Gutenberg Button Block
 
 == Changelog ==
+= 3.2.0 – 10 February 2026 =
+* Added: WooCommerce, shortcode, and settings as a submenu.
+* Added: Button options for the Shop page.
+* Update: Button size customization option.
+
 = 3.1.13 – 28 January 2026 =
 * Improved: General codebase improvements.
 

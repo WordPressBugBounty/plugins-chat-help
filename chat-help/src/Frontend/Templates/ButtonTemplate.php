@@ -33,7 +33,7 @@ class ButtonTemplate
 	 *
 	 * @since 1.0.0
 	 */
-	public static function buttonTemplate($options, $bubble_type, $unique_id)
+	public static function buttonTemplate($options, $ch_settings, $bubble_type, $unique_id)
 	{
 		$optAvailablity = isset($options['opt-availablity']) ? $options['opt-availablity'] : '';
 		$user_availability = Helpers::user_availability($optAvailablity);

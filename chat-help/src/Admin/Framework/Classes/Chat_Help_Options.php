@@ -52,6 +52,7 @@ if (! class_exists('Chat_Help_Options')) {
       'show_search'             => true,
       'show_reset_all'          => true,
       'show_reset_section'      => true,
+      'show_save_button'      => true,
       'show_footer'             => true,
       'show_all_options'        => true,
       'show_form_warning'       => true,
@@ -537,7 +538,7 @@ if (! class_exists('Chat_Help_Options')) {
       echo ($this->args['show_search']) ? '<div class="chat-help-search"><input type="text" name="chat-help-search" placeholder="' . esc_html__('Search...', 'chat-help') . '" autocomplete="off" /></div>' : '';
 
       echo '<div class="chat-help-buttons">';
-      echo '<input type="submit" name="' . esc_attr($this->unique) . '[_nonce][save]" class="button button-primary chat-help-top-save chat-help-save' . esc_attr($ajax_class) . '" value="' . esc_html__('Save Settings', 'chat-help') . '" data-save="' . esc_html__('Saving...', 'chat-help') . '">';
+      echo ($this->args['show_save_button']) ? '<input type="submit" name="' . esc_attr($this->unique) . '[_nonce][save]" class="button button-primary chat-help-top-save chat-help-save' . esc_attr($ajax_class) . '" value="' . esc_html__('Save Settings', 'chat-help') . '" data-save="' . esc_html__('Saving...', 'chat-help') . '">' : '';
       echo ($this->args['show_reset_section']) ? '<input type="submit" name="chat_help_transient[reset_section]" class="button button-secondary chat-help-reset-section chat-help-confirm" value="' . esc_html__('Reset Tab', 'chat-help') . '" data-confirm="' . esc_html__('Are you sure to reset this section options?', 'chat-help') . '">' : '';
       echo ($this->args['show_reset_all']) ? '<input type="submit" name="chat_help_transient[reset]" class="button chat-help-warning-primary chat-help-reset-all chat-help-confirm" value="' . (($this->args['show_reset_section']) ? esc_html__('Reset All', 'chat-help') : esc_html__('Reset', 'chat-help')) . '" data-confirm="' . esc_html__('Are you sure you want to reset all settings to default values?', 'chat-help') . '">' : '';
       echo '</div>';
@@ -656,7 +657,7 @@ if (! class_exists('Chat_Help_Options')) {
         echo '<div class="chat-help-footer">';
 
         echo '<div class="chat-help-buttons">';
-        echo '<input type="submit" name="chat_help_transient[save]" class="button button-primary chat-help-save' . esc_attr($ajax_class) . '" value="' . esc_html__('Save Settings', 'chat-help') . '" data-save="' . esc_html__('Saving...', 'chat-help') . '">';
+        echo ($this->args['show_save_button']) ? '<input type="submit" name="chat_help_transient[save]" class="button button-primary chat-help-save' . esc_attr($ajax_class) . '" value="' . esc_html__('Save Settings', 'chat-help') . '" data-save="' . esc_html__('Saving...', 'chat-help') . '">' : '';
         echo ($this->args['show_reset_section']) ? '<input type="submit" name="chat_help_transient[reset_section]" class="button button-secondary chat-help-reset-section chat-help-confirm" value="' . esc_html__('Reset Tab', 'chat-help') . '" data-confirm="' . esc_html__('Are you sure to reset this section options?', 'chat-help') . '">' : '';
         echo ($this->args['show_reset_all']) ? '<input type="submit" name="chat_help_transient[reset]" class="button chat-help-warning-primary chat-help-reset-all chat-help-confirm" value="' . (($this->args['show_reset_section']) ? esc_html__('Reset All', 'chat-help') : esc_html__('Reset', 'chat-help')) . '" data-confirm="' . esc_html__('Are you sure you want to reset all settings to default values?', 'chat-help') . '">' : '';
         echo '</div>';

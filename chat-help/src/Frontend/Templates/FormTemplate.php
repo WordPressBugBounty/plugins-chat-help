@@ -33,7 +33,7 @@ class FormTemplate
 	 *
 	 * @since 1.0.0
 	 */
-	public static function formTemplate($options, $bubble_type, $random, $whatsapp_message_template, $unique_id)
+	public static function formTemplate($options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id)
 	{
 		$optAvailablity = isset($options['opt-availablity']) ? $options['opt-availablity'] : '';
 		$user_availability = Helpers::user_availability($optAvailablity);
@@ -84,7 +84,6 @@ class FormTemplate
 			<?php
 			include Helpers::chat_help_locate_template('items/single-template-header.php');
 			include Helpers::chat_help_locate_template('items/form.php');
-			// include Helpers::chat_help_locate_template('items/template-footer.php');
 			?>
 
 		</div>

@@ -17,6 +17,7 @@ use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 use ThemeAtelier\ChatHelp\Admin\Admin;
 use ThemeAtelier\ChatHelp\Frontend\Frontend;
 use ThemeAtelier\ChatHelp\Frontend\Shortcode\CustomShortcode;
+use ThemeAtelier\ChatHelp\Frontend\WooCommerce;
 
 // don't call the file directly.
 if (!defined('ABSPATH')) {
@@ -180,6 +181,7 @@ class ChatHelp
     private function define_public_hooks()
     {
         $plugin_public = new Frontend($this->get_plugin_slug(), $this->get_version());
+        new WooCommerce();
         $plugin_helpers = new Helpers($this->get_plugin_slug(), $this->get_version());
         $button_shortcode = new CustomShortcode();
         $this->loader->add_action('wp_loaded', $plugin_helpers, 'register_all_scripts');

@@ -6,8 +6,8 @@
  * @link       https://themeatelier.net
  * @since      1.0.0
  *
- * @package chat-help-pro
- * @subpackage chat-help-pro/src/Admin/Views/Advance
+ * @package chat-help
+ * @subpackage chat-help/src/Admin/Views/Advance
  * @author     ThemeAtelier<themeatelierbd@gmail.com>
  */
 
@@ -27,6 +27,10 @@ function chat_help_delete_plugin_data()
 	// Delete plugin option settings.
 	$options = [
 		'cwp_option',
+		'ch_wooCommerce',
+		'ch_shortcode',
+		'ch_settings',
+		'ch_help',
 		'chat_help_version',
 		'chat_help_db_version',
 		'chat_help_first_version',
@@ -46,8 +50,8 @@ function chat_help_delete_plugin_data()
 
 // Load WPTP file.
 require plugin_dir_path(__FILE__) . '/chat-whatsapp.php';
-$chat_help_plugin_settings = get_option('cwp_option');
-$chat_help_data_delete     = isset($chat_help_plugin_settings['cleanup_data_deletion']) ? $chat_help_plugin_settings['cleanup_data_deletion'] : false;
+$ch_settings = get_option('ch_settings');
+$chat_help_data_delete     = isset($ch_settings['cleanup_data_deletion']) ? $ch_settings['cleanup_data_deletion'] : false;
 
 if ($chat_help_data_delete) {
 	chat_help_delete_plugin_data();

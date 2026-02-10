@@ -20,7 +20,6 @@ use ThemeAtelier\ChatHelp\Frontend\Templates\items\Buttons;
 use ThemeAtelier\ChatHelp\Frontend\Templates\ButtonTemplate;
 use ThemeAtelier\ChatHelp\Frontend\Templates\FormTemplate;
 use ThemeAtelier\ChatHelp\Frontend\Templates\SingleTemplate;
-use ThemeAtelier\ChatHelp\Frontend\Templates\WooButton;
 use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 
 if (! defined('ABSPATH')) {
@@ -67,34 +66,6 @@ class Frontend
         add_action('wp_footer', array($this, 'chat_help_content'));
         add_action('wp_ajax_handle_form_submission', [$this, 'handle_form_submission']);
         add_action('wp_ajax_nopriv_handle_form_submission', [$this, 'handle_form_submission']);
-        $wooButton = new WooButton();
-        $options = get_option('cwp_option');
-        $wooCommerce_button = isset($options['wooCommerce_button']) ? $options['wooCommerce_button'] : '';
-        $button_position = isset($options['wooCommerce_button_position']) ? $options['wooCommerce_button_position'] : 'woocommerce_after_add_to_cart_form';
-
-
-        $type_of_whatsapp_woo = isset($options['wooCommerce_button_type_of_whatsapp']) ? $options['wooCommerce_button_type_of_whatsapp'] : '';
-        $woo_number = isset($options['wooCommerce_button_number']) ? $options['wooCommerce_button_number'] : '';
-        $woo_group = isset($options['wooCommerce_button_group']) ? $options['wooCommerce_button_group'] : '';
-
-        if ($wooCommerce_button) {
-            if ('number' === $type_of_whatsapp_woo && !empty($woo_number) || ('group' === $type_of_whatsapp_woo && !empty($woo_group))) {
-                add_action("{$button_position}", array($wooButton, 'woo_button'));
-            }
-        }
-
-        if ($wooCommerce_button) {
-            if ('woocommerce_short_description_after' == $button_position) {
-                if ('number' === $type_of_whatsapp_woo && !empty($woo_number) || ('group' === $type_of_whatsapp_woo && !empty($woo_group))) {
-                    add_filter('woocommerce_short_description', function ($description) use ($wooButton) {
-                        ob_start();
-                        $wooButton->woo_button(); // echoes
-                        $button_html = ob_get_clean();
-                        return $description . $button_html;
-                    }, 20);
-                }
-            }
-        }
 
         add_filter('kses_allowed_protocols', [$this, 'allow_whatsapp_protocol']);
         add_action('wp_head', array($this, 'chat_help_header_script'), 1);
@@ -127,16 +98,17 @@ class Frontend
     public static function enqueue_scripts()
     {
         $options                 = get_option('cwp_option');
-        $wa_custom_css           = isset($options['whatsapp-custom-css']) ? $options['whatsapp-custom-css'] : '';
-        $wa_custom_js            = isset($options['whatsapp-custom-js']) ? $options['whatsapp-custom-js'] : '';
+        $ch_settings = get_option('ch_settings');
+        $wa_custom_css           = isset($ch_settings['whatsapp-custom-css']) ? $ch_settings['whatsapp-custom-css'] : '';
+        $wa_custom_js            = isset($ch_settings['whatsapp-custom-js']) ? $ch_settings['whatsapp-custom-js'] : '';
         $auto_show_popup         = isset($options['autoshow-popup']) ? $options['autoshow-popup'] : '';
         $auto_open_popup_timeout = isset($options['auto_open_popup_timeout']) ? $options['auto_open_popup_timeout'] : 0;
-        $open_in_new_tab         = isset($options['open_in_new_tab']) ? $options['open_in_new_tab'] : '';
+        $open_in_new_tab         = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
         $open_in_new_tab         = $open_in_new_tab ? '_blank' : '_self';
 
-        $google_analytics = isset($options['google_analytics']) ? $options['google_analytics'] : '';
-        $event_name = isset($options['event_name']) ? $options['event_name'] : '';
-        $google_analytics_parameter = isset($options['google_analytics_parameter']) ? $options['google_analytics_parameter'] : array();
+        $google_analytics = isset($ch_settings['google_analytics']) ? $ch_settings['google_analytics'] : '';
+        $event_name = isset($ch_settings['event_name']) ? $ch_settings['event_name'] : '';
+        $google_analytics_parameter = isset($ch_settings['google_analytics_parameter']) ? $ch_settings['google_analytics_parameter'] : array();
         $analytics_parameter = [];
         $analytics_parameter['google_analytics'] = $google_analytics;
         $analytics_parameter['event_name'] = $event_name;
@@ -207,6 +179,7 @@ class Frontend
     {
         $unique_id = "chat_help_button_$this->unique_id";
         $options = get_option('cwp_option');
+        $ch_settings = get_option('ch_settings');
         $bubble_include_page = isset($options['bubble_include_page']) ? $options['bubble_include_page'] : '';
         $bubble_exclude_page = isset($options['bubble_exclude_page']) ? $options['bubble_exclude_page'] : '';
         $whatsapp_message_template = isset($options['whatsapp_message_template']) ? $options['whatsapp_message_template'] : '';
@@ -214,11 +187,11 @@ class Frontend
         $circle_animation = isset($options['circle-animation']) ? $options['circle-animation'] : '3';
         $chat_type = isset($options['chat_layout']) ? $options['chat_layout'] : 'form';
         $random         = wp_rand(1, 13);
-        $bubble_type = Buttons::buttons($options);
+        $bubble_type = Buttons::buttons($options, $ch_settings);
 
         $should_display_element = Helpers::should_display_element($options);
         if ($should_display_element) {
-            self::render_chat_template($chat_type, $options, $bubble_type, $random, $whatsapp_message_template, $unique_id);
+            self::render_chat_template($chat_type, $options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id);
         }
 
         $bubble_button_tooltip_background = isset($options['bubble_button_tooltip_background']) ? $options['bubble_button_tooltip_background'] : '#f5f7f9';
@@ -272,7 +245,7 @@ class Frontend
 <?php
     }
 
-    public static function render_chat_template($chat_type, $options, $bubble_type, $random, $whatsapp_message_template, $unique_id)
+    public static function render_chat_template($chat_type, $options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id)
     {
         $type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
         $opt_number = isset($options['opt-number']) ? $options['opt-number'] : '';
@@ -283,18 +256,18 @@ class Frontend
                 break;
             case 'button':
                 if (('number' === $type_of_whatsapp && !empty($opt_number) || ('group' === $type_of_whatsapp && !empty($opt_group)))) {
-                    ButtonTemplate::buttonTemplate($options, $bubble_type, $unique_id);
+                    ButtonTemplate::buttonTemplate($options, $ch_settings, $bubble_type, $unique_id);
                 }
                 break;
             case 'agent':
 
                 if (('number' === $type_of_whatsapp && !empty($opt_number) || ('group' === $type_of_whatsapp && !empty($opt_group)))) {
-                    SingleTemplate::singleTemplate($options, $bubble_type, $random, $whatsapp_message_template, $unique_id);
+                    SingleTemplate::singleTemplate($options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id);
                 }
                 break;
             case 'form':
                 if (!empty($opt_number)) {
-                    FormTemplate::formTemplate($options, $bubble_type, $random, $whatsapp_message_template, $unique_id);
+                    FormTemplate::formTemplate($options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id);
                 }
                 break;
 
@@ -315,9 +288,10 @@ class Frontend
         $current_url = isset($_POST['current_url']) ? sanitize_url($_POST['current_url']) : '';
         $current_title = isset($_POST['current_title']) ? sanitize_text_field($_POST['current_title']) : '';
         $options = get_option('cwp_option');
+        $ch_settings = get_option('ch_settings');
         $agent_number = isset($options['opt-number']) ? $options['opt-number'] : '';
-        $url_for_desktop = isset($options['url_for_desktop']) ? $options['url_for_desktop'] : '';
-        $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
+        $url_for_desktop = isset($ch_settings['url_for_desktop']) ? $ch_settings['url_for_desktop'] : '';
+        $url_for_mobile = isset($ch_settings['url_for_mobile']) ? $ch_settings['url_for_mobile'] : '';
         $template = isset($options['whatsapp_message_template']) ? $options['whatsapp_message_template'] : '';
         $chat_help_leads = isset($options['chat_help_leads']) ? $options['chat_help_leads'] : true;
 

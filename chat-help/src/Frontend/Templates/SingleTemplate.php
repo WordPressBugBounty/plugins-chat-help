@@ -34,7 +34,7 @@ class SingleTemplate
 	 *
 	 * @since 1.0.0
 	 */
-	public static function singleTemplate($options, $bubble_type, $random, $whatsapp_message_template, $unique_id)
+	public static function singleTemplate($options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id)
 	{
 		$optAvailablity 	= isset($options['opt-availablity']) ? $options['opt-availablity'] : '';
 		$user_availability 	= Helpers::user_availability($optAvailablity);
@@ -98,7 +98,6 @@ class SingleTemplate
 			<?php
 			include Helpers::chat_help_locate_template('items/single-template-header.php');
 			include Helpers::chat_help_locate_template('items/agent-message.php');
-			// include Helpers::chat_help_locate_template('items/template-footer.php');
 			?>
 			
 		</div>

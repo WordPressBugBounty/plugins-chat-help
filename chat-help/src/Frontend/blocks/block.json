@@ -52,7 +52,7 @@
 		},
 		"buttonSize": {
 			"type": "string",
-			"default": "size-medium"
+			"default": "1"
 		},
 		"buttonPadding": {
 			"type": "object",

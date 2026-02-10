@@ -45,7 +45,6 @@ class Leads
         }
     }
 
-
     /**
      * Registers the "Leads" submenu page under DFS Templates.
      *
@@ -58,7 +57,7 @@ class Leads
             esc_html__('Leads', 'chat-help'),
             __('Leads <span class="update-plugins" style="background:#d63638;color:#fff;border-radius:3px;padding:1px 4px;font-size:10px;vertical-align:middle;float:right;">NEW</span>', 'chat-help'),
             'manage_options',
-            'leads',
+            'chat-help-leads',
             [$this, 'chat_help_leads_admin']
         );
     }
@@ -121,7 +120,7 @@ class Leads
      */
     public static function enqueue_scripts($hook)
     {
-        if ($hook === 'whatsapp-chat_page_leads') {
+        if ($hook === 'whatsapp-chat_page_chat-help-leads') {
 
             wp_dequeue_style('common');
             wp_deregister_style('common-css');

@@ -11,7 +11,7 @@
 
 namespace ThemeAtelier\ChatHelp\Frontend\Shortcode;
 
-use ThemeAtelier\ChatHelp\Frontend\CustomButtonsTemplates;
+use ThemeAtelier\ChatHelp\Frontend\Shortcode\CustomButtonsTemplates;
 
 /**
  * Class CustomShortcode
@@ -22,8 +22,6 @@ use ThemeAtelier\ChatHelp\Frontend\CustomButtonsTemplates;
  */
 class CustomShortcode
 {
-
-
 	/**
 	 * Handles the custom buttons shortcode rendering.
 	 *
@@ -66,7 +64,7 @@ class CustomShortcode
 				'number'      => '',
 				'group'       => '',
 				'visibility'  => 'everywhere',
-				'sizes'       => 'medium',
+				'sizes'       => '1',
 				'icon_bg' 	  => 'yes',
 				'icon' 		  => 'yes',
 				'border_radius'     => '50px',

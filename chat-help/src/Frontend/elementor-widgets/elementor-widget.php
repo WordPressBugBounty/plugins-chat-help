@@ -240,9 +240,6 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
             array(
                 'label'     => esc_html__('Chat settings', 'chat-help'),
                 'tab'       => \Elementor\Controls_Manager::TAB_CONTENT,
-                'condition' => array(
-                    'style' => '1',
-                ),
             )
         );
 
@@ -1155,11 +1152,14 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
                 'label'       => esc_html__('Size', 'chat-help'),
                 'type'        => \Elementor\Controls_Manager::SELECT,
                 'label_block' => false,
-                'default'     => 'medium',
+                'default'     => '1',
                 'options'     => array(
-                    'small' => esc_html__('Small', 'chat-help'),
-                    'medium' => esc_html__('Medium', 'chat-help'),
-                    'large' => esc_html__('Large', 'chat-help'),
+                    '0.7' => esc_html__('XS', 'chat-help'),
+                    '0.8' => esc_html__('S', 'chat-help'),
+                    '1' => esc_html__('M', 'chat-help'),
+                    '1.2' => esc_html__('L', 'chat-help'),
+                    '1.4' => esc_html__('XL', 'chat-help'),
+                    '1.6' => esc_html__('XXL', 'chat-help'),
                 ),
             )
         );
@@ -1590,15 +1590,16 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         $saturday  = ($settings['saturday__start'] ? $settings['saturday__start'] : '0:00') . '-' . ($settings['saturday__end'] ? $settings['saturday__end'] : '23:59');
         $wHelp_icon = $icon ? $icon : 'fab fa-whatsapp';
         $options = get_option('cwp_option');
-        $url_for_desktop = isset($options['url_for_desktop']) ? $options['url_for_desktop'] : '';
-        $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
+        $ch_settings = get_option('ch_settings');
+        $url_for_desktop = isset($ch_settings['url_for_desktop']) ? $ch_settings['url_for_desktop'] : '';
+        $url_for_mobile = isset($ch_settings['url_for_mobile']) ? $ch_settings['url_for_mobile'] : '';
         $message = isset($settings['predefined_template']) ? $settings['predefined_template'] : '';
         $message = Helpers::replacement_vars($message);
         $url = Helpers::whatsAppUrl($number, $type_of_whatsapp, $group, $url_for_desktop, $url_for_mobile, $message);
 ?>
         <?php if ('1' === $style) : ?>
             <div class="button-wrapper">
-                <div data-number="<?php echo esc_attr($number) ?>" data-group="<?php echo esc_attr($group) ?>" <?php if ($timezone) { ?> data-timezone="<?php echo esc_attr($timezone); ?>" <?php } ?> class="wHelp_button wHelp_woo_btn wHelp_button_advance chat_help_analytics wHelpButtons <?php echo esc_attr($visibility); ?> avatar-active <?php echo esc_attr($sizes); ?>" data-availability='{ "sunday":"<?php echo esc_attr($sunday); ?>", "monday":"<?php echo esc_attr($monday); ?>", "tuesday":"<?php echo esc_attr($tuesday); ?>", "wednesday":"<?php echo esc_attr($wednesday); ?>", "thursday":"<?php echo esc_attr($thursday); ?>", "friday":"<?php echo esc_attr($friday); ?>", "saturday":"<?php echo esc_attr($saturday); ?>" }'>
+                <div style="--wHelp-btn-scale: <?php echo esc_attr($sizes) ?>;" data-number="<?php echo esc_attr($number) ?>" data-group="<?php echo esc_attr($group) ?>" <?php if ($timezone) { ?> data-timezone="<?php echo esc_attr($timezone); ?>" <?php } ?> class="wHelp_button wHelp_woo_btn wHelp_button_advance chat_help_analytics wHelpButtons <?php echo esc_attr($visibility); ?> avatar-active" data-availability='{ "sunday":"<?php echo esc_attr($sunday); ?>", "monday":"<?php echo esc_attr($monday); ?>", "tuesday":"<?php echo esc_attr($tuesday); ?>", "wednesday":"<?php echo esc_attr($wednesday); ?>", "thursday":"<?php echo esc_attr($thursday); ?>", "friday":"<?php echo esc_attr($friday); ?>", "saturday":"<?php echo esc_attr($saturday); ?>" }'>
                     <?php if ($photo) { ?>
                         <img src="<?php echo esc_attr($photo); ?>" />
                     <?php } ?>
@@ -1622,7 +1623,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
             </div>
         <?php else : ?>
             <div class="button-wrapper">
-                <a href="<?php echo esc_attr($url); ?>" data-group="<?php echo esc_attr($group) ?>" data-number="<?php echo esc_attr($number) ?>" class="wHelp_button wHelp_woo_btn chat_help_analytics <?php echo esc_attr($visibility . ' ' . $sizes); ?>" target="<?php echo esc_attr($open_in_new_tab); ?>">
+                <a style="--wHelp-btn-scale: <?php echo esc_attr($sizes) ?>;" href="<?php echo esc_attr($url); ?>" data-group="<?php echo esc_attr($group) ?>" data-number="<?php echo esc_attr($number) ?>" class="wHelp_button wHelp_woo_btn chat_help_analytics wHelpButtons <?php echo esc_attr($visibility); ?>" target="<?php echo esc_attr($open_in_new_tab); ?>" data-availability='{ "sunday":"<?php echo esc_attr($sunday); ?>", "monday":"<?php echo esc_attr($monday); ?>", "tuesday":"<?php echo esc_attr($tuesday); ?>", "wednesday":"<?php echo esc_attr($wednesday); ?>", "thursday":"<?php echo esc_attr($thursday); ?>", "friday":"<?php echo esc_attr($friday); ?>", "saturday":"<?php echo esc_attr($saturday); ?>" }'>
 
                     <?php
                     if ($show__button__icon && !empty($icon)) {

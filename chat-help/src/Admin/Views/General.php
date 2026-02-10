@@ -1435,19 +1435,31 @@ class General
                                         'title' => esc_html__('Button Size', 'chat-help'),
                                         'title_help' => '<div class="chat-help-info-label">' . esc_html__('Select the size of the button.', 'chat-help') . '</div>',
                                         'options' => array(
-                                            'small'    => array(
-                                                'option_name' => esc_html__('Small', 'chat-help'),
+                                            '0.7' => array(
+                                                'option_name'   => esc_html__('XS', 'chat-help'),
                                             ),
-                                            'medium'    => array(
-                                                'option_name' => esc_html__('Medium', 'chat-help'),
+                                            '0.8' => array(
+                                                'option_name'   => esc_html__('S', 'chat-help'),
                                             ),
-                                            'large'    => array(
-                                                'option_name' => esc_html__('Large', 'chat-help'),
+                                            '1' => array(
+                                                'option_name'   => esc_html__('M', 'chat-help'),
+                                            ),
+                                            '1.2' => array(
+                                                'option_name'   => esc_html__('L', 'chat-help'),
+                                            ),
+                                            '1.4' => array(
+                                                'option_name'   => esc_html__('XL', 'chat-help'),
+                                            ),
+                                            '1.6' => array(
+                                                'option_name'   => esc_html__('XXL', 'chat-help'),
+                                            ),
+                                            'custom' => array(
+                                                'option_name'   => esc_html__('Custom', 'chat-help'),
+                                                'pro_only'  => true,
                                             ),
                                         ),
-                                        'default' => 'medium',
+                                        'default' => '1',
                                     ),
-
 
                                     array(
                                         'id'        => 'bubble_icon_color',
@@ -2166,6 +2178,21 @@ class General
                                                 )
                                             ),
                                         )
+                                    ),
+                                )
+                            ),
+                            array(
+                                'title' => esc_html__('Backup', 'chat-help'),
+                                'icon'  => 'icofont-shield',
+                                'fields' => array(
+                                    array(
+                                        'title'    => esc_html__('Backup', 'chat-help'),
+                                        'title_help' =>
+                                        '<div class="chat-help-info-label">' .
+                                            esc_html__('Export or import plugin settings for backup or migration purposes.', 'chat-help') .
+                                            '</div>' .
+                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/backup/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'type' => 'backup',
                                     ),
                                 )
                             ),

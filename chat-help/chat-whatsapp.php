@@ -3,7 +3,7 @@
 Plugin Name: 	ChatHelp
 Plugin URI: 	https://wpchathelp.com/
 Description: 	WhatsApp 💬 ChatHelp 🔥 Unlimited customer support tool that allows visitors to engage using "WhatsApp" or "WhatsApp Business". WhatsApp button included.
-Version: 		3.1.13
+Version: 		3.2.0
 Author:         ThemeAtelier
 Author URI:     https://themeatelier.net/
 License:        GPL-2.0+
@@ -26,7 +26,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 use ThemeAtelier\ChatHelp\Includes\ChatHelp;
 
 if (!defined('CHAT_HELP_VERSION')) {
-    define('CHAT_HELP_VERSION', '3.1.13');
+    define('CHAT_HELP_VERSION', '3.2.0');
 }
 if (!defined('CHAT_HELP_FILE')) {
     define('CHAT_HELP_FILE', __FILE__);

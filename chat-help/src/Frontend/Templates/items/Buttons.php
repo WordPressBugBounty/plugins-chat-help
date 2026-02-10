@@ -26,11 +26,11 @@ use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
  */
 class Buttons
 {
-    public static function buttons($options)
+    public static function buttons($options, $ch_settings)
     {
         $chat_type = $options['chat_layout'] ?? 'form';
-        $open_in_new_tab = isset($options['open_in_new_tab']) ? $options['open_in_new_tab'] : '';
-        $button_size = isset($options['button_size']) ? $options['button_size'] : 'wHelp-btn-md';
+        $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
+        $button_size = isset($options['button_size']) ? $options['button_size'] : '1';
         $floating_button_style = $options['opt-button-style'] ?? '1';
         $circle_button_icon = $options['circle-button-icon'] ?? 'icofont-brand-whatsapp';
         $circle_button_close = $options['circle-button-close'] ?? 'icofont-close';
@@ -48,8 +48,8 @@ class Buttons
         $type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
         $whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
         $whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
-        $url_for_desktop = isset($options['url_for_desktop']) ? $options['url_for_desktop'] : '';
-        $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
+        $url_for_desktop = isset($ch_settings['url_for_desktop']) ? $ch_settings['url_for_desktop'] : '';
+        $url_for_mobile = isset($ch_settings['url_for_mobile']) ? $ch_settings['url_for_mobile'] : '';
         $message = isset($options['prefilled_message']) ? $options['prefilled_message'] : '';
         $message = Helpers::replacement_vars($message);
         $url = Helpers::whatsAppUrl($whatsapp_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
@@ -124,7 +124,7 @@ class Buttons
 
         // Keep Button Style 1 as Is
         if ($floating_button_style === '1') {
-            $bubble_type = '<div style="--wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . '; --wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . ';" class="wHelp_button wHelp-bubble circle-bubble circle-animation-' . esc_attr($circle_animation . ' ' . $button_size) . ' wHelp_' . $chat_type . ' ' . esc_attr($chat_type) . ' ' . esc_attr($tooltip_class) . '">';
+            $bubble_type = '<div style="--wHelp-btn-scale: ' . esc_attr($button_size) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . '; --wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . ';" class="wHelp_button wHelp-bubble circle-bubble circle-animation-' . esc_attr($circle_animation) . ' wHelp_' . $chat_type . ' layout_' . $chat_type . ' ' . esc_attr($chat_type) . ' ' . esc_attr($tooltip_class) . '">';
             $bubble_type .= '<span class="open-icon">';
 
             $bubble_type .= '<i class="' . esc_attr($circle_button_icon_1) . '"></i>';
@@ -146,8 +146,8 @@ class Buttons
                 $whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
                 $whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
 
-                $url_for_desktop = isset($options['url_for_desktop']) ? $options['url_for_desktop'] : '';
-                $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
+                $url_for_desktop = isset($ch_settings['url_for_desktop']) ? $ch_settings['url_for_desktop'] : '';
+                $url_for_mobile = isset($ch_settings['url_for_mobile']) ? $ch_settings['url_for_mobile'] : '';
                 $message = isset($options['prefilled_message']) ? $options['prefilled_message'] : '';
                 $message = Helpers::replacement_vars($message);
                 $url = Helpers::whatsAppUrl($whatsapp_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
@@ -172,7 +172,7 @@ class Buttons
                 </div>';
             }
 
-            $bubble_type = '<div style="--wHelp-padding: ' . esc_attr($padding) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . '; --wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-icon-normal-bg-color: ' . esc_attr($normal_bg_color) . '; --wHelp-icon-hover-bg-color: ' . esc_attr($hover_bg_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . '; --wHelp-text-color: ' . esc_attr($text_color) . '; --wHelp-text-hover-color: ' . esc_attr($text_hover_color) . '; --wHelp-icon-border: ' . esc_attr($icon_border_all . ' ' . $icon_border_style) . '; --wHelp-icon-border-color: ' . esc_attr($icon_border_color) . '; --wHelp-hover-icon-border-color: ' . esc_attr($hover_icon_border_color) . '; --wHelp-icon-border-radius: ' . esc_attr($icon_border_radius) . ';" class="wHelp_button wHelp-bubble bubble ' . esc_attr($button_size . ' wHelp_' . $chat_type . ' ' . $tooltip_class) . '">';
+            $bubble_type = '<div style="--wHelp-padding: ' . esc_attr($padding) . '; --wHelp-btn-scale: ' . esc_attr($button_size) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . '; --wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-icon-normal-bg-color: ' . esc_attr($normal_bg_color) . '; --wHelp-icon-hover-bg-color: ' . esc_attr($hover_bg_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . '; --wHelp-text-color: ' . esc_attr($text_color) . '; --wHelp-text-hover-color: ' . esc_attr($text_hover_color) . '; --wHelp-icon-border: ' . esc_attr($icon_border_all . ' ' . $icon_border_style) . '; --wHelp-icon-border-color: ' . esc_attr($icon_border_color) . '; --wHelp-hover-icon-border-color: ' . esc_attr($hover_icon_border_color) . '; --wHelp-icon-border-radius: ' . esc_attr($icon_border_radius) . ';" class="wHelp_button wHelp-bubble bubble ' . esc_attr(' wHelp_' . $chat_type . ' layout_' . $chat_type . ' ' . $tooltip_class) . '">';
             $bubble_type .= $icons . esc_attr($button_label);
 
             // Add Tooltip
@@ -184,8 +184,8 @@ class Buttons
                 $whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
                 $whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
 
-                $url_for_desktop = isset($options['url_for_desktop']) ? $options['url_for_desktop'] : '';
-                $url_for_mobile = isset($options['url_for_mobile']) ? $options['url_for_mobile'] : '';
+                $url_for_desktop = isset($ch_settings['url_for_desktop']) ? $ch_settings['url_for_desktop'] : '';
+                $url_for_mobile = isset($ch_settings['url_for_mobile']) ? $ch_settings['url_for_mobile'] : '';
                 $message = isset($options['prefilled_message']) ? $options['prefilled_message'] : '';
                 $message = Helpers::replacement_vars($message);
                 $url = Helpers::whatsAppUrl($whatsapp_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);

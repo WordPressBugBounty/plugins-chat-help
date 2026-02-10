@@ -30,6 +30,7 @@ class DBUpdates
         '2.1.0' => 'updates/update-2.1.0.php',
         '2.2.9' => 'updates/update-2.2.9.php',
         '3.1.12' => 'updates/update-3.1.12.php',
+        '3.2.0' => 'updates/update-3.2.0.php',
     );
 
     /**
@@ -53,8 +54,8 @@ class DBUpdates
         $activation_date   = get_option('chat_help_activation_date');
 
         if (false === $installed_version) {
-            update_option('chat_help_version', '2.0.14');
-            update_option('chat_help_db_version', '2.0.14');
+            update_option('chat_help_version', CHAT_HELP_VERSION);
+            update_option('chat_help_db_version', CHAT_HELP_VERSION);
         }
         if (false === $first_version) {
             update_option('chat_help_first_version', CHAT_HELP_VERSION);
