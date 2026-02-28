@@ -155,22 +155,23 @@ class Frontend
         wp_enqueue_script('jquery_validate');
         wp_enqueue_script('chat-help-script');
 
-        $frontend_scripts = array(
+        $chat_help_frontend_scripts = array(
             'autoShowPopup'        => $auto_show_popup,
             'autoOpenPopupTimeout' => $auto_open_popup_timeout,
             'analytics_parameter'  => $analytics_parameter,
         );
-        wp_localize_script('chat-help-script', 'chat_help_script', $frontend_scripts);
+        wp_localize_script('chat-help-script', 'chat_help_script', $chat_help_frontend_scripts);
         if (! empty($wa_custom_js)) {
             wp_add_inline_script('chat-help-script', $wa_custom_js);
         }
         wp_localize_script(
             'chat-help-script',
-            'frontend_scripts',
+            'chat_help_frontend_scripts',
             array(
                 'ajaxurl' => admin_url('admin-ajax.php'),
                 'nonce'   => wp_create_nonce('chat_help_nonce'),
                 'open_in_new_tab'   => $open_in_new_tab,
+                'ip'   => esc_sql(sanitize_text_field($_SERVER['REMOTE_ADDR'])),
             )
         );
     }

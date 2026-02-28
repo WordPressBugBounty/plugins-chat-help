@@ -16,6 +16,8 @@ namespace ThemeAtelier\ChatHelp\Admin\Views;
 use ThemeAtelier\ChatHelp\Admin\Framework\Classes\Chat_Help;
 use ThemeAtelier\ChatHelp\Admin\Views\ProductPage;
 use ThemeAtelier\ChatHelp\Admin\Views\ShopPage;
+use ThemeAtelier\ChatHelp\Admin\Views\CartPage;
+use ThemeAtelier\ChatHelp\Admin\Views\CheckoutPage;
 
 class WooCommerce
 {
@@ -52,6 +54,8 @@ class WooCommerce
         ));
         ShopPage::options($prefix);
         ProductPage::options($prefix);
+        CartPage::options($prefix);
+        CheckoutPage::options($prefix);
 
         Chat_Help::createSection(
             $prefix,
@@ -63,9 +67,7 @@ class WooCommerce
                         'title'    => esc_html__('Backup', 'chat-help'),
                         'title_help' =>
                         '<div class="chat-help-info-label">' .
-                            esc_html__('Export or import plugin settings for backup or migration purposes.', 'chat-help') .
-                            '</div>' .
-                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/backup/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                            esc_html__('Export or import plugin settings for backup or migration purposes.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/backup/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                         'type' => 'backup',
                     ),
                 )

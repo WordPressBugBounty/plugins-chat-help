@@ -43,6 +43,8 @@ class WooCommerce
         $shop_page_hide_add_to_cart_button = isset($ch_wooCommerce['shop_page_hide_add_to_cart_button']) ? $ch_wooCommerce['shop_page_hide_add_to_cart_button'] : '';
         $this->shop_page_button();
         $this->product_page_button();
+        $this->cart_page_button();
+        $this->checkout_page_button();
 
         if ($shop_page_hide_add_to_cart_button) {
             add_action('wp_head', function () {
@@ -111,6 +113,49 @@ class WooCommerce
                         return $description . $button_html;
                     }, 20);
                 }
+            }
+        }
+    }
+    public function cart_page_button()
+    {
+        $wooButton = new WooButton();
+        $ch_wooCommerce = get_option('ch_wooCommerce');
+
+        $cart_page_button = isset($ch_wooCommerce['cart_page_button']) ? $ch_wooCommerce['cart_page_button'] : '';
+        $button_position = isset($ch_wooCommerce['cart_page_button_position']) ? $ch_wooCommerce['cart_page_button_position'] : 'after';
+
+        $type_of_whatsapp_woo = isset($ch_wooCommerce['cart_page_button_type_of_whatsapp']) ? $ch_wooCommerce['cart_page_button_type_of_whatsapp'] : '';
+        $cart_page_number = isset($ch_wooCommerce['cart_page_button_number']) ? $ch_wooCommerce['cart_page_button_number'] : '';
+        $cart_page_group = isset($ch_wooCommerce['cart_page_button_group']) ? $ch_wooCommerce['cart_page_button_group'] : '';
+
+        $position = 25;
+        if ("after" === $button_position) {
+            $position = 0;
+        } elseif ("before" === $button_position) {
+            $position = 25;
+        }
+
+        if ($cart_page_button) {
+            if ('number' === $type_of_whatsapp_woo && !empty($cart_page_number) || ('group' === $type_of_whatsapp_woo && !empty($cart_page_group))) {
+                add_action("woocommerce_proceed_to_checkout", array($wooButton, 'cart_page_button'), $position);
+            }
+        }
+    }
+    public function checkout_page_button()
+    {
+        $wooButton = new WooButton();
+        $ch_wooCommerce = get_option('ch_wooCommerce');
+
+        $checkout_page_button = isset($ch_wooCommerce['checkout_page_button']) ? $ch_wooCommerce['checkout_page_button'] : '';
+        $button_position = isset($ch_wooCommerce['checkout_page_button_position']) ? $ch_wooCommerce['checkout_page_button_position'] : 'after';
+
+        $type_of_whatsapp_woo = isset($ch_wooCommerce['checkout_page_button_type_of_whatsapp']) ? $ch_wooCommerce['checkout_page_button_type_of_whatsapp'] : '';
+        $checkout_page_number = isset($ch_wooCommerce['checkout_page_button_number']) ? $ch_wooCommerce['checkout_page_button_number'] : '';
+        $checkout_page_group = isset($ch_wooCommerce['checkout_page_button_group']) ? $ch_wooCommerce['checkout_page_button_group'] : '';
+
+        if ($checkout_page_button) {
+            if ('number' === $type_of_whatsapp_woo && !empty($checkout_page_number) || ('group' === $type_of_whatsapp_woo && !empty($checkout_page_group))) {
+                add_action($button_position, array($wooButton, 'checkout_page_button'));
             }
         }
     }

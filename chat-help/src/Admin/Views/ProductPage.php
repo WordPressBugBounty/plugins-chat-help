@@ -31,7 +31,7 @@ class ProductPage
         //
         Chat_Help::createSection($prefix, array(
             'title'       => esc_html__('Product Page', 'chat-help'),
-            'icon'        => 'icofont-cart',
+            'icon'        => 'icofont-gift',
             'fields'      => array(
                 array(
                     'id'      => 'product_page_button',

@@ -282,6 +282,64 @@ class Helpers
 		return $product instanceof \WC_Product;
 	}
 
+	private static function get_cart_whatsapp_info()
+	{
+		$ch_wooCommerce = get_option('ch_wooCommerce');
+
+		$cart_page_include_with_cart_info = isset($ch_wooCommerce['cart_page_include_with_cart_info']) ? $ch_wooCommerce['cart_page_include_with_cart_info'] : array('product_url', 'tax_amount');
+		$checkout_page_include_with_cart_info = isset($ch_wooCommerce['checkout_page_include_with_cart_info']) ? $ch_wooCommerce['checkout_page_include_with_cart_info'] : array('product_url', 'tax_amount');
+		if (! function_exists('WC') || ! WC()->cart || WC()->cart->is_empty()) {
+			return '';
+		}
+
+		// Ensure totals are calculated (important for checkout)
+		WC()->cart->calculate_totals();
+
+		// Detect current page
+		$is_checkout = function_exists('is_checkout') && is_checkout();
+		$is_cart     = function_exists('is_cart') && is_cart();
+
+		// Choose correct settings
+		$active_settings = $is_checkout ? $checkout_page_include_with_cart_info : $cart_page_include_with_cart_info;
+
+		$lines = [];
+
+		foreach (WC()->cart->get_cart() as $cart_item) {
+			$product = $cart_item['data'];
+			$qty     = $cart_item['quantity'];
+
+			if (! $product) continue;
+
+			$name  = $product->get_name();
+			$price = html_entity_decode(wp_strip_all_tags(wc_price($product->get_price())));
+			$url   = get_permalink($product->get_id());
+
+			$line = "{$qty}x - *{$name}*\n*Price:* {$price}";
+
+			// Hide URL if option is enabled
+			if (in_array('product_url', $active_settings, true)) {
+				$line .= "\n*URL:* {$url}";
+			}
+
+			$lines[] = $line . "\n";
+		}
+
+		$subtotal = html_entity_decode(wp_strip_all_tags(wc_price(WC()->cart->get_subtotal())));
+		$tax      = html_entity_decode(wp_strip_all_tags(wc_price(WC()->cart->get_total_tax())));
+		$total    = html_entity_decode(wp_strip_all_tags(wc_price(WC()->cart->get_total('edit'))));
+
+		$lines[] = "*Subtotal:* {$subtotal}";
+
+		// Show tax only if enabled
+		if (in_array('tax_amount', $active_settings, true)) {
+			$lines[] = "*Tax:* {$tax}";
+		}
+
+		$lines[] = "*Total:* {$total}";
+
+		return implode("\n", $lines);
+	}
+
 	/**
 	 * Global replacement vars
 	 *
@@ -333,9 +391,11 @@ class Helpers
 			}
 		}
 
+				// 🔥 Cart Info
+		$cartInfo = self::get_cart_whatsapp_info();
 
-		$variables = array('{siteTitle}', '{currentTitle}', '{siteURL}', '{currentURL}', '{siteEmail}', '{date}', '{ip}');
-		$values = array($siteTitle, $currentTitle, $siteURL, $currentURL, $siteEmail, $date, $ip);
+		$variables = array('{siteTitle}', '{currentTitle}', '{siteURL}', '{currentURL}', '{siteEmail}', '{date}', '{ip}', '{cartInfo}');
+		$values = array($siteTitle, $currentTitle, $siteURL, $currentURL, $siteEmail, $date, $ip, $cartInfo);
 		if (!self::is_valid_wc_product($product)) {
 			$product = null;
 		}

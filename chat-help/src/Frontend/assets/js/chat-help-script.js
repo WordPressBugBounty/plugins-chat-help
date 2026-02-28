@@ -327,6 +327,7 @@ if (wHelpChatAvailability) {
         vendor: navigator.vendor,
         url: window.location.href,
         referrer: document.referrer,
+        ip: chat_help_frontend_scripts.ip,
       };
 
       const chatHelpUserInfo = localStorage.getItem(
@@ -353,13 +354,13 @@ if (wHelpChatAvailability) {
 
               // Whatsapp form handler
               $.post(
-                frontend_scripts.ajaxurl,
+                chat_help_frontend_scripts.ajaxurl,
                 {
                   action: "handle_form_submission",
                   data: formData,
                   userInfo,
                   product_id: productAttr,
-                  nonce: frontend_scripts.nonce,
+                  nonce: chat_help_frontend_scripts.nonce,
                   current_url: currentUrl,
                   current_title: currentTitle,
                 },
@@ -369,7 +370,7 @@ if (wHelpChatAvailability) {
                     setTimeout(function () {
                       window.open(
                         response.data.whatsAppURL,
-                        frontend_scripts.open_in_new_tab
+                        chat_help_frontend_scripts.open_in_new_tab
                       );
                       form[0].reset();
                       submit_btn.innerHTML = button;

@@ -1843,7 +1843,6 @@ class General
                                             ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/#icon-button-minimal-floating-button">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'text_on' => esc_html__('Yes', 'chat-help'),
                                         'text_off'  => esc_html__('No', 'chat-help'),
-                                        'default'   => false,
                                         'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_grid', 'any'),
                                     ),
 
