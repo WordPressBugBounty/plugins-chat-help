@@ -1807,7 +1807,7 @@
   //
   // Field: section_tab
   //
-  $.fn.chat_help_field_group_field_section_tab = function () {
+  $.fn.chat_help_field_section_tab = function () {
     return this.each(function () {
       var $this = $(this),
         $links = $this.find(".chat-help-section_tab-nav a"),
@@ -1822,10 +1822,9 @@
           index = $link.index(),
           $content = $contents.eq(index);
 
-        $link
-          .addClass("chat-help-section_tab-active")
-          .siblings()
-          .removeClass("chat-help-section_tab-active");
+        $links.removeClass('chat-help-section_tab-active');
+        $link.addClass('chat-help-section_tab-active');
+
         $content.chat_help_reload_script();
         $content.removeClass("hidden").siblings().addClass("hidden");
       });
@@ -3700,9 +3699,7 @@
         $this.children(".chat-help-field-sorter").chat_help_field_sorter();
         $this.children(".chat-help-field-spinner").chat_help_field_spinner();
         $this.children(".chat-help-field-switcher").chat_help_field_switcher();
-        $this
-          .children(".chat-help-field-section_tab")
-          .chat_help_field_group_field_section_tab();
+        $this.children('.chat-help-field-section_tab').chat_help_field_section_tab();
         $this.children(".chat-help-field-tabbed").chat_help_field_tabbed();
         $this
           .children(".chat-help-field-typography")

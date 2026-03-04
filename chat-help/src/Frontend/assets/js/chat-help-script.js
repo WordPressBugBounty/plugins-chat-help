@@ -390,7 +390,7 @@ if (wHelpChatAvailability) {
 
 /******************** 11. AUTO OPEN POPUP AFTER SECONDS ********************/
 const autoShowPopupFunc = () => {
-  if (autoShowPopup) toggleChatBtn();
+  if (autoShowPopup === '1') toggleChatBtn();
 };
 
 if (autoOpenPopupTimeout > 0)

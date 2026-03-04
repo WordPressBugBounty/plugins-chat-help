@@ -438,19 +438,29 @@ class Help
                         </div>
                         <div class="section_video">
                             <div class="video">
-                                <iframe width="724" height="405" src="https://www.youtube.com/embed/RNwVAoGQssI"
+                                <iframe width="724" height="405" src="https://www.youtube.com/embed/B_xfMNOLP2A"
                                     title="WhatsApp ChatHelp - Overview" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                             <div class="section_video_play_list">
-                                <div class="play_list_item active" data-video_id="RNwVAoGQssI">
+                                <div class="play_list_item active" data-video_id="B_xfMNOLP2A">
                                     <div class="play_list_item_title">
                                         <h3>Overview</h3>
                                     </div>
                                     <div class="play_list_item_content">
                                         <div class="title">WhatsApp ChatHelp - Overview</div>
-                                        <span>3.19</span>
+                                        <span>6.25</span>
+                                    </div>
+                                </div>
+                                
+                               <div class="play_list_item " data-video_id="X2u0-zUdQ8c">
+                                    <div class="play_list_item_title">
+                                        <h3>Form</h3>
+                                    </div>
+                                    <div class="play_list_item_content">
+                                        <div class="title">Configure Single Form Layout</div>
+                                        <span>7.02</span>
                                     </div>
                                 </div>
                                 <div class="play_list_item " data-video_id="mQ54JqMpB-g">
@@ -458,7 +468,7 @@ class Help
                                         <h3>Agent</h3>
                                     </div>
                                     <div class="play_list_item_content">
-                                        <div class="title">Single Agent Bubble Layout</div>
+                                        <div class="title">Configure Single Agent Layout</div>
                                         <span>3.19</span>
                                     </div>
                                 </div>

@@ -1043,20 +1043,20 @@
 }
 
 @media screen and (max-width: 991px) {
-  .desktop,
+  .wHelp-desktop-only,
   .bubble.wooCommerce-desktop-only {
     display: none;
   }
 }
 
 @media screen and (min-width: 991px) {
-  .tablet,
+  .wHelp-tablet-only,
   .bubble.wooCommerce-tablet-only {
     display: none;
   }
 }
 @media screen and (max-width: 576px) {
-  .tablet,
+  .wHelp-tablet-only,
   .bubble.wooCommerce-tablet-only {
     display: none;
   }
@@ -1065,13 +1065,6 @@
 @media screen and (min-width: 576px) {
   .wHelp-mobile-only,
   .bubble.wooCommerce-mobile-only {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 991px) {
-  .mobile,
-  .bubble.wooCommerce-mobile-tablet-only {
     display: none;
   }
 }

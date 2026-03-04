@@ -41,9 +41,15 @@ if ( ! class_exists( 'Chat_Help_Abstract' ) ) {
           $field_check  = ( $field_type === 'typography' || $field_output ) ? true : false;
           $field_class  = 'CHAT_HELP_Field_' . $field_type;
 
+          if( $field_type === 'section_tab' ) {
+            if ( ! empty( $field['tabs'] ) ) {
+              foreach ( $field['tabs'] as $accordion ) {
+                $this->recursive_output_css( $accordion['fields'], $field );
+              }
+            }
+          }
+
           if ( $field_type && $field_id ) {
-
-
             if( $field_type === 'fieldset' ) {
               if ( ! empty( $field['fields'] ) ) {
                 $this->recursive_output_css( $field['fields'], $field );
@@ -65,13 +71,6 @@ if ( ! class_exists( 'Chat_Help_Abstract' ) ) {
                 }
               }
             }
-            if( $field_type === 'section_tab' ) {
-              if ( ! empty( $field['tabs'] ) ) {
-                foreach ( $field['tabs'] as $accordion ) {
-                  $this->recursive_output_css( $accordion['fields'], $field );
-                }
-              }
-            }
 
             if ( class_exists( $field_class ) ) {
 
@@ -83,7 +82,13 @@ if ( ! class_exists( 'Chat_Help_Abstract' ) ) {
 
                   if( ! empty( $combine_field ) ) {
 
-                    $field_value = ( isset( $this->options[$combine_field['id']][$field_id] ) ) ? $this->options[$combine_field['id']][$field_id] : '';
+                    if ($combine_field['type'] === 'section_tab') {
+                            $field_value = isset($this->options[$field_id]) ? $this->options[$field_id] : '';
+                        } else {
+                            $field_value = isset($this->options[$combine_field['id']][$field_id])
+                                ? $this->options[$combine_field['id']][$field_id]
+                                : '';
+                        }
 
                   } else {
 

@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 3.2.1
+Stable tag: 3.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,8 +67,7 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 - **Complete Documentation & Tutorials**: Step-by-step guides and video tutorials.
 - **Reliable Support**: Fast, friendly support team ready to help.
 
-== Full Features & Setup Guide ==
-https://youtu.be/RNwVAoGQssI
+https://youtu.be/B_xfMNOLP2A
 
 = Page Builders Ready =
 * Gutenberg
@@ -221,6 +220,13 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 7. Gutenberg Button Block
 
 == Changelog ==
+= 3.2.2 – 04 March 2026 =
+* Fixed: Device visibility issue.
+* Fixed: Popup auto-opening bug.
+* Improved: Typography consistency for better readability.
+* Added: Plugin overview video to the configuration help page.
+* Added: Single Form layout configuration video.
+
 = 3.2.1 – 27 February 2026 =
 * Added: Button options for the Cart page.
 * Added: Button options for the Checkout page.
