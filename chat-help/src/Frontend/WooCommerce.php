@@ -41,10 +41,12 @@ class WooCommerce
     {
         $ch_wooCommerce = get_option('ch_wooCommerce');
         $shop_page_hide_add_to_cart_button = isset($ch_wooCommerce['shop_page_hide_add_to_cart_button']) ? $ch_wooCommerce['shop_page_hide_add_to_cart_button'] : '';
+        $cart_page_hide_add_to_cart_button = isset($ch_wooCommerce['cart_page_hide_add_to_cart_button']) ? $ch_wooCommerce['cart_page_hide_add_to_cart_button'] : '';
         $this->shop_page_button();
         $this->product_page_button();
         $this->cart_page_button();
         $this->checkout_page_button();
+        $this->thank_you_page_button();
 
         if ($shop_page_hide_add_to_cart_button) {
             add_action('wp_head', function () {
@@ -59,6 +61,23 @@ class WooCommerce
             </style>';
                 }
             });
+        }
+
+        if ($cart_page_hide_add_to_cart_button) {
+            add_action('wp_head', function () {
+                if (is_cart()) {
+                    echo '<style>
+                .wc-proceed-to-checkout .checkout-button.button {
+                    display:none !important;
+                }
+            </style>';
+                }
+            });
+            add_action('woocommerce_proceed_to_checkout', function () {
+                if (is_cart()) {
+                    remove_action('woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20);
+                }
+            }, 1);
         }
     }
 
@@ -130,9 +149,9 @@ class WooCommerce
 
         $position = 25;
         if ("after" === $button_position) {
-            $position = 0;
-        } elseif ("before" === $button_position) {
             $position = 25;
+        } elseif ("before" === $button_position) {
+            $position = 0;
         }
 
         if ($cart_page_button) {
@@ -156,6 +175,23 @@ class WooCommerce
         if ($checkout_page_button) {
             if ('number' === $type_of_whatsapp_woo && !empty($checkout_page_number) || ('group' === $type_of_whatsapp_woo && !empty($checkout_page_group))) {
                 add_action($button_position, array($wooButton, 'checkout_page_button'));
+            }
+        }
+    }
+    public function thank_you_page_button()
+    {
+        $wooButton = new WooButton();
+        $ch_wooCommerce = get_option('ch_wooCommerce');
+
+        $thank_you_page_button = isset($ch_wooCommerce['thank_you_page_button']) ? $ch_wooCommerce['thank_you_page_button'] : '';
+
+        $type_of_whatsapp_woo = isset($ch_wooCommerce['thank_you_page_button_type_of_whatsapp']) ? $ch_wooCommerce['thank_you_page_button_type_of_whatsapp'] : '';
+        $thank_you_page_number = isset($ch_wooCommerce['thank_you_page_button_number']) ? $ch_wooCommerce['thank_you_page_button_number'] : '';
+        $thank_you_page_group = isset($ch_wooCommerce['thank_you_page_button_group']) ? $ch_wooCommerce['thank_you_page_button_group'] : '';
+
+        if ($thank_you_page_button) {
+            if ('number' === $type_of_whatsapp_woo && !empty($thank_you_page_number) || ('group' === $type_of_whatsapp_woo && !empty($thank_you_page_group))) {
+                add_action('woocommerce_thankyou_order_received_text', array($wooButton, 'thank_you_page_button'), 10, 2);
             }
         }
     }

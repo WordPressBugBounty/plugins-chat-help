@@ -1017,15 +1017,30 @@
 .wHelp_button.avatar-inactive.wHelp_button_advance {
   pointer-events: none;
 }
-.wHelp_button.shop_page_button, .wHelp_button.cart_page_button, .wHelp_button.checkout_page_button, .wHelp_button.product_page_button {
+.wHelp_button.shop_page_button, .wHelp_button.cart_page_button, .wHelp_button.checkout_page_button, .wHelp_button.thank_you_page_button, .wHelp_button.product_page_button {
   margin: var(--wHelp-margin);
 }
 .wHelp_button.shop_page_button i,
 .wHelp_button.shop_page_button .bubble__icon, .wHelp_button.cart_page_button i,
 .wHelp_button.cart_page_button .bubble__icon, .wHelp_button.checkout_page_button i,
-.wHelp_button.checkout_page_button .bubble__icon, .wHelp_button.product_page_button i,
+.wHelp_button.checkout_page_button .bubble__icon, .wHelp_button.thank_you_page_button i,
+.wHelp_button.thank_you_page_button .bubble__icon, .wHelp_button.product_page_button i,
 .wHelp_button.product_page_button .bubble__icon {
   margin: 0 !important;
+}
+
+.thank_you_custom_wrapper {
+  text-align: center;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.thank_you_custom_wrapper .thank_you_title {
+  margin-bottom: 20px;
+}
+.thank_you_custom_wrapper .thank_you_subtitle {
+  margin-bottom: 0;
 }
 
 .wHelp--checkbox {
@@ -1044,6 +1059,7 @@
 
 @media screen and (max-width: 991px) {
   .wHelp-desktop-only,
+  .wHelp_button.wooCommerce-desktop-only,
   .bubble.wooCommerce-desktop-only {
     display: none;
   }
@@ -1051,12 +1067,14 @@
 
 @media screen and (min-width: 991px) {
   .wHelp-tablet-only,
+  .wHelp_button.wooCommerce-tablet-only,
   .bubble.wooCommerce-tablet-only {
     display: none;
   }
 }
 @media screen and (max-width: 576px) {
   .wHelp-tablet-only,
+  .wHelp_button.wooCommerce-tablet-only,
   .bubble.wooCommerce-tablet-only {
     display: none;
   }
@@ -1064,6 +1082,7 @@
 
 @media screen and (min-width: 576px) {
   .wHelp-mobile-only,
+  .wHelp_button.wooCommerce-mobile-only,
   .bubble.wooCommerce-mobile-only {
     display: none;
   }

@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 3.2.2
+Stable tag: 3.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,8 @@ By offering multiple layouts (Simple Button, Single Agent, Single Form, Multi-Ag
 
 With Chat Help, you’re not just adding a button—you’re creating a complete **WhatsApp customer support system** inside WordPress.
 
+[youtube https://youtu.be/B_xfMNOLP2A]
+
 **👁️[Plugin Demo](https://wpchathelp.com/) | 📖 [Documentation](https://wpchathelp.com/docs/) | 🚀[Pro Version](https://wpchathelp.com/pricing/) | 👩🏼‍💻[Support](https://wordpress.org/support/plugin/chat-help/) | 🌟[Rate this plugin](https://wordpress.org/support/plugin/chat-help/reviews/#new-post)**
 
 ## 👉 Key Features of Chat Help ##
@@ -41,7 +43,14 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 
 
 ### 🛒 Ecommerce & Integration
-- **WooCommerce Integration**: Add WhatsApp buttons before/after Add to Cart. Auto-pull SKU, price, sale, and stock details. Engage customers directly from product or shop pages.
+
+- **WooCommerce Integration**: Add WhatsApp contact buttons across the entire shopping journey.
+- **Shop Page Button**: Allow customers to contact you directly from product listing pages.
+- **Product Page Button**: Show WhatsApp buttons before or after the Add to Cart button on single product pages.
+- **Cart Page Button**: Let customers ask questions before completing their purchase.
+- **Checkout Page Button**: Provide instant support at the final step to reduce cart abandonment.
+- **Order Thank You Page Button**: Keep communication open even after the order is placed.
+- **Auto Product Details**: Automatically include product name, SKU, price, sale price, stock status, product URL in the WhatsApp message, cart informations and order informations.
 - **Flexible Button Options**: Insert WhatsApp buttons anywhere with shortcodes, Gutenberg block, or Elementor widget.
 
 ### 🎨 Design & User Experience
@@ -66,8 +75,6 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 - **SEO & Performance Optimized**: Lightweight, fast-loading, and coded with SEO best practices.
 - **Complete Documentation & Tutorials**: Step-by-step guides and video tutorials.
 - **Reliable Support**: Fast, friendly support team ready to help.
-
-https://youtu.be/B_xfMNOLP2A
 
 = Page Builders Ready =
 * Gutenberg
@@ -220,6 +227,9 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 7. Gutenberg Button Block
 
 == Changelog ==
+= 3.2.3 – 10 March 2026 =
+* Added: Button options for the product order thank you page.
+
 = 3.2.2 – 04 March 2026 =
 * Fixed: Device visibility issue.
 * Fixed: Popup auto-opening bug.

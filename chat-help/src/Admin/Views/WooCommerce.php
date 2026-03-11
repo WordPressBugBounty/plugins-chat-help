@@ -18,6 +18,7 @@ use ThemeAtelier\ChatHelp\Admin\Views\ProductPage;
 use ThemeAtelier\ChatHelp\Admin\Views\ShopPage;
 use ThemeAtelier\ChatHelp\Admin\Views\CartPage;
 use ThemeAtelier\ChatHelp\Admin\Views\CheckoutPage;
+use ThemeAtelier\ChatHelp\Admin\Views\ThankYouPage;
 
 class WooCommerce
 {
@@ -56,6 +57,7 @@ class WooCommerce
         ProductPage::options($prefix);
         CartPage::options($prefix);
         CheckoutPage::options($prefix);
+        ThankYouPage::options($prefix);
 
         Chat_Help::createSection(
             $prefix,

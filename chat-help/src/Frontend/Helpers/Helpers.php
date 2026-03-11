@@ -340,6 +340,130 @@ class Helpers
 		return implode("\n", $lines);
 	}
 
+	private static function order_info_whatsapp_info()
+	{
+		$ch_wooCommerce = get_option('ch_wooCommerce');
+
+		$thank_you_page_order_summery       = $ch_wooCommerce['thank_you_page_order_summery'] ?? '';
+		$thank_you_page_order_summery_label = $ch_wooCommerce['thank_you_page_order_summery_label'] ?? '';
+
+		$thank_you_page_payment_link        = $ch_wooCommerce['thank_you_page_payment_link'] ?? '';
+		$thank_you_page_payment_link_label  = $ch_wooCommerce['thank_you_page_payment_link_label'] ?? '';
+
+		$thank_you_page_view_order          = $ch_wooCommerce['thank_you_page_view_order'] ?? '';
+		$thank_you_page_view_order_label    = $ch_wooCommerce['thank_you_page_view_order_label'] ?? '';
+
+		$thank_you_page_order_number        = $ch_wooCommerce['thank_you_page_order_number'] ?? '';
+		$thank_you_page_order_number_label  = $ch_wooCommerce['thank_you_page_order_number_label'] ?? '';
+
+		$thank_you_page_product_sku         = $ch_wooCommerce['thank_you_page_product_sku'] ?? '';
+
+		$thank_you_page_tax                 = $ch_wooCommerce['thank_you_page_tax'] ?? '';
+
+		$thank_you_page_shipping            = $ch_wooCommerce['thank_you_page_shipping'] ?? '';
+		$thank_you_page_shipping_label      = $ch_wooCommerce['thank_you_page_shipping_label'] ?? '';
+
+		global $wp;
+
+		$order_id = (int) ($wp->query_vars['order-received'] ?? 0);
+		if (!$order_id) {
+			return '';
+		}
+
+		// Validate order access if function exists
+		if (function_exists('wa_order_validate_order_access') && !wa_order_validate_order_access($order_id)) {
+			return '';
+		}
+
+		$order = wc_get_order($order_id);
+		if (!$order) {
+			return '';
+		}
+
+		$items = $order->get_items();
+		$product_list = '';
+
+		foreach ($items as $item) {
+			$product = $item->get_product();
+			$name = $item->get_name();
+			$qty = $item->get_quantity();
+			$sku = $product ? $product->get_sku() : '';
+
+			if ($thank_you_page_product_sku && $sku) {
+				$product_list .= "{$qty}x - {$name} (SKU: {$sku})\n";
+			} else {
+				$product_list .= "{$qty}x - {$name}\n";
+			}
+		}
+
+		$total = $order->get_total();
+		$payment_method = $order->get_payment_method_title();
+		$customer_name = $order->get_billing_first_name() . ' ' . $order->get_billing_last_name();
+		$phone = $order->get_billing_phone();
+		$email = $order->get_billing_email();
+		$address = $order->get_billing_address_1();
+		$city = $order->get_billing_city();
+		$district = $order->get_billing_state();
+		$postcode = $order->get_billing_postcode();
+		$country = $order->get_billing_country();
+		$order_number = $order->get_order_number();
+		$order_received_url = $order->get_checkout_order_received_url();
+		$payment_url = $order->get_checkout_payment_url();
+		$view_order_url = $order->get_view_order_url();
+		$order_date = $order->get_date_created() ? $order->get_date_created()->date('F j, Y - g:i A') : '';
+		$tax_total = $order->get_total_tax();
+		$shipping_method = $order->get_shipping_method();
+		$shipping_total = $order->get_shipping_total();
+		$shipping_address = $order->get_formatted_shipping_address();
+
+		$message = '';
+		if ($thank_you_page_order_number) {
+			$label = !empty($thank_you_page_order_number_label) ? $thank_you_page_order_number_label : 'Order Number';
+			$message .= "\n\n*{$label}*: #{$order_number}";
+		}
+		$message .= "\n\n*Total Products*: " . count($items) . "\n";
+		$message .= "-----------\n";
+		$message .= $product_list . "\n";
+		$message .= "*Total:* $" . $total . "\n\n";
+		$message .= "*Payment:* " . $payment_method . "\n\n";
+		$message .= "*Customer Details*\n";
+		$message .= $customer_name . "\n";
+		$message .= $address . "\n";
+		$message .= $city . "\n";
+		$message .= $district . "\n";
+		$message .= $postcode . "\n";
+		$message .= $country . "\n";
+		$message .= $phone . "\n";
+		$message .= $email . "\n\n";
+		if ($thank_you_page_order_summery) {
+			$label = !empty($thank_you_page_order_summery_label) ? $thank_you_page_order_summery_label : 'Check Order Summary';
+			$message .= "*{$label}:* \n{$order_received_url}\n\n";
+		}
+		if ($thank_you_page_payment_link) {
+			$label = !empty($thank_you_page_payment_link_label) ? $thank_you_page_payment_link_label : 'Payment Link';
+			$message .= "*{$label}:* \n{$payment_url}\n\n";
+		}
+		if ($thank_you_page_view_order) {
+			$label = !empty($thank_you_page_view_order_label) ? $thank_you_page_view_order_label : 'View Order';
+			$message .= "*{$label}:* \n{$view_order_url}\n\n";
+		}
+		if ($order_date) {
+			$message .= "*Order Date:* {$order_date}\n\n";
+		}
+		if ($thank_you_page_tax) {
+			$message .= "*Tax:* $" . $tax_total . "\n";
+		}
+		if ($thank_you_page_shipping) {
+			$label = !empty($thank_you_page_shipping_label) ? $thank_you_page_shipping_label : 'Shipping Information';
+			$message .= "\n*{$label}*\n";
+			$message .= "Method: {$shipping_method}\n";
+			$message .= "Cost: $" . $shipping_total . "\n";
+			$message .= "Address:\n{$shipping_address}\n";
+		}
+
+		return $message;
+	}
+
 	/**
 	 * Global replacement vars
 	 *
@@ -391,11 +515,12 @@ class Helpers
 			}
 		}
 
-				// 🔥 Cart Info
+		// 🔥 Cart Info
 		$cartInfo = self::get_cart_whatsapp_info();
+		$orderInfo = self::order_info_whatsapp_info();
 
-		$variables = array('{siteTitle}', '{currentTitle}', '{siteURL}', '{currentURL}', '{siteEmail}', '{date}', '{ip}', '{cartInfo}');
-		$values = array($siteTitle, $currentTitle, $siteURL, $currentURL, $siteEmail, $date, $ip, $cartInfo);
+		$variables = array('{siteTitle}', '{currentTitle}', '{siteURL}', '{currentURL}', '{siteEmail}', '{date}', '{ip}', '{cartInfo}', '{orderInfo}');
+		$values = array($siteTitle, $currentTitle, $siteURL, $currentURL, $siteEmail, $date, $ip, $cartInfo, $orderInfo);
 		if (!self::is_valid_wc_product($product)) {
 			$product = null;
 		}

@@ -557,4 +557,201 @@ class WooButton
             echo '</a>';
         }
     }
+        public static function thank_you_page_button()
+    {
+        $options = get_option('cwp_option');
+        $ch_wooCommerce = get_option('ch_wooCommerce');
+        $ch_settings = get_option('ch_settings');
+        $thank_you_page_button_type_of_whatsapp = isset($ch_wooCommerce['thank_you_page_button_type_of_whatsapp']) ? $ch_wooCommerce['thank_you_page_button_type_of_whatsapp'] : '';
+        $thank_you_page_button_number = isset($ch_wooCommerce['thank_you_page_button_number']) ? $ch_wooCommerce['thank_you_page_button_number'] : '';
+        $thank_you_page_button_group = isset($ch_wooCommerce['thank_you_page_button_group']) ? $ch_wooCommerce['thank_you_page_button_group'] : '';
+        $thank_you_page_button_icon = isset($ch_wooCommerce['thank_you_page_button_icon']) ? $ch_wooCommerce['thank_you_page_button_icon'] : 1;
+        $thank_you_page_circle_button_icon = isset($ch_wooCommerce['thank_you_page_circle_button_icon']) ? $ch_wooCommerce['thank_you_page_circle_button_icon'] : 'icofont-brand-whatsapp';
+        $thank_you_page_circle_button_icon_native = isset($ch_wooCommerce['thank_you_page_circle_button_icon_native']) ? $ch_wooCommerce['thank_you_page_circle_button_icon_native'] : '';
+        $thank_you_page_circle_button_icon_custom = isset($ch_wooCommerce['thank_you_page_circle_button_icon_custom']) ? $ch_wooCommerce['thank_you_page_circle_button_icon_custom']['url'] : '';
+        $thank_you_page_button_icon_open = !empty($ch_wooCommerce['thank_you_page_button_icon_open']) ? $ch_wooCommerce['thank_you_page_button_icon_open'] : 'icofont-brand-whatsapp';
+        $thank_you_page_button_icon_native = !empty($ch_wooCommerce['thank_you_page_button_icon_native']) ? $ch_wooCommerce['thank_you_page_button_icon_native'] : '';
+        $thank_you_page_button_icon_custom = !empty($ch_wooCommerce['thank_you_page_button_icon_custom']) ? $ch_wooCommerce['thank_you_page_button_icon_custom']['url'] : '';
+
+        $thank_you_page_button_text = isset($ch_wooCommerce['thank_you_page_button_text']) ? $ch_wooCommerce['thank_you_page_button_text'] : 'How may I help you?';
+        $thank_you_page_button_size = isset($ch_wooCommerce['thank_you_page_button_size']) ? $ch_wooCommerce['thank_you_page_button_size'] : '1';
+        $thank_you_page_button_size_custom = isset($ch_wooCommerce["thank_you_page_button_size_custom"]) ? $ch_wooCommerce["thank_you_page_button_size_custom"] : '100';
+        if ($thank_you_page_button_size === 'custom') {
+            $thank_you_page_button_size = $thank_you_page_button_size_custom / 100;
+        }
+        $thank_you_page_button_visibility = isset($ch_wooCommerce['thank_you_page_button_visibility']) ? $ch_wooCommerce['thank_you_page_button_visibility'] : 'everywhere';
+        $thank_you_page_button_visibility = 'wooCommerce-' . $thank_you_page_button_visibility . '-only';
+        $thank_you_page_button_style = isset($ch_wooCommerce['thank_you_page_button_style']) ? $ch_wooCommerce['thank_you_page_button_style'] : '2';
+        $color_settings = !empty($options['color_settings']) ? $options['color_settings'] : array();
+        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
+        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
+
+        $button_bg = !empty($ch_wooCommerce['thank_you_page_button_bg']) ? $ch_wooCommerce['thank_you_page_button_bg'] : array();
+        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : $color_primary;
+        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : $color_secondary;
+
+        $button_text = !empty($ch_wooCommerce['thank_you_page_button_text_color']) ? $ch_wooCommerce['thank_you_page_button_text_color'] : array();
+        $text_color = !empty($button_text['normal_color']) ? $button_text['normal_color'] : '#ffffff';
+        $text_hover_color = !empty($button_text['hover_color']) ? $button_text['hover_color'] : '#ffffff';
+
+        $thank_you_page_icon_bg_color = !empty($ch_wooCommerce['thank_you_page_icon_bg_color']) ? $ch_wooCommerce['thank_you_page_icon_bg_color'] : array();
+        $normal_bg_color = !empty($thank_you_page_icon_bg_color['normal_color']) ? $thank_you_page_icon_bg_color['normal_color'] : '#ffffff';
+        $hover_bg_color = !empty($thank_you_page_icon_bg_color['hover_color']) ? $thank_you_page_icon_bg_color['hover_color'] : '#ffffff';
+        $icon_bg = !empty($ch_wooCommerce['thank_you_page_icon_bg']) ? 'icon_bg' : '';
+        $thank_you_page_icon_color = !empty($ch_wooCommerce['thank_you_page_icon_color']) ? $ch_wooCommerce['thank_you_page_icon_color'] : array();
+
+        if ($thank_you_page_button_style == '2' && $icon_bg === 'icon_bg') {
+            $normal_icon_color = !empty($thank_you_page_icon_color['normal_color']) ? $thank_you_page_icon_color['normal_color'] : $bg_color;
+            $hover_icon_color = !empty($thank_you_page_icon_color['hover_color']) ? $thank_you_page_icon_color['hover_color'] : $bg_hover_color;
+        } else {
+            $normal_icon_color = !empty($thank_you_page_icon_color['normal_color']) ? $thank_you_page_icon_color['normal_color'] : '#ffffff';
+            $hover_icon_color = !empty($thank_you_page_icon_color['hover_color']) ? $thank_you_page_icon_color['hover_color'] : '#ffffff';
+        }
+
+        $url_for_desktop = isset($ch_settings['url_for_desktop']) ? $ch_settings['url_for_desktop'] : '';
+        $url_for_mobile = isset($ch_settings['url_for_mobile']) ? $ch_settings['url_for_mobile'] : '';
+
+        $thank_you_page_agent_photo = isset($ch_wooCommerce['thank_you_page_agent_photo']) ? $ch_wooCommerce['thank_you_page_agent_photo'] : '';
+        $thank_you_page_agent_photo_type = isset($ch_wooCommerce['thank_you_page_agent_photo_type']) ? $ch_wooCommerce['thank_you_page_agent_photo_type'] : 'default';
+        $agent_photo_url = isset($thank_you_page_agent_photo['url']) ? $thank_you_page_agent_photo['url'] : '';
+        $agent_name = isset($ch_wooCommerce['thank_you_page_button_top_label']) ? $ch_wooCommerce['thank_you_page_button_top_label'] : 'John Doe / Technical support';
+
+        $thank_you_page_button_border = isset($ch_wooCommerce['thank_you_page_button_border']) ? $ch_wooCommerce['thank_you_page_button_border'] : array();
+        $border_all = isset($thank_you_page_button_border['all']) ? $thank_you_page_button_border['all'] . 'px' : '0px';
+        $border_style = isset($thank_you_page_button_border['style']) ? $thank_you_page_button_border['style'] : 'solid';
+        $border_radius = isset($thank_you_page_button_border['border_radius']) ? $thank_you_page_button_border['border_radius'] . 'px' : '50px';
+        $border_color = isset($thank_you_page_button_border['color']) ? $thank_you_page_button_border['color'] : '';
+        $border_color = !empty($border_color) ? $border_color : $color_primary;
+        $hover_border_color = isset($thank_you_page_button_border['hover_color']) ? $thank_you_page_button_border['hover_color'] : '';
+        $hover_border_color = !empty($hover_border_color) ? $hover_border_color : $color_secondary;
+
+        $thank_you_page_icon_border = isset($ch_wooCommerce['thank_you_page_icon_border']) ? $ch_wooCommerce['thank_you_page_icon_border'] : array();
+        $icon_border_all = isset($thank_you_page_icon_border['all']) ? $thank_you_page_icon_border['all'] . 'px' : '0px';
+        $icon_border_style = isset($thank_you_page_icon_border['style']) ? $thank_you_page_icon_border['style'] : 'solid';
+        $icon_border_radius = isset($thank_you_page_icon_border['border_radius']) ? $thank_you_page_icon_border['border_radius'] . 'px' : '50px';
+        $icon_border_color = isset($thank_you_page_icon_border['color']) ? $thank_you_page_icon_border['color'] : '';
+        $icon_border_color = !empty($icon_border_color) ? $icon_border_color : $color_primary;
+        $hover_icon_border_color = isset($thank_you_page_icon_border['hover_color']) ? $thank_you_page_icon_border['hover_color'] : '';
+        $hover_icon_border_color = !empty($hover_icon_border_color) ? $hover_icon_border_color : $color_secondary;
+
+        // Bubble button paddings
+        $thank_you_page_button_padding = isset($ch_wooCommerce['thank_you_page_button_padding']) ? $ch_wooCommerce['thank_you_page_button_padding'] : array();
+        $thank_you_page_button_padding_top =  isset($thank_you_page_button_padding['top']) ? $thank_you_page_button_padding['top'] : '5';
+        $thank_you_page_button_padding_right =  isset($thank_you_page_button_padding['right']) ? $thank_you_page_button_padding['right'] : '15';
+        $thank_you_page_button_padding_bottom =  isset($thank_you_page_button_padding['bottom']) ? $thank_you_page_button_padding['bottom'] : '5';
+        $thank_you_page_button_padding_left =  isset($thank_you_page_button_padding['left']) ? $thank_you_page_button_padding['left'] : '6';
+        $thank_you_page_button_padding_unit = isset($thank_you_page_button_padding['unit']) ? $thank_you_page_button_padding['unit'] : 'px';
+
+        $padding = $thank_you_page_button_padding_top . $thank_you_page_button_padding_unit . ' ' . $thank_you_page_button_padding_right . $thank_you_page_button_padding_unit . ' ' . $thank_you_page_button_padding_bottom . $thank_you_page_button_padding_unit . ' ' . $thank_you_page_button_padding_left . $thank_you_page_button_padding_unit;
+        // Bubble button margins
+        $thank_you_page_button_margin = isset($ch_wooCommerce['thank_you_page_button_margin']) ? $ch_wooCommerce['thank_you_page_button_margin'] : array();
+        $thank_you_page_button_margin_top =  isset($thank_you_page_button_margin['top']) ? $thank_you_page_button_margin['top'] : '20';
+        $thank_you_page_button_margin_right =  isset($thank_you_page_button_margin['right']) ? $thank_you_page_button_margin['right'] : '0';
+        $thank_you_page_button_margin_bottom =  isset($thank_you_page_button_margin['bottom']) ? $thank_you_page_button_margin['bottom'] : '0';
+        $thank_you_page_button_margin_left =  isset($thank_you_page_button_margin['left']) ? $thank_you_page_button_margin['left'] : '0';
+        $thank_you_page_button_margin_unit = isset($thank_you_page_button_margin['unit']) ? $thank_you_page_button_margin['unit'] : 'px';
+
+        $margin = $thank_you_page_button_margin_top . $thank_you_page_button_margin_unit . ' ' . $thank_you_page_button_margin_right . $thank_you_page_button_margin_unit . ' ' . $thank_you_page_button_margin_bottom . $thank_you_page_button_margin_unit . ' ' . $thank_you_page_button_margin_left . $thank_you_page_button_margin_unit;
+
+        if ($thank_you_page_agent_photo_type === 'default') {
+            $agent_photo_url = CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/user.webp';
+        } elseif ($thank_you_page_agent_photo_type === 'custom' && $agent_photo_url) {
+            $agent_photo_url;
+        } elseif ($thank_you_page_agent_photo_type === 'none') {
+            $agent_photo_url = '';
+        }
+
+        $message = isset($ch_wooCommerce['thank_you_page_button_message']) ? $ch_wooCommerce['thank_you_page_button_message'] : '';
+        $message = Helpers::replacement_vars($message);
+
+        $url = Helpers::whatsAppUrl($thank_you_page_button_number, $thank_you_page_button_type_of_whatsapp, $thank_you_page_button_group, $url_for_desktop, $url_for_mobile, $message);
+        $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
+        $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
+
+        if ($thank_you_page_button_type_of_whatsapp === 'group') {
+            $gaAnalyticsAttr = 'data-group=' . $thank_you_page_button_group . '';
+        } else {
+            $gaAnalyticsAttr = 'data-number=' . $thank_you_page_button_number . '';
+        }
+
+        if ($thank_you_page_circle_button_icon === 'native') {
+            $circle_icon = '<i class="' . esc_attr($thank_you_page_circle_button_icon_native) . '"></i>';
+        } elseif ($thank_you_page_circle_button_icon === 'custom' && !empty($thank_you_page_circle_button_icon_custom)) {
+            $circle_icon = '<img src="' . esc_url($thank_you_page_circle_button_icon_custom) . '" alt="" />';
+        } else {
+            if (!empty($thank_you_page_circle_button_icon)) {
+                $circle_icon = '<i class="' . esc_attr($thank_you_page_circle_button_icon) . '"></i>';
+            } else {
+                $circle_icon = '<i class="icofont-brand-whatsapp"></i>';
+            }
+        }
+        if ($thank_you_page_button_icon_open === 'native') {
+            $woo_button_icon = '<i class="' . esc_attr($thank_you_page_button_icon_native) . '"></i>';
+        } elseif ($thank_you_page_button_icon_open === 'custom' && !empty($thank_you_page_button_icon_custom)) {
+            $woo_button_icon = '<img src="' . esc_url($thank_you_page_button_icon_custom) . '" alt="" />';
+        } else {
+            if (!empty($thank_you_page_button_icon_open)) {
+                $woo_button_icon = '<i class="' . esc_attr($thank_you_page_button_icon_open) . '"></i>';
+            } else {
+                $woo_button_icon = '<i class="icofont-brand-whatsapp"></i>';
+            }
+        }
+
+        $thank_you_page_custom_title = isset($ch_wooCommerce['thank_you_page_custom_title']) ? $ch_wooCommerce['thank_you_page_custom_title'] : '';
+        $thank_you_page_custom_subtitle = isset($ch_wooCommerce['thank_you_page_custom_subtitle']) ? $ch_wooCommerce['thank_you_page_custom_subtitle'] : '';
+
+        global $wp;
+        // Check the order with enhanced security validation
+        $order_id               = (int) $wp->query_vars['order-received'];
+        if (!$order_id) {
+            return '';
+        }
+
+        // Validate order access (if security enhancements are loaded)
+        if (function_exists('wa_order_validate_order_access') && !wa_order_validate_order_access($order_id)) {
+            return '';
+        }
+
+        $order = wc_get_order($order_id);
+        if (!$order) {
+            return '';
+        }
+
+        $customer_id        = $order->get_user_id();
+        $first_name         = $order->get_billing_first_name();
+
+        echo '<div class="thank_you_custom_wrapper">';
+        echo '<h2 class="thank_you_title">' . wp_kses_post($thank_you_page_custom_title) . ', ' . esc_html($first_name) . '!' . '</h2>';
+        echo '<p class="thank_you_subtitle">' . wp_kses_post($thank_you_page_custom_subtitle) . '</p>';
+
+
+        if ($thank_you_page_button_style === '1') {
+            echo '<a style="--wHelp-btn-scale: ' . esc_attr($thank_you_page_button_size) . ';--wHelp-margin: ' . esc_attr($margin) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . ';--wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . ';--wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" ' . esc_attr($gaAnalyticsAttr) . ' class="wHelp_button chat_help_analytics thank_you_page_button circle-bubble ' . esc_attr($thank_you_page_button_visibility) . '">';
+            if ($circle_icon) {
+                echo wp_kses_post($circle_icon);
+            }
+            echo '</a>';
+        } else if ($thank_you_page_button_style === '2') {
+            echo '<a style="--wHelp-padding: ' . esc_attr($padding) . '; --wHelp-btn-scale: ' . esc_attr($thank_you_page_button_size) . '; --wHelp-margin: ' . esc_attr($margin) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . ';--wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-icon-normal-bg-color: ' . esc_attr($normal_bg_color) . '; --wHelp-icon-hover-bg-color: ' . esc_attr($hover_bg_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . '; --wHelp-text-color: ' . esc_attr($text_color) . '; --wHelp-text-hover-color: ' . esc_attr($text_hover_color) . '; --wHelp-icon-border: ' . esc_attr($icon_border_all . ' ' . $icon_border_style) . '; --wHelp-icon-border-color: ' . esc_attr($icon_border_color) . '; --wHelp-hover-icon-border-color: ' . esc_attr($hover_icon_border_color) . '; --wHelp-icon-border-radius: ' . esc_attr($icon_border_radius) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" ' . esc_attr($gaAnalyticsAttr) . ' class="wHelp_button chat_help_analytics thank_you_page_button ' . esc_attr($thank_you_page_button_visibility) . '">';
+            if ($thank_you_page_button_icon_open !== 'no_icon' && $woo_button_icon) {
+                echo '<span class="bubble__icon ' . esc_attr($icon_bg) . '">';
+                echo wp_kses_post($woo_button_icon);
+                echo '</span>';
+            }
+            echo esc_html($thank_you_page_button_text);
+            echo '</a>';
+        } else {
+            echo '<div style="--wHelp-padding: ' . esc_attr($padding) . '; --wHelp-btn-scale: ' . esc_attr($thank_you_page_button_size) . '; --wHelp-margin: ' . esc_attr($margin) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . ';--wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . '; --wHelp-text-color: ' . esc_attr($text_color) . '; --wHelp-text-hover-color: ' . esc_attr($text_hover_color) . '; --wHelp-icon-border: ' . esc_attr($icon_border_all . ' ' . $icon_border_style) . '; --wHelp-icon-border-color: ' . esc_attr($icon_border_color) . '; --wHelp-hover-icon-border-color: ' . esc_attr($hover_icon_border_color) . '; --wHelp-icon-border-radius: ' . esc_attr($icon_border_radius) . ';" ' . esc_attr($gaAnalyticsAttr) . ' class="wHelp_button wHelp_button_advance chat_help_analytics thank_you_page_button ' . esc_attr($thank_you_page_button_visibility) . '">';
+            if ($agent_photo_url) {
+                echo '<img decoding="async" src="' . esc_url($agent_photo_url) . '">';
+            }
+            echo '<div class="info-wrapper">
+                        <div class="info">' . esc_html($agent_name) . '</div>
+                        <div class="wHelp_title">' . esc_html($thank_you_page_button_text) . '</div>
+                    </div>
+				    <a href="' . esc_attr($url) . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link"></a>			
+                </div>';
+        }
+        echo '</div>';
+    }
 }
