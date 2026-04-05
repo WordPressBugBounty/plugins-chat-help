@@ -23,10 +23,10 @@ const noBubble = document.querySelector(".no_bubble");
 const wHelpBubble = document.querySelectorAll(".wHelp-bubble");
 const wHelpCurrentTime = document.querySelector(".current-time");
 const wHelpUserAvailability = document.querySelectorAll(
-  ".wHelpUserAvailability"
+  ".wHelpUserAvailability",
 );
 const wHelpMultiPopupContent = document.querySelector(
-  ".wHelp-multi__popup__content"
+  ".wHelp-multi__popup__content",
 );
 const wHelpCheckboxDiv = document.querySelectorAll(".wHelp--checkbox");
 const wHelpCheckbox = document.querySelectorAll(".wHelp__checkbox");
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Deep clone the analytics_parameter to avoid overwriting original
       let eventData = JSON.parse(JSON.stringify(analytics_parameter));
 
-      if(eventData) {
+      if (eventData) {
         eventData.forEach((param) => {
           if (param.event_parameter === "number") {
             param.event_parameter_value = number;
@@ -60,13 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
         eventData.forEach((param) => {
           ga_prams[param.event_parameter] = param.event_parameter_value;
         });
-  
+
         // Send GA event
         if (typeof gtag !== "undefined") {
           gtag("event", event_name, ga_prams);
         }
       }
-
     });
   });
 });
@@ -83,7 +82,7 @@ if (wHelpCurrentTime) {
 /******************** 02. OPEN BUTTON ********************/
 const toggleChatBtn = () => {
   [...wHelp, ...wHelpMulti].forEach((item) =>
-    item.classList.toggle("wHelp-show")
+    item.classList.toggle("wHelp-show"),
   );
 };
 wHelpBubble.forEach((item) => {
@@ -106,7 +105,7 @@ const initCheckboxState = () => {
   const checkboxValue = localStorage.getItem("wHelpCheckboxValue") === "true";
   if (checkboxValue) {
     wHelpCheckButton.forEach((btn) =>
-      btn.classList.remove("condition__checked")
+      btn.classList.remove("condition__checked"),
     );
     wHelpCheckboxDiv.forEach((div) => (div.style.display = "none"));
   }
@@ -184,7 +183,7 @@ const handleUserAvailability = () => {
 
     wHelpUserAvailability.forEach((item) => {
       const availableTimes = JSON.parse(
-        item.getAttribute("data-userAvailability")
+        item.getAttribute("data-userAvailability"),
       );
       let timezone = item.getAttribute("data-timezone");
       if (timezone == "" || timezone == null) {
@@ -248,15 +247,21 @@ updateButtonAvailability();
 /******************** 09. SINGLE CHAT AVAILABILITY ********************/
 if (wHelpChatAvailability) {
   const chatAvailableTime = JSON.parse(
-    wHelpChatAvailability.getAttribute("data-availability")
+    wHelpChatAvailability.getAttribute("data-availability"),
   );
 
   let timezone = wHelpChatAvailability.getAttribute("data-timezone");
   if (timezone == "" || timezone == null) {
     timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  }  
+  }
   const now = timezone ? moment().tz(timezone) : moment();
   const availability = isAvailable(chatAvailableTime, now);
+
+  if (!availability.isAvailable) {
+    subtitleEl.textContent = subtitleEl.getAttribute("data-offline");
+  } else {
+    subtitleEl.textContent = subtitleEl.getAttribute("data-online");
+  }
 
   if (availability.isAvailable) {
     wHelpChatAvailability.classList.add("avatar-active");
@@ -331,7 +336,7 @@ if (wHelpChatAvailability) {
       };
 
       const chatHelpUserInfo = localStorage.getItem(
-        "chat_help_user_information"
+        "chat_help_user_information",
       );
       const ipInfo = chatHelpUserInfo ? JSON.parse(chatHelpUserInfo) : {};
       const userInfo = { ...userData, ...ipInfo };
@@ -339,7 +344,7 @@ if (wHelpChatAvailability) {
       wHelpCheckButton.forEach((btn) => {
         if (!btn.classList.contains("condition__checked")) {
           const chatAvailableTime = JSON.parse(
-            wHelpChatAvailability?.getAttribute("data-availability")
+            wHelpChatAvailability?.getAttribute("data-availability"),
           );
           if (chatAvailableTime) {
             const now = moment();
@@ -370,7 +375,7 @@ if (wHelpChatAvailability) {
                     setTimeout(function () {
                       window.open(
                         response.data.whatsAppURL,
-                        chat_help_frontend_scripts.open_in_new_tab
+                        chat_help_frontend_scripts.open_in_new_tab,
                       );
                       form[0].reset();
                       submit_btn.innerHTML = button;
@@ -378,7 +383,7 @@ if (wHelpChatAvailability) {
                   } else {
                     alert("Error processing request.");
                   }
-                }
+                },
               ).fail(() => alert("Unexpected error occurred."));
             }
           }
@@ -390,7 +395,7 @@ if (wHelpChatAvailability) {
 
 /******************** 11. AUTO OPEN POPUP AFTER SECONDS ********************/
 const autoShowPopupFunc = () => {
-  if (autoShowPopup === '1') toggleChatBtn();
+  if (autoShowPopup === "1") toggleChatBtn();
 };
 
 if (autoOpenPopupTimeout > 0)

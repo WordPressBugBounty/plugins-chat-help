@@ -51,6 +51,7 @@ class FormTemplate
 		$agent_photo = isset($options['agent-photo']) ? $options['agent-photo'] : '';
 		$agent_name = isset($options['agent-name']) ? $options['agent-name'] : 'John Doe';
 		$agent_subtitle = isset($options['agent-subtitle']) ? $options['agent-subtitle'] : 'Typically replies within a day';
+		$offline_agent_subtitle = !empty($options['offline_agent_subtitle']) ? $options['offline_agent_subtitle'] : $agent_subtitle;
 		$color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
 		$primary = isset($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
 		$secondary = isset($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';

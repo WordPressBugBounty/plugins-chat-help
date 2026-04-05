@@ -463,23 +463,85 @@ class Help
                                         <span>7.02</span>
                                     </div>
                                 </div>
-                                <div class="play_list_item " data-video_id="mQ54JqMpB-g">
+
+                                <div class="play_list_item " data-video_id="yrUEDDYnl3U">
                                     <div class="play_list_item_title">
                                         <h3>Agent</h3>
                                     </div>
                                     <div class="play_list_item_content">
                                         <div class="title">Configure Single Agent Layout</div>
-                                        <span>3.19</span>
+                                        <span>5.08</span>
                                     </div>
                                 </div>
 
-                                <div class="play_list_item " data-video_id="NPr8ZwUfwPE">
+                               <div class="play_list_item " data-video_id="UT1oc5QLtts">
                                     <div class="play_list_item_title">
-                                        <h3>Pre-Filled</h3>
+                                        <h3>Button</h3>
                                     </div>
                                     <div class="play_list_item_content">
-                                        <div class="title">Pre-filled Messages in WhatsApp</div>
-                                        <span>3.01</span>
+                                        <div class="title">Configure Floating WhatsApp Button Layout</div>
+                                        <span>6.16</span>
+                                    </div>
+                                </div>
+
+                                <div class="play_list_item " data-video_id="iRCbVZ7nImw">
+                                    <div class="play_list_item_title">
+                                        <h3>Shop</h3>
+                                    </div>
+                                    <div class="play_list_item_content">
+                                        <div class="title"> WooCommerce Shop Page Button</div>
+                                        <span>4.42</span>
+                                    </div>
+                                </div>
+
+                             <div class="play_list_item " data-video_id="QD0PWP6YuSs">
+                                    <div class="play_list_item_title">
+                                        <h3>Product</h3>
+                                    </div>
+                                    <div class="play_list_item_content">
+                                        <div class="title"> WooCommerce Product Page Button</div>
+                                        <span>4.22</span>
+                                    </div>
+                                </div>
+
+                               <div class="play_list_item " data-video_id="ehyy8c3qYOg">
+                                    <div class="play_list_item_title">
+                                        <h3>Cart</h3>
+                                    </div>
+                                    <div class="play_list_item_content">
+                                        <div class="title"> WooCommerce Cart Page Button</div>
+                                        <span>4.29</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="play_list_item " data-video_id="2qPQPzYCQso">
+                                    <div class="play_list_item_title">
+                                        <h3>Checkout</h3>
+                                    </div>
+                                    <div class="play_list_item_content">
+                                        <div class="title"> WooCommerce Checkout Page Button</div>
+                                        <span>5.48</span>
+                                    </div>
+                                </div>
+
+                                <div class="play_list_item " data-video_id="T74S87ZPe-w">
+                                    <div class="play_list_item_title">
+                                        <h3>Thank You</h3>
+                                    </div>
+                                    <div class="play_list_item_content">
+                                        <div class="title">WooCommerce Thank You Page Button</div>
+                                        <span>5.32</span>
+                                    </div>
+                                </div>
+
+                                <div class="play_list_item " data-video_id="6z_jgd9e0Wg">
+                                    <div class="play_list_item_title">
+                                        <h3>Button</h3>
+                                    </div>
+                                    <div class="play_list_item_content">
+                                        <div class="title">Shortcode, Gutenberg & Elementor Button</div>
+                                        <span>4.36</span>
                                     </div>
                                 </div>
 

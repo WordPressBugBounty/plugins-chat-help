@@ -52,6 +52,7 @@ class SingleTemplate
 		$agent_photo 	= isset($options['agent-photo']) ? $options['agent-photo'] : '';
 		$agent_name 	= isset($options['agent-name']) ? $options['agent-name'] : 'John Doe';
 		$agent_subtitle = isset($options['agent-subtitle']) ? $options['agent-subtitle'] : 'Typically replies within a day';
+		$offline_agent_subtitle = !empty($options['offline_agent_subtitle']) ? $options['offline_agent_subtitle'] : $agent_subtitle;
 		$bubble_visibility = isset($options['bubble-visibility']) ? $options['bubble-visibility'] : 'everywhere';
 		$type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
 		$whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';

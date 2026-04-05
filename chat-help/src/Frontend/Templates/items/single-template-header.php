@@ -20,8 +20,9 @@ use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
         <?php if ($agent_name) : ?>
             <div class="info__name"><?php echo esc_html($agent_name); ?></div>
         <?php endif;
-        if ($agent_subtitle) : ?>
-            <div class="info__title"><?php echo esc_html($agent_subtitle); ?></div>
+        if ($agent_subtitle || $offline_agent_subtitle) : ?>
+            <div class="info__title" data-online="<?php echo esc_attr($agent_subtitle); ?>"
+                data-offline="<?php echo esc_attr($offline_agent_subtitle); ?>"><?php echo esc_html($agent_subtitle); ?></div>
         <?php endif; ?>
     </div>
 </div>

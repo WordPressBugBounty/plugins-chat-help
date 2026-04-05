@@ -3,7 +3,7 @@
 Plugin Name: 	ChatHelp
 Plugin URI: 	https://wpchathelp.com/
 Description: 	WhatsApp 💬 ChatHelp 🔥 Unlimited customer support tool that allows visitors to engage using "WhatsApp" or "WhatsApp Business". WhatsApp button included.
-Version: 		3.2.3
+Version: 		3.2.4
 Author:         ThemeAtelier
 Author URI:     https://themeatelier.net/
 License:        GPL-2.0+
@@ -26,7 +26,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 use ThemeAtelier\ChatHelp\Includes\ChatHelp;
 
 if (!defined('CHAT_HELP_VERSION')) {
-    define('CHAT_HELP_VERSION', '3.2.3');
+    define('CHAT_HELP_VERSION', '3.2.4');
 }
 if (!defined('CHAT_HELP_FILE')) {
     define('CHAT_HELP_FILE', __FILE__);
@@ -95,3 +95,20 @@ if (!is_plugin_active($pro_plugin_slug)) {
     }
     add_action('block_categories_all', 'chat_help_plugin_block_categories', 10, 2);
 }
+
+/**
+ * Initialize the plugin tracker
+ *
+ * @return void
+ */
+function whatsHelp_chat_appsero_init()
+{
+    if (!class_exists('WhatsHelpAppSero\Insights')) {
+        require_once CHAT_HELP_DIR_PATH . 'src/Admin/appsero/Client.php';
+    }
+    $client = new WhatsHelpAppSero\Client('faa96fc0-6c04-4d9e-95fa-3612fea71662', 'WhatsApp Chat Help', __FILE__);
+    // Active insights
+    $client->insights()->init();
+}
+
+whatsHelp_chat_appsero_init();

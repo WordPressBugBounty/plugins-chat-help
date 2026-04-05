@@ -75,7 +75,6 @@ class Shortcode
                                 'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/button-with-info.svg',
                                 'text'            => esc_html__('Advance Button', 'chat-help'),
                                 'option_demo_url' => CHAT_HELP_DEMO_URL . 'button-shortcode#btn_demo',
-                                'pro_only' => true,
                             ),
 
                         ),

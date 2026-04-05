@@ -291,7 +291,7 @@ class General
                                     array(
                                         'id' => 'whatsapp_message_template',
                                         'type' => 'textarea',
-                                        'title' => esc_html__('Form Message Template', 'chat-help'),
+                                        'title' => esc_html__('Pre-filled Message', 'chat-help'),
                                         'title_help' => '<div class="chat-help-info-label">' .  esc_html__('Customize the WhatsApp message template sent after form submission.', 'chat-help') . '</div>' . ' ' . esc_html__('Use {form_fields} to include all fields, or insert specific variables (e.g., {text_1}, {textarea_2}) for more control.', 'chat-help') .      '</br>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-can-i-use-dynamic-variables-in-the-single-form-layout/">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'default' => "Hello! \nI’d like to get in touch regarding {currentTitle}.\nHere are my details:\n{form_fields}  {PRODUCT_START}\nProduct: {productName}\nPrice: {productPrice}{PRODUCT_END}",
                                         'desc' => '<div class="message_variables"></div>',
@@ -985,6 +985,14 @@ class General
                                             ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'default' => esc_html__('Typically replies within a day', 'chat-help'),
 
+                                        'dependency' => array('chat_layout', 'any', 'form,agent', 'any'),
+                                    ),
+                                    array(
+                                        'id' => 'offline_agent_subtitle',
+                                        'type' => 'text',
+                                        'title' => esc_html__('Offline Subtitle', 'chat-help'),
+                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/agent_subtitle.png') . '" alt=""></div>' .  '<div class="chat-help-info-label">' . esc_html__('Enter a subtitle to display when the agent is offline in the chat bubble.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'default' => esc_html__('Currently offline, will reply soon.', 'chat-help'),
                                         'dependency' => array('chat_layout', 'any', 'form,agent', 'any'),
                                     ),
 

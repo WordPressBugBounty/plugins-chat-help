@@ -52,8 +52,8 @@ class WooButton
         $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
 
         $button_bg = !empty($ch_wooCommerce['product_page_button_bg']) ? $ch_wooCommerce['product_page_button_bg'] : array();
-        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : $color_primary;
-        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : $color_secondary;
+        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#118c7e';
+        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#0b5a51';
 
         $button_text = !empty($ch_wooCommerce['product_page_button_text_color']) ? $ch_wooCommerce['product_page_button_text_color'] : array();
         $text_color = !empty($button_text['normal_color']) ? $button_text['normal_color'] : '#ffffff';
@@ -176,8 +176,8 @@ class WooButton
         $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
 
         $button_bg = !empty($ch_wooCommerce['shop_page_button_bg']) ? $ch_wooCommerce['shop_page_button_bg'] : array();
-        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : $color_primary;
-        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : $color_secondary;
+        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#118c7e';
+        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#0b5a51';
 
         $button_text = !empty($ch_wooCommerce['shop_page_button_text_color']) ? $ch_wooCommerce['shop_page_button_text_color'] : array();
         $text_color = !empty($button_text['normal_color']) ? $button_text['normal_color'] : '#ffffff';
@@ -302,8 +302,8 @@ class WooButton
         $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
 
         $button_bg = !empty($ch_wooCommerce['cart_page_button_bg']) ? $ch_wooCommerce['cart_page_button_bg'] : array();
-        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : $color_primary;
-        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : $color_secondary;
+        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#118c7e';
+        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#0b5a51';
 
         $button_text = !empty($ch_wooCommerce['cart_page_button_text_color']) ? $ch_wooCommerce['cart_page_button_text_color'] : array();
         $text_color = !empty($button_text['normal_color']) ? $button_text['normal_color'] : '#ffffff';
@@ -441,8 +441,8 @@ class WooButton
         $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
 
         $button_bg = !empty($ch_wooCommerce['checkout_page_button_bg']) ? $ch_wooCommerce['checkout_page_button_bg'] : array();
-        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : $color_primary;
-        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : $color_secondary;
+        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#118c7e';
+        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#0b5a51';
 
         $button_text = !empty($ch_wooCommerce['checkout_page_button_text_color']) ? $ch_wooCommerce['checkout_page_button_text_color'] : array();
         $text_color = !empty($button_text['normal_color']) ? $button_text['normal_color'] : '#ffffff';
@@ -587,8 +587,8 @@ class WooButton
         $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
 
         $button_bg = !empty($ch_wooCommerce['thank_you_page_button_bg']) ? $ch_wooCommerce['thank_you_page_button_bg'] : array();
-        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : $color_primary;
-        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : $color_secondary;
+        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#118c7e';
+        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#0b5a51';
 
         $button_text = !empty($ch_wooCommerce['thank_you_page_button_text_color']) ? $ch_wooCommerce['thank_you_page_button_text_color'] : array();
         $text_color = !empty($button_text['normal_color']) ? $button_text['normal_color'] : '#ffffff';

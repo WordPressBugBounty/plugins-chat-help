@@ -70,13 +70,13 @@ class ThemeAtelier_Offer_Banner {
 				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/chat-help-ny-banner.svg',
 				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=new_year_2026',
 			),
-			// 'ramadan'     => array(
-			// 	'id'    => 'ramadan_2026',
-			// 	'start' => strtotime( '2026-03-04 00:00:00' ),
-			// 	'end'   => strtotime( '2026-03-31 23:59:59' ),
-			// 	'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/chathelp-ramadan-banner.svg',
-			// 	'link'  => 'https://themeatelier.net/deals/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=ramadan_2026#wp_plugins',
-			// ),
+			'spring'     => array(
+				'id'    => 'spring_2026',
+				'start' => strtotime( '2026-04-01 00:00:00' ),
+				'end'   => strtotime( '2026-04-30 23:59:59' ),
+				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/chat-help-spring-sale.svg',
+				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=spring_2026',
+			),
 			
 		);
 

@@ -2,9 +2,9 @@
 Contributors: ThemeAtelier, faysal61, shshakib2001, tamimaziz
 Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce whatsapp
 Requires at least: 5.0
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 3.2.3
+Stable tag: 3.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -218,15 +218,23 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 
 
 == Screenshots ==
-1. Single Form
-2. Single Agent
-3. Simple Button
-4. Dark Mode
-5. WooCommerce Button
-6. Shortcode Buttons
-7. Gutenberg Button Block
+1. WhatsApp contact form layout allowing visitors to send messages directly through WhatsApp chat with a click-to-chat button.
+2. Pre-filled WhatsApp message feature allowing visitors to start chat with predefined text.
+2. Floating WhatsApp chat popup with welcome message and one-click start chat button for WordPress.
+3. Floating Click-to-Chat button for WordPress that lets visitors start a WhatsApp chat instantly.
+4. Customizable WhatsApp chat widget with welcome message and one-click chat button.
+5. WooCommerce WhatsApp chat button on product page allowing customers to request a quote or start chat.
+6. Multiple WhatsApp chat button styles with shortcode support for pages, posts, and widgets.
+7. Gutenberg block for adding a WhatsApp chat button anywhere in WordPress pages or posts.
+8. Elementor widget for adding a WhatsApp chat button anywhere on your WordPress website.
 
 == Changelog ==
+= 3.2.4 – 05 April 2026 =
+* Added: Option to set a different subtitle when offline.
+* Fixed: Corrected logic to properly check both conditions for showing or hiding action buttons (e.g., Add to Cart, Checkout).
+* Fixed: Resolved an issue where changing primary and secondary colors in the floating layout incorrectly affected WooCommerce button styles.
+* Improved: Ensured button styles remain consistent and follow intended color settings across layouts.
+
 = 3.2.3 – 10 March 2026 =
 * Added: Button options for the product order thank you page.
 

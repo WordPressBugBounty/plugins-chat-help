@@ -41,6 +41,8 @@ class WooCommerce
     {
         $ch_wooCommerce = get_option('ch_wooCommerce');
         $shop_page_hide_add_to_cart_button = isset($ch_wooCommerce['shop_page_hide_add_to_cart_button']) ? $ch_wooCommerce['shop_page_hide_add_to_cart_button'] : '';
+        $cart_page_button = isset($ch_wooCommerce['cart_page_button']) ? $ch_wooCommerce['cart_page_button'] : '';
+        $shop_page_button = isset($ch_wooCommerce['shop_page_button']) ? $ch_wooCommerce['shop_page_button'] : '';
         $cart_page_hide_add_to_cart_button = isset($ch_wooCommerce['cart_page_hide_add_to_cart_button']) ? $ch_wooCommerce['cart_page_hide_add_to_cart_button'] : '';
         $this->shop_page_button();
         $this->product_page_button();
@@ -48,7 +50,7 @@ class WooCommerce
         $this->checkout_page_button();
         $this->thank_you_page_button();
 
-        if ($shop_page_hide_add_to_cart_button) {
+        if ($shop_page_hide_add_to_cart_button && $shop_page_button) {
             add_action('wp_head', function () {
                 if (is_shop() || is_product_category() || is_product_tag()) {
                     echo '<style>
@@ -63,7 +65,7 @@ class WooCommerce
             });
         }
 
-        if ($cart_page_hide_add_to_cart_button) {
+        if ($cart_page_hide_add_to_cart_button && $cart_page_button) {
             add_action('wp_head', function () {
                 if (is_cart()) {
                     echo '<style>
