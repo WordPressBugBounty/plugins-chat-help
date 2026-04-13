@@ -34,7 +34,7 @@ class SingleTemplate
 	 *
 	 * @since 1.0.0
 	 */
-	public static function singleTemplate($options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id)
+	public static function singleTemplate($options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id, $chat_type)
 	{
 		$optAvailablity 	= isset($options['opt-availablity']) ? $options['opt-availablity'] : '';
 		$user_availability 	= Helpers::user_availability($optAvailablity);
@@ -49,7 +49,17 @@ class SingleTemplate
 		$header_content_position = isset($options['header-content-position']) ? $options['header-content-position'] : 'center';
 		$before_chat_icon 	= isset($options['before-chat-icon']) ? $options['before-chat-icon'] : 'icofont-brand-whatsapp';
 		$chat_button_text 	= isset($options['chat-button-text']) ? $options['chat-button-text'] : 'Send a message';
-		$agent_photo 	= isset($options['agent-photo']) ? $options['agent-photo'] : '';
+		$agent_photo = isset($options['agent-photo']) ? $options['agent-photo'] : '';
+		$agent_photo_type = isset($options['agent_photo_type']) ? $options['agent_photo_type'] : 'default';
+		$agent_photo_url = isset($agent_photo['url']) ? $agent_photo['url'] : '';
+
+		if ($agent_photo_type === 'default') {
+			$agent_photo_url = CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/user.webp';
+		} elseif ($agent_photo_type === 'custom' && $agent_photo_url) {
+			$agent_photo_url;
+		} elseif ($agent_photo_type === 'none') {
+			$agent_photo_url = '';
+		}
 		$agent_name 	= isset($options['agent-name']) ? $options['agent-name'] : 'John Doe';
 		$agent_subtitle = isset($options['agent-subtitle']) ? $options['agent-subtitle'] : 'Typically replies within a day';
 		$offline_agent_subtitle = !empty($options['offline_agent_subtitle']) ? $options['offline_agent_subtitle'] : $agent_subtitle;

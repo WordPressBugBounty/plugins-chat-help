@@ -21,6 +21,7 @@ use ThemeAtelier\ChatHelp\Frontend\Templates\ButtonTemplate;
 use ThemeAtelier\ChatHelp\Frontend\Templates\FormTemplate;
 use ThemeAtelier\ChatHelp\Frontend\Templates\SingleTemplate;
 use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
+use ThemeAtelier\ChatHelp\Frontend\Templates\SingleTemplateInput;
 
 if (! defined('ABSPATH')) {
     die;
@@ -117,28 +118,29 @@ class Frontend
         $current_title = wp_get_document_title();
         $current_url     = home_url(add_query_arg(null, null)); // Current full URL
 
+        if (is_array($google_analytics_parameter)) {
+            foreach ($google_analytics_parameter as &$param) {
+                if (isset($param['event_parameter_value']) && is_string($param['event_parameter_value'])) {
+                    $value = $param['event_parameter_value'];
 
-        foreach ($google_analytics_parameter as &$param) {
-            if (isset($param['event_parameter_value']) && is_string($param['event_parameter_value'])) {
-                $value = $param['event_parameter_value'];
+                    // Handle {number}, {title}, {url}
+                    switch ($param['event_parameter']) {
+                        case 'title':
+                            $value = $site_title;
+                            break;
+                        case 'current_title':
+                            $value = $current_title;
+                            break;
+                        case 'url':
+                            $value = $current_url;
+                            break;
+                    }
 
-                // Handle {number}, {title}, {url}
-                switch ($param['event_parameter']) {
-                    case 'title':
-                        $value = $site_title;
-                        break;
-                    case 'current_title':
-                        $value = $current_title;
-                        break;
-                    case 'url':
-                        $value = $current_url;
-                        break;
+                    $param['event_parameter_value'] = $value;
                 }
-
-                $param['event_parameter_value'] = $value;
             }
+            unset($param);
         }
-        unset($param);
 
         $analytics_parameter['google_analytics_parameter'] = $google_analytics_parameter;
 
@@ -261,9 +263,13 @@ class Frontend
                 }
                 break;
             case 'agent':
-
                 if (('number' === $type_of_whatsapp && !empty($opt_number) || ('group' === $type_of_whatsapp && !empty($opt_group)))) {
-                    SingleTemplate::singleTemplate($options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id);
+                    SingleTemplate::singleTemplate($options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id, $chat_type);
+                }
+                break;
+            case 'agent_input':
+                if (('number' === $type_of_whatsapp && !empty($opt_number) || ('group' === $type_of_whatsapp && !empty($opt_group)))) {
+                    SingleTemplateInput::singleTemplateInput($options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id, $chat_type);
                 }
                 break;
             case 'form':
@@ -288,12 +294,18 @@ class Frontend
         $product_id = isset($_POST['product_id']) ? sanitize_text_field($_POST['product_id']) : '';
         $current_url = isset($_POST['current_url']) ? sanitize_url($_POST['current_url']) : '';
         $current_title = isset($_POST['current_title']) ? sanitize_text_field($_POST['current_title']) : '';
+        $agentName = isset($_POST['agentName']) ? sanitize_text_field($_POST['agentName']) : '';
         $options = get_option('cwp_option');
         $ch_settings = get_option('ch_settings');
         $agent_number = isset($options['opt-number']) ? $options['opt-number'] : '';
         $url_for_desktop = isset($ch_settings['url_for_desktop']) ? $ch_settings['url_for_desktop'] : '';
         $url_for_mobile = isset($ch_settings['url_for_mobile']) ? $ch_settings['url_for_mobile'] : '';
-        $template = isset($options['whatsapp_message_template']) ? $options['whatsapp_message_template'] : '';
+        $chat_layout = isset($options['chat_layout']) ? $options['chat_layout'] : '';
+        if ('agent_input' ===  $chat_layout) {
+            $template = isset($options['agent_with_input_prefilled_message']) ? $options['agent_with_input_prefilled_message'] : '';
+        } else {
+            $template = isset($options['whatsapp_message_template']) ? $options['whatsapp_message_template'] : '';
+        }
         $chat_help_leads = isset($options['chat_help_leads']) ? $options['chat_help_leads'] : true;
 
         $form = true;
@@ -325,8 +337,9 @@ class Frontend
                 [
                     'field'     => maybe_serialize($formData),
                     'meta'      => maybe_serialize($userInfo),
+                    'agent_name'  => $agentName,
                 ],
-                ['%s', '%s']
+                ['%s', '%s', '%s']
             );
         }
 

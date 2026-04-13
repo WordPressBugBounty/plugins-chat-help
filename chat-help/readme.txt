@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 3.2.4
+Stable tag: 3.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -229,6 +229,11 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 8. Elementor widget for adding a WhatsApp chat button anywhere on your WordPress website.
 
 == Changelog ==
+= 3.3.0 – 13 April 2026 =
+* Added: New Floating layout called Pre-Chat Message.
+* Added: Filter by Agents option in the leads dashboard.
+* Fixed: Some documentation page links.
+
 = 3.2.4 – 05 April 2026 =
 * Added: Option to set a different subtitle when offline.
 * Fixed: Corrected logic to properly check both conditions for showing or hiding action buttons (e.g., Add to Cart, Checkout).

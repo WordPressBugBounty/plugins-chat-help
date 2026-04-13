@@ -34,6 +34,7 @@ const wHelpCheckButton = document.querySelectorAll(".wHelp__send-message");
 const wHelpPopupContent = document.querySelectorAll(".wHelp__popup__content");
 const wHelpButtons = document.querySelectorAll(".wHelpButtons");
 const wHelpChatAvailability = document.querySelector(".chat-availability");
+const subtitleEl = document.querySelector(".info__title");
 let analytics_parameter =
   chat_help_script.analytics_parameter.google_analytics_parameter;
 let event_name = chat_help_script.analytics_parameter.event_name;
@@ -284,112 +285,140 @@ if (wHelpChatAvailability) {
 
 /******************** 10. ADD SUBJECT OR BODY TEXT ********************/
 (function ($) {
-  if ($("#form").length) {
-    $("#form").validate();
+  /* ========================
+     COMMON UTIL FUNCTIONS
+  ======================== */
+  function getBrowserName() {
+    const ua = navigator.userAgent;
+    if (ua.includes("Firefox")) return "Firefox";
+    if (ua.includes("SamsungBrowser")) return "Samsung Internet";
+    if (ua.includes("Opera") || ua.includes("OPR")) return "Opera";
+    if (ua.includes("Edg")) return "Edge";
+    if (ua.includes("Chrome")) return "Chrome";
+    if (ua.includes("Safari")) return "Safari";
+    return "Unknown";
   }
 
-  wHelpPopupContent.forEach((whatsappForm) => {
-    let submit_btn = whatsappForm.querySelector(".wHelp__send-message");
-    $(whatsappForm).submit(function (e) {
-      e.preventDefault();
+  function getUserData() {
+    return {
+      device: /Mobi|Android/i.test(navigator.userAgent) ? "Mobile" : "Desktop",
+      browser: getBrowserName(),
+      platform: navigator.platform,
+      screen: screen.width + "x" + screen.height,
+      language: navigator.language,
+      vendor: navigator.vendor,
+      url: window.location.href,
+      referrer: document.referrer,
+      ip: chat_help_frontend_scripts.ip,
+    };
+  }
 
-      const form = $(this);
-      if (!form.valid()) {
-        return;
-      }
+  /* ========================
+     FORM SUBMIT (GLOBAL)
+  ======================== */
+  $(document).on("submit", "form#form", function (e) {
+    e.preventDefault();
+    const form = $(this);
+    // ✅ correct validation check
+    if (!form.valid()) return;
 
-      function getBrowserName() {
-        const userAgent = navigator.userAgent;
+    const submit_btn = form.find(".wHelp__send-message");
+    const number = submit_btn.data("number") || "";
+    const group = submit_btn.data("group") || "";
+    const formData = form.serialize();
+    const userInfo = getUserData();
+    const currentUrl = window.location.href;
+    const currentTitle = document.title;
+    let button = form.data("button");
+    let loading = form.data("loading");
+    let product_attr = form.data("product_attr");
+    let agentName = $(document).find(".wHelp_bubble .info__name").text().trim();
 
-        if (userAgent.indexOf("Firefox") > -1) {
-          return "Firefox";
-        } else if (userAgent.indexOf("SamsungBrowser") > -1) {
-          return "Samsung Internet";
-        } else if (
-          userAgent.indexOf("Opera") > -1 ||
-          userAgent.indexOf("OPR") > -1
-        ) {
-          return "Opera";
-        } else if (userAgent.indexOf("Edg") > -1) {
-          return "Edge";
-        } else if (userAgent.indexOf("Chrome") > -1) {
-          return "Chrome";
-        } else if (userAgent.indexOf("Safari") > -1) {
-          return "Safari";
+    $.post(
+      chat_help_frontend_scripts.ajaxurl,
+      {
+        action: "handle_form_submission",
+        data: formData,
+        userInfo,
+        nonce: chat_help_frontend_scripts.nonce,
+        product_id: product_attr,
+        current_url: currentUrl,
+        current_title: currentTitle,
+        agentName: agentName,
+      },
+      (response) => {
+        if (response.success) {
+          submit_btn.innerHTML = loading;
+          setTimeout(function () {
+            window.open(
+              response.data.whatsAppURL,
+              chat_help_frontend_scripts.open_in_new_tab,
+            );
+            form[0].reset();
+            submit_btn.innerHTML = button;
+          }, 100);
         } else {
-          return "Unknown";
+          alert("Error processing request.");
         }
-      }
+      },
+    ).fail(() => alert("Unexpected error occurred."));
+  });
+  $(document).on("submit", "form#agent_input", function (e) {
+    e.preventDefault();
+    const form = $(this);
+    // ✅ correct validation check
+    if (!form.valid()) return;
 
-      let userData = {
-        device: /Mobi|Android/i.test(navigator.userAgent)
-          ? "Mobile"
-          : "Desktop",
-        browser: getBrowserName(), // function from earlier
-        platform: navigator.platform,
-        screen: screen.width + "x" + screen.height,
-        language: navigator.language,
-        vendor: navigator.vendor,
-        url: window.location.href,
-        referrer: document.referrer,
-        ip: chat_help_frontend_scripts.ip,
-      };
+    const submit_btn = form.find(".send_agent_with_input");
+    
+    const number = submit_btn.data("number") || "";
+    const group = submit_btn.data("group") || "";
+    const formData = form.serialize();
+    const userInfo = getUserData();
+    const currentUrl = window.location.href;
+    const currentTitle = document.title;
+    let button = form.data("button");
+    let loading = form.data("loading");
+    let product_attr = form.data("product_attr");
+    let agentName = $(document).find(".wHelp_bubble .info__name").text().trim();
 
-      const chatHelpUserInfo = localStorage.getItem(
-        "chat_help_user_information",
-      );
-      const ipInfo = chatHelpUserInfo ? JSON.parse(chatHelpUserInfo) : {};
-      const userInfo = { ...userData, ...ipInfo };
-
-      wHelpCheckButton.forEach((btn) => {
-        if (!btn.classList.contains("condition__checked")) {
-          const chatAvailableTime = JSON.parse(
-            wHelpChatAvailability?.getAttribute("data-availability"),
-          );
-          if (chatAvailableTime) {
-            const now = moment();
-            const available = isAvailable(chatAvailableTime, now);
-            if (available.isAvailable) {
-              const formData = $(this).serialize();
-              const currentUrl = window.location.href;
-              const currentTitle = document.title;
-              let button = whatsappForm.getAttribute("data-button");
-              let loading = whatsappForm.getAttribute("data-loading");
-              let productAttr = whatsappForm.getAttribute("data-product_attr");
-
-              // Whatsapp form handler
-              $.post(
-                chat_help_frontend_scripts.ajaxurl,
-                {
-                  action: "handle_form_submission",
-                  data: formData,
-                  userInfo,
-                  product_id: productAttr,
-                  nonce: chat_help_frontend_scripts.nonce,
-                  current_url: currentUrl,
-                  current_title: currentTitle,
-                },
-                (response) => {
-                  if (response.success) {
-                    submit_btn.innerHTML = loading;
-                    setTimeout(function () {
-                      window.open(
-                        response.data.whatsAppURL,
-                        chat_help_frontend_scripts.open_in_new_tab,
-                      );
-                      form[0].reset();
-                      submit_btn.innerHTML = button;
-                    }, 100);
-                  } else {
-                    alert("Error processing request.");
-                  }
-                },
-              ).fail(() => alert("Unexpected error occurred."));
-            }
-          }
+    $.post(
+      chat_help_frontend_scripts.ajaxurl,
+      {
+        action: "handle_form_submission",
+        data: formData,
+        userInfo,
+        nonce: chat_help_frontend_scripts.nonce,
+        product_id: product_attr,
+        current_url: currentUrl,
+        current_title: currentTitle,
+        agentName: agentName,
+      },
+      (response) => {
+        if (response.success) {
+          submit_btn.innerHTML = loading;
+          setTimeout(function () {
+            window.open(
+              response.data.whatsAppURL,
+              chat_help_frontend_scripts.open_in_new_tab,
+            );
+            form[0].reset();
+            submit_btn.innerHTML = button;
+          }, 100);
+        } else {
+          alert("Error processing request.");
         }
-      });
-    });
+      },
+    ).fail(() => alert("Unexpected error occurred."));
+  });
+
+  /* ========================
+     VALIDATION INIT (DYNAMIC)
+  ======================== */
+  $(document).on("focus", "form", function () {
+    if (!$(this).data("validator")) {
+      $(this).validate();
+    }
   });
 })(jQuery);
 

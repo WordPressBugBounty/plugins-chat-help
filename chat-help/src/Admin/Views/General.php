@@ -36,13 +36,18 @@ class General
                     array(
                         'id' => 'chat_layout',
                         'type' => 'layout_preset',
-                        'title' => esc_html__('Floating Chat Layout(s)', 'chat-help'),
+                        'title' => esc_html__('Choose Your Chat Experience', 'chat-help'),
+                        'title_help' =>
+                        '<div class="chat-help-info-label">' .
+                            esc_html__('Choose how your WhatsApp chat appears.', 'chat-help') .
+                            '</div>' .
+                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs-category/floating-chat/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
 
                         'class'   => 'chat-help-layout-preset',
                         'options' => array(
                             'off' => array(
                                 'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/off.svg',
-                                'text'            => esc_html__('No Floating Chat', 'chat-help'),
+                                'text'            => esc_html__('Disable Chat', 'chat-help'),
                                 'option_demo_url' => '',
                             ),
                             'form' => array(
@@ -55,7 +60,12 @@ class General
                                 'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/single_agent.svg',
                                 'text'            => esc_html__('Single Agent', 'chat-help'),
                                 'option_demo_url' => CHAT_HELP_DEMO_URL . 'single-agent',
-
+                            ),
+                            'agent_input' => array(
+                                'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/agent_with_input.svg',
+                                'text'            => esc_html__('Pre-Chat Message', 'chat-help'),
+                                'option_demo_url' => CHAT_HELP_DEMO_URL . 'pre-chat-message/',
+                                'class'           => ' wrapper_class_form',
                             ),
                             'button' => array(
                                 'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/single_button.svg',
@@ -64,14 +74,14 @@ class General
                             ),
                             'multi' => array(
                                 'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/multi_agent.svg',
-                                'text'            => esc_html__('Multi Agents List', 'chat-help'),
+                                'text'            => esc_html__('Multi-Agent', 'chat-help'),
                                 'option_demo_url' => CHAT_HELP_DEMO_URL . 'multi-agents-list',
                                 'pro_only'        => true,
                             ),
-                            'multi_grid' => array(
-                                'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/multi_grid.svg',
-                                'text'            => esc_html__('Multi Agents Grid', 'chat-help'),
-                                'option_demo_url' => CHAT_HELP_DEMO_URL . 'multi-agents-grid',
+                            'multi_agent_form' => array(
+                                'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/multi_agent_form.svg',
+                                'text'            => esc_html__('Multi-Agent Form', 'chat-help'),
+                                'option_demo_url' => CHAT_HELP_DEMO_URL . 'multi-agent-form',
                                 'pro_only'        => true,
                             ),
                         ),
@@ -80,7 +90,7 @@ class General
                     array(
                         'type' => 'subheading',
                         'style'   => 'success',
-                        'content' => esc_html__('With \'No Floating Chat\' option, you won\'t be able to use the floating chat feature. However, you can still access and enjoy other functionalities such as the WooCommerce button, shortcodes, and button blocks provided by the plugin.', 'chat-help'),
+                        'content' => esc_html__('By "Disable Chat" option selected, the floating chat feature will be disabled. However, you can still use other functionalities, including the WooCommerce button, shortcodes, and button blocks provided by the plugin.', 'chat-help'),
                         'dependency' => array('chat_layout', '==', 'off'),
                     ),
 
@@ -108,8 +118,7 @@ class General
                                         'default' => 'number',
 
                                         'dependency' =>  array(
-                                            array('chat_layout', '!=', 'multi', 'any'),
-                                            array('chat_layout', '!=', 'multi_grid', 'any'),
+                                            array('chat_layout', 'not-any', 'agent_input,multi,multi_agent_form', 'any'),
                                             array('chat_layout',   '!=', 'form', 'visible'),
                                         ),
                                     ),
@@ -127,8 +136,7 @@ class General
                                         //     </video>
                                         // </div><div class="chat-help-info-label">Dark Mode toggling based on OS setting</div>',
                                         'dependency' =>  array(
-                                            array('chat_layout', '!=', 'multi', 'any'),
-                                            array('chat_layout', '!=', 'multi_grid', 'any'),
+                                            array('chat_layout', 'not-any', 'multi,multi_agent_form', 'any'),
                                             array('type_of_whatsapp',   '!=', 'group', 'visible'),
                                         ),
                                     ),
@@ -141,7 +149,7 @@ class General
                                         'desc' => esc_html__('Enter a valid WhatsApp group link (e.g., https://chat.whatsapp.com/Dn16RARM6KW7X4fq0fxVet).', 'chat-help'),
                                         'title_help' => '<div class="chat-help-info-label">' . esc_html__('Invite your visitors to join your WhatsApp group by adding the group’s invite URL here.', 'chat-help') . '</div> <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-do-i-create-a-whatsapp-group-and-invite-members/?ref=1">Detailed explanation</a>',
                                         'dependency' =>  array(
-                                            array('chat_layout',   '!=', 'form', 'visible'),
+                                            array('chat_layout',   'not-any', 'form,agent_input,multi,multi_agent_form', 'visible'),
                                             array('type_of_whatsapp',   '==', 'group', 'visible'),
                                         ),
                                     ),
@@ -298,19 +306,6 @@ class General
                                         'dependency' => array('chat_layout', '==', 'form', 'any'),
                                     ),
 
-                                    array(
-                                        'id'         => 'chat_help_leads',
-                                        'type'       => 'switcher',
-                                        'title'      => esc_html__('Leads (Form Submissions)', 'chat-help'),
-                                        'title_help' =>
-                                        '<div class="chat-help-info-label">' . esc_html__('Enable this option to store submitted form data as leads.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1#leads">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/leads-management/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-                                        'text_on'    => esc_html__('Enable', 'chat-help'),
-                                        'text_off'   => esc_html__('Disable', 'chat-help'),
-                                        'text_width' => 100,
-                                        'default'   => true,
-                                        'dependency' => array('chat_layout', 'any', 'form', 'any'),
-                                    ),
-
                                     /************************************
                                      * SINGLE AGENT WITHOUT FORM
                                      *************************************/
@@ -321,7 +316,7 @@ class General
                                         'title' => esc_html__('Current Time', 'chat-help'),
                                         'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/current_time.png') . '" alt=""></div> <div class="chat-help-info-label">' . esc_html__('Enable to display the current time before the agent’s message.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/single-agent/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/single-agent/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'default' => true,
-                                        'dependency' => array('chat_layout', '==', 'agent', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'agent,agent_input', 'any'),
                                         'text_on'    => esc_html__('Enabled', 'chat-help'),
                                         'text_off'   => esc_html__('Disabled', 'chat-help'),
                                         'text_width' => 100
@@ -334,9 +329,71 @@ class General
                                         'title' => esc_html__('Message From Agent', 'chat-help'),
                                         'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/agent_message.png') . '" alt=""></div> <div class="chat-help-info-label">' . esc_html__('Add a custom message to display inside the agent’s message box.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-agent/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
                                             '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/single-agent/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-                                        'default' => esc_html__('Hello 👋 Welcome to {siteTitle}! Click the button below to start chatting with us on WhatsApp.', 'chat-help'),
+                                        'default' => esc_html__('Hello Welcome to {siteTitle}! Click the button below to start chatting with us on WhatsApp.', 'chat-help'),
                                         'desc' => __('Global Vars:  {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> {PRODUCT_START} WooCommerce Vars: {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} {PRODUCT_END} <br> <b>Conditional Blocks:</b>  {PRODUCT_START} ... {PRODUCT_END},  {NOT_PRODUCT_START} ... {NOT_PRODUCT_END},  {LOGGEDIN_START} ... {LOGGEDIN_END},  {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}', 'chat-help'),
-                                        'dependency' => array('chat_layout', '==', 'agent', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'agent', 'any'),
+                                    ),
+                                    array(
+                                        'id'    => 'agent_with_input_message',
+                                        'type'  => 'textarea',
+                                        'title' => esc_html__('Message From Agent', 'chat-help'),
+                                        'title_help' => wp_kses_post('<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/agent_message.png') . '" alt=""></div> <div class="chat-help-info-label">' . esc_html__('Add a custom message to display inside the agent’s message box.', 'chat-help') . '</div> <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'single-agent/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a> <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/single-agent/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>'),
+                                        'default' => esc_html__('Hello and Welcome. Is there anything I can help you with?', 'chat-help'),
+                                        'desc' => wp_kses_post('<b>' . esc_html__('Global Vars:', 'chat-help') . '</b> {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> <b>' . esc_html__('WooCommerce Vars:', 'chat-help') . '</b> {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} <br> <b>' . esc_html__('Conditional Blocks:', 'chat-help') . '</b> {PRODUCT_START} ... {PRODUCT_END}, {NOT_PRODUCT_START} ... {NOT_PRODUCT_END}, {LOGGEDIN_START} ... {LOGGEDIN_END}, {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}'),
+                                        'dependency' => array('chat_layout', 'any', 'agent_input', 'any'),
+                                    ),
+                                    array(
+                                        'id'    => 'agent_input_placeholder',
+                                        'type'  => 'text',
+                                        'title' => esc_html__('Input Placeholder', 'chat-help'),
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enter the placeholder text for this field.', 'chat-help') . '</div>' . '<div>' . esc_html__('The placeholder appears inside the input box and disappears when the user types.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/pre-chat-message/#5-input-placeholder') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'default' => esc_html__('Enter your message', 'chat-help'),
+                                        'placeholder' => esc_html__('Enter your message', 'chat-help'),
+                                        'dependency' => array(
+                                            array('chat_layout', '==', 'agent_input', 'any'),
+                                            array('type_of_whatsapp',   '!=', 'group', 'visible'),
+                                        ),
+                                    ),
+                                    array(
+                                        'id'      => 'agent_input_required',
+                                        'type'    => 'checkbox',
+                                        'title' => esc_html__('Required', 'chat-help'),
+                                        'title_help' =>
+                                        '<div class="chat-help-info-label">' .
+                                            esc_html__('Check this option to make the field mandatory. Users will not be able to submit the form without filling in this field.', 'chat-help') .
+                                            '</div>' .
+                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/pre-chat-message/#6-required') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'default' => true,
+                                        'dependency' => array(
+                                            array('chat_layout', '==', 'agent_input', 'any'),
+                                            array('type_of_whatsapp',   '!=', 'group', 'visible'),
+                                        ),
+                                    ),
+                                    array(
+                                        'id'    => 'agent_with_input_prefilled_message',
+                                        'type'  => 'textarea',
+                                        'title' => esc_html__('Pre-filled Message', 'chat-help'),
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Write a friendly, pre-filled message that appears when users click the chat bubble.', 'chat-help') . ' ' . esc_html__('Example: "Hi! I have a question about your services."', 'chat-help') . ' ' . esc_html__('You can also insert dynamic variables as needed.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'pre-chat-message/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/pre-chat-message/#7-pre-filled-message">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'desc' => '<b>' . esc_html__('Input:', 'chat-help') . '</b> {agentMessage} <b><br>' . esc_html__('Global Vars:', 'chat-help') . '</b> {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br>' . '<b>' . esc_html__('WooCommerce Vars:', 'chat-help') . '</b> {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} <br>' . '<b>' . esc_html__('Conditional Blocks:', 'chat-help') . '</b> {PRODUCT_START} ... {PRODUCT_END}, {NOT_PRODUCT_START} ... {NOT_PRODUCT_END}, {LOGGEDIN_START} ... {LOGGEDIN_END}, {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END} ',
+
+                                        'default'   => __('{agentMessage}', 'chat-help'),
+                                        'dependency' => array(
+                                            array('chat_layout', '==', 'agent_input', 'any'),
+                                            array('type_of_whatsapp',   '!=', 'group', 'visible'),
+                                        ),
+                                    ),
+
+                                    array(
+                                        'id'         => 'chat_help_leads',
+                                        'type'       => 'switcher',
+                                        'title'      => esc_html__('Leads (Form Submissions)', 'chat-help'),
+                                        'title_help' =>
+                                        '<div class="chat-help-info-label">' . esc_html__('Enable this option to store submitted form data as leads.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1#leads">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/leads-management/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'text_on'    => esc_html__('Enable', 'chat-help'),
+                                        'text_off'   => esc_html__('Disable', 'chat-help'),
+                                        'text_width' => 100,
+                                        'default'   => true,
+                                        'dependency' => array('chat_layout', 'any', 'form,agent_input,multi_agent_form', 'any'),
                                     ),
 
                                     /************************************
@@ -349,14 +406,12 @@ class General
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Write a friendly, pre-filled message that appears when users click the chat bubble.', 'chat-help') .
-                                            ' ' .  esc_html__('Example: "Hi! I have a question about your services."', 'chat-help') . ' ' .  esc_html__('You can also insert dynamic variables as needed.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-agent/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-how-can-i-use-dynamic-variables-in-the-woocommerce-button-pre-filled-message/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            ' ' .  esc_html__('Example: "Hi! I have a question about your services."', 'chat-help') . ' ' .  esc_html__('You can also insert dynamic variables as needed.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'pre-chat-message/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-how-can-i-use-dynamic-variables-in-the-woocommerce-button-pre-filled-message/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'desc' => '<b>' . esc_html__('Global Vars:', 'chat-help') . '</b> {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br>' . '<b>' . esc_html__('WooCommerce Vars:', 'chat-help') . '</b> {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} <br>' . '<b>' . esc_html__('Conditional Blocks:', 'chat-help') . '</b> {PRODUCT_START} ... {PRODUCT_END}, {NOT_PRODUCT_START} ... {NOT_PRODUCT_END}, {LOGGEDIN_START} ... {LOGGEDIN_END}, {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END} ',
                                         'default'   => __('Hello! I have a question about {currentTitle}.', 'chat-help'),
                                         'dependency' =>
                                         array(
-                                            array('chat_layout',   '!=', 'form', 'visible'),
-                                            array('chat_layout',   '!=', 'multi', 'visible'),
-                                            array('chat_layout',   '!=', 'multi_grid', 'visible'),
+                                            array('chat_layout',   'not-any', 'form,multi,agent_input,multi_agent_form', 'visible'),
                                             array('type_of_whatsapp',   '!=', 'group', 'visible'),
                                         ),
                                     ),
@@ -369,7 +424,7 @@ class General
                                         'content' => esc_html__('Availability', 'chat-help'),
                                         'dependency' => array(
                                             array('chat_layout', '!=', 'multi', 'any'),
-                                            array('chat_layout', '!=', 'multi_grid', 'any'),
+                                            array('chat_layout', '!=', 'multi_agent_form', 'any'),
                                         ),
                                     ),
 
@@ -383,7 +438,7 @@ class General
                                         'placeholder' => esc_html__('Select Timezone', 'chat-help'),
                                         'dependency' => array(
                                             array('chat_layout', '!=', 'multi', 'any'),
-                                            array('chat_layout', '!=', 'multi_grid', 'any'),
+                                            array('chat_layout', '!=', 'multi_agent_form', 'any'),
                                         ),
                                         'options' => $timezones,
                                     ),
@@ -397,7 +452,7 @@ class General
                                             '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-do-timezone-and-availability-work-in-whatsapp-chat-help/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'dependency' => array(
                                             array('chat_layout', '!=', 'multi', 'any'),
-                                            array('chat_layout', '!=', 'multi_grid', 'any'),
+                                            array('chat_layout', '!=', 'multi_agent_form', 'any'),
                                         ),
                                         // sunday
                                         'tabs' => array(
@@ -540,7 +595,7 @@ class General
                                         'default' => true,
                                         'text_on' => esc_html__('Yes', 'chat-help'),
                                         'text_off' => esc_html__('No', 'chat-help'),
-                                        'dependency' => array('chat_layout', 'any', 'multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'multi,multi_agent_form', 'any'),
                                     ),
 
 
@@ -554,7 +609,7 @@ class General
                                             ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'multi-agents/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
                                             ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/multi-agent-list/#agent-settings">' . esc_html__('Open Docs', 'chat-help') . '</a>',
 
-                                        'dependency' => array('chat_layout', 'any', 'multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'multi,multi_agent_form', 'any'),
                                         'fields' => array(
                                             array(
                                                 'id' => 'agent-name',
@@ -911,7 +966,7 @@ class General
                                         'id'    => 'box_header_title',
                                         'type'  => 'heading',
                                         'content' => esc_html__('Box Header', 'chat-help'),
-                                        'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_agent_form', 'any'),
                                     ),
                                     // Agent photo type
                                     array(
@@ -932,7 +987,7 @@ class General
                                             'none' => esc_html__('None', 'chat-help'),
                                         ),
                                         'default'   => 'default',
-                                        'dependency' => array('chat_layout', 'any', 'form,agent', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input', 'any'),
                                     ),
 
                                     // adding agent photo
@@ -951,7 +1006,7 @@ class General
 
                                         'library' => 'image',
                                         'preview' => true,
-                                        'dependency' => array('chat_layout|agent_photo_type', 'any|==', 'form,agent|custom', 'any'),
+                                        'dependency' => array('chat_layout|agent_photo_type', 'any|==', 'form,agent,agent_input|custom', 'any'),
                                     ),
 
                                     // agent name
@@ -968,7 +1023,7 @@ class General
                                             ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
 
                                         'default' => esc_html__('John Doe', 'chat-help'),
-                                        'dependency' => array('chat_layout', 'any', 'form,agent', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input', 'any'),
                                     ),
 
                                     // agent subtitle
@@ -984,8 +1039,7 @@ class General
                                             ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
                                             ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'default' => esc_html__('Typically replies within a day', 'chat-help'),
-
-                                        'dependency' => array('chat_layout', 'any', 'form,agent', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input', 'any'),
                                     ),
                                     array(
                                         'id' => 'offline_agent_subtitle',
@@ -993,7 +1047,7 @@ class General
                                         'title' => esc_html__('Offline Subtitle', 'chat-help'),
                                         'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/preview/agent_subtitle.png') . '" alt=""></div>' .  '<div class="chat-help-info-label">' . esc_html__('Enter a subtitle to display when the agent is offline in the chat bubble.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'default' => esc_html__('Currently offline, will reply soon.', 'chat-help'),
-                                        'dependency' => array('chat_layout', 'any', 'form,agent', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input', 'any'),
                                     ),
 
                                     // For Multi chat layout
@@ -1012,7 +1066,7 @@ class General
                                             ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . '8-header-and-footer/#header-footer-settings-multi-agent-list-grid">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'default' => esc_html__('Need Help? Send a WhatsApp message now', 'chat-help'),
 
-                                        'dependency' => array('chat_layout', 'any', 'multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'multi,multi_agent_form', 'any'),
                                     ),
 
                                     // Bubble subtitle
@@ -1028,8 +1082,7 @@ class General
                                             ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
                                             ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-multi-agent-list-grid">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'default' => esc_html__('Click one of our representatives below', 'chat-help'),
-
-                                        'dependency' => array('chat_layout', 'any', 'multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'multi,multi_agent_form', 'any'),
                                     ),
                                     // Header content position
                                     array(
@@ -1049,14 +1102,14 @@ class General
                                             'left' => esc_html__('Left', 'chat-help'),
                                             'center' => esc_html__('Center', 'chat-help'),
                                         ),
-                                        'dependency' => array('chat_layout', 'any', 'form,agent', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input', 'any'),
                                     ),
 
                                     array(
                                         'id'    => 'box_footer_title',
                                         'type'  => 'heading',
                                         'content' => esc_html__('Box Footer', 'chat-help'),
-                                        'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input,multi,multi_agent_form', 'any'),
                                     ),
 
                                     // GDPR compliance checkbox
@@ -1074,7 +1127,7 @@ class General
                                         'text_off' => esc_html__('Disable', 'chat-help'),
                                         'text_width' => 100,
                                         'default' => false,
-                                        'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input,multi,multi_agent_form', 'any'),
                                     ),
                                     // GDPR compliance text
                                     array(
@@ -1137,8 +1190,8 @@ class General
                                             'icofont-telegram'    => array(
                                                 'option_name' => '<i class="icofont-telegram"></i>',
                                             ),
-                                            'icofont-life-buoy'    => array(
-                                                'option_name' => '<i class="icofont-life-buoy"></i>',
+                                            'icofont-paper-plane'    => array(
+                                                'option_name' => '<i class="icofont-paper-plane"></i>',
                                             ),
                                             'no_icon'    => array(
                                                 'option_name' => esc_html__('No Icon', 'chat-help'),
@@ -1153,7 +1206,7 @@ class General
                                             ),
                                         ),
                                         'default' => 'icofont-brand-whatsapp',
-                                        'dependency' => array('chat_layout', 'any', 'form,agent', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input', 'any'),
                                     ),
 
                                     // agent message button text
@@ -1186,7 +1239,7 @@ class General
                                         'text_off' => esc_html__('Disable', 'chat-help'),
                                         'text_width' => 100,
                                         'default' => true,
-                                        'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input,multi,multi_agent_form', 'any'),
                                     ),
                                 )
                             ),
@@ -1239,8 +1292,7 @@ class General
                                             '</div>' .
                                             ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'default' => esc_html__('How may I help you?', 'chat-help'),
-
-                                        'dependency' => array('opt-button-style', '!=', '1', 'any'),
+                                        'dependency' => array('chat_layout|opt-button-style', 'any|!=', 'form,agent,agent_input,button|1', 'any'),
                                     ),
 
                                     // Circle button icon
@@ -1271,8 +1323,8 @@ class General
                                             'icofont-telegram'    => array(
                                                 'option_name' => '<i class="icofont-telegram"></i>',
                                             ),
-                                            'icofont-life-buoy'    => array(
-                                                'option_name' => '<i class="icofont-life-buoy"></i>',
+                                            'icofont-paper-plane'    => array(
+                                                'option_name' => '<i class="icofont-paper-plane"></i>',
                                             ),
                                             'native'    => array(
                                                 'option_name' => esc_html__('Native', 'chat-help'),
@@ -1354,8 +1406,8 @@ class General
                                             'icofont-telegram'    => array(
                                                 'option_name' => '<i class="icofont-telegram"></i>',
                                             ),
-                                            'icofont-life-buoy'    => array(
-                                                'option_name' => '<i class="icofont-life-buoy"></i>',
+                                            'icofont-paper-plane'    => array(
+                                                'option_name' => '<i class="icofont-paper-plane"></i>',
                                             ),
                                             'native'    => array(
                                                 'option_name' => esc_html__('Native', 'chat-help'),
@@ -1434,7 +1486,7 @@ class General
                                         ),
 
                                         'default' => '1',
-                                        'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input,multi,multi_agent_form', 'any'),
                                     ),
 
                                     array(
@@ -1851,7 +1903,7 @@ class General
                                             ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/#icon-button-minimal-floating-button">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'text_on' => esc_html__('Yes', 'chat-help'),
                                         'text_off'  => esc_html__('No', 'chat-help'),
-                                        'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input,multi,multi_agent_form', 'any'),
                                     ),
 
                                     // Auto open popup timeout
@@ -1869,7 +1921,7 @@ class General
                                         'max' => 30000,
                                         'step' => 100,
                                         'default' => 0,
-                                        'dependency' => array('autoshow-popup|chat_layout', '==|any', 'true|form,agent,multi,multi_grid', 'any'),
+                                        'dependency' => array('autoshow-popup|chat_layout', '==|any', 'true|form,agent,agent_input,multi,multi_agent_form', 'any'),
                                         'unit'       => __('ms', 'chat-help'),
                                     ),
 
@@ -1902,7 +1954,7 @@ class General
                                             'random' => esc_html__('Random (Pro)', 'chat-help'),
                                         ),
                                         'default'     => '14',
-                                        'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input,multi,multi_agent_form', 'any'),
                                     ),
 
                                     // Header content position
@@ -1931,7 +1983,7 @@ class General
                                         ),
 
                                         'default' => 'default',
-                                        'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input,multi,multi_agent_form', 'any'),
                                     ),
                                     array(
                                         'id'      => 'alternative_wHelpBubble',
@@ -1943,7 +1995,7 @@ class General
                                             '</div>' .
                                             ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/#icon-button-minimal-floating-button">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                                         'placeholder' => esc_html__('.classname, #idname', 'chat-help'),
-                                        'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_grid', 'any'),
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input,multi,multi_agent_form', 'any'),
 
                                     ),
                                     array(

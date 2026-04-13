@@ -545,42 +545,49 @@ class Helpers
 			$field_index = 1;
 			$options = get_option('cwp_option');
 			$form_editor = isset($options['form_editor']) ? $options['form_editor'] : '';
-			foreach ($form_editor as $field_id => $form_field) {
-				$field_name = isset($form_field['field_select']) ? $form_field['field_select'] : '';
-				switch ($field_name) {
-					case 'text':
-						$field_label = isset($form_field['label']) ? $form_field['label'] : '';
-						$fields_label['label_' . $field_index] = $field_label;
+			$chat_layout = isset($options['chat_layout']) ? $options['chat_layout'] : '';
 
-						$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_text_' . esc_attr($field_id));
-						$fields_data['text_' . $field_index] = sanitize_text_field($formData[$dynamic_id] ?? '');
-						break;
-					case 'textarea':
-						$field_label = isset($form_field['label']) ? $form_field['label'] : '';
-						$fields_label['label_' . $field_index] = $field_label;
-						$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_textarea_' . esc_attr($field_id));
-						$fields_data['textarea_' . $field_index] = sanitize_textarea_field($formData[$dynamic_id] ?? '');
+			if ('agent_input' === $chat_layout) {
+				$variables[] = '{agentMessage}';
+				$values[] = $formData['agent_message'];
+			} else {
+				foreach ($form_editor as $field_id => $form_field) {
+					$field_name = isset($form_field['field_select']) ? $form_field['field_select'] : '';
+					switch ($field_name) {
+						case 'text':
+							$field_label = isset($form_field['label']) ? $form_field['label'] : '';
+							$fields_label['label_' . $field_index] = $field_label;
+
+							$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_text_' . esc_attr($field_id));
+							$fields_data['text_' . $field_index] = sanitize_text_field($formData[$dynamic_id] ?? '');
+							break;
+						case 'textarea':
+							$field_label = isset($form_field['label']) ? $form_field['label'] : '';
+							$fields_label['label_' . $field_index] = $field_label;
+							$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_textarea_' . esc_attr($field_id));
+							$fields_data['textarea_' . $field_index] = sanitize_textarea_field($formData[$dynamic_id] ?? '');
+					}
+					$field_index++;
 				}
-				$field_index++;
-			}
 
-			$form_fields = '';
-			foreach ($fields_label as $key => $label) {
-				$index = str_replace('label_', '', $key);
-				foreach ($fields_data as $data_key => $value) {
-					if (strpos($data_key, "_$index") !== false) {
-						$form_fields .= "$label: $value, ";
-						break;
+				$form_fields = '';
+				foreach ($fields_label as $key => $label) {
+					$index = str_replace('label_', '', $key);
+					foreach ($fields_data as $data_key => $value) {
+						if (strpos($data_key, "_$index") !== false) {
+							$form_fields .= "$label: $value, ";
+							break;
+						}
 					}
 				}
+				$form_fields = rtrim($form_fields, ', ');
+				foreach ($fields_data as $key => $value) {
+					$variables[] = '{' . $key . '}';
+					$values[] = $value;
+				}
+				$variables[] = '{form_fields}';
+				$values[] = $form_fields;
 			}
-			$form_fields = rtrim($form_fields, ', ');
-			foreach ($fields_data as $key => $value) {
-				$variables[] = '{' . $key . '}';
-				$values[] = $value;
-			}
-			$variables[] = '{form_fields}';
-			$values[] = $form_fields;
 		}
 
 		$replace_vars = trim(str_replace($variables, $values, $message));

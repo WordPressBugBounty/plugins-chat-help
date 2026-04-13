@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-05 09:07+0000\n"
+"POT-Creation-Date: 2026-04-13 04:56+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -58,7 +58,7 @@ msgstr ""
 msgid "Go Pro!"
 msgstr ""
 
-#: src/Admin/Admin.php:209, src/Admin/HelpPage/Help.php:559, src/Admin/Views/CartPage.php:39, src/Admin/Views/CartPage.php:84, src/Admin/Views/CartPage.php:124, src/Admin/Views/CartPage.php:152, src/Admin/Views/CartPage.php:162, src/Admin/Views/CartPage.php:200, src/Admin/Views/CartPage.php:278, src/Admin/Views/CartPage.php:311, src/Admin/Views/CartPage.php:326, src/Admin/Views/CartPage.php:341, src/Admin/Views/CartPage.php:362, src/Admin/Views/CartPage.php:380, src/Admin/Views/CartPage.php:395, src/Admin/Views/CartPage.php:411, src/Admin/Views/CheckoutPage.php:39, src/Admin/Views/CheckoutPage.php:90, src/Admin/Views/CheckoutPage.php:123, src/Admin/Views/CheckoutPage.php:151, src/Admin/Views/CheckoutPage.php:161, src/Admin/Views/CheckoutPage.php:199, src/Admin/Views/CheckoutPage.php:276, src/Admin/Views/CheckoutPage.php:309, src/Admin/Views/CheckoutPage.php:324, src/Admin/Views/CheckoutPage.php:339, src/Admin/Views/CheckoutPage.php:360, src/Admin/Views/CheckoutPage.php:378, src/Admin/Views/CheckoutPage.php:393, src/Admin/Views/CheckoutPage.php:409, src/Admin/Views/General.php:157, src/Admin/Views/General.php:284, src/Admin/Views/General.php:306, src/Admin/Views/General.php:322, src/Admin/Views/General.php:335, src/Admin/Views/General.php:538, src/Admin/Views/General.php:554, src/Admin/Views/General.php:567, src/Admin/Views/General.php:581, src/Admin/Views/General.php:595, src/Admin/Views/General.php:816, src/Admin/Views/General.php:829, src/Admin/Views/General.php:948, src/Admin/Views/General.php:967, src/Admin/Views/General.php:984, src/Admin/Views/General.php:994, src/Admin/Views/General.php:1011, src/Admin/Views/General.php:1028, src/Admin/Views/General.php:1044, src/Admin/Views/General.php:1121, src/Admin/Views/General.php:1169, src/Admin/Views/General.php:1206, src/Admin/Views/General.php:1386, src/Admin/Views/General.php:1427, src/Admin/Views/General.php:1495, src/Admin/Views/General.php:1529, src/Admin/Views/General.php:1543, src/Admin/Views/General.php:1559, src/Admin/Views/General.php:1579, src/Admin/Views/General.php:1603, src/Admin/Views/General.php:1625, src/Admin/Views/General.php:1644, src/Admin/Views/General.php:1658, src/Admin/Views/General.php:1673, src/Admin/Views/General.php:1697, src/Admin/Views/General.php:1727, src/Admin/Views/General.php:1748, src/Admin/Views/General.php:1769, src/Admin/Views/General.php:1790, src/Admin/Views/General.php:1812, src/Admin/Views/General.php:1828, src/Admin/Views/General.php:1885, src/Admin/Views/General.php:1917, src/Admin/Views/General.php:1960, src/Admin/Views/ProductPage.php:40, src/Admin/Views/ProductPage.php:106, src/Admin/Views/ProductPage.php:129, src/Admin/Views/ProductPage.php:208, src/Admin/Views/ProductPage.php:285, src/Admin/Views/ProductPage.php:317, src/Admin/Views/ProductPage.php:332, src/Admin/Views/ProductPage.php:347, src/Admin/Views/ProductPage.php:368, src/Admin/Views/ProductPage.php:386, src/Admin/Views/ProductPage.php:401, src/Admin/Views/ProductPage.php:417, src/Admin/Views/ShopPage.php:40, src/Admin/Views/ShopPage.php:100, src/Admin/Views/ShopPage.php:123, src/Admin/Views/ShopPage.php:202, src/Admin/Views/ShopPage.php:279, src/Admin/Views/ShopPage.php:311, src/Admin/Views/ShopPage.php:326, src/Admin/Views/ShopPage.php:341, src/Admin/Views/ShopPage.php:362, src/Admin/Views/ShopPage.php:380, src/Admin/Views/ShopPage.php:395, src/Admin/Views/ShopPage.php:411, src/Admin/Views/Shortcode.php:65, src/Admin/Views/ThankYouPage.php:39, src/Admin/Views/ThankYouPage.php:98, src/Admin/Views/ThankYouPage.php:109, src/Admin/Views/ThankYouPage.php:216, src/Admin/Views/ThankYouPage.php:258, src/Admin/Views/ThankYouPage.php:271, src/Admin/Views/ThankYouPage.php:281, src/Admin/Views/ThankYouPage.php:291, src/Admin/Views/ThankYouPage.php:328, src/Admin/Views/ThankYouPage.php:336, src/Admin/Views/ThankYouPage.php:345, src/Admin/Views/ThankYouPage.php:377, src/Admin/Views/ThankYouPage.php:391, src/Admin/Views/ThankYouPage.php:432, src/Admin/Views/ThankYouPage.php:460, src/Admin/Views/ThankYouPage.php:493, src/Admin/Views/ThankYouPage.php:508, src/Admin/Views/ThankYouPage.php:523, src/Admin/Views/ThankYouPage.php:544, src/Admin/Views/ThankYouPage.php:562, src/Admin/Views/ThankYouPage.php:577, src/Admin/Views/ThankYouPage.php:593
+#: src/Admin/Admin.php:209, src/Admin/HelpPage/Help.php:559, src/Admin/Views/CartPage.php:39, src/Admin/Views/CartPage.php:84, src/Admin/Views/CartPage.php:124, src/Admin/Views/CartPage.php:152, src/Admin/Views/CartPage.php:162, src/Admin/Views/CartPage.php:200, src/Admin/Views/CartPage.php:278, src/Admin/Views/CartPage.php:311, src/Admin/Views/CartPage.php:326, src/Admin/Views/CartPage.php:341, src/Admin/Views/CartPage.php:362, src/Admin/Views/CartPage.php:380, src/Admin/Views/CartPage.php:395, src/Admin/Views/CartPage.php:411, src/Admin/Views/CheckoutPage.php:39, src/Admin/Views/CheckoutPage.php:90, src/Admin/Views/CheckoutPage.php:123, src/Admin/Views/CheckoutPage.php:151, src/Admin/Views/CheckoutPage.php:161, src/Admin/Views/CheckoutPage.php:199, src/Admin/Views/CheckoutPage.php:276, src/Admin/Views/CheckoutPage.php:309, src/Admin/Views/CheckoutPage.php:324, src/Admin/Views/CheckoutPage.php:339, src/Admin/Views/CheckoutPage.php:360, src/Admin/Views/CheckoutPage.php:378, src/Admin/Views/CheckoutPage.php:393, src/Admin/Views/CheckoutPage.php:409, src/Admin/Views/General.php:165, src/Admin/Views/General.php:292, src/Admin/Views/General.php:317, src/Admin/Views/General.php:330, src/Admin/Views/General.php:340, src/Admin/Views/General.php:376, src/Admin/Views/General.php:391, src/Admin/Views/General.php:409, src/Admin/Views/General.php:593, src/Admin/Views/General.php:609, src/Admin/Views/General.php:622, src/Admin/Views/General.php:636, src/Admin/Views/General.php:650, src/Admin/Views/General.php:871, src/Admin/Views/General.php:884, src/Admin/Views/General.php:1003, src/Admin/Views/General.php:1022, src/Admin/Views/General.php:1039, src/Admin/Views/General.php:1048, src/Admin/Views/General.php:1065, src/Admin/Views/General.php:1082, src/Admin/Views/General.php:1097, src/Admin/Views/General.php:1174, src/Admin/Views/General.php:1222, src/Admin/Views/General.php:1259, src/Admin/Views/General.php:1438, src/Admin/Views/General.php:1479, src/Admin/Views/General.php:1547, src/Admin/Views/General.php:1581, src/Admin/Views/General.php:1595, src/Admin/Views/General.php:1611, src/Admin/Views/General.php:1631, src/Admin/Views/General.php:1655, src/Admin/Views/General.php:1677, src/Admin/Views/General.php:1696, src/Admin/Views/General.php:1710, src/Admin/Views/General.php:1725, src/Admin/Views/General.php:1749, src/Admin/Views/General.php:1779, src/Admin/Views/General.php:1800, src/Admin/Views/General.php:1821, src/Admin/Views/General.php:1842, src/Admin/Views/General.php:1864, src/Admin/Views/General.php:1880, src/Admin/Views/General.php:1937, src/Admin/Views/General.php:1969, src/Admin/Views/General.php:2012, src/Admin/Views/ProductPage.php:40, src/Admin/Views/ProductPage.php:106, src/Admin/Views/ProductPage.php:129, src/Admin/Views/ProductPage.php:208, src/Admin/Views/ProductPage.php:285, src/Admin/Views/ProductPage.php:317, src/Admin/Views/ProductPage.php:332, src/Admin/Views/ProductPage.php:347, src/Admin/Views/ProductPage.php:368, src/Admin/Views/ProductPage.php:386, src/Admin/Views/ProductPage.php:401, src/Admin/Views/ProductPage.php:417, src/Admin/Views/ShopPage.php:40, src/Admin/Views/ShopPage.php:100, src/Admin/Views/ShopPage.php:123, src/Admin/Views/ShopPage.php:202, src/Admin/Views/ShopPage.php:279, src/Admin/Views/ShopPage.php:311, src/Admin/Views/ShopPage.php:326, src/Admin/Views/ShopPage.php:341, src/Admin/Views/ShopPage.php:362, src/Admin/Views/ShopPage.php:380, src/Admin/Views/ShopPage.php:395, src/Admin/Views/ShopPage.php:411, src/Admin/Views/Shortcode.php:65, src/Admin/Views/ThankYouPage.php:39, src/Admin/Views/ThankYouPage.php:98, src/Admin/Views/ThankYouPage.php:109, src/Admin/Views/ThankYouPage.php:216, src/Admin/Views/ThankYouPage.php:258, src/Admin/Views/ThankYouPage.php:271, src/Admin/Views/ThankYouPage.php:281, src/Admin/Views/ThankYouPage.php:291, src/Admin/Views/ThankYouPage.php:328, src/Admin/Views/ThankYouPage.php:336, src/Admin/Views/ThankYouPage.php:345, src/Admin/Views/ThankYouPage.php:377, src/Admin/Views/ThankYouPage.php:391, src/Admin/Views/ThankYouPage.php:432, src/Admin/Views/ThankYouPage.php:460, src/Admin/Views/ThankYouPage.php:493, src/Admin/Views/ThankYouPage.php:508, src/Admin/Views/ThankYouPage.php:523, src/Admin/Views/ThankYouPage.php:544, src/Admin/Views/ThankYouPage.php:562, src/Admin/Views/ThankYouPage.php:577, src/Admin/Views/ThankYouPage.php:593
 msgid "Live Demo"
 msgstr ""
 
@@ -67,7 +67,7 @@ msgstr ""
 msgid "<i>Enjoying %1$sWhatsApp ChatHelp?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊</i>"
 msgstr ""
 
-#: src/Admin/Leads.php:57, src/Admin/Leads.php:241
+#: src/Admin/Leads.php:57, src/Admin/Leads.php:242
 msgid "Leads"
 msgstr ""
 
@@ -75,127 +75,127 @@ msgstr ""
 msgid "Leads <span class=\"update-plugins\" style=\"background:#d63638;color:#fff;border-radius:3px;padding:1px 4px;font-size:10px;vertical-align:middle;float:right;\">NEW</span>"
 msgstr ""
 
-#: src/Admin/Leads.php:242
+#: src/Admin/Leads.php:243
 msgid "All Email"
 msgstr ""
 
-#: src/Admin/Leads.php:243
+#: src/Admin/Leads.php:244
 msgid "Pending Verification"
 msgstr ""
 
-#: src/Admin/Leads.php:244
+#: src/Admin/Leads.php:245
 msgid "Verified"
 msgstr ""
 
-#: src/Admin/Leads.php:245
+#: src/Admin/Leads.php:246
 msgid "Resend"
 msgstr ""
 
-#: src/Admin/Leads.php:246
+#: src/Admin/Leads.php:247
 msgid "You can resend again within"
 msgstr ""
 
-#: src/Admin/Leads.php:247
+#: src/Admin/Leads.php:248
 msgid "All Domain"
 msgstr ""
 
-#: src/Admin/Leads.php:248
+#: src/Admin/Leads.php:249
 msgid "All Extension"
 msgstr ""
 
-#: src/Admin/Leads.php:249
+#: src/Admin/Leads.php:250
 msgid "Search"
 msgstr ""
 
-#: src/Admin/Leads.php:250
+#: src/Admin/Leads.php:251
 msgid "Loading..."
 msgstr ""
 
-#: src/Admin/Leads.php:251
+#: src/Admin/Leads.php:252
 msgid "Delete Lead"
 msgstr ""
 
-#: src/Admin/Leads.php:252
+#: src/Admin/Leads.php:253
 msgid "Are you sure you want to delete this lead?"
 msgstr ""
 
-#: src/Admin/Leads.php:253, src/Admin/Framework/Classes/Chat_Help_Metabox.php:284
+#: src/Admin/Leads.php:254, src/Admin/Framework/Classes/Chat_Help_Metabox.php:284
 msgid "Cancel"
 msgstr ""
 
-#: src/Admin/Leads.php:254
+#: src/Admin/Leads.php:255
 msgid "Yes, Delete"
 msgstr ""
 
-#: src/Admin/Leads.php:255
+#: src/Admin/Leads.php:256
 msgid "Lead(s) deleted successfully!"
 msgstr ""
 
-#: src/Admin/Leads.php:256
+#: src/Admin/Leads.php:257
 msgid "Delete failed!"
 msgstr ""
 
-#: src/Admin/Leads.php:257
+#: src/Admin/Leads.php:258
 msgid "Failed to delete lead"
 msgstr ""
 
-#: src/Admin/Leads.php:258
+#: src/Admin/Leads.php:259
 msgid "Export"
 msgstr ""
 
-#: src/Admin/Leads.php:259
+#: src/Admin/Leads.php:260
 msgid "Action"
 msgstr ""
 
-#: src/Admin/Leads.php:260
+#: src/Admin/Leads.php:261
 msgid "Date"
 msgstr ""
 
-#: src/Admin/Leads.php:261
+#: src/Admin/Leads.php:262
 msgid "Showing"
 msgstr ""
 
-#: src/Admin/Leads.php:262
+#: src/Admin/Leads.php:263
 msgid "Per page"
 msgstr ""
 
-#: src/Admin/Leads.php:263
+#: src/Admin/Leads.php:264
 msgid "Page"
 msgstr ""
 
-#: src/Admin/Leads.php:264
+#: src/Admin/Leads.php:265
 msgid "Others Information"
 msgstr ""
 
-#: src/Admin/Leads.php:265
+#: src/Admin/Leads.php:266
 msgid "Form Submitted Data"
 msgstr ""
 
-#: src/Admin/Leads.php:266
+#: src/Admin/Leads.php:267
 msgid "Show More"
 msgstr ""
 
-#: src/Admin/Leads.php:267
+#: src/Admin/Leads.php:268
 msgid "Show Less"
 msgstr ""
 
-#: src/Admin/Leads.php:268
+#: src/Admin/Leads.php:269
 msgid "All"
 msgstr ""
 
-#: src/Admin/Leads.php:269
+#: src/Admin/Leads.php:270
 msgid "of"
 msgstr ""
 
-#: src/Admin/Leads.php:270
+#: src/Admin/Leads.php:271
 msgid "Copied!"
 msgstr ""
 
-#: src/Admin/Leads.php:271
+#: src/Admin/Leads.php:272
 msgid "No leads to export"
 msgstr ""
 
-#: src/Admin/Leads.php:272
+#: src/Admin/Leads.php:273
 msgid "No leads found."
 msgstr ""
 
@@ -345,7 +345,7 @@ msgstr ""
 msgid "Time based availablity for agents"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:702, src/Admin/Views/General.php:1066
+#: src/Admin/HelpPage/Help.php:702, src/Admin/Views/General.php:1119
 msgid "GDPR Compliance"
 msgstr ""
 
@@ -361,7 +361,7 @@ msgstr ""
 msgid "Icons For Circle Button"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:734, src/Admin/Views/General.php:1422
+#: src/Admin/HelpPage/Help.php:734, src/Admin/Views/General.php:1474
 msgid "Transition Effect for Circle Icon"
 msgstr ""
 
@@ -487,7 +487,7 @@ msgstr ""
 msgid "Add your own custom CSS to override or extend the default styling of the chat box."
 msgstr ""
 
-#: src/Admin/Views/AdditionalCssJs.php:45, src/Admin/Views/AdditionalCssJs.php:61, src/Admin/Views/AdvancedControls.php:45, src/Admin/Views/AdvancedControls.php:62, src/Admin/Views/AdvancedControls.php:77, src/Admin/Views/AdvancedControls.php:93, src/Admin/Views/Analytics.php:46, src/Admin/Views/Analytics.php:58, src/Admin/Views/Analytics.php:72, src/Admin/Views/CartPage.php:39, src/Admin/Views/CartPage.php:84, src/Admin/Views/CartPage.php:92, src/Admin/Views/CartPage.php:101, src/Admin/Views/CartPage.php:124, src/Admin/Views/CartPage.php:152, src/Admin/Views/CartPage.php:162, src/Admin/Views/CartPage.php:200, src/Admin/Views/CartPage.php:279, src/Admin/Views/CartPage.php:312, src/Admin/Views/CartPage.php:327, src/Admin/Views/CartPage.php:342, src/Admin/Views/CartPage.php:363, src/Admin/Views/CartPage.php:380, src/Admin/Views/CartPage.php:395, src/Admin/Views/CartPage.php:411, src/Admin/Views/CheckoutPage.php:39, src/Admin/Views/CheckoutPage.php:90, src/Admin/Views/CheckoutPage.php:98, src/Admin/Views/CheckoutPage.php:110, src/Admin/Views/CheckoutPage.php:123, src/Admin/Views/CheckoutPage.php:151, src/Admin/Views/CheckoutPage.php:161, src/Admin/Views/CheckoutPage.php:199, src/Admin/Views/CheckoutPage.php:277, src/Admin/Views/CheckoutPage.php:310, src/Admin/Views/CheckoutPage.php:325, src/Admin/Views/CheckoutPage.php:340, src/Admin/Views/CheckoutPage.php:361, src/Admin/Views/CheckoutPage.php:378, src/Admin/Views/CheckoutPage.php:393, src/Admin/Views/CheckoutPage.php:409, src/Admin/Views/General.php:157, src/Admin/Views/General.php:173, src/Admin/Views/General.php:197, src/Admin/Views/General.php:208, src/Admin/Views/General.php:220, src/Admin/Views/General.php:233, src/Admin/Views/General.php:241, src/Admin/Views/General.php:252, src/Admin/Views/General.php:261, src/Admin/Views/General.php:284, src/Admin/Views/General.php:295, src/Admin/Views/General.php:306, src/Admin/Views/General.php:322, src/Admin/Views/General.php:336, src/Admin/Views/General.php:352, src/Admin/Views/General.php:352, src/Admin/Views/General.php:381, src/Admin/Views/General.php:397, src/Admin/Views/General.php:539, src/Admin/Views/General.php:555, src/Admin/Views/General.php:568, src/Admin/Views/General.php:582, src/Admin/Views/General.php:596, src/Admin/Views/General.php:646, src/Admin/Views/General.php:664, src/Admin/Views/General.php:680, src/Admin/Views/General.php:817, src/Admin/Views/General.php:830, src/Admin/Views/General.php:928, src/Admin/Views/General.php:949, src/Admin/Views/General.php:968, src/Admin/Views/General.php:985, src/Admin/Views/General.php:994, src/Admin/Views/General.php:1012, src/Admin/Views/General.php:1029, src/Admin/Views/General.php:1045, src/Admin/Views/General.php:1072, src/Admin/Views/General.php:1088, src/Admin/Views/General.php:1104, src/Admin/Views/General.php:1122, src/Admin/Views/General.php:1170, src/Admin/Views/General.php:1184, src/Admin/Views/General.php:1207, src/Admin/Views/General.php:1240, src/Admin/Views/General.php:1256, src/Admin/Views/General.php:1298, src/Admin/Views/General.php:1339, src/Admin/Views/General.php:1387, src/Admin/Views/General.php:1428, src/Admin/Views/General.php:1496, src/Admin/Views/General.php:1530, src/Admin/Views/General.php:1544, src/Admin/Views/General.php:1560, src/Admin/Views/General.php:1580, src/Admin/Views/General.php:1604, src/Admin/Views/General.php:1626, src/Admin/Views/General.php:1645, src/Admin/Views/General.php:1659, src/Admin/Views/General.php:1674, src/Admin/Views/General.php:1698, src/Admin/Views/General.php:1728, src/Admin/Views/General.php:1749, src/Admin/Views/General.php:1770, src/Admin/Views/General.php:1791, src/Admin/Views/General.php:1813, src/Admin/Views/General.php:1829, src/Admin/Views/General.php:1851, src/Admin/Views/General.php:1866, src/Admin/Views/General.php:1886, src/Admin/Views/General.php:1918, src/Admin/Views/General.php:1944, src/Admin/Views/General.php:1961, src/Admin/Views/General.php:1984, src/Admin/Views/General.php:2000, src/Admin/Views/General.php:2037, src/Admin/Views/General.php:2057, src/Admin/Views/General.php:2088, src/Admin/Views/General.php:2103, src/Admin/Views/General.php:2114, src/Admin/Views/General.php:2147, src/Admin/Views/General.php:2162, src/Admin/Views/General.php:2173, src/Admin/Views/General.php:2201, src/Admin/Views/ProductPage.php:40, src/Admin/Views/ProductPage.php:106, src/Admin/Views/ProductPage.php:115, src/Admin/Views/ProductPage.php:129, src/Admin/Views/ProductPage.php:159, src/Admin/Views/ProductPage.php:169, src/Admin/Views/ProductPage.php:208, src/Admin/Views/ProductPage.php:286, src/Admin/Views/ProductPage.php:318, src/Admin/Views/ProductPage.php:333, src/Admin/Views/ProductPage.php:348, src/Admin/Views/ProductPage.php:369, src/Admin/Views/ProductPage.php:386, src/Admin/Views/ProductPage.php:401, src/Admin/Views/ProductPage.php:417, src/Admin/Views/ShopPage.php:40, src/Admin/Views/ShopPage.php:100, src/Admin/Views/ShopPage.php:109, src/Admin/Views/ShopPage.php:123, src/Admin/Views/ShopPage.php:153, src/Admin/Views/ShopPage.php:163, src/Admin/Views/ShopPage.php:202, src/Admin/Views/ShopPage.php:280, src/Admin/Views/ShopPage.php:312, src/Admin/Views/ShopPage.php:327, src/Admin/Views/ShopPage.php:342, src/Admin/Views/ShopPage.php:363, src/Admin/Views/ShopPage.php:380, src/Admin/Views/ShopPage.php:395, src/Admin/Views/ShopPage.php:411, src/Admin/Views/Shortcode.php:66, src/Admin/Views/ThankYouPage.php:39, src/Admin/Views/ThankYouPage.php:86, src/Admin/Views/ThankYouPage.php:98, src/Admin/Views/ThankYouPage.php:109, src/Admin/Views/ThankYouPage.php:216, src/Admin/Views/ThankYouPage.php:243, src/Admin/Views/ThankYouPage.php:258, src/Admin/Views/ThankYouPage.php:271, src/Admin/Views/ThankYouPage.php:281, src/Admin/Views/ThankYouPage.php:291, src/Admin/Views/ThankYouPage.php:328, src/Admin/Views/ThankYouPage.php:336, src/Admin/Views/ThankYouPage.php:345, src/Admin/Views/ThankYouPage.php:378, src/Admin/Views/ThankYouPage.php:392, src/Admin/Views/ThankYouPage.php:432, src/Admin/Views/ThankYouPage.php:461, src/Admin/Views/ThankYouPage.php:494, src/Admin/Views/ThankYouPage.php:509, src/Admin/Views/ThankYouPage.php:524, src/Admin/Views/ThankYouPage.php:545, src/Admin/Views/ThankYouPage.php:562, src/Admin/Views/ThankYouPage.php:577, src/Admin/Views/ThankYouPage.php:593, src/Admin/Views/Webhooks.php:56, src/Admin/Views/Webhooks.php:69, src/Admin/Views/WooCommerce.php:72
+#: src/Admin/Views/AdditionalCssJs.php:45, src/Admin/Views/AdditionalCssJs.php:61, src/Admin/Views/AdvancedControls.php:45, src/Admin/Views/AdvancedControls.php:62, src/Admin/Views/AdvancedControls.php:77, src/Admin/Views/AdvancedControls.php:93, src/Admin/Views/Analytics.php:46, src/Admin/Views/Analytics.php:58, src/Admin/Views/Analytics.php:72, src/Admin/Views/CartPage.php:39, src/Admin/Views/CartPage.php:84, src/Admin/Views/CartPage.php:92, src/Admin/Views/CartPage.php:101, src/Admin/Views/CartPage.php:124, src/Admin/Views/CartPage.php:152, src/Admin/Views/CartPage.php:162, src/Admin/Views/CartPage.php:200, src/Admin/Views/CartPage.php:279, src/Admin/Views/CartPage.php:312, src/Admin/Views/CartPage.php:327, src/Admin/Views/CartPage.php:342, src/Admin/Views/CartPage.php:363, src/Admin/Views/CartPage.php:380, src/Admin/Views/CartPage.php:395, src/Admin/Views/CartPage.php:411, src/Admin/Views/CheckoutPage.php:39, src/Admin/Views/CheckoutPage.php:90, src/Admin/Views/CheckoutPage.php:98, src/Admin/Views/CheckoutPage.php:110, src/Admin/Views/CheckoutPage.php:123, src/Admin/Views/CheckoutPage.php:151, src/Admin/Views/CheckoutPage.php:161, src/Admin/Views/CheckoutPage.php:199, src/Admin/Views/CheckoutPage.php:277, src/Admin/Views/CheckoutPage.php:310, src/Admin/Views/CheckoutPage.php:325, src/Admin/Views/CheckoutPage.php:340, src/Admin/Views/CheckoutPage.php:361, src/Admin/Views/CheckoutPage.php:378, src/Admin/Views/CheckoutPage.php:393, src/Admin/Views/CheckoutPage.php:409, src/Admin/Views/General.php:44, src/Admin/Views/General.php:165, src/Admin/Views/General.php:181, src/Admin/Views/General.php:205, src/Admin/Views/General.php:216, src/Admin/Views/General.php:228, src/Admin/Views/General.php:241, src/Admin/Views/General.php:249, src/Admin/Views/General.php:260, src/Admin/Views/General.php:269, src/Admin/Views/General.php:292, src/Admin/Views/General.php:303, src/Admin/Views/General.php:317, src/Admin/Views/General.php:331, src/Admin/Views/General.php:340, src/Admin/Views/General.php:349, src/Admin/Views/General.php:365, src/Admin/Views/General.php:376, src/Admin/Views/General.php:391, src/Admin/Views/General.php:409, src/Admin/Views/General.php:436, src/Admin/Views/General.php:452, src/Admin/Views/General.php:594, src/Admin/Views/General.php:610, src/Admin/Views/General.php:623, src/Admin/Views/General.php:637, src/Admin/Views/General.php:651, src/Admin/Views/General.php:701, src/Admin/Views/General.php:719, src/Admin/Views/General.php:735, src/Admin/Views/General.php:872, src/Admin/Views/General.php:885, src/Admin/Views/General.php:983, src/Admin/Views/General.php:1004, src/Admin/Views/General.php:1023, src/Admin/Views/General.php:1040, src/Admin/Views/General.php:1048, src/Admin/Views/General.php:1066, src/Admin/Views/General.php:1083, src/Admin/Views/General.php:1098, src/Admin/Views/General.php:1125, src/Admin/Views/General.php:1141, src/Admin/Views/General.php:1157, src/Admin/Views/General.php:1175, src/Admin/Views/General.php:1223, src/Admin/Views/General.php:1237, src/Admin/Views/General.php:1260, src/Admin/Views/General.php:1293, src/Admin/Views/General.php:1308, src/Admin/Views/General.php:1350, src/Admin/Views/General.php:1391, src/Admin/Views/General.php:1439, src/Admin/Views/General.php:1480, src/Admin/Views/General.php:1548, src/Admin/Views/General.php:1582, src/Admin/Views/General.php:1596, src/Admin/Views/General.php:1612, src/Admin/Views/General.php:1632, src/Admin/Views/General.php:1656, src/Admin/Views/General.php:1678, src/Admin/Views/General.php:1697, src/Admin/Views/General.php:1711, src/Admin/Views/General.php:1726, src/Admin/Views/General.php:1750, src/Admin/Views/General.php:1780, src/Admin/Views/General.php:1801, src/Admin/Views/General.php:1822, src/Admin/Views/General.php:1843, src/Admin/Views/General.php:1865, src/Admin/Views/General.php:1881, src/Admin/Views/General.php:1903, src/Admin/Views/General.php:1918, src/Admin/Views/General.php:1938, src/Admin/Views/General.php:1970, src/Admin/Views/General.php:1996, src/Admin/Views/General.php:2013, src/Admin/Views/General.php:2036, src/Admin/Views/General.php:2052, src/Admin/Views/General.php:2089, src/Admin/Views/General.php:2109, src/Admin/Views/General.php:2140, src/Admin/Views/General.php:2155, src/Admin/Views/General.php:2166, src/Admin/Views/General.php:2199, src/Admin/Views/General.php:2214, src/Admin/Views/General.php:2225, src/Admin/Views/General.php:2253, src/Admin/Views/ProductPage.php:40, src/Admin/Views/ProductPage.php:106, src/Admin/Views/ProductPage.php:115, src/Admin/Views/ProductPage.php:129, src/Admin/Views/ProductPage.php:159, src/Admin/Views/ProductPage.php:169, src/Admin/Views/ProductPage.php:208, src/Admin/Views/ProductPage.php:286, src/Admin/Views/ProductPage.php:318, src/Admin/Views/ProductPage.php:333, src/Admin/Views/ProductPage.php:348, src/Admin/Views/ProductPage.php:369, src/Admin/Views/ProductPage.php:386, src/Admin/Views/ProductPage.php:401, src/Admin/Views/ProductPage.php:417, src/Admin/Views/ShopPage.php:40, src/Admin/Views/ShopPage.php:100, src/Admin/Views/ShopPage.php:109, src/Admin/Views/ShopPage.php:123, src/Admin/Views/ShopPage.php:153, src/Admin/Views/ShopPage.php:163, src/Admin/Views/ShopPage.php:202, src/Admin/Views/ShopPage.php:280, src/Admin/Views/ShopPage.php:312, src/Admin/Views/ShopPage.php:327, src/Admin/Views/ShopPage.php:342, src/Admin/Views/ShopPage.php:363, src/Admin/Views/ShopPage.php:380, src/Admin/Views/ShopPage.php:395, src/Admin/Views/ShopPage.php:411, src/Admin/Views/Shortcode.php:66, src/Admin/Views/ThankYouPage.php:39, src/Admin/Views/ThankYouPage.php:86, src/Admin/Views/ThankYouPage.php:98, src/Admin/Views/ThankYouPage.php:109, src/Admin/Views/ThankYouPage.php:216, src/Admin/Views/ThankYouPage.php:243, src/Admin/Views/ThankYouPage.php:258, src/Admin/Views/ThankYouPage.php:271, src/Admin/Views/ThankYouPage.php:281, src/Admin/Views/ThankYouPage.php:291, src/Admin/Views/ThankYouPage.php:328, src/Admin/Views/ThankYouPage.php:336, src/Admin/Views/ThankYouPage.php:345, src/Admin/Views/ThankYouPage.php:378, src/Admin/Views/ThankYouPage.php:392, src/Admin/Views/ThankYouPage.php:432, src/Admin/Views/ThankYouPage.php:461, src/Admin/Views/ThankYouPage.php:494, src/Admin/Views/ThankYouPage.php:509, src/Admin/Views/ThankYouPage.php:524, src/Admin/Views/ThankYouPage.php:545, src/Admin/Views/ThankYouPage.php:562, src/Admin/Views/ThankYouPage.php:577, src/Admin/Views/ThankYouPage.php:593, src/Admin/Views/Webhooks.php:56, src/Admin/Views/Webhooks.php:69, src/Admin/Views/WooCommerce.php:72
 msgid "Open Docs"
 msgstr ""
 
@@ -635,15 +635,15 @@ msgstr ""
 msgid "Add a custom WhatsApp button on displayed beside the Proceed to Checkout button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:40, src/Admin/Views/CheckoutPage.php:40, src/Admin/Views/General.php:285, src/Admin/Views/General.php:1630, src/Admin/Views/ProductPage.php:41, src/Admin/Views/ShopPage.php:41, src/Admin/Views/ThankYouPage.php:40
+#: src/Admin/Views/CartPage.php:40, src/Admin/Views/CheckoutPage.php:40, src/Admin/Views/General.php:293, src/Admin/Views/General.php:1682, src/Admin/Views/ProductPage.php:41, src/Admin/Views/ShopPage.php:41, src/Admin/Views/ThankYouPage.php:40
 msgid "Show"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:41, src/Admin/Views/CheckoutPage.php:41, src/Admin/Views/General.php:286, src/Admin/Views/General.php:1631, src/Admin/Views/ProductPage.php:42, src/Admin/Views/ShopPage.php:42, src/Admin/Views/ThankYouPage.php:41
+#: src/Admin/Views/CartPage.php:41, src/Admin/Views/CheckoutPage.php:41, src/Admin/Views/General.php:294, src/Admin/Views/General.php:1683, src/Admin/Views/ProductPage.php:42, src/Admin/Views/ShopPage.php:42, src/Admin/Views/ThankYouPage.php:41
 msgid "Hide"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:49, src/Admin/Views/CheckoutPage.php:49, src/Admin/Views/General.php:102, src/Admin/Views/General.php:608, src/Admin/Views/ProductPage.php:50, src/Admin/Views/ShopPage.php:50, src/Admin/Views/ThankYouPage.php:49, src/Frontend/elementor-widgets/elementor-widget.php:92
+#: src/Admin/Views/CartPage.php:49, src/Admin/Views/CheckoutPage.php:49, src/Admin/Views/General.php:112, src/Admin/Views/General.php:663, src/Admin/Views/ProductPage.php:50, src/Admin/Views/ShopPage.php:50, src/Admin/Views/ThankYouPage.php:49, src/Frontend/elementor-widgets/elementor-widget.php:92
 msgid "WhatsApp Type"
 msgstr ""
 
@@ -651,7 +651,7 @@ msgstr ""
 msgid "Choose how users will connect: select \"Number\" to receive direct WhatsApp messages, or \"Group\" to invite users to join your WhatsApp group."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:50, src/Admin/Views/CheckoutPage.php:50, src/Admin/Views/General.php:103, src/Admin/Views/General.php:609, src/Admin/Views/ProductPage.php:51, src/Admin/Views/ShopPage.php:51, src/Admin/Views/ThankYouPage.php:50
+#: src/Admin/Views/CartPage.php:50, src/Admin/Views/CheckoutPage.php:50, src/Admin/Views/General.php:113, src/Admin/Views/General.php:664, src/Admin/Views/ProductPage.php:51, src/Admin/Views/ShopPage.php:51, src/Admin/Views/ThankYouPage.php:50
 msgid "Detailed explanation"
 msgstr ""
 
@@ -663,7 +663,7 @@ msgstr ""
 msgid "Group"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:62, src/Admin/Views/CheckoutPage.php:62, src/Admin/Views/General.php:120, src/Admin/Views/ProductPage.php:63, src/Admin/Views/ShopPage.php:63, src/Admin/Views/ThankYouPage.php:62
+#: src/Admin/Views/CartPage.php:62, src/Admin/Views/CheckoutPage.php:62, src/Admin/Views/General.php:129, src/Admin/Views/ProductPage.php:63, src/Admin/Views/ShopPage.php:63, src/Admin/Views/ThankYouPage.php:62
 msgid "WhatsApp Number"
 msgstr ""
 
@@ -671,19 +671,19 @@ msgstr ""
 msgid "WhatsApp number in international format."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:64, src/Admin/Views/CheckoutPage.php:64, src/Admin/Views/General.php:623, src/Admin/Views/ProductPage.php:66, src/Admin/Views/ShopPage.php:65, src/Admin/Views/ThankYouPage.php:64
+#: src/Admin/Views/CartPage.php:64, src/Admin/Views/CheckoutPage.php:64, src/Admin/Views/General.php:678, src/Admin/Views/ProductPage.php:66, src/Admin/Views/ShopPage.php:65, src/Admin/Views/ThankYouPage.php:64
 msgid "Add your WhatsApp number including country code. eg: +880123456189"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:71, src/Admin/Views/CheckoutPage.php:74, src/Admin/Views/General.php:140, src/Admin/Views/General.php:630, src/Admin/Views/ProductPage.php:77, src/Admin/Views/ShopPage.php:83, src/Admin/Views/ThankYouPage.php:74
+#: src/Admin/Views/CartPage.php:71, src/Admin/Views/CheckoutPage.php:74, src/Admin/Views/General.php:148, src/Admin/Views/General.php:685, src/Admin/Views/ProductPage.php:77, src/Admin/Views/ShopPage.php:83, src/Admin/Views/ThankYouPage.php:74
 msgid "WhatsApp Group"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:72, src/Admin/Views/CheckoutPage.php:75, src/Admin/Views/General.php:141, src/Admin/Views/ProductPage.php:78, src/Admin/Views/ShopPage.php:84, src/Admin/Views/ThankYouPage.php:75
+#: src/Admin/Views/CartPage.php:72, src/Admin/Views/CheckoutPage.php:75, src/Admin/Views/General.php:149, src/Admin/Views/ProductPage.php:78, src/Admin/Views/ShopPage.php:84, src/Admin/Views/ThankYouPage.php:75
 msgid "Enter a valid WhatsApp group link (e.g., https://chat.whatsapp.com/Dn16RARM6KW7X4fq0fxVet)."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:73, src/Admin/Views/CheckoutPage.php:76, src/Admin/Views/General.php:142, src/Admin/Views/ProductPage.php:79, src/Admin/Views/ShopPage.php:85, src/Admin/Views/ThankYouPage.php:76
+#: src/Admin/Views/CartPage.php:73, src/Admin/Views/CheckoutPage.php:76, src/Admin/Views/General.php:150, src/Admin/Views/ProductPage.php:79, src/Admin/Views/ShopPage.php:85, src/Admin/Views/ThankYouPage.php:76
 msgid "Invite your visitors to join your WhatsApp group by adding the group’s invite URL here."
 msgstr ""
 
@@ -703,7 +703,7 @@ msgstr ""
 msgid "Choose where the WhatsApp button will appear on WooCommerce Cart page."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:91, src/Admin/Views/CheckoutPage.php:97, src/Admin/Views/General.php:294, src/Admin/Views/General.php:348, src/Admin/Views/General.php:641, src/Admin/Views/ProductPage.php:114, src/Admin/Views/ShopPage.php:108, src/Admin/Views/ThankYouPage.php:85
+#: src/Admin/Views/CartPage.php:91, src/Admin/Views/CheckoutPage.php:97, src/Admin/Views/General.php:302, src/Admin/Views/General.php:375, src/Admin/Views/General.php:405, src/Admin/Views/General.php:696, src/Admin/Views/ProductPage.php:114, src/Admin/Views/ShopPage.php:108, src/Admin/Views/ThankYouPage.php:85
 msgid "Pre-filled Message"
 msgstr ""
 
@@ -711,11 +711,11 @@ msgstr ""
 msgid "Write a friendly, pre-filled message that users will see when they click the chat button. Example: “Hello, I want to purchase the item(s) below: {cartInfo}.” This saves them time and makes starting a conversation effortless."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:93, src/Admin/Views/CheckoutPage.php:99, src/Admin/Views/General.php:353, src/Admin/Views/General.php:648, src/Admin/Views/ProductPage.php:116, src/Admin/Views/ShopPage.php:110, src/Admin/Views/ThankYouPage.php:87
+#: src/Admin/Views/CartPage.php:93, src/Admin/Views/CheckoutPage.php:99, src/Admin/Views/General.php:342, src/Admin/Views/General.php:377, src/Admin/Views/General.php:410, src/Admin/Views/General.php:703, src/Admin/Views/ProductPage.php:116, src/Admin/Views/ShopPage.php:110, src/Admin/Views/ThankYouPage.php:87
 msgid "WooCommerce Vars:"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:93, src/Admin/Views/CheckoutPage.php:99, src/Admin/Views/General.php:353, src/Admin/Views/General.php:648, src/Admin/Views/ProductPage.php:117, src/Admin/Views/ShopPage.php:111, src/Admin/Views/ThankYouPage.php:87
+#: src/Admin/Views/CartPage.php:93, src/Admin/Views/CheckoutPage.php:99, src/Admin/Views/General.php:342, src/Admin/Views/General.php:377, src/Admin/Views/General.php:410, src/Admin/Views/General.php:703, src/Admin/Views/ProductPage.php:117, src/Admin/Views/ShopPage.php:111, src/Admin/Views/ThankYouPage.php:87
 msgid "Global Vars:"
 msgstr ""
 
@@ -747,7 +747,7 @@ msgstr ""
 msgid "WooCommerce Button Style"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:124, src/Admin/Views/CheckoutPage.php:123, src/Admin/Views/General.php:1204, src/Admin/Views/ProductPage.php:129, src/Admin/Views/ShopPage.php:123, src/Admin/Views/ThankYouPage.php:216
+#: src/Admin/Views/CartPage.php:124, src/Admin/Views/CheckoutPage.php:123, src/Admin/Views/General.php:1257, src/Admin/Views/ProductPage.php:129, src/Admin/Views/ShopPage.php:123, src/Admin/Views/ThankYouPage.php:216
 msgid "Choose a style for the floating chat button from the available design options."
 msgstr ""
 
@@ -755,19 +755,19 @@ msgstr ""
 msgid "Icon"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:133, src/Admin/Views/CheckoutPage.php:132, src/Admin/Views/General.php:1217, src/Admin/Views/ProductPage.php:139, src/Admin/Views/ShopPage.php:133, src/Admin/Views/Shortcode.php:71, src/Admin/Views/ThankYouPage.php:225
+#: src/Admin/Views/CartPage.php:133, src/Admin/Views/CheckoutPage.php:132, src/Admin/Views/General.php:1270, src/Admin/Views/ProductPage.php:139, src/Admin/Views/ShopPage.php:133, src/Admin/Views/Shortcode.php:71, src/Admin/Views/ThankYouPage.php:225
 msgid "Simple Button"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:138, src/Admin/Views/CheckoutPage.php:137, src/Admin/Views/General.php:1222, src/Admin/Views/ProductPage.php:144, src/Admin/Views/ShopPage.php:138, src/Admin/Views/Shortcode.php:76, src/Admin/Views/ThankYouPage.php:230
+#: src/Admin/Views/CartPage.php:138, src/Admin/Views/CheckoutPage.php:137, src/Admin/Views/General.php:1275, src/Admin/Views/ProductPage.php:144, src/Admin/Views/ShopPage.php:138, src/Admin/Views/Shortcode.php:76, src/Admin/Views/ThankYouPage.php:230
 msgid "Advance Button"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:151, src/Admin/Views/CheckoutPage.php:150, src/Admin/Views/General.php:1234, src/Admin/Views/ProductPage.php:158, src/Admin/Views/ShopPage.php:152, src/Admin/Views/ThankYouPage.php:280
+#: src/Admin/Views/CartPage.php:151, src/Admin/Views/CheckoutPage.php:150, src/Admin/Views/General.php:1287, src/Admin/Views/ProductPage.php:158, src/Admin/Views/ShopPage.php:152, src/Admin/Views/ThankYouPage.php:280
 msgid "Button Main Label"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:152, src/Admin/Views/CheckoutPage.php:151, src/Admin/Views/General.php:1238, src/Admin/Views/ProductPage.php:159, src/Admin/Views/ShopPage.php:153, src/Admin/Views/ThankYouPage.php:281
+#: src/Admin/Views/CartPage.php:152, src/Admin/Views/CheckoutPage.php:151, src/Admin/Views/General.php:1291, src/Admin/Views/ProductPage.php:159, src/Admin/Views/ShopPage.php:153, src/Admin/Views/ThankYouPage.php:281
 msgid "Enter the text to display inside the floating chat button."
 msgstr ""
 
@@ -775,115 +775,115 @@ msgstr ""
 msgid "Complete Order via WhatsApp"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:161, src/Admin/Views/CheckoutPage.php:160, src/Admin/Views/General.php:1250, src/Admin/Views/ProductPage.php:168, src/Admin/Views/ShopPage.php:162, src/Admin/Views/ThankYouPage.php:290
+#: src/Admin/Views/CartPage.php:161, src/Admin/Views/CheckoutPage.php:160, src/Admin/Views/General.php:1302, src/Admin/Views/ProductPage.php:168, src/Admin/Views/ShopPage.php:162, src/Admin/Views/ThankYouPage.php:290
 msgid "Icon for Circle Button"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:162, src/Admin/Views/CheckoutPage.php:161, src/Admin/Views/General.php:1254, src/Admin/Views/ProductPage.php:169, src/Admin/Views/ShopPage.php:163, src/Admin/Views/ThankYouPage.php:291
+#: src/Admin/Views/CartPage.php:162, src/Admin/Views/CheckoutPage.php:161, src/Admin/Views/General.php:1306, src/Admin/Views/ProductPage.php:169, src/Admin/Views/ShopPage.php:163, src/Admin/Views/ThankYouPage.php:291
 msgid "Select an icon to display inside the circular chat button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:183, src/Admin/Views/CartPage.php:209, src/Admin/Views/CheckoutPage.php:182, src/Admin/Views/CheckoutPage.php:208, src/Admin/Views/General.php:1147, src/Admin/Views/General.php:1278, src/Admin/Views/General.php:1317, src/Admin/Views/General.php:1361, src/Admin/Views/General.php:1406, src/Admin/Views/ProductPage.php:191, src/Admin/Views/ProductPage.php:217, src/Admin/Views/ShopPage.php:185, src/Admin/Views/ShopPage.php:211, src/Admin/Views/ThankYouPage.php:312, src/Admin/Views/ThankYouPage.php:354
+#: src/Admin/Views/CartPage.php:183, src/Admin/Views/CartPage.php:209, src/Admin/Views/CheckoutPage.php:182, src/Admin/Views/CheckoutPage.php:208, src/Admin/Views/General.php:1200, src/Admin/Views/General.php:1330, src/Admin/Views/General.php:1369, src/Admin/Views/General.php:1413, src/Admin/Views/General.php:1458, src/Admin/Views/ProductPage.php:191, src/Admin/Views/ProductPage.php:217, src/Admin/Views/ShopPage.php:185, src/Admin/Views/ShopPage.php:211, src/Admin/Views/ThankYouPage.php:312, src/Admin/Views/ThankYouPage.php:354
 msgid "Native"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:187, src/Admin/Views/CartPage.php:213, src/Admin/Views/CartPage.php:249, src/Admin/Views/CheckoutPage.php:186, src/Admin/Views/CheckoutPage.php:212, src/Admin/Views/CheckoutPage.php:247, src/Admin/Views/General.php:931, src/Admin/Views/General.php:1151, src/Admin/Views/General.php:1282, src/Admin/Views/General.php:1321, src/Admin/Views/General.php:1365, src/Admin/Views/General.php:1410, src/Admin/Views/General.php:1465, src/Admin/Views/ProductPage.php:195, src/Admin/Views/ProductPage.php:221, src/Admin/Views/ProductPage.php:256, src/Admin/Views/ShopPage.php:189, src/Admin/Views/ShopPage.php:215, src/Admin/Views/ShopPage.php:250, src/Admin/Views/ThankYouPage.php:246, src/Admin/Views/ThankYouPage.php:316, src/Admin/Views/ThankYouPage.php:358, src/Admin/Views/ThankYouPage.php:421
+#: src/Admin/Views/CartPage.php:187, src/Admin/Views/CartPage.php:213, src/Admin/Views/CartPage.php:249, src/Admin/Views/CheckoutPage.php:186, src/Admin/Views/CheckoutPage.php:212, src/Admin/Views/CheckoutPage.php:247, src/Admin/Views/General.php:986, src/Admin/Views/General.php:1204, src/Admin/Views/General.php:1334, src/Admin/Views/General.php:1373, src/Admin/Views/General.php:1417, src/Admin/Views/General.php:1462, src/Admin/Views/General.php:1517, src/Admin/Views/ProductPage.php:195, src/Admin/Views/ProductPage.php:221, src/Admin/Views/ProductPage.php:256, src/Admin/Views/ShopPage.php:189, src/Admin/Views/ShopPage.php:215, src/Admin/Views/ShopPage.php:250, src/Admin/Views/ThankYouPage.php:246, src/Admin/Views/ThankYouPage.php:316, src/Admin/Views/ThankYouPage.php:358, src/Admin/Views/ThankYouPage.php:421
 msgid "Custom"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:199, src/Admin/Views/CheckoutPage.php:198, src/Admin/Views/General.php:1333, src/Admin/Views/ProductPage.php:207, src/Admin/Views/ShopPage.php:201, src/Admin/Views/ThankYouPage.php:344
+#: src/Admin/Views/CartPage.php:199, src/Admin/Views/CheckoutPage.php:198, src/Admin/Views/General.php:1385, src/Admin/Views/ProductPage.php:207, src/Admin/Views/ShopPage.php:201, src/Admin/Views/ThankYouPage.php:344
 msgid "Icon for Button"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:200, src/Admin/Views/CheckoutPage.php:199, src/Admin/Views/General.php:1337, src/Admin/Views/ProductPage.php:208, src/Admin/Views/ShopPage.php:202, src/Admin/Views/ThankYouPage.php:345
+#: src/Admin/Views/CartPage.php:200, src/Admin/Views/CheckoutPage.php:199, src/Admin/Views/General.php:1389, src/Admin/Views/ProductPage.php:208, src/Admin/Views/ShopPage.php:202, src/Admin/Views/ThankYouPage.php:345
 msgid "Select an icon to display inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:217, src/Admin/Views/CheckoutPage.php:216, src/Admin/Views/General.php:1144, src/Admin/Views/General.php:1369, src/Admin/Views/ProductPage.php:225, src/Admin/Views/ShopPage.php:219, src/Admin/Views/ThankYouPage.php:362
+#: src/Admin/Views/CartPage.php:217, src/Admin/Views/CheckoutPage.php:216, src/Admin/Views/General.php:1197, src/Admin/Views/General.php:1421, src/Admin/Views/ProductPage.php:225, src/Admin/Views/ShopPage.php:219, src/Admin/Views/ThankYouPage.php:362
 msgid "No Icon"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:227, src/Admin/Views/CheckoutPage.php:225, src/Admin/Views/General.php:1443, src/Admin/Views/ProductPage.php:234, src/Admin/Views/ShopPage.php:228, src/Admin/Views/ThankYouPage.php:399
+#: src/Admin/Views/CartPage.php:227, src/Admin/Views/CheckoutPage.php:225, src/Admin/Views/General.php:1495, src/Admin/Views/ProductPage.php:234, src/Admin/Views/ShopPage.php:228, src/Admin/Views/ThankYouPage.php:399
 msgid "Button Size"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:228, src/Admin/Views/CheckoutPage.php:226, src/Admin/Views/General.php:1444, src/Admin/Views/ProductPage.php:235, src/Admin/Views/ShopPage.php:229, src/Admin/Views/ThankYouPage.php:400
+#: src/Admin/Views/CartPage.php:228, src/Admin/Views/CheckoutPage.php:226, src/Admin/Views/General.php:1496, src/Admin/Views/ProductPage.php:235, src/Admin/Views/ShopPage.php:229, src/Admin/Views/ThankYouPage.php:400
 msgid "Select the size of the button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:231, src/Admin/Views/CheckoutPage.php:229, src/Admin/Views/General.php:1447, src/Admin/Views/ProductPage.php:238, src/Admin/Views/ShopPage.php:232, src/Admin/Views/ThankYouPage.php:403, src/Frontend/elementor-widgets/elementor-widget.php:1157
+#: src/Admin/Views/CartPage.php:231, src/Admin/Views/CheckoutPage.php:229, src/Admin/Views/General.php:1499, src/Admin/Views/ProductPage.php:238, src/Admin/Views/ShopPage.php:232, src/Admin/Views/ThankYouPage.php:403, src/Frontend/elementor-widgets/elementor-widget.php:1157
 msgid "XS"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:234, src/Admin/Views/CheckoutPage.php:232, src/Admin/Views/General.php:1450, src/Admin/Views/ProductPage.php:241, src/Admin/Views/ShopPage.php:235, src/Admin/Views/ThankYouPage.php:406, src/Frontend/elementor-widgets/elementor-widget.php:1158
+#: src/Admin/Views/CartPage.php:234, src/Admin/Views/CheckoutPage.php:232, src/Admin/Views/General.php:1502, src/Admin/Views/ProductPage.php:241, src/Admin/Views/ShopPage.php:235, src/Admin/Views/ThankYouPage.php:406, src/Frontend/elementor-widgets/elementor-widget.php:1158
 msgid "S"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:237, src/Admin/Views/CheckoutPage.php:235, src/Admin/Views/General.php:1453, src/Admin/Views/ProductPage.php:244, src/Admin/Views/ShopPage.php:238, src/Admin/Views/ThankYouPage.php:409, src/Frontend/elementor-widgets/elementor-widget.php:1159
+#: src/Admin/Views/CartPage.php:237, src/Admin/Views/CheckoutPage.php:235, src/Admin/Views/General.php:1505, src/Admin/Views/ProductPage.php:244, src/Admin/Views/ShopPage.php:238, src/Admin/Views/ThankYouPage.php:409, src/Frontend/elementor-widgets/elementor-widget.php:1159
 msgid "M"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:240, src/Admin/Views/CheckoutPage.php:238, src/Admin/Views/General.php:1456, src/Admin/Views/ProductPage.php:247, src/Admin/Views/ShopPage.php:241, src/Admin/Views/ThankYouPage.php:412, src/Frontend/elementor-widgets/elementor-widget.php:1160
+#: src/Admin/Views/CartPage.php:240, src/Admin/Views/CheckoutPage.php:238, src/Admin/Views/General.php:1508, src/Admin/Views/ProductPage.php:247, src/Admin/Views/ShopPage.php:241, src/Admin/Views/ThankYouPage.php:412, src/Frontend/elementor-widgets/elementor-widget.php:1160
 msgid "L"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:243, src/Admin/Views/CheckoutPage.php:241, src/Admin/Views/General.php:1459, src/Admin/Views/ProductPage.php:250, src/Admin/Views/ShopPage.php:244, src/Admin/Views/ThankYouPage.php:415, src/Frontend/elementor-widgets/elementor-widget.php:1161
+#: src/Admin/Views/CartPage.php:243, src/Admin/Views/CheckoutPage.php:241, src/Admin/Views/General.php:1511, src/Admin/Views/ProductPage.php:250, src/Admin/Views/ShopPage.php:244, src/Admin/Views/ThankYouPage.php:415, src/Frontend/elementor-widgets/elementor-widget.php:1161
 msgid "XL"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:246, src/Admin/Views/CheckoutPage.php:244, src/Admin/Views/General.php:1462, src/Admin/Views/ProductPage.php:253, src/Admin/Views/ShopPage.php:247, src/Admin/Views/ThankYouPage.php:418, src/Frontend/elementor-widgets/elementor-widget.php:1162
+#: src/Admin/Views/CartPage.php:246, src/Admin/Views/CheckoutPage.php:244, src/Admin/Views/General.php:1514, src/Admin/Views/ProductPage.php:253, src/Admin/Views/ShopPage.php:247, src/Admin/Views/ThankYouPage.php:418, src/Frontend/elementor-widgets/elementor-widget.php:1162
 msgid "XXL"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:259, src/Admin/Views/CheckoutPage.php:257, src/Admin/Views/General.php:1475, src/Admin/Views/ProductPage.php:266, src/Admin/Views/ShopPage.php:260, src/Admin/Views/ThankYouPage.php:441, src/Frontend/elementor-widgets/elementor-widget.php:1451
+#: src/Admin/Views/CartPage.php:259, src/Admin/Views/CheckoutPage.php:257, src/Admin/Views/General.php:1527, src/Admin/Views/ProductPage.php:266, src/Admin/Views/ShopPage.php:260, src/Admin/Views/ThankYouPage.php:441, src/Frontend/elementor-widgets/elementor-widget.php:1451
 msgid "Icon Color"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:261, src/Admin/Views/CheckoutPage.php:259, src/Admin/Views/General.php:1477, src/Admin/Views/ProductPage.php:268, src/Admin/Views/ShopPage.php:262, src/Admin/Views/ThankYouPage.php:443
+#: src/Admin/Views/CartPage.php:261, src/Admin/Views/CheckoutPage.php:259, src/Admin/Views/General.php:1529, src/Admin/Views/ProductPage.php:268, src/Admin/Views/ShopPage.php:262, src/Admin/Views/ThankYouPage.php:443
 msgid "You can define normal and hover colors for the button icon."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:264, src/Admin/Views/CartPage.php:294, src/Admin/Views/CartPage.php:314, src/Admin/Views/CartPage.php:329, src/Admin/Views/CheckoutPage.php:262, src/Admin/Views/CheckoutPage.php:292, src/Admin/Views/CheckoutPage.php:312, src/Admin/Views/CheckoutPage.php:327, src/Admin/Views/General.php:1480, src/Admin/Views/General.php:1511, src/Admin/Views/General.php:1532, src/Admin/Views/General.php:1546, src/Admin/Views/ProductPage.php:271, src/Admin/Views/ProductPage.php:300, src/Admin/Views/ProductPage.php:320, src/Admin/Views/ProductPage.php:335, src/Admin/Views/ShopPage.php:265, src/Admin/Views/ShopPage.php:294, src/Admin/Views/ShopPage.php:314, src/Admin/Views/ShopPage.php:329, src/Admin/Views/ThankYouPage.php:446, src/Admin/Views/ThankYouPage.php:476, src/Admin/Views/ThankYouPage.php:496, src/Admin/Views/ThankYouPage.php:511
+#: src/Admin/Views/CartPage.php:264, src/Admin/Views/CartPage.php:294, src/Admin/Views/CartPage.php:314, src/Admin/Views/CartPage.php:329, src/Admin/Views/CheckoutPage.php:262, src/Admin/Views/CheckoutPage.php:292, src/Admin/Views/CheckoutPage.php:312, src/Admin/Views/CheckoutPage.php:327, src/Admin/Views/General.php:1532, src/Admin/Views/General.php:1563, src/Admin/Views/General.php:1584, src/Admin/Views/General.php:1598, src/Admin/Views/ProductPage.php:271, src/Admin/Views/ProductPage.php:300, src/Admin/Views/ProductPage.php:320, src/Admin/Views/ProductPage.php:335, src/Admin/Views/ShopPage.php:265, src/Admin/Views/ShopPage.php:294, src/Admin/Views/ShopPage.php:314, src/Admin/Views/ShopPage.php:329, src/Admin/Views/ThankYouPage.php:446, src/Admin/Views/ThankYouPage.php:476, src/Admin/Views/ThankYouPage.php:496, src/Admin/Views/ThankYouPage.php:511
 msgid "Normal Color"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:265, src/Admin/Views/CartPage.php:295, src/Admin/Views/CartPage.php:315, src/Admin/Views/CartPage.php:330, src/Admin/Views/CheckoutPage.php:263, src/Admin/Views/CheckoutPage.php:293, src/Admin/Views/CheckoutPage.php:313, src/Admin/Views/CheckoutPage.php:328, src/Admin/Views/General.php:1481, src/Admin/Views/General.php:1512, src/Admin/Views/General.php:1533, src/Admin/Views/General.php:1547, src/Admin/Views/General.php:1987, src/Admin/Views/ProductPage.php:272, src/Admin/Views/ProductPage.php:301, src/Admin/Views/ProductPage.php:321, src/Admin/Views/ProductPage.php:336, src/Admin/Views/ShopPage.php:266, src/Admin/Views/ShopPage.php:295, src/Admin/Views/ShopPage.php:315, src/Admin/Views/ShopPage.php:330, src/Admin/Views/ThankYouPage.php:447, src/Admin/Views/ThankYouPage.php:477, src/Admin/Views/ThankYouPage.php:497, src/Admin/Views/ThankYouPage.php:512, src/Admin/Framework/fields/border/border.php:146
+#: src/Admin/Views/CartPage.php:265, src/Admin/Views/CartPage.php:295, src/Admin/Views/CartPage.php:315, src/Admin/Views/CartPage.php:330, src/Admin/Views/CheckoutPage.php:263, src/Admin/Views/CheckoutPage.php:293, src/Admin/Views/CheckoutPage.php:313, src/Admin/Views/CheckoutPage.php:328, src/Admin/Views/General.php:1533, src/Admin/Views/General.php:1564, src/Admin/Views/General.php:1585, src/Admin/Views/General.php:1599, src/Admin/Views/General.php:2039, src/Admin/Views/ProductPage.php:272, src/Admin/Views/ProductPage.php:301, src/Admin/Views/ProductPage.php:321, src/Admin/Views/ProductPage.php:336, src/Admin/Views/ShopPage.php:266, src/Admin/Views/ShopPage.php:295, src/Admin/Views/ShopPage.php:315, src/Admin/Views/ShopPage.php:330, src/Admin/Views/ThankYouPage.php:447, src/Admin/Views/ThankYouPage.php:477, src/Admin/Views/ThankYouPage.php:497, src/Admin/Views/ThankYouPage.php:512, src/Admin/Framework/fields/border/border.php:146
 msgid "Hover Color"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:272, src/Admin/Views/CheckoutPage.php:270, src/Admin/Views/General.php:1489, src/Admin/Views/ProductPage.php:279, src/Admin/Views/ShopPage.php:273, src/Admin/Views/ThankYouPage.php:454, src/Frontend/elementor-widgets/elementor-widget.php:1486
+#: src/Admin/Views/CartPage.php:272, src/Admin/Views/CheckoutPage.php:270, src/Admin/Views/General.php:1541, src/Admin/Views/ProductPage.php:279, src/Admin/Views/ShopPage.php:273, src/Admin/Views/ThankYouPage.php:454, src/Frontend/elementor-widgets/elementor-widget.php:1486
 msgid "Icon Background"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:273, src/Admin/Views/CheckoutPage.php:271, src/Admin/Views/General.php:307, src/Admin/Views/General.php:1073, src/Admin/Views/General.php:1185, src/Admin/Views/General.php:1490, src/Admin/Views/ProductPage.php:280, src/Admin/Views/ShopPage.php:274, src/Admin/Views/ThankYouPage.php:455
+#: src/Admin/Views/CartPage.php:273, src/Admin/Views/CheckoutPage.php:271, src/Admin/Views/General.php:392, src/Admin/Views/General.php:1126, src/Admin/Views/General.php:1238, src/Admin/Views/General.php:1542, src/Admin/Views/ProductPage.php:280, src/Admin/Views/ShopPage.php:274, src/Admin/Views/ThankYouPage.php:455
 msgid "Enable"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:274, src/Admin/Views/CheckoutPage.php:272, src/Admin/Views/General.php:308, src/Admin/Views/General.php:1074, src/Admin/Views/General.php:1186, src/Admin/Views/General.php:1491, src/Admin/Views/ProductPage.php:281, src/Admin/Views/ShopPage.php:275, src/Admin/Views/ThankYouPage.php:456
+#: src/Admin/Views/CartPage.php:274, src/Admin/Views/CheckoutPage.php:272, src/Admin/Views/General.php:393, src/Admin/Views/General.php:1127, src/Admin/Views/General.php:1239, src/Admin/Views/General.php:1543, src/Admin/Views/ProductPage.php:281, src/Admin/Views/ShopPage.php:275, src/Admin/Views/ThankYouPage.php:456
 msgid "Disable"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:276, src/Admin/Views/CheckoutPage.php:274, src/Admin/Views/General.php:1493, src/Admin/Views/ProductPage.php:283, src/Admin/Views/ShopPage.php:277, src/Admin/Views/ThankYouPage.php:458
+#: src/Admin/Views/CartPage.php:276, src/Admin/Views/CheckoutPage.php:274, src/Admin/Views/General.php:1545, src/Admin/Views/ProductPage.php:283, src/Admin/Views/ShopPage.php:277, src/Admin/Views/ThankYouPage.php:458
 msgid "Enable/Disable Button Inner Icon Background"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:289, src/Admin/Views/CheckoutPage.php:287, src/Admin/Views/General.php:1505, src/Admin/Views/ProductPage.php:295, src/Admin/Views/ShopPage.php:289, src/Admin/Views/ThankYouPage.php:471
+#: src/Admin/Views/CartPage.php:289, src/Admin/Views/CheckoutPage.php:287, src/Admin/Views/General.php:1557, src/Admin/Views/ProductPage.php:295, src/Admin/Views/ShopPage.php:289, src/Admin/Views/ThankYouPage.php:471
 msgid "Icon Background Color"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:291, src/Admin/Views/CheckoutPage.php:289, src/Admin/Views/General.php:1508, src/Admin/Views/ProductPage.php:297, src/Admin/Views/ShopPage.php:291, src/Admin/Views/ThankYouPage.php:473
+#: src/Admin/Views/CartPage.php:291, src/Admin/Views/CheckoutPage.php:289, src/Admin/Views/General.php:1560, src/Admin/Views/ProductPage.php:297, src/Admin/Views/ShopPage.php:291, src/Admin/Views/ThankYouPage.php:473
 msgid "You can define normal and hover background colors for the button icon."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:307, src/Admin/Views/CheckoutPage.php:305, src/Admin/Views/General.php:1525, src/Admin/Views/ProductPage.php:313, src/Admin/Views/ShopPage.php:307, src/Admin/Views/ThankYouPage.php:489
+#: src/Admin/Views/CartPage.php:307, src/Admin/Views/CheckoutPage.php:305, src/Admin/Views/General.php:1577, src/Admin/Views/ProductPage.php:313, src/Admin/Views/ShopPage.php:307, src/Admin/Views/ThankYouPage.php:489
 msgid "Button Background"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:309, src/Admin/Views/CheckoutPage.php:307, src/Admin/Views/General.php:1527, src/Admin/Views/ProductPage.php:315, src/Admin/Views/ShopPage.php:309, src/Admin/Views/ThankYouPage.php:491
+#: src/Admin/Views/CartPage.php:309, src/Admin/Views/CheckoutPage.php:307, src/Admin/Views/General.php:1579, src/Admin/Views/ProductPage.php:315, src/Admin/Views/ShopPage.php:309, src/Admin/Views/ThankYouPage.php:491
 msgid "Set your button background color."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:322, src/Admin/Views/CheckoutPage.php:320, src/Admin/Views/General.php:1539, src/Admin/Views/ProductPage.php:328, src/Admin/Views/ShopPage.php:322, src/Admin/Views/ThankYouPage.php:504
+#: src/Admin/Views/CartPage.php:322, src/Admin/Views/CheckoutPage.php:320, src/Admin/Views/General.php:1591, src/Admin/Views/ProductPage.php:328, src/Admin/Views/ShopPage.php:322, src/Admin/Views/ThankYouPage.php:504
 msgid "Button Label Color"
 msgstr ""
 
@@ -891,19 +891,19 @@ msgstr ""
 msgid "Set your button button label color."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:337, src/Admin/Views/CheckoutPage.php:335, src/Admin/Views/General.php:1555, src/Admin/Views/ProductPage.php:343, src/Admin/Views/ShopPage.php:337, src/Admin/Views/ThankYouPage.php:519
+#: src/Admin/Views/CartPage.php:337, src/Admin/Views/CheckoutPage.php:335, src/Admin/Views/General.php:1607, src/Admin/Views/ProductPage.php:343, src/Admin/Views/ShopPage.php:337, src/Admin/Views/ThankYouPage.php:519
 msgid "Button Border"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:339, src/Admin/Views/CartPage.php:360, src/Admin/Views/CheckoutPage.php:337, src/Admin/Views/CheckoutPage.php:358, src/Admin/Views/General.php:1557, src/Admin/Views/General.php:1577, src/Admin/Views/ProductPage.php:345, src/Admin/Views/ProductPage.php:366, src/Admin/Views/ShopPage.php:339, src/Admin/Views/ShopPage.php:360, src/Admin/Views/ThankYouPage.php:521, src/Admin/Views/ThankYouPage.php:542
+#: src/Admin/Views/CartPage.php:339, src/Admin/Views/CartPage.php:360, src/Admin/Views/CheckoutPage.php:337, src/Admin/Views/CheckoutPage.php:358, src/Admin/Views/General.php:1609, src/Admin/Views/General.php:1629, src/Admin/Views/ProductPage.php:345, src/Admin/Views/ProductPage.php:366, src/Admin/Views/ShopPage.php:339, src/Admin/Views/ShopPage.php:360, src/Admin/Views/ThankYouPage.php:521, src/Admin/Views/ThankYouPage.php:542
 msgid "Set border for the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:358, src/Admin/Views/CheckoutPage.php:356, src/Admin/Views/General.php:1575, src/Admin/Views/ProductPage.php:364, src/Admin/Views/ShopPage.php:358, src/Admin/Views/ThankYouPage.php:540, src/Frontend/elementor-widgets/elementor-widget.php:1352, src/Frontend/elementor-widgets/elementor-widget.php:1356
+#: src/Admin/Views/CartPage.php:358, src/Admin/Views/CheckoutPage.php:356, src/Admin/Views/General.php:1627, src/Admin/Views/ProductPage.php:364, src/Admin/Views/ShopPage.php:358, src/Admin/Views/ThankYouPage.php:540, src/Frontend/elementor-widgets/elementor-widget.php:1352, src/Frontend/elementor-widgets/elementor-widget.php:1356
 msgid "Icon Border"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:379, src/Admin/Views/CheckoutPage.php:377, src/Admin/Views/General.php:1598, src/Admin/Views/ProductPage.php:385, src/Admin/Views/ShopPage.php:379, src/Admin/Views/ThankYouPage.php:561
+#: src/Admin/Views/CartPage.php:379, src/Admin/Views/CheckoutPage.php:377, src/Admin/Views/General.php:1650, src/Admin/Views/ProductPage.php:385, src/Admin/Views/ShopPage.php:379, src/Admin/Views/ThankYouPage.php:561
 msgid "Button Padding"
 msgstr ""
 
@@ -927,19 +927,19 @@ msgstr ""
 msgid "Control where the chat button is visible. Choose to show it on all devices or restrict it to desktop, tablet, or mobile only."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:413, src/Admin/Views/CheckoutPage.php:411, src/Admin/Views/General.php:2039, src/Admin/Views/ProductPage.php:419, src/Admin/Views/ShopPage.php:413, src/Admin/Views/ThankYouPage.php:595, src/Frontend/elementor-widgets/elementor-widget.php:1140
+#: src/Admin/Views/CartPage.php:413, src/Admin/Views/CheckoutPage.php:411, src/Admin/Views/General.php:2091, src/Admin/Views/ProductPage.php:419, src/Admin/Views/ShopPage.php:413, src/Admin/Views/ThankYouPage.php:595, src/Frontend/elementor-widgets/elementor-widget.php:1140
 msgid "Everywhere"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:414, src/Admin/Views/CheckoutPage.php:412, src/Admin/Views/General.php:2040, src/Admin/Views/ProductPage.php:420, src/Admin/Views/ShopPage.php:414, src/Admin/Views/ThankYouPage.php:596
+#: src/Admin/Views/CartPage.php:414, src/Admin/Views/CheckoutPage.php:412, src/Admin/Views/General.php:2092, src/Admin/Views/ProductPage.php:420, src/Admin/Views/ShopPage.php:414, src/Admin/Views/ThankYouPage.php:596
 msgid "Desktop Only"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:415, src/Admin/Views/CheckoutPage.php:413, src/Admin/Views/General.php:2041, src/Admin/Views/ProductPage.php:421, src/Admin/Views/ShopPage.php:415, src/Admin/Views/ThankYouPage.php:597
+#: src/Admin/Views/CartPage.php:415, src/Admin/Views/CheckoutPage.php:413, src/Admin/Views/General.php:2093, src/Admin/Views/ProductPage.php:421, src/Admin/Views/ShopPage.php:415, src/Admin/Views/ThankYouPage.php:597
 msgid "Tablet Only"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:416, src/Admin/Views/CheckoutPage.php:414, src/Admin/Views/General.php:2042, src/Admin/Views/ProductPage.php:422, src/Admin/Views/ShopPage.php:416, src/Admin/Views/ThankYouPage.php:598
+#: src/Admin/Views/CartPage.php:416, src/Admin/Views/CheckoutPage.php:414, src/Admin/Views/General.php:2094, src/Admin/Views/ProductPage.php:422, src/Admin/Views/ShopPage.php:416, src/Admin/Views/ThankYouPage.php:598
 msgid "Mobile Only"
 msgstr ""
 
@@ -967,7 +967,7 @@ msgstr ""
 msgid "Choose where the WhatsApp button will appear on WooCommerce checkout page."
 msgstr ""
 
-#: src/Admin/Views/CheckoutPage.php:152, src/Admin/Views/General.php:1241, src/Admin/Views/ProductPage.php:160, src/Admin/Views/ShopPage.php:154
+#: src/Admin/Views/CheckoutPage.php:152, src/Admin/Views/General.php:1294, src/Admin/Views/ProductPage.php:160, src/Admin/Views/ShopPage.php:154
 msgid "How may I help you?"
 msgstr ""
 
@@ -976,1130 +976,1158 @@ msgid "FLOATING CHAT"
 msgstr ""
 
 #: src/Admin/Views/General.php:39
-msgid "Floating Chat Layout(s)"
+msgid "Choose Your Chat Experience"
 msgstr ""
 
-#: src/Admin/Views/General.php:45
-msgid "No Floating Chat"
+#: src/Admin/Views/General.php:42
+msgid "Choose how your WhatsApp chat appears."
 msgstr ""
 
 #: src/Admin/Views/General.php:50
+msgid "Disable Chat"
+msgstr ""
+
+#: src/Admin/Views/General.php:55
 msgid "Single Form"
 msgstr ""
 
-#: src/Admin/Views/General.php:56
+#: src/Admin/Views/General.php:61
 msgid "Single Agent"
 msgstr ""
 
-#: src/Admin/Views/General.php:62
+#: src/Admin/Views/General.php:66
+msgid "Pre-Chat Message"
+msgstr ""
+
+#: src/Admin/Views/General.php:72
 msgid "Floating Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:67
-msgid "Multi Agents List"
-msgstr ""
-
-#: src/Admin/Views/General.php:73
-msgid "Multi Agents Grid"
+#: src/Admin/Views/General.php:77
+msgid "Multi-Agent"
 msgstr ""
 
 #: src/Admin/Views/General.php:83
-msgid "With 'No Floating Chat' option, you won't be able to use the floating chat feature. However, you can still access and enjoy other functionalities such as the WooCommerce button, shortcodes, and button blocks provided by the plugin."
+msgid "Multi-Agent Form"
 msgstr ""
 
 #: src/Admin/Views/General.php:93
-msgid "General"
+msgid "By \"Disable Chat\" option selected, the floating chat feature will be disabled. However, you can still use other functionalities, including the WooCommerce button, shortcodes, and button blocks provided by the plugin."
 msgstr ""
 
 #: src/Admin/Views/General.php:103
+msgid "General"
+msgstr ""
+
+#: src/Admin/Views/General.php:113
 msgid "Select “Number” to receive direct messages, or “Group” to let people join your WhatsApp group."
 msgstr ""
 
-#: src/Admin/Views/General.php:121
+#: src/Admin/Views/General.php:130
 msgid "Add your WhatsApp number including the country code (e.g., +880123456189)."
 msgstr ""
 
-#: src/Admin/Views/General.php:123
+#: src/Admin/Views/General.php:132
 msgid "Enter WhatsApp number with country code (e.g., +10123456189)."
 msgstr ""
 
-#: src/Admin/Views/General.php:155
+#: src/Admin/Views/General.php:163
 msgid "Form Fields"
 msgstr ""
 
-#: src/Admin/Views/General.php:157
+#: src/Admin/Views/General.php:165
 msgid "Add and customize the input fields for your WhatsApp form."
 msgstr ""
 
-#: src/Admin/Views/General.php:160
+#: src/Admin/Views/General.php:168
 msgid "Want to unlock the full potential of Form Fields?"
 msgstr ""
 
-#: src/Admin/Views/General.php:160
+#: src/Admin/Views/General.php:168
 msgid "Upgrade To Pro!"
 msgstr ""
 
-#: src/Admin/Views/General.php:168
+#: src/Admin/Views/General.php:176
 msgid "Field Type"
 msgstr ""
 
-#: src/Admin/Views/General.php:171
+#: src/Admin/Views/General.php:179
 msgid "Select the type of form field you want to add (Text, Email, Phone Number, Textarea, or Select). Each field type allows you to collect different kinds of user input."
 msgstr ""
 
-#: src/Admin/Views/General.php:176
+#: src/Admin/Views/General.php:184
 msgid "Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:177
+#: src/Admin/Views/General.php:185
 msgid "Textarea"
 msgstr ""
 
-#: src/Admin/Views/General.php:178
+#: src/Admin/Views/General.php:186
 msgid "Email (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:179
+#: src/Admin/Views/General.php:187
 msgid "Phone Number (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:180
+#: src/Admin/Views/General.php:188
 msgid "Select (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:191
+#: src/Admin/Views/General.php:199
 msgid "Label"
 msgstr ""
 
-#: src/Admin/Views/General.php:194
+#: src/Admin/Views/General.php:202
 msgid "Enter the label text for this field."
 msgstr ""
 
-#: src/Admin/Views/General.php:197
+#: src/Admin/Views/General.php:205
 msgid "The label appears above or beside the input field and helps users understand what information to provide."
 msgstr ""
 
-#: src/Admin/Views/General.php:199
+#: src/Admin/Views/General.php:207
 msgid "Field Label"
 msgstr ""
 
-#: src/Admin/Views/General.php:204
+#: src/Admin/Views/General.php:212
 msgid "Placeholder"
 msgstr ""
 
-#: src/Admin/Views/General.php:207
+#: src/Admin/Views/General.php:215, src/Admin/Views/General.php:349
 msgid "Enter the placeholder text for this field."
 msgstr ""
 
-#: src/Admin/Views/General.php:208
+#: src/Admin/Views/General.php:216, src/Admin/Views/General.php:349
 msgid "The placeholder appears inside the input box and disappears when the user types."
 msgstr ""
 
-#: src/Admin/Views/General.php:210
+#: src/Admin/Views/General.php:218
 msgid "E.g. placeholder"
 msgstr ""
 
-#: src/Admin/Views/General.php:216
+#: src/Admin/Views/General.php:224
 msgid "Default Placeholder"
 msgstr ""
 
-#: src/Admin/Views/General.php:219
+#: src/Admin/Views/General.php:227
 msgid "Set a default placeholder option for the select dropdown (e.g., \"Select Option\"). This option will appear as the first unselectable choice until the user picks a value."
 msgstr ""
 
-#: src/Admin/Views/General.php:221
+#: src/Admin/Views/General.php:229
 msgid "Leave blank if you don't want to display a default placeholder option."
 msgstr ""
 
-#: src/Admin/Views/General.php:222
+#: src/Admin/Views/General.php:230
 msgid "Select Option"
 msgstr ""
 
-#: src/Admin/Views/General.php:229
+#: src/Admin/Views/General.php:237
 msgid "Select Options"
 msgstr ""
 
-#: src/Admin/Views/General.php:233
+#: src/Admin/Views/General.php:241
 msgid "Add the options that will appear in the select dropdown. You can add as many options as needed using the repeater."
 msgstr ""
 
-#: src/Admin/Views/General.php:238
+#: src/Admin/Views/General.php:246
 msgid "Option"
 msgstr ""
 
-#: src/Admin/Views/General.php:241
+#: src/Admin/Views/General.php:249
 msgid "Enter the label for this option. Each entry becomes a selectable choice in the dropdown list."
 msgstr ""
 
-#: src/Admin/Views/General.php:249
+#: src/Admin/Views/General.php:257, src/Admin/Views/General.php:360
 msgid "Required"
 msgstr ""
 
-#: src/Admin/Views/General.php:252
+#: src/Admin/Views/General.php:260, src/Admin/Views/General.php:363
 msgid "Check this option to make the field mandatory. Users will not be able to submit the form without filling in this field."
 msgstr ""
 
-#: src/Admin/Views/General.php:259
+#: src/Admin/Views/General.php:267
 msgid "Custom Validation Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:261
+#: src/Admin/Views/General.php:269
 msgid "Custom Validation Message Preview"
 msgstr ""
 
-#: src/Admin/Views/General.php:261
+#: src/Admin/Views/General.php:269
 msgid "Set a custom error message that will appear if the user leaves this required field empty or enters invalid data."
 msgstr ""
 
-#: src/Admin/Views/General.php:267
+#: src/Admin/Views/General.php:275
 msgid "Name"
 msgstr ""
 
-#: src/Admin/Views/General.php:268
+#: src/Admin/Views/General.php:276
 msgid "Your Name"
 msgstr ""
 
-#: src/Admin/Views/General.php:273, src/Frontend/Templates/items/form.php:16
+#: src/Admin/Views/General.php:281, src/Frontend/Templates/items/form.php:16
 msgid "Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:274
+#: src/Admin/Views/General.php:282
 msgid "Your Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:283
+#: src/Admin/Views/General.php:291
 msgid "Input Label"
 msgstr ""
 
-#: src/Admin/Views/General.php:284
+#: src/Admin/Views/General.php:292
 msgid "Show or hide labels above form fields."
 msgstr ""
 
-#: src/Admin/Views/General.php:295
+#: src/Admin/Views/General.php:303
 msgid "Customize the WhatsApp message template sent after form submission."
 msgstr ""
 
-#: src/Admin/Views/General.php:295
+#: src/Admin/Views/General.php:303
 msgid "Use {form_fields} to include all fields, or insert specific variables (e.g., {text_1}, {textarea_2}) for more control."
 msgstr ""
 
-#: src/Admin/Views/General.php:304
-msgid "Leads (Form Submissions)"
-msgstr ""
-
-#: src/Admin/Views/General.php:306
-msgid "Enable this option to store submitted form data as leads."
-msgstr ""
-
-#: src/Admin/Views/General.php:321
+#: src/Admin/Views/General.php:316
 msgid "Current Time"
 msgstr ""
 
-#: src/Admin/Views/General.php:322
+#: src/Admin/Views/General.php:317
 msgid "Enable to display the current time before the agent’s message."
 msgstr ""
 
-#: src/Admin/Views/General.php:325, src/Admin/Framework/fields/sorter/sorter.php:21
+#: src/Admin/Views/General.php:320, src/Admin/Framework/fields/sorter/sorter.php:21
 msgid "Enabled"
 msgstr ""
 
-#: src/Admin/Views/General.php:326, src/Admin/Framework/fields/sorter/sorter.php:22
+#: src/Admin/Views/General.php:321, src/Admin/Framework/fields/sorter/sorter.php:22
 msgid "Disabled"
 msgstr ""
 
-#: src/Admin/Views/General.php:334
+#: src/Admin/Views/General.php:329, src/Admin/Views/General.php:339
 msgid "Message From Agent"
 msgstr ""
 
-#: src/Admin/Views/General.php:335
+#: src/Admin/Views/General.php:330, src/Admin/Views/General.php:340
 msgid "Add a custom message to display inside the agent’s message box."
 msgstr ""
 
-#: src/Admin/Views/General.php:337
-msgid "Hello 👋 Welcome to {siteTitle}! Click the button below to start chatting with us on WhatsApp."
+#: src/Admin/Views/General.php:332
+msgid "Hello Welcome to {siteTitle}! Click the button below to start chatting with us on WhatsApp."
 msgstr ""
 
-#: src/Admin/Views/General.php:338
+#: src/Admin/Views/General.php:333
 msgid "Global Vars:  {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> {PRODUCT_START} WooCommerce Vars: {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} {PRODUCT_END} <br> <b>Conditional Blocks:</b>  {PRODUCT_START} ... {PRODUCT_END},  {NOT_PRODUCT_START} ... {NOT_PRODUCT_END},  {LOGGEDIN_START} ... {LOGGEDIN_END},  {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}"
 msgstr ""
 
-#: src/Admin/Views/General.php:351
-msgid "Write a friendly, pre-filled message that appears when users click the chat bubble."
+#: src/Admin/Views/General.php:341
+msgid "Hello and Welcome. Is there anything I can help you with?"
 msgstr ""
 
-#: src/Admin/Views/General.php:352
-msgid "Example: \"Hi! I have a question about your services.\""
-msgstr ""
-
-#: src/Admin/Views/General.php:352
-msgid "You can also insert dynamic variables as needed."
-msgstr ""
-
-#: src/Admin/Views/General.php:353, src/Admin/Views/ProductPage.php:117, src/Admin/Views/ShopPage.php:111
+#: src/Admin/Views/General.php:342, src/Admin/Views/General.php:377, src/Admin/Views/General.php:410, src/Admin/Views/ProductPage.php:117, src/Admin/Views/ShopPage.php:111
 msgid "Conditional Blocks:"
 msgstr ""
 
-#: src/Admin/Views/General.php:354
+#: src/Admin/Views/General.php:348
+msgid "Input Placeholder"
+msgstr ""
+
+#: src/Admin/Views/General.php:350, src/Admin/Views/General.php:351
+msgid "Enter your message"
+msgstr ""
+
+#: src/Admin/Views/General.php:376, src/Admin/Views/General.php:408
+msgid "Write a friendly, pre-filled message that appears when users click the chat bubble."
+msgstr ""
+
+#: src/Admin/Views/General.php:376, src/Admin/Views/General.php:409
+msgid "Example: \"Hi! I have a question about your services.\""
+msgstr ""
+
+#: src/Admin/Views/General.php:376, src/Admin/Views/General.php:409
+msgid "You can also insert dynamic variables as needed."
+msgstr ""
+
+#: src/Admin/Views/General.php:377
+msgid "Input:"
+msgstr ""
+
+#: src/Admin/Views/General.php:379
+msgid "{agentMessage}"
+msgstr ""
+
+#: src/Admin/Views/General.php:389
+msgid "Leads (Form Submissions)"
+msgstr ""
+
+#: src/Admin/Views/General.php:391
+msgid "Enable this option to store submitted form data as leads."
+msgstr ""
+
+#: src/Admin/Views/General.php:411
 msgid "Hello! I have a question about {currentTitle}."
 msgstr ""
 
-#: src/Admin/Views/General.php:369, src/Admin/Views/General.php:395, src/Admin/Views/General.php:675
+#: src/Admin/Views/General.php:424, src/Admin/Views/General.php:450, src/Admin/Views/General.php:730
 msgid "Availability"
 msgstr ""
 
-#: src/Admin/Views/General.php:380, src/Admin/Views/General.php:659, src/Frontend/elementor-widgets/elementor-widget.php:249
+#: src/Admin/Views/General.php:435, src/Admin/Views/General.php:714, src/Frontend/elementor-widgets/elementor-widget.php:249
 msgid "Timezone"
 msgstr ""
 
-#: src/Admin/Views/General.php:381
+#: src/Admin/Views/General.php:436
 msgid "Select your local timezone. Availability schedules will be applied based on this timezone."
 msgstr ""
 
-#: src/Admin/Views/General.php:383, src/Admin/Views/General.php:667
+#: src/Admin/Views/General.php:438, src/Admin/Views/General.php:722
 msgid "Select Timezone"
 msgstr ""
 
-#: src/Admin/Views/General.php:396
+#: src/Admin/Views/General.php:451
 msgid "Set your daily availability using 24-hour format (e.g., 09:00 to 18:00). To mark a full day as offline, set both From and To values to 00:00."
 msgstr ""
 
-#: src/Admin/Views/General.php:405, src/Admin/Views/General.php:685, src/Frontend/elementor-widgets/elementor-widget.php:856
+#: src/Admin/Views/General.php:460, src/Admin/Views/General.php:740, src/Frontend/elementor-widgets/elementor-widget.php:856
 msgid "Sunday"
 msgstr ""
 
-#: src/Admin/Views/General.php:422, src/Admin/Views/General.php:702, src/Frontend/elementor-widgets/elementor-widget.php:895
+#: src/Admin/Views/General.php:477, src/Admin/Views/General.php:757, src/Frontend/elementor-widgets/elementor-widget.php:895
 msgid "Monday"
 msgstr ""
 
-#: src/Admin/Views/General.php:439, src/Admin/Views/General.php:719, src/Frontend/elementor-widgets/elementor-widget.php:934
+#: src/Admin/Views/General.php:494, src/Admin/Views/General.php:774, src/Frontend/elementor-widgets/elementor-widget.php:934
 msgid "Tuesday"
 msgstr ""
 
-#: src/Admin/Views/General.php:456, src/Admin/Views/General.php:736, src/Frontend/elementor-widgets/elementor-widget.php:973
+#: src/Admin/Views/General.php:511, src/Admin/Views/General.php:791, src/Frontend/elementor-widgets/elementor-widget.php:973
 msgid "Wednesday"
 msgstr ""
 
-#: src/Admin/Views/General.php:474, src/Admin/Views/General.php:754, src/Frontend/elementor-widgets/elementor-widget.php:1012
+#: src/Admin/Views/General.php:529, src/Admin/Views/General.php:809, src/Frontend/elementor-widgets/elementor-widget.php:1012
 msgid "Thursday"
 msgstr ""
 
-#: src/Admin/Views/General.php:492, src/Admin/Views/General.php:772, src/Frontend/elementor-widgets/elementor-widget.php:1051
+#: src/Admin/Views/General.php:547, src/Admin/Views/General.php:827, src/Frontend/elementor-widgets/elementor-widget.php:1051
 msgid "Friday"
 msgstr ""
 
-#: src/Admin/Views/General.php:510, src/Admin/Views/General.php:790, src/Frontend/elementor-widgets/elementor-widget.php:1089
+#: src/Admin/Views/General.php:565, src/Admin/Views/General.php:845, src/Frontend/elementor-widgets/elementor-widget.php:1089
 msgid "Saturday"
 msgstr ""
 
-#: src/Admin/Views/General.php:536
+#: src/Admin/Views/General.php:591
 msgid "Show Search Field"
 msgstr ""
 
-#: src/Admin/Views/General.php:537
+#: src/Admin/Views/General.php:592
 msgid "Show or hide the search box. This helps visitors quickly find an agent when you have many agents."
 msgstr ""
 
-#: src/Admin/Views/General.php:541, src/Admin/Views/General.php:1815, src/Admin/Views/General.php:1831, src/Admin/Views/General.php:1852, src/Frontend/elementor-widgets/elementor-widget.php:229, src/Frontend/elementor-widgets/elementor-widget.php:1418, src/Frontend/elementor-widgets/elementor-widget.php:1488
+#: src/Admin/Views/General.php:596, src/Admin/Views/General.php:1867, src/Admin/Views/General.php:1883, src/Admin/Views/General.php:1904, src/Frontend/elementor-widgets/elementor-widget.php:229, src/Frontend/elementor-widgets/elementor-widget.php:1418, src/Frontend/elementor-widgets/elementor-widget.php:1488
 msgid "Yes"
 msgstr ""
 
-#: src/Admin/Views/General.php:542, src/Admin/Views/General.php:1816, src/Admin/Views/General.php:1832, src/Admin/Views/General.php:1853, src/Frontend/elementor-widgets/elementor-widget.php:230, src/Frontend/elementor-widgets/elementor-widget.php:1419, src/Frontend/elementor-widgets/elementor-widget.php:1489
+#: src/Admin/Views/General.php:597, src/Admin/Views/General.php:1868, src/Admin/Views/General.php:1884, src/Admin/Views/General.php:1905, src/Frontend/elementor-widgets/elementor-widget.php:230, src/Frontend/elementor-widgets/elementor-widget.php:1419, src/Frontend/elementor-widgets/elementor-widget.php:1489
 msgid "No"
 msgstr ""
 
-#: src/Admin/Views/General.php:551
+#: src/Admin/Views/General.php:606
 msgid "Chat Agents"
 msgstr ""
 
-#: src/Admin/Views/General.php:553
+#: src/Admin/Views/General.php:608
 msgid "Add and manage your chat agents. Each agent can have a name, photo, WhatsApp type (number or group), pre-filled message, timezone, availability, designation, and custom online/offline text. You can add as many agents as you need."
 msgstr ""
 
-#: src/Admin/Views/General.php:562, src/Admin/Views/General.php:961
+#: src/Admin/Views/General.php:617, src/Admin/Views/General.php:1016
 msgid "Agent Name"
 msgstr ""
 
-#: src/Admin/Views/General.php:565
+#: src/Admin/Views/General.php:620
 msgid "Enter the agent’s name."
 msgstr ""
 
-#: src/Admin/Views/General.php:576
+#: src/Admin/Views/General.php:631
 msgid "Agent Designation"
 msgstr ""
 
-#: src/Admin/Views/General.php:579
+#: src/Admin/Views/General.php:634
 msgid "Enter the agent’s designation or role (e.g., Sales Manager, Support Agent)."
 msgstr ""
 
-#: src/Admin/Views/General.php:590, src/Admin/Views/General.php:942, src/Admin/Views/ThankYouPage.php:257
+#: src/Admin/Views/General.php:645, src/Admin/Views/General.php:997, src/Admin/Views/ThankYouPage.php:257
 msgid "Agent Photo"
 msgstr ""
 
-#: src/Admin/Views/General.php:593
+#: src/Admin/Views/General.php:648
 msgid "Upload or select an image to use as the agent’s photo."
 msgstr ""
 
-#: src/Admin/Views/General.php:609
+#: src/Admin/Views/General.php:664
 msgid "Select \"Number\" to receive direct messages or \"Group\" to let people join your WhatsApp group."
 msgstr ""
 
-#: src/Admin/Views/General.php:620
+#: src/Admin/Views/General.php:675
 msgid "WhatsApp Number for Agent"
 msgstr ""
 
-#: src/Admin/Views/General.php:633
+#: src/Admin/Views/General.php:688
 msgid "Invite your visitors to join into your whatapp group."
 msgstr ""
 
-#: src/Admin/Views/General.php:644
+#: src/Admin/Views/General.php:699
 msgid "Write a friendly, pre-filled message that will appear when users start a chat with this agent. Example: “Hi! I have a question about your services.”"
 msgstr ""
 
-#: src/Admin/Views/General.php:662
+#: src/Admin/Views/General.php:717
 msgid "Select the agent’s timezone. This ensures availability times are shown correctly, even if the user is in a different timezone."
 msgstr ""
 
-#: src/Admin/Views/General.php:678
+#: src/Admin/Views/General.php:733
 msgid "Set the agent’s available hours using 24-hour format (e.g., From 00:00 to 23:59). To mark a full day as unavailable, use 00:00 for both From and To values."
 msgstr ""
 
-#: src/Admin/Views/General.php:811
+#: src/Admin/Views/General.php:866
 msgid "Agent Online Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:814
+#: src/Admin/Views/General.php:869
 msgid "Set the text that will be shown when the agent is available/online (e.g., “I am Online”)."
 msgstr ""
 
-#: src/Admin/Views/General.php:824
+#: src/Admin/Views/General.php:879
 msgid "Agent Offline Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:827
+#: src/Admin/Views/General.php:882
 msgid "Set the text that will be shown when the agent is unavailable/offline (e.g., “I am Offline”)."
 msgstr ""
 
-#: src/Admin/Views/General.php:836
+#: src/Admin/Views/General.php:891
 msgid "Sarah C. Patrick"
 msgstr ""
 
-#: src/Admin/Views/General.php:838, src/Admin/Views/General.php:849, src/Admin/Views/General.php:860, src/Admin/Views/General.php:871, src/Admin/Views/General.php:882, src/Admin/Views/General.php:893
+#: src/Admin/Views/General.php:893, src/Admin/Views/General.php:904, src/Admin/Views/General.php:915, src/Admin/Views/General.php:926, src/Admin/Views/General.php:937, src/Admin/Views/General.php:948
 msgid "+8801123456588"
 msgstr ""
 
-#: src/Admin/Views/General.php:839, src/Admin/Views/General.php:894
+#: src/Admin/Views/General.php:894, src/Admin/Views/General.php:949
 msgid "Technical support"
 msgstr ""
 
-#: src/Admin/Views/General.php:840, src/Admin/Views/General.php:851, src/Admin/Views/General.php:862, src/Admin/Views/General.php:873, src/Admin/Views/General.php:884, src/Admin/Views/General.php:895, src/Frontend/Shortcode/CustomShortcode.php:60
+#: src/Admin/Views/General.php:895, src/Admin/Views/General.php:906, src/Admin/Views/General.php:917, src/Admin/Views/General.php:928, src/Admin/Views/General.php:939, src/Admin/Views/General.php:950, src/Frontend/Shortcode/CustomShortcode.php:60
 msgid "I am online"
 msgstr ""
 
-#: src/Admin/Views/General.php:841, src/Admin/Views/General.php:852, src/Admin/Views/General.php:863, src/Admin/Views/General.php:874, src/Admin/Views/General.php:885, src/Admin/Views/General.php:896, src/Frontend/Shortcode/CustomShortcode.php:61
+#: src/Admin/Views/General.php:896, src/Admin/Views/General.php:907, src/Admin/Views/General.php:918, src/Admin/Views/General.php:929, src/Admin/Views/General.php:940, src/Admin/Views/General.php:951, src/Frontend/Shortcode/CustomShortcode.php:61
 msgid "I am offline"
 msgstr ""
 
-#: src/Admin/Views/General.php:847
+#: src/Admin/Views/General.php:902
 msgid "Patricia J. Hunt"
 msgstr ""
 
-#: src/Admin/Views/General.php:850
+#: src/Admin/Views/General.php:905
 msgid "Marketing support"
 msgstr ""
 
-#: src/Admin/Views/General.php:858
+#: src/Admin/Views/General.php:913
 msgid "Frederic M. Tune"
 msgstr ""
 
-#: src/Admin/Views/General.php:861
+#: src/Admin/Views/General.php:916
 msgid "Sales support"
 msgstr ""
 
-#: src/Admin/Views/General.php:869, src/Admin/Views/General.php:880
+#: src/Admin/Views/General.php:924, src/Admin/Views/General.php:935
 msgid "Douglas A. Smith"
 msgstr ""
 
-#: src/Admin/Views/General.php:872
+#: src/Admin/Views/General.php:927
 msgid "Product manager"
 msgstr ""
 
-#: src/Admin/Views/General.php:883
+#: src/Admin/Views/General.php:938
 msgid "Support Manager"
 msgstr ""
 
-#: src/Admin/Views/General.php:891
+#: src/Admin/Views/General.php:946
 msgid "Garland D. Homer"
 msgstr ""
 
-#: src/Admin/Views/General.php:907
+#: src/Admin/Views/General.php:962
 msgid "Header & Footer"
 msgstr ""
 
-#: src/Admin/Views/General.php:913
+#: src/Admin/Views/General.php:968
 msgid "Box Header"
 msgstr ""
 
-#: src/Admin/Views/General.php:920, src/Admin/Views/ThankYouPage.php:241
+#: src/Admin/Views/General.php:975, src/Admin/Views/ThankYouPage.php:241
 msgid "Agent Photo Type"
 msgstr ""
 
-#: src/Admin/Views/General.php:923, src/Admin/Views/ThankYouPage.php:243
+#: src/Admin/Views/General.php:978, src/Admin/Views/ThankYouPage.php:243
 msgid "Choose how the agent photo is displayed:"
 msgstr ""
 
-#: src/Admin/Views/General.php:925, src/Admin/Views/ThankYouPage.php:243
+#: src/Admin/Views/General.php:980, src/Admin/Views/ThankYouPage.php:243
 msgid "Use the plugin’s built-in photo."
 msgstr ""
 
-#: src/Admin/Views/General.php:926, src/Admin/Views/ThankYouPage.php:243
+#: src/Admin/Views/General.php:981, src/Admin/Views/ThankYouPage.php:243
 msgid "Upload your own image."
 msgstr ""
 
-#: src/Admin/Views/General.php:927, src/Admin/Views/ThankYouPage.php:243
+#: src/Admin/Views/General.php:982, src/Admin/Views/ThankYouPage.php:243
 msgid "No photo will be shown."
 msgstr ""
 
-#: src/Admin/Views/General.php:930, src/Admin/Views/ThankYouPage.php:245, src/Admin/Framework/fields/typography/typography.php:121, src/Admin/Framework/fields/typography/typography.php:134, src/Admin/Framework/fields/typography/typography.php:147, src/Admin/Framework/fields/typography/typography.php:162, src/Admin/Framework/fields/typography/typography.php:178, src/Admin/Framework/fields/typography/typography.php:191, src/Admin/Framework/fields/typography/typography.php:205, src/Admin/Framework/fields/typography/typography.php:223
+#: src/Admin/Views/General.php:985, src/Admin/Views/ThankYouPage.php:245, src/Admin/Framework/fields/typography/typography.php:121, src/Admin/Framework/fields/typography/typography.php:134, src/Admin/Framework/fields/typography/typography.php:147, src/Admin/Framework/fields/typography/typography.php:162, src/Admin/Framework/fields/typography/typography.php:178, src/Admin/Framework/fields/typography/typography.php:191, src/Admin/Framework/fields/typography/typography.php:205, src/Admin/Framework/fields/typography/typography.php:223
 msgid "Default"
 msgstr ""
 
-#: src/Admin/Views/General.php:932, src/Admin/Views/ThankYouPage.php:247, src/Admin/Framework/fields/border/border.php:70, src/Admin/Framework/fields/typography/typography.php:201, src/Admin/Framework/fields/typography/typography.php:215
+#: src/Admin/Views/General.php:987, src/Admin/Views/ThankYouPage.php:247, src/Admin/Framework/fields/border/border.php:70, src/Admin/Framework/fields/typography/typography.php:201, src/Admin/Framework/fields/typography/typography.php:215
 msgid "None"
 msgstr ""
 
-#: src/Admin/Views/General.php:946, src/Admin/Views/ThankYouPage.php:258
+#: src/Admin/Views/General.php:1001, src/Admin/Views/ThankYouPage.php:258
 msgid "Upload an agent photo to display inside the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:950, src/Admin/Views/ThankYouPage.php:259
+#: src/Admin/Views/General.php:1005, src/Admin/Views/ThankYouPage.php:259
 msgid "Upload or select an image from the media library."
 msgstr ""
 
-#: src/Admin/Views/General.php:965, src/Admin/Views/ThankYouPage.php:271
+#: src/Admin/Views/General.php:1020, src/Admin/Views/ThankYouPage.php:271
 msgid "Enter the agent’s name to display inside the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:970
+#: src/Admin/Views/General.php:1025
 msgid "John Doe"
 msgstr ""
 
-#: src/Admin/Views/General.php:978
+#: src/Admin/Views/General.php:1033
 msgid "Subtitle"
 msgstr ""
 
-#: src/Admin/Views/General.php:982
+#: src/Admin/Views/General.php:1037
 msgid "Enter a subtitle to display below the agent’s name in the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:986
+#: src/Admin/Views/General.php:1041
 msgid "Typically replies within a day"
 msgstr ""
 
-#: src/Admin/Views/General.php:993
+#: src/Admin/Views/General.php:1047
 msgid "Offline Subtitle"
 msgstr ""
 
-#: src/Admin/Views/General.php:994
+#: src/Admin/Views/General.php:1048
 msgid "Enter a subtitle to display when the agent is offline in the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:995
+#: src/Admin/Views/General.php:1049
 msgid "Currently offline, will reply soon."
 msgstr ""
 
-#: src/Admin/Views/General.php:1005
+#: src/Admin/Views/General.php:1059
 msgid "Bubble Title"
 msgstr ""
 
-#: src/Admin/Views/General.php:1009
+#: src/Admin/Views/General.php:1063
 msgid "Enter the main title text to display at the top of the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:1013
+#: src/Admin/Views/General.php:1067
 msgid "Need Help? Send a WhatsApp message now"
 msgstr ""
 
-#: src/Admin/Views/General.php:1022
+#: src/Admin/Views/General.php:1076
 msgid "Bubble Subtitle"
 msgstr ""
 
-#: src/Admin/Views/General.php:1026
+#: src/Admin/Views/General.php:1080
 msgid "Enter a subtitle to display below the main title inside the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:1030
+#: src/Admin/Views/General.php:1084
 msgid "Click one of our representatives below"
 msgstr ""
 
-#: src/Admin/Views/General.php:1038
+#: src/Admin/Views/General.php:1091
 msgid "Bubble Header Content Position"
 msgstr ""
 
-#: src/Admin/Views/General.php:1042
+#: src/Admin/Views/General.php:1095
 msgid "Choose the alignment for the header content."
 msgstr ""
 
-#: src/Admin/Views/General.php:1049, src/Frontend/elementor-widgets/elementor-widget.php:1537, src/Admin/Framework/fields/typography/typography.php:173
+#: src/Admin/Views/General.php:1102, src/Frontend/elementor-widgets/elementor-widget.php:1537, src/Admin/Framework/fields/typography/typography.php:173
 msgid "Left"
 msgstr ""
 
-#: src/Admin/Views/General.php:1050, src/Frontend/elementor-widgets/elementor-widget.php:1541, src/Admin/Framework/fields/typography/typography.php:174
+#: src/Admin/Views/General.php:1103, src/Frontend/elementor-widgets/elementor-widget.php:1541, src/Admin/Framework/fields/typography/typography.php:174
 msgid "Center"
 msgstr ""
 
-#: src/Admin/Views/General.php:1058
+#: src/Admin/Views/General.php:1111
 msgid "Box Footer"
 msgstr ""
 
-#: src/Admin/Views/General.php:1070
+#: src/Admin/Views/General.php:1123
 msgid "Enable a GDPR compliance checkbox for user consent before sending a message."
 msgstr ""
 
-#: src/Admin/Views/General.php:1083
+#: src/Admin/Views/General.php:1136
 msgid "GDPR Compliance Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:1086
+#: src/Admin/Views/General.php:1139
 msgid "Customize the GDPR compliance text shown with the consent checkbox."
 msgstr ""
 
-#: src/Admin/Views/General.php:1089
+#: src/Admin/Views/General.php:1142
 msgid "Please accept our <a href=\"#\">privacy policy</a> before starting a conversation."
 msgstr ""
 
-#: src/Admin/Views/General.php:1098
+#: src/Admin/Views/General.php:1151
 msgid "Loading Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:1102
+#: src/Admin/Views/General.php:1155
 msgid "Enter the loading text shown while the message is being sent or redirecting."
 msgstr ""
 
-#: src/Admin/Views/General.php:1105
+#: src/Admin/Views/General.php:1158
 msgid "Redirecting..."
 msgstr ""
 
-#: src/Admin/Views/General.php:1115
+#: src/Admin/Views/General.php:1168
 msgid "Icon for Send Message Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:1119
+#: src/Admin/Views/General.php:1172
 msgid "Select an icon to display before the send message button text."
 msgstr ""
 
-#: src/Admin/Views/General.php:1163
+#: src/Admin/Views/General.php:1216
 msgid "Send Message Button Label"
 msgstr ""
 
-#: src/Admin/Views/General.php:1167
+#: src/Admin/Views/General.php:1220
 msgid "Enter the text to display on the send message button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1171
+#: src/Admin/Views/General.php:1224
 msgid "Send Message"
 msgstr ""
 
-#: src/Admin/Views/General.php:1179
+#: src/Admin/Views/General.php:1232
 msgid "Footer Content"
 msgstr ""
 
-#: src/Admin/Views/General.php:1182
+#: src/Admin/Views/General.php:1235
 msgid "Enable or disable the footer text below the chat box. You can also replace the default text with your own custom message."
 msgstr ""
 
-#: src/Admin/Views/General.php:1195
+#: src/Admin/Views/General.php:1248
 msgid "Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:1201
+#: src/Admin/Views/General.php:1254
 msgid "Floating Button Style"
 msgstr ""
 
-#: src/Admin/Views/General.php:1212
+#: src/Admin/Views/General.php:1265
 msgid "Icon Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:1294
+#: src/Admin/Views/General.php:1346
 msgid "Icon for Circle Button Close"
 msgstr ""
 
-#: src/Admin/Views/General.php:1297
+#: src/Admin/Views/General.php:1349
 msgid "Select the icon to display when the circular chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/General.php:1380
+#: src/Admin/Views/General.php:1432
 msgid "Icon for Button Close"
 msgstr ""
 
-#: src/Admin/Views/General.php:1384
+#: src/Admin/Views/General.php:1436
 msgid "Select the icon to display when the floating chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/General.php:1425
+#: src/Admin/Views/General.php:1477
 msgid "Select the animation effect used when toggling the circular chat button between open and close states."
 msgstr ""
 
-#: src/Admin/Views/General.php:1430
+#: src/Admin/Views/General.php:1482
 msgid "Slide Down"
 msgstr ""
 
-#: src/Admin/Views/General.php:1431, src/Admin/Views/General.php:1888
+#: src/Admin/Views/General.php:1483, src/Admin/Views/General.php:1940
 msgid "Fade"
 msgstr ""
 
-#: src/Admin/Views/General.php:1432
+#: src/Admin/Views/General.php:1484
 msgid "Rotate (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1433, src/Admin/Views/General.php:1901
+#: src/Admin/Views/General.php:1485, src/Admin/Views/General.php:1953
 msgid "Slide Up (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1541
+#: src/Admin/Views/General.php:1593
 msgid "Set your button label color."
 msgstr ""
 
-#: src/Admin/Views/General.php:1601
+#: src/Admin/Views/General.php:1653
 msgid "Adjust the inner spacing (padding) of the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1619
+#: src/Admin/Views/General.php:1671
 msgid "Button Tooltip"
 msgstr ""
 
-#: src/Admin/Views/General.php:1623
+#: src/Admin/Views/General.php:1675
 msgid "Enable and customize the tooltip text that appears when hovering over the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1629
+#: src/Admin/Views/General.php:1681
 msgid "On Hover"
 msgstr ""
 
-#: src/Admin/Views/General.php:1638
+#: src/Admin/Views/General.php:1690
 msgid "Button Tooltip Text"
 msgstr ""
 
-#: src/Admin/Views/General.php:1642
+#: src/Admin/Views/General.php:1694
 msgid "Enter the text that will appear inside the tooltip when hovering over the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1646
+#: src/Admin/Views/General.php:1698
 msgid "Need Help? Chat with us"
 msgstr ""
 
-#: src/Admin/Views/General.php:1653
+#: src/Admin/Views/General.php:1705
 msgid "Button Tooltip Background"
 msgstr ""
 
-#: src/Admin/Views/General.php:1656
+#: src/Admin/Views/General.php:1708
 msgid "Choose the background color for the tooltip that appears when hovering over the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1667
+#: src/Admin/Views/General.php:1719
 msgid "Button Tooltip Width"
 msgstr ""
 
-#: src/Admin/Views/General.php:1671
+#: src/Admin/Views/General.php:1723
 msgid "Set the maximum width of the tooltip that appears when hovering over the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1687
+#: src/Admin/Views/General.php:1739
 msgid "Positioning"
 msgstr ""
 
-#: src/Admin/Views/General.php:1692
+#: src/Admin/Views/General.php:1744
 msgid "Bubble Position"
 msgstr ""
 
-#: src/Admin/Views/General.php:1695
+#: src/Admin/Views/General.php:1747
 msgid "Select the screen position where the floating chat button will appear."
 msgstr ""
 
-#: src/Admin/Views/General.php:1701
+#: src/Admin/Views/General.php:1753
 msgid "Bottom Right"
 msgstr ""
 
-#: src/Admin/Views/General.php:1704
+#: src/Admin/Views/General.php:1756
 msgid "Bottom Left"
 msgstr ""
 
-#: src/Admin/Views/General.php:1707
+#: src/Admin/Views/General.php:1759
 msgid "Middle Right"
 msgstr ""
 
-#: src/Admin/Views/General.php:1711
+#: src/Admin/Views/General.php:1763
 msgid "Middle Left"
 msgstr ""
 
-#: src/Admin/Views/General.php:1722
+#: src/Admin/Views/General.php:1774
 msgid "Margin from Bottom Right"
 msgstr ""
 
-#: src/Admin/Views/General.php:1725
+#: src/Admin/Views/General.php:1777
 msgid "Set the margin (spacing) of the floating chat button from the bottom and right edges of the screen. Adjust to reposition the button as needed."
 msgstr ""
 
-#: src/Admin/Views/General.php:1743
+#: src/Admin/Views/General.php:1795
 msgid "Margin from Bottom Left"
 msgstr ""
 
-#: src/Admin/Views/General.php:1746
+#: src/Admin/Views/General.php:1798
 msgid "Set the margin (spacing) of the floating chat button from the bottom and left edges of the screen. Adjust to reposition the button as needed."
 msgstr ""
 
-#: src/Admin/Views/General.php:1764
+#: src/Admin/Views/General.php:1816
 msgid "Margin from Middle Right"
 msgstr ""
 
-#: src/Admin/Views/General.php:1767
+#: src/Admin/Views/General.php:1819
 msgid "Set the margin (spacing) of the floating chat button from the right edge of the screen when positioned in the middle. Adjust to fine-tune its placement."
 msgstr ""
 
-#: src/Admin/Views/General.php:1785
+#: src/Admin/Views/General.php:1837
 msgid "Margin from Middle Left"
 msgstr ""
 
-#: src/Admin/Views/General.php:1788
+#: src/Admin/Views/General.php:1840
 msgid "Set the margin (spacing) of the floating chat button from the left edge of the screen when positioned in the middle. Adjust to fine-tune its placement."
 msgstr ""
 
-#: src/Admin/Views/General.php:1807
+#: src/Admin/Views/General.php:1859
 msgid "Different Positioning for Tablet Devices"
 msgstr ""
 
-#: src/Admin/Views/General.php:1810
+#: src/Admin/Views/General.php:1862
 msgid "Enable this option to set a custom bubble position specifically for tablet devices. Useful for optimizing layout and user experience on medium screens."
 msgstr ""
 
-#: src/Admin/Views/General.php:1823
+#: src/Admin/Views/General.php:1875
 msgid "Different Positioning for Mobile Devices"
 msgstr ""
 
-#: src/Admin/Views/General.php:1826
+#: src/Admin/Views/General.php:1878
 msgid "Enable this option to set a custom chat bubble position specifically for mobile devices. Useful for optimizing layout and usability on smaller screens."
 msgstr ""
 
-#: src/Admin/Views/General.php:1839, src/Frontend/elementor-widgets/elementor-widget.php:144, src/Admin/Framework/fields/border/border.php:118
+#: src/Admin/Views/General.php:1891, src/Frontend/elementor-widgets/elementor-widget.php:144, src/Admin/Framework/fields/border/border.php:118
 msgid "Style"
 msgstr ""
 
-#: src/Admin/Views/General.php:1846
+#: src/Admin/Views/General.php:1898
 msgid "Auto Open Popup"
 msgstr ""
 
-#: src/Admin/Views/General.php:1849
+#: src/Admin/Views/General.php:1901
 msgid "Enable this option to automatically open the chat popup when the page loads. Useful for drawing visitor attention without requiring a click."
 msgstr ""
 
-#: src/Admin/Views/General.php:1861
+#: src/Admin/Views/General.php:1913
 msgid "Auto Open Popup Timeout"
 msgstr ""
 
-#: src/Admin/Views/General.php:1864
+#: src/Admin/Views/General.php:1916
 msgid "Set the delay (in seconds) before the chat popup automatically opens after the page loads."
 msgstr ""
 
-#: src/Admin/Views/General.php:1873
+#: src/Admin/Views/General.php:1925
 msgid "ms"
 msgstr ""
 
-#: src/Admin/Views/General.php:1880
+#: src/Admin/Views/General.php:1932
 msgid "Select Animation for Bubble"
 msgstr ""
 
-#: src/Admin/Views/General.php:1883
+#: src/Admin/Views/General.php:1935
 msgid "Choose an animation style for how the chat bubble appears on the screen. You can pick a specific effect or select \"Random\" to apply a different animation each time."
 msgstr ""
 
-#: src/Admin/Views/General.php:1889
+#: src/Admin/Views/General.php:1941
 msgid "Fade Right"
 msgstr ""
 
-#: src/Admin/Views/General.php:1890
+#: src/Admin/Views/General.php:1942
 msgid "Fade Down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1891
+#: src/Admin/Views/General.php:1943
 msgid "Ease Down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1892
+#: src/Admin/Views/General.php:1944
 msgid "Fade In Scale (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1893
+#: src/Admin/Views/General.php:1945
 msgid "Rotation (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1894
+#: src/Admin/Views/General.php:1946
 msgid "Slide Fall (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1895
+#: src/Admin/Views/General.php:1947
 msgid "Slide Down (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1896
+#: src/Admin/Views/General.php:1948
 msgid "Rotate Left (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1897
+#: src/Admin/Views/General.php:1949
 msgid "Flip Horizontal (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1898
+#: src/Admin/Views/General.php:1950
 msgid "Flip Vertical (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1899
+#: src/Admin/Views/General.php:1951
 msgid "Flip Up (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1900
+#: src/Admin/Views/General.php:1952
 msgid "Super Scaled (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1902
+#: src/Admin/Views/General.php:1954
 msgid "Random (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:1912
+#: src/Admin/Views/General.php:1964
 msgid "Select Bubble Layout Mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:1915
+#: src/Admin/Views/General.php:1967
 msgid "Choose a color mode for the chat bubble. This controls the overall appearance and theme style of the bubble."
 msgstr ""
 
-#: src/Admin/Views/General.php:1921
+#: src/Admin/Views/General.php:1973
 msgid "Light Mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:1924
+#: src/Admin/Views/General.php:1976
 msgid "Dark Mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:1928
+#: src/Admin/Views/General.php:1980
 msgid "Night Mode"
 msgstr ""
 
-#: src/Admin/Views/General.php:1939
+#: src/Admin/Views/General.php:1991
 msgid "Custom Bubble Trigger"
 msgstr ""
 
-#: src/Admin/Views/General.php:1942
+#: src/Admin/Views/General.php:1994
 msgid "Add custom CSS selectors (e.g., .classname, #idname) that can also act as triggers to open the chat bubble. Useful when you want other elements on your site to open the chat besides the default button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1945
+#: src/Admin/Views/General.php:1997
 msgid ".classname, #idname"
 msgstr ""
 
-#: src/Admin/Views/General.php:1952
+#: src/Admin/Views/General.php:2004
 msgid "Color Settings"
 msgstr ""
 
-#: src/Admin/Views/General.php:1955
+#: src/Admin/Views/General.php:2007
 msgid "Preview Image"
 msgstr ""
 
-#: src/Admin/Views/General.php:1958
+#: src/Admin/Views/General.php:2010
 msgid "Set your brand colors for the chat bubble. Adjust the Primary and Secondary colors to match your site style."
 msgstr ""
 
-#: src/Admin/Views/General.php:1963
+#: src/Admin/Views/General.php:2015
 msgid "Primary"
 msgstr ""
 
-#: src/Admin/Views/General.php:1964
+#: src/Admin/Views/General.php:2016
 msgid "Secondary"
 msgstr ""
 
-#: src/Admin/Views/General.php:1976
+#: src/Admin/Views/General.php:2028
 msgid "Send Button"
 msgstr ""
 
-#: src/Admin/Views/General.php:1977
+#: src/Admin/Views/General.php:2029
 msgid "Unlock full customization of the Send Button colors with the "
 msgstr ""
 
-#: src/Admin/Views/General.php:1978
+#: src/Admin/Views/General.php:2030
 msgid "Pro version."
 msgstr ""
 
-#: src/Admin/Views/General.php:1982
+#: src/Admin/Views/General.php:2034
 msgid "Choose the colors for the send button."
 msgstr ""
 
-#: src/Admin/Views/General.php:1986, src/Admin/Framework/fields/background/background.php:280, src/Admin/Framework/fields/border/border.php:136
+#: src/Admin/Views/General.php:2038, src/Admin/Framework/fields/background/background.php:280, src/Admin/Framework/fields/border/border.php:136
 msgid "Color"
 msgstr ""
 
-#: src/Admin/Views/General.php:1988
+#: src/Admin/Views/General.php:2040
 msgid "Background"
 msgstr ""
 
-#: src/Admin/Views/General.php:1989
+#: src/Admin/Views/General.php:2041
 msgid "Hover Background"
 msgstr ""
 
-#: src/Admin/Views/General.php:1995
+#: src/Admin/Views/General.php:2047
 msgid "Typography"
 msgstr ""
 
-#: src/Admin/Views/General.php:1998
+#: src/Admin/Views/General.php:2050
 msgid "Select the font family and weight for your chat bubble text. Adjust these options to keep the widget consistent with your site’s typography."
 msgstr ""
 
-#: src/Admin/Views/General.php:2016
+#: src/Admin/Views/General.php:2068
 msgid "Others"
 msgstr ""
 
-#: src/Admin/Views/General.php:2023
+#: src/Admin/Views/General.php:2075
 msgid "Visiblity"
 msgstr ""
 
-#: src/Admin/Views/General.php:2029
+#: src/Admin/Views/General.php:2081
 msgid "Device Visibility"
 msgstr ""
 
-#: src/Admin/Views/General.php:2032
+#: src/Admin/Views/General.php:2084
 msgid "Everywhere:"
 msgstr ""
 
-#: src/Admin/Views/General.php:2032
+#: src/Admin/Views/General.php:2084
 msgid "Visible on all devices."
 msgstr ""
 
-#: src/Admin/Views/General.php:2033
+#: src/Admin/Views/General.php:2085
 msgid "Desktop Only:"
 msgstr ""
 
-#: src/Admin/Views/General.php:2033
+#: src/Admin/Views/General.php:2085
 msgid "Visible on devices wider than 991px."
 msgstr ""
 
-#: src/Admin/Views/General.php:2034
+#: src/Admin/Views/General.php:2086
 msgid "Tablet Only:"
 msgstr ""
 
-#: src/Admin/Views/General.php:2034
+#: src/Admin/Views/General.php:2086
 msgid "Visible on devices between 576px and 991px."
 msgstr ""
 
-#: src/Admin/Views/General.php:2035
+#: src/Admin/Views/General.php:2087
 msgid "Mobile Only:"
 msgstr ""
 
-#: src/Admin/Views/General.php:2035
+#: src/Admin/Views/General.php:2087
 msgid "Visible on devices smaller than 576px."
 msgstr ""
 
-#: src/Admin/Views/General.php:2052
+#: src/Admin/Views/General.php:2104
 msgid "Visibility By"
 msgstr ""
 
-#: src/Admin/Views/General.php:2055
+#: src/Admin/Views/General.php:2107
 msgid "Select where the chat bubble should be visible. You can enable it by specific content types such as pages, posts, products, categories, or tags."
 msgstr ""
 
-#: src/Admin/Views/General.php:2059, src/Admin/Views/General.php:2078, src/Admin/Views/General.php:2109
+#: src/Admin/Views/General.php:2111, src/Admin/Views/General.php:2130, src/Admin/Views/General.php:2161
 msgid "Theme Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:2060, src/Admin/Views/General.php:2137, src/Admin/Views/General.php:2168
+#: src/Admin/Views/General.php:2112, src/Admin/Views/General.php:2189, src/Admin/Views/General.php:2220
 msgid "Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:2061
+#: src/Admin/Views/General.php:2113
 msgid "Posts (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2062
+#: src/Admin/Views/General.php:2114
 msgid "Products (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2063
+#: src/Admin/Views/General.php:2115
 msgid "Post Categories (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2064
+#: src/Admin/Views/General.php:2116
 msgid "Post Tags (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2065
+#: src/Admin/Views/General.php:2117
 msgid "Product Categories (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2066
+#: src/Admin/Views/General.php:2118
 msgid "Product Tags (Pro)"
 msgstr ""
 
-#: src/Admin/Views/General.php:2083, src/Admin/Views/General.php:2142
+#: src/Admin/Views/General.php:2135, src/Admin/Views/General.php:2194
 msgid "Target"
 msgstr ""
 
-#: src/Admin/Views/General.php:2086
+#: src/Admin/Views/General.php:2138
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected items."
 msgstr ""
 
-#: src/Admin/Views/General.php:2090, src/Admin/Views/General.php:2149
+#: src/Admin/Views/General.php:2142, src/Admin/Views/General.php:2201
 msgid "Include"
 msgstr ""
 
-#: src/Admin/Views/General.php:2091, src/Admin/Views/General.php:2150
+#: src/Admin/Views/General.php:2143, src/Admin/Views/General.php:2202
 msgid "Exclude"
 msgstr ""
 
-#: src/Admin/Views/General.php:2098
+#: src/Admin/Views/General.php:2150
 msgid "All Theme Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:2101
+#: src/Admin/Views/General.php:2153
 msgid "Enable this option to apply the chat bubble visibility rule to all theme pages at once, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/General.php:2112
+#: src/Admin/Views/General.php:2164
 msgid "Select a specific theme page where the chat bubble visibility rule should apply. Options include Blog, 404, or Search pages."
 msgstr ""
 
-#: src/Admin/Views/General.php:2116
+#: src/Admin/Views/General.php:2168
 msgid "Blog Page"
 msgstr ""
 
-#: src/Admin/Views/General.php:2117
+#: src/Admin/Views/General.php:2169
 msgid "404 Page"
 msgstr ""
 
-#: src/Admin/Views/General.php:2118
+#: src/Admin/Views/General.php:2170
 msgid "Search Page"
 msgstr ""
 
-#: src/Admin/Views/General.php:2145
+#: src/Admin/Views/General.php:2197
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected pages."
 msgstr ""
 
-#: src/Admin/Views/General.php:2157
+#: src/Admin/Views/General.php:2209
 msgid "All Pages"
 msgstr ""
 
-#: src/Admin/Views/General.php:2160
+#: src/Admin/Views/General.php:2212
 msgid "Enable this option to apply the chat bubble visibility rule to all pages across your site, instead of selecting individual pages."
 msgstr ""
 
-#: src/Admin/Views/General.php:2171
+#: src/Admin/Views/General.php:2223
 msgid "Select one or more specific pages where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/General.php:2182
+#: src/Admin/Views/General.php:2234
 msgid "You don't have any pages available."
 msgstr ""
 
-#: src/Admin/Views/General.php:2192, src/Admin/Views/General.php:2196, src/Admin/Views/WooCommerce.php:65, src/Admin/Views/WooCommerce.php:69
+#: src/Admin/Views/General.php:2244, src/Admin/Views/General.php:2248, src/Admin/Views/WooCommerce.php:65, src/Admin/Views/WooCommerce.php:69
 msgid "Backup"
 msgstr ""
 
-#: src/Admin/Views/General.php:2199, src/Admin/Views/WooCommerce.php:72
+#: src/Admin/Views/General.php:2251, src/Admin/Views/WooCommerce.php:72
 msgid "Export or import plugin settings for backup or migration purposes."
 msgstr ""
 

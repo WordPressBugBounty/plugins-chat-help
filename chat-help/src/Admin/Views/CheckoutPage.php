@@ -175,8 +175,8 @@ class CheckoutPage
                         'icofont-telegram'    => array(
                             'option_name' => '<i class="icofont-telegram"></i>',
                         ),
-                        'icofont-life-buoy'    => array(
-                            'option_name' => '<i class="icofont-life-buoy"></i>',
+                        'icofont-paper-plane'    => array(
+                            'option_name' => '<i class="icofont-paper-plane"></i>',
                         ),
                         'native'    => array(
                             'option_name' => esc_html__('Native', 'chat-help'),
@@ -203,7 +203,7 @@ class CheckoutPage
                         'icofont-live-support'    => array('option_name' => '<i class="icofont-live-support"></i>'),
                         'icofont-ui-messaging'    => array('option_name' => '<i class="icofont-ui-messaging"></i>'),
                         'icofont-telegram'    => array('option_name' => '<i class="icofont-telegram"></i>'),
-                        'icofont-life-buoy'    => array('option_name' => '<i class="icofont-life-buoy"></i>'),
+                        'icofont-paper-plane'    => array('option_name' => '<i class="icofont-paper-plane"></i>'),
                         'native'    => array(
                             'option_name' => esc_html__('Native', 'chat-help'),
                             'pro_only'  => true,

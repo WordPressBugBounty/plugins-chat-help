@@ -103,6 +103,7 @@ class Leads
         id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
         field LONGTEXT NOT NULL,
         meta LONGTEXT NOT NULL,
+        agent_name VARCHAR(255),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY  (id)
     ) $charset_collate;";
@@ -270,6 +271,7 @@ class Leads
             'copied' => esc_html__('Copied!', 'chat-help'),
             'no_leads_to_export' => esc_html__('No leads to export', 'chat-help'),
             'no_leads_found' => esc_html__('No leads found.', 'chat-help'),
+            'all_agents' => esc_html__('All Agents', 'chat-help-pro'),
         ];
     }
 }
