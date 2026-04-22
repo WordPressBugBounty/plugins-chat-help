@@ -316,7 +316,7 @@ if (wHelpChatAvailability) {
   /* ========================
      FORM SUBMIT (GLOBAL)
   ======================== */
-  $(document).on("submit", "form#form", function (e) {
+  $(document).on("submit", "form#wHelp_form", function (e) {
     e.preventDefault();
     const form = $(this);
     // ✅ correct validation check
@@ -415,7 +415,7 @@ if (wHelpChatAvailability) {
   /* ========================
      VALIDATION INIT (DYNAMIC)
   ======================== */
-  $(document).on("focus", "form", function () {
+  $(document).on("focus", "form#wHelp_form,form#agent_input", function () {
     if (!$(this).data("validator")) {
       $(this).validate();
     }

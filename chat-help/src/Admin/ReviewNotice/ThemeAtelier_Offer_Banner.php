@@ -77,6 +77,13 @@ class ThemeAtelier_Offer_Banner {
 				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/chat-help-spring-sale.svg',
 				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=spring_2026',
 			),
+			'may'     => array(
+				'id'    => 'may_2026',
+				'start' => strtotime( '2026-05-01 00:00:00' ),
+				'end'   => strtotime( '2026-05-31 23:59:59' ),
+				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/may-growth.svg',
+				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=may_2026',
+			),
 			
 		);
 

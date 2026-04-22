@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 3.3.0
+Stable tag: 3.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,7 +34,7 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 ## 👉 Key Features of Chat Help ##
 
 ### 💬 Core Chat Features
-- **Floating Chat Layouts**: Choose from multiple chat bubble styles: Single Form, Single Agent, or disable the bubble with No Floating Chat.
+- **Floating Chat Layouts**: Choose from multiple chat bubble styles: Single Form, Single Agent, Pre-Chat Message, Floating Button or disable the bubble.
 - **Single Form Builder**: Collect visitor details before chat with text/textarea fields, labels, placeholders, validation messages, and required fields.
 - **Multiple WhatsApp Types Supported**: Personal, Business, or Group — all formats supported in floating chats and buttons.
 - **Smart Pre-Filled Messages**: Ready-to-send messages with global variables (`{siteTitle}`, `{currentURL}`, `{date}`, `{ip}`) and WooCommerce variables (`{productName}`, `{productPrice}`, `{stockStatus}`). Conditional tags like `{PRODUCT_START}...{PRODUCT_END}` and `{LOGGEDIN_START}...{LOGGEDIN_END}` make messages dynamic.
@@ -229,6 +229,9 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 8. Elementor widget for adding a WhatsApp chat button anywhere on your WordPress website.
 
 == Changelog ==
+= 3.3.1 – 22 April 2026 =
+* Fixed: WooCommerce quentaty form validation issue.
+
 = 3.3.0 – 13 April 2026 =
 * Added: New Floating layout called Pre-Chat Message.
 * Added: Filter by Agents option in the leads dashboard.

@@ -45,7 +45,7 @@ if ($product) {
 }
 ?>
 <form
-    id="form"
+    id="wHelp_form"
     class="wHelp__popup__content" <?php echo esc_attr($product_attr); ?>
     data-loading="<?php echo esc_attr($chat_loading_text) ?>" data-button="<?php echo esc_attr($chat_button_text) ?>"
     style="--color-primary: <?php echo esc_attr($primary); ?>;--color-secondary: <?php echo esc_attr($secondary); ?>;">
