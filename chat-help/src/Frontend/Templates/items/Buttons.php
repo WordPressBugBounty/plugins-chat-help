@@ -30,7 +30,7 @@ class Buttons
     {
         $chat_type = $options['chat_layout'] ?? 'form';
         $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
-        $button_size = isset($options['button_size']) ? $options['button_size'] : '1';
+        $button_size = isset($options['button_size']) ? $options['button_size'] : '1.2';
         $floating_button_style = $options['opt-button-style'] ?? '1';
         $circle_button_icon = $options['circle-button-icon'] ?? 'icofont-brand-whatsapp';
         $circle_button_close = $options['circle-button-close'] ?? 'icofont-close';
@@ -121,14 +121,16 @@ class Buttons
         $bubble_button_padding_unit = isset($bubble_button_padding['unit']) ? $bubble_button_padding['unit'] : 'px';
 
         $padding = $bubble_button_padding_top . $bubble_button_padding_unit . ' ' . $bubble_button_padding_right . $bubble_button_padding_unit . ' ' . $bubble_button_padding_bottom . $bubble_button_padding_unit . ' ' . $bubble_button_padding_left . $bubble_button_padding_unit;
+        $notification_icon = isset($options['notification_icon']) ? $options['notification_icon'] : '';
 
         // Keep Button Style 1 as Is
         if ($floating_button_style === '1') {
             $bubble_type = '<div style="--wHelp-btn-scale: ' . esc_attr($button_size) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . '; --wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . ';" class="wHelp_button wHelp-bubble circle-bubble circle-animation-' . esc_attr($circle_animation) . ' wHelp_' . $chat_type . ' layout_' . $chat_type . ' ' . esc_attr($chat_type) . ' ' . esc_attr($tooltip_class) . '">';
+            if($notification_icon) {
+                $bubble_type .= '<span class="notification_icon without_number"></span>';
+            }
             $bubble_type .= '<span class="open-icon">';
-
             $bubble_type .= '<i class="' . esc_attr($circle_button_icon_1) . '"></i>';
-
             $bubble_type .= '</span>';
             $bubble_type .= '<span class="close-icon">';
             if ($circle_button_close_1 == 'custom') {
@@ -173,7 +175,7 @@ class Buttons
             }
 
             $bubble_type = '<div style="--wHelp-padding: ' . esc_attr($padding) . '; --wHelp-btn-scale: ' . esc_attr($button_size) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . '; --wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-icon-normal-bg-color: ' . esc_attr($normal_bg_color) . '; --wHelp-icon-hover-bg-color: ' . esc_attr($hover_bg_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . '; --wHelp-text-color: ' . esc_attr($text_color) . '; --wHelp-text-hover-color: ' . esc_attr($text_hover_color) . '; --wHelp-icon-border: ' . esc_attr($icon_border_all . ' ' . $icon_border_style) . '; --wHelp-icon-border-color: ' . esc_attr($icon_border_color) . '; --wHelp-hover-icon-border-color: ' . esc_attr($hover_icon_border_color) . '; --wHelp-icon-border-radius: ' . esc_attr($icon_border_radius) . ';" class="wHelp_button wHelp-bubble bubble ' . esc_attr(' wHelp_' . $chat_type . ' layout_' . $chat_type . ' ' . $tooltip_class) . '">';
-            $bubble_type .= $icons . esc_attr($button_label);
+            $bubble_type .= ($notification_icon ? '<span class="notification_icon without_number"></span>' : '') . $icons . esc_attr($button_label);
 
             // Add Tooltip
             if ($tooltip_enabled != 'hide' && $tooltip_text) {

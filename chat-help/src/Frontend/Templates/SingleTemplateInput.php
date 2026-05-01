@@ -52,6 +52,7 @@ class SingleTemplateInput
 		$enable_positioning_mobile = isset($options['enable-positioning-mobile']) ? $options['enable-positioning-mobile'] : '';
 		$bubble_position_mobile = isset($options['bubble-position-mobile']) ? $options['bubble-position-mobile'] : 'right_bottom';
 		$select_animation = isset($options['select-animation']) ? $options['select-animation'] : 'random';
+		$theme_style = isset($options['theme_style']) ? $options['theme_style'] : 'flat_theme';
 		$bubble_style = isset($options['bubble-style']) ? $options['bubble-style'] : 'default';
 		$select_timezone = isset($options['select-timezone']) ? $options['select-timezone'] : '';
 		$header_content_position = isset($options['header-content-position']) ? $options['header-content-position'] : 'center';
@@ -63,7 +64,7 @@ class SingleTemplateInput
 		$agent_photo_type = isset($options['agent_photo_type']) ? $options['agent_photo_type'] : 'default';
 		$agent_photo_url = isset($agent_photo['url']) ? $agent_photo['url'] : '';
 
-		if ($agent_photo_type === 'default') {
+	if ($agent_photo_type === 'default') {
 			$agent_photo_url = CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/user.webp';
 		} elseif ($agent_photo_type === 'custom' && $agent_photo_url) {
 			$agent_photo_url;
@@ -116,7 +117,7 @@ class SingleTemplateInput
 			$button_style = 'button_advance';
 		}
 
-		echo '<div id="' . esc_attr($unique_id) . '" class="wHelp_bubble wHelp ' . esc_attr($bubble_position . ' ' . $bubble_position_tablet . ' ' . $bubble_position_mobile . ' ' . $button_style) . ' wHelp-' . esc_attr($bubble_visibility) . '-only ';
+		echo '<div id="' . esc_attr($unique_id) . '" class="wHelp_bubble wHelp ' . esc_attr($bubble_position . ' ' . $bubble_position_tablet . ' ' . $bubble_position_mobile . ' ' . $button_style . ' ' . $theme_style) . ' wHelp-' . esc_attr($bubble_visibility) . '-only ';
 
 		// Add bubble style classes based on the 'bubble-style' option.
 		if ($bubble_style === 'dark') {

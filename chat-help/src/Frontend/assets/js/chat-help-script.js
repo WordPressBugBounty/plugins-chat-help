@@ -35,6 +35,10 @@ const wHelpPopupContent = document.querySelectorAll(".wHelp__popup__content");
 const wHelpButtons = document.querySelectorAll(".wHelpButtons");
 const wHelpChatAvailability = document.querySelector(".chat-availability");
 const subtitleEl = document.querySelector(".info__title");
+const wHelp_agent = document.querySelector(".wHelp_agent");
+const wHelp_form = document.querySelector(".wHelp_form");
+const wHelp_agent_input = document.querySelector(".wHelp_agent_input");
+
 let analytics_parameter =
   chat_help_script.analytics_parameter.google_analytics_parameter;
 let event_name = chat_help_script.analytics_parameter.event_name;
@@ -258,10 +262,12 @@ if (wHelpChatAvailability) {
   const now = timezone ? moment().tz(timezone) : moment();
   const availability = isAvailable(chatAvailableTime, now);
 
-  if (!availability.isAvailable) {
-    subtitleEl.textContent = subtitleEl.getAttribute("data-offline");
-  } else {
-    subtitleEl.textContent = subtitleEl.getAttribute("data-online");
+  if (wHelp_agent || wHelp_form || wHelp_agent_input) {
+    if (!availability.isAvailable) {
+      subtitleEl.textContent = subtitleEl.getAttribute("data-offline");
+    } else {
+      subtitleEl.textContent = subtitleEl.getAttribute("data-online");
+    }
   }
 
   if (availability.isAvailable) {
@@ -370,7 +376,7 @@ if (wHelpChatAvailability) {
     if (!form.valid()) return;
 
     const submit_btn = form.find(".send_agent_with_input");
-    
+
     const number = submit_btn.data("number") || "";
     const group = submit_btn.data("group") || "";
     const formData = form.serialize();

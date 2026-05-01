@@ -1247,6 +1247,35 @@ class General
                                         ),
                                     ),
                                     array(
+                                        'id' => 'notification_icon',
+                                        'type' => 'switcher',
+                                        'title' => esc_html__('Display Notification Icon', 'chat-help'),
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Toggle to show or hide the notification icon in the interface.', 'chat-help') . '</div>',
+                                        'text_on' => esc_html__('Show', 'chat-help'),
+                                        'text_off'  => esc_html__('Hide', 'chat-help'),
+                                        'text_width' => 90,
+                                    ),
+                                    array(
+                                        'id' => 'notification_number',
+                                        'type' => 'select',
+                                        'title' => esc_html__('Notification Number', 'chat-help'),
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Select a number to display as a notification badge on the icon. Choose "None" to hide the number.', 'chat-help') . '</div>',
+                                        'options'    => array(
+                                            ''     => esc_html('None', 'chat-help'),
+                                            '1'     => '1 (Pro)',
+                                            '2'     => '2 (Pro)',
+                                            '3'     => '3 (Pro)',
+                                            '4'     => '4 (Pro)',
+                                            '5'     => '5 (Pro)',
+                                            '6'     => '6 (Pro)',
+                                            '7'     => '7 (Pro)',
+                                            '8'     => '8 (Pro)',
+                                            '9'     => '9 (Pro)',
+                                        ),
+                                        'default'   => '',
+                                        'dependency' => array('notification_icon', '==', 'true', 'any'),
+                                    ),
+                                    array(
                                         'id' => 'bubble_icon_border',
                                         'type' => 'border',
                                         'title' => esc_html__('Icon Border', 'chat-help'),
@@ -1579,6 +1608,32 @@ class General
                                             'random' => esc_html__('Random (Pro)', 'chat-help'),
                                         ),
                                         'default'     => '14',
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input,multi,multi_agent_form', 'any'),
+                                    ),
+
+                                    array(
+                                        'id'      => 'theme_style',
+                                        'type'    => 'layout_preset',
+                                        'title' => esc_html__('Theme Style', 'chat-help'),
+                                        'class'    => 'theme_style',
+                                        'title_help' =>
+                                        '<div class="chat-help-info-label">' .
+                                            esc_html__('Select the visual style for your chat bubble. This setting changes the overall look and feel of the chat interface.', 'chat-help') .
+                                            '</div>' .
+                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-agent/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
+                                            ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'options' => array(
+                                            'flat_theme' => array(
+                                                'image' => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/flat_theme.jpg',
+                                                'text' => esc_html__('Flat Theme', 'chat-help'),
+                                            ),
+                                            'whatsapp_theme' => array(
+                                                'image' => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/whatsapp_theme.jpg',
+                                                'text' => esc_html__('Whatsapp Theme', 'chat-help'),
+                                            ),
+                                        ),
+
+                                        'default' => 'flat_theme',
                                         'dependency' => array('chat_layout', 'any', 'form,agent,agent_input,multi,multi_agent_form', 'any'),
                                     ),
 

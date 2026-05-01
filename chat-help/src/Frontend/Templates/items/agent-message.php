@@ -19,9 +19,9 @@ if ($agent_message) : ?>
     ?>
     <div class="sms">
         <div class="sms__text">
-            <p>
+            <div class="agent-message">
                 <?php echo wp_kses_post($replaced_message); ?>
-            </p>
+            </div>
             <?php
             if ($show_current_time) {
                 echo '<div class="current-time"></div>';

@@ -43,6 +43,7 @@ class FormTemplate
 		$gdpr_compliance_content = isset($options['gdpr-compliance-content']) ? $options['gdpr-compliance-content'] : 'Please accept our <a href="#">privacy policy</a> first to start a conversation.';
 		$bubble_position = isset($options['bubble-position']) ? $options['bubble-position'] : 'right_bottom';
 		$select_animation = isset($options['select-animation']) ? $options['select-animation'] : 'random';
+		$theme_style = isset($options['theme_style']) ? $options['theme_style'] : 'flat_theme';
 		$bubble_style = isset($options['bubble-style']) ? $options['bubble-style'] : 'default';
 		$select_timezone = isset($options['select-timezone']) ? $options['select-timezone'] : '';
 		$header_content_position = isset($options['header-content-position']) ? $options['header-content-position'] : 'center';
@@ -68,7 +69,7 @@ class FormTemplate
 			$animation = !empty($select_animation) ? $select_animation : '14';
 		endif;
 
-		echo '<div id="' . esc_attr($unique_id) . '" class="wHelp_bubble wHelp ' . esc_attr($bubble_position) . ' wHelp-' . esc_attr($bubble_visibility) . '-only ';
+		echo '<div id="' . esc_attr($unique_id) . '" class="wHelp_bubble wHelp ' . esc_attr($bubble_position . ' ' . $theme_style) . ' wHelp-' . esc_attr($bubble_visibility) . '-only ';
 		// Add bubble style classes based on the 'bubble-style' option.
 		if ($bubble_style === 'dark') {
 			echo 'dark-mode ';

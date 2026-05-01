@@ -5606,6 +5606,10 @@ margin-right: 0px;
   max-width: 100%;
 }
 
+.chat-help-field-layout_preset.theme_style .chat-help--image img {
+  padding: 3px;
+}
+
 #chat-help-section-dfs_layouts_1 .chat-help-field-layout_preset span {
   font-size: 13px;
 }

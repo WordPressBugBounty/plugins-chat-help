@@ -245,10 +245,11 @@
   border-bottom: 15px solid transparent;
   border-right: 15px solid var(--wHelp-color-message);
 }
-.wHelp__popup__content .sms__text p {
+.wHelp__popup__content .sms__text .agent-message {
   font-size: 14px;
   line-height: 1.6;
   color: var(--wHelp-color-dark);
+  margin-bottom: 8px;
 }
 .wHelp__popup__content .user-text {
   margin-bottom: 15px;
@@ -410,25 +411,14 @@
   background-color: var(--wHelp-color-offline);
   border-color: var(--wHelp-color-offline);
   cursor: not-allowed;
+  pointer-events: none;
   color: var(--wHelp-color-light);
 }
 .wHelp_bubble.avatar-inactive .wHelp__send-message:hover {
   background-color: var(--wHelp-color-offline);
 }
-.wHelp_bubble.avatar-inactive.wHelp_button_advance {
-  pointer-events: none;
-}
-.wHelp_bubble.avatar-inactive .wHelp-button-advance {
-  background-color: var(--wHelp-color-offline) !important;
-  color: var(--wHelp-color-light) !important;
-  cursor: not-allowed;
-  border-color: var(--wHelp-color-dark) !important;
-}
 .wHelp_bubble.avatar-inactive .wHelp-button-advance .online {
   display: none;
-}
-.wHelp_bubble.avatar-inactive .wHelp-button-advance .offline {
-  background-color: var(--wHelp-color-inactive) !important;
 }
 .wHelp_bubble.avatar-active .wHelp_button_advance .offline {
   display: none;
@@ -499,6 +489,48 @@
 .wHelp-multi.wHelp-grid .wHelp-multi__popup__content .condition__checked.user.avatar-inactive .image::before,
 .wHelp-multi.wHelp-grid .wHelp-multi__popup__content .condition__checked.user .image::before {
   background-color: var(--wHelp-color-offline) !important;
+}
+
+.whatsapp_theme .wHelp__popup {
+  overflow: hidden;
+}
+.whatsapp_theme .wHelp__popup__content {
+  position: relative;
+  background-color: #ece5dd;
+}
+.whatsapp_theme .wHelp__popup__content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../image/wa_bg.png);
+  opacity: 0.07;
+}
+.whatsapp_theme .wHelp__popup__content .sms__text {
+  background-color: #d9fdd3;
+}
+.whatsapp_theme .wHelp__popup__content .sms__text::before {
+  border-right: 15px solid #d9fdd3;
+}
+.whatsapp_theme .wHelp__popup__content .user-text {
+  position: relative;
+}
+.whatsapp_theme .wHelp__popup__content .user-text input,
+.whatsapp_theme .wHelp__popup__content .user-text textarea,
+.whatsapp_theme .wHelp__popup__content .user-text select {
+  background-color: var(--wHelp-color-light) !important;
+}
+.whatsapp_theme .wHelp__popup__content #search-input {
+  position: relative;
+  background-color: var(--wHelp-color-light);
+}
+.whatsapp_theme .wHelp__popup__content .user {
+  background-color: var(--wHelp-color-light);
+}
+.whatsapp_theme.wHelp_bubble .wHelp__send-message.agent_input input {
+  background-color: var(--wHelp-color-light);
 }
 
 .wHelp_button[class*=circle-animation-] .open-icon {
@@ -811,6 +843,9 @@
 .dark-mode .wHelp__popup__content .sms__text::before {
   border-right: 15px solid var(--wHelp-color-dark-secondary);
 }
+.dark-mode .wHelp__popup__content .sms__text .agent-message {
+  color: var(--wHelp-color-light);
+}
 .dark-mode .wHelp__popup__content .user-text input,
 .dark-mode .wHelp__popup__content .user-text textarea {
   background-color: var(--wHelp-color-dark-secondary) !important;
@@ -834,6 +869,19 @@
   background-color: var(--wHelp-color-dark-mode);
 }
 .dark-mode .wHelp__send-message:hover {
+  background-color: var(--wHelp-color-dark-mode2);
+}
+.dark-mode .wHelp__send-message.agent_input input {
+  background-color: var(--wHelp-color-dark-secondary);
+  border: 1px solid var(--wHelp-color-dark-mode);
+}
+.dark-mode .wHelp__send-message.agent_input input:focus, .dark-mode .wHelp__send-message.agent_input input:hover {
+  border: 1px solid var(--wHelp-color-dark-mode2);
+}
+.dark-mode .wHelp__send-message.agent_input button.send_agent_with_input {
+  background-color: var(--wHelp-color-dark-mode);
+}
+.dark-mode .wHelp__send-message.agent_input button.send_agent_with_input:focus, .dark-mode .wHelp__send-message.agent_input button.send_agent_with_input:hover {
   background-color: var(--wHelp-color-dark-mode2);
 }
 .dark-mode .wHelp-bubble.circle-bubble {
@@ -879,6 +927,21 @@
   color: var(--wHelp-color-light);
   text-decoration: none !important;
 }
+.dark-mode.whatsapp_theme .wHelp-multi__popup {
+  background-color: var(--wHelp-color-dark-primary);
+}
+.dark-mode.whatsapp_theme .wHelp-multi__popup #search-input {
+  background-color: var(--wHelp-color-dark-secondary);
+}
+.dark-mode.whatsapp_theme .wHelp-multi__popup::before {
+  opacity: 1;
+}
+.dark-mode.whatsapp_theme .wHelp__popup__content::before {
+  opacity: 1;
+}
+.dark-mode.whatsapp_theme .wHelp__send-message.agent_input input {
+  background-color: var(--wHelp-color-dark-secondary);
+}
 
 .night-mode .wHelp-multi__popup {
   background-color: var(--wHelp-color-dark-primary);
@@ -911,8 +974,14 @@
 .night-mode .wHelp__popup--header .info__title {
   color: var(--wHelp-color-light);
 }
+.night-mode .wHelp__popup__content {
+  background-color: var(--wHelp-color-dark-primary);
+}
 .night-mode .wHelp__popup .sms__text {
   background-color: var(--wHelp-color-dark-secondary);
+  color: var(--wHelp-color-light);
+}
+.night-mode .wHelp__popup .sms__text .agent-message {
   color: var(--wHelp-color-light);
 }
 .night-mode .wHelp__popup .sms__text::before {
@@ -943,6 +1012,18 @@
 .night-mode .wHelp--checkbox {
   color: var(--wHelp-color-light);
 }
+.night-mode.whatsapp_theme .wHelp-multi__popup {
+  background-color: var(--wHelp-color-dark-primary);
+}
+.night-mode.whatsapp_theme .wHelp-multi__popup #search-input {
+  background-color: var(--wHelp-color-dark-secondary);
+}
+.night-mode.whatsapp_theme .wHelp-multi__popup::before {
+  opacity: 1;
+}
+.night-mode.whatsapp_theme .wHelp__popup__content::before {
+  opacity: 1;
+}
 
 .wHelp_button {
   text-decoration: none !important;
@@ -960,6 +1041,7 @@
   background-color: var(--wHelp-background);
   border: var(--wHelp-border);
   border-color: var(--wHelp-border-color);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 12px 0px;
 }
 .wHelp_button:focus, .wHelp_button:hover {
   background-color: var(--wHelp-hover-background);
@@ -1159,9 +1241,9 @@
 .wHelp_button.circle-bubble {
   position: relative;
   z-index: 999;
-  width: calc(50px * var(--wHelp-btn-scale, 1));
-  height: calc(50px * var(--wHelp-btn-scale, 1));
-  font-size: calc(25px * var(--wHelp-btn-scale, 1));
+  width: calc(60px * var(--wHelp-btn-scale, 1));
+  height: calc(60px * var(--wHelp-btn-scale, 1));
+  font-size: calc(30px * var(--wHelp-btn-scale, 1));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1175,6 +1257,22 @@
 }
 .wHelp_button.bubble.wHelp_button {
   display: flex;
+}
+.wHelp_button .notification_icon {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 2px;
+  right: 2px;
+  background-color: red;
+  border-radius: 50px;
+  font-size: 12px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  font-weight: bold;
 }
 
 .theme-kadence.woocommerce ul.products.woo-archive-action-on-hover li.product:hover .entry-content-wrap,
