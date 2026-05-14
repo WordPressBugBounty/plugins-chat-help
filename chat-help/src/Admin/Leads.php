@@ -38,7 +38,6 @@ class Leads
         if ($chat_help_leads) {
             add_action('chat_help_recommended_page_menu', [$this, 'register_chat_help_leads_submenu']);
             add_action('admin_head', array($this, 'chat_help_localize_script'));
-            add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'), 100);
             add_action('rest_api_init', [$this, 'register_rest_routes']);
 
             $this->create_chat_help_leads_table();
@@ -55,23 +54,11 @@ class Leads
         add_submenu_page(
             'chat-help',
             esc_html__('Leads', 'chat-help'),
-            __('Leads <span class="update-plugins" style="background:#d63638;color:#fff;border-radius:3px;padding:1px 4px;font-size:10px;vertical-align:middle;float:right;">NEW</span>', 'chat-help'),
+            esc_html__('Leads', 'chat-help'),
             'manage_options',
-            'chat-help-leads',
-            [$this, 'chat_help_leads_admin']
+            'chat-help#/leads',
+            '__return_true'
         );
-    }
-
-    /**
-     * Renders the Leads admin page container.
-     *
-     * @since 3.1.0
-     */
-    public function chat_help_leads_admin()
-    {
-?>
-        <div id="chat_help_leads"></div>
-    <?php
     }
 
     /**
@@ -110,39 +97,6 @@ class Leads
 
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
-    }
-
-    /**
-     * Enqueues scripts and injects localized variables for the Leads page.
-     *
-     * @param string $hook Current admin page hook.
-     *
-     * @since 3.1.0
-     */
-    public static function enqueue_scripts($hook)
-    {
-        if ($hook === 'whatsapp-chat_page_chat-help-leads') {
-
-            wp_dequeue_style('common');
-            wp_deregister_style('common-css');
-
-            add_action('admin_print_scripts', function () {
-                echo wp_print_inline_script_tag(
-                    'window.chatHelp = ' . wp_json_encode([
-                        'restUrl' => esc_url_raw(rest_url('chat-help/v1')),
-                        'nonce'   => wp_create_nonce('wp_rest'),
-                    ]) . ';'
-                );
-            });
-
-            wp_enqueue_script(
-                'chat-help-leads',
-                plugin_dir_url(__FILE__) . 'assets/js/chat-help-leads.js',
-                array(),
-                time(),
-                true
-            );
-        }
     }
 
     public function register_rest_routes()

@@ -126,16 +126,25 @@ class Admin
 			esc_html__('WhatsApp Chat', 'chat-help'),
 			'manage_options',
 			'chat-help',
-			array($this, 'chat_help_settings'),
+			[$this, 'render_react_page'],
 			'dashicons-whatsapp',
 			58
+		);
+		do_action('chat_help_before_submenus');
+		add_submenu_page(
+			'chat-help',
+			esc_html__('Dashboard', 'chat-help'),
+			esc_html__('Dashboard', 'chat-help'),
+			'manage_options',
+			'chat-help',
+			[$this, 'render_react_page']
 		);
 		add_submenu_page(
 			'chat-help',
 			esc_html__('Floating Chat', 'chat-help'),
 			esc_html__('Floating Chat', 'chat-help'),
 			'manage_options',
-			'chat-help',
+			'floating-chat',
 			[$this, 'chat_help_settings']
 		);
 		do_action('chat_help_recommended_page_menu');
@@ -178,6 +187,11 @@ class Admin
 	 * Options page callback
 	 */
 	public function chat_help_settings() {}
+
+	public static function render_react_page(): void
+	{
+		echo '<div id="chat_help_pro_react"></div>';
+	}
 
 	// Plugin settings in plugin list
 	public function chat_help_action_links(array $links)
@@ -223,7 +237,7 @@ class Admin
 	{
 
 		$screen = get_current_screen();
-		if ('toplevel_page_chat-help' === $screen->id || 'whatsapp-chat_page_chat-help-leads' === $screen->id || 'whatsapp-chat_page_chat-help-shortcode' === $screen->id || 'whatsapp-chat_page_chat-help-settings' === $screen->id || 'whatsapp-chat_page_chat-help-woo' === $screen->id || 'whatsapp-chat_page_chat-help-help' === $screen->id) {
+		if ('toplevel_page_chat-help' === $screen->id || 'whatsapp-chat_page_chat-help-floating' === $screen->id || 'whatsapp-chat_page_chat-help-shortcode' === $screen->id || 'whatsapp-chat_page_chat-help-settings' === $screen->id || 'whatsapp-chat_page_chat-help-woo' === $screen->id || 'whatsapp-chat_page_chat-help-help' === $screen->id) {
 			$text = sprintf(
 				/* translators: 1: start strong tag, 2: close strong tag. 3: start link 4: close link */
 				__('<i>Enjoying %1$sWhatsApp ChatHelp?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊</i>', 'chat-help'),

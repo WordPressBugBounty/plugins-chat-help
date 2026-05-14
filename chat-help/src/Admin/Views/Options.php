@@ -621,29 +621,24 @@ class Options {
 		);
 		//
 		// Create options
-		//
-		Chat_Help::createOptions(
-			$prefix,
-			array(
-				'menu_title'              => esc_html__( 'ChatHelp', 'chat-help' ),
-				'menu_slug'               => 'chat-help',
-				'menu_type'               => 'submenu',
-				'show_search'             => false,
-				'show_bar_menu'           => false,
-				'show_sub_menu'           => false,
-				'show_reset_all'          => false,
-				'show_footer'			  => false,
-				'show_all_options'		  => false,
-				'framework_title'         => esc_html__( 'ChatHelp', 'chat-help' ),
-				'admin_bar_menu_priority' => 5,
-				'footer_text'             => esc_html__( 'Thank you for using our product', 'chat-help' ),
-				'theme'                   => 'light',
-				'nav'                     => 'inline',
-				'framework_class'         => 'chat-help-setting-admin',
-				'class'              	  => 'chat-help-preloader',
-			)
-		);
-
+		Chat_Help::createOptions($prefix, array(
+            'menu_title'        => esc_html__('ChatHelp', 'chat-help'),
+            'menu_slug'         => 'floating-chat',
+            'menu_type'               => 'submenu',
+            'show_search'             => false,
+            'show_bar_menu'           => false,
+            'show_sub_menu'           => false,
+            'show_reset_all'          => false,
+            'show_footer'              => false,
+            'show_all_options'          => false,
+            'framework_title'   => esc_html__('ChatHelp', 'chat-help'),
+            'admin_bar_menu_priority' => 5,
+            'footer_text'             => esc_html__('Thank you for using our product', 'chat-help'),
+            'theme'                   => 'light',
+            'nav'                     => 'inline',
+            'framework_class'         => 'chat-help-admin',
+            'class'                    => 'chat-help-preloader',
+        ));
 		General::options( $prefix, $timezones );
 	}
 }

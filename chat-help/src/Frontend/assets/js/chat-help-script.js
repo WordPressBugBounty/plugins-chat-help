@@ -16,6 +16,7 @@
  * -----------------------------------
  */
 
+(function () {
 "use strict";
 const wHelp = document.querySelectorAll(".wHelp");
 const wHelpMulti = document.querySelectorAll(".wHelp-multi");
@@ -274,8 +275,7 @@ if (wHelpChatAvailability) {
     wHelpChatAvailability.classList.add("avatar-active");
     wHelpChatAvailability.classList.add("chat_help_analytics");
     wHelpChatAvailability.classList.remove("avatar-inactive");
-    wHelpCheckButton.forEach((whatsappForm) => {
-      whatsappForm.classList.add("chat_help_analytics");
+    wHelpCheckButton.forEach(() => {
       wHelpChatAvailability.classList.remove("chat_help_analytics");
     });
   } else {
@@ -468,3 +468,6 @@ async function userInformation() {
   }
 }
 userInformation();
+
+window.searchUser = searchUser;
+})();

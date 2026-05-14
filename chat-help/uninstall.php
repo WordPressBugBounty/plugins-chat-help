@@ -46,6 +46,8 @@ function chat_help_delete_plugin_data()
 	// delete leads table
 	$table_name = $wpdb->prefix . 'chat_help_leads';
 	$wpdb->query("DROP TABLE IF EXISTS `$table_name`");
+	$table_name_analytics = $wpdb->prefix . 'chat_help_analytics';
+	$wpdb->query("DROP TABLE IF EXISTS `$table_name_analytics`");
 }
 
 // Load WPTP file.
