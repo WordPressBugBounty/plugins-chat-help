@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 3.4.0
+Stable tag: 3.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -230,6 +230,12 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 9. Elementor widget for adding a WhatsApp chat button anywhere on your WordPress website.
 
 == Changelog ==
+= 3.4.1 – 20 May 2026 =
+* Added: WhatsApp Group support for the Form Chat, and Pre-Chat Message layouts — on submit, opens a copy-to-clipboard modal with the group invite URL on the "Go to WhatsApp" button.
+* Added: Modal CTA inherits the send-button color settings via CSS variables (`--wHelp-color-primary`, `--wHelp-color-secondary`, `--text-color`, `--text-hover-color`).
+* Improved: Form submit pipeline now forwards the WhatsApp type to the backend so the correct URL (number deep-link vs. group invite) is generated server-side.
+* Improved: Modal closes via overlay click, close button, Escape key, or after navigating to WhatsApp; clipboard fallback for non-secure contexts and older mobile browsers.
+
 = 3.4.0 – 13 May 2026 =
 * Added: Analytics Dashboard — new first-item admin page with real-time visitor, view, and conversion tracking.
 * Added: Performance Trendline chart showing visitors, views, conversions, and leads over time with toggle filters.

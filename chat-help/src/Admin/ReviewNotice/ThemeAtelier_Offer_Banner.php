@@ -63,26 +63,20 @@ class ThemeAtelier_Offer_Banner {
 
 		// Define offer durations.
 		$offers = array(
-			'new_year'     => array(
-				'id'    => 'new_year_2026',
-				'start' => strtotime( '2025-12-20 00:00:00' ),
-				'end'   => strtotime( '2026-01-15 23:59:59' ),
-				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/chat-help-ny-banner.svg',
-				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=new_year_2026',
-			),
-			'spring'     => array(
-				'id'    => 'spring_2026',
-				'start' => strtotime( '2026-04-01 00:00:00' ),
-				'end'   => strtotime( '2026-04-30 23:59:59' ),
-				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/chat-help-spring-sale.svg',
-				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=spring_2026',
-			),
 			'may'     => array(
 				'id'    => 'may_2026',
 				'start' => strtotime( '2026-05-01 00:00:00' ),
 				'end'   => strtotime( '2026-05-31 23:59:59' ),
 				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/may-growth.svg',
 				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=may_2026',
+			),
+
+			'mid_mega_sale'     => array(
+				'id'    => 'mid_mega_sale_2026',
+				'start' => strtotime( '2026-06-01 00:00:00' ),
+				'end'   => strtotime( '2026-06-30 23:59:59' ),
+				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/mid-mega-sale.svg',
+				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=mid_mega_sale_2026',
 			),
 			
 		);

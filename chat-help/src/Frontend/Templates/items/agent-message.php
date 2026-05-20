@@ -68,7 +68,7 @@ if ('agent_input' === $chat_type) {
         <?php echo esc_attr($gaAnalyticsAttr) ?>>
         <form id="agent_input">
             <input type="text" placeholder="<?php echo esc_html($agent_input_placeholder) ?>" id="agent_message" name="agent_message" <?php echo esc_attr($required) ?>>
-            <button type="submit" target="<?php echo esc_attr($open_in_new_tab) ?>" data-number="<?php echo esc_attr($whatsapp_number) ?>" class="send_agent_with_input"><?php echo wp_kses_post($open_icon); ?></button>
+            <button type="submit" target="<?php echo esc_attr($open_in_new_tab) ?>" data-type="<?php echo esc_attr($type_of_whatsapp === 'group' ? 'group' : 'number'); ?>" data-number="<?php echo esc_attr($whatsapp_number) ?>" data-group="<?php echo esc_attr($whatsapp_group) ?>" class="send_agent_with_input"><?php echo wp_kses_post($open_icon); ?></button>
         </form>
     </div>
 <?php

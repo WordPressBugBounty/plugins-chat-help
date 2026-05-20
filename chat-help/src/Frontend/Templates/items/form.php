@@ -29,11 +29,13 @@ $hover_color = '#fff';
 $background = $primary;
 $hover_background = $secondary;
 
-if ($type_of_whatsapp === 'group') {
-    $gaAnalyticsAttr = 'data-group=' . $whatsapp_group . '';
-} else {
-    $gaAnalyticsAttr = 'data-number=' . $whatsapp_number . '';
-}
+$whats_type = ($type_of_whatsapp === 'group') ? 'group' : 'number';
+$gaAnalyticsAttr = sprintf(
+    'data-type="%s" data-number="%s" data-group="%s"',
+    esc_attr($whats_type),
+    esc_attr($whatsapp_number),
+    esc_attr($whatsapp_group)
+);
 
 $form_editor = isset($options['form_editor']) ? $options['form_editor'] : '';
 global $product;
@@ -83,7 +85,7 @@ if ($product) {
         type="submit"
         class="wHelp__send-message <?php echo $gdpr_enable ? 'condition__checked' : ''; ?>"
         style="--wHelp-color-primary: <?php echo esc_attr($background) ?>;--wHelp-color-secondary:<?php echo esc_attr($hover_background) ?>;--text-color: <?php echo esc_attr($color) ?>;--text-hover-color: <?php echo esc_attr($hover_color) ?>"
-        <?php echo esc_attr($gaAnalyticsAttr) ?>
+        <?php echo $gaAnalyticsAttr; // already escaped via sprintf/esc_attr ?>
         target="_blank">
         <?php
         if ($before_chat_icon === 'no_icon') {

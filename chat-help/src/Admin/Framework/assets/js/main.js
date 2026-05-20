@@ -3934,13 +3934,6 @@
   $("label:contains((Pro)) input").attr("disabled", true).css("opacity", "1");
   $("select option:contains((Pro))").attr("disabled", true).css("opacity", "1");
 
-  $(document).on("click", ".wrapper_class_form", function () {
-    if ($(".chat-help--active.wrapper_class_form").length) {
-      $('.chat_help_type_of_whatsapp input[value="number"]')
-        .prop("checked", true)
-        .trigger("change");
-    }
-  });
   $(document).on("keyup change", "#chat-help-form", function (e) {
     e.preventDefault();
     var $button = $(this).find(".chat-help-save.chat-help-save-ajax");

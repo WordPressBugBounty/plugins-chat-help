@@ -166,6 +166,7 @@ class Frontend
         if (! empty($wa_custom_js)) {
             wp_add_inline_script('chat-help-script', $wa_custom_js);
         }
+
         wp_localize_script(
             'chat-help-script',
             'chat_help_frontend_scripts',
@@ -273,7 +274,7 @@ class Frontend
                 }
                 break;
             case 'form':
-                if (!empty($opt_number)) {
+                if (('number' === $type_of_whatsapp && !empty($opt_number)) || ('group' === $type_of_whatsapp && !empty($opt_group))) {
                     FormTemplate::formTemplate($options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id);
                 }
                 break;
@@ -297,7 +298,13 @@ class Frontend
         $agentName = isset($_POST['agentName']) ? sanitize_text_field($_POST['agentName']) : '';
         $options = get_option('cwp_option');
         $ch_settings = get_option('ch_settings');
-        $agent_number = isset($options['opt-number']) ? $options['opt-number'] : '';
+        $agent_number = isset($_POST['number']) && $_POST['number'] !== ''
+            ? sanitize_text_field(wp_unslash($_POST['number']))
+            : (isset($options['opt-number']) ? $options['opt-number'] : '');
+        $whatsapp_group = isset($_POST['group']) && $_POST['group'] !== ''
+            ? esc_url_raw(wp_unslash($_POST['group']))
+            : (isset($options['opt-group']) ? $options['opt-group'] : '');
+        $type_of_whatsapp = isset($_POST['type']) && $_POST['type'] === 'group' ? 'group' : 'number';
         $url_for_desktop = isset($ch_settings['url_for_desktop']) ? $ch_settings['url_for_desktop'] : '';
         $url_for_mobile = isset($ch_settings['url_for_mobile']) ? $ch_settings['url_for_mobile'] : '';
         $chat_layout = isset($options['chat_layout']) ? $options['chat_layout'] : '';
@@ -310,7 +317,7 @@ class Frontend
 
         $form = true;
         $message = Helpers::replacement_vars($template, $form, $formData, $product_id, $current_url, $current_title);
-        $url = Helpers::whatsAppUrl($agent_number,  $type_of_whatsapp = 'number', $whatsapp_group = '', $url_for_desktop, $url_for_mobile, $message);
+        $url = Helpers::whatsAppUrl($agent_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
 
         if ($chat_help_leads) {
             $userInfo = isset($_POST['userInfo']) && is_array($_POST['userInfo']) ? array_map('sanitize_text_field', $_POST['userInfo']) : [];
@@ -343,7 +350,11 @@ class Frontend
             );
         }
 
-        wp_send_json_success(array('whatsAppURL' => $url));
+        wp_send_json_success(array(
+            'whatsAppURL' => $url,
+            'type'        => $type_of_whatsapp,
+            'message'     => $message,
+        ));
         wp_die();
     }
 }

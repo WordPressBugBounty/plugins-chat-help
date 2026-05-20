@@ -108,7 +108,6 @@ class General
                                         'id' => 'type_of_whatsapp',
                                         'type' => 'radio',
                                         'inline' => true,
-                                        'class' => 'chat_help_type_of_whatsapp',
                                         'title' => esc_html__('WhatsApp Type', 'chat-help'),
                                         'title_help' => '<div class="chat-help-info-label">' . esc_html__('Select “Number” to receive direct messages, or “Group” to let people join your WhatsApp group.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/what-is-the-whatsapp-type-field-and-how-should-i-use-it/?ref=1">' . esc_html__('Detailed explanation', 'chat-help') . '</a>',
                                         'options'    => array(
@@ -118,8 +117,7 @@ class General
                                         'default' => 'number',
 
                                         'dependency' =>  array(
-                                            array('chat_layout', 'not-any', 'agent_input,multi,multi_agent_form', 'any'),
-                                            array('chat_layout',   '!=', 'form', 'visible'),
+                                            array('chat_layout', 'not-any', 'multi,multi_agent_form', 'any'),
                                         ),
                                     ),
                                     array(
@@ -149,7 +147,7 @@ class General
                                         'desc' => esc_html__('Enter a valid WhatsApp group link (e.g., https://chat.whatsapp.com/Dn16RARM6KW7X4fq0fxVet).', 'chat-help'),
                                         'title_help' => '<div class="chat-help-info-label">' . esc_html__('Invite your visitors to join your WhatsApp group by adding the group’s invite URL here.', 'chat-help') . '</div> <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-do-i-create-a-whatsapp-group-and-invite-members/?ref=1">Detailed explanation</a>',
                                         'dependency' =>  array(
-                                            array('chat_layout',   'not-any', 'form,agent_input,multi,multi_agent_form', 'visible'),
+                                            array('chat_layout',   'not-any', 'multi,multi_agent_form', 'visible'),
                                             array('type_of_whatsapp',   '==', 'group', 'visible'),
                                         ),
                                     ),

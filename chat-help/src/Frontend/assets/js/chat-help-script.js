@@ -320,6 +320,116 @@ if (wHelpChatAvailability) {
   }
 
   /* ========================
+     GROUP MODAL (CLIPBOARD + PASTE INSTRUCTIONS)
+  ======================== */
+  function wHelpCopyToClipboard(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard
+        .writeText(text)
+        .catch(wHelpLegacyCopy.bind(null, text));
+    }
+    wHelpLegacyCopy(text);
+    return Promise.resolve();
+  }
+
+  function wHelpLegacyCopy(text) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "-1000px";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand("copy");
+    } catch (err) {}
+    document.body.removeChild(ta);
+  }
+
+  function wHelpEscapeHtml(str) {
+    return String(str == null ? "" : str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function wHelpCloseGroupModal() {
+    const modal = document.querySelector(".wHelp-group-modal");
+    if (modal) modal.parentNode.removeChild(modal);
+    document.removeEventListener("keydown", wHelpGroupModalEsc);
+  }
+
+  function wHelpGroupModalEsc(e) {
+    if (e.key === "Escape") wHelpCloseGroupModal();
+  }
+
+  const WHELP_MODAL_STYLE_VARS = [
+    "--wHelp-color-primary",
+    "--wHelp-color-secondary",
+    "--text-color",
+    "--text-hover-color",
+  ];
+  function wHelpExtractStyleVars(el) {
+    const out = {};
+    const src = el && (el[0] || el);
+    if (!src || !src.style) return out;
+    WHELP_MODAL_STYLE_VARS.forEach((name) => {
+      const v = src.style.getPropertyValue(name);
+      if (v) out[name] = v.trim();
+    });
+    return out;
+  }
+  function wHelpStyleAttr(styleVars) {
+    const parts = [];
+    WHELP_MODAL_STYLE_VARS.forEach((name) => {
+      if (styleVars && styleVars[name]) parts.push(name + ":" + styleVars[name]);
+    });
+    return parts.length
+      ? ' style="' + wHelpEscapeHtml(parts.join(";")) + '"'
+      : "";
+  }
+
+  function wHelpShowGroupCopyModal(groupUrl, message, styleVars) {
+    wHelpCloseGroupModal();
+    wHelpCopyToClipboard(message || "");
+
+    const wrap = document.createElement("div");
+    wrap.className = "wHelp-group-modal";
+    wrap.innerHTML =
+      '<div class="wHelp-group-modal__overlay"></div>' +
+      '<div class="wHelp-group-modal__dialog"' + wHelpStyleAttr(styleVars) + ' role="dialog" aria-modal="true">' +
+        '<button type="button" class="wHelp-group-modal__close" aria-label="Close">&times;</button>' +
+        '<h3 class="wHelp-group-modal__title">Message copied!</h3>' +
+        '<p class="wHelp-group-modal__desc">Your message has been copied to the clipboard. Please paste it manually into the WhatsApp group chat.</p>' +
+        '<div class="wHelp-group-modal__instructions">' +
+          '<p><strong>Desktop:</strong></p>' +
+          '<p>Press <kbd>Ctrl&nbsp;+&nbsp;V</kbd> (Windows) or <kbd>Cmd&nbsp;+&nbsp;V</kbd> (Mac) in the message input field.</p>' +
+          '<p><strong>Mobile:</strong></p>' +
+          '<p>Long-press in the message input field and select "Paste".</p>' +
+        '</div>' +
+        '<a class="wHelp-group-modal__cta" href="' + wHelpEscapeHtml(groupUrl) + '" target="_blank" rel="noopener">GO TO WHATSAPP</a>' +
+      '</div>';
+
+    document.body.appendChild(wrap);
+
+    wrap
+      .querySelector(".wHelp-group-modal__overlay")
+      .addEventListener("click", wHelpCloseGroupModal);
+    wrap
+      .querySelector(".wHelp-group-modal__close")
+      .addEventListener("click", wHelpCloseGroupModal);
+    wrap
+      .querySelector(".wHelp-group-modal__cta")
+      .addEventListener("click", function () {
+        setTimeout(wHelpCloseGroupModal, 50);
+      });
+    document.addEventListener("keydown", wHelpGroupModalEsc);
+  }
+
+  /* ========================
      FORM SUBMIT (GLOBAL)
   ======================== */
   $(document).on("submit", "form#wHelp_form", function (e) {
@@ -331,6 +441,7 @@ if (wHelpChatAvailability) {
     const submit_btn = form.find(".wHelp__send-message");
     const number = submit_btn.data("number") || "";
     const group = submit_btn.data("group") || "";
+    const whatsAppType = submit_btn.data("type") || "number";
     const formData = form.serialize();
     const userInfo = getUserData();
     const currentUrl = window.location.href;
@@ -351,18 +462,31 @@ if (wHelpChatAvailability) {
         current_url: currentUrl,
         current_title: currentTitle,
         agentName: agentName,
+        number: number,
+        group: group,
+        type: whatsAppType,
       },
       (response) => {
         if (response.success) {
-          submit_btn.innerHTML = loading;
-          setTimeout(function () {
-            window.open(
-              response.data.whatsAppURL,
-              chat_help_frontend_scripts.open_in_new_tab,
+          const data = response.data;
+          if (data.type === "group") {
+            wHelpShowGroupCopyModal(
+              data.whatsAppURL,
+              data.message,
+              wHelpExtractStyleVars(submit_btn),
             );
             form[0].reset();
-            submit_btn.innerHTML = button;
-          }, 100);
+          } else {
+            submit_btn.innerHTML = loading;
+            setTimeout(function () {
+              window.open(
+                data.whatsAppURL,
+                chat_help_frontend_scripts.open_in_new_tab,
+              );
+              form[0].reset();
+              submit_btn.innerHTML = button;
+            }, 100);
+          }
         } else {
           alert("Error processing request.");
         }
@@ -379,6 +503,7 @@ if (wHelpChatAvailability) {
 
     const number = submit_btn.data("number") || "";
     const group = submit_btn.data("group") || "";
+    const whatsAppType = submit_btn.data("type") || "number";
     const formData = form.serialize();
     const userInfo = getUserData();
     const currentUrl = window.location.href;
@@ -399,18 +524,31 @@ if (wHelpChatAvailability) {
         current_url: currentUrl,
         current_title: currentTitle,
         agentName: agentName,
+        number: number,
+        group: group,
+        type: whatsAppType,
       },
       (response) => {
         if (response.success) {
-          submit_btn.innerHTML = loading;
-          setTimeout(function () {
-            window.open(
-              response.data.whatsAppURL,
-              chat_help_frontend_scripts.open_in_new_tab,
+          const data = response.data;
+          if (data.type === "group") {
+            wHelpShowGroupCopyModal(
+              data.whatsAppURL,
+              data.message,
+              wHelpExtractStyleVars(submit_btn),
             );
             form[0].reset();
-            submit_btn.innerHTML = button;
-          }, 100);
+          } else {
+            submit_btn.innerHTML = loading;
+            setTimeout(function () {
+              window.open(
+                data.whatsAppURL,
+                chat_help_frontend_scripts.open_in_new_tab,
+              );
+              form[0].reset();
+              submit_btn.innerHTML = button;
+            }, 100);
+          }
         } else {
           alert("Error processing request.");
         }
