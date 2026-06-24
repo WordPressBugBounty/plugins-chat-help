@@ -1,15 +1,13 @@
-=== ChatHelp – Click to Chat Button, Chat to Order, Floating Chat & Form ===
+=== ChatHelp – Click to Chat Button, WooCommerce Chat to Order & Floating Chat Form ===
 Contributors: ThemeAtelier, faysal61, shshakib2001, tamimaziz
 Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce whatsapp
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 3.4.1
+Stable tag: 3.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-WhatsApp click-to-chat floating button, WooCommerce chat-to-order, built-in analytics dashboard, and chat forms to convert visitors into customers.
-
+Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
 == Description ==
 
 WhatsApp Chat plugin for WordPress makes it simple to add **WhatsApp chat support** to your WordPress site with a customizable floating chat bubble, WooCommerce buttons, shortcode buttons, Gutenberg block, and Elementor widget. Whether you’re running a **WooCommerce store**, a blog, or a service website, Chat Help lets visitors connect with you instantly via **WhatsApp** or **WhatsApp Business**—even join your **WhatsApp Group** directly.
@@ -219,17 +217,25 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 [For basic usage, have a look at ChatHelp quick start guide](https://wpchathelp.com/docs/quick-start-guide/)
 
 == Screenshots ==
-1. Built-in analytics dashboard showing real-time visitors, views, conversions, and leads with performance trendlines, device breakdown, and date-range filters.
-2. WhatsApp contact form layout allowing visitors to send messages directly through WhatsApp chat with a click-to-chat button.
-3. Pre-filled WhatsApp message feature allowing visitors to start chat with predefined text.
-4. Floating WhatsApp chat popup with welcome message and one-click start chat button for WordPress.
-5. Floating Click-to-Chat button for WordPress that lets visitors start a WhatsApp chat instantly.
-6. WooCommerce WhatsApp chat button on product page allowing customers to request a quote or start chat.
-7. Multiple WhatsApp chat button styles with shortcode support for pages, posts, and widgets.
-8. Gutenberg block for adding a WhatsApp chat button anywhere in WordPress pages or posts.
-9. Elementor widget for adding a WhatsApp chat button anywhere on your WordPress website.
+1. Single Form WhatsApp chat widget with subject and message fields for direct customer support and lead capture.
+2. Pre-Chat welcome message widget with agent profile and Start Chat button to boost WhatsApp engagement.
+3. Floating WhatsApp button with "Need Help? Chat with us" call-to-action to increase customer conversions.
+4. WooCommerce product page with "Order Via WhatsApp" buttons and an online support chat widget for instant ordering.
+5. WooCommerce single product page "Get a Quote via WhatsApp" button with easy admin settings panel.
+6. Multiple WhatsApp chat button styles and shortcode options - icons, avatars, hover effects, and customizable sizes.
+7. Chat Help Pro analytics dashboard tracking visitors, views, conversions, leads, and device performance.
+8. Single Form chat experience admin settings with WhatsApp number, form fields, pre-filled messages, and availability scheduling.
+9. Leads management dashboard to view, filter, export, and track WhatsApp form submissions and visitor details.
+10. ChatHelp WooCommerce settings for product page WhatsApp buttons with full styling and customization controls.
+11. ChatHelp shortcode generator to add customizable WhatsApp chat buttons to any page, post, or widget.
+12. ChatHelp advanced settings for WhatsApp URL options, webhooks, analytics, and custom CSS & JS.
+13. WhatsApp Button Gutenberg block for adding chat buttons directly in the WordPress block editor.
+14. WhatsApp chat button integration with Elementor page builder for drag-and-drop customization.
 
 == Changelog ==
+= 3.4.2 – 24 May 2026 =
+* Fixed: Recommended free plugins grid for admin panel.
+
 = 3.4.1 – 20 May 2026 =
 * Added: WhatsApp Group support for the Form Chat, and Pre-Chat Message layouts — on submit, opens a copy-to-clipboard modal with the group invite URL on the "Go to WhatsApp" button.
 * Added: Modal CTA inherits the send-button color settings via CSS variables (`--wHelp-color-primary`, `--wHelp-color-secondary`, `--text-color`, `--text-hover-color`).

@@ -326,7 +326,7 @@
 .recommended_page .plugin-card:nth-child(3n) {
   margin-right: 8px;
 }
-.recommended_page .plugin-card:nth-child(3n + 1) {
+.recommended_page .plugin-card:nth-child(1n + 1) {
   margin-left: 8px;
 }
 

@@ -62,9 +62,7 @@ class Help
      */
     protected static $not_show_plugin_list = array(
         'chat-help',
-        'better-chat-support',
         'bizreview',
-        'chat-help',
         'chat-viber',
         'chat-telegram',
         'click-to-dial',
@@ -187,7 +185,7 @@ class Help
                         $image_type = 'jpg';
                         break;
                     case 'chat-help':
-                        $image_type = 'gif';
+                        $image_type = 'png';
                         break;
                     case 'darkify':
                         $image_type = 'gif?rev=3301202';
@@ -552,7 +550,7 @@ class Help
                         <ul class="section_buttons">
                             <li>
                                 <a class="chat_btn_primary"
-                                    href="<?php echo esc_url(home_url('') . '/wp-admin/admin.php?page=chat-help'); ?>"><?php echo esc_html__('Plugin Settings', 'chat-help') ?></a>
+                                    href="<?php echo esc_url(home_url('') . '/wp-admin/admin.php?page=floating-chat'); ?>"><?php echo esc_html__('Plugin Settings', 'chat-help') ?></a>
                             </li>
                             <li>
                                 <a target="_blank" class="chat_btn_secondary"

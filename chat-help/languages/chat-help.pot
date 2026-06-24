@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-20 13:41+0000\n"
+"POT-Creation-Date: 2026-06-24 06:47+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -62,7 +62,7 @@ msgstr ""
 msgid "Go Pro!"
 msgstr ""
 
-#: src/Admin/Admin.php:223, src/Admin/HelpPage/Help.php:559, src/Admin/Views/CartPage.php:39, src/Admin/Views/CartPage.php:84, src/Admin/Views/CartPage.php:124, src/Admin/Views/CartPage.php:152, src/Admin/Views/CartPage.php:162, src/Admin/Views/CartPage.php:200, src/Admin/Views/CartPage.php:278, src/Admin/Views/CartPage.php:311, src/Admin/Views/CartPage.php:326, src/Admin/Views/CartPage.php:341, src/Admin/Views/CartPage.php:362, src/Admin/Views/CartPage.php:380, src/Admin/Views/CartPage.php:395, src/Admin/Views/CartPage.php:411, src/Admin/Views/CheckoutPage.php:39, src/Admin/Views/CheckoutPage.php:90, src/Admin/Views/CheckoutPage.php:123, src/Admin/Views/CheckoutPage.php:151, src/Admin/Views/CheckoutPage.php:161, src/Admin/Views/CheckoutPage.php:199, src/Admin/Views/CheckoutPage.php:276, src/Admin/Views/CheckoutPage.php:309, src/Admin/Views/CheckoutPage.php:324, src/Admin/Views/CheckoutPage.php:339, src/Admin/Views/CheckoutPage.php:360, src/Admin/Views/CheckoutPage.php:378, src/Admin/Views/CheckoutPage.php:393, src/Admin/Views/CheckoutPage.php:409, src/Admin/Views/General.php:163, src/Admin/Views/General.php:290, src/Admin/Views/General.php:315, src/Admin/Views/General.php:328, src/Admin/Views/General.php:338, src/Admin/Views/General.php:374, src/Admin/Views/General.php:389, src/Admin/Views/General.php:407, src/Admin/Views/General.php:626, src/Admin/Views/General.php:645, src/Admin/Views/General.php:662, src/Admin/Views/General.php:671, src/Admin/Views/General.php:688, src/Admin/Views/General.php:705, src/Admin/Views/General.php:720, src/Admin/Views/General.php:797, src/Admin/Views/General.php:845, src/Admin/Views/General.php:882, src/Admin/Views/General.php:1061, src/Admin/Views/General.php:1102, src/Admin/Views/General.php:1170, src/Admin/Views/General.php:1204, src/Admin/Views/General.php:1218, src/Admin/Views/General.php:1234, src/Admin/Views/General.php:1283, src/Admin/Views/General.php:1307, src/Admin/Views/General.php:1329, src/Admin/Views/General.php:1348, src/Admin/Views/General.php:1362, src/Admin/Views/General.php:1377, src/Admin/Views/General.php:1401, src/Admin/Views/General.php:1431, src/Admin/Views/General.php:1452, src/Admin/Views/General.php:1473, src/Admin/Views/General.php:1494, src/Admin/Views/General.php:1516, src/Admin/Views/General.php:1532, src/Admin/Views/General.php:1589, src/Admin/Views/General.php:1621, src/Admin/Views/General.php:1647, src/Admin/Views/General.php:1690, src/Admin/Views/ProductPage.php:40, src/Admin/Views/ProductPage.php:106, src/Admin/Views/ProductPage.php:129, src/Admin/Views/ProductPage.php:208, src/Admin/Views/ProductPage.php:285, src/Admin/Views/ProductPage.php:317, src/Admin/Views/ProductPage.php:332, src/Admin/Views/ProductPage.php:347, src/Admin/Views/ProductPage.php:368, src/Admin/Views/ProductPage.php:386, src/Admin/Views/ProductPage.php:401, src/Admin/Views/ProductPage.php:417, src/Admin/Views/ShopPage.php:40, src/Admin/Views/ShopPage.php:100, src/Admin/Views/ShopPage.php:123, src/Admin/Views/ShopPage.php:202, src/Admin/Views/ShopPage.php:279, src/Admin/Views/ShopPage.php:311, src/Admin/Views/ShopPage.php:326, src/Admin/Views/ShopPage.php:341, src/Admin/Views/ShopPage.php:362, src/Admin/Views/ShopPage.php:380, src/Admin/Views/ShopPage.php:395, src/Admin/Views/ShopPage.php:411, src/Admin/Views/Shortcode.php:65, src/Admin/Views/ThankYouPage.php:39, src/Admin/Views/ThankYouPage.php:98, src/Admin/Views/ThankYouPage.php:109, src/Admin/Views/ThankYouPage.php:216, src/Admin/Views/ThankYouPage.php:258, src/Admin/Views/ThankYouPage.php:271, src/Admin/Views/ThankYouPage.php:281, src/Admin/Views/ThankYouPage.php:291, src/Admin/Views/ThankYouPage.php:328, src/Admin/Views/ThankYouPage.php:336, src/Admin/Views/ThankYouPage.php:345, src/Admin/Views/ThankYouPage.php:377, src/Admin/Views/ThankYouPage.php:391, src/Admin/Views/ThankYouPage.php:432, src/Admin/Views/ThankYouPage.php:460, src/Admin/Views/ThankYouPage.php:493, src/Admin/Views/ThankYouPage.php:508, src/Admin/Views/ThankYouPage.php:523, src/Admin/Views/ThankYouPage.php:544, src/Admin/Views/ThankYouPage.php:562, src/Admin/Views/ThankYouPage.php:577, src/Admin/Views/ThankYouPage.php:593
+#: src/Admin/Admin.php:223, src/Admin/HelpPage/Help.php:557, src/Admin/Views/CartPage.php:39, src/Admin/Views/CartPage.php:84, src/Admin/Views/CartPage.php:124, src/Admin/Views/CartPage.php:152, src/Admin/Views/CartPage.php:162, src/Admin/Views/CartPage.php:200, src/Admin/Views/CartPage.php:278, src/Admin/Views/CartPage.php:311, src/Admin/Views/CartPage.php:326, src/Admin/Views/CartPage.php:341, src/Admin/Views/CartPage.php:362, src/Admin/Views/CartPage.php:380, src/Admin/Views/CartPage.php:395, src/Admin/Views/CartPage.php:411, src/Admin/Views/CheckoutPage.php:39, src/Admin/Views/CheckoutPage.php:90, src/Admin/Views/CheckoutPage.php:123, src/Admin/Views/CheckoutPage.php:151, src/Admin/Views/CheckoutPage.php:161, src/Admin/Views/CheckoutPage.php:199, src/Admin/Views/CheckoutPage.php:276, src/Admin/Views/CheckoutPage.php:309, src/Admin/Views/CheckoutPage.php:324, src/Admin/Views/CheckoutPage.php:339, src/Admin/Views/CheckoutPage.php:360, src/Admin/Views/CheckoutPage.php:378, src/Admin/Views/CheckoutPage.php:393, src/Admin/Views/CheckoutPage.php:409, src/Admin/Views/General.php:163, src/Admin/Views/General.php:290, src/Admin/Views/General.php:315, src/Admin/Views/General.php:328, src/Admin/Views/General.php:338, src/Admin/Views/General.php:374, src/Admin/Views/General.php:389, src/Admin/Views/General.php:407, src/Admin/Views/General.php:626, src/Admin/Views/General.php:645, src/Admin/Views/General.php:662, src/Admin/Views/General.php:671, src/Admin/Views/General.php:688, src/Admin/Views/General.php:705, src/Admin/Views/General.php:720, src/Admin/Views/General.php:797, src/Admin/Views/General.php:845, src/Admin/Views/General.php:882, src/Admin/Views/General.php:1061, src/Admin/Views/General.php:1102, src/Admin/Views/General.php:1170, src/Admin/Views/General.php:1204, src/Admin/Views/General.php:1218, src/Admin/Views/General.php:1234, src/Admin/Views/General.php:1283, src/Admin/Views/General.php:1307, src/Admin/Views/General.php:1329, src/Admin/Views/General.php:1348, src/Admin/Views/General.php:1362, src/Admin/Views/General.php:1377, src/Admin/Views/General.php:1401, src/Admin/Views/General.php:1431, src/Admin/Views/General.php:1452, src/Admin/Views/General.php:1473, src/Admin/Views/General.php:1494, src/Admin/Views/General.php:1516, src/Admin/Views/General.php:1532, src/Admin/Views/General.php:1589, src/Admin/Views/General.php:1621, src/Admin/Views/General.php:1647, src/Admin/Views/General.php:1690, src/Admin/Views/ProductPage.php:40, src/Admin/Views/ProductPage.php:106, src/Admin/Views/ProductPage.php:129, src/Admin/Views/ProductPage.php:208, src/Admin/Views/ProductPage.php:285, src/Admin/Views/ProductPage.php:317, src/Admin/Views/ProductPage.php:332, src/Admin/Views/ProductPage.php:347, src/Admin/Views/ProductPage.php:368, src/Admin/Views/ProductPage.php:386, src/Admin/Views/ProductPage.php:401, src/Admin/Views/ProductPage.php:417, src/Admin/Views/ShopPage.php:40, src/Admin/Views/ShopPage.php:100, src/Admin/Views/ShopPage.php:123, src/Admin/Views/ShopPage.php:202, src/Admin/Views/ShopPage.php:279, src/Admin/Views/ShopPage.php:311, src/Admin/Views/ShopPage.php:326, src/Admin/Views/ShopPage.php:341, src/Admin/Views/ShopPage.php:362, src/Admin/Views/ShopPage.php:380, src/Admin/Views/ShopPage.php:395, src/Admin/Views/ShopPage.php:411, src/Admin/Views/Shortcode.php:65, src/Admin/Views/ThankYouPage.php:39, src/Admin/Views/ThankYouPage.php:98, src/Admin/Views/ThankYouPage.php:109, src/Admin/Views/ThankYouPage.php:216, src/Admin/Views/ThankYouPage.php:258, src/Admin/Views/ThankYouPage.php:271, src/Admin/Views/ThankYouPage.php:281, src/Admin/Views/ThankYouPage.php:291, src/Admin/Views/ThankYouPage.php:328, src/Admin/Views/ThankYouPage.php:336, src/Admin/Views/ThankYouPage.php:345, src/Admin/Views/ThankYouPage.php:377, src/Admin/Views/ThankYouPage.php:391, src/Admin/Views/ThankYouPage.php:432, src/Admin/Views/ThankYouPage.php:460, src/Admin/Views/ThankYouPage.php:493, src/Admin/Views/ThankYouPage.php:508, src/Admin/Views/ThankYouPage.php:523, src/Admin/Views/ThankYouPage.php:544, src/Admin/Views/ThankYouPage.php:562, src/Admin/Views/ThankYouPage.php:577, src/Admin/Views/ThankYouPage.php:593
 msgid "Live Demo"
 msgstr ""
 
@@ -199,279 +199,279 @@ msgstr ""
 msgid "No leads found."
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:234
+#: src/Admin/HelpPage/Help.php:232
 msgid "Install Now"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:226
+#: src/Admin/HelpPage/Help.php:224
 msgid "Activate"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:242
+#: src/Admin/HelpPage/Help.php:240
 msgid "More Details"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:274
+#: src/Admin/HelpPage/Help.php:272
 msgid "Version:"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:283
+#: src/Admin/HelpPage/Help.php:281
 msgid "+ Active Installations"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:291
+#: src/Admin/HelpPage/Help.php:289
 msgid "Last Updated:"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:292
+#: src/Admin/HelpPage/Help.php:290
 msgid "ago"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:388
+#: src/Admin/HelpPage/Help.php:386
 msgid "Get Started"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:394
+#: src/Admin/HelpPage/Help.php:392
 msgid "Recommended"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:400
+#: src/Admin/HelpPage/Help.php:398
 msgid "Lite Vs Pro"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:406
+#: src/Admin/HelpPage/Help.php:404
 msgid "Pro Plugins"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:414
+#: src/Admin/HelpPage/Help.php:412
 msgid "🚀 Upgrading To Pro!"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:430
+#: src/Admin/HelpPage/Help.php:428
 msgid ""
 "Thank you for installing Whatsapp ChatHelp! This playlist will help you get started with the\n"
 "                                    plugin. Enjoy!"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:555
+#: src/Admin/HelpPage/Help.php:553
 msgid "Plugin Settings"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:563
+#: src/Admin/HelpPage/Help.php:561
 msgid "Upgrade To Pro"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:574
+#: src/Admin/HelpPage/Help.php:572
 msgid "Documentation"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:576
+#: src/Admin/HelpPage/Help.php:574
 msgid "Explore Whatsapp ChatHelp plugin capabilities in our enriched documentation."
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:583
+#: src/Admin/HelpPage/Help.php:581
 msgid "Technical Support"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:585
+#: src/Admin/HelpPage/Help.php:583
 msgid "For personalized assistance, reach out to our skilled support team for prompt help."
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:592
+#: src/Admin/HelpPage/Help.php:590
 msgid "Hire Us!"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:594
+#: src/Admin/HelpPage/Help.php:592
 msgid "We are available for freelance work for any WordPress, React, NextJS projects. Click to contact us."
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:623
+#: src/Admin/HelpPage/Help.php:621
 msgid "FEATURES"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:624
+#: src/Admin/HelpPage/Help.php:622
 msgid "Lite"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:625
+#: src/Admin/HelpPage/Help.php:623
 msgid "PRO"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:628
+#: src/Admin/HelpPage/Help.php:626
 msgid "All Free Version Features"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:634
+#: src/Admin/HelpPage/Help.php:632
 msgid "Amazing Floating Chat Layouts."
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:635, src/Admin/HelpPage/Help.php:643, src/Admin/HelpPage/Help.php:657
+#: src/Admin/HelpPage/Help.php:633, src/Admin/HelpPage/Help.php:641, src/Admin/HelpPage/Help.php:655
 msgid "Hot"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:642
+#: src/Admin/HelpPage/Help.php:640
 msgid "Multi-agents layout."
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:650
+#: src/Admin/HelpPage/Help.php:648
 msgid "Advanced button layout."
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:651
+#: src/Admin/HelpPage/Help.php:649
 msgid "New"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:657
+#: src/Admin/HelpPage/Help.php:655
 msgid "Single form layout's forms fields"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:664
+#: src/Admin/HelpPage/Help.php:662
 msgid "List All Leads Inside Leads Menu"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:671
+#: src/Admin/HelpPage/Help.php:669
 msgid "Export Leads As CSV"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:678
+#: src/Admin/HelpPage/Help.php:676
 msgid "Advanced Filtering For Leads"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:685
+#: src/Admin/HelpPage/Help.php:683
 msgid "Transform it to your current timezone"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:694
+#: src/Admin/HelpPage/Help.php:692
 msgid "Time based availablity for agents"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:702, src/Admin/Views/General.php:742
+#: src/Admin/HelpPage/Help.php:700, src/Admin/Views/General.php:742
 msgid "GDPR Compliance"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:710
+#: src/Admin/HelpPage/Help.php:708
 msgid "Footer Content Change Option"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:718
+#: src/Admin/HelpPage/Help.php:716
 msgid "Icons For Send Message Button"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:726
+#: src/Admin/HelpPage/Help.php:724
 msgid "Icons For Circle Button"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:734, src/Admin/Views/General.php:1097
+#: src/Admin/HelpPage/Help.php:732, src/Admin/Views/General.php:1097
 msgid "Transition Effect for Circle Icon"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:742
+#: src/Admin/HelpPage/Help.php:740
 msgid "Visibility by option(s)"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:751
+#: src/Admin/HelpPage/Help.php:749
 msgid "Icons For Circle Button Close"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:759
+#: src/Admin/HelpPage/Help.php:757
 msgid "Send Button Color Option"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:767
+#: src/Admin/HelpPage/Help.php:765
 msgid "Webhooks Intregation"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:775
+#: src/Admin/HelpPage/Help.php:773
 msgid "Dark and Night Layout Mode"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:784
+#: src/Admin/HelpPage/Help.php:782
 msgid "Right and Middle for Bubble"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:793
+#: src/Admin/HelpPage/Help.php:791
 msgid "Shortcode Buttons"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:799
+#: src/Admin/HelpPage/Help.php:797
 msgid "WooCommerce Buttons"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:805
+#: src/Admin/HelpPage/Help.php:803
 msgid "WooCommerce Buttons Style"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:811
+#: src/Admin/HelpPage/Help.php:809
 msgid "Single Product Button Positions"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:816
+#: src/Admin/HelpPage/Help.php:814
 msgid "Gutenberg Button Blocks"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:825
+#: src/Admin/HelpPage/Help.php:823
 msgid "Upgrade To PRO & Enjoy Advanced Features!"
 msgstr ""
 
 #. translators: %s is the number of users using the plugin.
-#: src/Admin/HelpPage/Help.php:829
+#: src/Admin/HelpPage/Help.php:827
 msgid "Already, %s people are using Whatsapp ChatHelp on their websites to create beautiful showcases, why won’t you!"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:834
+#: src/Admin/HelpPage/Help.php:832
 msgid "Upgrade to Pro Now!"
 msgstr ""
 
 #. translators: %s is a link to the refund policy page.
-#: src/Admin/HelpPage/Help.php:839
+#: src/Admin/HelpPage/Help.php:837
 msgid "14-Day No-Questions-Asked %s"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:839
+#: src/Admin/HelpPage/Help.php:837
 msgid "Refund Policy"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:842
+#: src/Admin/HelpPage/Help.php:840
 msgid "See All Features"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:843
+#: src/Admin/HelpPage/Help.php:841
 msgid "Pro Live Demo"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:850
+#: src/Admin/HelpPage/Help.php:848
 msgid "NO NEED TO TAKE OUR WORD FOR IT"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:851
+#: src/Admin/HelpPage/Help.php:849
 msgid "Our Users Love Whatsapp ChatHelp!"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:857
+#: src/Admin/HelpPage/Help.php:855
 msgid "The plugin is really easy to use for it’s good admin UI also the support is very responsive. I got my answer with solution within few hours."
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:862, src/Admin/HelpPage/Help.php:865, src/Admin/HelpPage/Help.php:880
+#: src/Admin/HelpPage/Help.php:860, src/Admin/HelpPage/Help.php:863, src/Admin/HelpPage/Help.php:878
 msgid "Crowandravener"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:875
+#: src/Admin/HelpPage/Help.php:873
 msgid "I am using this plugin to provide support to my customers through WhatsApp. It’s really effective and they can connect with me very easily using their WhatsApp. They don’t need to save our number manually."
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:883
+#: src/Admin/HelpPage/Help.php:881
 msgid "firststepstogether "
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:893
+#: src/Admin/HelpPage/Help.php:891
 msgid "I requested a Pre-filled Message feature for their plugin, and they implemented it surprisingly fast. I expected it to be a Pro-only feature, but they generously included it in the free version across all chat layouts and button types. Excellent support!"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:898
+#: src/Admin/HelpPage/Help.php:896
 msgid "User Asiegle"
 msgstr ""
 
-#: src/Admin/HelpPage/Help.php:901
+#: src/Admin/HelpPage/Help.php:899
 msgid "fhinvention "
 msgstr ""
 

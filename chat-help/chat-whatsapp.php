@@ -3,7 +3,7 @@
 Plugin Name: 	ChatHelp
 Plugin URI: 	https://wpchathelp.com/
 Description: 	WhatsApp 💬 ChatHelp 🔥 Unlimited customer support tool that allows visitors to engage using "WhatsApp" or "WhatsApp Business". WhatsApp button included.
-Version: 		3.4.1
+Version: 		3.4.2
 Author:         ThemeAtelier
 Author URI:     https://themeatelier.net/
 License:        GPL-2.0+
