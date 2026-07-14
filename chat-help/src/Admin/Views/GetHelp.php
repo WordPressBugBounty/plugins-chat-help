@@ -13,7 +13,7 @@
 
 namespace ThemeAtelier\ChatHelp\Admin\Views;
 
-use ThemeAtelier\ChatHelp\Admin\Framework\Classes\Chat_Help;
+use ThemeAtelier\ChatHelp\Admin\Schema\SchemaRegistry;
 
 class GetHelp
 {
@@ -26,7 +26,7 @@ class GetHelp
      */
     public static function options($prefix)
     {
-        Chat_Help::createOptions($prefix, array(
+        SchemaRegistry::createOptions($prefix, array(
             'menu_title'              => esc_html__('ChatHelp Help', 'chat-help'),
             'menu_slug'               => 'chat-help-help',
             'menu_type'               => 'submenu',
@@ -43,14 +43,11 @@ class GetHelp
             'footer_text'             => esc_html__('Thank you for using our product', 'chat-help'),
             'theme'                   => 'light',
             'nav'                     => 'inline',
-            'framework_class'         => 'chat-help-setting-admin chat-help-help-page',
+            'framework_class'         => 'chat-help-admin chat-help-help-page',
             'class'                   => 'chat-help-preloader',
         ));
-        //
-        // Field: advance
-        //
-        Chat_Help::createSection($prefix, array(
-            'title'       => esc_html__('HELP', 'chat-help'),
+        SchemaRegistry::createSection($prefix, array(
+            'title'       => esc_html__('GET HELP', 'chat-help'),
             'icon'        => 'icofont-life-buoy',
 
             'fields'      => array(

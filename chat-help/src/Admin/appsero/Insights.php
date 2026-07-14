@@ -426,14 +426,14 @@ class Insights
         if (isset($_GET[$this->client->slug . '_tracker_optin']) && $_GET[$this->client->slug . '_tracker_optin'] == 'true') {
             $this->optin();
 
-            wp_redirect(remove_query_arg($this->client->slug . '_tracker_optin'));
+            wp_safe_redirect(remove_query_arg($this->client->slug . '_tracker_optin'));
             exit;
         }
 
         if (isset($_GET[$this->client->slug . '_tracker_optout']) && $_GET[$this->client->slug . '_tracker_optout'] == 'true') {
             $this->optout();
 
-            wp_redirect(remove_query_arg($this->client->slug . '_tracker_optout'));
+            wp_safe_redirect(remove_query_arg($this->client->slug . '_tracker_optout'));
             exit;
         }
     }
@@ -775,7 +775,7 @@ class Insights
         $custom_reasons = apply_filters('appsero_custom_deactivation_reasons', []);
 ?>
 
-        <div class="wd-dr-modal" id="<?php echo $this->client->slug; ?>-wd-dr-modal">
+        <div class="wd-dr-modal" id="<?php echo esc_attr($this->client->slug); ?>-wd-dr-modal">
             <div class="wd-dr-modal-wrap">
                 <div class="wd-dr-modal-header">
                     <h3><?php $this->client->_etrans('Goodbyes are always hard. If you have a moment, please let us know how we can improve.'); ?>
@@ -858,10 +858,13 @@ class Insights
                     <div class="wd-dr-modal-reason-input"><textarea></textarea></div>
                     <p class="wd-dr-modal-reasons-bottom">
                         <?php
-                        echo sprintf(
-                            $this->client->chat_help_trans('We share your data with <a href="%1$s" target="_blank">Appsero</a> to troubleshoot problems &amp; make product improvements. <a href="%2$s" target="_blank">Learn more</a> about how Appsero handles your data.'),
-                            esc_url('https://appsero.com/'),
-                            esc_url('https://appsero.com/privacy-policy')
+                        echo wp_kses(
+                            sprintf(
+                                $this->client->chat_help_trans('We share your data with <a href="%1$s" target="_blank">Appsero</a> to troubleshoot problems &amp; make product improvements. <a href="%2$s" target="_blank">Learn more</a> about how Appsero handles your data.'),
+                                esc_url('https://appsero.com/'),
+                                esc_url('https://appsero.com/privacy-policy')
+                            ),
+                            array('a' => array('href' => true, 'target' => true))
                         );
                         ?>
                     </p>
@@ -880,11 +883,11 @@ class Insights
         <script type="text/javascript">
             (function($) {
                 $(function() {
-                    var modal = $('#<?php echo $this->client->slug; ?>-wd-dr-modal');
+                    var modal = $('#<?php echo esc_js($this->client->slug); ?>-wd-dr-modal');
                     var deactivateLink = '';
 
                     // Open modal
-                    $('#the-list').on('click', 'a.<?php echo $this->client->slug; ?>-deactivate-link', function(e) {
+                    $('#the-list').on('click', 'a.<?php echo esc_js($this->client->slug); ?>-deactivate-link', function(e) {
                         e.preventDefault();
 
                         modal.addClass('modal-active');
@@ -943,7 +946,7 @@ class Insights
                             url: ajaxurl,
                             type: 'POST',
                             data: {
-                                action: '<?php echo $this->client->slug; ?>_submit-uninstall-reason',
+                                action: '<?php echo esc_js($this->client->slug); ?>_submit-uninstall-reason',
                                 reason_id: (0 === $radio.length) ? 'none' : $radio.val(),
                                 reason_info: (0 !== $input.length) ? $input.val().trim() : ''
                             },

@@ -278,50 +278,13 @@ class Analytics
 
     public function get_tables(WP_REST_Request $request)
     {
-        global $wpdb;
-
-        [$from, $to, $widget_where, $date_where] = $this->build_where($request->get_params());
-        $table = $this->table;
-
-        $countries = $wpdb->get_results(
-            "SELECT country AS label,
-                SUM(event_type = 'view') AS views,
-                SUM(event_type = 'conversion') AS conversions
-            FROM $table WHERE 1=1 $date_where $widget_where AND country != ''
-            GROUP BY country ORDER BY views DESC LIMIT 10"
-        );
-
-        $pages = $wpdb->get_results(
-            "SELECT page_url AS label,
-                SUM(event_type = 'view') AS views,
-                SUM(event_type = 'conversion') AS conversions
-            FROM $table WHERE 1=1 $date_where $widget_where AND page_url != ''
-            GROUP BY page_url ORDER BY views DESC LIMIT 10"
-        );
-
-        $browsers = $wpdb->get_results(
-            "SELECT browser AS label,
-                SUM(event_type = 'view') AS views,
-                SUM(event_type = 'conversion') AS conversions
-            FROM $table WHERE 1=1 $date_where $widget_where AND browser != ''
-            GROUP BY browser ORDER BY views DESC LIMIT 10"
-        );
-
-        $format = function ($rows) {
-            return array_map(function ($row) {
-                return [
-                    'label'       => $row->label,
-                    'views'       => (int) $row->views,
-                    'conversions' => (int) $row->conversions,
-                ];
-            }, $rows ?: []);
-        };
-
+        // Traffic Breakdown (countries / pages / browsers) is Pro-only. The
+        // free dashboard renders a locked preview and never calls this, but
+        // the data is withheld server-side too (defence-in-depth).
         return new WP_REST_Response([
-            'countries' => $format($countries),
-            'pages'     => $format($pages),
-            'browsers'  => $format($browsers),
-        ]);
+            'pro'     => true,
+            'message' => __('Traffic Breakdown is a Pro feature. Upgrade to see countries, pages, and browsers.', 'chat-help'),
+        ], 403);
     }
 
     private function build_where(array $params)
@@ -443,10 +406,9 @@ class Analytics
     public function inject_tracking_script()
     {
         $track_url = esc_url_raw(rest_url('chat-help/v1/analytics/track'));
-        $url_json  = wp_json_encode($track_url);
         ?>
 <script>(function(){
-var trackUrl=<?php echo $url_json; ?>;
+var trackUrl=<?php echo wp_json_encode($track_url); ?>;
 function getDevice(){var ua=navigator.userAgent;if(/tablet|ipad|playbook|silk/i.test(ua))return"other";if(/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/i.test(ua))return"mobile";return"desktop";}
 var device=getDevice();
 function track(eventType,widgetId,sessionId){fetch(trackUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({event_type:eventType,widget_id:widgetId||0,device_type:device,session_id:sessionId||"",page_url:window.location.pathname})}).catch(function(){});}

@@ -85,7 +85,7 @@ if ($product) {
         type="submit"
         class="wHelp__send-message <?php echo $gdpr_enable ? 'condition__checked' : ''; ?>"
         style="--wHelp-color-primary: <?php echo esc_attr($background) ?>;--wHelp-color-secondary:<?php echo esc_attr($hover_background) ?>;--text-color: <?php echo esc_attr($color) ?>;--text-hover-color: <?php echo esc_attr($hover_color) ?>"
-        <?php echo $gaAnalyticsAttr; // already escaped via sprintf/esc_attr ?>
+        <?php echo esc_attr($gaAnalyticsAttr); // "data-number=…" / "data-group=…" — digits only, esc_attr passes it through ?>
         target="_blank">
         <?php
         if ($before_chat_icon === 'no_icon') {

@@ -33,6 +33,67 @@ const wHelpCheckboxDiv = document.querySelectorAll(".wHelp--checkbox");
 const wHelpCheckbox = document.querySelectorAll(".wHelp__checkbox");
 const wHelpCheckButton = document.querySelectorAll(".wHelp__send-message");
 const wHelpPopupContent = document.querySelectorAll(".wHelp__popup__content");
+
+/* Scrollbar-aware form-field gutter: `.user-text` keeps an 8px right padding
+   as breathing room only while its content does NOT scroll. Once it overflows
+   and the scrollbar actually takes up layout space (classic scrollbars; the
+   macOS overlay kind takes none and keeps the padding), the `wHelp-scrollable`
+   class drops the padding so the field edges stay aligned — smoothly (the
+   padding transitions instead of jumping, and toggling it never changes the
+   wrapper's own width, so nothing outside it shifts). Recalculated live: on
+   the wrapper resizing, on any field inside it resizing (e.g. a user dragging
+   a <textarea>'s native resize handle), on fields being added/removed, and on
+   viewport resize — with no page reload. */
+const wHelpUserTexts = document.querySelectorAll(
+  ".wHelp__popup__content .user-text",
+);
+const wHelpSyncScrollGutter = (el) => {
+  const style = window.getComputedStyle(el);
+  const borders =
+    (parseFloat(style.borderLeftWidth) || 0) +
+    (parseFloat(style.borderRightWidth) || 0);
+  const scrollbarTakesSpace = el.offsetWidth - el.clientWidth - borders > 0;
+  const overflows = el.scrollHeight > el.clientHeight;
+  el.classList.toggle("wHelp-scrollable", overflows && scrollbarTakesSpace);
+};
+wHelpUserTexts.forEach((el) => {
+  const sync = () => wHelpSyncScrollGutter(el);
+  sync();
+
+  // Viewport resize can change whether the popup's fields wrap onto more
+  // lines (and so whether they overflow) even when nothing inside `.user-text`
+  // itself fires a ResizeObserver callback in the same tick — always listen
+  // for it, regardless of ResizeObserver support below.
+  window.addEventListener("resize", sync);
+
+  if (typeof ResizeObserver === "undefined") {
+    return;
+  }
+
+  const resizeObserver = new ResizeObserver(sync);
+  const observeChildren = () => {
+    Array.from(el.children).forEach((child) => resizeObserver.observe(child));
+  };
+  // The wrapper itself — catches responsive/media-query driven size changes.
+  resizeObserver.observe(el);
+  // Every field inside it. `.user-text` is capped by `max-height`, so its OWN
+  // box never changes size once content overflows — only its `scrollHeight`
+  // does. A field resized (e.g. that <textarea> drag handle) changes ITS OWN
+  // box without ever changing the wrapper's, so an observer on the wrapper
+  // alone would never fire for that.
+  observeChildren();
+
+  // Fields can be added or removed at runtime (e.g. the admin's Form Fields
+  // repeater). Re-sync and start observing any newly-added field so it's
+  // covered by the same size-based detection above.
+  if (typeof MutationObserver !== "undefined") {
+    new MutationObserver(() => {
+      observeChildren();
+      sync();
+    }).observe(el, { childList: true });
+  }
+});
+
 const wHelpButtons = document.querySelectorAll(".wHelpButtons");
 const wHelpChatAvailability = document.querySelector(".chat-availability");
 const subtitleEl = document.querySelector(".info__title");

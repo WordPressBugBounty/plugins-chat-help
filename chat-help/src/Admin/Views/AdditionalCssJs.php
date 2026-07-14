@@ -13,7 +13,7 @@
 
 namespace ThemeAtelier\ChatHelp\Admin\Views;
 
-use ThemeAtelier\ChatHelp\Admin\Framework\Classes\Chat_Help;
+use ThemeAtelier\ChatHelp\Admin\Schema\SchemaRegistry;
 
 class AdditionalCssJs
 {
@@ -25,10 +25,7 @@ class AdditionalCssJs
      */
     public static function options($prefix)
     {
-        //
-        // Field: backup
-        //
-        Chat_Help::createSection(
+        SchemaRegistry::createSection(
             $prefix,
             array(
                 'title' => esc_html__('Additional CSS & JS', 'chat-help'),
@@ -38,28 +35,18 @@ class AdditionalCssJs
                         'id'       => 'whatsapp_custom_css',
                         'type'     => 'code_editor',
                         'title' => esc_html__('Custom CSS', 'chat-help'),
-                        'title_help' =>
-                        '<div class="chat-help-info-label">' .
-                            esc_html__('Add your own custom CSS to override or extend the default styling of the chat box.', 'chat-help') .
-                            '</div>' .
-                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/additional-css-js/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-
+                        'title_help' => '<div class="chat-help-info-label">' .  esc_html__('Add your own custom CSS to override or extend the default styling of the chat box.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/additional-css-js/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                         'settings' => array(
                             'theme'  => 'mbo',
                             'mode'   => 'css',
                         ),
                     ),
-
                     array(
                         'id'       => 'whatsapp_custom_js',
                         'type'     => 'code_editor',
                         'title' => esc_html__('Custom JavaScript', 'chat-help'),
                         'title_help' =>
-                        '<div class="chat-help-info-label">' .
-                            esc_html__('Add your own custom JavaScript to extend or customize chat box behavior.', 'chat-help') .
-                            '</div>' .
-                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/additional-css-js/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-
+                        '<div class="chat-help-info-label">' . esc_html__('Add your own custom JavaScript to extend or customize chat box behavior.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/additional-css-js/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
                         'settings' => array(
                             'theme'  => 'mbo',
                             'mode'   => 'js',

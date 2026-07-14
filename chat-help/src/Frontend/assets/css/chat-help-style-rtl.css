@@ -255,6 +255,10 @@
   margin-bottom: 15px;
   max-height: 240px;
   overflow-y: auto;
+  padding-left: 0px;
+  transition: padding-left 0.15s ease;
+}
+.wHelp__popup__content .user-text.wHelp-scrollable {
   padding-left: 8px;
 }
 .wHelp__popup__content .user-text::-webkit-scrollbar {
@@ -1393,5 +1397,3 @@
 .theme-kadence.woocommerce ul.products.woo-archive-action-on-hover li.product:focus-within .product-action-wrap {
   bottom: -3rem;
 }
-
-/*# sourceMappingURL=chat-help-style.css.map */

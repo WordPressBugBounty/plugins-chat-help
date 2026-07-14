@@ -197,6 +197,30 @@ class Helpers
 	}
 
 	/**
+	 * The Global Chat (cwp_option) WhatsApp Number and Group, used as live
+	 * fallbacks anywhere a number/group field is left empty (WooCommerce
+	 * buttons, shortcode, Elementor widget, and as editor defaults for the
+	 * Gutenberg block and new Chat Layouts). Reading the option here — not
+	 * copying values around — is what makes the fallback live: change the
+	 * global number once and every empty field follows.
+	 *
+	 * @return array{number:string,group:string}
+	 */
+	public static function global_whatsapp_defaults()
+	{
+		$options = get_option('cwp_option', array());
+		$options = is_array($options) ? $options : array();
+
+		$number = isset($options['opt-number']) && is_string($options['opt-number']) ? trim($options['opt-number']) : '';
+		$group  = isset($options['opt-group']) && is_string($options['opt-group']) ? trim($options['opt-group']) : '';
+
+		return array(
+			'number' => $number,
+			'group'  => $group,
+		);
+	}
+
+	/**
 	 * WhatsApp URL
 	 *
 	 * @return string
@@ -335,6 +359,65 @@ class Helpers
 		}
 
 		$lines[] = "*Total:* {$total}";
+
+		return implode("\n", $lines);
+	}
+
+	/**
+	 * Build the customer's shipping information for the WhatsApp message.
+	 *
+	 * Reads the shipping fields the customer has entered (available on the cart
+	 * and checkout pages) and falls back to billing fields when a shipping field
+	 * is empty (e.g. "ship to billing address"). Country and state codes are
+	 * resolved to human-readable names. Returns an empty string when no address
+	 * data is available so the {shipping} placeholder degrades gracefully.
+	 *
+	 * @return string
+	 */
+	private static function get_shipping_whatsapp_info()
+	{
+		if (! function_exists('WC') || ! WC() || ! WC()->customer) {
+			return '';
+		}
+
+		$customer = WC()->customer;
+
+		$first    = $customer->get_shipping_first_name() ?: $customer->get_billing_first_name();
+		$last     = $customer->get_shipping_last_name() ?: $customer->get_billing_last_name();
+		$company  = $customer->get_shipping_company() ?: $customer->get_billing_company();
+		$addr1    = $customer->get_shipping_address_1() ?: $customer->get_billing_address_1();
+		$addr2    = $customer->get_shipping_address_2() ?: $customer->get_billing_address_2();
+		$city     = $customer->get_shipping_city() ?: $customer->get_billing_city();
+		$state    = $customer->get_shipping_state() ?: $customer->get_billing_state();
+		$postcode = $customer->get_shipping_postcode() ?: $customer->get_billing_postcode();
+		$country  = $customer->get_shipping_country() ?: $customer->get_billing_country();
+
+		// Resolve country/state codes to readable names when possible.
+		$country_name = $country;
+		$state_name   = $state;
+		if ($country && WC()->countries) {
+			$countries    = WC()->countries->get_countries();
+			$country_name = isset($countries[$country]) ? $countries[$country] : $country;
+
+			$states     = WC()->countries->get_states($country);
+			$state_name = ($state && is_array($states) && isset($states[$state])) ? $states[$state] : $state;
+		}
+
+		$name  = trim($first . ' ' . $last);
+		$lines = [];
+
+		if ('' !== $name)         $lines[] = "*Name:* {$name}";
+		if ('' !== $company)      $lines[] = "*Company:* {$company}";
+		if ('' !== $addr1)        $lines[] = "*Address:* {$addr1}";
+		if ('' !== $addr2)        $lines[] = "*Address 2:* {$addr2}";
+		if ('' !== $city)         $lines[] = "*City:* {$city}";
+		if ('' !== $state_name)   $lines[] = "*State:* {$state_name}";
+		if ('' !== $postcode)     $lines[] = "*Postcode:* {$postcode}";
+		if ('' !== $country_name) $lines[] = "*Country:* {$country_name}";
+
+		if (empty($lines)) {
+			return '';
+		}
 
 		return implode("\n", $lines);
 	}
@@ -517,9 +600,10 @@ class Helpers
 		// 🔥 Cart Info
 		$cartInfo = self::get_cart_whatsapp_info();
 		$orderInfo = self::order_info_whatsapp_info();
+		$shippingInfo = self::get_shipping_whatsapp_info();
 
-		$variables = array('{siteTitle}', '{currentTitle}', '{siteURL}', '{currentURL}', '{siteEmail}', '{date}', '{ip}', '{cartInfo}', '{orderInfo}');
-		$values = array($siteTitle, $currentTitle, $siteURL, $currentURL, $siteEmail, $date, $ip, $cartInfo, $orderInfo);
+		$variables = array('{siteTitle}', '{currentTitle}', '{siteURL}', '{currentURL}', '{siteEmail}', '{date}', '{ip}', '{cartInfo}', '{orderInfo}', '{shipping}');
+		$values = array($siteTitle, $currentTitle, $siteURL, $currentURL, $siteEmail, $date, $ip, $cartInfo, $orderInfo, $shippingInfo);
 		if (!self::is_valid_wc_product($product)) {
 			$product = null;
 		}
@@ -626,5 +710,17 @@ class Helpers
 
 		// fallback if label empty
 		return $fallback;
+	}
+
+	/**
+	 * Capability required to manage the Chat Help admin (menu + REST routes).
+	 * Filterable so hosts can widen/narrow access. Mirrors the Pro plugin so the
+	 * ported REST controllers use the same gate.
+	 *
+	 * @return string
+	 */
+	public static function chat_help_dashboard_capability()
+	{
+		return apply_filters('chat_help_dashboard_capability', 'manage_options');
 	}
 }

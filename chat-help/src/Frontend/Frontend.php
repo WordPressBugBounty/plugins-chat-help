@@ -34,6 +34,48 @@ if (! defined('ABSPATH')) {
 class Frontend
 {
     /**
+     * System / web-safe font families that never need a Google Font stylesheet
+     * (already available locally). Mirrors chat-help-pro's list one-for-one so
+     * the Typography font-family feature behaves identically across versions.
+     *
+     * @var array<int,string>
+     */
+    const SAFE_WEB_FONTS = [
+        'Arial', 'Arial Black', 'Helvetica', 'Times New Roman', 'Courier New',
+        'Tahoma', 'Verdana', 'Impact', 'Trebuchet MS', 'Comic Sans MS',
+        'Lucida Console', 'Lucida Sans Unicode', 'Georgia', 'Palatino Linotype',
+    ];
+
+    /**
+     * Enqueue a Google Font stylesheet for a resolved typography font-family
+     * (the `chat_help_typography` field's `font-family` sub-option). Ported from
+     * chat-help-pro so the free version loads the chosen font exactly the same
+     * way: the modern `/css2` endpoint, a real `wp_enqueue_style()` handle
+     * (deduped, filterable, `null` version so no cache-busting query string),
+     * skipped entirely for `SAFE_WEB_FONTS` system fonts.
+     *
+     * Used by both the real frontend (`enqueue_scripts()`, hooked to
+     * `wp_enqueue_scripts` so it prints in `<head>`) and the admin live preview
+     * (`PreviewRest::render_assets()`, which needs the returned handle to
+     * `wp_styles()->do_items()` it into the preview iframe's head) — one
+     * function, so the two can never diverge.
+     *
+     * @param string $font_family The selected font family name.
+     * @return string The registered style handle, or '' if nothing was enqueued.
+     */
+    public static function enqueue_google_font($font_family)
+    {
+        $font_family = trim((string) $font_family);
+        if (! $font_family || in_array($font_family, self::SAFE_WEB_FONTS, true)) {
+            return '';
+        }
+        $handle          = 'chat-help-google-font-' . sanitize_key($font_family);
+        $font_url_family = str_replace(' ', '+', $font_family);
+        wp_enqueue_style($handle, "https://fonts.googleapis.com/css2?family={$font_url_family}&display=swap", [], null);
+        return $handle;
+    }
+
+    /**
      * The slug of this plugin.
      *
      * @since    1.0.0
@@ -146,6 +188,12 @@ class Frontend
 
         wp_enqueue_style('ico-font');
         wp_enqueue_style('chat-help-style');
+
+        // Load the chosen Typography Google Font in <head> (skipped for
+        // system fonts). The font-family itself is applied by inline_style().
+        $chat_help_typography = isset($options['chat_help_typography']) ? $options['chat_help_typography'] : array();
+        self::enqueue_google_font(isset($chat_help_typography['font-family']) ? $chat_help_typography['font-family'] : '');
+
         $custom_css = '';
         if ($wa_custom_css) {
             $custom_css .= $wa_custom_css;
@@ -184,11 +232,7 @@ class Frontend
         $unique_id = "chat_help_button_$this->unique_id";
         $options = get_option('cwp_option');
         $ch_settings = get_option('ch_settings');
-        $bubble_include_page = isset($options['bubble_include_page']) ? $options['bubble_include_page'] : '';
-        $bubble_exclude_page = isset($options['bubble_exclude_page']) ? $options['bubble_exclude_page'] : '';
         $whatsapp_message_template = isset($options['whatsapp_message_template']) ? $options['whatsapp_message_template'] : '';
-        $whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
-        $circle_animation = isset($options['circle-animation']) ? $options['circle-animation'] : '3';
         $chat_type = isset($options['chat_layout']) ? $options['chat_layout'] : 'form';
         $random         = wp_rand(1, 13);
         $bubble_type = Buttons::buttons($options, $ch_settings);
@@ -198,6 +242,32 @@ class Frontend
             self::render_chat_template($chat_type, $options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id);
         }
 
+        // Every value inside the block is esc_attr()'d (or charset-stripped for
+        // the font name) where it's interpolated; wp_kses here validates the
+        // <style> wrapper itself without re-encoding the CSS text.
+        echo wp_kses(
+            self::inline_style($options, $unique_id),
+            array('style' => array('type' => true, 'class' => true))
+        );
+    }
+
+    /**
+     * The positioning/color CSS custom-property block, scoped to `#$unique_id`
+     * (the widget wrapper's id — see the templates' `id="' . esc_attr($unique_id)`
+     * markup). `chat-help-style.css` reads these vars globally (e.g.
+     * `background: var(--wHelp-color-primary)`), so this small per-instance
+     * block is what actually applies a widget's saved position/colors.
+     *
+     * Extracted out of chat_help_content() (same output, just returned instead
+     * of echoed) so the admin Live Preview can render the identical style block
+     * for an unsaved options array without duplicating this template.
+     *
+     * @param array  $options   The widget's options (cwp_option or ch_meta shape).
+     * @param string $unique_id The id of the widget wrapper element this styles.
+     * @return string
+     */
+    public static function inline_style($options, $unique_id)
+    {
         $bubble_button_tooltip_background = isset($options['bubble_button_tooltip_background']) ? $options['bubble_button_tooltip_background'] : '#f5f7f9';
         $bubble_button_tooltip_width = isset($options['bubble_button_tooltip_width']) ? $options['bubble_button_tooltip_width'] : 190;
         // Right
@@ -229,9 +299,33 @@ class Frontend
         $color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
         $primary = isset($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
         $secondary = isset($color_settings['secondary']) ? $color_settings['secondary'] : '#118c7e';
+
+        // Chat bubble typography (`chat_help_typography` field) — only
+        // `font-family` is enabled on that field, so that's all that's applied.
+        // The selector mirrors the field's schema `output` key exactly (keep both
+        // in sync). `.wHelp button` is required because browsers don't inherit
+        // `font-family` into form controls, so submit buttons ("Send Message")
+        // would otherwise fall back to the default UI font. The Google Font
+        // stylesheet is enqueued separately (frontend: enqueue_scripts(); preview:
+        // PreviewRest::render_assets()) via enqueue_google_font().
+        $chat_help_typography = isset($options['chat_help_typography']) ? $options['chat_help_typography'] : array();
+        $typography_font_family = isset($chat_help_typography['font-family']) ? trim($chat_help_typography['font-family']) : '';
+        // Sanitized for direct output inside the raw-text <style> element below.
+        // Entities aren't decoded inside <style>, so no escaping function may
+        // introduce them there — instead strip everything that isn't part of a
+        // real font-family name. That also makes the esc_attr() at the echo a
+        // guaranteed no-op (nothing encodable survives this charset).
+        $typography_font_family = preg_replace('/[^A-Za-z0-9 _\-]/', '', $typography_font_family);
+
+        ob_start();
     ?>
         <style type="text/css" class="chat_help_inline_css">
-            #chat_help_button_<?php echo esc_attr($this->unique_id); ?> {
+            <?php if ($typography_font_family) : ?>
+            .wHelp,.wHelp-multi,.wHelp-multi input, .advance_button, .wHelp__popup__content input, .wHelp__popup__content textarea, .wHelp button {
+                font-family: "<?php echo esc_attr($typography_font_family); // a no-op: the preg_replace above leaves nothing for esc_attr to encode, so no entities can reach the <style> text ?>";
+            }
+            <?php endif; ?>
+            #<?php echo esc_attr($unique_id); ?> {
                 --right_bottom_value_bottom: <?php echo esc_attr($right_bottom_value_bottom . $right_bottom_unit) ?>;
                 --right_bottom_value_right: <?php echo esc_attr($right_bottom_value_right . $right_bottom_unit) ?>;
                 --left_bottom_value_bottom: <?php echo esc_attr($left_bottom_value_bottom . $left_bottom_unit) ?>;
@@ -247,6 +341,7 @@ class Frontend
             }
         </style>
 <?php
+        return ob_get_clean();
     }
 
     public static function render_chat_template($chat_type, $options, $ch_settings, $bubble_type, $random, $whatsapp_message_template, $unique_id)

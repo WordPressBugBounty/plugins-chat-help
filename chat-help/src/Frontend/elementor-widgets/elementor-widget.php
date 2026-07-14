@@ -100,13 +100,19 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
             )
         );
 
+        // The number/group controls default to the Global Chat values, re-read
+        // on every editor load, so untouched widgets inherit them live (Elementor
+        // only persists values the user changes). Clearing the field entirely
+        // still inherits too, via the render() fallback.
+        $global_whatsapp = Helpers::global_whatsapp_defaults();
         $this->add_control(
             'number',
             array(
                 'label'       => esc_html__('Whatsapp number', 'chat-help'),
-                'description' => esc_html__('Add your whatsapp number including country code. eg: +880123456189', 'chat-help'),
+                'description' => esc_html__('Add your whatsapp number including country code. eg: +880123456189. Leave unchanged to use the Global Chat number.', 'chat-help'),
                 'label_block' => false,
                 'type'        => \Elementor\Controls_Manager::TEXT,
+                'default'     => $global_whatsapp['number'],
                 'condition'   => array(
                     'type_of_whatsapp' => 'number',
                 ),
@@ -116,9 +122,10 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
             'group',
             array(
                 'label'       => esc_html__('Whatsapp group', 'chat-help'),
-                'description' => esc_html__('Add your whatsapp group link', 'chat-help'),
+                'description' => esc_html__('Add your whatsapp group link. Leave unchanged to use the Global Chat group.', 'chat-help'),
                 'label_block' => false,
                 'type'        => \Elementor\Controls_Manager::TEXT,
+                'default'     => $global_whatsapp['group'],
                 'condition'   => array(
                     'type_of_whatsapp' => 'group',
                 ),
@@ -1565,6 +1572,10 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         $type_of_whatsapp     = $settings['type_of_whatsapp'];
         $number     = $settings['number'];
         $group      = $settings['group'];
+        // Empty widget fields inherit the Global Chat number/group (live fallback).
+        $global_whatsapp = Helpers::global_whatsapp_defaults();
+        $number = trim((string) $number) !== '' ? $number : $global_whatsapp['number'];
+        $group  = trim((string) $group) !== '' ? $group : $global_whatsapp['group'];
         $timezone   = $settings['timezone'];
         $visibility = $settings['visibility'];
         $show__button__icon       = isset($settings['show__button__icon']) ? $settings['show__button__icon'] : '';

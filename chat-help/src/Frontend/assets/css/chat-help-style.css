@@ -255,6 +255,10 @@
   margin-bottom: 15px;
   max-height: 240px;
   overflow-y: auto;
+  padding-right: 0px;
+  transition: padding-right 0.15s ease;
+}
+.wHelp__popup__content .user-text.wHelp-scrollable {
   padding-right: 8px;
 }
 .wHelp__popup__content .user-text::-webkit-scrollbar {

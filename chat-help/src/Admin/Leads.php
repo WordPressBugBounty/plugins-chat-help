@@ -36,29 +36,16 @@ class Leads
         $options = get_option('cwp_option');
         $chat_help_leads    = isset($options['chat_help_leads']) ? $options['chat_help_leads'] : true;
         if ($chat_help_leads) {
-            add_action('chat_help_recommended_page_menu', [$this, 'register_chat_help_leads_submenu']);
+            // NOTE: the Leads submenu item is registered by Admin::add_plugin_page()
+            // (slug `chat-help-leads`), matching the Pro plugin. It used to be
+            // registered here with the slug `chat-help#/leads`, but WordPress
+            // URL-encodes the `#`, so the hash never reached the browser and the
+            // SPA always opened on the Dashboard route.
             add_action('admin_head', array($this, 'chat_help_localize_script'));
             add_action('rest_api_init', [$this, 'register_rest_routes']);
 
             $this->create_chat_help_leads_table();
         }
-    }
-
-    /**
-     * Registers the "Leads" submenu page under DFS Templates.
-     *
-     * @since 3.1.0
-     */
-    public function register_chat_help_leads_submenu()
-    {
-        add_submenu_page(
-            'chat-help',
-            esc_html__('Leads', 'chat-help'),
-            esc_html__('Leads', 'chat-help'),
-            'manage_options',
-            'chat-help#/leads',
-            '__return_true'
-        );
     }
 
     /**
@@ -225,7 +212,7 @@ class Leads
             'copied' => esc_html__('Copied!', 'chat-help'),
             'no_leads_to_export' => esc_html__('No leads to export', 'chat-help'),
             'no_leads_found' => esc_html__('No leads found.', 'chat-help'),
-            'all_agents' => esc_html__('All Agents', 'chat-help-pro'),
+            'all_agents' => esc_html__('All Agents', 'chat-help'),
         ];
     }
 }

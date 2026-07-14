@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 3.4.2
+Stable tag: 3.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -233,6 +233,27 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 14. WhatsApp chat button integration with Elementor page builder for drag-and-drop customization.
 
 == Changelog ==
+= 3.5.0 – 14 July 2026 =
+* Added: Completely redesigned admin built with React — the same modern interface, navigation and page structure as WhatsApp Chat Help Pro.
+* Added: Chat Layouts — create and manage multiple floating chat widgets, each with its own layout, agents, appearance and behavior settings, right from the new layout editor.
+* Added: Assign Layouts — choose exactly where each saved Chat Layout appears by assigning it to specific posts, pages or WooCommerce content.
+* Added: Pro-only options (Multi-Agent, Multi-Agent Form, Dark & Night bubble modes, custom icons, responsive positioning, content visibility rules and more) are now shown in place with a "PRO" badge instead of being hidden, so you can see exactly what Pro adds.
+* Improved: Settings are now served over the REST API, which makes the settings pages load and save noticeably faster.
+* Improved: The Leads menu item now opens the Leads screen directly.
+* Improved: Exporting leads to CSV now shows a progress state and a success or error notification instead of failing silently.
+* Improved: Security hardening across the plugin — all dynamic output is escaped and admin redirects use safe redirects, following the WordPress.org Plugin Check recommendations.
+* Improved: The WhatsApp Button editor block now uses Block API version 3 for compatibility with the WordPress 7.0 iframe block editor.
+* Changed: Webhooks settings are now a Pro feature — the section stays visible as a read-only preview with an Upgrade to Pro panel. (The free version never sent webhook requests; any saved values are preserved.)
+* Changed: Removed the legacy Codestar settings framework and unused bundled assets (~2.6 MB smaller download).
+* Fixed: The "rate us" prompt in the admin footer could disappear when another installed plugin also overrides the footer text.
+* Note: All existing settings are preserved — this release does not change or reset any of your saved options.
+
+= 3.4.3 – 28 June 2026 =
+* Added: {shipping} placeholder for the WooCommerce Cart and Checkout pre-filled messages — inserts the customer's shipping first/last name, company, address line 1 & 2, city, state, postcode and country, with graceful fallback to billing details.
+* Improved: On the Checkout page the {shipping} placeholder now refreshes from the live checkout form — including manual field edits, the "ship to a different address" toggle, and WooCommerce AJAX updates — so the WhatsApp message always sends the latest shipping information.
+* Fixed: Product Page button could leak onto the Cart page (once per cart item); it is now scoped to single product pages only.
+* Fixed: WhatsApp button not appearing on the WooCommerce Checkout block. The button was only hooked into the classic (shortcode) checkout actions, which do not fire on the block-based checkout; it is now rendered on the block-based checkout as well.
+
 = 3.4.2 – 24 May 2026 =
 * Fixed: Recommended free plugins grid for admin panel.
 

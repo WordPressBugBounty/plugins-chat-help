@@ -13,10 +13,11 @@
 
 namespace ThemeAtelier\ChatHelp\Admin\Views;
 
-use ThemeAtelier\ChatHelp\Admin\Framework\Classes\Chat_Help;
+use ThemeAtelier\ChatHelp\Admin\Schema\SchemaRegistry;
 
 class Shortcode
 {
+
     /**
      * Create Option fields for the setting options.
      *
@@ -25,7 +26,7 @@ class Shortcode
      */
     public static function options($prefix)
     {
-        Chat_Help::createOptions($prefix, array(
+        SchemaRegistry::createOptions($prefix, array(
             'menu_title'        => esc_html__('ChatHelp Shortcode', 'chat-help'),
             'menu_slug'         => 'chat-help-shortcode',
             'menu_type'               => 'submenu',
@@ -42,17 +43,14 @@ class Shortcode
             'footer_text'             => esc_html__('Thank you for using our product', 'chat-help'),
             'theme'                   => 'light',
             'nav'                     => 'inline',
-            'framework_class'         => 'chat-help-setting-admin',
+            'framework_class'         => 'chat-help-admin',
             'class'                    => 'chat-help-preloader',
         ));
-        //
-        // Field: shortcodes
-        //
-        Chat_Help::createSection(
+        SchemaRegistry::createSection(
             $prefix,
             array(
-                'title'  => esc_html__('SHORTCODES', 'chat-help'),
-                'icon'   => 'icofont-code-alt',
+                'title'       => esc_html__('SHORTCODES', 'chat-help'),
+                'icon'        => 'icofont-code-alt',
                 'fields' => array(
                     array(
                         'id'      => 'opt-shortcode-select',
@@ -66,20 +64,18 @@ class Shortcode
                             ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/shortcodes/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
 
                         'options' => array(
-                            '2' => array(
-                                'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/button2.svg',
-                                'text'            => esc_html__('Simple Button', 'chat-help'),
-                                'option_demo_url' => CHAT_HELP_DEMO_URL . 'button-shortcode#simple-button',
-                            ),
                             '1' => array(
-                                'image'           => CHAT_HELP_DIR_URL . 'src/Admin/Framework/assets/images/button-with-info.svg',
+                                'image'           => CHAT_HELP_DIR_URL . 'src/Admin/assets/images/button-with-info.svg',
                                 'text'            => esc_html__('Advance Button', 'chat-help'),
                                 'option_demo_url' => CHAT_HELP_DEMO_URL . 'button-shortcode#btn_demo',
                             ),
-
+                            '2' => array(
+                                'image'           => CHAT_HELP_DIR_URL . 'src/Admin/assets/images/button2.svg',
+                                'text'            => esc_html__('Simple Button', 'chat-help'),
+                                'option_demo_url' => CHAT_HELP_DEMO_URL . 'button-shortcode#simple-button',
+                            ),
                         ),
-                        'default' => '2',
-
+                        'default' => '1',
                     ),
 
                     array(
@@ -98,9 +94,9 @@ class Shortcode
                         'dependency' => array('opt-shortcode-select', 'any', '2'),
                         'shortcode_text'    => '[chat_help style="2" number="+880123456789" message="Hi! I have a question about your service." label="How can I help you?" sunday="00:00-23:59" monday="00:00-23:59" tuesday="00:00-23:59" wednesday="00:00-23:59" thursday="00:00-23:59" friday="00:00-23:59" saturday="00:00-23:59"]',
                     ),
-                )
 
-            )
+                ),
+            ),
         );
     }
 }

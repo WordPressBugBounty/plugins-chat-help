@@ -1,5 +1,5 @@
 {
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "create-block/whatsapp-button",
 	"title": "WhatsApp Button",
 	"category": "whatsapp-block",

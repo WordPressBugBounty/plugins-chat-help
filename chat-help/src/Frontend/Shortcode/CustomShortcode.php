@@ -12,6 +12,7 @@
 namespace ThemeAtelier\ChatHelp\Frontend\Shortcode;
 
 use ThemeAtelier\ChatHelp\Frontend\Shortcode\CustomButtonsTemplates;
+use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 
 /**
  * Class CustomShortcode
@@ -80,6 +81,16 @@ class CustomShortcode
 			),
 			$atts
 		);
+
+		// A shortcode without number="…" / group="…" inherits the Global Chat
+		// values (live fallback), so [chat_help style="1"] works out of the box.
+		$global_whatsapp = Helpers::global_whatsapp_defaults();
+		if (trim((string) $atts['number']) === '') {
+			$atts['number'] = $global_whatsapp['number'];
+		}
+		if (trim((string) $atts['group']) === '') {
+			$atts['group'] = $global_whatsapp['group'];
+		}
 
 		ob_start();
 

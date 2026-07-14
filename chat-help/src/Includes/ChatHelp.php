@@ -88,7 +88,7 @@ class ChatHelp
     public function chat_help_redirect_to($plugin)
     {
         if (CHAT_HELP_BASENAME === $plugin) {
-            $redirect_url = esc_url(admin_url('admin.php?page=chat-help'));
+            $redirect_url = esc_url(admin_url('admin.php?page=chat-help#/global?section=general'));
             exit(wp_kses_post(wp_safe_redirect($redirect_url)));
         }
     }

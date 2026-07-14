@@ -67,11 +67,11 @@ class ReviewNotice
             </div>
             <div class="chat-help-notice-text">
                 <h3>Enjoying <strong>WhatsApp ChatHelp</strong>?</h3>
-                <p>We hope you had a wonderful experience using <strong>WhatsApp ChatHelp</strong>. Please take a moment to leave a review on <a href="https://wordpress.org/support/plugin/chat-help/reviews/?filter=5#new-post" target="_blank"><strong>WordPress.org</strong></a>.
+                <p>We hope you had a wonderful experience using <strong>WhatsApp ChatHelp</strong>. Please take a moment to leave a review on <a href="https://wordpress.org/support/plugin/chat-help/reviews/#new-post" target="_blank"><strong>WordPress.org</strong></a>.
                     Your positive review will help us improve. Thank you! 😊</p>
 
                 <p class="chat-help-review-actions">
-                    <a href="https://wordpress.org/support/plugin/chat-help/reviews/?filter=5#new-post" target="_blank" class="button button-primary notice-dismissed rate-chat-help">Ok, you deserve ★★★★★</a>
+                    <a href="https://wordpress.org/support/plugin/chat-help/reviews/#new-post" target="_blank" class="button button-primary notice-dismissed rate-chat-help">Ok, you deserve ★★★★★</a>
                     <a href="#" class="notice-dismissed remind-me-later"><span class="dashicons dashicons-clock"></span>Nope, maybe later
                     </a>
                     <a href="#" class="notice-dismissed never-show-again"><span class="dashicons dashicons-dismiss"></span>Never show again</a>

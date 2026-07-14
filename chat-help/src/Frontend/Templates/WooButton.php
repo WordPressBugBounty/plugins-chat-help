@@ -31,14 +31,34 @@ if (! defined('ABSPATH')) {
  */
 class WooButton
 {
+    /**
+     * Whether the checkout live-shipping script has been queued this request.
+     *
+     * @var bool
+     */
+    protected static $checkout_shipping_script_added = false;
+
     public static function woo_button()
     {
+        // The Product Page button must only ever render on a single product
+        // page. It attaches to hooks/filters such as woocommerce_short_description
+        // which are also applied while the cart and other pages render product
+        // data — without this guard the button leaks onto those pages (e.g. once
+        // per cart line item).
+        if (function_exists('is_product') && ! is_product()) {
+            return;
+        }
+
         $options = get_option('cwp_option');
         $ch_wooCommerce = get_option('ch_wooCommerce');
         $ch_settings = get_option('ch_settings');
         $product_page_button_type_of_whatsapp = isset($ch_wooCommerce['product_page_button_type_of_whatsapp']) ? $ch_wooCommerce['product_page_button_type_of_whatsapp'] : '';
         $product_page_button_number = isset($ch_wooCommerce['product_page_button_number']) ? $ch_wooCommerce['product_page_button_number'] : '';
         $product_page_button_group = isset($ch_wooCommerce['product_page_button_group']) ? $ch_wooCommerce['product_page_button_group'] : '';
+        // Empty fields inherit the Global Chat number/group (live fallback).
+        $global_whatsapp = Helpers::global_whatsapp_defaults();
+        $product_page_button_number = trim((string) $product_page_button_number) !== '' ? $product_page_button_number : $global_whatsapp['number'];
+        $product_page_button_group = trim((string) $product_page_button_group) !== '' ? $product_page_button_group : $global_whatsapp['group'];
         $product_page_circle_button_icon = isset($ch_wooCommerce['product_page_circle_button_icon']) ? $ch_wooCommerce['product_page_circle_button_icon'] : 'icofont-brand-whatsapp';
         $product_page_button_icon_open = !empty($ch_wooCommerce['product_page_button_icon_open']) ? $ch_wooCommerce['product_page_button_icon_open'] : 'icofont-brand-whatsapp';
 
@@ -163,6 +183,10 @@ class WooButton
         $shop_page_button_type_of_whatsapp = isset($ch_wooCommerce['shop_page_button_type_of_whatsapp']) ? $ch_wooCommerce['shop_page_button_type_of_whatsapp'] : '';
         $shop_page_button_number = isset($ch_wooCommerce['shop_page_button_number']) ? $ch_wooCommerce['shop_page_button_number'] : '';
         $shop_page_button_group = isset($ch_wooCommerce['shop_page_button_group']) ? $ch_wooCommerce['shop_page_button_group'] : '';
+        // Empty fields inherit the Global Chat number/group (live fallback).
+        $global_whatsapp = Helpers::global_whatsapp_defaults();
+        $shop_page_button_number = trim((string) $shop_page_button_number) !== '' ? $shop_page_button_number : $global_whatsapp['number'];
+        $shop_page_button_group = trim((string) $shop_page_button_group) !== '' ? $shop_page_button_group : $global_whatsapp['group'];
         $shop_page_circle_button_icon = isset($ch_wooCommerce['shop_page_circle_button_icon']) ? $ch_wooCommerce['shop_page_circle_button_icon'] : 'icofont-brand-whatsapp';
         $shop_page_button_icon_open = !empty($ch_wooCommerce['shop_page_button_icon_open']) ? $ch_wooCommerce['shop_page_button_icon_open'] : 'icofont-brand-whatsapp';
 
@@ -289,6 +313,10 @@ class WooButton
         $cart_page_button_type_of_whatsapp = isset($ch_wooCommerce['cart_page_button_type_of_whatsapp']) ? $ch_wooCommerce['cart_page_button_type_of_whatsapp'] : '';
         $cart_page_button_number = isset($ch_wooCommerce['cart_page_button_number']) ? $ch_wooCommerce['cart_page_button_number'] : '';
         $cart_page_button_group = isset($ch_wooCommerce['cart_page_button_group']) ? $ch_wooCommerce['cart_page_button_group'] : '';
+        // Empty fields inherit the Global Chat number/group (live fallback).
+        $global_whatsapp = Helpers::global_whatsapp_defaults();
+        $cart_page_button_number = trim((string) $cart_page_button_number) !== '' ? $cart_page_button_number : $global_whatsapp['number'];
+        $cart_page_button_group = trim((string) $cart_page_button_group) !== '' ? $cart_page_button_group : $global_whatsapp['group'];
         $cart_page_circle_button_icon = isset($ch_wooCommerce['cart_page_circle_button_icon']) ? $ch_wooCommerce['cart_page_circle_button_icon'] : 'icofont-brand-whatsapp';
         $cart_page_button_icon_open = !empty($ch_wooCommerce['cart_page_button_icon_open']) ? $ch_wooCommerce['cart_page_button_icon_open'] : 'icofont-brand-whatsapp';
 
@@ -428,6 +456,10 @@ class WooButton
         $checkout_page_button_type_of_whatsapp = isset($ch_wooCommerce['checkout_page_button_type_of_whatsapp']) ? $ch_wooCommerce['checkout_page_button_type_of_whatsapp'] : '';
         $checkout_page_button_number = isset($ch_wooCommerce['checkout_page_button_number']) ? $ch_wooCommerce['checkout_page_button_number'] : '';
         $checkout_page_button_group = isset($ch_wooCommerce['checkout_page_button_group']) ? $ch_wooCommerce['checkout_page_button_group'] : '';
+        // Empty fields inherit the Global Chat number/group (live fallback).
+        $global_whatsapp = Helpers::global_whatsapp_defaults();
+        $checkout_page_button_number = trim((string) $checkout_page_button_number) !== '' ? $checkout_page_button_number : $global_whatsapp['number'];
+        $checkout_page_button_group = trim((string) $checkout_page_button_group) !== '' ? $checkout_page_button_group : $global_whatsapp['group'];
         $checkout_page_circle_button_icon = isset($ch_wooCommerce['checkout_page_circle_button_icon']) ? $ch_wooCommerce['checkout_page_circle_button_icon'] : 'icofont-brand-whatsapp';
         $checkout_page_button_icon_open = !empty($ch_wooCommerce['checkout_page_button_icon_open']) ? $ch_wooCommerce['checkout_page_button_icon_open'] : 'icofont-brand-whatsapp';
 
@@ -515,8 +547,28 @@ class WooButton
             $agent_photo_url = '';
         }
 
-        $message = isset($ch_wooCommerce['checkout_page_button_message']) ? $ch_wooCommerce['checkout_page_button_message'] : '';
-        $message = Helpers::replacement_vars($message);
+        $raw_message = isset($ch_wooCommerce['checkout_page_button_message']) ? $ch_wooCommerce['checkout_page_button_message'] : '';
+        $message = Helpers::replacement_vars($raw_message);
+
+        // When the message uses {shipping}, the value baked in at render time goes
+        // stale as the customer edits the checkout form. Build a template where
+        // every other variable is resolved but {shipping} is left as a JS sentinel,
+        // and let a small script refresh it from the live form at click time (and
+        // after WooCommerce AJAX re-renders).
+        // Emitted as data-ch-ship / data-ch-msg on the button (escaped inline at
+        // the echo). The refresh script only matches [data-ch-ship="1"], so the
+        // empty defaults are inert.
+        $ship_enabled     = '';
+        $template_message = '';
+        if (false !== strpos($raw_message, '{shipping}')) {
+            $ship_enabled     = '1';
+            $template_message = Helpers::replacement_vars(str_replace('{shipping}', '__CH_SHIPPING__', $raw_message));
+
+            if (! self::$checkout_shipping_script_added) {
+                self::$checkout_shipping_script_added = true;
+                add_action('wp_footer', array(self::class, 'checkout_shipping_script'), 99);
+            }
+        }
 
         $url = Helpers::whatsAppUrl($checkout_page_button_number, $checkout_page_button_type_of_whatsapp, $checkout_page_button_group, $url_for_desktop, $url_for_mobile, $message);
         $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
@@ -541,13 +593,13 @@ class WooButton
         }
 
         if ($checkout_page_button_style === '1') {
-            echo '<a style="--wHelp-btn-scale: ' . esc_attr($checkout_page_button_size) . ';--wHelp-margin: ' . esc_attr($margin) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . ';--wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . ';--wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" ' . esc_attr($gaAnalyticsAttr) . ' class="wHelp_button chat_help_analytics checkout_page_button circle-bubble ' . esc_attr($checkout_page_button_visibility) . '">';
+            echo '<a style="--wHelp-btn-scale: ' . esc_attr($checkout_page_button_size) . ';--wHelp-margin: ' . esc_attr($margin) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . ';--wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . ';--wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" ' . esc_attr($gaAnalyticsAttr) . ' data-ch-ship="' . esc_attr($ship_enabled) . '" data-ch-msg="' . esc_attr($template_message) . '" class="wHelp_button chat_help_analytics checkout_page_button circle-bubble ' . esc_attr($checkout_page_button_visibility) . '">';
             if ($circle_icon) {
                 echo wp_kses_post($circle_icon);
             }
             echo '</a>';
         } else {
-            echo '<a style="--wHelp-padding: ' . esc_attr($padding) . '; --wHelp-btn-scale: ' . esc_attr($checkout_page_button_size) . '; --wHelp-margin: ' . esc_attr($margin) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . ';--wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-icon-normal-bg-color: ' . esc_attr($normal_bg_color) . '; --wHelp-icon-hover-bg-color: ' . esc_attr($hover_bg_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . '; --wHelp-text-color: ' . esc_attr($text_color) . '; --wHelp-text-hover-color: ' . esc_attr($text_hover_color) . '; --wHelp-icon-border: ' . esc_attr($icon_border_all . ' ' . $icon_border_style) . '; --wHelp-icon-border-color: ' . esc_attr($icon_border_color) . '; --wHelp-hover-icon-border-color: ' . esc_attr($hover_icon_border_color) . '; --wHelp-icon-border-radius: ' . esc_attr($icon_border_radius) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" ' . esc_attr($gaAnalyticsAttr) . ' class="wHelp_button chat_help_analytics checkout_page_button ' . esc_attr($checkout_page_button_visibility) . '">';
+            echo '<a style="--wHelp-padding: ' . esc_attr($padding) . '; --wHelp-btn-scale: ' . esc_attr($checkout_page_button_size) . '; --wHelp-margin: ' . esc_attr($margin) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . ';--wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-icon-normal-bg-color: ' . esc_attr($normal_bg_color) . '; --wHelp-icon-hover-bg-color: ' . esc_attr($hover_bg_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . '; --wHelp-text-color: ' . esc_attr($text_color) . '; --wHelp-text-hover-color: ' . esc_attr($text_hover_color) . '; --wHelp-icon-border: ' . esc_attr($icon_border_all . ' ' . $icon_border_style) . '; --wHelp-icon-border-color: ' . esc_attr($icon_border_color) . '; --wHelp-hover-icon-border-color: ' . esc_attr($hover_icon_border_color) . '; --wHelp-icon-border-radius: ' . esc_attr($icon_border_radius) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" ' . esc_attr($gaAnalyticsAttr) . ' data-ch-ship="' . esc_attr($ship_enabled) . '" data-ch-msg="' . esc_attr($template_message) . '" class="wHelp_button chat_help_analytics checkout_page_button ' . esc_attr($checkout_page_button_visibility) . '">';
             if ($checkout_page_button_icon_open !== 'no_icon' && $woo_button_icon) {
                 echo '<span class="bubble__icon ' . esc_attr($icon_bg) . '">';
                 echo wp_kses_post($woo_button_icon);
@@ -557,7 +609,147 @@ class WooButton
             echo '</a>';
         }
     }
-        public static function thank_you_page_button()
+
+    /**
+     * Print the script that refreshes the checkout button's {shipping} value.
+     *
+     * Works on both checkout types:
+     *  - Classic (shortcode) checkout: reads the live billing/shipping form
+     *    fields (honouring "ship to a different address").
+     *  - Block checkout: reads the live customer data from the wc/store/cart data
+     *    store, which stays current as the customer edits the React form (and even
+     *    while the address is shown collapsed as a saved card).
+     *
+     * Binding uses event delegation on the document so it also covers the button
+     * the block checkout injects dynamically and any re-render — there is nothing
+     * to re-bind. The WhatsApp URL's text parameter is rewritten just before the
+     * button is followed. Mirrors Helpers::get_shipping_whatsapp_info().
+     *
+     * @return void
+     */
+    public static function checkout_shipping_script()
+    {
+        ?>
+<script>
+(function () {
+    var SENTINEL = '__CH_SHIPPING__';
+
+    function fmt(p) {
+        var lines = [];
+        if (p.name)    lines.push('*Name:* ' + p.name);
+        if (p.company) lines.push('*Company:* ' + p.company);
+        if (p.a1)      lines.push('*Address:* ' + p.a1);
+        if (p.a2)      lines.push('*Address 2:* ' + p.a2);
+        if (p.city)    lines.push('*City:* ' + p.city);
+        if (p.state)   lines.push('*State:* ' + p.state);
+        if (p.post)    lines.push('*Postcode:* ' + p.post);
+        if (p.country) lines.push('*Country:* ' + p.country);
+        return lines.join('\n');
+    }
+
+    function countryName(code) {
+        if (!code) return '';
+        try {
+            if (window.Intl && Intl.DisplayNames) {
+                var n = new Intl.DisplayNames(['en'], { type: 'region' }).of(code);
+                if (n) return n;
+            }
+        } catch (e) {}
+        return code;
+    }
+
+    // Read an element's live value. The DOM always holds the latest keystroke,
+    // so this is fresher than any cached/debounced store value. Handles native
+    // selects (classic) and combobox inputs (block) alike.
+    function read(id) {
+        var e = document.getElementById(id);
+        if (!e) return '';
+        if (e.tagName === 'SELECT' && e.selectedIndex >= 0) {
+            var o = e.options[e.selectedIndex];
+            return o ? String(o.text).trim() : '';
+        }
+        return String(e.value != null ? e.value : '').trim();
+    }
+
+    // Snapshot of the block checkout's customer data (used only when the address
+    // is shown collapsed as a saved card, so no inputs are in the DOM).
+    function storeData() {
+        if (!document.querySelector('.wp-block-woocommerce-checkout')) return null;
+        if (!(window.wp && wp.data && typeof wp.data.select === 'function')) return null;
+        try {
+            var sel = wp.data.select('wc/store/cart');
+            if (!sel || typeof sel.getCustomerData !== 'function') return null;
+            var d = sel.getCustomerData();
+            if (!d) return null;
+            return { ship: d.shippingAddress || {}, bill: d.billingAddress || {} };
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function buildShipping() {
+        var store = storeData();
+        var classicDiff = document.getElementById('ship-to-different-address-checkbox');
+        var classicPrefix = (classicDiff && classicDiff.checked) ? 'shipping_' : 'billing_';
+
+        // For each field, take the freshest available value: live block input,
+        // live classic input, then the block store (collapsed card) as fallback.
+        function resolve(key) {
+            var v = read('shipping-' + key) || read('billing-' + key); // block inputs
+            if (v) return v;
+            v = read(classicPrefix + key) || read('billing_' + key);    // classic inputs
+            if (v) return v;
+            if (store) {                                                // block store
+                var base = (store.ship.address_1 || store.ship.first_name || store.ship.city) ? store.ship : store.bill;
+                var sv = (base[key] != null && base[key] !== '') ? base[key] : (store.bill[key] || '');
+                sv = String(sv).trim();
+                if (sv) return (key === 'country') ? countryName(sv) : sv;
+            }
+            return '';
+        }
+
+        var first = resolve('first_name'), last = resolve('last_name');
+        return fmt({
+            name: (first + ' ' + last).trim(),
+            company: resolve('company'),
+            a1: resolve('address_1'),
+            a2: resolve('address_2'),
+            city: resolve('city'),
+            state: resolve('state'),
+            post: resolve('postcode'),
+            country: resolve('country')
+        });
+    }
+
+    function refresh(a) {
+        var tmpl = a.getAttribute('data-ch-msg');
+        if (tmpl === null) return;
+        var msg = tmpl.split(SENTINEL).join(buildShipping());
+        var href = a.getAttribute('href') || '';
+        if (/[?&]text=/.test(href)) {
+            href = href.replace(/([?&]text=)[^&#]*/, '$1' + encodeURIComponent(msg));
+            a.setAttribute('href', href);
+        }
+    }
+
+    // Delegated handler: covers the classic button and the button the block
+    // checkout injects dynamically, with no need to (re)bind on re-renders.
+    function handler(e) {
+        var t = e.target;
+        if (!t || !t.closest) return;
+        var a = t.closest('a.checkout_page_button[data-ch-ship="1"]');
+        if (a) refresh(a);
+    }
+
+    ['pointerdown', 'touchstart', 'click'].forEach(function (ev) {
+        document.addEventListener(ev, handler, true);
+    });
+})();
+</script>
+        <?php
+    }
+
+    public static function thank_you_page_button()
     {
         $options = get_option('cwp_option');
         $ch_wooCommerce = get_option('ch_wooCommerce');
@@ -565,6 +757,10 @@ class WooButton
         $thank_you_page_button_type_of_whatsapp = isset($ch_wooCommerce['thank_you_page_button_type_of_whatsapp']) ? $ch_wooCommerce['thank_you_page_button_type_of_whatsapp'] : '';
         $thank_you_page_button_number = isset($ch_wooCommerce['thank_you_page_button_number']) ? $ch_wooCommerce['thank_you_page_button_number'] : '';
         $thank_you_page_button_group = isset($ch_wooCommerce['thank_you_page_button_group']) ? $ch_wooCommerce['thank_you_page_button_group'] : '';
+        // Empty fields inherit the Global Chat number/group (live fallback).
+        $global_whatsapp = Helpers::global_whatsapp_defaults();
+        $thank_you_page_button_number = trim((string) $thank_you_page_button_number) !== '' ? $thank_you_page_button_number : $global_whatsapp['number'];
+        $thank_you_page_button_group = trim((string) $thank_you_page_button_group) !== '' ? $thank_you_page_button_group : $global_whatsapp['group'];
         $thank_you_page_button_icon = isset($ch_wooCommerce['thank_you_page_button_icon']) ? $ch_wooCommerce['thank_you_page_button_icon'] : 1;
         $thank_you_page_circle_button_icon = isset($ch_wooCommerce['thank_you_page_circle_button_icon']) ? $ch_wooCommerce['thank_you_page_circle_button_icon'] : 'icofont-brand-whatsapp';
         $thank_you_page_circle_button_icon_native = isset($ch_wooCommerce['thank_you_page_circle_button_icon_native']) ? $ch_wooCommerce['thank_you_page_circle_button_icon_native'] : '';

@@ -46,6 +46,9 @@ class Dashboard
         $widgets         = $this->get_floating_widgets();
         $has_global_chat = $this->is_global_chat_active();
 
+        // The React bundle itself is enqueued once by Assets (single owner) to
+        // avoid mounting the SPA twice on #chat_help_pro_react. Here we only
+        // inject the Dashboard's own runtime data the SPA reads.
         add_action('admin_print_scripts', function () use ($widgets, $has_global_chat) {
             $data = [
                 'restUrl'       => esc_url_raw(rest_url('chat-help/v1')),
@@ -54,20 +57,12 @@ class Dashboard
                 'widgets'       => $widgets,
                 'hasGlobalChat' => $has_global_chat,
             ];
-            echo wp_print_inline_script_tag(
+            // wp_print_inline_script_tag() prints (and escapes) itself — no echo.
+            wp_print_inline_script_tag(
                 'window.chatHelpDashboard = ' . wp_json_encode($data) . ';' .
                 'window.chatHelp = { restUrl: ' . wp_json_encode(esc_url_raw(rest_url('chat-help/v1'))) . ', nonce: ' . wp_json_encode(wp_create_nonce('wp_rest')) . ' };'
             );
         });
-
-        $min = defined('WP_DEBUG') && WP_DEBUG ? '' : '.min';
-        wp_enqueue_script(
-            'chat-help-dashboard',
-            plugin_dir_url(__FILE__) . 'assets/js/chat-help-admin.js',
-            [],
-            CHAT_HELP_VERSION,
-            true
-        );
     }
 
     private function is_global_chat_active(): bool
