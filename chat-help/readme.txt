@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 3.5.0
+Stable tag: 3.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -25,6 +25,8 @@ By offering multiple layouts (Simple Button, Single Agent, Single Form, Multi-Ag
 
 With Chat Help, you’re not just adding a button—you’re creating a complete **WhatsApp customer support system** inside WordPress with a built-in **analytics dashboard** to track real visitors, views, conversions, and leads over time.
 
+**New in 3.5.0:** a completely rebuilt **React admin** with a modern interface, **multiple Chat Layouts** (create as many floating chat widgets as you need, each with its own agents, appearance, and behavior), and **Assign Layouts** to control exactly which posts, pages, or WooCommerce content each layout appears on. Settings now load and save over the **REST API** for a noticeably faster admin experience.
+
 [youtube https://youtu.be/B_xfMNOLP2A]
 
 **👁️[Plugin Demo](https://wpchathelp.com/) | 📖 [Documentation](https://wpchathelp.com/docs/) | 🚀[Pro Version](https://wpchathelp.com/pricing/) | 👩🏼‍💻[Support](https://wordpress.org/support/plugin/chat-help/) | 🌟[Rate this plugin](https://wordpress.org/support/plugin/chat-help/reviews/#new-post)**
@@ -32,6 +34,9 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 ## 👉 Key Features of Chat Help ##
 
 ### 💬 Core Chat Features
+- **Modern React Admin**: Fully rebuilt admin interface — fast, clean navigation and a dedicated layout editor. Settings are served over the WordPress REST API for quicker loads and saves.
+- **Multiple Chat Layouts**: Create and manage as many floating chat widgets as you need, each with its own layout, agents, appearance, and behavior settings.
+- **Assign Layouts**: Choose exactly where each saved Chat Layout appears — assign it to specific posts, pages, or WooCommerce content.
 - **Floating Chat Layouts**: Choose from multiple chat bubble styles: Single Form, Single Agent, Pre-Chat Message, Floating Button or disable the bubble.
 - **Single Form Builder**: Collect visitor details before chat with text/textarea fields, labels, placeholders, validation messages, and required fields.
 - **Multiple WhatsApp Types Supported**: Personal, Business, or Group — all formats supported in floating chats and buttons.
@@ -61,13 +66,17 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 ### ⚙️ Control, Compliance & Analytics
 - **Analytics Dashboard**: Built-in real-time dashboard tracking visitors, views, conversions, and leads — with performance trendlines, device breakdown (Desktop/Mobile), and date-range filters (This Week, This Month, Custom, and more).
 - **Layout-Aware Conversion Tracking**: Each chat layout fires a conversion event at the exact correct user action moment for accurate data.
+- **Leads Export**: Export leads to CSV with a live progress state and clear success/error notifications.
 - **Advanced Page Visibility**: Control where the bubble appears (templates, specific pages, etc.).
 - **Timezone & Availability**: Set availability per agent/button with automatic Online/Offline switching.
 - **GDPR Compliance**: Add a checkbox with your terms text (supports links & formatting).
 - **Google Analytics Tracking**: Track button clicks with GA events; add custom UTM parameters or dynamic values.
 - **Advanced Settings**: Clean uninstall, import/export settings, custom CSS/JS, and WhatsApp URL behavior control (API/web/intent).
+- **Security Hardened**: All dynamic output escaped and admin redirects made safe, following WordPress.org Plugin Check recommendations.
 
 ### 🌐 Compatibility & Performance
+- **WordPress 7.0 Ready**: The WhatsApp Button block uses Block API version 3 for full compatibility with the iframe block editor.
+- **Lean Download**: Legacy settings framework and unused bundled assets removed — roughly 2.6 MB smaller.
 - **Elementor & Page Builder Ready**: Works seamlessly with Elementor, Gutenberg, WPBakery, Divi, Beaver Builder, Oxygen, and more.
 - **Multisite & Theme Compatibility**: Tested across multisite and popular themes (Astra, Divi, Kadence, GeneratePress, Avada, Neve, Blocksy, OceanWP, etc.).
 - **Multilingual Ready**: Translation-ready `.pot` file; compatible with WPML, Polylang, TranslatePress, Weglot, and Loco Translate.
@@ -104,21 +113,27 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 
 ### 🌟 PRO VERSION FEATURES
 
+Pro options are now shown right inside the free admin with a **"PRO" badge** instead of being hidden — so you can see exactly what Pro adds before upgrading.
+
 ### 💬 Layouts & Forms
 - **Floating Chat Layouts**: Unlock all layouts — Single Form (with unlimited custom fields), Single Agent, Simple Button, Advanced Button, Multi-Agent List, and Multi-Agent Grid.
 - **Multi-Agent Chat Layout**: Display multiple agents in a sleek list or grid, letting users choose who to chat with.
+- **Multi-Agent Form**: Let visitors pick an agent and submit a form in the same chat flow.
 - **Advanced Button Layout**: Premium button style for stronger call-to-action and design flexibility.
 - **Unlimited Form Fields**: Build fully customized Single Form layouts with unlimited fields.
 
 ### 🎨 Design & User Experience
 - **Dark & Night Mode**: Switch to a modern dark theme for a sleek appearance.
-- **Icon Packs**: 2,000+ icons for Send Message, 2,000+ for Circle Button, and 200+ for Close Icon.
+- **Icon Packs**: 2,000+ icons for Send Message, 2,000+ for Circle Button, and 200+ for Close Icon. Custom icon uploads supported.
 - **Transition Effects for Circle Icon**: Choose from 4 smooth animation styles.
 - **Flexible Bubble Positioning**: Place the floating chat bubble on the right or centered.
+- **Responsive Positioning**: Set separate bubble positions and offsets for desktop and mobile.
 
 ### ⚙️ Advanced Controls & Integrations
 - **Visibility Control Options**: Fine-tune where and when your chat appears — by templates, pages, posts, products, categories, and tags.
+- **Content Visibility Rules**: Advanced per-layout rules for showing or hiding chat on specific content.
 - **Webhooks Integration**: Connect with external systems and automation tools using custom webhooks.
+- **Traffic Breakdown Analytics**: Unlock Countries, Pages, and Browsers reporting in the analytics dashboard.
 
 == Other Plugins from ThemeAtelier ==
 
@@ -233,6 +248,10 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 14. WhatsApp chat button integration with Elementor page builder for drag-and-drop customization.
 
 == Changelog ==
+= 3.5.1 – 14 July 2026 =
+* Fixed: Chat Layouts (and the Dashboard analytics) failed to load with a "Failed to load layouts" error when the site used the "Plain" permalink setting. REST requests are now built with the correct query-string separator so they work under any permalink structure.
+* Fixed: Removed the development-only coding-standards packages (PHP_CodeSniffer / WPCS) from the committed vendor directory. Their test fixtures contained sample git merge-conflict markers that some editors flagged as real conflicts. Only the runtime autoloader is now included.
+
 = 3.5.0 – 14 July 2026 =
 * Added: Completely redesigned admin built with React — the same modern interface, navigation and page structure as WhatsApp Chat Help Pro.
 * Added: Chat Layouts — create and manage multiple floating chat widgets, each with its own layout, agents, appearance and behavior settings, right from the new layout editor.
@@ -594,6 +613,12 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 * Initial release.
 
 == Upgrade Notice ==
+
+= 3.5.1 =
+Bug-fix release: Chat Layouts and the analytics dashboard now load correctly on sites using the "Plain" permalink setting. Recommended for all users.
+
+= 3.5.0 =
+Major update: brand-new React admin, multiple Chat Layouts with per-layout agents and styling, Assign Layouts for precise placement, REST API-powered settings for faster loads, security hardening, and a 2.6 MB smaller download. All existing settings are preserved. Webhooks are now a Pro feature (the free version never sent webhook requests; saved values are kept).
 
 = 3.4.0 =
 Major update: introduces a built-in Analytics Dashboard with real-time visitor, view, conversion, and lead tracking — including performance trendlines, device breakdown, and flexible date filters. Upgrade recommended for all users.

@@ -118,6 +118,7 @@ class ThemeAtelier_Offer_Banner {
 			
 				<button type="button"
 					class="notice-dismiss themeatelier-offer-banner-dismiss"
+					style="background-color: #fff"
 					data-offer-id="<?php echo esc_attr( $offer['id'] ); ?>"
 					data-nonce="<?php echo esc_attr( $nonce ); ?>">
 				</button>

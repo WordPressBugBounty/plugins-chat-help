@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ThemeAtelier\\ChatHelp\\' => array($baseDir . '/src'),
-    'PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => array($vendorDir . '/dealerdirect/phpcodesniffer-composer-installer/src'),
 );
