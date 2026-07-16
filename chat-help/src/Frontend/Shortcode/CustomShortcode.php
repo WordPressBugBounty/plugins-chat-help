@@ -92,6 +92,13 @@ class CustomShortcode
 			$atts['group'] = $global_whatsapp['group'];
 		}
 
+		// Hardening: phone numbers are digits (optional leading +); group invite
+		// codes are alphanumeric/underscore/hyphen. Strip anything else so no
+		// spaces or markup can reach the rendered HTML attribute (defense in depth
+		// on top of the esc_attr()-quoted output in CustomButtonsTemplates).
+		$atts['number'] = preg_replace('/[^0-9+]/', '', (string) $atts['number']);
+		$atts['group']  = preg_replace('/[^A-Za-z0-9_\-]/', '', (string) $atts['group']);
+
 		ob_start();
 
 		$button_obj = new CustomButtonsTemplates($atts);
