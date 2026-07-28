@@ -561,7 +561,10 @@ class Admin
 
 					// Initial expanded state from the URL hash, so a refresh /
 					// direct load of a child page shows the group open immediately.
-					var h = window.location.hash || '';
+					// The hash routinely carries a query string (e.g.
+					// "#/global?section=general" — see SettingsPage's active-tab
+					// tracking), so only the path portion before "?" is compared.
+					var h = (window.location.hash || '').replace(/\?.*$/, '');
 					var active = ['#/global', '#/widgets', '#/leads'].some(function (r) {
 						return h === r || h.indexOf(r + '/') === 0;
 					});

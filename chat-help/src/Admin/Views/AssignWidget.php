@@ -118,7 +118,28 @@ class AssignWidget
 								'id'          => 'widget_specific_posts',
 								'type'        => 'select',
 								'title'       => __('Select Post(s)', 'chat-help'),
+								// The label follows the row's "Post Type" pick (e.g.
+								// "Select Product(s)") — `%s` is swapped client-side
+								// for that sibling's own option label, so it stays in
+								// sync with whatever post types are actually
+								// registered instead of being hardcoded here.
+								'title_template' => __('Select %s(s)', 'chat-help'),
 								'options'     => 'posts',
+								// The choices follow this row's own "Post Type"
+								// selection: the renderer re-fetches the list from
+								// /chat-help/v1/posts whenever that sibling
+								// changes. Without this the field resolved its
+								// options once, server-side, and always showed
+								// Posts no matter which type was picked.
+								'options_by'  => 'widget_post_type',
+								// The type to fall back to when a row has no post
+								// type stored yet — an older rule saved before the
+								// Post Type field existed, or one saved without an
+								// explicit pick (the legacy multi-select could
+								// store an empty value). Matches widget_post_type's
+								// own default so the list still loads instead of
+								// rendering empty.
+								'options_by_default' => 'post',
 								'title_help'  => __('Choose the posts to display. Sort the posts position by drag & drop.', 'chat-help'),
 								'chosen'      => true,
 								'sortable'    => false,
@@ -126,6 +147,9 @@ class AssignWidget
 								'class'       => 'ta_widget_specific_posts',
 								'multiple'    => true,
 								'placeholder' => __('Choose Posts', 'chat-help'),
+								// Same sibling-driven swap as `title_template` above,
+								// applied to the empty-state placeholder text.
+								'placeholder_template' => __('Choose %s(s)', 'chat-help'),
 								'query_args'  => array(
 									'posts_per_page' => -1,
 									'cache_results'  => false,

@@ -43,6 +43,69 @@ class SettingsRest extends AbstractRestController
                 'permission_callback' => [$this, 'can_manage'],
             ],
         ]);
+
+        // Posts of ONE post type — backs the Assign Layouts "Select Post(s)"
+        // field, which must re-list its choices whenever its row's "Post Type"
+        // changes. Schema options are resolved once when the page loads, so a
+        // per-type lookup can't come from there; this route is what makes the
+        // list follow the selection.
+        \register_rest_route(self::NS, '/posts', [
+            [
+                'methods'             => WP_REST_Server::READABLE,
+                'callback'            => [$this, 'get_posts_by_type'],
+                'permission_callback' => [$this, 'can_manage'],
+                'args'                => [
+                    'post_type' => [
+                        'type'              => 'string',
+                        // Not strictly required: a bare call (or an older rule
+                        // with no type stored) falls back to 'post' below rather
+                        // than failing, so the list still loads.
+                        'required'          => false,
+                        'default'           => 'post',
+                        'sanitize_callback' => 'sanitize_key',
+                    ],
+                ],
+            ],
+        ]);
+    }
+
+    /**
+     * GET /posts?post_type=<slug> — `{ id: title }` for one post type.
+     *
+     * Restricted to public post types (minus the excluded ones, e.g. Media), so
+     * the route can't be used to enumerate private or internal content.
+     */
+    public function get_posts_by_type(WP_REST_Request $request): WP_REST_Response
+    {
+        $post_type = (string) $request->get_param('post_type');
+        if ($post_type === '') {
+            $post_type = 'post';
+        }
+
+        $allowed = \get_post_types(['public' => true], 'names');
+        unset($allowed['attachment']);
+        if (! \in_array($post_type, $allowed, true)) {
+            return new WP_REST_Response(['message' => \__('Unknown post type.', 'chat-help')], 400);
+        }
+
+        $out = [];
+        $posts = \get_posts([
+            'post_type'      => $post_type,
+            'post_status'    => 'publish',
+            'posts_per_page' => -1,
+            'orderby'        => 'title',
+            'order'          => 'ASC',
+            'cache_results'  => false,
+            'no_found_rows'  => true,
+        ]);
+        foreach ($posts as $post) {
+            $out[(string) $post->ID] = ($post->post_title !== '')
+                ? $post->post_title
+                /* translators: %d: post ID. */
+                : \sprintf(\__('(no title) #%d', 'chat-help'), $post->ID);
+        }
+
+        return new WP_REST_Response($out, 200);
     }
 
     /**

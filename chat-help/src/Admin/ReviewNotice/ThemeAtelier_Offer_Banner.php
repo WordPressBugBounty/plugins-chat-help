@@ -63,13 +63,12 @@ class ThemeAtelier_Offer_Banner {
 
 		// Define offer durations.
 		$offers = array(
-			
-			'independent_day_sale'     => array(
-				'id'    => 'independent_day_sale_2026',
-				'start' => strtotime( '2026-07-01 00:00:00' ),
-				'end'   => strtotime( '2026-07-31 23:59:59' ),
-				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/independence-day-sale.svg',
-				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=independent_day_sale_2026',
+			'mega_sale'     => array(
+				'id'    => 'mega_sale_2026',
+				'start' => strtotime( '2026-08-01 00:00:00' ),
+				'end'   => strtotime( '2026-08-31 23:59:59' ),
+				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/mega-sale.svg',
+				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=mega_sale_2026',
 			),
 			
 		);

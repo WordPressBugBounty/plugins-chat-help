@@ -197,6 +197,15 @@ abstract class AbstractRestController
             // Typography sub-option flags (control which controls render).
             'color', 'hover_color', 'text_align', 'letter_spacing', 'subset',
             'font_size', 'line_height', 'font_style', 'text_transform', 'text_color',
+            // Assign Layouts "Select Post(s)" list follows its row's "Post Type".
+            // Without it in this allowlist the key is stripped from the schema
+            // and the renderer never learns the list should be filtered.
+            // `options_by_default` is the type to scope by when that sibling has
+            // no value stored yet, so the list still loads for older/empty rows.
+            'options_by', 'options_by_default',
+            // Sibling-driven label/placeholder: `%s` is swapped for the
+            // `options_by` sibling's chosen option label (see `widget_specific_posts`).
+            'title_template', 'placeholder_template',
         ];
 
         $out = [];

@@ -2,9 +2,9 @@
 Contributors: ThemeAtelier, faysal61, shshakib2001, tamimaziz
 Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce whatsapp
 Requires at least: 5.0
-Tested up to: 7.0
+Tested up to: 7.0.2
 Requires PHP: 7.0
-Stable tag: 3.5.2
+Stable tag: 3.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -249,6 +249,10 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 15. WhatsApp chat button Elementor widget for drag-and-drop customization of agent, number, pre-filled message, and button style on any page.
 
 == Changelog ==
+= 3.5.3 – 28 July 2026 =
+* Fixed: Assign Layouts — the "Select Post(s)" field now follows the row's "Post Type" selection (e.g. picking Page lists Pages), instead of always listing Posts regardless of the chosen type.
+* Fixed: The "Floating Chat" sidebar group (Global Chat, Chat Layouts, Leads) collapsed after refreshing an admin page instead of staying open, hiding the submenu items until they were reopened.
+
 = 3.5.2 – 15 July 2026 =
 * Security: Fixed an authenticated (Contributor and above) stored Cross-Site Scripting vulnerability in the `[chat_help]` / `[ctw]` shortcode. The `number` and `group` attributes were written into an unquoted `data-number` / `data-group` HTML attribute, allowing a crafted value to break out and inject an event handler. Attribute values are now output inside quotes with `esc_attr()`, and the `number` / `group` inputs are additionally sanitized to allowed characters. Reported by Wordfence (CVE-2026-15799).
 
