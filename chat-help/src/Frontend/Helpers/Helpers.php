@@ -89,6 +89,30 @@ class Helpers
 	}
 
 	/**
+	 * Derive up to two uppercase initials from an agent name, e.g.
+	 * "Amara Osei" -> "AO", "Cher" -> "C". Used for the default (built-in)
+	 * agent avatar so the plugin doesn't need to ship a placeholder photo.
+	 *
+	 * @param  string $name agent name.
+	 * @return string
+	 */
+	public static function agent_initials($name)
+	{
+		$name = trim(wp_strip_all_tags((string) $name));
+		if ($name === '') {
+			return '';
+		}
+
+		$words = preg_split('/\s+/', $name);
+		$initials = mb_substr($words[0], 0, 1);
+		if (count($words) > 1) {
+			$initials .= mb_substr($words[count($words) - 1], 0, 1);
+		}
+
+		return mb_strtoupper($initials);
+	}
+
+	/**
 	 * Custom Template locator .
 	 *
 	 * @param  mixed $template_name template name .

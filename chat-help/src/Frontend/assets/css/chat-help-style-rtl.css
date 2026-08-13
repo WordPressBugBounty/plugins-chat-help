@@ -11,6 +11,7 @@
   --wHelp-color-dark: #222;
   --wHelp-color-dark-mode: #006289;
   --wHelp-color-dark-mode2: #0b5572;
+  --wHelp-color-border: #dfe1e3;
   --wHelp-shadow: 0 7px 15px 1px rgb(55 62 70 / 7%);
 }
 
@@ -20,6 +21,58 @@
   box-sizing: border-box;
 }
 
+.wHelp-popup-close {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--wHelp-color-light);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.wHelp-popup-close:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.chat_help_avatar_initials {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  background-color: var(--wHelp-color-primary);
+  color: var(--wHelp-color-light);
+}
+
+@supports (background-color: color-mix(in srgb, red 50%, white)) {
+  .chat_help_avatar_initials {
+    background-color: color-mix(in srgb, var(--wHelp-color-primary) 15%, white);
+    color: var(--wHelp-color-primary);
+  }
+}
+.dark-mode .chat_help_avatar_initials,
+.night-mode .chat_help_avatar_initials {
+  background-color: var(--wHelp-color-primary);
+  color: var(--wHelp-color-dark-primary);
+}
+
+@supports (background-color: color-mix(in srgb, red 50%, white)) {
+  .dark-mode .chat_help_avatar_initials,
+  .night-mode .chat_help_avatar_initials {
+    background-color: color-mix(in srgb, var(--wHelp-color-primary) 30%, black);
+    color: var(--wHelp-color-primary);
+  }
+}
 .wHelp-scroll {
   max-height: 295px;
   overflow-y: scroll;
@@ -153,14 +206,17 @@
   display: flex;
   gap: 10px;
   align-items: center;
-  padding: 20px;
+  padding: 16px;
+  padding-left: 42px;
+  position: relative;
   background-color: var(--wHelp-color-primary);
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
 @media screen and (max-width: 767px) {
   .wHelp__popup--header {
-    padding: 15px;
+    padding: 14px;
+    padding-left: 40px;
   }
 }
 .wHelp__popup--header.header-center {
@@ -169,8 +225,8 @@
   text-align: center;
 }
 .wHelp__popup--header .image {
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   position: relative;
 }
 .wHelp__popup--header .image::before {
@@ -192,26 +248,31 @@
   height: 100%;
   object-fit: cover;
 }
+.wHelp__popup--header .image .chat_help_avatar_initials {
+  font-size: 16px;
+  background-color: var(--wHelp-color-light);
+  color: var(--wHelp-color-primary);
+}
 .wHelp__popup--header .info__name {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   color: var(--wHelp-color-light);
   font-weight: 700;
 }
 .wHelp__popup--header .info__title {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
   color: var(--wHelp-color-light);
   font-weight: 400;
 }
 .wHelp__popup__content {
-  padding: 20px;
-  padding-bottom: 10px;
+  padding: 16px;
+  padding-bottom: 8px;
 }
 @media screen and (max-width: 767px) {
   .wHelp__popup__content {
-    padding: 15px;
+    padding: 14px;
   }
 }
 .wHelp__popup__content .wHelp--checkbox {
@@ -230,6 +291,9 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+}
+.wHelp__popup__content .sms .image .chat_help_avatar_initials {
+  font-size: 12px;
 }
 .wHelp__popup__content .sms__text {
   padding: 10px;
@@ -253,7 +317,7 @@
 }
 .wHelp__popup__content .user-text {
   margin-bottom: 15px;
-  max-height: 240px;
+  max-height: 300px;
   overflow-y: auto;
   padding-left: 0px;
   transition: padding-left 0.15s ease;
@@ -301,12 +365,13 @@
   width: 100%;
   height: auto;
   max-height: 100px;
-  padding: 8px 10px;
+  padding: 10px 14px;
+  font-family: inherit;
   font-size: 16px;
-  border-radius: 3px !important;
-  border: 1px solid var(--wHelp-color-message);
+  border-radius: 10px !important;
+  border: 1px solid var(--wHelp-color-border);
   transition: all 0.3s;
-  background-color: var(--wHelp-color-message) !important;
+  background-color: var(--wHelp-color-light) !important;
 }
 .wHelp__popup__content .user-text input:focus,
 .wHelp__popup__content .user-text textarea:focus {
@@ -320,9 +385,12 @@
 .wHelp__popup__content .user-text select {
   width: 100%;
   height: auto;
-  padding: 8px 10px;
+  padding: 10px 14px;
+  font-family: inherit;
   font-size: 16px;
-  border-radius: 3px !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--wHelp-color-border);
+  background-color: var(--wHelp-color-light);
 }
 .wHelp__popup__content .current-time {
   text-align: left;
@@ -385,6 +453,7 @@
   display: inline-block;
   text-align: center;
   position: relative;
+  cursor: pointer;
   border: none;
   line-height: 22px;
   height: auto;
@@ -1195,6 +1264,35 @@
 .wHelp--checkbox label a {
   color: var(--wHelp-color-dark);
   text-decoration: none !important;
+}
+
+input.wHelp__checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin: 0 0 2px 8px;
+  vertical-align: middle;
+  border: 1.5px solid var(--wHelp-color-primary);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+input.wHelp__checkbox:checked {
+  background-color: var(--wHelp-color-primary);
+}
+input.wHelp__checkbox:checked::after {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--wHelp-color-light);
+  border-width: 0 0 2px 2px;
+  transform: rotate(-45deg);
 }
 
 @media screen and (max-width: 991px) {

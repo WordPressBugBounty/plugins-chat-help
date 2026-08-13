@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 7.0.2
 Requires PHP: 7.0
-Stable tag: 3.5.3
+Stable tag: 3.5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -249,6 +249,13 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 15. WhatsApp chat button Elementor widget for drag-and-drop customization of agent, number, pre-filled message, and button style on any page.
 
 == Changelog ==
+= 3.5.4 – 13 August 2026 =
+* Added: Default agent avatar now shows the agent's initials instead of the plugin's built-in placeholder photo when the Agent Photo Type is set to "Default".
+* Added: Show Close Icon option for the chat box header (Single Form and Agent layouts) — adds a small × button so visitors can close the popup without clicking the floating bubble again.
+* Improved: Back/close navigation icons switched from the bundled icon font to inline SVG.
+* Fixed: Primary/secondary chat colors fell back incorrectly when a color field was saved as an empty string, instead of using the plugin's default teal color.
+* Changed: Default agent subtitle text changed from "Typically replies within a day" to "Typically replies within minutes".
+
 = 3.5.3 – 28 July 2026 =
 * Fixed: Assign Layouts — the "Select Post(s)" field now follows the row's "Post Type" selection (e.g. picking Page lists Pages), instead of always listing Posts regardless of the chosen type.
 * Fixed: The "Floating Chat" sidebar group (Global Chat, Chat Layouts, Leads) collapsed after refreshing an admin page instead of staying open, hiding the submenu items until they were reopened.

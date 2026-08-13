@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-28 12:04+0000\n"
+"POT-Creation-Date: 2026-08-13 12:56+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -122,7 +122,7 @@ msgstr ""
 msgid "Go Pro!"
 msgstr ""
 
-#: src/Admin/Admin.php:610, src/Admin/Views/CartPage.php:37, src/Admin/Views/CartPage.php:66, src/Admin/Views/CartPage.php:106, src/Admin/Views/CartPage.php:147, src/Admin/Views/CartPage.php:159, src/Admin/Views/CartPage.php:168, src/Admin/Views/CartPage.php:177, src/Admin/Views/CartPage.php:212, src/Admin/Views/CartPage.php:220, src/Admin/Views/CartPage.php:228, src/Admin/Views/CartPage.php:258, src/Admin/Views/CartPage.php:272, src/Admin/Views/CartPage.php:312, src/Admin/Views/CartPage.php:340, src/Admin/Views/CartPage.php:373, src/Admin/Views/CartPage.php:388, src/Admin/Views/CartPage.php:403, src/Admin/Views/CartPage.php:424, src/Admin/Views/CartPage.php:442, src/Admin/Views/CartPage.php:457, src/Admin/Views/CartPage.php:473, src/Admin/Views/CheckoutPage.php:37, src/Admin/Views/CheckoutPage.php:72, src/Admin/Views/CheckoutPage.php:105, src/Admin/Views/CheckoutPage.php:145, src/Admin/Views/CheckoutPage.php:157, src/Admin/Views/CheckoutPage.php:166, src/Admin/Views/CheckoutPage.php:175, src/Admin/Views/CheckoutPage.php:210, src/Admin/Views/CheckoutPage.php:218, src/Admin/Views/CheckoutPage.php:226, src/Admin/Views/CheckoutPage.php:256, src/Admin/Views/CheckoutPage.php:270, src/Admin/Views/CheckoutPage.php:310, src/Admin/Views/CheckoutPage.php:338, src/Admin/Views/CheckoutPage.php:371, src/Admin/Views/CheckoutPage.php:386, src/Admin/Views/CheckoutPage.php:401, src/Admin/Views/CheckoutPage.php:422, src/Admin/Views/CheckoutPage.php:440, src/Admin/Views/CheckoutPage.php:455, src/Admin/Views/CheckoutPage.php:471, src/Admin/Views/ProductPage.php:37, src/Admin/Views/ProductPage.php:100, src/Admin/Views/ProductPage.php:109, src/Admin/Views/ProductPage.php:150, src/Admin/Views/ProductPage.php:162, src/Admin/Views/ProductPage.php:171, src/Admin/Views/ProductPage.php:180, src/Admin/Views/ProductPage.php:215, src/Admin/Views/ProductPage.php:223, src/Admin/Views/ProductPage.php:231, src/Admin/Views/ProductPage.php:261, src/Admin/Views/ProductPage.php:275, src/Admin/Views/ProductPage.php:315, src/Admin/Views/ProductPage.php:343, src/Admin/Views/ProductPage.php:376, src/Admin/Views/ProductPage.php:391, src/Admin/Views/ProductPage.php:406, src/Admin/Views/ProductPage.php:427, src/Admin/Views/ProductPage.php:445, src/Admin/Views/ProductPage.php:460, src/Admin/Views/ProductPage.php:476, src/Admin/Views/ShopPage.php:37, src/Admin/Views/ShopPage.php:94, src/Admin/Views/ShopPage.php:103, src/Admin/Views/ShopPage.php:145, src/Admin/Views/ShopPage.php:157, src/Admin/Views/ShopPage.php:166, src/Admin/Views/ShopPage.php:175, src/Admin/Views/ShopPage.php:211, src/Admin/Views/ShopPage.php:219, src/Admin/Views/ShopPage.php:227, src/Admin/Views/ShopPage.php:257, src/Admin/Views/ShopPage.php:271, src/Admin/Views/ShopPage.php:311, src/Admin/Views/ShopPage.php:339, src/Admin/Views/ShopPage.php:372, src/Admin/Views/ShopPage.php:387, src/Admin/Views/ShopPage.php:402, src/Admin/Views/ShopPage.php:423, src/Admin/Views/ShopPage.php:441, src/Admin/Views/ShopPage.php:456, src/Admin/Views/ShopPage.php:472, src/Admin/Views/Shortcode.php:63, src/Admin/Views/ThankYouPage.php:37, src/Admin/Views/ThankYouPage.php:80, src/Admin/Views/ThankYouPage.php:91, src/Admin/Views/ThankYouPage.php:198, src/Admin/Views/ThankYouPage.php:238, src/Admin/Views/ThankYouPage.php:250, src/Admin/Views/ThankYouPage.php:259, src/Admin/Views/ThankYouPage.php:268, src/Admin/Views/ThankYouPage.php:303, src/Admin/Views/ThankYouPage.php:311, src/Admin/Views/ThankYouPage.php:319, src/Admin/Views/ThankYouPage.php:349, src/Admin/Views/ThankYouPage.php:363, src/Admin/Views/ThankYouPage.php:403, src/Admin/Views/ThankYouPage.php:431, src/Admin/Views/ThankYouPage.php:464, src/Admin/Views/ThankYouPage.php:479, src/Admin/Views/ThankYouPage.php:494, src/Admin/Views/ThankYouPage.php:515, src/Admin/Views/ThankYouPage.php:533, src/Admin/Views/ThankYouPage.php:548, src/Admin/Views/ThankYouPage.php:564, src/Admin/Views/Fields/FloatingChatFields.php:150, src/Admin/Views/Fields/FloatingChatFields.php:162, src/Admin/Views/Fields/FloatingChatFields.php:170, src/Admin/Views/Fields/FloatingChatFields.php:180, src/Admin/Views/Fields/FloatingChatFields.php:187, src/Admin/Views/Fields/FloatingChatFields.php:388, src/Admin/Views/Fields/FloatingChatFields.php:395, src/Admin/Views/Fields/FloatingChatFields.php:406, src/Admin/Views/Fields/FloatingChatFields.php:416, src/Admin/Views/Fields/FloatingChatFields.php:458, src/Admin/Views/Fields/FloatingChatFields.php:472, src/Admin/Views/Fields/FloatingChatFields.php:588, src/Admin/Views/Fields/FloatingChatFields.php:727, src/Admin/Views/Fields/FloatingChatFields.php:754, src/Admin/Views/Fields/FloatingChatFields.php:768, src/Admin/Views/Fields/FloatingChatFields.php:777, src/Admin/Views/Fields/FloatingChatFields.php:814, src/Admin/Views/Fields/FloatingChatFields.php:842, src/Admin/Views/Fields/FloatingChatFields.php:1070, src/Admin/Views/Fields/FloatingChatFields.php:1083, src/Admin/Views/Fields/FloatingChatFields.php:1093, src/Admin/Views/Fields/FloatingChatFields.php:1101, src/Admin/Views/Fields/FloatingChatFields.php:1113, src/Admin/Views/Fields/FloatingChatFields.php:1129, src/Admin/Views/Fields/FloatingChatFields.php:1139, src/Admin/Views/Fields/FloatingChatFields.php:1194, src/Admin/Views/Fields/FloatingChatFields.php:1237, src/Admin/Views/Fields/FloatingChatFields.php:1251, src/Admin/Views/Fields/FloatingChatFields.php:1267, src/Admin/Views/Fields/FloatingChatFields.php:1316, src/Admin/Views/Fields/FloatingChatFields.php:1360, src/Admin/Views/Fields/FloatingChatFields.php:1388, src/Admin/Views/Fields/FloatingChatFields.php:1405, src/Admin/Views/Fields/FloatingChatFields.php:1420, src/Admin/Views/Fields/FloatingChatFields.php:1435, src/Admin/Views/Fields/FloatingChatFields.php:1450, src/Admin/Views/Fields/FloatingChatFields.php:1466, src/Admin/Views/Fields/FloatingChatFields.php:1482, src/Admin/Views/Fields/FloatingChatFields.php:1499, src/Admin/Views/Fields/FloatingChatFields.php:1568, src/Admin/Views/Fields/FloatingChatFields.php:1677, src/Admin/Views/Fields/FloatingChatFields.php:1691, src/Admin/Views/Fields/FloatingChatFields.php:1707, src/Admin/Views/Fields/FloatingChatFields.php:1744, src/Admin/Views/Fields/FloatingChatFields.php:1758, src/Admin/Views/Fields/FloatingChatFields.php:1772, src/Admin/Views/Fields/FloatingChatFields.php:1819, src/Admin/Views/Fields/FloatingChatFields.php:1848, src/Admin/Views/Fields/FloatingChatFields.php:1885, src/Admin/Views/Fields/FloatingChatFields.php:1899, src/Admin/Views/Fields/FloatingChatFields.php:1915, src/Admin/Views/Fields/FloatingChatFields.php:1964, src/Admin/Views/Fields/FloatingChatFields.php:1986, src/Admin/Views/Fields/FloatingChatFields.php:2006, src/Admin/Views/Fields/FloatingChatFields.php:2025, src/Admin/Views/Fields/FloatingChatFields.php:2039, src/Admin/Views/Fields/FloatingChatFields.php:2054, src/Admin/Views/Fields/FloatingChatFields.php:2077, src/Admin/Views/Fields/FloatingChatFields.php:2097, src/Admin/Views/Fields/FloatingChatFields.php:2118, src/Admin/Views/Fields/FloatingChatFields.php:2139, src/Admin/Views/Fields/FloatingChatFields.php:2160, src/Admin/Views/Fields/FloatingChatFields.php:2181, src/Admin/Views/Fields/FloatingChatFields.php:2198, src/Admin/Views/Fields/FloatingChatFields.php:2218, src/Admin/Views/Fields/FloatingChatFields.php:2239, src/Admin/Views/Fields/FloatingChatFields.php:2260, src/Admin/Views/Fields/FloatingChatFields.php:2281, src/Admin/Views/Fields/FloatingChatFields.php:2303, src/Admin/Views/Fields/FloatingChatFields.php:2319, src/Admin/Views/Fields/FloatingChatFields.php:2340, src/Admin/Views/Fields/FloatingChatFields.php:2361, src/Admin/Views/Fields/FloatingChatFields.php:2382, src/Admin/Views/Fields/FloatingChatFields.php:2403, src/Admin/Views/Fields/FloatingChatFields.php:2466, src/Admin/Views/Fields/FloatingChatFields.php:2497, src/Admin/Views/Fields/FloatingChatFields.php:2521, src/Admin/Views/Fields/FloatingChatFields.php:2556
+#: src/Admin/Admin.php:610, src/Admin/Views/CartPage.php:37, src/Admin/Views/CartPage.php:66, src/Admin/Views/CartPage.php:106, src/Admin/Views/CartPage.php:147, src/Admin/Views/CartPage.php:159, src/Admin/Views/CartPage.php:168, src/Admin/Views/CartPage.php:177, src/Admin/Views/CartPage.php:212, src/Admin/Views/CartPage.php:220, src/Admin/Views/CartPage.php:228, src/Admin/Views/CartPage.php:258, src/Admin/Views/CartPage.php:272, src/Admin/Views/CartPage.php:312, src/Admin/Views/CartPage.php:340, src/Admin/Views/CartPage.php:373, src/Admin/Views/CartPage.php:388, src/Admin/Views/CartPage.php:403, src/Admin/Views/CartPage.php:424, src/Admin/Views/CartPage.php:442, src/Admin/Views/CartPage.php:457, src/Admin/Views/CartPage.php:473, src/Admin/Views/CheckoutPage.php:37, src/Admin/Views/CheckoutPage.php:72, src/Admin/Views/CheckoutPage.php:105, src/Admin/Views/CheckoutPage.php:145, src/Admin/Views/CheckoutPage.php:157, src/Admin/Views/CheckoutPage.php:166, src/Admin/Views/CheckoutPage.php:175, src/Admin/Views/CheckoutPage.php:210, src/Admin/Views/CheckoutPage.php:218, src/Admin/Views/CheckoutPage.php:226, src/Admin/Views/CheckoutPage.php:256, src/Admin/Views/CheckoutPage.php:270, src/Admin/Views/CheckoutPage.php:310, src/Admin/Views/CheckoutPage.php:338, src/Admin/Views/CheckoutPage.php:371, src/Admin/Views/CheckoutPage.php:386, src/Admin/Views/CheckoutPage.php:401, src/Admin/Views/CheckoutPage.php:422, src/Admin/Views/CheckoutPage.php:440, src/Admin/Views/CheckoutPage.php:455, src/Admin/Views/CheckoutPage.php:471, src/Admin/Views/ProductPage.php:37, src/Admin/Views/ProductPage.php:100, src/Admin/Views/ProductPage.php:109, src/Admin/Views/ProductPage.php:150, src/Admin/Views/ProductPage.php:162, src/Admin/Views/ProductPage.php:171, src/Admin/Views/ProductPage.php:180, src/Admin/Views/ProductPage.php:215, src/Admin/Views/ProductPage.php:223, src/Admin/Views/ProductPage.php:231, src/Admin/Views/ProductPage.php:261, src/Admin/Views/ProductPage.php:275, src/Admin/Views/ProductPage.php:315, src/Admin/Views/ProductPage.php:343, src/Admin/Views/ProductPage.php:376, src/Admin/Views/ProductPage.php:391, src/Admin/Views/ProductPage.php:406, src/Admin/Views/ProductPage.php:427, src/Admin/Views/ProductPage.php:445, src/Admin/Views/ProductPage.php:460, src/Admin/Views/ProductPage.php:476, src/Admin/Views/ShopPage.php:37, src/Admin/Views/ShopPage.php:94, src/Admin/Views/ShopPage.php:103, src/Admin/Views/ShopPage.php:145, src/Admin/Views/ShopPage.php:157, src/Admin/Views/ShopPage.php:166, src/Admin/Views/ShopPage.php:175, src/Admin/Views/ShopPage.php:211, src/Admin/Views/ShopPage.php:219, src/Admin/Views/ShopPage.php:227, src/Admin/Views/ShopPage.php:257, src/Admin/Views/ShopPage.php:271, src/Admin/Views/ShopPage.php:311, src/Admin/Views/ShopPage.php:339, src/Admin/Views/ShopPage.php:372, src/Admin/Views/ShopPage.php:387, src/Admin/Views/ShopPage.php:402, src/Admin/Views/ShopPage.php:423, src/Admin/Views/ShopPage.php:441, src/Admin/Views/ShopPage.php:456, src/Admin/Views/ShopPage.php:472, src/Admin/Views/Shortcode.php:63, src/Admin/Views/ThankYouPage.php:37, src/Admin/Views/ThankYouPage.php:80, src/Admin/Views/ThankYouPage.php:91, src/Admin/Views/ThankYouPage.php:198, src/Admin/Views/ThankYouPage.php:238, src/Admin/Views/ThankYouPage.php:250, src/Admin/Views/ThankYouPage.php:259, src/Admin/Views/ThankYouPage.php:268, src/Admin/Views/ThankYouPage.php:303, src/Admin/Views/ThankYouPage.php:311, src/Admin/Views/ThankYouPage.php:319, src/Admin/Views/ThankYouPage.php:349, src/Admin/Views/ThankYouPage.php:363, src/Admin/Views/ThankYouPage.php:403, src/Admin/Views/ThankYouPage.php:431, src/Admin/Views/ThankYouPage.php:464, src/Admin/Views/ThankYouPage.php:479, src/Admin/Views/ThankYouPage.php:494, src/Admin/Views/ThankYouPage.php:515, src/Admin/Views/ThankYouPage.php:533, src/Admin/Views/ThankYouPage.php:548, src/Admin/Views/ThankYouPage.php:564, src/Admin/Views/Fields/FloatingChatFields.php:150, src/Admin/Views/Fields/FloatingChatFields.php:162, src/Admin/Views/Fields/FloatingChatFields.php:170, src/Admin/Views/Fields/FloatingChatFields.php:180, src/Admin/Views/Fields/FloatingChatFields.php:187, src/Admin/Views/Fields/FloatingChatFields.php:388, src/Admin/Views/Fields/FloatingChatFields.php:395, src/Admin/Views/Fields/FloatingChatFields.php:406, src/Admin/Views/Fields/FloatingChatFields.php:416, src/Admin/Views/Fields/FloatingChatFields.php:458, src/Admin/Views/Fields/FloatingChatFields.php:472, src/Admin/Views/Fields/FloatingChatFields.php:588, src/Admin/Views/Fields/FloatingChatFields.php:727, src/Admin/Views/Fields/FloatingChatFields.php:754, src/Admin/Views/Fields/FloatingChatFields.php:768, src/Admin/Views/Fields/FloatingChatFields.php:777, src/Admin/Views/Fields/FloatingChatFields.php:814, src/Admin/Views/Fields/FloatingChatFields.php:842, src/Admin/Views/Fields/FloatingChatFields.php:1083, src/Admin/Views/Fields/FloatingChatFields.php:1096, src/Admin/Views/Fields/FloatingChatFields.php:1106, src/Admin/Views/Fields/FloatingChatFields.php:1114, src/Admin/Views/Fields/FloatingChatFields.php:1126, src/Admin/Views/Fields/FloatingChatFields.php:1142, src/Admin/Views/Fields/FloatingChatFields.php:1152, src/Admin/Views/Fields/FloatingChatFields.php:1207, src/Admin/Views/Fields/FloatingChatFields.php:1250, src/Admin/Views/Fields/FloatingChatFields.php:1264, src/Admin/Views/Fields/FloatingChatFields.php:1280, src/Admin/Views/Fields/FloatingChatFields.php:1329, src/Admin/Views/Fields/FloatingChatFields.php:1373, src/Admin/Views/Fields/FloatingChatFields.php:1401, src/Admin/Views/Fields/FloatingChatFields.php:1418, src/Admin/Views/Fields/FloatingChatFields.php:1433, src/Admin/Views/Fields/FloatingChatFields.php:1448, src/Admin/Views/Fields/FloatingChatFields.php:1463, src/Admin/Views/Fields/FloatingChatFields.php:1479, src/Admin/Views/Fields/FloatingChatFields.php:1495, src/Admin/Views/Fields/FloatingChatFields.php:1512, src/Admin/Views/Fields/FloatingChatFields.php:1581, src/Admin/Views/Fields/FloatingChatFields.php:1690, src/Admin/Views/Fields/FloatingChatFields.php:1704, src/Admin/Views/Fields/FloatingChatFields.php:1720, src/Admin/Views/Fields/FloatingChatFields.php:1757, src/Admin/Views/Fields/FloatingChatFields.php:1771, src/Admin/Views/Fields/FloatingChatFields.php:1785, src/Admin/Views/Fields/FloatingChatFields.php:1832, src/Admin/Views/Fields/FloatingChatFields.php:1861, src/Admin/Views/Fields/FloatingChatFields.php:1898, src/Admin/Views/Fields/FloatingChatFields.php:1912, src/Admin/Views/Fields/FloatingChatFields.php:1928, src/Admin/Views/Fields/FloatingChatFields.php:1977, src/Admin/Views/Fields/FloatingChatFields.php:1999, src/Admin/Views/Fields/FloatingChatFields.php:2019, src/Admin/Views/Fields/FloatingChatFields.php:2038, src/Admin/Views/Fields/FloatingChatFields.php:2052, src/Admin/Views/Fields/FloatingChatFields.php:2067, src/Admin/Views/Fields/FloatingChatFields.php:2090, src/Admin/Views/Fields/FloatingChatFields.php:2110, src/Admin/Views/Fields/FloatingChatFields.php:2131, src/Admin/Views/Fields/FloatingChatFields.php:2152, src/Admin/Views/Fields/FloatingChatFields.php:2173, src/Admin/Views/Fields/FloatingChatFields.php:2194, src/Admin/Views/Fields/FloatingChatFields.php:2211, src/Admin/Views/Fields/FloatingChatFields.php:2231, src/Admin/Views/Fields/FloatingChatFields.php:2252, src/Admin/Views/Fields/FloatingChatFields.php:2273, src/Admin/Views/Fields/FloatingChatFields.php:2294, src/Admin/Views/Fields/FloatingChatFields.php:2316, src/Admin/Views/Fields/FloatingChatFields.php:2332, src/Admin/Views/Fields/FloatingChatFields.php:2353, src/Admin/Views/Fields/FloatingChatFields.php:2374, src/Admin/Views/Fields/FloatingChatFields.php:2395, src/Admin/Views/Fields/FloatingChatFields.php:2416, src/Admin/Views/Fields/FloatingChatFields.php:2479, src/Admin/Views/Fields/FloatingChatFields.php:2510, src/Admin/Views/Fields/FloatingChatFields.php:2534, src/Admin/Views/Fields/FloatingChatFields.php:2569
 msgid "Live Demo"
 msgstr ""
 
@@ -349,7 +349,7 @@ msgstr ""
 msgid "Add your own custom CSS to override or extend the default styling of the chat box."
 msgstr ""
 
-#: src/Admin/Views/AdditionalCssJs.php:38, src/Admin/Views/AdditionalCssJs.php:49, src/Admin/Views/AdvancedControls.php:39, src/Admin/Views/AdvancedControls.php:53, src/Admin/Views/AdvancedControls.php:65, src/Admin/Views/AdvancedControls.php:77, src/Admin/Views/Analytics.php:40, src/Admin/Views/Analytics.php:48, src/Admin/Views/Analytics.php:58, src/Admin/Views/CartPage.php:37, src/Admin/Views/CartPage.php:66, src/Admin/Views/CartPage.php:74, src/Admin/Views/CartPage.php:83, src/Admin/Views/CartPage.php:106, src/Admin/Views/CartPage.php:133, src/Admin/Views/CartPage.php:147, src/Admin/Views/CartPage.php:159, src/Admin/Views/CartPage.php:168, src/Admin/Views/CartPage.php:177, src/Admin/Views/CartPage.php:212, src/Admin/Views/CartPage.php:220, src/Admin/Views/CartPage.php:228, src/Admin/Views/CartPage.php:259, src/Admin/Views/CartPage.php:273, src/Admin/Views/CartPage.php:312, src/Admin/Views/CartPage.php:341, src/Admin/Views/CartPage.php:374, src/Admin/Views/CartPage.php:389, src/Admin/Views/CartPage.php:404, src/Admin/Views/CartPage.php:425, src/Admin/Views/CartPage.php:442, src/Admin/Views/CartPage.php:457, src/Admin/Views/CartPage.php:473, src/Admin/Views/CheckoutPage.php:37, src/Admin/Views/CheckoutPage.php:72, src/Admin/Views/CheckoutPage.php:80, src/Admin/Views/CheckoutPage.php:92, src/Admin/Views/CheckoutPage.php:105, src/Admin/Views/CheckoutPage.php:131, src/Admin/Views/CheckoutPage.php:145, src/Admin/Views/CheckoutPage.php:157, src/Admin/Views/CheckoutPage.php:166, src/Admin/Views/CheckoutPage.php:175, src/Admin/Views/CheckoutPage.php:210, src/Admin/Views/CheckoutPage.php:218, src/Admin/Views/CheckoutPage.php:226, src/Admin/Views/CheckoutPage.php:257, src/Admin/Views/CheckoutPage.php:271, src/Admin/Views/CheckoutPage.php:310, src/Admin/Views/CheckoutPage.php:339, src/Admin/Views/CheckoutPage.php:372, src/Admin/Views/CheckoutPage.php:387, src/Admin/Views/CheckoutPage.php:402, src/Admin/Views/CheckoutPage.php:423, src/Admin/Views/CheckoutPage.php:440, src/Admin/Views/CheckoutPage.php:455, src/Admin/Views/CheckoutPage.php:471, src/Admin/Views/ProductPage.php:37, src/Admin/Views/ProductPage.php:70, src/Admin/Views/ProductPage.php:100, src/Admin/Views/ProductPage.php:109, src/Admin/Views/ProductPage.php:136, src/Admin/Views/ProductPage.php:150, src/Admin/Views/ProductPage.php:162, src/Admin/Views/ProductPage.php:171, src/Admin/Views/ProductPage.php:180, src/Admin/Views/ProductPage.php:215, src/Admin/Views/ProductPage.php:223, src/Admin/Views/ProductPage.php:231, src/Admin/Views/ProductPage.php:262, src/Admin/Views/ProductPage.php:276, src/Admin/Views/ProductPage.php:315, src/Admin/Views/ProductPage.php:344, src/Admin/Views/ProductPage.php:377, src/Admin/Views/ProductPage.php:392, src/Admin/Views/ProductPage.php:407, src/Admin/Views/ProductPage.php:428, src/Admin/Views/ProductPage.php:445, src/Admin/Views/ProductPage.php:460, src/Admin/Views/ProductPage.php:476, src/Admin/Views/ShopPage.php:37, src/Admin/Views/ShopPage.php:76, src/Admin/Views/ShopPage.php:94, src/Admin/Views/ShopPage.php:103, src/Admin/Views/ShopPage.php:131, src/Admin/Views/ShopPage.php:145, src/Admin/Views/ShopPage.php:157, src/Admin/Views/ShopPage.php:166, src/Admin/Views/ShopPage.php:175, src/Admin/Views/ShopPage.php:211, src/Admin/Views/ShopPage.php:219, src/Admin/Views/ShopPage.php:227, src/Admin/Views/ShopPage.php:258, src/Admin/Views/ShopPage.php:272, src/Admin/Views/ShopPage.php:311, src/Admin/Views/ShopPage.php:340, src/Admin/Views/ShopPage.php:373, src/Admin/Views/ShopPage.php:388, src/Admin/Views/ShopPage.php:403, src/Admin/Views/ShopPage.php:424, src/Admin/Views/ShopPage.php:441, src/Admin/Views/ShopPage.php:456, src/Admin/Views/ShopPage.php:472, src/Admin/Views/Shortcode.php:64, src/Admin/Views/ThankYouPage.php:37, src/Admin/Views/ThankYouPage.php:68, src/Admin/Views/ThankYouPage.php:80, src/Admin/Views/ThankYouPage.php:91, src/Admin/Views/ThankYouPage.php:198, src/Admin/Views/ThankYouPage.php:224, src/Admin/Views/ThankYouPage.php:238, src/Admin/Views/ThankYouPage.php:250, src/Admin/Views/ThankYouPage.php:259, src/Admin/Views/ThankYouPage.php:268, src/Admin/Views/ThankYouPage.php:303, src/Admin/Views/ThankYouPage.php:311, src/Admin/Views/ThankYouPage.php:319, src/Admin/Views/ThankYouPage.php:350, src/Admin/Views/ThankYouPage.php:364, src/Admin/Views/ThankYouPage.php:403, src/Admin/Views/ThankYouPage.php:432, src/Admin/Views/ThankYouPage.php:465, src/Admin/Views/ThankYouPage.php:480, src/Admin/Views/ThankYouPage.php:495, src/Admin/Views/ThankYouPage.php:516, src/Admin/Views/ThankYouPage.php:533, src/Admin/Views/ThankYouPage.php:548, src/Admin/Views/ThankYouPage.php:564, src/Admin/Views/Webhooks.php:48, src/Admin/Views/Webhooks.php:56, src/Admin/Views/WooCommerce.php:65, src/Admin/Views/Fields/FloatingChatFields.php:103, src/Admin/Views/Fields/FloatingChatFields.php:150, src/Admin/Views/Fields/FloatingChatFields.php:162, src/Admin/Views/Fields/FloatingChatFields.php:170, src/Admin/Views/Fields/FloatingChatFields.php:180, src/Admin/Views/Fields/FloatingChatFields.php:187, src/Admin/Views/Fields/FloatingChatFields.php:233, src/Admin/Views/Fields/FloatingChatFields.php:244, src/Admin/Views/Fields/FloatingChatFields.php:256, src/Admin/Views/Fields/FloatingChatFields.php:388, src/Admin/Views/Fields/FloatingChatFields.php:395, src/Admin/Views/Fields/FloatingChatFields.php:407, src/Admin/Views/Fields/FloatingChatFields.php:416, src/Admin/Views/Fields/FloatingChatFields.php:459, src/Admin/Views/Fields/FloatingChatFields.php:473, src/Admin/Views/Fields/FloatingChatFields.php:588, src/Admin/Views/Fields/FloatingChatFields.php:602, src/Admin/Views/Fields/FloatingChatFields.php:628, src/Admin/Views/Fields/FloatingChatFields.php:636, src/Admin/Views/Fields/FloatingChatFields.php:650, src/Admin/Views/Fields/FloatingChatFields.php:665, src/Admin/Views/Fields/FloatingChatFields.php:675, src/Admin/Views/Fields/FloatingChatFields.php:688, src/Admin/Views/Fields/FloatingChatFields.php:702, src/Admin/Views/Fields/FloatingChatFields.php:728, src/Admin/Views/Fields/FloatingChatFields.php:739, src/Admin/Views/Fields/FloatingChatFields.php:755, src/Admin/Views/Fields/FloatingChatFields.php:768, src/Admin/Views/Fields/FloatingChatFields.php:777, src/Admin/Views/Fields/FloatingChatFields.php:786, src/Admin/Views/Fields/FloatingChatFields.php:802, src/Admin/Views/Fields/FloatingChatFields.php:814, src/Admin/Views/Fields/FloatingChatFields.php:845, src/Admin/Views/Fields/FloatingChatFields.php:861, src/Admin/Views/Fields/FloatingChatFields.php:861, src/Admin/Views/Fields/FloatingChatFields.php:888, src/Admin/Views/Fields/FloatingChatFields.php:902, src/Admin/Views/Fields/FloatingChatFields.php:1054, src/Admin/Views/Fields/FloatingChatFields.php:1070, src/Admin/Views/Fields/FloatingChatFields.php:1083, src/Admin/Views/Fields/FloatingChatFields.php:1093, src/Admin/Views/Fields/FloatingChatFields.php:1101, src/Admin/Views/Fields/FloatingChatFields.php:1113, src/Admin/Views/Fields/FloatingChatFields.php:1130, src/Admin/Views/Fields/FloatingChatFields.php:1139, src/Admin/Views/Fields/FloatingChatFields.php:1160, src/Admin/Views/Fields/FloatingChatFields.php:1171, src/Admin/Views/Fields/FloatingChatFields.php:1184, src/Admin/Views/Fields/FloatingChatFields.php:1194, src/Admin/Views/Fields/FloatingChatFields.php:1238, src/Admin/Views/Fields/FloatingChatFields.php:1252, src/Admin/Views/Fields/FloatingChatFields.php:1268, src/Admin/Views/Fields/FloatingChatFields.php:1281, src/Admin/Views/Fields/FloatingChatFields.php:1295, src/Admin/Views/Fields/FloatingChatFields.php:1317, src/Admin/Views/Fields/FloatingChatFields.php:1345, src/Admin/Views/Fields/FloatingChatFields.php:1360, src/Admin/Views/Fields/FloatingChatFields.php:1373, src/Admin/Views/Fields/FloatingChatFields.php:1388, src/Admin/Views/Fields/FloatingChatFields.php:1406, src/Admin/Views/Fields/FloatingChatFields.php:1421, src/Admin/Views/Fields/FloatingChatFields.php:1436, src/Admin/Views/Fields/FloatingChatFields.php:1451, src/Admin/Views/Fields/FloatingChatFields.php:1467, src/Admin/Views/Fields/FloatingChatFields.php:1483, src/Admin/Views/Fields/FloatingChatFields.php:1500, src/Admin/Views/Fields/FloatingChatFields.php:1541, src/Admin/Views/Fields/FloatingChatFields.php:1554, src/Admin/Views/Fields/FloatingChatFields.php:1569, src/Admin/Views/Fields/FloatingChatFields.php:1606, src/Admin/Views/Fields/FloatingChatFields.php:1619, src/Admin/Views/Fields/FloatingChatFields.php:1634, src/Admin/Views/Fields/FloatingChatFields.php:1678, src/Admin/Views/Fields/FloatingChatFields.php:1692, src/Admin/Views/Fields/FloatingChatFields.php:1708, src/Admin/Views/Fields/FloatingChatFields.php:1745, src/Admin/Views/Fields/FloatingChatFields.php:1759, src/Admin/Views/Fields/FloatingChatFields.php:1773, src/Admin/Views/Fields/FloatingChatFields.php:1819, src/Admin/Views/Fields/FloatingChatFields.php:1849, src/Admin/Views/Fields/FloatingChatFields.php:1886, src/Admin/Views/Fields/FloatingChatFields.php:1900, src/Admin/Views/Fields/FloatingChatFields.php:1916, src/Admin/Views/Fields/FloatingChatFields.php:1965, src/Admin/Views/Fields/FloatingChatFields.php:1987, src/Admin/Views/Fields/FloatingChatFields.php:2007, src/Admin/Views/Fields/FloatingChatFields.php:2026, src/Admin/Views/Fields/FloatingChatFields.php:2040, src/Admin/Views/Fields/FloatingChatFields.php:2055, src/Admin/Views/Fields/FloatingChatFields.php:2078, src/Admin/Views/Fields/FloatingChatFields.php:2098, src/Admin/Views/Fields/FloatingChatFields.php:2119, src/Admin/Views/Fields/FloatingChatFields.php:2140, src/Admin/Views/Fields/FloatingChatFields.php:2161, src/Admin/Views/Fields/FloatingChatFields.php:2182, src/Admin/Views/Fields/FloatingChatFields.php:2199, src/Admin/Views/Fields/FloatingChatFields.php:2219, src/Admin/Views/Fields/FloatingChatFields.php:2240, src/Admin/Views/Fields/FloatingChatFields.php:2261, src/Admin/Views/Fields/FloatingChatFields.php:2282, src/Admin/Views/Fields/FloatingChatFields.php:2304, src/Admin/Views/Fields/FloatingChatFields.php:2320, src/Admin/Views/Fields/FloatingChatFields.php:2341, src/Admin/Views/Fields/FloatingChatFields.php:2362, src/Admin/Views/Fields/FloatingChatFields.php:2383, src/Admin/Views/Fields/FloatingChatFields.php:2404, src/Admin/Views/Fields/FloatingChatFields.php:2431, src/Admin/Views/Fields/FloatingChatFields.php:2447, src/Admin/Views/Fields/FloatingChatFields.php:2467, src/Admin/Views/Fields/FloatingChatFields.php:2498, src/Admin/Views/Fields/FloatingChatFields.php:2522, src/Admin/Views/Fields/FloatingChatFields.php:2540, src/Admin/Views/Fields/FloatingChatFields.php:2557, src/Admin/Views/Fields/FloatingChatFields.php:2576, src/Admin/Views/Fields/FloatingChatFields.php:2593, src/Admin/Views/Fields/FloatingChatFields.php:2631, src/Admin/Views/Fields/FloatingChatFields.php:2656, src/Admin/Views/Fields/FloatingChatFields.php:2687, src/Admin/Views/Fields/FloatingChatFields.php:2702, src/Admin/Views/Fields/FloatingChatFields.php:2713, src/Admin/Views/Fields/FloatingChatFields.php:2746, src/Admin/Views/Fields/FloatingChatFields.php:2761, src/Admin/Views/Fields/FloatingChatFields.php:2772, src/Admin/Views/Fields/FloatingChatFields.php:2805, src/Admin/Views/Fields/FloatingChatFields.php:2820, src/Admin/Views/Fields/FloatingChatFields.php:2831, src/Admin/Views/Fields/FloatingChatFields.php:2860, src/Admin/Views/Fields/FloatingChatFields.php:2875, src/Admin/Views/Fields/FloatingChatFields.php:2886, src/Admin/Views/Fields/FloatingChatFields.php:2919, src/Admin/Views/Fields/FloatingChatFields.php:2934, src/Admin/Views/Fields/FloatingChatFields.php:2946, src/Admin/Views/Fields/FloatingChatFields.php:2978, src/Admin/Views/Fields/FloatingChatFields.php:2993, src/Admin/Views/Fields/FloatingChatFields.php:3004, src/Admin/Views/Fields/FloatingChatFields.php:3033, src/Admin/Views/Fields/FloatingChatFields.php:3048, src/Admin/Views/Fields/FloatingChatFields.php:3059, src/Admin/Views/Fields/FloatingChatFields.php:3091, src/Admin/Views/Fields/FloatingChatFields.php:3106, src/Admin/Views/Fields/FloatingChatFields.php:3117, src/Admin/Views/Fields/FloatingChatFields.php:3145
+#: src/Admin/Views/AdditionalCssJs.php:38, src/Admin/Views/AdditionalCssJs.php:49, src/Admin/Views/AdvancedControls.php:39, src/Admin/Views/AdvancedControls.php:53, src/Admin/Views/AdvancedControls.php:65, src/Admin/Views/AdvancedControls.php:77, src/Admin/Views/Analytics.php:40, src/Admin/Views/Analytics.php:48, src/Admin/Views/Analytics.php:58, src/Admin/Views/CartPage.php:37, src/Admin/Views/CartPage.php:66, src/Admin/Views/CartPage.php:74, src/Admin/Views/CartPage.php:83, src/Admin/Views/CartPage.php:106, src/Admin/Views/CartPage.php:133, src/Admin/Views/CartPage.php:147, src/Admin/Views/CartPage.php:159, src/Admin/Views/CartPage.php:168, src/Admin/Views/CartPage.php:177, src/Admin/Views/CartPage.php:212, src/Admin/Views/CartPage.php:220, src/Admin/Views/CartPage.php:228, src/Admin/Views/CartPage.php:259, src/Admin/Views/CartPage.php:273, src/Admin/Views/CartPage.php:312, src/Admin/Views/CartPage.php:341, src/Admin/Views/CartPage.php:374, src/Admin/Views/CartPage.php:389, src/Admin/Views/CartPage.php:404, src/Admin/Views/CartPage.php:425, src/Admin/Views/CartPage.php:442, src/Admin/Views/CartPage.php:457, src/Admin/Views/CartPage.php:473, src/Admin/Views/CheckoutPage.php:37, src/Admin/Views/CheckoutPage.php:72, src/Admin/Views/CheckoutPage.php:80, src/Admin/Views/CheckoutPage.php:92, src/Admin/Views/CheckoutPage.php:105, src/Admin/Views/CheckoutPage.php:131, src/Admin/Views/CheckoutPage.php:145, src/Admin/Views/CheckoutPage.php:157, src/Admin/Views/CheckoutPage.php:166, src/Admin/Views/CheckoutPage.php:175, src/Admin/Views/CheckoutPage.php:210, src/Admin/Views/CheckoutPage.php:218, src/Admin/Views/CheckoutPage.php:226, src/Admin/Views/CheckoutPage.php:257, src/Admin/Views/CheckoutPage.php:271, src/Admin/Views/CheckoutPage.php:310, src/Admin/Views/CheckoutPage.php:339, src/Admin/Views/CheckoutPage.php:372, src/Admin/Views/CheckoutPage.php:387, src/Admin/Views/CheckoutPage.php:402, src/Admin/Views/CheckoutPage.php:423, src/Admin/Views/CheckoutPage.php:440, src/Admin/Views/CheckoutPage.php:455, src/Admin/Views/CheckoutPage.php:471, src/Admin/Views/ProductPage.php:37, src/Admin/Views/ProductPage.php:70, src/Admin/Views/ProductPage.php:100, src/Admin/Views/ProductPage.php:109, src/Admin/Views/ProductPage.php:136, src/Admin/Views/ProductPage.php:150, src/Admin/Views/ProductPage.php:162, src/Admin/Views/ProductPage.php:171, src/Admin/Views/ProductPage.php:180, src/Admin/Views/ProductPage.php:215, src/Admin/Views/ProductPage.php:223, src/Admin/Views/ProductPage.php:231, src/Admin/Views/ProductPage.php:262, src/Admin/Views/ProductPage.php:276, src/Admin/Views/ProductPage.php:315, src/Admin/Views/ProductPage.php:344, src/Admin/Views/ProductPage.php:377, src/Admin/Views/ProductPage.php:392, src/Admin/Views/ProductPage.php:407, src/Admin/Views/ProductPage.php:428, src/Admin/Views/ProductPage.php:445, src/Admin/Views/ProductPage.php:460, src/Admin/Views/ProductPage.php:476, src/Admin/Views/ShopPage.php:37, src/Admin/Views/ShopPage.php:76, src/Admin/Views/ShopPage.php:94, src/Admin/Views/ShopPage.php:103, src/Admin/Views/ShopPage.php:131, src/Admin/Views/ShopPage.php:145, src/Admin/Views/ShopPage.php:157, src/Admin/Views/ShopPage.php:166, src/Admin/Views/ShopPage.php:175, src/Admin/Views/ShopPage.php:211, src/Admin/Views/ShopPage.php:219, src/Admin/Views/ShopPage.php:227, src/Admin/Views/ShopPage.php:258, src/Admin/Views/ShopPage.php:272, src/Admin/Views/ShopPage.php:311, src/Admin/Views/ShopPage.php:340, src/Admin/Views/ShopPage.php:373, src/Admin/Views/ShopPage.php:388, src/Admin/Views/ShopPage.php:403, src/Admin/Views/ShopPage.php:424, src/Admin/Views/ShopPage.php:441, src/Admin/Views/ShopPage.php:456, src/Admin/Views/ShopPage.php:472, src/Admin/Views/Shortcode.php:64, src/Admin/Views/ThankYouPage.php:37, src/Admin/Views/ThankYouPage.php:68, src/Admin/Views/ThankYouPage.php:80, src/Admin/Views/ThankYouPage.php:91, src/Admin/Views/ThankYouPage.php:198, src/Admin/Views/ThankYouPage.php:224, src/Admin/Views/ThankYouPage.php:238, src/Admin/Views/ThankYouPage.php:250, src/Admin/Views/ThankYouPage.php:259, src/Admin/Views/ThankYouPage.php:268, src/Admin/Views/ThankYouPage.php:303, src/Admin/Views/ThankYouPage.php:311, src/Admin/Views/ThankYouPage.php:319, src/Admin/Views/ThankYouPage.php:350, src/Admin/Views/ThankYouPage.php:364, src/Admin/Views/ThankYouPage.php:403, src/Admin/Views/ThankYouPage.php:432, src/Admin/Views/ThankYouPage.php:465, src/Admin/Views/ThankYouPage.php:480, src/Admin/Views/ThankYouPage.php:495, src/Admin/Views/ThankYouPage.php:516, src/Admin/Views/ThankYouPage.php:533, src/Admin/Views/ThankYouPage.php:548, src/Admin/Views/ThankYouPage.php:564, src/Admin/Views/Webhooks.php:48, src/Admin/Views/Webhooks.php:56, src/Admin/Views/WooCommerce.php:65, src/Admin/Views/Fields/FloatingChatFields.php:103, src/Admin/Views/Fields/FloatingChatFields.php:150, src/Admin/Views/Fields/FloatingChatFields.php:162, src/Admin/Views/Fields/FloatingChatFields.php:170, src/Admin/Views/Fields/FloatingChatFields.php:180, src/Admin/Views/Fields/FloatingChatFields.php:187, src/Admin/Views/Fields/FloatingChatFields.php:233, src/Admin/Views/Fields/FloatingChatFields.php:244, src/Admin/Views/Fields/FloatingChatFields.php:256, src/Admin/Views/Fields/FloatingChatFields.php:388, src/Admin/Views/Fields/FloatingChatFields.php:395, src/Admin/Views/Fields/FloatingChatFields.php:407, src/Admin/Views/Fields/FloatingChatFields.php:416, src/Admin/Views/Fields/FloatingChatFields.php:459, src/Admin/Views/Fields/FloatingChatFields.php:473, src/Admin/Views/Fields/FloatingChatFields.php:588, src/Admin/Views/Fields/FloatingChatFields.php:602, src/Admin/Views/Fields/FloatingChatFields.php:628, src/Admin/Views/Fields/FloatingChatFields.php:636, src/Admin/Views/Fields/FloatingChatFields.php:650, src/Admin/Views/Fields/FloatingChatFields.php:665, src/Admin/Views/Fields/FloatingChatFields.php:675, src/Admin/Views/Fields/FloatingChatFields.php:688, src/Admin/Views/Fields/FloatingChatFields.php:702, src/Admin/Views/Fields/FloatingChatFields.php:728, src/Admin/Views/Fields/FloatingChatFields.php:739, src/Admin/Views/Fields/FloatingChatFields.php:755, src/Admin/Views/Fields/FloatingChatFields.php:768, src/Admin/Views/Fields/FloatingChatFields.php:777, src/Admin/Views/Fields/FloatingChatFields.php:786, src/Admin/Views/Fields/FloatingChatFields.php:802, src/Admin/Views/Fields/FloatingChatFields.php:814, src/Admin/Views/Fields/FloatingChatFields.php:845, src/Admin/Views/Fields/FloatingChatFields.php:861, src/Admin/Views/Fields/FloatingChatFields.php:861, src/Admin/Views/Fields/FloatingChatFields.php:888, src/Admin/Views/Fields/FloatingChatFields.php:902, src/Admin/Views/Fields/FloatingChatFields.php:1067, src/Admin/Views/Fields/FloatingChatFields.php:1083, src/Admin/Views/Fields/FloatingChatFields.php:1096, src/Admin/Views/Fields/FloatingChatFields.php:1106, src/Admin/Views/Fields/FloatingChatFields.php:1114, src/Admin/Views/Fields/FloatingChatFields.php:1126, src/Admin/Views/Fields/FloatingChatFields.php:1143, src/Admin/Views/Fields/FloatingChatFields.php:1152, src/Admin/Views/Fields/FloatingChatFields.php:1173, src/Admin/Views/Fields/FloatingChatFields.php:1184, src/Admin/Views/Fields/FloatingChatFields.php:1197, src/Admin/Views/Fields/FloatingChatFields.php:1207, src/Admin/Views/Fields/FloatingChatFields.php:1251, src/Admin/Views/Fields/FloatingChatFields.php:1265, src/Admin/Views/Fields/FloatingChatFields.php:1281, src/Admin/Views/Fields/FloatingChatFields.php:1294, src/Admin/Views/Fields/FloatingChatFields.php:1308, src/Admin/Views/Fields/FloatingChatFields.php:1330, src/Admin/Views/Fields/FloatingChatFields.php:1358, src/Admin/Views/Fields/FloatingChatFields.php:1373, src/Admin/Views/Fields/FloatingChatFields.php:1386, src/Admin/Views/Fields/FloatingChatFields.php:1401, src/Admin/Views/Fields/FloatingChatFields.php:1419, src/Admin/Views/Fields/FloatingChatFields.php:1434, src/Admin/Views/Fields/FloatingChatFields.php:1449, src/Admin/Views/Fields/FloatingChatFields.php:1464, src/Admin/Views/Fields/FloatingChatFields.php:1480, src/Admin/Views/Fields/FloatingChatFields.php:1496, src/Admin/Views/Fields/FloatingChatFields.php:1513, src/Admin/Views/Fields/FloatingChatFields.php:1554, src/Admin/Views/Fields/FloatingChatFields.php:1567, src/Admin/Views/Fields/FloatingChatFields.php:1582, src/Admin/Views/Fields/FloatingChatFields.php:1619, src/Admin/Views/Fields/FloatingChatFields.php:1632, src/Admin/Views/Fields/FloatingChatFields.php:1647, src/Admin/Views/Fields/FloatingChatFields.php:1691, src/Admin/Views/Fields/FloatingChatFields.php:1705, src/Admin/Views/Fields/FloatingChatFields.php:1721, src/Admin/Views/Fields/FloatingChatFields.php:1758, src/Admin/Views/Fields/FloatingChatFields.php:1772, src/Admin/Views/Fields/FloatingChatFields.php:1786, src/Admin/Views/Fields/FloatingChatFields.php:1832, src/Admin/Views/Fields/FloatingChatFields.php:1862, src/Admin/Views/Fields/FloatingChatFields.php:1899, src/Admin/Views/Fields/FloatingChatFields.php:1913, src/Admin/Views/Fields/FloatingChatFields.php:1929, src/Admin/Views/Fields/FloatingChatFields.php:1978, src/Admin/Views/Fields/FloatingChatFields.php:2000, src/Admin/Views/Fields/FloatingChatFields.php:2020, src/Admin/Views/Fields/FloatingChatFields.php:2039, src/Admin/Views/Fields/FloatingChatFields.php:2053, src/Admin/Views/Fields/FloatingChatFields.php:2068, src/Admin/Views/Fields/FloatingChatFields.php:2091, src/Admin/Views/Fields/FloatingChatFields.php:2111, src/Admin/Views/Fields/FloatingChatFields.php:2132, src/Admin/Views/Fields/FloatingChatFields.php:2153, src/Admin/Views/Fields/FloatingChatFields.php:2174, src/Admin/Views/Fields/FloatingChatFields.php:2195, src/Admin/Views/Fields/FloatingChatFields.php:2212, src/Admin/Views/Fields/FloatingChatFields.php:2232, src/Admin/Views/Fields/FloatingChatFields.php:2253, src/Admin/Views/Fields/FloatingChatFields.php:2274, src/Admin/Views/Fields/FloatingChatFields.php:2295, src/Admin/Views/Fields/FloatingChatFields.php:2317, src/Admin/Views/Fields/FloatingChatFields.php:2333, src/Admin/Views/Fields/FloatingChatFields.php:2354, src/Admin/Views/Fields/FloatingChatFields.php:2375, src/Admin/Views/Fields/FloatingChatFields.php:2396, src/Admin/Views/Fields/FloatingChatFields.php:2417, src/Admin/Views/Fields/FloatingChatFields.php:2444, src/Admin/Views/Fields/FloatingChatFields.php:2460, src/Admin/Views/Fields/FloatingChatFields.php:2480, src/Admin/Views/Fields/FloatingChatFields.php:2511, src/Admin/Views/Fields/FloatingChatFields.php:2535, src/Admin/Views/Fields/FloatingChatFields.php:2553, src/Admin/Views/Fields/FloatingChatFields.php:2570, src/Admin/Views/Fields/FloatingChatFields.php:2589, src/Admin/Views/Fields/FloatingChatFields.php:2606, src/Admin/Views/Fields/FloatingChatFields.php:2644, src/Admin/Views/Fields/FloatingChatFields.php:2669, src/Admin/Views/Fields/FloatingChatFields.php:2700, src/Admin/Views/Fields/FloatingChatFields.php:2715, src/Admin/Views/Fields/FloatingChatFields.php:2726, src/Admin/Views/Fields/FloatingChatFields.php:2759, src/Admin/Views/Fields/FloatingChatFields.php:2774, src/Admin/Views/Fields/FloatingChatFields.php:2785, src/Admin/Views/Fields/FloatingChatFields.php:2818, src/Admin/Views/Fields/FloatingChatFields.php:2833, src/Admin/Views/Fields/FloatingChatFields.php:2844, src/Admin/Views/Fields/FloatingChatFields.php:2873, src/Admin/Views/Fields/FloatingChatFields.php:2888, src/Admin/Views/Fields/FloatingChatFields.php:2899, src/Admin/Views/Fields/FloatingChatFields.php:2932, src/Admin/Views/Fields/FloatingChatFields.php:2947, src/Admin/Views/Fields/FloatingChatFields.php:2959, src/Admin/Views/Fields/FloatingChatFields.php:2991, src/Admin/Views/Fields/FloatingChatFields.php:3006, src/Admin/Views/Fields/FloatingChatFields.php:3017, src/Admin/Views/Fields/FloatingChatFields.php:3046, src/Admin/Views/Fields/FloatingChatFields.php:3061, src/Admin/Views/Fields/FloatingChatFields.php:3072, src/Admin/Views/Fields/FloatingChatFields.php:3104, src/Admin/Views/Fields/FloatingChatFields.php:3119, src/Admin/Views/Fields/FloatingChatFields.php:3130, src/Admin/Views/Fields/FloatingChatFields.php:3158
 msgid "Open Docs"
 msgstr ""
 
@@ -585,11 +585,11 @@ msgstr ""
 msgid "Add a custom WhatsApp button on displayed beside the Proceed to Checkout button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:38, src/Admin/Views/CheckoutPage.php:38, src/Admin/Views/ProductPage.php:38, src/Admin/Views/ShopPage.php:38, src/Admin/Views/ThankYouPage.php:38, src/Admin/Views/Fields/FloatingChatFields.php:729, src/Admin/Views/Fields/FloatingChatFields.php:1933, src/Admin/Views/Fields/FloatingChatFields.php:2011
+#: src/Admin/Views/CartPage.php:38, src/Admin/Views/CheckoutPage.php:38, src/Admin/Views/ProductPage.php:38, src/Admin/Views/ShopPage.php:38, src/Admin/Views/ThankYouPage.php:38, src/Admin/Views/Fields/FloatingChatFields.php:729, src/Admin/Views/Fields/FloatingChatFields.php:1055, src/Admin/Views/Fields/FloatingChatFields.php:1946, src/Admin/Views/Fields/FloatingChatFields.php:2024
 msgid "Show"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:39, src/Admin/Views/CheckoutPage.php:39, src/Admin/Views/ProductPage.php:39, src/Admin/Views/ShopPage.php:39, src/Admin/Views/ThankYouPage.php:39, src/Admin/Views/Fields/FloatingChatFields.php:730, src/Admin/Views/Fields/FloatingChatFields.php:1934, src/Admin/Views/Fields/FloatingChatFields.php:2012
+#: src/Admin/Views/CartPage.php:39, src/Admin/Views/CheckoutPage.php:39, src/Admin/Views/ProductPage.php:39, src/Admin/Views/ShopPage.php:39, src/Admin/Views/ThankYouPage.php:39, src/Admin/Views/Fields/FloatingChatFields.php:730, src/Admin/Views/Fields/FloatingChatFields.php:1056, src/Admin/Views/Fields/FloatingChatFields.php:1947, src/Admin/Views/Fields/FloatingChatFields.php:2025
 msgid "Hide"
 msgstr ""
 
@@ -673,7 +673,7 @@ msgstr ""
 msgid "WooCommerce Button Style"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:106, src/Admin/Views/CheckoutPage.php:105, src/Admin/Views/ProductPage.php:109, src/Admin/Views/ShopPage.php:103, src/Admin/Views/ThankYouPage.php:198, src/Admin/Views/Fields/FloatingChatFields.php:1314
+#: src/Admin/Views/CartPage.php:106, src/Admin/Views/CheckoutPage.php:105, src/Admin/Views/ProductPage.php:109, src/Admin/Views/ShopPage.php:103, src/Admin/Views/ThankYouPage.php:198, src/Admin/Views/Fields/FloatingChatFields.php:1327
 msgid "Choose a style for the floating chat button from the available design options."
 msgstr ""
 
@@ -681,71 +681,71 @@ msgstr ""
 msgid "Icon"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:115, src/Admin/Views/CheckoutPage.php:114, src/Admin/Views/ProductPage.php:118, src/Admin/Views/ShopPage.php:113, src/Admin/Views/Shortcode.php:74, src/Admin/Views/ThankYouPage.php:207, src/Admin/Views/Fields/FloatingChatFields.php:1327
+#: src/Admin/Views/CartPage.php:115, src/Admin/Views/CheckoutPage.php:114, src/Admin/Views/ProductPage.php:118, src/Admin/Views/ShopPage.php:113, src/Admin/Views/Shortcode.php:74, src/Admin/Views/ThankYouPage.php:207, src/Admin/Views/Fields/FloatingChatFields.php:1340
 msgid "Simple Button"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:120, src/Admin/Views/CheckoutPage.php:119, src/Admin/Views/ProductPage.php:123, src/Admin/Views/ShopPage.php:118, src/Admin/Views/Shortcode.php:69, src/Admin/Views/ThankYouPage.php:212, src/Admin/Views/Fields/FloatingChatFields.php:1332
+#: src/Admin/Views/CartPage.php:120, src/Admin/Views/CheckoutPage.php:119, src/Admin/Views/ProductPage.php:123, src/Admin/Views/ShopPage.php:118, src/Admin/Views/Shortcode.php:69, src/Admin/Views/ThankYouPage.php:212, src/Admin/Views/Fields/FloatingChatFields.php:1345
 msgid "Advance Button"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:131, src/Admin/Views/CheckoutPage.php:129, src/Admin/Views/ProductPage.php:134, src/Admin/Views/ShopPage.php:129, src/Admin/Views/ThankYouPage.php:222, src/Admin/Views/Fields/FloatingChatFields.php:1052
+#: src/Admin/Views/CartPage.php:131, src/Admin/Views/CheckoutPage.php:129, src/Admin/Views/ProductPage.php:134, src/Admin/Views/ShopPage.php:129, src/Admin/Views/ThankYouPage.php:222, src/Admin/Views/Fields/FloatingChatFields.php:1065
 msgid "Agent Photo Type"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:133, src/Admin/Views/CheckoutPage.php:131, src/Admin/Views/ProductPage.php:136, src/Admin/Views/ShopPage.php:131, src/Admin/Views/ThankYouPage.php:224, src/Admin/Views/Fields/FloatingChatFields.php:1054, src/Admin/Views/Fields/FloatingChatFields.php:1345
+#: src/Admin/Views/CartPage.php:133, src/Admin/Views/CheckoutPage.php:131, src/Admin/Views/ProductPage.php:136, src/Admin/Views/ShopPage.php:131, src/Admin/Views/ThankYouPage.php:224, src/Admin/Views/Fields/FloatingChatFields.php:1067, src/Admin/Views/Fields/FloatingChatFields.php:1358
 msgid "Choose how the agent photo is displayed:"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:133, src/Admin/Views/CheckoutPage.php:131, src/Admin/Views/ProductPage.php:136, src/Admin/Views/ShopPage.php:131, src/Admin/Views/ThankYouPage.php:224, src/Admin/Views/Fields/FloatingChatFields.php:1054, src/Admin/Views/Fields/FloatingChatFields.php:1345, src/Admin/Views/Fields/FloatingChatFields.php:1373
+#: src/Admin/Views/CartPage.php:133, src/Admin/Views/CheckoutPage.php:131, src/Admin/Views/ProductPage.php:136, src/Admin/Views/ShopPage.php:131, src/Admin/Views/ThankYouPage.php:224, src/Admin/Views/Fields/FloatingChatFields.php:1067, src/Admin/Views/Fields/FloatingChatFields.php:1358, src/Admin/Views/Fields/FloatingChatFields.php:1386
 msgid "Use the plugin’s built-in photo."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:133, src/Admin/Views/CheckoutPage.php:131, src/Admin/Views/ProductPage.php:136, src/Admin/Views/ShopPage.php:131, src/Admin/Views/ThankYouPage.php:224, src/Admin/Views/Fields/FloatingChatFields.php:1054, src/Admin/Views/Fields/FloatingChatFields.php:1345, src/Admin/Views/Fields/FloatingChatFields.php:1373
+#: src/Admin/Views/CartPage.php:133, src/Admin/Views/CheckoutPage.php:131, src/Admin/Views/ProductPage.php:136, src/Admin/Views/ShopPage.php:131, src/Admin/Views/ThankYouPage.php:224, src/Admin/Views/Fields/FloatingChatFields.php:1067, src/Admin/Views/Fields/FloatingChatFields.php:1358, src/Admin/Views/Fields/FloatingChatFields.php:1386
 msgid "Upload your own image."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:133, src/Admin/Views/CheckoutPage.php:131, src/Admin/Views/ProductPage.php:136, src/Admin/Views/ShopPage.php:131, src/Admin/Views/ThankYouPage.php:224, src/Admin/Views/Fields/FloatingChatFields.php:1054, src/Admin/Views/Fields/FloatingChatFields.php:1345, src/Admin/Views/Fields/FloatingChatFields.php:1373
+#: src/Admin/Views/CartPage.php:133, src/Admin/Views/CheckoutPage.php:131, src/Admin/Views/ProductPage.php:136, src/Admin/Views/ShopPage.php:131, src/Admin/Views/ThankYouPage.php:224, src/Admin/Views/Fields/FloatingChatFields.php:1067, src/Admin/Views/Fields/FloatingChatFields.php:1358, src/Admin/Views/Fields/FloatingChatFields.php:1386
 msgid "No photo will be shown."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:135, src/Admin/Views/CheckoutPage.php:133, src/Admin/Views/ProductPage.php:138, src/Admin/Views/ShopPage.php:133, src/Admin/Views/ThankYouPage.php:226, src/Admin/Views/Fields/FloatingChatFields.php:1056, src/Admin/Views/Fields/FloatingChatFields.php:1347, src/Admin/Views/Fields/FloatingChatFields.php:1375
+#: src/Admin/Views/CartPage.php:135, src/Admin/Views/CheckoutPage.php:133, src/Admin/Views/ProductPage.php:138, src/Admin/Views/ShopPage.php:133, src/Admin/Views/ThankYouPage.php:226, src/Admin/Views/Fields/FloatingChatFields.php:1069, src/Admin/Views/Fields/FloatingChatFields.php:1360, src/Admin/Views/Fields/FloatingChatFields.php:1388
 msgid "Default"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:136, src/Admin/Views/CartPage.php:201, src/Admin/Views/CartPage.php:240, src/Admin/Views/CartPage.php:302, src/Admin/Views/CheckoutPage.php:134, src/Admin/Views/CheckoutPage.php:199, src/Admin/Views/CheckoutPage.php:238, src/Admin/Views/CheckoutPage.php:300, src/Admin/Views/ProductPage.php:139, src/Admin/Views/ProductPage.php:204, src/Admin/Views/ProductPage.php:243, src/Admin/Views/ProductPage.php:305, src/Admin/Views/ShopPage.php:134, src/Admin/Views/ShopPage.php:200, src/Admin/Views/ShopPage.php:239, src/Admin/Views/ShopPage.php:301, src/Admin/Views/ThankYouPage.php:227, src/Admin/Views/ThankYouPage.php:292, src/Admin/Views/ThankYouPage.php:331, src/Admin/Views/ThankYouPage.php:393, src/Admin/Views/Fields/FloatingChatFields.php:444, src/Admin/Views/Fields/FloatingChatFields.php:1057, src/Admin/Views/Fields/FloatingChatFields.php:1222, src/Admin/Views/Fields/FloatingChatFields.php:1348, src/Admin/Views/Fields/FloatingChatFields.php:1376, src/Admin/Views/Fields/FloatingChatFields.php:1525, src/Admin/Views/Fields/FloatingChatFields.php:1591, src/Admin/Views/Fields/FloatingChatFields.php:1659, src/Admin/Views/Fields/FloatingChatFields.php:1730, src/Admin/Views/Fields/FloatingChatFields.php:1810
+#: src/Admin/Views/CartPage.php:136, src/Admin/Views/CartPage.php:201, src/Admin/Views/CartPage.php:240, src/Admin/Views/CartPage.php:302, src/Admin/Views/CheckoutPage.php:134, src/Admin/Views/CheckoutPage.php:199, src/Admin/Views/CheckoutPage.php:238, src/Admin/Views/CheckoutPage.php:300, src/Admin/Views/ProductPage.php:139, src/Admin/Views/ProductPage.php:204, src/Admin/Views/ProductPage.php:243, src/Admin/Views/ProductPage.php:305, src/Admin/Views/ShopPage.php:134, src/Admin/Views/ShopPage.php:200, src/Admin/Views/ShopPage.php:239, src/Admin/Views/ShopPage.php:301, src/Admin/Views/ThankYouPage.php:227, src/Admin/Views/ThankYouPage.php:292, src/Admin/Views/ThankYouPage.php:331, src/Admin/Views/ThankYouPage.php:393, src/Admin/Views/Fields/FloatingChatFields.php:444, src/Admin/Views/Fields/FloatingChatFields.php:1070, src/Admin/Views/Fields/FloatingChatFields.php:1235, src/Admin/Views/Fields/FloatingChatFields.php:1361, src/Admin/Views/Fields/FloatingChatFields.php:1389, src/Admin/Views/Fields/FloatingChatFields.php:1538, src/Admin/Views/Fields/FloatingChatFields.php:1604, src/Admin/Views/Fields/FloatingChatFields.php:1672, src/Admin/Views/Fields/FloatingChatFields.php:1743, src/Admin/Views/Fields/FloatingChatFields.php:1823
 msgid "Custom"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:137, src/Admin/Views/CheckoutPage.php:135, src/Admin/Views/ProductPage.php:140, src/Admin/Views/ShopPage.php:135, src/Admin/Views/ThankYouPage.php:228, src/Admin/Views/Fields/FloatingChatFields.php:1058, src/Admin/Views/Fields/FloatingChatFields.php:1349, src/Admin/Views/Fields/FloatingChatFields.php:1377
+#: src/Admin/Views/CartPage.php:137, src/Admin/Views/CheckoutPage.php:135, src/Admin/Views/ProductPage.php:140, src/Admin/Views/ShopPage.php:135, src/Admin/Views/ThankYouPage.php:228, src/Admin/Views/Fields/FloatingChatFields.php:1071, src/Admin/Views/Fields/FloatingChatFields.php:1362, src/Admin/Views/Fields/FloatingChatFields.php:1390
 msgid "None"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:146, src/Admin/Views/CheckoutPage.php:144, src/Admin/Views/ProductPage.php:149, src/Admin/Views/ShopPage.php:144, src/Admin/Views/ThankYouPage.php:237, src/Admin/Views/Fields/FloatingChatFields.php:186, src/Admin/Views/Fields/FloatingChatFields.php:1069
+#: src/Admin/Views/CartPage.php:146, src/Admin/Views/CheckoutPage.php:144, src/Admin/Views/ProductPage.php:149, src/Admin/Views/ShopPage.php:144, src/Admin/Views/ThankYouPage.php:237, src/Admin/Views/Fields/FloatingChatFields.php:186, src/Admin/Views/Fields/FloatingChatFields.php:1082
 msgid "Agent Photo"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:147, src/Admin/Views/CheckoutPage.php:145, src/Admin/Views/ProductPage.php:150, src/Admin/Views/ShopPage.php:145, src/Admin/Views/ThankYouPage.php:238, src/Admin/Views/Fields/FloatingChatFields.php:1070, src/Admin/Views/Fields/FloatingChatFields.php:1360, src/Admin/Views/Fields/FloatingChatFields.php:1388
+#: src/Admin/Views/CartPage.php:147, src/Admin/Views/CheckoutPage.php:145, src/Admin/Views/ProductPage.php:150, src/Admin/Views/ShopPage.php:145, src/Admin/Views/ThankYouPage.php:238, src/Admin/Views/Fields/FloatingChatFields.php:1083, src/Admin/Views/Fields/FloatingChatFields.php:1373, src/Admin/Views/Fields/FloatingChatFields.php:1401
 msgid "Upload an agent photo to display inside the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:148, src/Admin/Views/CheckoutPage.php:146, src/Admin/Views/ProductPage.php:151, src/Admin/Views/ShopPage.php:146, src/Admin/Views/ThankYouPage.php:239, src/Admin/Views/Fields/FloatingChatFields.php:1071, src/Admin/Views/Fields/FloatingChatFields.php:1361, src/Admin/Views/Fields/FloatingChatFields.php:1389
+#: src/Admin/Views/CartPage.php:148, src/Admin/Views/CheckoutPage.php:146, src/Admin/Views/ProductPage.php:151, src/Admin/Views/ShopPage.php:146, src/Admin/Views/ThankYouPage.php:239, src/Admin/Views/Fields/FloatingChatFields.php:1084, src/Admin/Views/Fields/FloatingChatFields.php:1374, src/Admin/Views/Fields/FloatingChatFields.php:1402
 msgid "Upload or select an image from the media library."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:158, src/Admin/Views/CheckoutPage.php:156, src/Admin/Views/ProductPage.php:161, src/Admin/Views/ShopPage.php:156, src/Admin/Views/ThankYouPage.php:249, src/Frontend/elementor-widgets/elementor-widget.php:182, src/Admin/Views/Fields/FloatingChatFields.php:1399, src/Admin/Views/Fields/FloatingChatFields.php:1429
+#: src/Admin/Views/CartPage.php:158, src/Admin/Views/CheckoutPage.php:156, src/Admin/Views/ProductPage.php:161, src/Admin/Views/ShopPage.php:156, src/Admin/Views/ThankYouPage.php:249, src/Frontend/elementor-widgets/elementor-widget.php:182, src/Admin/Views/Fields/FloatingChatFields.php:1412, src/Admin/Views/Fields/FloatingChatFields.php:1442
 msgid "Button Top Label"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:159, src/Admin/Views/CheckoutPage.php:157, src/Admin/Views/ProductPage.php:162, src/Admin/Views/ShopPage.php:157, src/Admin/Views/ThankYouPage.php:250, src/Admin/Views/Fields/FloatingChatFields.php:1083
+#: src/Admin/Views/CartPage.php:159, src/Admin/Views/CheckoutPage.php:157, src/Admin/Views/ProductPage.php:162, src/Admin/Views/ShopPage.php:157, src/Admin/Views/ThankYouPage.php:250, src/Admin/Views/Fields/FloatingChatFields.php:1096
 msgid "Enter the agent’s name to display inside the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:160, src/Admin/Views/CheckoutPage.php:158, src/Admin/Views/ProductPage.php:163, src/Admin/Views/ShopPage.php:158, src/Admin/Views/ThankYouPage.php:251, src/Admin/Views/Fields/FloatingChatFields.php:1407
+#: src/Admin/Views/CartPage.php:160, src/Admin/Views/CheckoutPage.php:158, src/Admin/Views/ProductPage.php:163, src/Admin/Views/ShopPage.php:158, src/Admin/Views/ThankYouPage.php:251, src/Admin/Views/Fields/FloatingChatFields.php:1420
 msgid "John Doe / Technical support"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:167, src/Admin/Views/CheckoutPage.php:165, src/Admin/Views/ProductPage.php:170, src/Admin/Views/ShopPage.php:165, src/Admin/Views/ThankYouPage.php:258, src/Admin/Views/Fields/FloatingChatFields.php:1414, src/Admin/Views/Fields/FloatingChatFields.php:1444
+#: src/Admin/Views/CartPage.php:167, src/Admin/Views/CheckoutPage.php:165, src/Admin/Views/ProductPage.php:170, src/Admin/Views/ShopPage.php:165, src/Admin/Views/ThankYouPage.php:258, src/Admin/Views/Fields/FloatingChatFields.php:1427, src/Admin/Views/Fields/FloatingChatFields.php:1457
 msgid "Button Main Label"
 msgstr ""
 
@@ -753,155 +753,155 @@ msgstr ""
 msgid "Enter the text to display inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:169, src/Admin/Views/CheckoutPage.php:167, src/Admin/Views/ProductPage.php:172, src/Admin/Views/ShopPage.php:167, src/Admin/Views/ThankYouPage.php:260, src/Admin/Views/Fields/FloatingChatFields.php:1422
+#: src/Admin/Views/CartPage.php:169, src/Admin/Views/CheckoutPage.php:167, src/Admin/Views/ProductPage.php:172, src/Admin/Views/ShopPage.php:167, src/Admin/Views/ThankYouPage.php:260, src/Admin/Views/Fields/FloatingChatFields.php:1435
 msgid "How may I help you?"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:176, src/Admin/Views/CheckoutPage.php:174, src/Admin/Views/ProductPage.php:179, src/Admin/Views/ShopPage.php:174, src/Admin/Views/ThankYouPage.php:267, src/Admin/Views/Fields/FloatingChatFields.php:1493
+#: src/Admin/Views/CartPage.php:176, src/Admin/Views/CheckoutPage.php:174, src/Admin/Views/ProductPage.php:179, src/Admin/Views/ShopPage.php:174, src/Admin/Views/ThankYouPage.php:267, src/Admin/Views/Fields/FloatingChatFields.php:1506
 msgid "Icon for Circle Button"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:177, src/Admin/Views/CheckoutPage.php:175, src/Admin/Views/ProductPage.php:180, src/Admin/Views/ShopPage.php:175, src/Admin/Views/ThankYouPage.php:268, src/Admin/Views/Fields/FloatingChatFields.php:1497
+#: src/Admin/Views/CartPage.php:177, src/Admin/Views/CheckoutPage.php:175, src/Admin/Views/ProductPage.php:180, src/Admin/Views/ShopPage.php:175, src/Admin/Views/ThankYouPage.php:268, src/Admin/Views/Fields/FloatingChatFields.php:1510
 msgid "Select an icon to display inside the circular chat button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:198, src/Admin/Views/CartPage.php:237, src/Admin/Views/CheckoutPage.php:196, src/Admin/Views/CheckoutPage.php:235, src/Admin/Views/ProductPage.php:201, src/Admin/Views/ProductPage.php:240, src/Admin/Views/ShopPage.php:197, src/Admin/Views/ShopPage.php:236, src/Admin/Views/ThankYouPage.php:289, src/Admin/Views/ThankYouPage.php:328, src/Admin/Views/Fields/FloatingChatFields.php:441, src/Admin/Views/Fields/FloatingChatFields.php:1219, src/Admin/Views/Fields/FloatingChatFields.php:1522, src/Admin/Views/Fields/FloatingChatFields.php:1588, src/Admin/Views/Fields/FloatingChatFields.php:1656, src/Admin/Views/Fields/FloatingChatFields.php:1727
+#: src/Admin/Views/CartPage.php:198, src/Admin/Views/CartPage.php:237, src/Admin/Views/CheckoutPage.php:196, src/Admin/Views/CheckoutPage.php:235, src/Admin/Views/ProductPage.php:201, src/Admin/Views/ProductPage.php:240, src/Admin/Views/ShopPage.php:197, src/Admin/Views/ShopPage.php:236, src/Admin/Views/ThankYouPage.php:289, src/Admin/Views/ThankYouPage.php:328, src/Admin/Views/Fields/FloatingChatFields.php:441, src/Admin/Views/Fields/FloatingChatFields.php:1232, src/Admin/Views/Fields/FloatingChatFields.php:1535, src/Admin/Views/Fields/FloatingChatFields.php:1601, src/Admin/Views/Fields/FloatingChatFields.php:1669, src/Admin/Views/Fields/FloatingChatFields.php:1740
 msgid "Native"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:211, src/Admin/Views/CheckoutPage.php:209, src/Admin/Views/ProductPage.php:214, src/Admin/Views/ShopPage.php:210, src/Admin/Views/ThankYouPage.php:302, src/Admin/Views/Fields/FloatingChatFields.php:1536
+#: src/Admin/Views/CartPage.php:211, src/Admin/Views/CheckoutPage.php:209, src/Admin/Views/ProductPage.php:214, src/Admin/Views/ShopPage.php:210, src/Admin/Views/ThankYouPage.php:302, src/Admin/Views/Fields/FloatingChatFields.php:1549
 msgid "Circle Button Native Icon"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:212, src/Admin/Views/CheckoutPage.php:210, src/Admin/Views/ProductPage.php:215, src/Admin/Views/ShopPage.php:211, src/Admin/Views/ThankYouPage.php:303, src/Admin/Views/Fields/FloatingChatFields.php:1539
+#: src/Admin/Views/CartPage.php:212, src/Admin/Views/CheckoutPage.php:210, src/Admin/Views/ProductPage.php:215, src/Admin/Views/ShopPage.php:211, src/Admin/Views/ThankYouPage.php:303, src/Admin/Views/Fields/FloatingChatFields.php:1552
 msgid "Choose a native icon from the built-in library of 2000+ icons to display inside the circular chat button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:219, src/Admin/Views/CheckoutPage.php:217, src/Admin/Views/ProductPage.php:222, src/Admin/Views/ShopPage.php:218, src/Admin/Views/ThankYouPage.php:310, src/Admin/Views/Fields/FloatingChatFields.php:1549
+#: src/Admin/Views/CartPage.php:219, src/Admin/Views/CheckoutPage.php:217, src/Admin/Views/ProductPage.php:222, src/Admin/Views/ShopPage.php:218, src/Admin/Views/ThankYouPage.php:310, src/Admin/Views/Fields/FloatingChatFields.php:1562
 msgid "Circle Button Custom Icon"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:220, src/Admin/Views/CheckoutPage.php:218, src/Admin/Views/ProductPage.php:223, src/Admin/Views/ShopPage.php:219, src/Admin/Views/ThankYouPage.php:311, src/Admin/Views/Fields/FloatingChatFields.php:1552
+#: src/Admin/Views/CartPage.php:220, src/Admin/Views/CheckoutPage.php:218, src/Admin/Views/ProductPage.php:223, src/Admin/Views/ShopPage.php:219, src/Admin/Views/ThankYouPage.php:311, src/Admin/Views/Fields/FloatingChatFields.php:1565
 msgid "Upload or select a custom icon from your media library to display inside the circular chat button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:227, src/Admin/Views/CheckoutPage.php:225, src/Admin/Views/ProductPage.php:230, src/Admin/Views/ShopPage.php:226, src/Admin/Views/ThankYouPage.php:318, src/Admin/Views/Fields/FloatingChatFields.php:1628
+#: src/Admin/Views/CartPage.php:227, src/Admin/Views/CheckoutPage.php:225, src/Admin/Views/ProductPage.php:230, src/Admin/Views/ShopPage.php:226, src/Admin/Views/ThankYouPage.php:318, src/Admin/Views/Fields/FloatingChatFields.php:1641
 msgid "Icon for Button"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:228, src/Admin/Views/CheckoutPage.php:226, src/Admin/Views/ProductPage.php:231, src/Admin/Views/ShopPage.php:227, src/Admin/Views/ThankYouPage.php:319, src/Admin/Views/Fields/FloatingChatFields.php:1632
+#: src/Admin/Views/CartPage.php:228, src/Admin/Views/CheckoutPage.php:226, src/Admin/Views/ProductPage.php:231, src/Admin/Views/ShopPage.php:227, src/Admin/Views/ThankYouPage.php:319, src/Admin/Views/Fields/FloatingChatFields.php:1645
 msgid "Select an icon to display inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:243, src/Admin/Views/CheckoutPage.php:241, src/Admin/Views/ProductPage.php:246, src/Admin/Views/ShopPage.php:242, src/Admin/Views/ThankYouPage.php:334, src/Admin/Views/Fields/FloatingChatFields.php:438, src/Admin/Views/Fields/FloatingChatFields.php:1216, src/Admin/Views/Fields/FloatingChatFields.php:1662
+#: src/Admin/Views/CartPage.php:243, src/Admin/Views/CheckoutPage.php:241, src/Admin/Views/ProductPage.php:246, src/Admin/Views/ShopPage.php:242, src/Admin/Views/ThankYouPage.php:334, src/Admin/Views/Fields/FloatingChatFields.php:438, src/Admin/Views/Fields/FloatingChatFields.php:1229, src/Admin/Views/Fields/FloatingChatFields.php:1675
 msgid "No Icon"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:253, src/Admin/Views/CheckoutPage.php:251, src/Admin/Views/ProductPage.php:256, src/Admin/Views/ShopPage.php:252, src/Admin/Views/ThankYouPage.php:344, src/Admin/Views/Fields/FloatingChatFields.php:1672
+#: src/Admin/Views/CartPage.php:253, src/Admin/Views/CheckoutPage.php:251, src/Admin/Views/ProductPage.php:256, src/Admin/Views/ShopPage.php:252, src/Admin/Views/ThankYouPage.php:344, src/Admin/Views/Fields/FloatingChatFields.php:1685
 msgid "Button Native Icon"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:256, src/Admin/Views/CheckoutPage.php:254, src/Admin/Views/ProductPage.php:259, src/Admin/Views/ShopPage.php:255, src/Admin/Views/ThankYouPage.php:347, src/Admin/Views/Fields/FloatingChatFields.php:1675
+#: src/Admin/Views/CartPage.php:256, src/Admin/Views/CheckoutPage.php:254, src/Admin/Views/ProductPage.php:259, src/Admin/Views/ShopPage.php:255, src/Admin/Views/ThankYouPage.php:347, src/Admin/Views/Fields/FloatingChatFields.php:1688
 msgid "Choose a native icon from the built-in library of 2000+ icons to display inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:267, src/Admin/Views/CheckoutPage.php:265, src/Admin/Views/ProductPage.php:270, src/Admin/Views/ShopPage.php:266, src/Admin/Views/ThankYouPage.php:358, src/Admin/Views/Fields/FloatingChatFields.php:1686
+#: src/Admin/Views/CartPage.php:267, src/Admin/Views/CheckoutPage.php:265, src/Admin/Views/ProductPage.php:270, src/Admin/Views/ShopPage.php:266, src/Admin/Views/ThankYouPage.php:358, src/Admin/Views/Fields/FloatingChatFields.php:1699
 msgid "Button Custom Icon"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:270, src/Admin/Views/CheckoutPage.php:268, src/Admin/Views/ProductPage.php:273, src/Admin/Views/ShopPage.php:269, src/Admin/Views/ThankYouPage.php:361, src/Admin/Views/Fields/FloatingChatFields.php:1689
+#: src/Admin/Views/CartPage.php:270, src/Admin/Views/CheckoutPage.php:268, src/Admin/Views/ProductPage.php:273, src/Admin/Views/ShopPage.php:269, src/Admin/Views/ThankYouPage.php:361, src/Admin/Views/Fields/FloatingChatFields.php:1702
 msgid "Upload or select a custom icon from your media library to display inside the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:280, src/Admin/Views/CheckoutPage.php:278, src/Admin/Views/ProductPage.php:283, src/Admin/Views/ShopPage.php:279, src/Admin/Views/ThankYouPage.php:371, src/Admin/Views/Fields/FloatingChatFields.php:1788
+#: src/Admin/Views/CartPage.php:280, src/Admin/Views/CheckoutPage.php:278, src/Admin/Views/ProductPage.php:283, src/Admin/Views/ShopPage.php:279, src/Admin/Views/ThankYouPage.php:371, src/Admin/Views/Fields/FloatingChatFields.php:1801
 msgid "Button Size"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:281, src/Admin/Views/CheckoutPage.php:279, src/Admin/Views/ProductPage.php:284, src/Admin/Views/ShopPage.php:280, src/Admin/Views/ThankYouPage.php:372, src/Admin/Views/Fields/FloatingChatFields.php:1789
+#: src/Admin/Views/CartPage.php:281, src/Admin/Views/CheckoutPage.php:279, src/Admin/Views/ProductPage.php:284, src/Admin/Views/ShopPage.php:280, src/Admin/Views/ThankYouPage.php:372, src/Admin/Views/Fields/FloatingChatFields.php:1802
 msgid "Select the size of the button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:284, src/Admin/Views/CheckoutPage.php:282, src/Admin/Views/ProductPage.php:287, src/Admin/Views/ShopPage.php:283, src/Admin/Views/ThankYouPage.php:375, src/Frontend/elementor-widgets/elementor-widget.php:1164, src/Admin/Views/Fields/FloatingChatFields.php:1792
+#: src/Admin/Views/CartPage.php:284, src/Admin/Views/CheckoutPage.php:282, src/Admin/Views/ProductPage.php:287, src/Admin/Views/ShopPage.php:283, src/Admin/Views/ThankYouPage.php:375, src/Frontend/elementor-widgets/elementor-widget.php:1164, src/Admin/Views/Fields/FloatingChatFields.php:1805
 msgid "XS"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:287, src/Admin/Views/CheckoutPage.php:285, src/Admin/Views/ProductPage.php:290, src/Admin/Views/ShopPage.php:286, src/Admin/Views/ThankYouPage.php:378, src/Frontend/elementor-widgets/elementor-widget.php:1165, src/Admin/Views/Fields/FloatingChatFields.php:1795
+#: src/Admin/Views/CartPage.php:287, src/Admin/Views/CheckoutPage.php:285, src/Admin/Views/ProductPage.php:290, src/Admin/Views/ShopPage.php:286, src/Admin/Views/ThankYouPage.php:378, src/Frontend/elementor-widgets/elementor-widget.php:1165, src/Admin/Views/Fields/FloatingChatFields.php:1808
 msgid "S"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:290, src/Admin/Views/CheckoutPage.php:288, src/Admin/Views/ProductPage.php:293, src/Admin/Views/ShopPage.php:289, src/Admin/Views/ThankYouPage.php:381, src/Frontend/elementor-widgets/elementor-widget.php:1166, src/Admin/Views/Fields/FloatingChatFields.php:1798
+#: src/Admin/Views/CartPage.php:290, src/Admin/Views/CheckoutPage.php:288, src/Admin/Views/ProductPage.php:293, src/Admin/Views/ShopPage.php:289, src/Admin/Views/ThankYouPage.php:381, src/Frontend/elementor-widgets/elementor-widget.php:1166, src/Admin/Views/Fields/FloatingChatFields.php:1811
 msgid "M"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:293, src/Admin/Views/CheckoutPage.php:291, src/Admin/Views/ProductPage.php:296, src/Admin/Views/ShopPage.php:292, src/Admin/Views/ThankYouPage.php:384, src/Frontend/elementor-widgets/elementor-widget.php:1167, src/Admin/Views/Fields/FloatingChatFields.php:1801
+#: src/Admin/Views/CartPage.php:293, src/Admin/Views/CheckoutPage.php:291, src/Admin/Views/ProductPage.php:296, src/Admin/Views/ShopPage.php:292, src/Admin/Views/ThankYouPage.php:384, src/Frontend/elementor-widgets/elementor-widget.php:1167, src/Admin/Views/Fields/FloatingChatFields.php:1814
 msgid "L"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:296, src/Admin/Views/CheckoutPage.php:294, src/Admin/Views/ProductPage.php:299, src/Admin/Views/ShopPage.php:295, src/Admin/Views/ThankYouPage.php:387, src/Frontend/elementor-widgets/elementor-widget.php:1168, src/Admin/Views/Fields/FloatingChatFields.php:1804
+#: src/Admin/Views/CartPage.php:296, src/Admin/Views/CheckoutPage.php:294, src/Admin/Views/ProductPage.php:299, src/Admin/Views/ShopPage.php:295, src/Admin/Views/ThankYouPage.php:387, src/Frontend/elementor-widgets/elementor-widget.php:1168, src/Admin/Views/Fields/FloatingChatFields.php:1817
 msgid "XL"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:299, src/Admin/Views/CheckoutPage.php:297, src/Admin/Views/ProductPage.php:302, src/Admin/Views/ShopPage.php:298, src/Admin/Views/ThankYouPage.php:390, src/Frontend/elementor-widgets/elementor-widget.php:1169, src/Admin/Views/Fields/FloatingChatFields.php:1807
+#: src/Admin/Views/CartPage.php:299, src/Admin/Views/CheckoutPage.php:297, src/Admin/Views/ProductPage.php:302, src/Admin/Views/ShopPage.php:298, src/Admin/Views/ThankYouPage.php:390, src/Frontend/elementor-widgets/elementor-widget.php:1169, src/Admin/Views/Fields/FloatingChatFields.php:1820
 msgid "XXL"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:311, src/Admin/Views/CheckoutPage.php:309, src/Admin/Views/ProductPage.php:314, src/Admin/Views/ShopPage.php:310, src/Admin/Views/ThankYouPage.php:402, src/Admin/Views/Fields/FloatingChatFields.php:1818
+#: src/Admin/Views/CartPage.php:311, src/Admin/Views/CheckoutPage.php:309, src/Admin/Views/ProductPage.php:314, src/Admin/Views/ShopPage.php:310, src/Admin/Views/ThankYouPage.php:402, src/Admin/Views/Fields/FloatingChatFields.php:1831
 msgid "Custom Switch Size"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:312, src/Admin/Views/CheckoutPage.php:310, src/Admin/Views/ProductPage.php:315, src/Admin/Views/ShopPage.php:311, src/Admin/Views/ThankYouPage.php:403, src/Admin/Views/Fields/FloatingChatFields.php:1819
+#: src/Admin/Views/CartPage.php:312, src/Admin/Views/CheckoutPage.php:310, src/Admin/Views/ProductPage.php:315, src/Admin/Views/ShopPage.php:311, src/Admin/Views/ThankYouPage.php:403, src/Admin/Views/Fields/FloatingChatFields.php:1832
 msgid "Scale in percentage relative to normal size."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:321, src/Admin/Views/CheckoutPage.php:319, src/Admin/Views/ProductPage.php:324, src/Admin/Views/ShopPage.php:320, src/Admin/Views/ThankYouPage.php:412, src/Frontend/elementor-widgets/elementor-widget.php:1458, src/Admin/Views/Fields/FloatingChatFields.php:1828
+#: src/Admin/Views/CartPage.php:321, src/Admin/Views/CheckoutPage.php:319, src/Admin/Views/ProductPage.php:324, src/Admin/Views/ShopPage.php:320, src/Admin/Views/ThankYouPage.php:412, src/Frontend/elementor-widgets/elementor-widget.php:1458, src/Admin/Views/Fields/FloatingChatFields.php:1841
 msgid "Icon Color"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:323, src/Admin/Views/CheckoutPage.php:321, src/Admin/Views/ProductPage.php:326, src/Admin/Views/ShopPage.php:322, src/Admin/Views/ThankYouPage.php:414, src/Admin/Views/Fields/FloatingChatFields.php:1830
+#: src/Admin/Views/CartPage.php:323, src/Admin/Views/CheckoutPage.php:321, src/Admin/Views/ProductPage.php:326, src/Admin/Views/ShopPage.php:322, src/Admin/Views/ThankYouPage.php:414, src/Admin/Views/Fields/FloatingChatFields.php:1843
 msgid "You can define normal and hover colors for the button icon."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:326, src/Admin/Views/CartPage.php:356, src/Admin/Views/CartPage.php:376, src/Admin/Views/CartPage.php:391, src/Admin/Views/CheckoutPage.php:324, src/Admin/Views/CheckoutPage.php:354, src/Admin/Views/CheckoutPage.php:374, src/Admin/Views/CheckoutPage.php:389, src/Admin/Views/ProductPage.php:329, src/Admin/Views/ProductPage.php:359, src/Admin/Views/ProductPage.php:379, src/Admin/Views/ProductPage.php:394, src/Admin/Views/ShopPage.php:325, src/Admin/Views/ShopPage.php:355, src/Admin/Views/ShopPage.php:375, src/Admin/Views/ShopPage.php:390, src/Admin/Views/ThankYouPage.php:417, src/Admin/Views/ThankYouPage.php:447, src/Admin/Views/ThankYouPage.php:467, src/Admin/Views/ThankYouPage.php:482, src/Admin/Views/Fields/FloatingChatFields.php:1833, src/Admin/Views/Fields/FloatingChatFields.php:1866, src/Admin/Views/Fields/FloatingChatFields.php:1888, src/Admin/Views/Fields/FloatingChatFields.php:1902
+#: src/Admin/Views/CartPage.php:326, src/Admin/Views/CartPage.php:356, src/Admin/Views/CartPage.php:376, src/Admin/Views/CartPage.php:391, src/Admin/Views/CheckoutPage.php:324, src/Admin/Views/CheckoutPage.php:354, src/Admin/Views/CheckoutPage.php:374, src/Admin/Views/CheckoutPage.php:389, src/Admin/Views/ProductPage.php:329, src/Admin/Views/ProductPage.php:359, src/Admin/Views/ProductPage.php:379, src/Admin/Views/ProductPage.php:394, src/Admin/Views/ShopPage.php:325, src/Admin/Views/ShopPage.php:355, src/Admin/Views/ShopPage.php:375, src/Admin/Views/ShopPage.php:390, src/Admin/Views/ThankYouPage.php:417, src/Admin/Views/ThankYouPage.php:447, src/Admin/Views/ThankYouPage.php:467, src/Admin/Views/ThankYouPage.php:482, src/Admin/Views/Fields/FloatingChatFields.php:1846, src/Admin/Views/Fields/FloatingChatFields.php:1879, src/Admin/Views/Fields/FloatingChatFields.php:1901, src/Admin/Views/Fields/FloatingChatFields.php:1915
 msgid "Normal Color"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:327, src/Admin/Views/CartPage.php:357, src/Admin/Views/CartPage.php:377, src/Admin/Views/CartPage.php:392, src/Admin/Views/CheckoutPage.php:325, src/Admin/Views/CheckoutPage.php:355, src/Admin/Views/CheckoutPage.php:375, src/Admin/Views/CheckoutPage.php:390, src/Admin/Views/ProductPage.php:330, src/Admin/Views/ProductPage.php:360, src/Admin/Views/ProductPage.php:380, src/Admin/Views/ProductPage.php:395, src/Admin/Views/ShopPage.php:326, src/Admin/Views/ShopPage.php:356, src/Admin/Views/ShopPage.php:376, src/Admin/Views/ShopPage.php:391, src/Admin/Views/ThankYouPage.php:418, src/Admin/Views/ThankYouPage.php:448, src/Admin/Views/ThankYouPage.php:468, src/Admin/Views/ThankYouPage.php:483, src/Admin/Views/Fields/FloatingChatFields.php:1834, src/Admin/Views/Fields/FloatingChatFields.php:1867, src/Admin/Views/Fields/FloatingChatFields.php:1889, src/Admin/Views/Fields/FloatingChatFields.php:1903, src/Admin/Views/Fields/FloatingChatFields.php:2579
+#: src/Admin/Views/CartPage.php:327, src/Admin/Views/CartPage.php:357, src/Admin/Views/CartPage.php:377, src/Admin/Views/CartPage.php:392, src/Admin/Views/CheckoutPage.php:325, src/Admin/Views/CheckoutPage.php:355, src/Admin/Views/CheckoutPage.php:375, src/Admin/Views/CheckoutPage.php:390, src/Admin/Views/ProductPage.php:330, src/Admin/Views/ProductPage.php:360, src/Admin/Views/ProductPage.php:380, src/Admin/Views/ProductPage.php:395, src/Admin/Views/ShopPage.php:326, src/Admin/Views/ShopPage.php:356, src/Admin/Views/ShopPage.php:376, src/Admin/Views/ShopPage.php:391, src/Admin/Views/ThankYouPage.php:418, src/Admin/Views/ThankYouPage.php:448, src/Admin/Views/ThankYouPage.php:468, src/Admin/Views/ThankYouPage.php:483, src/Admin/Views/Fields/FloatingChatFields.php:1847, src/Admin/Views/Fields/FloatingChatFields.php:1880, src/Admin/Views/Fields/FloatingChatFields.php:1902, src/Admin/Views/Fields/FloatingChatFields.php:1916, src/Admin/Views/Fields/FloatingChatFields.php:2592
 msgid "Hover Color"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:334, src/Admin/Views/CheckoutPage.php:332, src/Admin/Views/ProductPage.php:337, src/Admin/Views/ShopPage.php:333, src/Admin/Views/ThankYouPage.php:425, src/Frontend/elementor-widgets/elementor-widget.php:1493, src/Admin/Views/Fields/FloatingChatFields.php:1842
+#: src/Admin/Views/CartPage.php:334, src/Admin/Views/CheckoutPage.php:332, src/Admin/Views/ProductPage.php:337, src/Admin/Views/ShopPage.php:333, src/Admin/Views/ThankYouPage.php:425, src/Frontend/elementor-widgets/elementor-widget.php:1493, src/Admin/Views/Fields/FloatingChatFields.php:1855
 msgid "Icon Background"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:335, src/Admin/Views/CheckoutPage.php:333, src/Admin/Views/ProductPage.php:338, src/Admin/Views/ShopPage.php:334, src/Admin/Views/ThankYouPage.php:426, src/Admin/Views/Fields/FloatingChatFields.php:847, src/Admin/Views/Fields/FloatingChatFields.php:1161, src/Admin/Views/Fields/FloatingChatFields.php:1282, src/Admin/Views/Fields/FloatingChatFields.php:1843
+#: src/Admin/Views/CartPage.php:335, src/Admin/Views/CheckoutPage.php:333, src/Admin/Views/ProductPage.php:338, src/Admin/Views/ShopPage.php:334, src/Admin/Views/ThankYouPage.php:426, src/Admin/Views/Fields/FloatingChatFields.php:847, src/Admin/Views/Fields/FloatingChatFields.php:1174, src/Admin/Views/Fields/FloatingChatFields.php:1295, src/Admin/Views/Fields/FloatingChatFields.php:1856
 msgid "Enable"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:336, src/Admin/Views/CheckoutPage.php:334, src/Admin/Views/ProductPage.php:339, src/Admin/Views/ShopPage.php:335, src/Admin/Views/ThankYouPage.php:427, src/Admin/Views/Fields/FloatingChatFields.php:848, src/Admin/Views/Fields/FloatingChatFields.php:1162, src/Admin/Views/Fields/FloatingChatFields.php:1283, src/Admin/Views/Fields/FloatingChatFields.php:1844
+#: src/Admin/Views/CartPage.php:336, src/Admin/Views/CheckoutPage.php:334, src/Admin/Views/ProductPage.php:339, src/Admin/Views/ShopPage.php:335, src/Admin/Views/ThankYouPage.php:427, src/Admin/Views/Fields/FloatingChatFields.php:848, src/Admin/Views/Fields/FloatingChatFields.php:1175, src/Admin/Views/Fields/FloatingChatFields.php:1296, src/Admin/Views/Fields/FloatingChatFields.php:1857
 msgid "Disable"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:338, src/Admin/Views/CheckoutPage.php:336, src/Admin/Views/ProductPage.php:341, src/Admin/Views/ShopPage.php:337, src/Admin/Views/ThankYouPage.php:429, src/Admin/Views/Fields/FloatingChatFields.php:1846
+#: src/Admin/Views/CartPage.php:338, src/Admin/Views/CheckoutPage.php:336, src/Admin/Views/ProductPage.php:341, src/Admin/Views/ShopPage.php:337, src/Admin/Views/ThankYouPage.php:429, src/Admin/Views/Fields/FloatingChatFields.php:1859
 msgid "Enable/Disable Button Inner Icon Background"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:351, src/Admin/Views/CheckoutPage.php:349, src/Admin/Views/ProductPage.php:354, src/Admin/Views/ShopPage.php:350, src/Admin/Views/ThankYouPage.php:442, src/Admin/Views/Fields/FloatingChatFields.php:1860
+#: src/Admin/Views/CartPage.php:351, src/Admin/Views/CheckoutPage.php:349, src/Admin/Views/ProductPage.php:354, src/Admin/Views/ShopPage.php:350, src/Admin/Views/ThankYouPage.php:442, src/Admin/Views/Fields/FloatingChatFields.php:1873
 msgid "Icon Background Color"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:353, src/Admin/Views/CheckoutPage.php:351, src/Admin/Views/ProductPage.php:356, src/Admin/Views/ShopPage.php:352, src/Admin/Views/ThankYouPage.php:444, src/Admin/Views/Fields/FloatingChatFields.php:1863
+#: src/Admin/Views/CartPage.php:353, src/Admin/Views/CheckoutPage.php:351, src/Admin/Views/ProductPage.php:356, src/Admin/Views/ShopPage.php:352, src/Admin/Views/ThankYouPage.php:444, src/Admin/Views/Fields/FloatingChatFields.php:1876
 msgid "You can define normal and hover background colors for the button icon."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:369, src/Admin/Views/CheckoutPage.php:367, src/Admin/Views/ProductPage.php:372, src/Admin/Views/ShopPage.php:368, src/Admin/Views/ThankYouPage.php:460, src/Admin/Views/Fields/FloatingChatFields.php:1881
+#: src/Admin/Views/CartPage.php:369, src/Admin/Views/CheckoutPage.php:367, src/Admin/Views/ProductPage.php:372, src/Admin/Views/ShopPage.php:368, src/Admin/Views/ThankYouPage.php:460, src/Admin/Views/Fields/FloatingChatFields.php:1894
 msgid "Button Background"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:371, src/Admin/Views/CheckoutPage.php:369, src/Admin/Views/ProductPage.php:374, src/Admin/Views/ShopPage.php:370, src/Admin/Views/ThankYouPage.php:462, src/Admin/Views/Fields/FloatingChatFields.php:1883
+#: src/Admin/Views/CartPage.php:371, src/Admin/Views/CheckoutPage.php:369, src/Admin/Views/ProductPage.php:374, src/Admin/Views/ShopPage.php:370, src/Admin/Views/ThankYouPage.php:462, src/Admin/Views/Fields/FloatingChatFields.php:1896
 msgid "Set your button background color."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:384, src/Admin/Views/CheckoutPage.php:382, src/Admin/Views/ProductPage.php:387, src/Admin/Views/ShopPage.php:383, src/Admin/Views/ThankYouPage.php:475, src/Admin/Views/Fields/FloatingChatFields.php:1895
+#: src/Admin/Views/CartPage.php:384, src/Admin/Views/CheckoutPage.php:382, src/Admin/Views/ProductPage.php:387, src/Admin/Views/ShopPage.php:383, src/Admin/Views/ThankYouPage.php:475, src/Admin/Views/Fields/FloatingChatFields.php:1908
 msgid "Button Label Color"
 msgstr ""
 
@@ -909,19 +909,19 @@ msgstr ""
 msgid "Set your button button label color."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:399, src/Admin/Views/CheckoutPage.php:397, src/Admin/Views/ProductPage.php:402, src/Admin/Views/ShopPage.php:398, src/Admin/Views/ThankYouPage.php:490, src/Admin/Views/Fields/FloatingChatFields.php:1911
+#: src/Admin/Views/CartPage.php:399, src/Admin/Views/CheckoutPage.php:397, src/Admin/Views/ProductPage.php:402, src/Admin/Views/ShopPage.php:398, src/Admin/Views/ThankYouPage.php:490, src/Admin/Views/Fields/FloatingChatFields.php:1924
 msgid "Button Border"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:401, src/Admin/Views/CartPage.php:422, src/Admin/Views/CheckoutPage.php:399, src/Admin/Views/CheckoutPage.php:420, src/Admin/Views/ProductPage.php:404, src/Admin/Views/ProductPage.php:425, src/Admin/Views/ShopPage.php:400, src/Admin/Views/ShopPage.php:421, src/Admin/Views/ThankYouPage.php:492, src/Admin/Views/ThankYouPage.php:513, src/Admin/Views/Fields/FloatingChatFields.php:1913, src/Admin/Views/Fields/FloatingChatFields.php:1962
+#: src/Admin/Views/CartPage.php:401, src/Admin/Views/CartPage.php:422, src/Admin/Views/CheckoutPage.php:399, src/Admin/Views/CheckoutPage.php:420, src/Admin/Views/ProductPage.php:404, src/Admin/Views/ProductPage.php:425, src/Admin/Views/ShopPage.php:400, src/Admin/Views/ShopPage.php:421, src/Admin/Views/ThankYouPage.php:492, src/Admin/Views/ThankYouPage.php:513, src/Admin/Views/Fields/FloatingChatFields.php:1926, src/Admin/Views/Fields/FloatingChatFields.php:1975
 msgid "Set border for the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:420, src/Admin/Views/CheckoutPage.php:418, src/Admin/Views/ProductPage.php:423, src/Admin/Views/ShopPage.php:419, src/Admin/Views/ThankYouPage.php:511, src/Frontend/elementor-widgets/elementor-widget.php:1359, src/Frontend/elementor-widgets/elementor-widget.php:1363, src/Admin/Views/Fields/FloatingChatFields.php:1960
+#: src/Admin/Views/CartPage.php:420, src/Admin/Views/CheckoutPage.php:418, src/Admin/Views/ProductPage.php:423, src/Admin/Views/ShopPage.php:419, src/Admin/Views/ThankYouPage.php:511, src/Frontend/elementor-widgets/elementor-widget.php:1359, src/Frontend/elementor-widgets/elementor-widget.php:1363, src/Admin/Views/Fields/FloatingChatFields.php:1973
 msgid "Icon Border"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:441, src/Admin/Views/CheckoutPage.php:439, src/Admin/Views/ProductPage.php:444, src/Admin/Views/ShopPage.php:440, src/Admin/Views/ThankYouPage.php:532, src/Admin/Views/Fields/FloatingChatFields.php:1982
+#: src/Admin/Views/CartPage.php:441, src/Admin/Views/CheckoutPage.php:439, src/Admin/Views/ProductPage.php:444, src/Admin/Views/ShopPage.php:440, src/Admin/Views/ThankYouPage.php:532, src/Admin/Views/Fields/FloatingChatFields.php:1995
 msgid "Button Padding"
 msgstr ""
 
@@ -945,19 +945,19 @@ msgstr ""
 msgid "Control where the chat button is visible. Choose to show it on all devices or restrict it to desktop, tablet, or mobile only."
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:475, src/Admin/Views/CheckoutPage.php:473, src/Admin/Views/ProductPage.php:478, src/Admin/Views/ShopPage.php:474, src/Admin/Views/ThankYouPage.php:566, src/Frontend/elementor-widgets/elementor-widget.php:1147, src/Admin/Views/Fields/FloatingChatFields.php:2633
+#: src/Admin/Views/CartPage.php:475, src/Admin/Views/CheckoutPage.php:473, src/Admin/Views/ProductPage.php:478, src/Admin/Views/ShopPage.php:474, src/Admin/Views/ThankYouPage.php:566, src/Frontend/elementor-widgets/elementor-widget.php:1147, src/Admin/Views/Fields/FloatingChatFields.php:2646
 msgid "Everywhere"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:476, src/Admin/Views/CheckoutPage.php:474, src/Admin/Views/ProductPage.php:479, src/Admin/Views/ShopPage.php:475, src/Admin/Views/ThankYouPage.php:567, src/Admin/Views/Fields/FloatingChatFields.php:2634
+#: src/Admin/Views/CartPage.php:476, src/Admin/Views/CheckoutPage.php:474, src/Admin/Views/ProductPage.php:479, src/Admin/Views/ShopPage.php:475, src/Admin/Views/ThankYouPage.php:567, src/Admin/Views/Fields/FloatingChatFields.php:2647
 msgid "Desktop Only"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:477, src/Admin/Views/CheckoutPage.php:475, src/Admin/Views/ProductPage.php:480, src/Admin/Views/ShopPage.php:476, src/Admin/Views/ThankYouPage.php:568, src/Admin/Views/Fields/FloatingChatFields.php:2635
+#: src/Admin/Views/CartPage.php:477, src/Admin/Views/CheckoutPage.php:475, src/Admin/Views/ProductPage.php:480, src/Admin/Views/ShopPage.php:476, src/Admin/Views/ThankYouPage.php:568, src/Admin/Views/Fields/FloatingChatFields.php:2648
 msgid "Tablet Only"
 msgstr ""
 
-#: src/Admin/Views/CartPage.php:478, src/Admin/Views/CheckoutPage.php:476, src/Admin/Views/ProductPage.php:481, src/Admin/Views/ShopPage.php:477, src/Admin/Views/ThankYouPage.php:569, src/Admin/Views/Fields/FloatingChatFields.php:2636
+#: src/Admin/Views/CartPage.php:478, src/Admin/Views/CheckoutPage.php:476, src/Admin/Views/ProductPage.php:481, src/Admin/Views/ShopPage.php:477, src/Admin/Views/ThankYouPage.php:569, src/Admin/Views/Fields/FloatingChatFields.php:2649
 msgid "Mobile Only"
 msgstr ""
 
@@ -3682,11 +3682,11 @@ msgstr ""
 msgid "ChatHelp WooCommerce"
 msgstr ""
 
-#: src/Admin/Views/WooCommerce.php:56, src/Admin/Views/WooCommerce.php:60, src/Admin/Views/Fields/FloatingChatFields.php:3135, src/Admin/Views/Fields/FloatingChatFields.php:3140
+#: src/Admin/Views/WooCommerce.php:56, src/Admin/Views/WooCommerce.php:60, src/Admin/Views/Fields/FloatingChatFields.php:3148, src/Admin/Views/Fields/FloatingChatFields.php:3153
 msgid "Backup"
 msgstr ""
 
-#: src/Admin/Views/WooCommerce.php:63, src/Admin/Views/Fields/FloatingChatFields.php:3143
+#: src/Admin/Views/WooCommerce.php:63, src/Admin/Views/Fields/FloatingChatFields.php:3156
 msgid "Export or import plugin settings for backup or migration purposes."
 msgstr ""
 
@@ -3726,7 +3726,7 @@ msgstr ""
 msgid "Hi! I have a question about your services."
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:151, src/Admin/Views/Fields/FloatingChatFields.php:2418
+#: src/Frontend/elementor-widgets/elementor-widget.php:151, src/Admin/Views/Fields/FloatingChatFields.php:2431
 msgid "Style"
 msgstr ""
 
@@ -3794,11 +3794,11 @@ msgstr ""
 msgid "Open link in new window"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:236, src/Frontend/elementor-widgets/elementor-widget.php:1425, src/Frontend/elementor-widgets/elementor-widget.php:1495, src/Admin/Views/Fields/FloatingChatFields.php:152, src/Admin/Views/Fields/FloatingChatFields.php:2184, src/Admin/Views/Fields/FloatingChatFields.php:2305, src/Admin/Views/Fields/FloatingChatFields.php:2432
+#: src/Frontend/elementor-widgets/elementor-widget.php:236, src/Frontend/elementor-widgets/elementor-widget.php:1425, src/Frontend/elementor-widgets/elementor-widget.php:1495, src/Admin/Views/Fields/FloatingChatFields.php:152, src/Admin/Views/Fields/FloatingChatFields.php:2197, src/Admin/Views/Fields/FloatingChatFields.php:2318, src/Admin/Views/Fields/FloatingChatFields.php:2445
 msgid "Yes"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:237, src/Frontend/elementor-widgets/elementor-widget.php:1426, src/Frontend/elementor-widgets/elementor-widget.php:1496, src/Admin/Views/Fields/FloatingChatFields.php:153, src/Admin/Views/Fields/FloatingChatFields.php:2185, src/Admin/Views/Fields/FloatingChatFields.php:2306, src/Admin/Views/Fields/FloatingChatFields.php:2433
+#: src/Frontend/elementor-widgets/elementor-widget.php:237, src/Frontend/elementor-widgets/elementor-widget.php:1426, src/Frontend/elementor-widgets/elementor-widget.php:1496, src/Admin/Views/Fields/FloatingChatFields.php:153, src/Admin/Views/Fields/FloatingChatFields.php:2198, src/Admin/Views/Fields/FloatingChatFields.php:2319, src/Admin/Views/Fields/FloatingChatFields.php:2446
 msgid "No"
 msgstr ""
 
@@ -3946,11 +3946,11 @@ msgstr ""
 msgid "Alignment"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1544, src/Admin/Views/Fields/FloatingChatFields.php:1142
+#: src/Frontend/elementor-widgets/elementor-widget.php:1544, src/Admin/Views/Fields/FloatingChatFields.php:1155
 msgid "Left"
 msgstr ""
 
-#: src/Frontend/elementor-widgets/elementor-widget.php:1548, src/Admin/Views/Fields/FloatingChatFields.php:1143
+#: src/Frontend/elementor-widgets/elementor-widget.php:1548, src/Admin/Views/Fields/FloatingChatFields.php:1156
 msgid "Center"
 msgstr ""
 
@@ -4014,7 +4014,7 @@ msgstr ""
 msgid "Add and manage your chat agents. Each agent can have a name, photo, WhatsApp type (number or group), pre-filled message, timezone, availability, designation, and custom online/offline text. You can add as many agents as you need."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:169, src/Admin/Views/Fields/FloatingChatFields.php:1082
+#: src/Admin/Views/Fields/FloatingChatFields.php:169, src/Admin/Views/Fields/FloatingChatFields.php:1095
 msgid "Agent Name"
 msgstr ""
 
@@ -4102,7 +4102,7 @@ msgstr ""
 msgid "Enter the text to display on the submit button text."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:408, src/Admin/Views/Fields/FloatingChatFields.php:486, src/Admin/Views/Fields/FloatingChatFields.php:499, src/Admin/Views/Fields/FloatingChatFields.php:512, src/Admin/Views/Fields/FloatingChatFields.php:525, src/Admin/Views/Fields/FloatingChatFields.php:538, src/Admin/Views/Fields/FloatingChatFields.php:551, src/Admin/Views/Fields/FloatingChatFields.php:1269
+#: src/Admin/Views/Fields/FloatingChatFields.php:408, src/Admin/Views/Fields/FloatingChatFields.php:486, src/Admin/Views/Fields/FloatingChatFields.php:499, src/Admin/Views/Fields/FloatingChatFields.php:512, src/Admin/Views/Fields/FloatingChatFields.php:525, src/Admin/Views/Fields/FloatingChatFields.php:538, src/Admin/Views/Fields/FloatingChatFields.php:551, src/Admin/Views/Fields/FloatingChatFields.php:1282
 msgid "Send Message"
 msgstr ""
 
@@ -4118,7 +4118,7 @@ msgstr ""
 msgid "Submit Button Native Icon"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:456, src/Admin/Views/Fields/FloatingChatFields.php:1235
+#: src/Admin/Views/Fields/FloatingChatFields.php:456, src/Admin/Views/Fields/FloatingChatFields.php:1248
 msgid "Choose a native icon from the built-in library of 2000+ icons to display before the send message button text."
 msgstr ""
 
@@ -4126,7 +4126,7 @@ msgstr ""
 msgid "Submit Button Custom Icon"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:470, src/Admin/Views/Fields/FloatingChatFields.php:1249
+#: src/Admin/Views/Fields/FloatingChatFields.php:470, src/Admin/Views/Fields/FloatingChatFields.php:1262
 msgid "Upload or select a custom icon from your media library to display before the send message button text."
 msgstr ""
 
@@ -4434,895 +4434,903 @@ msgstr ""
 msgid "Box Header"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1084
+#: src/Admin/Views/Fields/FloatingChatFields.php:1052
+msgid "Show Close Icon"
+msgstr ""
+
+#: src/Admin/Views/Fields/FloatingChatFields.php:1053
+msgid "Show a small close (×) button in the top-right corner of the header so visitors can close the chat box without clicking the floating bubble again."
+msgstr ""
+
+#: src/Admin/Views/Fields/FloatingChatFields.php:1097
 msgid "John Doe"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1092
+#: src/Admin/Views/Fields/FloatingChatFields.php:1105
 msgid "Subtitle"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1093
+#: src/Admin/Views/Fields/FloatingChatFields.php:1106
 msgid "Enter a subtitle to display below the agent’s name in the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1094
-msgid "Typically replies within a day."
-msgstr ""
-
-#: src/Admin/Views/Fields/FloatingChatFields.php:1100
-msgid "Offline Subtitle"
-msgstr ""
-
-#: src/Admin/Views/Fields/FloatingChatFields.php:1101
-msgid "Enter a subtitle to display when the agent is offline in the chat bubble."
-msgstr ""
-
-#: src/Admin/Views/Fields/FloatingChatFields.php:1102
-msgid "Currently offline, will reply soon."
-msgstr ""
-
-#: src/Admin/Views/Fields/FloatingChatFields.php:1112
-msgid "Bubble Title"
+#: src/Admin/Views/Fields/FloatingChatFields.php:1107
+msgid "Typically replies within minutes"
 msgstr ""
 
 #: src/Admin/Views/Fields/FloatingChatFields.php:1113
-msgid "Enter the main title text to display at the top of the chat bubble."
+msgid "Offline Subtitle"
 msgstr ""
 
 #: src/Admin/Views/Fields/FloatingChatFields.php:1114
-msgid "Need Help? Send a WhatsApp message now"
+msgid "Enter a subtitle to display when the agent is offline in the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1123
-msgid "Bubble Subtitle"
+#: src/Admin/Views/Fields/FloatingChatFields.php:1115
+msgid "Currently offline, will reply soon."
+msgstr ""
+
+#: src/Admin/Views/Fields/FloatingChatFields.php:1125
+msgid "Bubble Title"
+msgstr ""
+
+#: src/Admin/Views/Fields/FloatingChatFields.php:1126
+msgid "Enter the main title text to display at the top of the chat bubble."
 msgstr ""
 
 #: src/Admin/Views/Fields/FloatingChatFields.php:1127
+msgid "Need Help? Send a WhatsApp message now"
+msgstr ""
+
+#: src/Admin/Views/Fields/FloatingChatFields.php:1136
+msgid "Bubble Subtitle"
+msgstr ""
+
+#: src/Admin/Views/Fields/FloatingChatFields.php:1140
 msgid "Enter a subtitle to display below the main title inside the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1131
+#: src/Admin/Views/Fields/FloatingChatFields.php:1144
 msgid "Click one of our representatives below"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1138
+#: src/Admin/Views/Fields/FloatingChatFields.php:1151
 msgid "Bubble Header Content Position"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1139
+#: src/Admin/Views/Fields/FloatingChatFields.php:1152
 msgid "Choose the alignment for the header content."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1151
+#: src/Admin/Views/Fields/FloatingChatFields.php:1164
 msgid "Box Footer"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1159
+#: src/Admin/Views/Fields/FloatingChatFields.php:1172
 msgid "GDPR Compliance"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1160
+#: src/Admin/Views/Fields/FloatingChatFields.php:1173
 msgid "Enable a GDPR compliance checkbox for user consent before sending a message."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1170
+#: src/Admin/Views/Fields/FloatingChatFields.php:1183
 msgid "GDPR Compliance Message"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1171
+#: src/Admin/Views/Fields/FloatingChatFields.php:1184
 msgid "Customize the GDPR compliance text shown with the consent checkbox."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1172
+#: src/Admin/Views/Fields/FloatingChatFields.php:1185
 msgid "Please accept our <a href=\"#\">privacy policy</a> before starting a conversation."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1183
+#: src/Admin/Views/Fields/FloatingChatFields.php:1196
 msgid "Loading Text"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1184
+#: src/Admin/Views/Fields/FloatingChatFields.php:1197
 msgid "Enter the loading text shown while the message is being sent or redirecting."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1185
+#: src/Admin/Views/Fields/FloatingChatFields.php:1198
 msgid "Redirecting..."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1193
+#: src/Admin/Views/Fields/FloatingChatFields.php:1206
 msgid "Icon for Send Message Button"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1194
+#: src/Admin/Views/Fields/FloatingChatFields.php:1207
 msgid "Select an icon to display before the send message button text."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1232
+#: src/Admin/Views/Fields/FloatingChatFields.php:1245
 msgid "Send Message Native Icon"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1246
+#: src/Admin/Views/Fields/FloatingChatFields.php:1259
 msgid "Send Message Custom Icon"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1261
+#: src/Admin/Views/Fields/FloatingChatFields.php:1274
 msgid "Send Message Button Label"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1265
+#: src/Admin/Views/Fields/FloatingChatFields.php:1278
 msgid "Enter the text to display on the send message button."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1276
+#: src/Admin/Views/Fields/FloatingChatFields.php:1289
 msgid "Footer Content"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1279
+#: src/Admin/Views/Fields/FloatingChatFields.php:1292
 msgid "Enable or disable the footer text below the chat box. You can also replace the default text with your own custom message."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1290
+#: src/Admin/Views/Fields/FloatingChatFields.php:1303
 msgid "Custom Footer Text"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1293
+#: src/Admin/Views/Fields/FloatingChatFields.php:1306
 msgid "Enter the text or HTML you’d like to show in the footer when the footer content option is enabled."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1296
+#: src/Admin/Views/Fields/FloatingChatFields.php:1309
 msgid "Chat with us on WhatsApp"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1304
+#: src/Admin/Views/Fields/FloatingChatFields.php:1317
 msgid "Button"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1311
+#: src/Admin/Views/Fields/FloatingChatFields.php:1324
 msgid "Floating Button Style"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1322
+#: src/Admin/Views/Fields/FloatingChatFields.php:1335
 msgid "Icon Button"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1343
+#: src/Admin/Views/Fields/FloatingChatFields.php:1356
 msgid "Agent Avatar Type"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1359
+#: src/Admin/Views/Fields/FloatingChatFields.php:1372
 msgid "Agent Avatar"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1371
+#: src/Admin/Views/Fields/FloatingChatFields.php:1384
 msgid "Chat Button Image Type"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1373
+#: src/Admin/Views/Fields/FloatingChatFields.php:1386
 msgid "Choose how the button image is displayed:"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1387
+#: src/Admin/Views/Fields/FloatingChatFields.php:1400
 msgid "Chat Button Image"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1403, src/Admin/Views/Fields/FloatingChatFields.php:1433
+#: src/Admin/Views/Fields/FloatingChatFields.php:1416, src/Admin/Views/Fields/FloatingChatFields.php:1446
 msgid "Enter the text to display inside the floating chat button top label."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1418, src/Admin/Views/Fields/FloatingChatFields.php:1448
+#: src/Admin/Views/Fields/FloatingChatFields.php:1431, src/Admin/Views/Fields/FloatingChatFields.php:1461
 msgid "Enter the text to display inside the floating chat button main label."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1437
+#: src/Admin/Views/Fields/FloatingChatFields.php:1450
 msgid "Support Team"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1452
+#: src/Admin/Views/Fields/FloatingChatFields.php:1465
 msgid "Start a conversation"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1460
+#: src/Admin/Views/Fields/FloatingChatFields.php:1473
 msgid "Online Text"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1464
+#: src/Admin/Views/Fields/FloatingChatFields.php:1477
 msgid "Set the text to display when the agent is online and available for chat."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1468
+#: src/Admin/Views/Fields/FloatingChatFields.php:1481
 msgid "I Am Online"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1476
+#: src/Admin/Views/Fields/FloatingChatFields.php:1489
 msgid "Offline Text"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1480
+#: src/Admin/Views/Fields/FloatingChatFields.php:1493
 msgid "Set the text to display when the agent is offline or unavailable for chat."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1484
+#: src/Admin/Views/Fields/FloatingChatFields.php:1497
 msgid "I Am Offline"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1563
+#: src/Admin/Views/Fields/FloatingChatFields.php:1576
 msgid "Icon for Circle Button Close"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1566
+#: src/Admin/Views/Fields/FloatingChatFields.php:1579
 msgid "Select the icon to display when the circular chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1601
+#: src/Admin/Views/Fields/FloatingChatFields.php:1614
 msgid "Circle Button Native Close Icon"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1604
+#: src/Admin/Views/Fields/FloatingChatFields.php:1617
 msgid "Choose a native icon from the built-in library to display when the circular chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1614
+#: src/Admin/Views/Fields/FloatingChatFields.php:1627
 msgid "Circle Button Custom Close Icon"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1617
+#: src/Admin/Views/Fields/FloatingChatFields.php:1630
 msgid "Upload or select a custom icon from your media library to display when the circular chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1701
+#: src/Admin/Views/Fields/FloatingChatFields.php:1714
 msgid "Icon for Button Close"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1705
+#: src/Admin/Views/Fields/FloatingChatFields.php:1718
 msgid "Select the icon to display when the floating chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1739
+#: src/Admin/Views/Fields/FloatingChatFields.php:1752
 msgid "Button Native Close Icon"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1742
+#: src/Admin/Views/Fields/FloatingChatFields.php:1755
 msgid "Choose a native icon from the built-in library to display when the floating chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1753
+#: src/Admin/Views/Fields/FloatingChatFields.php:1766
 msgid "Button Custom Close Icon"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1756
+#: src/Admin/Views/Fields/FloatingChatFields.php:1769
 msgid "Upload or select a custom icon from your media library to display when the floating chat button is in the close state."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1767
+#: src/Admin/Views/Fields/FloatingChatFields.php:1780
 msgid "Transition Effect for Circle Icon"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1770
+#: src/Admin/Views/Fields/FloatingChatFields.php:1783
 msgid "Select the animation effect used when toggling the circular chat button between open and close states."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1775, src/Admin/Views/Fields/FloatingChatFields.php:2475
+#: src/Admin/Views/Fields/FloatingChatFields.php:1788, src/Admin/Views/Fields/FloatingChatFields.php:2488
 msgid "Slide Down"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1776
+#: src/Admin/Views/Fields/FloatingChatFields.php:1789
 msgid "Fade"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1777
+#: src/Admin/Views/Fields/FloatingChatFields.php:1790
 msgid "Rotate"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1778, src/Admin/Views/Fields/FloatingChatFields.php:2481
+#: src/Admin/Views/Fields/FloatingChatFields.php:1791, src/Admin/Views/Fields/FloatingChatFields.php:2494
 msgid "Slide Up"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1897
+#: src/Admin/Views/Fields/FloatingChatFields.php:1910
 msgid "Set your button label color."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1931
+#: src/Admin/Views/Fields/FloatingChatFields.php:1944
 msgid "Display Notification Icon"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1932
+#: src/Admin/Views/Fields/FloatingChatFields.php:1945
 msgid "Toggle to show or hide the notification icon in the interface."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1940
+#: src/Admin/Views/Fields/FloatingChatFields.php:1953
 msgid "Notification Number"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1941
+#: src/Admin/Views/Fields/FloatingChatFields.php:1954
 msgid "Select a number to display as a notification badge on the icon. Choose \"None\" to hide the number."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:1984
+#: src/Admin/Views/Fields/FloatingChatFields.php:1997
 msgid "Adjust the inner spacing (padding) of the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2000
+#: src/Admin/Views/Fields/FloatingChatFields.php:2013
 msgid "Button Tooltip"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2004
+#: src/Admin/Views/Fields/FloatingChatFields.php:2017
 msgid "Enable and customize the tooltip text that appears when hovering over the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2010
+#: src/Admin/Views/Fields/FloatingChatFields.php:2023
 msgid "On Hover"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2019
+#: src/Admin/Views/Fields/FloatingChatFields.php:2032
 msgid "Button Tooltip Text"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2023
+#: src/Admin/Views/Fields/FloatingChatFields.php:2036
 msgid "Enter the text that will appear inside the tooltip when hovering over the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2027
+#: src/Admin/Views/Fields/FloatingChatFields.php:2040
 msgid "Need Help? Chat with us"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2034
+#: src/Admin/Views/Fields/FloatingChatFields.php:2047
 msgid "Button Tooltip Background"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2037
+#: src/Admin/Views/Fields/FloatingChatFields.php:2050
 msgid "Choose the background color for the tooltip that appears when hovering over the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2048
+#: src/Admin/Views/Fields/FloatingChatFields.php:2061
 msgid "Button Tooltip Width"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2052
+#: src/Admin/Views/Fields/FloatingChatFields.php:2065
 msgid "Set the maximum width of the tooltip that appears when hovering over the floating chat button."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2067
+#: src/Admin/Views/Fields/FloatingChatFields.php:2080
 msgid "Positioning"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2072, src/Admin/Views/Fields/FloatingChatFields.php:2193, src/Admin/Views/Fields/FloatingChatFields.php:2314
+#: src/Admin/Views/Fields/FloatingChatFields.php:2085, src/Admin/Views/Fields/FloatingChatFields.php:2206, src/Admin/Views/Fields/FloatingChatFields.php:2327
 msgid "Bubble Position"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2075
+#: src/Admin/Views/Fields/FloatingChatFields.php:2088
 msgid "Select the screen position where the floating chat button will appear."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2080, src/Admin/Views/Fields/FloatingChatFields.php:2201, src/Admin/Views/Fields/FloatingChatFields.php:2322
+#: src/Admin/Views/Fields/FloatingChatFields.php:2093, src/Admin/Views/Fields/FloatingChatFields.php:2214, src/Admin/Views/Fields/FloatingChatFields.php:2335
 msgid "Bottom Right"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2081, src/Admin/Views/Fields/FloatingChatFields.php:2202, src/Admin/Views/Fields/FloatingChatFields.php:2323
+#: src/Admin/Views/Fields/FloatingChatFields.php:2094, src/Admin/Views/Fields/FloatingChatFields.php:2215, src/Admin/Views/Fields/FloatingChatFields.php:2336
 msgid "Bottom Left"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2082, src/Admin/Views/Fields/FloatingChatFields.php:2203, src/Admin/Views/Fields/FloatingChatFields.php:2324
+#: src/Admin/Views/Fields/FloatingChatFields.php:2095, src/Admin/Views/Fields/FloatingChatFields.php:2216, src/Admin/Views/Fields/FloatingChatFields.php:2337
 msgid "Middle Right"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2083, src/Admin/Views/Fields/FloatingChatFields.php:2204, src/Admin/Views/Fields/FloatingChatFields.php:2325
+#: src/Admin/Views/Fields/FloatingChatFields.php:2096, src/Admin/Views/Fields/FloatingChatFields.php:2217, src/Admin/Views/Fields/FloatingChatFields.php:2338
 msgid "Middle Left"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2092, src/Admin/Views/Fields/FloatingChatFields.php:2213, src/Admin/Views/Fields/FloatingChatFields.php:2335
+#: src/Admin/Views/Fields/FloatingChatFields.php:2105, src/Admin/Views/Fields/FloatingChatFields.php:2226, src/Admin/Views/Fields/FloatingChatFields.php:2348
 msgid "Margin from Bottom Right"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2095
+#: src/Admin/Views/Fields/FloatingChatFields.php:2108
 msgid "Set the margin (spacing) of the floating chat button from the bottom and right edges of the screen. Adjust to reposition the button as needed."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2113, src/Admin/Views/Fields/FloatingChatFields.php:2234, src/Admin/Views/Fields/FloatingChatFields.php:2356
+#: src/Admin/Views/Fields/FloatingChatFields.php:2126, src/Admin/Views/Fields/FloatingChatFields.php:2247, src/Admin/Views/Fields/FloatingChatFields.php:2369
 msgid "Margin from Bottom Left"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2116
+#: src/Admin/Views/Fields/FloatingChatFields.php:2129
 msgid "Set the margin (spacing) of the floating chat button from the bottom and left edges of the screen. Adjust to reposition the button as needed."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2134, src/Admin/Views/Fields/FloatingChatFields.php:2255, src/Admin/Views/Fields/FloatingChatFields.php:2377
+#: src/Admin/Views/Fields/FloatingChatFields.php:2147, src/Admin/Views/Fields/FloatingChatFields.php:2268, src/Admin/Views/Fields/FloatingChatFields.php:2390
 msgid "Margin from Middle Right"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2137
+#: src/Admin/Views/Fields/FloatingChatFields.php:2150
 msgid "Set the margin (spacing) of the floating chat button from the right edge of the screen when positioned in the middle. Adjust to fine-tune its placement."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2155, src/Admin/Views/Fields/FloatingChatFields.php:2276, src/Admin/Views/Fields/FloatingChatFields.php:2398
+#: src/Admin/Views/Fields/FloatingChatFields.php:2168, src/Admin/Views/Fields/FloatingChatFields.php:2289, src/Admin/Views/Fields/FloatingChatFields.php:2411
 msgid "Margin from Middle Left"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2158
+#: src/Admin/Views/Fields/FloatingChatFields.php:2171
 msgid "Set the margin (spacing) of the floating chat button from the left edge of the screen when positioned in the middle. Adjust to fine-tune its placement."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2176
+#: src/Admin/Views/Fields/FloatingChatFields.php:2189
 msgid "Different Positioning for Tablet Devices"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2179
+#: src/Admin/Views/Fields/FloatingChatFields.php:2192
 msgid "Enable this option to set a custom bubble position specifically for tablet devices. Useful for optimizing layout and user experience on medium screens."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2196, src/Admin/Views/Fields/FloatingChatFields.php:2317
+#: src/Admin/Views/Fields/FloatingChatFields.php:2209, src/Admin/Views/Fields/FloatingChatFields.php:2330
 msgid "Select the screen position where the chat bubble will appear."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2216
+#: src/Admin/Views/Fields/FloatingChatFields.php:2229
 msgid "Set the margin (spacing) of the chat bubble from the bottom and right edges of the screen. Adjust to fine-tune its placement."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2237
+#: src/Admin/Views/Fields/FloatingChatFields.php:2250
 msgid "Set the margin (spacing) of the chat bubble from the bottom and left edges of the screen. Adjust to fine-tune its placement."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2258, src/Admin/Views/Fields/FloatingChatFields.php:2380
+#: src/Admin/Views/Fields/FloatingChatFields.php:2271, src/Admin/Views/Fields/FloatingChatFields.php:2393
 msgid "Set the margin (spacing) of the chat bubble from the right edge of the screen when positioned in the middle. Adjust to fine-tune its placement."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2279, src/Admin/Views/Fields/FloatingChatFields.php:2401
+#: src/Admin/Views/Fields/FloatingChatFields.php:2292, src/Admin/Views/Fields/FloatingChatFields.php:2414
 msgid "Set the margin (spacing) of the chat bubble from the left edge of the screen when positioned in the middle. Adjust to fine-tune its placement."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2298
+#: src/Admin/Views/Fields/FloatingChatFields.php:2311
 msgid "Different Positioning for Mobile Devices"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2301
+#: src/Admin/Views/Fields/FloatingChatFields.php:2314
 msgid "Enable this option to set a custom chat bubble position specifically for mobile devices. Useful for optimizing layout and usability on smaller screens."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2338
+#: src/Admin/Views/Fields/FloatingChatFields.php:2351
 msgid "Set the margin (spacing) of the chat bubble from the bottom and right edges of the screen. Adjust to reposition the bubble as needed."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2359
+#: src/Admin/Views/Fields/FloatingChatFields.php:2372
 msgid "Set the margin (spacing) of the chat bubble from the bottom and left edges of the screen. Adjust to reposition the bubble as needed."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2426
+#: src/Admin/Views/Fields/FloatingChatFields.php:2439
 msgid "Auto Open Popup"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2429
+#: src/Admin/Views/Fields/FloatingChatFields.php:2442
 msgid "Enable this option to automatically open the chat popup when the page loads. Useful for drawing visitor attention without requiring a click."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2442
+#: src/Admin/Views/Fields/FloatingChatFields.php:2455
 msgid "Auto Open Popup Timeout"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2445
+#: src/Admin/Views/Fields/FloatingChatFields.php:2458
 msgid "Set the delay (in seconds) before the chat popup automatically opens after the page loads."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2454
+#: src/Admin/Views/Fields/FloatingChatFields.php:2467
 msgid "ms"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2461
+#: src/Admin/Views/Fields/FloatingChatFields.php:2474
 msgid "Select Animation for Bubble"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2464
+#: src/Admin/Views/Fields/FloatingChatFields.php:2477
 msgid "Choose an animation style for how the chat bubble appears on the screen. You can pick a specific effect or select \"Random\" to apply a different animation each time."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2469
+#: src/Admin/Views/Fields/FloatingChatFields.php:2482
 msgid "Fade Right"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2470
+#: src/Admin/Views/Fields/FloatingChatFields.php:2483
 msgid "Fade Down"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2471
+#: src/Admin/Views/Fields/FloatingChatFields.php:2484
 msgid "Ease Down"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2472
+#: src/Admin/Views/Fields/FloatingChatFields.php:2485
 msgid "Fade In Scale"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2473
+#: src/Admin/Views/Fields/FloatingChatFields.php:2486
 msgid "Rotation"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2474
+#: src/Admin/Views/Fields/FloatingChatFields.php:2487
 msgid "Slide Fall"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2476
+#: src/Admin/Views/Fields/FloatingChatFields.php:2489
 msgid "Rotate Left"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2477
+#: src/Admin/Views/Fields/FloatingChatFields.php:2490
 msgid "Flip Horizontal"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2478
+#: src/Admin/Views/Fields/FloatingChatFields.php:2491
 msgid "Flip Vertical"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2479
+#: src/Admin/Views/Fields/FloatingChatFields.php:2492
 msgid "Flip Up"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2480
+#: src/Admin/Views/Fields/FloatingChatFields.php:2493
 msgid "Super Scaled"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2482
+#: src/Admin/Views/Fields/FloatingChatFields.php:2495
 msgid "Random"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2491
+#: src/Admin/Views/Fields/FloatingChatFields.php:2504
 msgid "Theme Style"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2495
+#: src/Admin/Views/Fields/FloatingChatFields.php:2508
 msgid "Select the visual style for your chat bubble. This setting changes the overall look and feel of the chat interface."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2502
+#: src/Admin/Views/Fields/FloatingChatFields.php:2515
 msgid "Flat Theme"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2506
+#: src/Admin/Views/Fields/FloatingChatFields.php:2519
 msgid "Whatsapp Theme"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2516
+#: src/Admin/Views/Fields/FloatingChatFields.php:2529
 msgid "Select Bubble Layout Mode"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2519
+#: src/Admin/Views/Fields/FloatingChatFields.php:2532
 msgid "Choose a color mode for the chat bubble. This controls the overall appearance and theme style of the bubble."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2524
+#: src/Admin/Views/Fields/FloatingChatFields.php:2537
 msgid "Light Mode"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2525
+#: src/Admin/Views/Fields/FloatingChatFields.php:2538
 msgid "Dark Mode"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2526
+#: src/Admin/Views/Fields/FloatingChatFields.php:2539
 msgid "Night Mode"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2535
+#: src/Admin/Views/Fields/FloatingChatFields.php:2548
 msgid "Custom Bubble Trigger"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2538
+#: src/Admin/Views/Fields/FloatingChatFields.php:2551
 msgid "Add custom CSS selectors (e.g., .classname, #idname) that can also act as triggers to open the chat bubble. Useful when you want other elements on your site to open the chat besides the default button."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2541
+#: src/Admin/Views/Fields/FloatingChatFields.php:2554
 msgid ".classname, #idname"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2548
+#: src/Admin/Views/Fields/FloatingChatFields.php:2561
 msgid "Color Settings"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2551
+#: src/Admin/Views/Fields/FloatingChatFields.php:2564
 msgid "Preview Image"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2554
+#: src/Admin/Views/Fields/FloatingChatFields.php:2567
 msgid "Set your brand colors for the chat bubble. Adjust the Primary and Secondary colors to match your site style."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2559
+#: src/Admin/Views/Fields/FloatingChatFields.php:2572
 msgid "Primary"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2560
+#: src/Admin/Views/Fields/FloatingChatFields.php:2573
 msgid "Secondary"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2571
+#: src/Admin/Views/Fields/FloatingChatFields.php:2584
 msgid "Send Button"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2574
+#: src/Admin/Views/Fields/FloatingChatFields.php:2587
 msgid "Choose the colors for the send button."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2578
+#: src/Admin/Views/Fields/FloatingChatFields.php:2591
 msgid "Color"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2580
+#: src/Admin/Views/Fields/FloatingChatFields.php:2593
 msgid "Background"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2581
+#: src/Admin/Views/Fields/FloatingChatFields.php:2594
 msgid "Hover Background"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2588
+#: src/Admin/Views/Fields/FloatingChatFields.php:2601
 msgid "Typography"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2591
+#: src/Admin/Views/Fields/FloatingChatFields.php:2604
 msgid "Select the font family and weight for your chat bubble text. Adjust these options to keep the widget consistent with your site’s typography."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2609
+#: src/Admin/Views/Fields/FloatingChatFields.php:2622
 msgid "Others"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2617
+#: src/Admin/Views/Fields/FloatingChatFields.php:2630
 msgid "Visiblity"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2623
+#: src/Admin/Views/Fields/FloatingChatFields.php:2636
 msgid "Show Chat On"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2626
+#: src/Admin/Views/Fields/FloatingChatFields.php:2639
 msgid "Everywhere:"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2626
+#: src/Admin/Views/Fields/FloatingChatFields.php:2639
 msgid "Visible on all devices."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2627
+#: src/Admin/Views/Fields/FloatingChatFields.php:2640
 msgid "Desktop Only:"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2627
+#: src/Admin/Views/Fields/FloatingChatFields.php:2640
 msgid "Visible on devices wider than 991px."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2628
+#: src/Admin/Views/Fields/FloatingChatFields.php:2641
 msgid "Tablet Only:"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2628
+#: src/Admin/Views/Fields/FloatingChatFields.php:2641
 msgid "Visible on devices between 576px and 991px."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2629
+#: src/Admin/Views/Fields/FloatingChatFields.php:2642
 msgid "Mobile Only:"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2629
+#: src/Admin/Views/Fields/FloatingChatFields.php:2642
 msgid "Visible on devices smaller than 576px."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2644
+#: src/Admin/Views/Fields/FloatingChatFields.php:2657
 msgid "Content Visibility"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2651
+#: src/Admin/Views/Fields/FloatingChatFields.php:2664
 msgid "Enable Visibility Rules By"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2654
+#: src/Admin/Views/Fields/FloatingChatFields.php:2667
 msgid "Select where the chat bubble should be visible. You can enable it by specific content types such as pages, posts, products, categories, or tags."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2658, src/Admin/Views/Fields/FloatingChatFields.php:2677, src/Admin/Views/Fields/FloatingChatFields.php:2708
+#: src/Admin/Views/Fields/FloatingChatFields.php:2671, src/Admin/Views/Fields/FloatingChatFields.php:2690, src/Admin/Views/Fields/FloatingChatFields.php:2721
 msgid "Theme Pages"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2659, src/Admin/Views/Fields/FloatingChatFields.php:2736, src/Admin/Views/Fields/FloatingChatFields.php:2767
+#: src/Admin/Views/Fields/FloatingChatFields.php:2672, src/Admin/Views/Fields/FloatingChatFields.php:2749, src/Admin/Views/Fields/FloatingChatFields.php:2780
 msgid "Pages"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2660, src/Admin/Views/Fields/FloatingChatFields.php:2795, src/Admin/Views/Fields/FloatingChatFields.php:2826
+#: src/Admin/Views/Fields/FloatingChatFields.php:2673, src/Admin/Views/Fields/FloatingChatFields.php:2808, src/Admin/Views/Fields/FloatingChatFields.php:2839
 msgid "Posts"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2661, src/Admin/Views/Fields/FloatingChatFields.php:2850, src/Admin/Views/Fields/FloatingChatFields.php:2881
+#: src/Admin/Views/Fields/FloatingChatFields.php:2674, src/Admin/Views/Fields/FloatingChatFields.php:2863, src/Admin/Views/Fields/FloatingChatFields.php:2894
 msgid "Products"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2662, src/Admin/Views/Fields/FloatingChatFields.php:2909, src/Admin/Views/Fields/FloatingChatFields.php:2941
+#: src/Admin/Views/Fields/FloatingChatFields.php:2675, src/Admin/Views/Fields/FloatingChatFields.php:2922, src/Admin/Views/Fields/FloatingChatFields.php:2954
 msgid "Post Categories"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2663, src/Admin/Views/Fields/FloatingChatFields.php:2968, src/Admin/Views/Fields/FloatingChatFields.php:2999
+#: src/Admin/Views/Fields/FloatingChatFields.php:2676, src/Admin/Views/Fields/FloatingChatFields.php:2981, src/Admin/Views/Fields/FloatingChatFields.php:3012
 msgid "Post Tags"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2664, src/Admin/Views/Fields/FloatingChatFields.php:3023, src/Admin/Views/Fields/FloatingChatFields.php:3054
+#: src/Admin/Views/Fields/FloatingChatFields.php:2677, src/Admin/Views/Fields/FloatingChatFields.php:3036, src/Admin/Views/Fields/FloatingChatFields.php:3067
 msgid "Product Categories"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2665, src/Admin/Views/Fields/FloatingChatFields.php:3081, src/Admin/Views/Fields/FloatingChatFields.php:3112
+#: src/Admin/Views/Fields/FloatingChatFields.php:2678, src/Admin/Views/Fields/FloatingChatFields.php:3094, src/Admin/Views/Fields/FloatingChatFields.php:3125
 msgid "Product Tags"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2682, src/Admin/Views/Fields/FloatingChatFields.php:2741, src/Admin/Views/Fields/FloatingChatFields.php:2800, src/Admin/Views/Fields/FloatingChatFields.php:2855, src/Admin/Views/Fields/FloatingChatFields.php:2914, src/Admin/Views/Fields/FloatingChatFields.php:2973, src/Admin/Views/Fields/FloatingChatFields.php:3028, src/Admin/Views/Fields/FloatingChatFields.php:3086
+#: src/Admin/Views/Fields/FloatingChatFields.php:2695, src/Admin/Views/Fields/FloatingChatFields.php:2754, src/Admin/Views/Fields/FloatingChatFields.php:2813, src/Admin/Views/Fields/FloatingChatFields.php:2868, src/Admin/Views/Fields/FloatingChatFields.php:2927, src/Admin/Views/Fields/FloatingChatFields.php:2986, src/Admin/Views/Fields/FloatingChatFields.php:3041, src/Admin/Views/Fields/FloatingChatFields.php:3099
 msgid "Target"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2685
+#: src/Admin/Views/Fields/FloatingChatFields.php:2698
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected items."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2689, src/Admin/Views/Fields/FloatingChatFields.php:2748, src/Admin/Views/Fields/FloatingChatFields.php:2807, src/Admin/Views/Fields/FloatingChatFields.php:2862, src/Admin/Views/Fields/FloatingChatFields.php:2921, src/Admin/Views/Fields/FloatingChatFields.php:2980, src/Admin/Views/Fields/FloatingChatFields.php:3035, src/Admin/Views/Fields/FloatingChatFields.php:3093
+#: src/Admin/Views/Fields/FloatingChatFields.php:2702, src/Admin/Views/Fields/FloatingChatFields.php:2761, src/Admin/Views/Fields/FloatingChatFields.php:2820, src/Admin/Views/Fields/FloatingChatFields.php:2875, src/Admin/Views/Fields/FloatingChatFields.php:2934, src/Admin/Views/Fields/FloatingChatFields.php:2993, src/Admin/Views/Fields/FloatingChatFields.php:3048, src/Admin/Views/Fields/FloatingChatFields.php:3106
 msgid "Include"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2690, src/Admin/Views/Fields/FloatingChatFields.php:2749, src/Admin/Views/Fields/FloatingChatFields.php:2808, src/Admin/Views/Fields/FloatingChatFields.php:2863, src/Admin/Views/Fields/FloatingChatFields.php:2922, src/Admin/Views/Fields/FloatingChatFields.php:2981, src/Admin/Views/Fields/FloatingChatFields.php:3036, src/Admin/Views/Fields/FloatingChatFields.php:3094
+#: src/Admin/Views/Fields/FloatingChatFields.php:2703, src/Admin/Views/Fields/FloatingChatFields.php:2762, src/Admin/Views/Fields/FloatingChatFields.php:2821, src/Admin/Views/Fields/FloatingChatFields.php:2876, src/Admin/Views/Fields/FloatingChatFields.php:2935, src/Admin/Views/Fields/FloatingChatFields.php:2994, src/Admin/Views/Fields/FloatingChatFields.php:3049, src/Admin/Views/Fields/FloatingChatFields.php:3107
 msgid "Exclude"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2697
+#: src/Admin/Views/Fields/FloatingChatFields.php:2710
 msgid "All Theme Pages"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2700
+#: src/Admin/Views/Fields/FloatingChatFields.php:2713
 msgid "Enable this option to apply the chat bubble visibility rule to all theme pages at once, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2711
+#: src/Admin/Views/Fields/FloatingChatFields.php:2724
 msgid "Select a specific theme page where the chat bubble visibility rule should apply. Options include Blog, 404, or Search pages."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2715
+#: src/Admin/Views/Fields/FloatingChatFields.php:2728
 msgid "Blog Page"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2716
+#: src/Admin/Views/Fields/FloatingChatFields.php:2729
 msgid "404 Page"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2717
+#: src/Admin/Views/Fields/FloatingChatFields.php:2730
 msgid "Search Page"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2744
+#: src/Admin/Views/Fields/FloatingChatFields.php:2757
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected pages."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2756
+#: src/Admin/Views/Fields/FloatingChatFields.php:2769
 msgid "All Pages"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2759
+#: src/Admin/Views/Fields/FloatingChatFields.php:2772
 msgid "Enable this option to apply the chat bubble visibility rule to all pages across your site, instead of selecting individual pages."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2770
+#: src/Admin/Views/Fields/FloatingChatFields.php:2783
 msgid "Select one or more specific pages where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2781
+#: src/Admin/Views/Fields/FloatingChatFields.php:2794
 msgid "You don't have any pages available."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2803
+#: src/Admin/Views/Fields/FloatingChatFields.php:2816
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected posts."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2815
+#: src/Admin/Views/Fields/FloatingChatFields.php:2828
 msgid "All Posts"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2818
+#: src/Admin/Views/Fields/FloatingChatFields.php:2831
 msgid "Enable this option to apply the chat bubble visibility rule to all posts across your site, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2829
+#: src/Admin/Views/Fields/FloatingChatFields.php:2842
 msgid "Select one or more specific posts where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2836
+#: src/Admin/Views/Fields/FloatingChatFields.php:2849
 msgid "You don't have any posts available."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2858
+#: src/Admin/Views/Fields/FloatingChatFields.php:2871
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected products."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2870
+#: src/Admin/Views/Fields/FloatingChatFields.php:2883
 msgid "All Products"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2873
+#: src/Admin/Views/Fields/FloatingChatFields.php:2886
 msgid "Enable this option to apply the chat bubble visibility rule to all products across your store, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2884
+#: src/Admin/Views/Fields/FloatingChatFields.php:2897
 msgid "Select one or more specific products where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2895
+#: src/Admin/Views/Fields/FloatingChatFields.php:2908
 msgid "You don't have any products available."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2917
+#: src/Admin/Views/Fields/FloatingChatFields.php:2930
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected post categories."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2929
+#: src/Admin/Views/Fields/FloatingChatFields.php:2942
 msgid "All Post Categories"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2932
+#: src/Admin/Views/Fields/FloatingChatFields.php:2945
 msgid "Enable this option to apply the chat bubble visibility rule to all post categories, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2944
+#: src/Admin/Views/Fields/FloatingChatFields.php:2957
 msgid "Select one or more specific post categories where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2954
+#: src/Admin/Views/Fields/FloatingChatFields.php:2967
 msgid "You don't have any post categories available."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2976
+#: src/Admin/Views/Fields/FloatingChatFields.php:2989
 msgid "Choose whether to include or exclude the selected post tags from displaying the chat bubble."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2988
+#: src/Admin/Views/Fields/FloatingChatFields.php:3001
 msgid "All Post Tags"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:2991
+#: src/Admin/Views/Fields/FloatingChatFields.php:3004
 msgid "Enable this option to apply the chat bubble visibility rule to all post tags, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:3002
+#: src/Admin/Views/Fields/FloatingChatFields.php:3015
 msgid "Select one or more specific post tags where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:3009
+#: src/Admin/Views/Fields/FloatingChatFields.php:3022
 msgid "You don't have any post tags available."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:3031
+#: src/Admin/Views/Fields/FloatingChatFields.php:3044
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected product categories."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:3043
+#: src/Admin/Views/Fields/FloatingChatFields.php:3056
 msgid "All Product Categories"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:3046
+#: src/Admin/Views/Fields/FloatingChatFields.php:3059
 msgid "Enable this option to apply the chat bubble visibility rule to all product categories, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:3057
+#: src/Admin/Views/Fields/FloatingChatFields.php:3070
 msgid "Select one or more specific product categories where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:3067
+#: src/Admin/Views/Fields/FloatingChatFields.php:3080
 msgid "You don't have any product category available."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:3089
+#: src/Admin/Views/Fields/FloatingChatFields.php:3102
 msgid "Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected product tags."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:3101
+#: src/Admin/Views/Fields/FloatingChatFields.php:3114
 msgid "All Product Tags"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:3104
+#: src/Admin/Views/Fields/FloatingChatFields.php:3117
 msgid "Enable this option to apply the chat bubble visibility rule to all product tags, instead of selecting them individually."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:3115
+#: src/Admin/Views/Fields/FloatingChatFields.php:3128
 msgid "Select one or more specific product tags where the chat bubble visibility rule should apply."
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:3125
+#: src/Admin/Views/Fields/FloatingChatFields.php:3138
 msgid "You don't have any product tags available."
 msgstr ""
 
@@ -5344,4 +5352,8 @@ msgstr ""
 
 #: src/Frontend/Templates/items/form.php:18
 msgid "Send a message"
+msgstr ""
+
+#: src/Frontend/Templates/items/single-template-header.php:20
+msgid "Close"
 msgstr ""

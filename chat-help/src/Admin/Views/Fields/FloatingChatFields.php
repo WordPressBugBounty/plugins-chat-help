@@ -1045,6 +1045,19 @@ class FloatingChatFields
                                         'content' => esc_html__('Box Header', 'chat-help'),
                                         'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_agent_form', 'any'),
                                     ),
+                                    // Header close icon
+                                    array(
+                                        'id' => 'header_close_icon',
+                                        'type' => 'button_set',
+                                        'title' => esc_html__('Show Close Icon', 'chat-help'),
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Show a small close (×) button in the top-right corner of the header so visitors can close the chat box without clicking the floating bubble again.', 'chat-help') . '</div>',
+                                        'options' => array(
+                                            'yes' => esc_html__('Show', 'chat-help'),
+                                            'no' => esc_html__('Hide', 'chat-help'),
+                                        ),
+                                        'default' => 'yes',
+                                        'dependency' => array('chat_layout', 'any', 'form,agent,agent_input', 'any'),
+                                    ),
                                     // Agent photo type
                                     array(
                                         'id' => 'agent_photo_type',
@@ -1091,7 +1104,7 @@ class FloatingChatFields
                                         'type' => 'text',
                                         'title' => esc_html__('Subtitle', 'chat-help'),
                                         'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/agent_subtitle.png') . '" alt=""></div>' .  '<div class="chat-help-info-label">' . esc_html__('Enter a subtitle to display below the agent’s name in the chat bubble.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-                                        'default' => esc_html__('Typically replies within a day.', 'chat-help'),
+                                        'default' => esc_html__('Typically replies within minutes', 'chat-help'),
                                         'dependency' => array('chat_layout', 'any', 'form,agent,agent_input', 'any'),
                                     ),
                                     array(

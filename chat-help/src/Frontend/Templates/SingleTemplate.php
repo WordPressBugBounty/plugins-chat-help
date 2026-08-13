@@ -54,23 +54,19 @@ class SingleTemplate
 		$agent_photo_type = isset($options['agent_photo_type']) ? $options['agent_photo_type'] : 'default';
 		$agent_photo_url = isset($agent_photo['url']) ? $agent_photo['url'] : '';
 
-		if ($agent_photo_type === 'default') {
-			$agent_photo_url = CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/user.webp';
-		} elseif ($agent_photo_type === 'custom' && $agent_photo_url) {
-			$agent_photo_url;
-		} elseif ($agent_photo_type === 'none') {
+		if ($agent_photo_type === 'none') {
 			$agent_photo_url = '';
 		}
 		$agent_name 	= isset($options['agent-name']) ? $options['agent-name'] : 'John Doe';
-		$agent_subtitle = isset($options['agent-subtitle']) ? $options['agent-subtitle'] : 'Typically replies within a day';
+		$agent_subtitle = isset($options['agent-subtitle']) ? $options['agent-subtitle'] : 'Typically replies within minutes';
 		$offline_agent_subtitle = !empty($options['offline_agent_subtitle']) ? $options['offline_agent_subtitle'] : $agent_subtitle;
 		$bubble_visibility = isset($options['bubble-visibility']) ? $options['bubble-visibility'] : 'everywhere';
 		$type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
 		$whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
 		$whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
 		$color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
-		$primary = isset($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-		$secondary = isset($color_settings['secondary']) ? $color_settings['secondary'] : '#118c7e';
+		$primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
+		$secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#118c7e';
 		$send_button_color = isset($options['send_button_color']) ? $options['send_button_color'] : '';
 		$color = '#fff';
 		$hover_color = '#fff';

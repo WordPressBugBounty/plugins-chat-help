@@ -167,6 +167,14 @@ if (alternativeWHelpBubble.length > 0) {
   });
 }
 
+/******************** 02b. HEADER CLOSE BUTTON ********************/
+document.querySelectorAll(".wHelp-popup-close").forEach((item) => {
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    [...wHelp, ...wHelpMulti].forEach((el) => el.classList.remove("wHelp-show"));
+  });
+});
+
 /******************** 03. CHECK TERMS AND CONDITION ********************/
 const initCheckboxState = () => {
   const checkboxValue = localStorage.getItem("wHelpCheckboxValue") === "true";
