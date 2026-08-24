@@ -204,6 +204,7 @@ class Frontend
         wp_enqueue_script('moment-timezone-with-data');
         wp_enqueue_script('jquery_validate');
         wp_enqueue_script('chat-help-script');
+        wp_enqueue_script('tma-bubble-stack');
 
         $chat_help_frontend_scripts = array(
             'autoShowPopup'        => $auto_show_popup,

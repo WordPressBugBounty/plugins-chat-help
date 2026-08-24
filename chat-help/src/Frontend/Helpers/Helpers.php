@@ -71,6 +71,7 @@ class Helpers
 		wp_register_script('moment-timezone-with-data', CHAT_HELP_ASSETS . 'js/moment-timezone-with-data' . $this->min . '.js', array('jquery'), CHAT_HELP_VERSION, true);
 		wp_register_script('jquery_validate', CHAT_HELP_ASSETS . 'js/jquery.validate' . $this->min . '.js', array('jquery'), CHAT_HELP_VERSION, true);
 		wp_register_script('chat-help-script', CHAT_HELP_ASSETS . 'js/chat-help-script' . $this->min . '.js', array('jquery'), CHAT_HELP_VERSION, true);
+		wp_register_script('tma-bubble-stack', CHAT_HELP_ASSETS . 'js/bubble-stack.js', array(), CHAT_HELP_VERSION, true);
 	}
 
 	public static function user_availability($optAvailablity)

@@ -2,9 +2,9 @@
 Contributors: ThemeAtelier, faysal61, shshakib2001, tamimaziz
 Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce whatsapp
 Requires at least: 5.0
-Tested up to: 7.0.2
+Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.5.4
+Stable tag: 3.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -249,6 +249,9 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 15. WhatsApp chat button Elementor widget for drag-and-drop customization of agent, number, pre-filled message, and button style on any page.
 
 == Changelog ==
+= 3.5.5 – 24 August 2026 =
+* Fixed: When ChatHelp and Better Chat Support for Messenger were both active with their bubbles set to the same side, the two floating bubbles sat on top of each other and both chat boxes could be open at once. The bubbles now stack automatically, and opening one chat box closes and hides the other so the popups no longer overlap.
+
 = 3.5.4 – 13 August 2026 =
 * Added: Default agent avatar now shows the agent's initials instead of the plugin's built-in placeholder photo when the Agent Photo Type is set to "Default".
 * Added: Show Close Icon option for the chat box header (Single Form and Agent layouts) — adds a small × button so visitors can close the popup without clicking the floating bubble again.
@@ -628,6 +631,9 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 * Initial release.
 
 == Upgrade Notice ==
+
+= 3.5.5 =
+Fixes overlapping chat bubbles when ChatHelp and Better Chat Support for Messenger are both active on the same side of the screen.
 
 = 3.5.2 =
 Security release: fixes an authenticated (Contributor+) stored XSS in the chat button shortcode (CVE-2026-15799). Update immediately.
