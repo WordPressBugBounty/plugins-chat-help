@@ -61,8 +61,17 @@ if ($product) {
                     case 'text':
                         include Helpers::chat_help_locate_template('form/text.php');
                         break;
+                    case 'email':
+                        include Helpers::chat_help_locate_template('form/email.php');
+                        break;
+                    case 'phone_number':
+                        include Helpers::chat_help_locate_template('form/phone_number.php');
+                        break;
                     case 'textarea':
                         include Helpers::chat_help_locate_template('form/textarea.php');
+                        break;
+                    case 'select':
+                        include Helpers::chat_help_locate_template('form/select.php');
                         break;
                 }
             }

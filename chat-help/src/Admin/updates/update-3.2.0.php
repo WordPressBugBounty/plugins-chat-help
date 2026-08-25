@@ -14,8 +14,17 @@ update_option('chat_help_db_version', CHAT_HELP_VERSION);
 function chat_help_convert_data_3_2_0($options)
 {
     $options = get_option('cwp_option');
-    $ch_wooCommerce = get_option('ch_wooCommerce');
-    $ch_settings = get_option('ch_settings');
+    // Default to arrays: neither option exists yet on a site that never saved
+    // those tabs, and get_option() would return false, which PHP 8.1+ refuses
+    // to auto-convert on the writes below.
+    $ch_wooCommerce = get_option('ch_wooCommerce', array());
+    if (! is_array($ch_wooCommerce)) {
+        $ch_wooCommerce = array();
+    }
+    $ch_settings = get_option('ch_settings', array());
+    if (! is_array($ch_settings)) {
+        $ch_settings = array();
+    }
     $wooCommerce_button = isset($options['wooCommerce_button']) ? $options['wooCommerce_button'] : '';
     $wooCommerce_button_type_of_whatsapp = isset($options['wooCommerce_button_type_of_whatsapp']) ? $options['wooCommerce_button_type_of_whatsapp'] : 'number';
     $wooCommerce_button_number = isset($options['wooCommerce_button_number']) ? $options['wooCommerce_button_number'] : '';

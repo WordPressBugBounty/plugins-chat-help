@@ -669,6 +669,27 @@ class Helpers
 							$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_text_' . esc_attr($field_id));
 							$fields_data['text_' . $field_index] = sanitize_text_field($formData[$dynamic_id] ?? '');
 							break;
+						case 'email':
+							$field_label = isset($form_field['label']) ? $form_field['label'] : '';
+							$fields_label['label_' . $field_index] = $field_label;
+
+							$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_email_' . esc_attr($field_id));
+							$fields_data['email_' . $field_index] = sanitize_email($formData[$dynamic_id] ?? '');
+							break;
+						case 'phone_number':
+							$field_label = isset($form_field['label']) ? $form_field['label'] : '';
+							$fields_label['label_' . $field_index] = $field_label;
+
+							$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_phone_number_' . esc_attr($field_id));
+							$fields_data['phone_number_' . $field_index] = sanitize_text_field($formData[$dynamic_id] ?? '');
+							break;
+						case 'select':
+							$field_label = isset($form_field['label']) ? $form_field['label'] : '';
+							$fields_label['label_' . $field_index] = $field_label;
+
+							$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_select_' . esc_attr($field_id));
+							$fields_data['select_' . $field_index] = sanitize_text_field($formData[$dynamic_id] ?? '');
+							break;
 						case 'textarea':
 							$field_label = isset($form_field['label']) ? $form_field['label'] : '';
 							$fields_label['label_' . $field_index] = $field_label;
