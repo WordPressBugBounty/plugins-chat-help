@@ -246,6 +246,34 @@ class Helpers
 	}
 
 	/**
+	 * Build the "data-number=" / "data-group=" attribute used by the Google
+	 * Analytics click handler.
+	 *
+	 * Several templates print the result into an *unquoted* HTML attribute and
+	 * run it through esc_attr() on the way out, so the value returned here must
+	 * never contain a space, quote or angle bracket — otherwise the browser
+	 * splits it into stray attributes. Numbers are reduced to digits and groups
+	 * are URL-encoded, which makes the value safe either way.
+	 *
+	 * @param  string $type_of_whatsapp 'group' or 'number'.
+	 * @param  string $whatsapp_number  Raw number from the settings.
+	 * @param  string $whatsapp_group   Raw group invite URL from the settings.
+	 * @return string Attribute markup, or an empty string when there is no value.
+	 */
+	public static function analytics_attr($type_of_whatsapp, $whatsapp_number = '', $whatsapp_group = '')
+	{
+		if ('group' === $type_of_whatsapp) {
+			$group = esc_url_raw((string) $whatsapp_group);
+
+			return '' === $group ? '' : 'data-group=' . $group;
+		}
+
+		$digits = preg_replace('/\D+/', '', (string) $whatsapp_number);
+
+		return '' === $digits ? '' : 'data-number=' . $digits;
+	}
+
+	/**
 	 * WhatsApp URL
 	 *
 	 * @return string
@@ -276,6 +304,11 @@ class Helpers
 		$user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? sanitize_text_field(wp_unslash($_SERVER['HTTP_USER_AGENT'])) : '';
 
 		if ($type_of_whatsapp === 'number') {
+			// WhatsApp only accepts digits in the phone segment. Strip "+", spaces,
+			// dashes, parentheses and any stray quotes so a malformed value can never
+			// produce a "not_found=1" deeplink.
+			$whatsapp_number = preg_replace('/\D+/', '', (string) $whatsapp_number);
+
 			if (wp_is_mobile() || preg_match('/iPhone|Android|iPod|iPad|webOS|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/', $user_agent)) {
 				if ($url_for_mobile == 'protocol') {
 					$url = 'whatsapp://send?phone=' . $whatsapp_number;
@@ -289,7 +322,9 @@ class Helpers
 					}
 				}
 			} else {
-				if ($url_for_desktop == 'api') {
+				// Settings default is "api"; an unsaved/empty option must not fall
+				// through to WhatsApp Web.
+				if ($url_for_desktop !== 'web') {
 					$url = 'https://wa.me/' . $whatsapp_number;
 					if (!empty($message)) {
 						$url .= '?text=' . rawurlencode($message);

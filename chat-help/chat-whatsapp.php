@@ -3,7 +3,7 @@
 Plugin Name: 	ChatHelp
 Plugin URI: 	https://wpchathelp.com/
 Description: 	WhatsApp 💬 ChatHelp 🔥 Unlimited customer support tool that allows visitors to engage using "WhatsApp" or "WhatsApp Business". WhatsApp button included.
-Version: 		3.5.6
+Version: 		3.5.7
 Author:         ThemeAtelier
 Author URI:     https://themeatelier.net/
 License:        GPL-2.0+
@@ -26,7 +26,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 use ThemeAtelier\ChatHelp\Includes\ChatHelp;
 
 if (!defined('CHAT_HELP_VERSION')) {
-    define('CHAT_HELP_VERSION', '3.5.6');
+    define('CHAT_HELP_VERSION', '3.5.7');
 }
 if (!defined('CHAT_HELP_FILE')) {
     define('CHAT_HELP_FILE', __FILE__);
@@ -79,6 +79,23 @@ if (!is_plugin_active($pro_plugin_slug)) {
         register_block_type_from_metadata(CHAT_HELP_DIR_PATH . 'src/Frontend/blocks/');
     }
     add_action('init', 'create_chat_help_block_init');
+
+    /**
+     * The WhatsApp Button block draws its icon with Dashicons.
+     *
+     * Dashicons is not loaded where the block actually needs it: the editor
+     * canvas is an iframe since WP 6.3 and only receives assets enqueued for
+     * blocks, and on the front end Dashicons only happens to be present when
+     * the admin bar is showing — so logged-out visitors saw an empty icon.
+     * 'enqueue_block_assets' covers both contexts.
+     */
+    function chat_help_block_enqueue_dashicons()
+    {
+        if (is_admin() || has_block('create-block/whatsapp-button')) {
+            wp_enqueue_style('dashicons');
+        }
+    }
+    add_action('enqueue_block_assets', 'chat_help_block_enqueue_dashicons');
 
     /**
      * New WhatsApp Button blocks start prefilled with the Global Chat

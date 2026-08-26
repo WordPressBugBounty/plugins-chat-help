@@ -1610,7 +1610,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
 ?>
         <?php if ('1' === $style) : ?>
             <div class="button-wrapper">
-                <div style="--wHelp-btn-scale: <?php echo esc_attr($sizes) ?>;" data-number="<?php echo esc_attr($number) ?>" data-group="<?php echo esc_attr($group) ?>" <?php if ($timezone) { ?> data-timezone="<?php echo esc_attr($timezone); ?>" <?php } ?> class="wHelp_button wHelp_woo_btn wHelp_button_advance chat_help_analytics wHelpButtons <?php echo esc_attr($visibility); ?> avatar-active" data-availability='{ "sunday":"<?php echo esc_attr($sunday); ?>", "monday":"<?php echo esc_attr($monday); ?>", "tuesday":"<?php echo esc_attr($tuesday); ?>", "wednesday":"<?php echo esc_attr($wednesday); ?>", "thursday":"<?php echo esc_attr($thursday); ?>", "friday":"<?php echo esc_attr($friday); ?>", "saturday":"<?php echo esc_attr($saturday); ?>" }'>
+                <div style="--wHelp-btn-scale: <?php echo esc_attr($sizes) ?>;" <?php echo esc_attr(Helpers::analytics_attr($type_of_whatsapp, $number, $group)) ?> <?php if ($timezone) { ?> data-timezone="<?php echo esc_attr($timezone); ?>" <?php } ?> class="wHelp_button wHelp_woo_btn wHelp_button_advance chat_help_analytics wHelpButtons <?php echo esc_attr($visibility); ?> avatar-active" data-availability='{ "sunday":"<?php echo esc_attr($sunday); ?>", "monday":"<?php echo esc_attr($monday); ?>", "tuesday":"<?php echo esc_attr($tuesday); ?>", "wednesday":"<?php echo esc_attr($wednesday); ?>", "thursday":"<?php echo esc_attr($thursday); ?>", "friday":"<?php echo esc_attr($friday); ?>", "saturday":"<?php echo esc_attr($saturday); ?>" }'>
                     <?php if ($photo) { ?>
                         <img src="<?php echo esc_attr($photo); ?>" />
                     <?php } ?>
@@ -1634,7 +1634,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
             </div>
         <?php else : ?>
             <div class="button-wrapper">
-                <a style="--wHelp-btn-scale: <?php echo esc_attr($sizes) ?>;" href="<?php echo esc_attr($url); ?>" data-group="<?php echo esc_attr($group) ?>" data-number="<?php echo esc_attr($number) ?>" class="wHelp_button wHelp_woo_btn chat_help_analytics wHelpButtons <?php echo esc_attr($visibility); ?>" target="<?php echo esc_attr($open_in_new_tab); ?>" data-availability='{ "sunday":"<?php echo esc_attr($sunday); ?>", "monday":"<?php echo esc_attr($monday); ?>", "tuesday":"<?php echo esc_attr($tuesday); ?>", "wednesday":"<?php echo esc_attr($wednesday); ?>", "thursday":"<?php echo esc_attr($thursday); ?>", "friday":"<?php echo esc_attr($friday); ?>", "saturday":"<?php echo esc_attr($saturday); ?>" }'>
+                <a style="--wHelp-btn-scale: <?php echo esc_attr($sizes) ?>;" href="<?php echo esc_attr($url); ?>" <?php echo esc_attr(Helpers::analytics_attr($type_of_whatsapp, $number, $group)) ?> class="wHelp_button wHelp_woo_btn chat_help_analytics wHelpButtons <?php echo esc_attr($visibility); ?>" target="<?php echo esc_attr($open_in_new_tab); ?>" data-availability='{ "sunday":"<?php echo esc_attr($sunday); ?>", "monday":"<?php echo esc_attr($monday); ?>", "tuesday":"<?php echo esc_attr($tuesday); ?>", "wednesday":"<?php echo esc_attr($wednesday); ?>", "thursday":"<?php echo esc_attr($thursday); ?>", "friday":"<?php echo esc_attr($friday); ?>", "saturday":"<?php echo esc_attr($saturday); ?>" }'>
 
                     <?php
                     if ($show__button__icon && !empty($icon)) {

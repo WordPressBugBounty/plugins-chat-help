@@ -140,11 +140,7 @@ class WooButton
         $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
         $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
 
-        if ($product_page_button_type_of_whatsapp === 'group') {
-            $gaAnalyticsAttr = 'data-group=' . $product_page_button_group . '';
-        } else {
-            $gaAnalyticsAttr = 'data-number=' . $product_page_button_number . '';
-        }
+        $gaAnalyticsAttr = Helpers::analytics_attr($product_page_button_type_of_whatsapp, $product_page_button_number, $product_page_button_group);
 
         if (!empty($product_page_circle_button_icon)) {
             $circle_icon = '<i class="' . esc_attr($product_page_circle_button_icon) . '"></i>';
@@ -268,11 +264,7 @@ class WooButton
         $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
         $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
 
-        if ($shop_page_button_type_of_whatsapp === 'group') {
-            $gaAnalyticsAttr = 'data-group=' . $shop_page_button_group . '';
-        } else {
-            $gaAnalyticsAttr = 'data-number=' . $shop_page_button_number . '';
-        }
+        $gaAnalyticsAttr = Helpers::analytics_attr($shop_page_button_type_of_whatsapp, $shop_page_button_number, $shop_page_button_group);
 
         if (!empty($shop_page_circle_button_icon)) {
             $circle_icon = '<i class="' . esc_attr($shop_page_circle_button_icon) . '"></i>';
@@ -411,11 +403,7 @@ class WooButton
         $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
         $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
 
-        if ($cart_page_button_type_of_whatsapp === 'group') {
-            $gaAnalyticsAttr = 'data-group=' . $cart_page_button_group . '';
-        } else {
-            $gaAnalyticsAttr = 'data-number=' . $cart_page_button_number . '';
-        }
+        $gaAnalyticsAttr = Helpers::analytics_attr($cart_page_button_type_of_whatsapp, $cart_page_button_number, $cart_page_button_group);
 
 
         if (!empty($cart_page_circle_button_icon)) {
@@ -574,11 +562,7 @@ class WooButton
         $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
         $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
 
-        if ($checkout_page_button_type_of_whatsapp === 'group') {
-            $gaAnalyticsAttr = 'data-group=' . $checkout_page_button_group . '';
-        } else {
-            $gaAnalyticsAttr = 'data-number=' . $checkout_page_button_number . '';
-        }
+        $gaAnalyticsAttr = Helpers::analytics_attr($checkout_page_button_type_of_whatsapp, $checkout_page_button_number, $checkout_page_button_group);
 
         if (!empty($checkout_page_circle_button_icon)) {
             $circle_icon = '<i class="' . esc_attr($checkout_page_circle_button_icon) . '"></i>';
@@ -864,11 +848,7 @@ class WooButton
         $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
         $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
 
-        if ($thank_you_page_button_type_of_whatsapp === 'group') {
-            $gaAnalyticsAttr = 'data-group=' . $thank_you_page_button_group . '';
-        } else {
-            $gaAnalyticsAttr = 'data-number=' . $thank_you_page_button_number . '';
-        }
+        $gaAnalyticsAttr = Helpers::analytics_attr($thank_you_page_button_type_of_whatsapp, $thank_you_page_button_number, $thank_you_page_button_group);
 
         if ($thank_you_page_circle_button_icon === 'native') {
             $circle_icon = '<i class="' . esc_attr($thank_you_page_circle_button_icon_native) . '"></i>';

@@ -83,11 +83,7 @@ class SingleTemplateInput
 		$hover_background = !empty($send_button_color['hover_background']) ? $send_button_color['hover_background'] : $secondary;
 		$floating_button_style = isset($options['opt-button-style']) ? $options['opt-button-style'] : '1';
 
-		if ($type_of_whatsapp === 'group') {
-			$gaAnalyticsAttr = 'data-group=' . $whatsapp_group . '';
-		} else {
-			$gaAnalyticsAttr = 'data-number=' . $whatsapp_number . '';
-		}
+		$gaAnalyticsAttr = Helpers::analytics_attr($type_of_whatsapp, $whatsapp_number, $whatsapp_group);
 
 		$bubble_visibility = isset($options['bubble-visibility']) ? $options['bubble-visibility'] : 'everywhere';
 		// Method implementation goes here.

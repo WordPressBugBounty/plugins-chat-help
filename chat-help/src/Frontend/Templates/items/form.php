@@ -30,12 +30,18 @@ $background = $primary;
 $hover_background = $secondary;
 
 $whats_type = ($type_of_whatsapp === 'group') ? 'group' : 'number';
-$gaAnalyticsAttr = sprintf(
-    'data-type="%s" data-number="%s" data-group="%s"',
-    esc_attr($whats_type),
-    esc_attr($whatsapp_number),
-    esc_attr($whatsapp_group)
-);
+
+// Only print the attribute that matches the selected mode; an empty
+// data-number/data-group would be sent to the AJAX handler as a real value.
+$gaAnalyticsAttr = sprintf('data-type="%s"', esc_attr($whats_type));
+
+if ('group' === $whats_type) {
+    if (!empty($whatsapp_group)) {
+        $gaAnalyticsAttr .= sprintf(' data-group="%s"', esc_attr($whatsapp_group));
+    }
+} elseif (!empty($whatsapp_number)) {
+    $gaAnalyticsAttr .= sprintf(' data-number="%s"', esc_attr($whatsapp_number));
+}
 
 $form_editor = isset($options['form_editor']) ? $options['form_editor'] : '';
 global $product;
@@ -94,7 +100,7 @@ if ($product) {
         type="submit"
         class="wHelp__send-message <?php echo $gdpr_enable ? 'condition__checked' : ''; ?>"
         style="--wHelp-color-primary: <?php echo esc_attr($background) ?>;--wHelp-color-secondary:<?php echo esc_attr($hover_background) ?>;--text-color: <?php echo esc_attr($color) ?>;--text-hover-color: <?php echo esc_attr($hover_color) ?>"
-        <?php echo esc_attr($gaAnalyticsAttr); // "data-number=…" / "data-group=…" — digits only, esc_attr passes it through ?>
+        <?php echo $gaAnalyticsAttr; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- each attribute value is already run through esc_attr() when $gaAnalyticsAttr is built above ?>
         target="_blank">
         <?php
         if ($before_chat_icon === 'no_icon') {

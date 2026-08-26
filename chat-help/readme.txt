@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.5.6
+Stable tag: 3.5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -249,6 +249,16 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 15. WhatsApp chat button Elementor widget for drag-and-drop customization of agent, number, pre-filled message, and button style on any page.
 
 == Changelog ==
+= 3.5.7 – 26 August 2026 =
+* Fixed: Submitting the chat form on the front end opened a WhatsApp error page ("This page doesn't exist") instead of the conversation. The button's WhatsApp number was written into the page with extra quote characters, so the generated wa.me link was rejected. Testing the same number from the WordPress admin was unaffected, which is why the problem only showed up on the front end.
+* Fixed: WhatsApp numbers entered with a leading "+", spaces, dashes or brackets are now normalised to digits before the chat link is built, so formatted numbers no longer produce a broken link.
+* Fixed: The "URL for Desktop" setting fell back to WhatsApp Web when the option had never been saved, even though the setting's own default is "API".
+* Fixed: WhatsApp button block now strips formatting from the number and URL-encodes the prefilled message, so messages containing "#" or "&" are no longer cut short. Existing blocks are upgraded automatically and will not show the "unexpected or invalid content" warning.
+* Fixed: The WhatsApp icon on the WhatsApp Button block showed as an empty square in the block editor, and was missing entirely for logged-out visitors on the front end. The icon font is now loaded in both places.
+* Fixed: With Icon Background enabled, the block editor preview ignored the chosen Icon Color and Icon Background Color and showed the button's own colours instead. The preview now matches the front end.
+* Changed: Buttons now output only the analytics attribute that matches the selected chat type — an empty data-group no longer appears on number buttons, and vice versa.
+* Changed: The demo chat agents no longer ship with a placeholder WhatsApp number. Agents left blank fall back to the Global Chat number.
+
 = 3.5.6 – 24 August 2026 =
 * Fixed: Email, Phone Number and Select form fields were selectable in the Form Fields editor but never rendered on the front end (only Text and Textarea did), and their values were left out of the WhatsApp message. All five field types now work in the free version.
 
@@ -635,6 +645,9 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 * Initial release.
 
 == Upgrade Notice ==
+
+= 3.5.7 =
+Fixes the front-end chat form opening a WhatsApp error page instead of the conversation. Recommended for all users.
 
 = 3.5.6 =
 Fixes the Email, Phone Number and Select form fields not showing on the front end.

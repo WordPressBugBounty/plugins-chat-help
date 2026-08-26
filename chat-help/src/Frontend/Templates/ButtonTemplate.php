@@ -41,6 +41,7 @@ class ButtonTemplate
 		$bubble_style = isset($options['bubble-style']) ? $options['bubble-style'] : 'default';
 		$select_timezone = isset($options['select-timezone']) ? $options['select-timezone'] : '';
 		$bubble_visibility = isset($options['bubble-visibility']) ? $options['bubble-visibility'] : 'everywhere';
+		$type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
 		$whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
 		$whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
 
@@ -58,7 +59,7 @@ class ButtonTemplate
 			echo 'wHelp-left';
 		}
 
-		echo 'chat-availability" data-group="' . esc_attr($whatsapp_group) . '" data-number="' . esc_attr($whatsapp_number) . '" data-timezone="' . esc_attr($select_timezone) . '" data-availability="' . esc_attr($user_availability) . '">';
+		echo 'chat-availability" ' . esc_attr(Helpers::analytics_attr($type_of_whatsapp, $whatsapp_number, $whatsapp_group)) . ' data-timezone="' . esc_attr($select_timezone) . '" data-availability="' . esc_attr($user_availability) . '">';
 		echo wp_kses_post($bubble_type); ?>
 		</div>
 <?php

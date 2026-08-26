@@ -73,11 +73,7 @@ class SingleTemplate
 		$background = $primary;
 		$hover_background = $secondary;
 
-		if ($type_of_whatsapp === 'group') {
-			$gaAnalyticsAttr = 'data-group=' . $whatsapp_group . '';
-		} else {
-			$gaAnalyticsAttr = 'data-number=' . $whatsapp_number . '';
-		}
+		$gaAnalyticsAttr = Helpers::analytics_attr($type_of_whatsapp, $whatsapp_number, $whatsapp_group);
 		
 		// Method implementation goes here.
 		if ('random' === $select_animation) :

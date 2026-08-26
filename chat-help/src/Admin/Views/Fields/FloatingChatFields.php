@@ -479,7 +479,7 @@ class FloatingChatFields
                                             array(
                                                 'agent-name' => esc_html__('Sarah C. Patrick', 'chat-help'),
                                                 'agent_type_of_whatsapp' => 'number',
-                                                'agent-number' => esc_html__('+8801123456588', 'chat-help'),
+                                                'agent-number' => '',
                                                 'agent-designation' => esc_html__('Technical support', 'chat-help'),
                                                 'agent-online-text' => esc_html__('I am online', 'chat-help'),
                                                 'agent-offline-text' => esc_html__('I am offline', 'chat-help'),
@@ -492,7 +492,7 @@ class FloatingChatFields
                                             array(
                                                 'agent-name' => esc_html__('Patricia J. Hunt', 'chat-help'),
                                                 'agent_type_of_whatsapp' => 'number',
-                                                'agent-number' => esc_html__('+8801123456588', 'chat-help'),
+                                                'agent-number' => '',
                                                 'agent-designation' => esc_html__('Marketing support', 'chat-help'),
                                                 'agent-online-text' => esc_html__('I am online', 'chat-help'),
                                                 'agent-offline-text' => esc_html__('I am offline', 'chat-help'),
@@ -505,7 +505,7 @@ class FloatingChatFields
                                             array(
                                                 'agent-name' => esc_html__('Frederic M. Tune', 'chat-help'),
                                                 'agent_type_of_whatsapp' => 'number',
-                                                'agent-number' => esc_html__('+8801123456588', 'chat-help'),
+                                                'agent-number' => '',
                                                 'agent-designation' => esc_html__('Sales support', 'chat-help'),
                                                 'agent-online-text' => esc_html__('I am online', 'chat-help'),
                                                 'agent-offline-text' => esc_html__('I am offline', 'chat-help'),
@@ -518,7 +518,7 @@ class FloatingChatFields
                                             array(
                                                 'agent-name' => esc_html__('Douglas A. Smith', 'chat-help'),
                                                 'agent_type_of_whatsapp' => 'number',
-                                                'agent-number' => esc_html__('+8801123456588', 'chat-help'),
+                                                'agent-number' => '',
                                                 'agent-designation' => esc_html__('Product manager', 'chat-help'),
                                                 'agent-online-text' => esc_html__('I am online', 'chat-help'),
                                                 'agent-offline-text' => esc_html__('I am offline', 'chat-help'),
@@ -531,7 +531,7 @@ class FloatingChatFields
                                             array(
                                                 'agent-name' => esc_html__('Douglas A. Smith', 'chat-help'),
                                                 'agent_type_of_whatsapp' => 'number',
-                                                'agent-number' => esc_html__('+8801123456588', 'chat-help'),
+                                                'agent-number' => '',
                                                 'agent-designation' => esc_html__('Support Manager', 'chat-help'),
                                                 'agent-online-text' => esc_html__('I am online', 'chat-help'),
                                                 'agent-offline-text' => esc_html__('I am offline', 'chat-help'),
@@ -544,7 +544,7 @@ class FloatingChatFields
                                             array(
                                                 'agent-name' => esc_html__('Garland D. Homer', 'chat-help'),
                                                 'agent_type_of_whatsapp' => 'number',
-                                                'agent-number' => esc_html__('+8801123456588', 'chat-help'),
+                                                'agent-number' => '',
                                                 'agent-designation' => esc_html__('Technical support', 'chat-help'),
                                                 'agent-online-text' => esc_html__('I am online', 'chat-help'),
                                                 'agent-offline-text' => esc_html__('I am offline', 'chat-help'),
