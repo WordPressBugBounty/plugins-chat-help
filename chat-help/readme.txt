@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.5.7
+Stable tag: 3.5.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -249,6 +249,9 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 15. WhatsApp chat button Elementor widget for drag-and-drop customization of agent, number, pre-filled message, and button style on any page.
 
 == Changelog ==
+= 3.5.8 – 31 August 2026 =
+* Fixed: With Auto Open Popup enabled and the "Chat Button" chat experience selected, the floating button switched to its close icon even though it has no popup to close. The button is now left out of the open/close toggle.
+
 = 3.5.7 – 26 August 2026 =
 * Fixed: Submitting the chat form on the front end opened a WhatsApp error page ("This page doesn't exist") instead of the conversation. The button's WhatsApp number was written into the page with extra quote characters, so the generated wa.me link was rejected. Testing the same number from the WordPress admin was unaffected, which is why the problem only showed up on the front end.
 * Fixed: WhatsApp numbers entered with a leading "+", spaces, dashes or brackets are now normalised to digits before the chat link is built, so formatted numbers no longer produce a broken link.

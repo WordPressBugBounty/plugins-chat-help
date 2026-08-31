@@ -18,7 +18,10 @@
 
 (function () {
 "use strict";
-const wHelp = document.querySelectorAll(".wHelp");
+// The Chat Button layout has no popup, so it carries `.no_bubble`. It must be
+// left out of every `wHelp-show` toggle, otherwise auto-open (or a click on
+// another bubble) flips it to its close icon with nothing to close.
+const wHelp = document.querySelectorAll(".wHelp:not(.no_bubble)");
 const wHelpMulti = document.querySelectorAll(".wHelp-multi");
 const noBubble = document.querySelector(".no_bubble");
 const wHelpBubble = document.querySelectorAll(".wHelp-bubble");
