@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.5.8
+Stable tag: 3.5.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -249,6 +249,11 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 15. WhatsApp chat button Elementor widget for drag-and-drop customization of agent, number, pre-filled message, and button style on any page.
 
 == Changelog ==
+= 3.5.9 – 5 September 2026 =
+* Fixed: "Open in New Tab" was ignored on sites where the Settings page had never been saved: the switch showed as on in the admin, but WhatsApp still opened in the same tab and the visitor left the site. The front end now uses the same default the setting itself declares.
+* Fixed: After a chat form was submitted, WhatsApp could still open in the current tab (or be blocked by the browser's popup blocker) even with "Open in New Tab" on, because the link was opened only after the submission had been saved. The new tab is now opened as part of the click itself.
+* Removed: The "Loading Text" setting. It never took effect in any released version, and it cannot be shown now that the WhatsApp tab is opened as part of the click — that tab takes focus immediately, so a label change on the button behind it is never seen. The setting has been dropped rather than left in place doing nothing.
+
 = 3.5.8 – 31 August 2026 =
 * Fixed: With Auto Open Popup enabled and the "Chat Button" chat experience selected, the floating button switched to its close icon even though it has no popup to close. The button is now left out of the open/close toggle.
 

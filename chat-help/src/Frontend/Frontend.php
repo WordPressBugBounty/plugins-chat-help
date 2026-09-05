@@ -146,8 +146,7 @@ class Frontend
         $wa_custom_js            = isset($ch_settings['whatsapp-custom-js']) ? $ch_settings['whatsapp-custom-js'] : '';
         $auto_show_popup         = isset($options['autoshow-popup']) ? $options['autoshow-popup'] : '';
         $auto_open_popup_timeout = isset($options['auto_open_popup_timeout']) ? $options['auto_open_popup_timeout'] : 0;
-        $open_in_new_tab         = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
-        $open_in_new_tab         = $open_in_new_tab ? '_blank' : '_self';
+        $open_in_new_tab         = Helpers::open_in_new_tab_target($ch_settings);
 
         $google_analytics = isset($ch_settings['google_analytics']) ? $ch_settings['google_analytics'] : '';
         $event_name = isset($ch_settings['event_name']) ? $ch_settings['event_name'] : '';

@@ -11,7 +11,7 @@ if (! defined('ABSPATH')) {
 
 use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 
-$open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
+$open_in_new_tab = Helpers::open_in_new_tab_target($ch_settings);
 echo '<div class="wHelp__popup__content">';
 if ($agent_message) : ?>
     <?php
@@ -56,7 +56,6 @@ $url_for_mobile = isset($ch_settings['url_for_mobile']) ? $ch_settings['url_for_
 $message = isset($options['prefilled_message']) ? $options['prefilled_message'] : '';
 $message = Helpers::replacement_vars($message);
 $url = Helpers::whatsAppUrl($whatsapp_number,  $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
-$open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
 
 if ('agent_input' === $chat_type) {
 ?>

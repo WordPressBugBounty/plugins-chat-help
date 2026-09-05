@@ -502,6 +502,48 @@ if (wHelpChatAvailability) {
   }
 
   /* ========================
+     WHATSAPP NAVIGATION
+  ======================== */
+  /*
+   * Open the WhatsApp URL honouring the "Open in New Tab" setting.
+   *
+   * Both form flows only learn the URL after an AJAX round-trip, and a
+   * window.open() made from an async callback has lost the click's user
+   * activation — browsers then block the popup, or fall back to navigating the
+   * current tab, which is exactly the "WhatsApp opens in the same tab and the
+   * visitor leaves the site" report. So the tab is claimed SYNCHRONOUSLY while
+   * the submit handler is still running (wHelpOpenTarget) and only pointed at
+   * the real URL once the response lands (wHelpNavigate).
+   *
+   * If the browser blocks even the synchronous open (hard popup blocker),
+   * handle.win is null and we fall back to a plain window.open with the
+   * configured target, which is no worse than the old behaviour.
+   */
+  function wHelpOpenTarget() {
+    const target = chat_help_frontend_scripts.open_in_new_tab || "_blank";
+    if (target !== "_blank") return { target: target, win: null };
+    let win = null;
+    try {
+      win = window.open("", "_blank");
+    } catch (e) {
+      win = null;
+    }
+    return { target: target, win: win };
+  }
+
+  function wHelpNavigate(handle, url) {
+    if (!url) {
+      if (handle && handle.win) handle.win.close();
+      return;
+    }
+    if (handle && handle.win && !handle.win.closed) {
+      handle.win.location.href = url;
+      return;
+    }
+    window.open(url, (handle && handle.target) || "_blank");
+  }
+
+  /* ========================
      FORM SUBMIT (GLOBAL)
   ======================== */
   $(document).on("submit", "form#wHelp_form", function (e) {
@@ -509,6 +551,9 @@ if (wHelpChatAvailability) {
     const form = $(this);
     // ✅ correct validation check
     if (!form.valid()) return;
+
+    // Claimed here, while the submit gesture is still active — see wHelpOpenTarget.
+    const waTab = wHelpOpenTarget();
 
     const submit_btn = form.find(".wHelp__send-message");
     const number = submit_btn.data("number") || "";
@@ -518,8 +563,6 @@ if (wHelpChatAvailability) {
     const userInfo = getUserData();
     const currentUrl = window.location.href;
     const currentTitle = document.title;
-    let button = form.data("button");
-    let loading = form.data("loading");
     let product_attr = form.data("product_attr");
     let agentName = $(document).find(".wHelp_bubble .info__name").text().trim();
 
@@ -542,6 +585,9 @@ if (wHelpChatAvailability) {
         if (response.success) {
           const data = response.data;
           if (data.type === "group") {
+            // The group flow shows a copy modal instead of navigating, so the
+            // tab claimed on submit is not needed.
+            if (waTab.win && !waTab.win.closed) waTab.win.close();
             wHelpShowGroupCopyModal(
               data.whatsAppURL,
               data.message,
@@ -549,27 +595,27 @@ if (wHelpChatAvailability) {
             );
             form[0].reset();
           } else {
-            submit_btn.innerHTML = loading;
-            setTimeout(function () {
-              window.open(
-                data.whatsAppURL,
-                chat_help_frontend_scripts.open_in_new_tab,
-              );
-              form[0].reset();
-              submit_btn.innerHTML = button;
-            }, 100);
+            wHelpNavigate(waTab, data.whatsAppURL);
+            form[0].reset();
           }
         } else {
+          if (waTab.win && !waTab.win.closed) waTab.win.close();
           alert("Error processing request.");
         }
       },
-    ).fail(() => alert("Unexpected error occurred."));
+    ).fail(() => {
+      if (waTab.win && !waTab.win.closed) waTab.win.close();
+      alert("Unexpected error occurred.");
+    });
   });
   $(document).on("submit", "form#agent_input", function (e) {
     e.preventDefault();
     const form = $(this);
     // ✅ correct validation check
     if (!form.valid()) return;
+
+    // Claimed here, while the submit gesture is still active — see wHelpOpenTarget.
+    const waTab = wHelpOpenTarget();
 
     const submit_btn = form.find(".send_agent_with_input");
 
@@ -580,8 +626,6 @@ if (wHelpChatAvailability) {
     const userInfo = getUserData();
     const currentUrl = window.location.href;
     const currentTitle = document.title;
-    let button = form.data("button");
-    let loading = form.data("loading");
     let product_attr = form.data("product_attr");
     let agentName = $(document).find(".wHelp_bubble .info__name").text().trim();
 
@@ -604,6 +648,9 @@ if (wHelpChatAvailability) {
         if (response.success) {
           const data = response.data;
           if (data.type === "group") {
+            // The group flow shows a copy modal instead of navigating, so the
+            // tab claimed on submit is not needed.
+            if (waTab.win && !waTab.win.closed) waTab.win.close();
             wHelpShowGroupCopyModal(
               data.whatsAppURL,
               data.message,
@@ -611,21 +658,18 @@ if (wHelpChatAvailability) {
             );
             form[0].reset();
           } else {
-            submit_btn.innerHTML = loading;
-            setTimeout(function () {
-              window.open(
-                data.whatsAppURL,
-                chat_help_frontend_scripts.open_in_new_tab,
-              );
-              form[0].reset();
-              submit_btn.innerHTML = button;
-            }, 100);
+            wHelpNavigate(waTab, data.whatsAppURL);
+            form[0].reset();
           }
         } else {
+          if (waTab.win && !waTab.win.closed) waTab.win.close();
           alert("Error processing request.");
         }
       },
-    ).fail(() => alert("Unexpected error occurred."));
+    ).fail(() => {
+      if (waTab.win && !waTab.win.closed) waTab.win.close();
+      alert("Unexpected error occurred.");
+    });
   });
 
   /* ========================

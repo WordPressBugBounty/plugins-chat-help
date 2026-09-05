@@ -804,4 +804,29 @@ class Helpers
 	{
 		return apply_filters('chat_help_dashboard_capability', 'manage_options');
 	}
+
+	/**
+	 * Resolve the link target for the "Open in New Tab" setting.
+	 *
+	 * The `open_in_new_tab` switcher (src/Admin/Views/AdvancedControls.php)
+	 * declares `'default' => true`, but a schema default only materialises in
+	 * the option row once the Settings page has actually been saved — the admin
+	 * UI shows it via the REST layer's merge_defaults(), the frontend reads the
+	 * raw option. Every call site used to fall back to `''` when the key was
+	 * absent, which is falsy, so a site that had never pressed Save on Settings
+	 * showed the toggle ON in wp-admin while the frontend opened WhatsApp in the
+	 * SAME tab. Defaulting the missing key to the schema's `true` here keeps the
+	 * two in agreement; an explicitly saved "off" is still honoured.
+	 *
+	 * @param array|mixed $ch_settings The `ch_settings` option.
+	 * @return string `_blank` or `_self`.
+	 */
+	public static function open_in_new_tab_target($ch_settings)
+	{
+		$enabled = is_array($ch_settings) && array_key_exists('open_in_new_tab', $ch_settings)
+			? $ch_settings['open_in_new_tab']
+			: true;
+
+		return $enabled ? '_blank' : '_self';
+	}
 }

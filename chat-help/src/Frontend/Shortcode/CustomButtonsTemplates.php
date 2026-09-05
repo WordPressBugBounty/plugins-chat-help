@@ -67,8 +67,7 @@ class CustomButtonsTemplates
 		}
 
 		$ch_settings = get_option('ch_settings');
-		$open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
-		$open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
+		$open_in_new_tab = Helpers::open_in_new_tab_target($ch_settings);
 		$url_for_desktop = isset($ch_settings['url_for_desktop']) ? $ch_settings['url_for_desktop'] : '';
 		$url_for_mobile = isset($ch_settings['url_for_mobile']) ? $ch_settings['url_for_mobile'] : '';
 		$url = Helpers::whatsAppUrl($number, $type_of_whatsapp, $group, $url_for_desktop, $url_for_mobile, $message);
@@ -129,8 +128,7 @@ class CustomButtonsTemplates
 		}
 
 		$ch_settings = get_option('ch_settings');
-		$open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
-		$open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
+		$open_in_new_tab = Helpers::open_in_new_tab_target($ch_settings);
 		$url_for_desktop = isset($ch_settings['url_for_desktop']) ? $ch_settings['url_for_desktop'] : '';
 		$url_for_mobile = isset($ch_settings['url_for_mobile']) ? $ch_settings['url_for_mobile'] : '';
 		$url = Helpers::whatsAppUrl($number, $type_of_whatsapp, $group, $url_for_desktop, $url_for_mobile, $message);

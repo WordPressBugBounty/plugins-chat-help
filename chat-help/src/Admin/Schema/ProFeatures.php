@@ -39,11 +39,13 @@
  *     free admin never rendered a control for it — so locking them is a no-op
  *     for existing installs.
  *
- * The single exception is `chat-button-loading-text`: a genuine free field that
- * Pro does not have. It is re-added in `Views/Fields/FloatingChatFields.php` and
- * is NOT locked.
+ * `chat-button-loading-text` used to be an exception here — a free-only field
+ * with no Pro equivalent, re-added in `Views/Fields/FloatingChatFields.php` and
+ * left unlocked. It has since been removed outright (it never worked, and cannot
+ * work alongside the synchronous tab claim the submit handler now needs); see the
+ * tombstone comment at its old site in that file.
  *
- * `ch_settings.webhooks` is a second, deliberate exception: unlike the rest of
+ * `ch_settings.webhooks` is a deliberate exception: unlike the rest of
  * this map, it is NOT restoring parity with the pre-migration free plugin (that
  * version shipped Webhooks unlocked). It is a later product decision to make the
  * whole Webhooks tab Pro-only going forward, added the same way every other

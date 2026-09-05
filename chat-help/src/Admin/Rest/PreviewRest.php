@@ -33,6 +33,7 @@ use WP_REST_Server;
 use WP_REST_Request;
 use WP_REST_Response;
 use ThemeAtelier\ChatHelp\Frontend\Frontend;
+use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
 use ThemeAtelier\ChatHelp\Frontend\Templates\items\Buttons;
 
 if (! defined('ABSPATH')) {
@@ -188,7 +189,7 @@ class PreviewRest extends AbstractRestController
     {
         $auto_show_popup            = $options['autoshow-popup'] ?? '';
         $auto_open_popup_timeout    = $options['auto_open_popup_timeout'] ?? 0;
-        $open_in_new_tab            = ! empty($ch_settings['open_in_new_tab']) ? '_blank' : '_self';
+        $open_in_new_tab            = Helpers::open_in_new_tab_target($ch_settings);
         $google_analytics           = $ch_settings['google_analytics'] ?? '';
         $event_name                 = $ch_settings['event_name'] ?? '';
         $google_analytics_parameter = \is_array($ch_settings['google_analytics_parameter'] ?? null) ? $ch_settings['google_analytics_parameter'] : [];

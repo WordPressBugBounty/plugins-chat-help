@@ -137,8 +137,7 @@ class WooButton
         $message = Helpers::replacement_vars($message);
 
         $url = Helpers::whatsAppUrl($product_page_button_number, $product_page_button_type_of_whatsapp, $product_page_button_group, $url_for_desktop, $url_for_mobile, $message);
-        $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
-        $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
+        $open_in_new_tab = Helpers::open_in_new_tab_target($ch_settings);
 
         $gaAnalyticsAttr = Helpers::analytics_attr($product_page_button_type_of_whatsapp, $product_page_button_number, $product_page_button_group);
 
@@ -261,8 +260,7 @@ class WooButton
         $message = Helpers::replacement_vars($message);
 
         $url = Helpers::whatsAppUrl($shop_page_button_number, $shop_page_button_type_of_whatsapp, $shop_page_button_group, $url_for_desktop, $url_for_mobile, $message);
-        $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
-        $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
+        $open_in_new_tab = Helpers::open_in_new_tab_target($ch_settings);
 
         $gaAnalyticsAttr = Helpers::analytics_attr($shop_page_button_type_of_whatsapp, $shop_page_button_number, $shop_page_button_group);
 
@@ -400,8 +398,7 @@ class WooButton
         $message = Helpers::replacement_vars($message);
 
         $url = Helpers::whatsAppUrl($cart_page_button_number, $cart_page_button_type_of_whatsapp, $cart_page_button_group, $url_for_desktop, $url_for_mobile, $message);
-        $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
-        $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
+        $open_in_new_tab = Helpers::open_in_new_tab_target($ch_settings);
 
         $gaAnalyticsAttr = Helpers::analytics_attr($cart_page_button_type_of_whatsapp, $cart_page_button_number, $cart_page_button_group);
 
@@ -559,8 +556,7 @@ class WooButton
         }
 
         $url = Helpers::whatsAppUrl($checkout_page_button_number, $checkout_page_button_type_of_whatsapp, $checkout_page_button_group, $url_for_desktop, $url_for_mobile, $message);
-        $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
-        $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
+        $open_in_new_tab = Helpers::open_in_new_tab_target($ch_settings);
 
         $gaAnalyticsAttr = Helpers::analytics_attr($checkout_page_button_type_of_whatsapp, $checkout_page_button_number, $checkout_page_button_group);
 
@@ -845,8 +841,7 @@ class WooButton
         $message = Helpers::replacement_vars($message);
 
         $url = Helpers::whatsAppUrl($thank_you_page_button_number, $thank_you_page_button_type_of_whatsapp, $thank_you_page_button_group, $url_for_desktop, $url_for_mobile, $message);
-        $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
-        $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
+        $open_in_new_tab = Helpers::open_in_new_tab_target($ch_settings);
 
         $gaAnalyticsAttr = Helpers::analytics_attr($thank_you_page_button_type_of_whatsapp, $thank_you_page_button_number, $thank_you_page_button_group);
 

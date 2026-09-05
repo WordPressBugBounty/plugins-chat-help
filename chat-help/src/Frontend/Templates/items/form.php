@@ -16,7 +16,6 @@ $agent_name_placeholder_text = isset($options['agent-name-placeholder-text']) ? 
 $agent_message_placeholder_text = isset($options['agent-message-placeholder-text']) ? $options['agent-message-placeholder-text'] : __('Message', 'chat-help');
 $before_chat_icon = isset($options['before-chat-icon']) ? $options['before-chat-icon'] : 'icofont-brand-whatsapp';
 $chat_button_text = isset($options['chat-button-text']) ? $options['chat-button-text'] : __('Send a message', 'chat-help');
-$chat_loading_text = isset($options['chat-button-loading-text']) ? $options['chat-button-loading-text'] : 'Redirecting...';
 $type_of_whatsapp = isset($options['type_of_whatsapp']) ? $options['type_of_whatsapp'] : '';
 $whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
 $whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
@@ -55,7 +54,7 @@ if ($product) {
 <form
     id="wHelp_form"
     class="wHelp__popup__content" <?php echo esc_attr($product_attr); ?>
-    data-loading="<?php echo esc_attr($chat_loading_text) ?>" data-button="<?php echo esc_attr($chat_button_text) ?>"
+    data-button="<?php echo esc_attr($chat_button_text) ?>"
     style="--color-primary: <?php echo esc_attr($primary); ?>;--color-secondary: <?php echo esc_attr($secondary); ?>;">
     <div class="user-text">
         <?php

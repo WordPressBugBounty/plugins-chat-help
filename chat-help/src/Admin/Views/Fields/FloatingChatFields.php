@@ -1186,18 +1186,24 @@ class FloatingChatFields
                                         'dependency' => array('chat_layout|gdpr-enable', '!=|==', 'button|true', 'any'),
                                     ),
 
-                                    // FREE-ONLY: the Pro plugin has no equivalent, but the free
-                                    // frontend reads this value (src/Frontend/Templates/items/form.php),
-                                    // so it must keep its editable field or existing users lose a
-                                    // working setting. Do not drop when re-syncing this file from Pro.
-                                    array(
-                                        'id' => 'chat-button-loading-text',
-                                        'type' => 'text',
-                                        'title' => esc_html__('Loading Text', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/redirecting.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Enter the loading text shown while the message is being sent or redirecting.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-                                        'default' => esc_html__('Redirecting...', 'chat-help'),
-                                        'dependency' => array('chat_layout', 'any', 'form', 'any'),
-                                    ),
+                                    // REMOVED: `chat-button-loading-text` ("Loading Text").
+                                    //
+                                    // This was a free-only field with no Pro equivalent. It never
+                                    // worked in any released version — the script assigned to
+                                    // `submit_btn.innerHTML` on a jQuery object, which is an
+                                    // expando write, so the label never changed.
+                                    //
+                                    // It cannot be made to work now either: the submit handler
+                                    // claims the WhatsApp tab synchronously on click (required so
+                                    // the browser still counts it as user-initiated and does not
+                                    // block the popup — see wHelpOpenTarget in
+                                    // assets/js/chat-help-script.js), and that new tab takes focus
+                                    // immediately, so any label change lands in a tab the visitor is
+                                    // no longer looking at. With "Open in New Tab" off, the current
+                                    // tab navigates away the moment the response arrives, which
+                                    // hides it just the same.
+                                    //
+                                    // Do NOT re-add it when re-syncing this file from Pro.
 
                                     // before chat icon
                                     array(

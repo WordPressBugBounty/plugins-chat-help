@@ -29,7 +29,7 @@ class Buttons
     public static function buttons($options, $ch_settings)
     {
         $chat_type = $options['chat_layout'] ?? 'form';
-        $open_in_new_tab = isset($ch_settings['open_in_new_tab']) ? $ch_settings['open_in_new_tab'] : '';
+        $open_in_new_tab = Helpers::open_in_new_tab_target($ch_settings);
         $button_size = isset($options['button_size']) ? $options['button_size'] : '1.2';
         $floating_button_style = $options['opt-button-style'] ?? '1';
         $circle_button_icon = $options['circle-button-icon'] ?? 'icofont-brand-whatsapp';
@@ -53,7 +53,6 @@ class Buttons
         $message = isset($options['prefilled_message']) ? $options['prefilled_message'] : '';
         $message = Helpers::replacement_vars($message);
         $url = Helpers::whatsAppUrl($whatsapp_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
-        $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
 
         // Determine the open icon
         if (!empty($circle_button_icon)) {
@@ -154,7 +153,6 @@ class Buttons
                 $message = Helpers::replacement_vars($message);
                 $url = Helpers::whatsAppUrl($whatsapp_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
 
-                $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
                 $bubble_type .= '<a href="' . esc_attr($url) . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link chat_help_link"></a>';
             }
             if ($tooltip_enabled != 'hide' && !empty($tooltip_text)) {
@@ -191,7 +189,6 @@ class Buttons
                 $message = isset($options['prefilled_message']) ? $options['prefilled_message'] : '';
                 $message = Helpers::replacement_vars($message);
                 $url = Helpers::whatsAppUrl($whatsapp_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
-                $open_in_new_tab = $open_in_new_tab ? '_blank' : '_self';
                 $bubble_type .= '<a href="' . esc_attr($url) . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link chat_help_link"></a>';
             }
             $bubble_type .= '</div>';
