@@ -27,10 +27,15 @@ class License
     public static function options($prefix)
     {
         SchemaRegistry::createSection($prefix, array(
-            'title'       => esc_html__('LICENSE', 'chat-help'),
+            'title'       => esc_html__('License', 'chat-help'),
             'icon'        => 'icofont-key',
 
             'fields'      => array(
+                // Intro line, rendered plain above the license card.
+                array(
+                    'type'    => 'page_hint',
+                    'content' => esc_html__('Manage your Chat Help license key to receive updates and support.', 'chat-help'),
+                ),
                 array(
                     'id'   => 'license_key',
                     'type' => 'license',

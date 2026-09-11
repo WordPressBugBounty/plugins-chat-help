@@ -609,6 +609,14 @@
   background-color: var(--wHelp-color-light);
 }
 
+.wHelp_button[class*=circle-animation-] .open-icon img,
+.wHelp_button[class*=circle-animation-] .close-icon img {
+  width: calc(30px * var(--wHelp-btn-scale, 1));
+  height: calc(30px * var(--wHelp-btn-scale, 1));
+  max-width: none;
+  object-fit: contain;
+  display: block;
+}
 .wHelp_button[class*=circle-animation-] .open-icon {
   color: var(--wHelp-icon-normal-color);
   transition: 0.4s ease all;
@@ -676,6 +684,13 @@
 }
 .wHelp_button .bubble__icon svg {
   width: calc(20px * var(--wHelp-btn-scale, 1));
+}
+.wHelp_button .bubble__icon img {
+  width: calc(20px * var(--wHelp-btn-scale, 1));
+  height: calc(20px * var(--wHelp-btn-scale, 1));
+  max-width: none;
+  object-fit: contain;
+  display: block;
 }
 .wHelp_button .bubble__icon--open {
   right: calc(10px * var(--wHelp-btn-scale, 1));
@@ -1363,6 +1378,10 @@ input.wHelp__checkbox:checked::after {
 .wHelp_button.bubble.wHelp_button {
   display: flex;
 }
+.wHelp_button.wHelp-bubble-no-icon {
+  min-height: calc(45px * var(--wHelp-btn-scale, 1));
+  justify-content: center;
+}
 .wHelp_button .notification_icon {
   position: absolute;
   width: 12px;
@@ -1495,5 +1514,3 @@ input.wHelp__checkbox:checked::after {
 .theme-kadence.woocommerce ul.products.woo-archive-action-on-hover li.product:focus-within .product-action-wrap {
   bottom: -3rem;
 }
-
-/*# sourceMappingURL=chat-help-style.css.map */

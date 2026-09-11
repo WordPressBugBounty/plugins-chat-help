@@ -97,6 +97,7 @@ class ProFeatures
                 'category',
                 'category_all',
                 'category_target',
+                'chat_button_default_icon',
                 'chat_button_image',
                 'chat_button_image_type',
                 'chat_button_text',
@@ -245,20 +246,20 @@ class ProFeatures
         // shipped every field these pages register (verified by diffing the
         // pre-migration schema against Pro's).
         //
-        // ch_meta (Chat Layouts) and assign_widget (Assign Layouts) are NOT listed
-        // here — Chat Layouts inherits Global Chat's boundary via SHARES below, and
-        // Assign Layouts has no Pro-only fields, so it is fully free.
+        // ch_meta (Custom Chats) and assign_widget (Assign Chats) are NOT listed
+        // here — Custom Chats inherits Global Chat's boundary via SHARES below, and
+        // Assign Chats has no Pro-only fields, so it is fully free.
     );
 
     /**
      * Option keys that reuse another key's lock config.
      *
-     * Chat Layouts (`ch_meta`) renders the exact same FloatingChatFields schema as
+     * Custom Chats (`ch_meta`) renders the exact same FloatingChatFields schema as
      * Global Chat (`cwp_option`) — only per-widget instead of global — so the
      * free/Pro boundary is identical: any field/option Pro-locked in Global Chat
      * is Pro-locked in a Chat Layout too. Aliasing keeps that guarantee in one
      * place (requirement: "Any field marked Pro in Global Chat should also be
-     * marked Pro in Chat Layouts").
+     * marked Pro in Custom Chats").
      *
      * @var array<string,string>
      */
@@ -326,14 +327,14 @@ class ProFeatures
         $opts   = $cfg['options'][$field_id] ?? array();
         $static = \is_array($opts) ? \array_map('strval', $opts) : array();
 
-        // Assign Layouts post-type picker: only Posts and Pages are free; every
+        // Assign Chats post-type picker: only Posts and Pages are free; every
         // other registered public post type is Pro. Detected at runtime, so it
         // adapts to whatever CPTs a given site has.
         if ($key === 'assign_widget' && $field_id === 'widget_post_type') {
             return \array_values(\array_unique(\array_merge($static, self::pro_post_types())));
         }
 
-        // Assign Layouts taxonomy/term picker: only terms of taxonomies attached
+        // Assign Chats taxonomy/term picker: only terms of taxonomies attached
         // to the Posts post type are free; every other taxonomy's terms (WooCommerce,
         // CPTs, other plugins) are Pro. Option keys here are term ids.
         if ($key === 'assign_widget' && $field_id === 'widget_taxonomy_terms') {
@@ -344,7 +345,7 @@ class ProFeatures
     }
 
     /**
-     * Public post type slugs that are Pro-only in Assign Layouts — i.e. every
+     * Public post type slugs that are Pro-only in Assign Chats — i.e. every
      * public post type except Posts and Pages (and the non-selectable
      * `attachment` media type, which the picker never lists). Auto-detected.
      *
@@ -365,7 +366,7 @@ class ProFeatures
     }
 
     /**
-     * Whether a post type slug is usable in the free Assign Layouts feature.
+     * Whether a post type slug is usable in the free Assign Chats feature.
      */
     public static function is_free_post_type(string $slug): bool
     {
@@ -373,7 +374,7 @@ class ProFeatures
     }
 
     /**
-     * Term ids that are Pro-only in the Assign Layouts taxonomy picker — every
+     * Term ids that are Pro-only in the Assign Chats taxonomy picker — every
      * term whose taxonomy is NOT attached to the Posts post type (WooCommerce,
      * CPT and other-plugin taxonomies). Only public taxonomies are considered,
      * matching AbstractRestController::resolve_options()'s term list. Detected at
@@ -401,7 +402,7 @@ class ProFeatures
     }
 
     /**
-     * Whether a taxonomy is usable in the free Assign Layouts feature — i.e. it
+     * Whether a taxonomy is usable in the free Assign Chats feature — i.e. it
      * is attached to the Posts post type.
      */
     public static function is_free_taxonomy(string $taxonomy): bool
@@ -410,7 +411,7 @@ class ProFeatures
     }
 
     /**
-     * Drop any Assign Layouts rows that target a Pro-only post type, so a crafted
+     * Drop any Assign Chats rows that target a Pro-only post type, so a crafted
      * request can never persist (or later apply) a layout assignment to a
      * Pro post type. Rows with no post type set (e.g. taxonomy-based rows, which
      * default the hidden post-type field) are kept.

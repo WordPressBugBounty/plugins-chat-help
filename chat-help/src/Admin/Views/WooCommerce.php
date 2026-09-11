@@ -51,21 +51,8 @@ class WooCommerce
         CartPage::options($prefix);
         CheckoutPage::options($prefix);
         ThankYouPage::options($prefix);
-
-        SchemaRegistry::createSection($prefix, array(
-            'title' => esc_html__('Backup', 'chat-help'),
-            'icon'  => 'icofont-shield',
-            'fields' => array(
-                array(
-                    'title'    => esc_html__('Backup', 'chat-help'),
-                    'title_help' =>
-                    '<div class="chat-help-info-label">' .
-                        esc_html__('Export or import plugin settings for backup or migration purposes.', 'chat-help') .
-                        '</div>' .
-                        ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/backup/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-                    'type' => 'backup',
-                ),
-            )
-        ));
+        // No Backup section here: one place moves this data now — Settings →
+        // Import/Export, which carries these settings along with the chats,
+        // leads and everything else, in three formats.
     }
 }

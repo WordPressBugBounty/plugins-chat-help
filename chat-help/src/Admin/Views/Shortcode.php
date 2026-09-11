@@ -59,9 +59,7 @@ class Shortcode
                         'title_help' =>
                         '<div class="chat-help-info-label">' .
                             esc_html__('Choose between Simple or Advanced button styles for the shortcode. The Advanced style supports agent details (photo, name, designation), while the Simple style is a basic WhatsApp button.', 'chat-help') .
-                            '</div>' .
-                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'button-shortcode/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                            ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/shortcodes/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                            '</div>',
 
                         'options' => array(
                             '1' => array(

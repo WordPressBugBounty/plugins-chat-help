@@ -88,6 +88,19 @@ class Buttons
         if ($floating_button_style == '2' && $icon_bg === 'icon_bg') {
             $normal_icon_color = !empty($bubble_icon_color['normal_color']) ? $bubble_icon_color['normal_color'] : $bg_color;
             $hover_icon_color = !empty($bubble_icon_color['hover_color']) ? $bubble_icon_color['hover_color'] : $bg_hover_color;
+
+            // Icon and its circle in the same colour renders nothing at all. A
+            // stored '#ffffff' on both (older installs saved that pair from the
+            // schema defaults) hid the Simple Button's icon completely, so treat
+            // an exact match as "no colour chosen" and use the same fallback an
+            // unset value would get. Nothing legitimate is lost: an icon painted
+            // in its own background colour is invisible either way.
+            if (strcasecmp((string) $normal_icon_color, (string) $normal_bg_color) === 0) {
+                $normal_icon_color = $bg_color;
+            }
+            if (strcasecmp((string) $hover_icon_color, (string) $hover_bg_color) === 0) {
+                $hover_icon_color = $bg_hover_color;
+            }
         } else {
             $normal_icon_color = !empty($bubble_icon_color['normal_color']) ? $bubble_icon_color['normal_color'] : '#ffffff';
             $hover_icon_color = !empty($bubble_icon_color['hover_color']) ? $bubble_icon_color['hover_color'] : '#ffffff';
@@ -118,6 +131,16 @@ class Buttons
         $bubble_button_padding_bottom =  isset($bubble_button_padding['bottom']) ? $bubble_button_padding['bottom'] : '5';
         $bubble_button_padding_left =  isset($bubble_button_padding['left']) ? $bubble_button_padding['left'] : '6';
         $bubble_button_padding_unit = isset($bubble_button_padding['unit']) ? $bubble_button_padding['unit'] : 'px';
+
+        // The default left padding (6px) is deliberately tighter than the right:
+        // the icon circle overhangs the pill's left edge, so the gap is made up
+        // by the icon itself. With "No Icon" there is nothing to overhang, and
+        // that same 6px reads as a label shoved against the button's edge — so
+        // mirror the right padding instead.
+        $no_icon = ($circle_button_icon === 'no_icon');
+        if ($no_icon) {
+            $bubble_button_padding_left = $bubble_button_padding_right;
+        }
 
         $padding = $bubble_button_padding_top . $bubble_button_padding_unit . ' ' . $bubble_button_padding_right . $bubble_button_padding_unit . ' ' . $bubble_button_padding_bottom . $bubble_button_padding_unit . ' ' . $bubble_button_padding_left . $bubble_button_padding_unit;
         $notification_icon = isset($options['notification_icon']) ? $options['notification_icon'] : '';
@@ -172,7 +195,7 @@ class Buttons
                 </div>';
             }
 
-            $bubble_type = '<div style="--wHelp-padding: ' . esc_attr($padding) . '; --wHelp-btn-scale: ' . esc_attr($button_size) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . '; --wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-icon-normal-bg-color: ' . esc_attr($normal_bg_color) . '; --wHelp-icon-hover-bg-color: ' . esc_attr($hover_bg_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . '; --wHelp-text-color: ' . esc_attr($text_color) . '; --wHelp-text-hover-color: ' . esc_attr($text_hover_color) . '; --wHelp-icon-border: ' . esc_attr($icon_border_all . ' ' . $icon_border_style) . '; --wHelp-icon-border-color: ' . esc_attr($icon_border_color) . '; --wHelp-hover-icon-border-color: ' . esc_attr($hover_icon_border_color) . '; --wHelp-icon-border-radius: ' . esc_attr($icon_border_radius) . ';" class="wHelp_button wHelp-bubble bubble ' . esc_attr(' wHelp_' . $chat_type . ' layout_' . $chat_type . ' ' . $tooltip_class) . '">';
+            $bubble_type = '<div style="--wHelp-padding: ' . esc_attr($padding) . '; --wHelp-btn-scale: ' . esc_attr($button_size) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . '; --wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-icon-normal-bg-color: ' . esc_attr($normal_bg_color) . '; --wHelp-icon-hover-bg-color: ' . esc_attr($hover_bg_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . '; --wHelp-text-color: ' . esc_attr($text_color) . '; --wHelp-text-hover-color: ' . esc_attr($text_hover_color) . '; --wHelp-icon-border: ' . esc_attr($icon_border_all . ' ' . $icon_border_style) . '; --wHelp-icon-border-color: ' . esc_attr($icon_border_color) . '; --wHelp-hover-icon-border-color: ' . esc_attr($hover_icon_border_color) . '; --wHelp-icon-border-radius: ' . esc_attr($icon_border_radius) . ';" class="wHelp_button wHelp-bubble bubble ' . ($no_icon ? 'wHelp-bubble-no-icon ' : '') . '' . esc_attr(' wHelp_' . $chat_type . ' layout_' . $chat_type . ' ' . $tooltip_class) . '">';
             $bubble_type .= ($notification_icon ? '<span class="notification_icon without_number"></span>' : '') . $icons . esc_attr($button_label);
 
             // Add Tooltip

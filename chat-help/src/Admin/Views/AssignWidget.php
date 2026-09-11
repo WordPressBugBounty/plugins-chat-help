@@ -72,7 +72,7 @@ class AssignWidget
 			$prefix,
 			array(
 				'name'   => 'assign_widget',
-				'title'  => __('Layout', 'chat-help'),
+				'title'  => __('Chat', 'chat-help'),
 				'fields' => array(
 
 					array(
@@ -172,11 +172,20 @@ class AssignWidget
 								'id'          => 'select_widget',
 								'class'       => 'select_widget',
 								'type'        => 'select',
-								'title'       => __('Select Layout', 'chat-help'),
+								'title'       => __('Select Chat', 'chat-help'),
 								'options'     => 'posts',
 								'title_help'  => __('Choose the posts to display. Sort the posts position by drag & drop.', 'chat-help'),
-								'placeholder' => __('Choose Layout', 'chat-help'),
-								'empty_message' => __('No chat layout is created. Please <a href="' . admin_url( 'post-new.php?post_type=floating_widget' ) . '">create</a> a layout first.', 'chat-help'),
+								'placeholder' => __('Choose Chat', 'chat-help'),
+								'empty_message' => sprintf(
+									/* translators: %1$s: opening link tag to the new-layout screen, %2$s: closing link tag. */
+									__('No chat layout is created. Please %1$screate%2$s a layout first.', 'chat-help'),
+									// The SPA's own "new layout" route, not the raw CPT screen:
+									// post-new.php resolves back through the admin-menu
+									// interception and lands on the default route (Global
+									// Chat) instead of the layout editor.
+									'<a href="' . esc_url( admin_url( 'admin.php?page=chat-help' ) ) . '#/widgets/new">',
+									'</a>'
+								),
 								'query_args'  => array(
 									'post_type'		 => 'floating_widget',
 									'posts_per_page' => -1,

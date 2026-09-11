@@ -40,7 +40,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Whatsapp buttons', 'chat-help');
+        return esc_html__('WhatsApp Buttons', 'chat-help');
     }
 
     /**
@@ -108,8 +108,8 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         $this->add_control(
             'number',
             array(
-                'label'       => esc_html__('Whatsapp number', 'chat-help'),
-                'description' => esc_html__('Add your whatsapp number including country code. eg: +880123456189. Leave unchanged to use the Global Chat number.', 'chat-help'),
+                'label'       => esc_html__('WhatsApp number', 'chat-help'),
+                'description' => esc_html__('Add your WhatsApp number including the country code, e.g. +880123456189. Leave unchanged to use the Global Chat number.', 'chat-help'),
                 'label_block' => false,
                 'type'        => \Elementor\Controls_Manager::TEXT,
                 'default'     => $global_whatsapp['number'],
@@ -121,7 +121,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         $this->add_control(
             'group',
             array(
-                'label'       => esc_html__('Whatsapp group', 'chat-help'),
+                'label'       => esc_html__('WhatsApp group', 'chat-help'),
                 'description' => esc_html__('Add your whatsapp group link. Leave unchanged to use the Global Chat group.', 'chat-help'),
                 'label_block' => false,
                 'type'        => \Elementor\Controls_Manager::TEXT,
@@ -134,8 +134,8 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         $this->add_control(
             'predefined_template',
             [
-                'label' => esc_html__('Pre-defeined Message', 'chat-help'),
-                'description' => __('Global Vars - {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br>Woocommerce Vars - {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus}<br><b>NOTE: WooCommerce vars will work only single product pages.</b>', 'chat-help'),
+                'label' => esc_html__('Pre-defined Message', 'chat-help'),
+                'description' => __('Global Vars - {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br>WooCommerce Vars - {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus}<br><b>NOTE: WooCommerce vars work only on single product pages.</b>', 'chat-help'),
                 'type'  => \Elementor\Controls_Manager::TEXTAREA,
                 'label_block' => true,
                 'default' => esc_html__('Hi! I have a question about your services.', 'chat-help'),
@@ -204,11 +204,11 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         $this->add_control(
             'online__text',
             array(
-                'label'       => esc_html__('Online badget text', 'chat-help'),
-                'description' => esc_html__('Add custom badget text when user in online.', 'chat-help'),
+                'label'       => esc_html__('Online badge text', 'chat-help'),
+                'description' => esc_html__('Add custom badge text shown when the agent is online.', 'chat-help'),
                 'type'        => \Elementor\Controls_Manager::TEXT,
                 'label_block' => false,
-                'default'     => esc_html__('I\'m avaiable', 'chat-help'),
+                'default'     => esc_html__('I\'m available', 'chat-help'),
                 'condition'   => array(
                     'style' => '1',
                 ),
@@ -218,8 +218,8 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         $this->add_control(
             'offline__text',
             array(
-                'label'       => esc_html__('Offline badget text', 'chat-help'),
-                'description' => esc_html__('Add custom badget text when user in offline.', 'chat-help'),
+                'label'       => esc_html__('Offline badge text', 'chat-help'),
+                'description' => esc_html__('Add custom badge text shown when the agent is offline.', 'chat-help'),
                 'type'        => \Elementor\Controls_Manager::TEXT,
                 'label_block' => false,
                 'default'     => esc_html__('I\'m offline', 'chat-help'),
@@ -1186,7 +1186,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base
         $this->add_control(
             'bg__color__hover',
             array(
-                'label'     => esc_html__('Hover backgound color', 'chat-help'),
+                'label'     => esc_html__('Hover background color', 'chat-help'),
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'default'   => '#0b5a51',
                 'selectors' => array(

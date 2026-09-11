@@ -28,14 +28,14 @@ class AdditionalCssJs
         SchemaRegistry::createSection(
             $prefix,
             array(
-                'title' => esc_html__('Additional CSS & JS', 'chat-help'),
+                'title' => esc_html__('Advanced', 'chat-help'),
                 'icon'  => 'icofont-code-alt',
                 'fields' => array(
                     array(
                         'id'       => 'whatsapp_custom_css',
                         'type'     => 'code_editor',
                         'title' => esc_html__('Custom CSS', 'chat-help'),
-                        'title_help' => '<div class="chat-help-info-label">' .  esc_html__('Add your own custom CSS to override or extend the default styling of the chat box.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/additional-css-js/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                        'title_help' => '<div class="chat-help-info-label">' .  esc_html__('Add your own custom CSS to override or extend the default styling of the chat box.', 'chat-help') . '</div>',
                         'settings' => array(
                             'theme'  => 'mbo',
                             'mode'   => 'css',
@@ -46,11 +46,26 @@ class AdditionalCssJs
                         'type'     => 'code_editor',
                         'title' => esc_html__('Custom JavaScript', 'chat-help'),
                         'title_help' =>
-                        '<div class="chat-help-info-label">' . esc_html__('Add your own custom JavaScript to extend or customize chat box behavior.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/additional-css-js/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                        '<div class="chat-help-info-label">' . esc_html__('Add your own custom JavaScript to extend or customize chat box behavior.', 'chat-help') . '</div>',
                         'settings' => array(
                             'theme'  => 'mbo',
                             'mode'   => 'js',
                         ),
+                    ),
+                    // Last, under its own heading: it is a site-wide switch
+                    // about the plugin itself (not about a chat), and it is
+                    // destructive — it belongs after the everyday fields.
+                    array(
+                        'type' => 'heading',
+                        'content' => esc_html__('Plugin Data', 'chat-help'),
+                    ),
+                    array(
+                        'id'      => 'cleanup_data_deletion',
+                        'type'    => 'checkbox',
+                        'title' => esc_html__('Clean-up Data on Deletion', 'chat-help'),
+                        'title_help' =>
+                        '<div class="chat-help-info-label">' . esc_html__('Enable this option to completely remove all Chat Help plugin data when the plugin is deleted from your site.', 'chat-help') . '</div>',
+
                     ),
                 )
             )

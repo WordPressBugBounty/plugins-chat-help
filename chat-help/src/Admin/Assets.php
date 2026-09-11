@@ -141,14 +141,14 @@ class Assets
             // animated onboarding overlay when this is true (and the user has
             // not dismissed it locally).
             'onboarding' => $this->needs_onboarding(),
-            // Option keys that are Pro-locked in their entirety (Chat Layouts /
-            // Assign Layouts). The SPA reads this to disable the create/save/bulk
+            // Option keys that are Pro-locked in their entirety (Custom Chats /
+            // Assign Chats). The SPA reads this to disable the create/save/bulk
             // actions on those pages; the REST layer enforces it regardless.
             'proLockedKeys' => $this->pro_locked_keys(),
             // PreviewRest renders the real widget via
             // Frontend::render_chat_template() (Pro's equivalent reuses one
             // Template::content() entry point instead — same idea, different
-            // dispatcher) for both Global Chat and Chat Layouts, so the SPA's
+            // dispatcher) for both Global Chat and Custom Chats, so the SPA's
             // Live Preview toggle/column are shown just like Pro.
             'livePreview' => true,
         ];

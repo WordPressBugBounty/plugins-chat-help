@@ -14,7 +14,7 @@
  *    no equivalent state.
  *  - Only the global widget has site-wide "Others" (visibility-by-content-type)
  *    and "Backup" tabs — a Chat Layout's targeting is handled by the separate
- *    "Assign Layouts" page instead, and Backup only makes sense once, globally.
+ *    "Assign Chats" page instead, and Backup only makes sense once, globally.
  *
  * @link       https://themeatelier.net
  * @since      1.0.0
@@ -99,27 +99,33 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Choose how your WhatsApp chat appears.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs-category/floating-chat/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'class'   => 'chat-help-layout-preset',
                                         'options' => $chat_layout_options,
                                         'default' => 'form',
                                     ),
                                     array(
-                                        'type' => 'subheading',
-                                        'style'   => 'success',
+                                        // A notice, not a heading: this is prose
+                                        // explaining a consequence, and `subheading`
+                                        // rendered it as a large bold title.
+                                        'type' => 'submessage',
+                                        'style'   => 'info',
                                         'content' => esc_html__('By "Disable Chat" option selected, the floating chat feature will be disabled. However, you can still use other functionalities, including the WooCommerce button, shortcodes, and button blocks provided by the plugin.', 'chat-help'),
                                         'dependency' => array('chat_layout', '==', 'off'),
                                     ),
                                     // adding contact number
+                                    array(
+                                        'type'    => 'heading',
+                                        'content' => esc_html__('WhatsApp Account', 'chat-help'),
+                                    ),
                                     array(
                                         'id' => 'type_of_whatsapp',
                                         'type' => 'radio',
                                         'inline' => true,
                                         'class' => 'chat_help_type_of_whatsapp',
                                         'title' => esc_html__('WhatsApp Type', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Select “Number” to receive direct messages, or “Group” to let people join your WhatsApp group.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/what-is-the-whatsapp-type-field-and-how-should-i-use-it/?ref=1">' . esc_html__('Detailed explanation', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Select “Number” to receive direct messages, or “Group” to let people join your WhatsApp group.', 'chat-help') . '</div>',
                                         'options'    => array(
                                             'number' => 'Number',
                                             'group' => 'Group',
@@ -144,10 +150,14 @@ class FloatingChatFields
                                      *************************************/
                                     // Show search field
                                     array(
+                                        'type'    => 'heading',
+                                        'content' => esc_html__('Agents', 'chat-help'),
+                                    ),
+                                    array(
                                         'id' => 'bubble-search',
                                         'type' => 'switcher',
                                         'title' => esc_html__('Show Search Field', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/search_field.webp') . '" alt=""></div> <div class="chat-help-info-label">' . esc_html__('Show or hide the search box. This helps visitors quickly find an agent when you have many agents.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'multi-agent-list/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/multi-agent-list/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => ' <div class="chat-help-info-label">' . esc_html__('Show or hide the search box. This helps visitors quickly find an agent when you have many agents.', 'chat-help') . '</div>',
                                         'default' => true,
                                         'text_on' => esc_html__('Yes', 'chat-help'),
                                         'text_off' => esc_html__('No', 'chat-help'),
@@ -159,7 +169,7 @@ class FloatingChatFields
                                         'type' => 'group',
                                         'title' => esc_html__('Chat Agents', 'chat-help'),
                                         'title_help' =>
-                                        esc_html__('Add and manage your chat agents. Each agent can have a name, photo, WhatsApp type (number or group), pre-filled message, timezone, availability, designation, and custom online/offline text. You can add as many agents as you need.', 'chat-help') . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'multi-agents/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/multi-agent-list/#agent-settings">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        esc_html__('Add and manage your chat agents. Each agent can have a name, photo, WhatsApp type (number or group), pre-filled message, timezone, availability, designation, and custom online/offline text. You can add as many agents as you need.', 'chat-help'),
 
                                         'dependency' => array('chat_layout', 'any', 'multi,multi_agent_form', 'any'),
                                         'fields' => array(
@@ -167,7 +177,7 @@ class FloatingChatFields
                                                 'id' => 'agent-name',
                                                 'type' => 'text',
                                                 'title' => esc_html__('Agent Name', 'chat-help'),
-                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enter the agent’s name.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'multi-agent-list/?ref=1"') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/#agent-settings"') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enter the agent’s name.', 'chat-help') . '</div>',
                                             ),
 
                                             // agent designation
@@ -177,14 +187,14 @@ class FloatingChatFields
                                                 'title' => esc_html__('Agent Designation', 'chat-help'),
                                                 'title_help' => '<div class="chat-help-info-label">' .
                                                     esc_html__('Enter the agent’s designation or role (e.g., Sales Manager, Support Agent).', 'chat-help') .
-                                                    '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'multi-agent-list/?ref=1"') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/multi-agent-list/#agent-settings"') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                    '</div>',
                                             ),
 
                                             array(
                                                 'id'    => 'agent-photo',
                                                 'type'  => 'media',
                                                 'title' => esc_html__('Agent Photo', 'chat-help'),
-                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Upload or select an image to use as the agent’s photo.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'multi-agent-list/?ref=1"') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/multi-agent-list/#agent-settings"') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Upload or select an image to use as the agent’s photo.', 'chat-help') . '</div>',
                                                 'placeholder' => CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/user.webp',
                                                 'library' => 'image',
                                                 'preview' => true,
@@ -196,7 +206,7 @@ class FloatingChatFields
                                                 'inline' => true,
                                                 'class' => 'chat_help_type_of_whatsapp',
                                                 'title' => esc_html__('WhatsApp Type', 'chat-help'),
-                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Select "Number" to receive direct messages or "Group" to let people join your WhatsApp group.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/what-is-the-whatsapp-type-field-and-how-should-i-use-it/?ref=1">' . esc_html__('Detailed explanation', 'chat-help') . '</a>',
+                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Select "Number" to receive direct messages or "Group" to let people join your WhatsApp group.', 'chat-help') . '</div>',
                                                 'options'    => array(
                                                     'number' => esc_html__('Number', 'chat-help'),
                                                     'group' => esc_html__('Group', 'chat-help'),
@@ -211,7 +221,7 @@ class FloatingChatFields
                                                 'title' => esc_html__('WhatsApp Number for Agent', 'chat-help'),
                                                 'desc' => esc_html__('WhatsApp number in international format.', 'chat-help'),
                                                 'chat-help',
-                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Add your WhatsApp number including country code. eg: +880123456189', 'chat-help') . '</div> <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-should-i-enter-my-whatsapp-number-in-the-plugin/?ref=1">Detailed explanation</a>',
+                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Add your WhatsApp number including the country code, e.g. +880123456189.', 'chat-help') . '</div> ',
                                                 'dependency' => array('agent_type_of_whatsapp',   '==', 'number'),
                                             ),
                                             array(
@@ -221,18 +231,28 @@ class FloatingChatFields
                                                 'title' => esc_html__('WhatsApp Group', 'chat-help'),
                                                 'desc' => 'WhatsApp group link.',
                                                 'chat-help',
-                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Invite your visitors to join into your whatapp group.', 'chat-help') . '</div> <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-do-i-create-a-whatsapp-group-and-invite-members/?ref=1">Detailed explanation</a>',
+                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Invite your visitors to join your WhatsApp group.', 'chat-help') . '</div> ',
                                                 'dependency' => array('agent_type_of_whatsapp',   '==', 'group'),
                                             ),
 
                                             // Predefined text
                                             array(
                                                 'id'    => 'prefilled_message',
+                                                // Matches the single-agent layout's own pre-filled message, so a
+                                                // multi-agent install does not ship every agent with a blank one.
+                                                'default' => __('Hello! I have a question about {currentTitle}.', 'chat-help'),
                                                 'type'  => 'textarea',
                                                 'title' => esc_html__('Pre-filled Message', 'chat-help'),
-                                                'title_help' => wp_kses_post('<div class="chat-help-info-label">' . esc_html__('Write a friendly, pre-filled message that will appear when users start a chat with this agent. Example: “Hi! I have a question about your services.”', 'chat-help') . '</div> <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/how-can-i-use-dynamic-variables-in-the-message-from-agent-field-single-agent-layout/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>'),
-                                                'desc' => wp_kses_post('<b>' . esc_html__('Global Vars:', 'chat-help') . '</b> {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date}<br><b>' . esc_html__('WooCommerce Vars:', 'chat-help') . '</b> {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus}<br><b>' . esc_html__('Conditional Blocks:', 'chat-help') . '</b> {PRODUCT_START} ... {PRODUCT_END}, {NOT_PRODUCT_START} ... {NOT_PRODUCT_END}, {LOGGEDIN_START} ... {LOGGEDIN_END}, {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}'),
-                                                'dependency' => array('agent_type_of_whatsapp', '==', 'number'),
+                                                'title_help' => wp_kses_post('<div class="chat-help-info-label">' . esc_html__('Write a friendly, pre-filled message that will appear when users start a chat with this agent. Example: “Hi! I have a question about your services.”', 'chat-help') . '</div> '),
+                                                // The token list renders as a searchable picker beside the field
+                                                // (see MessageTemplateField) rather than as a wall of text under it.
+                                                'variables' => 'global',
+                                                // Hidden on Multi-Agent Form: that layout builds its message from the
+                                                // Form Message Template and never reads a per-agent
+                                                // pre-filled message (MultiFormTemplate.php assigns
+                                                // $agent_message and never uses it), so the field was
+                                                // asking for a value that could not take effect.
+                                                'dependency' => array('chat_layout|agent_type_of_whatsapp', 'not-any|==', 'multi_agent_form|number', 'any'),
                                             ),
 
                                             // changeing timezone
@@ -241,7 +261,7 @@ class FloatingChatFields
                                                 'type' => 'select',
                                                 'title' => esc_html__('Timezone', 'chat-help'),
                                                 'title_help' => '<div class="chat-help-info-label">' .
-                                                    esc_html__('Select the agent’s timezone. This ensures availability times are shown correctly, even if the user is in a different timezone.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/how-do-timezone-and-availability-work-in-whatsapp-chat-help/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                    esc_html__('Select the agent’s timezone. This ensures availability times are shown correctly, even if the user is in a different timezone.', 'chat-help') . '</div>',
 
                                                 'chosen' => true,
                                                 'placeholder' => esc_html__('Select Timezone', 'chat-help'),
@@ -253,7 +273,7 @@ class FloatingChatFields
                                                 'id' => 'opt-availablity',
                                                 'type' => 'tabbed',
                                                 'title' => esc_html__('Availability', 'chat-help'),
-                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Set the agent’s available hours using 24-hour format (e.g., From 00:00 to 23:59). To mark a full day as unavailable, use 00:00 for both From and To values.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/how-do-timezone-and-availability-work-in-whatsapp-chat-help/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Set the agent’s available hours using 24-hour format (e.g., From 00:00 to 23:59). To mark a full day as unavailable, use 00:00 for both From and To values.', 'chat-help') . '</div>',
 
                                                 // sunday
                                                 'tabs' => array(
@@ -385,26 +405,23 @@ class FloatingChatFields
                                                 'id' => 'agent-online-text',
                                                 'type' => 'text',
                                                 'title' => esc_html__('Agent Online Text', 'chat-help'),
-                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Set the text that will be shown when the agent is available/online (e.g., “I am Online”).', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'multi-agents-list/?ref=1"') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/multi-agent-list/#agent-settings') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Set the text that will be shown when the agent is available/online (e.g., “I am Online”).', 'chat-help') . '</div>',
                                             ),
 
                                             array(
                                                 'id' => 'agent-offline-text',
                                                 'type' => 'text',
                                                 'title' => esc_html__('Agent Offline Text', 'chat-help'),
-                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Set the text that will be shown when the agent is unavailable/offline (e.g., “I am Offline”).', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'multi-agents-list/?ref=1"') . '">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/multi-agent-list/#agent-settings') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Set the text that will be shown when the agent is unavailable/offline (e.g., “I am Offline”).', 'chat-help') . '</div>',
                                             ),
                                             array(
                                                 'id' => 'submit_button_text',
                                                 'type' => 'text',
                                                 'title' => esc_html__('Submit Button Text', 'chat-help'),
                                                 'title_help' =>
-                                                '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/send_message_text.png') . '" alt=""></div>' .
-                                                    '<div class="chat-help-info-label">' .
+                                                '<div class="chat-help-info-label">' .
                                                     esc_html__('Enter the text to display on the submit button text.', 'chat-help') .
-                                                    '</div>' .
-                                                    ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                                    ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                    '</div>',
                                                 'default' => esc_html__('Send Message', 'chat-help'),
 
                                                 'dependency' => array('chat_layout', 'any', 'multi_agent_form', true),
@@ -413,7 +430,7 @@ class FloatingChatFields
                                                 'id' => 'submit_button_icon',
                                                 'type' => 'button_set',
                                                 'title' => esc_html__('Submit Button Icon', 'chat-help'),
-                                                'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/send_message_icon.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Select an icon to display before the submit button icon.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' . ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Select an icon to display before the submit button icon.', 'chat-help') . '</div>',
 
                                                 'options' => array(
                                                     'icofont-brand-whatsapp'    => array(
@@ -454,9 +471,7 @@ class FloatingChatFields
                                                 'title_help' =>
                                                 '<div class="chat-help-info-label">' .
                                                     esc_html__('Choose a native icon from the built-in library of 2000+ icons to display before the send message button text.', 'chat-help') .
-                                                    '</div>' .
-                                                    ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                                    ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                    '</div>',
 
                                                 'default' => 'icofont-brand-whatsapp',
                                                 'dependency' => array('chat_layout|submit_button_icon', 'any|', 'multi_agent_form|native', true),
@@ -468,9 +483,7 @@ class FloatingChatFields
                                                 'title_help' =>
                                                 '<div class="chat-help-info-label">' .
                                                     esc_html__('Upload or select a custom icon from your media library to display before the send message button text.', 'chat-help') .
-                                                    '</div>' .
-                                                    ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                                    ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                    '</div>',
 
                                                 'dependency' => array('chat_layout|submit_button_icon', 'any|', 'multi_agent_form|custom', true),
                                             ),
@@ -485,6 +498,14 @@ class FloatingChatFields
                                                 'agent-offline-text' => esc_html__('I am offline', 'chat-help'),
                                                 'submit_button_text' => esc_html__('Send Message', 'chat-help'),
                                                 'submit_button_icon' => 'icofont-brand-whatsapp',
+                                                // Initials by default. The photo below is still seeded, so
+                                                // switching this row to Custom shows it immediately —
+                                                // but a fresh install leads with the avatar rather than
+                                                // stock faces. Declared explicitly (not left absent)
+                                                // because MultiTemplate infers 'custom' from the presence
+                                                // of a photo, which made the admin and the preview
+                                                // disagree about what the row was using.
+                                                'agent_photo_type' => 'default',
                                                 'agent-photo' => [
                                                     "url" => CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/user.webp',
                                                 ]
@@ -498,6 +519,14 @@ class FloatingChatFields
                                                 'agent-offline-text' => esc_html__('I am offline', 'chat-help'),
                                                 'submit_button_text' => esc_html__('Send Message', 'chat-help'),
                                                 'submit_button_icon' => 'icofont-brand-whatsapp',
+                                                // Initials by default. The photo below is still seeded, so
+                                                // switching this row to Custom shows it immediately —
+                                                // but a fresh install leads with the avatar rather than
+                                                // stock faces. Declared explicitly (not left absent)
+                                                // because MultiTemplate infers 'custom' from the presence
+                                                // of a photo, which made the admin and the preview
+                                                // disagree about what the row was using.
+                                                'agent_photo_type' => 'default',
                                                 'agent-photo' => [
                                                     "url" => CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/agent1.webp',
                                                 ]
@@ -511,6 +540,14 @@ class FloatingChatFields
                                                 'agent-offline-text' => esc_html__('I am offline', 'chat-help'),
                                                 'submit_button_text' => esc_html__('Send Message', 'chat-help'),
                                                 'submit_button_icon' => 'icofont-brand-whatsapp',
+                                                // Initials by default. The photo below is still seeded, so
+                                                // switching this row to Custom shows it immediately —
+                                                // but a fresh install leads with the avatar rather than
+                                                // stock faces. Declared explicitly (not left absent)
+                                                // because MultiTemplate infers 'custom' from the presence
+                                                // of a photo, which made the admin and the preview
+                                                // disagree about what the row was using.
+                                                'agent_photo_type' => 'default',
                                                 'agent-photo' => [
                                                     "url" => CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/agent2.webp',
                                                 ]
@@ -524,21 +561,16 @@ class FloatingChatFields
                                                 'agent-offline-text' => esc_html__('I am offline', 'chat-help'),
                                                 'submit_button_text' => esc_html__('Send Message', 'chat-help'),
                                                 'submit_button_icon' => 'icofont-brand-whatsapp',
+                                                // Initials by default. The photo below is still seeded, so
+                                                // switching this row to Custom shows it immediately —
+                                                // but a fresh install leads with the avatar rather than
+                                                // stock faces. Declared explicitly (not left absent)
+                                                // because MultiTemplate infers 'custom' from the presence
+                                                // of a photo, which made the admin and the preview
+                                                // disagree about what the row was using.
+                                                'agent_photo_type' => 'default',
                                                 'agent-photo' => [
                                                     "url" => CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/agent3.webp',
-                                                ]
-                                            ),
-                                            array(
-                                                'agent-name' => esc_html__('Douglas A. Smith', 'chat-help'),
-                                                'agent_type_of_whatsapp' => 'number',
-                                                'agent-number' => '',
-                                                'agent-designation' => esc_html__('Support Manager', 'chat-help'),
-                                                'agent-online-text' => esc_html__('I am online', 'chat-help'),
-                                                'agent-offline-text' => esc_html__('I am offline', 'chat-help'),
-                                                'submit_button_text' => esc_html__('Send Message', 'chat-help'),
-                                                'submit_button_icon' => 'icofont-brand-whatsapp',
-                                                'agent-photo' => [
-                                                    "url" => CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/agent4.webp',
                                                 ]
                                             ),
                                             array(
@@ -550,6 +582,14 @@ class FloatingChatFields
                                                 'agent-offline-text' => esc_html__('I am offline', 'chat-help'),
                                                 'submit_button_text' => esc_html__('Send Message', 'chat-help'),
                                                 'submit_button_icon' => 'icofont-brand-whatsapp',
+                                                // Initials by default. The photo below is still seeded, so
+                                                // switching this row to Custom shows it immediately —
+                                                // but a fresh install leads with the avatar rather than
+                                                // stock faces. Declared explicitly (not left absent)
+                                                // because MultiTemplate infers 'custom' from the presence
+                                                // of a photo, which made the admin and the preview
+                                                // disagree about what the row was using.
+                                                'agent_photo_type' => 'default',
                                                 'agent-photo' => [
                                                     "url" => CHAT_HELP_DIR_URL . 'src/Frontend/assets/image/agent1.webp',
                                                 ]
@@ -581,11 +621,15 @@ class FloatingChatFields
                                      *************************************/
                                     // Form Fields for Form Layout
                                     array(
+                                        'type'    => 'heading',
+                                        'content' => esc_html__('Form', 'chat-help'),
+                                    ),
+                                    array(
                                         'id'        => 'form_editor',
                                         'type'      => 'group',
                                         'title' => esc_html__('Form Fields', 'chat-help'),
                                         'accordion_title_number' => true,
-                                        'title_help' => '<div class="chat-help-info-label">' .  esc_html__('Add and customize the input fields for your WhatsApp form.', 'chat-help') .  '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/single-form/#form-fields-field-options">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' .  esc_html__('Add and customize the input fields for your WhatsApp form.', 'chat-help') .  '</div>',
                                         'class' => 'chat-help-form-fields-wrapper',
                                         'accordion_title_by' => 'label',
                                         'dependency' => array('chat_layout', 'any', 'form,multi_agent_form', 'any'),
@@ -598,8 +642,7 @@ class FloatingChatFields
                                                 'title_help' =>
                                                 '<div class="chat-help-info-label">' .
                                                     esc_html__('Select the type of form field you want to add (Text, Email, Phone Number, Textarea, or Select). Each field type allows you to collect different kinds of user input.', 'chat-help') .
-                                                    '</div>' .
-                                                    ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/single-form/#form-fields-field-options') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                    '</div>',
 
                                                 'options' => array(
                                                     'text' => esc_html__('Text', 'chat-help'),
@@ -624,8 +667,7 @@ class FloatingChatFields
                                                     '</div>' .
                                                     '<div>' .
                                                     esc_html__('The label appears above or beside the input field and helps users understand what information to provide.', 'chat-help') .
-                                                    '</div>' .
-                                                    ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/single-form/#form-fields-field-options') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                    '</div>',
 
                                                 'placeholder' => esc_html__('Field Label', 'chat-help'),
                                             ),
@@ -633,7 +675,7 @@ class FloatingChatFields
                                                 'id'    => 'placeholder',
                                                 'type'  => 'text',
                                                 'title' => esc_html__('Placeholder', 'chat-help'),
-                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enter the placeholder text for this field.', 'chat-help') . '</div>' . '<div>' . esc_html__('The placeholder appears inside the input box and disappears when the user types.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/single-form/#form-fields-field-options') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enter the placeholder text for this field.', 'chat-help') . '</div>' . '<div>' . esc_html__('The placeholder appears inside the input box and disappears when the user types.', 'chat-help') . '</div>',
 
 
                                                 'placeholder' => esc_html__('E.g. placeholder', 'chat-help'),
@@ -646,8 +688,7 @@ class FloatingChatFields
                                                 'title_help' =>
                                                 '<div class="chat-help-info-label">' .
                                                     esc_html__('Set a default placeholder option for the select dropdown (e.g., "Select Option"). This option will appear as the first unselectable choice until the user picks a value.', 'chat-help') .
-                                                    '</div>' .
-                                                    ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/single-form/#form-fields-field-options') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                    '</div>',
                                                 'desc'    => esc_html__('Leave blank if you don\'t want to display a default placeholder option.', 'chat-help'),
                                                 'default' => esc_html__('Select Option', 'chat-help'),
 
@@ -661,8 +702,7 @@ class FloatingChatFields
                                                 'title_help' =>
                                                 '<div class="chat-help-info-label">' .
                                                     esc_html__('Add the options that will appear in the select dropdown. You can add as many options as needed using the repeater.', 'chat-help') .
-                                                    '</div>' .
-                                                    ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/single-form/#select-field-options-special-fields') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                    '</div>',
                                                 'fields' => array(
                                                     array(
                                                         'id'    => 'option',
@@ -671,8 +711,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Enter the label for this option. Each entry becomes a selectable choice in the dropdown list.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/single-form/#select-field-options-special-fields') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                     ),
                                                 ),
                                             ),
@@ -684,8 +723,7 @@ class FloatingChatFields
                                                 'title_help' =>
                                                 '<div class="chat-help-info-label">' .
                                                     esc_html__('Check this option to make the field mandatory. Users will not be able to submit the form without filling in this field.', 'chat-help') .
-                                                    '</div>' .
-                                                    ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/form-fields/?ref=4') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                    '</div>',
 
                                                 'default' => true,
                                                 'dependency' => array('field_select', '!=', 'select'),
@@ -695,11 +733,9 @@ class FloatingChatFields
                                                 'type'    => 'text',
                                                 'title'   => esc_html__('Custom Validation Message', 'chat-help'),
                                                 'title_help' =>
-                                                '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/custom_validation.png') . '" alt="' . esc_html__('Custom Validation Message Preview', 'chat-help') . '"></div>' .
-                                                    '<div>' .
+                                                '<div>' .
                                                     esc_html__('Set a custom error message that will appear if the user leaves this required field empty or enters invalid data.', 'chat-help') .
-                                                    '</div>' .
-                                                    ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/single-form/#form-fields-field-options') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                    '</div>',
 
                                             ),
                                         ),
@@ -723,9 +759,7 @@ class FloatingChatFields
                                         'id' => 'chat_input_label',
                                         'type' => 'switcher',
                                         'title' => esc_html__('Input Label', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/label.png') . '" alt=""></div> <div class="chat-help-info-label">' . esc_html__('Show or hide labels above form fields.', 'chat-help') . '</div>' .
-                                            '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/single-form/#form-fields-field-options">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => ' <div class="chat-help-info-label">' . esc_html__('Show or hide labels above form fields.', 'chat-help') . '</div>',
                                         'text_on' => esc_html__('Show', 'chat-help'),
                                         'text_off' => esc_html__('Hide', 'chat-help'),
                                         'text_width' => 80,
@@ -734,9 +768,11 @@ class FloatingChatFields
 
                                     array(
                                         'id' => 'whatsapp_message_template',
+                                        // 'form' also offers a token per configured Form Field.
+                                        'variables' => 'form',
                                         'type' => 'textarea',
                                         'title' => esc_html__('Form Message Template', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-info-label">' .  esc_html__('Customize the WhatsApp message template sent after form submission.', 'chat-help') . '</div>' . ' ' . esc_html__('Use {form_fields} to include all fields, or insert specific variables (e.g., {text_1}, {textarea_2}) for more control.', 'chat-help') .      '</br>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-can-i-use-dynamic-variables-in-the-single-form-layout/">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' .  esc_html__('Customize the WhatsApp message template sent after form submission.', 'chat-help') . '</div>' . ' ' . esc_html__('Use {form_fields} to include all fields, or insert specific variables (e.g., {text_1}, {textarea_2}) for more control.', 'chat-help') .      '</br>',
                                         'default' => "Hello! \nI’d like to get in touch regarding {currentTitle}.\nHere are my details:\n{form_fields}  {PRODUCT_START}\nProduct: {productName}\nPrice: {productPrice}{PRODUCT_END}",
                                         'desc' => '<div class="message_variables"></div>',
                                         'dependency' => array('chat_layout', 'any', 'form,multi_agent_form', 'any'),
@@ -747,12 +783,14 @@ class FloatingChatFields
                                      *************************************/
 
                                     array(
+                                        'type'    => 'heading',
+                                        'content' => esc_html__('Chat Content', 'chat-help'),
+                                    ),
+                                    array(
                                         'id' => 'show_current_time',
                                         'type' => 'switcher',
                                         'title' => esc_html__('Current Time', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/current_time.png') . '" alt=""></div> <div class="chat-help-info-label">' . esc_html__('Enable to display the current time before the agent’s message.', 'chat-help') . '</div>' .
-                                            '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/single-agent/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/single-agent/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => ' <div class="chat-help-info-label">' . esc_html__('Enable to display the current time before the agent’s message.', 'chat-help') . '</div>',
                                         'default' => true,
                                         'dependency' => array('chat_layout', 'any', 'agent,agent_input', 'any'),
                                         'text_on'    => esc_html__('Enabled', 'chat-help'),
@@ -765,25 +803,29 @@ class FloatingChatFields
                                         'id'    => 'agent-message',
                                         'type'  => 'textarea',
                                         'title' => esc_html__('Message From Agent', 'chat-help'),
-                                        'title_help' => wp_kses_post('<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/agent_message.png') . '" alt=""></div> <div class="chat-help-info-label">' . esc_html__('Add a custom message to display inside the agent’s message box.', 'chat-help') . '</div> <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'single-agent/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a> <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/single-agent/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>'),
+                                        'title_help' => wp_kses_post(' <div class="chat-help-info-label">' . esc_html__('Add a custom message to display inside the agent’s message box.', 'chat-help') . '</div>  '),
                                         'default' => esc_html__('Hello Welcome to {siteTitle}! Click the button below to start chatting with us on WhatsApp.', 'chat-help'),
-                                        'desc' => wp_kses_post('<b>' . esc_html__('Global Vars:', 'chat-help') . '</b> {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> <b>' . esc_html__('WooCommerce Vars:', 'chat-help') . '</b> {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} <br> <b>' . esc_html__('Conditional Blocks:', 'chat-help') . '</b> {PRODUCT_START} ... {PRODUCT_END}, {NOT_PRODUCT_START} ... {NOT_PRODUCT_END}, {LOGGEDIN_START} ... {LOGGEDIN_END}, {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}'),
+                                        // The token list renders as a searchable picker beside the field
+                                        // (see MessageTemplateField) rather than as a wall of text under it.
+                                        'variables' => 'global',
                                         'dependency' => array('chat_layout', 'any', 'agent', 'any'),
                                     ),
                                     array(
                                         'id'    => 'agent_with_input_message',
                                         'type'  => 'textarea',
                                         'title' => esc_html__('Message From Agent', 'chat-help'),
-                                        'title_help' => wp_kses_post('<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/agent_message.png') . '" alt=""></div> <div class="chat-help-info-label">' . esc_html__('Add a custom message to display inside the agent’s message box.', 'chat-help') . '</div> <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'single-agent/?ref=1') . '">' . esc_html__('Live Demo', 'chat-help') . '</a> <a class="tooltip_btn_secondary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/single-agent/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>'),
+                                        'title_help' => wp_kses_post(' <div class="chat-help-info-label">' . esc_html__('Add a custom message to display inside the agent’s message box.', 'chat-help') . '</div>  '),
                                         'default' => esc_html__('Hello and Welcome. Is there anything I can help you with?', 'chat-help'),
-                                        'desc' => wp_kses_post('<b>' . esc_html__('Global Vars:', 'chat-help') . '</b> {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br> <b>' . esc_html__('WooCommerce Vars:', 'chat-help') . '</b> {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} <br> <b>' . esc_html__('Conditional Blocks:', 'chat-help') . '</b> {PRODUCT_START} ... {PRODUCT_END}, {NOT_PRODUCT_START} ... {NOT_PRODUCT_END}, {LOGGEDIN_START} ... {LOGGEDIN_END}, {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END}'),
+                                        // The token list renders as a searchable picker beside the field
+                                        // (see MessageTemplateField) rather than as a wall of text under it.
+                                        'variables' => 'global',
                                         'dependency' => array('chat_layout', 'any', 'agent_input', 'any'),
                                     ),
                                     array(
                                         'id'    => 'agent_input_placeholder',
                                         'type'  => 'text',
                                         'title' => esc_html__('Input Placeholder', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enter the placeholder text for this field.', 'chat-help') . '</div>' . '<div>' . esc_html__('The placeholder appears inside the input box and disappears when the user types.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/pre-chat-message/#5-input-placeholder') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enter the placeholder text for this field.', 'chat-help') . '</div>' . '<div>' . esc_html__('The placeholder appears inside the input box and disappears when the user types.', 'chat-help') . '</div>',
                                         'default' => esc_html__('Enter your message', 'chat-help'),
                                         'placeholder' => esc_html__('Enter your message', 'chat-help'),
                                         'dependency' => array(
@@ -798,8 +840,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Check this option to make the field mandatory. Users will not be able to submit the form without filling in this field.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/pre-chat-message/#6-required') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'default' => true,
                                         'dependency' => array(
@@ -811,8 +852,13 @@ class FloatingChatFields
                                         'id'    => 'agent_with_input_prefilled_message',
                                         'type'  => 'textarea',
                                         'title' => esc_html__('Pre-filled Message', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Write a friendly, pre-filled message that appears when users click the chat bubble.', 'chat-help') . ' ' . esc_html__('Example: "Hi! I have a question about your services."', 'chat-help') . ' ' . esc_html__('You can also insert dynamic variables as needed.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'pre-chat-message/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/pre-chat-message/#7-pre-filled-message">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-                                        'desc' => '<b>' . esc_html__('Input:', 'chat-help') . '</b> {agentMessage} <b><br>' . esc_html__('Global Vars:', 'chat-help') . '</b> {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br>' . '<b>' . esc_html__('WooCommerce Vars:', 'chat-help') . '</b> {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} <br>' . '<b>' . esc_html__('Conditional Blocks:', 'chat-help') . '</b> {PRODUCT_START} ... {PRODUCT_END}, {NOT_PRODUCT_START} ... {NOT_PRODUCT_END}, {LOGGEDIN_START} ... {LOGGEDIN_END}, {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END} ',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Write a friendly, pre-filled message that appears when users click the chat bubble.', 'chat-help') . ' ' . esc_html__('Example: "Hi! I have a question about your services."', 'chat-help') . ' ' . esc_html__('You can also insert dynamic variables as needed.', 'chat-help') . '</div>',
+                                        // The token list renders as a searchable picker beside the field
+                                        // (see MessageTemplateField) rather than as a wall of text under it.
+                                        'variables' => 'global',
+                                        'variables_extra' => array(
+                                        	'{agentMessage}' => esc_html__('The agent message above', 'chat-help'),
+                                        ),
 
                                         'default'   => __('{agentMessage}', 'chat-help'),
                                         // Historically the Widget (per-layout) copy of this field also hid while
@@ -831,19 +877,17 @@ class FloatingChatFields
                                     ),
 
                                     array(
+                                        'type'    => 'heading',
+                                        'content' => esc_html__('Leads', 'chat-help'),
+                                    ),
+                                    array(
                                         'id'         => 'chat_help_leads',
                                         'type'       => 'switcher',
                                         'title'      => esc_html__('Leads (Form Submissions)', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Enable this option to store submitted form data as leads.', 'chat-help') .
-                                            '</div>' .
-                                            '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1#leads">' .
-                                            esc_html__('Live Demo', 'chat-help') .
-                                            '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/leads-management/?ref=1">' .
-                                            esc_html__('Open Docs', 'chat-help') .
-                                            '</a>',
+                                            '</div>',
                                         'text_on'    => esc_html__('Enable', 'chat-help'),
                                         'text_off'   => esc_html__('Disable', 'chat-help'),
                                         'text_width' => 100,
@@ -858,8 +902,10 @@ class FloatingChatFields
                                         'id'    => 'prefilled_message',
                                         'type'  => 'textarea',
                                         'title' => esc_html__('Pre-filled Message', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Write a friendly, pre-filled message that appears when users click the chat bubble.', 'chat-help') . ' ' . esc_html__('Example: "Hi! I have a question about your services."', 'chat-help') . ' ' . esc_html__('You can also insert dynamic variables as needed.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-agent/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-how-can-i-use-dynamic-variables-in-the-woocommerce-button-pre-filled-message/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-                                        'desc' => '<b>' . esc_html__('Global Vars:', 'chat-help') . '</b> {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br>' . '<b>' . esc_html__('WooCommerce Vars:', 'chat-help') . '</b> {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus} <br>' . '<b>' . esc_html__('Conditional Blocks:', 'chat-help') . '</b> {PRODUCT_START} ... {PRODUCT_END}, {NOT_PRODUCT_START} ... {NOT_PRODUCT_END}, {LOGGEDIN_START} ... {LOGGEDIN_END}, {NOT_LOGGEDIN_START} ... {NOT_LOGGEDIN_END} ',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Write a friendly, pre-filled message that appears when users click the chat bubble.', 'chat-help') . ' ' . esc_html__('Example: "Hi! I have a question about your services."', 'chat-help') . ' ' . esc_html__('You can also insert dynamic variables as needed.', 'chat-help') . '</div>',
+                                        // The token list renders as a searchable picker beside the field
+                                        // (see MessageTemplateField) rather than as a wall of text under it.
+                                        'variables' => 'global',
 
                                         'default'   => __('Hello! I have a question about {currentTitle}.', 'chat-help'),
                                         'dependency' =>
@@ -885,7 +931,7 @@ class FloatingChatFields
                                         'id' => 'select-timezone',
                                         'type' => 'select',
                                         'title' => esc_html__('Timezone', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-info-desc">' . esc_html__('Select your local timezone. Availability schedules will be applied based on this timezone.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-do-timezone-and-availability-work-in-whatsapp-chat-help/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-desc">' . esc_html__('Select your local timezone. Availability schedules will be applied based on this timezone.', 'chat-help') . '</div>',
                                         'chosen' => true,
                                         'placeholder' => esc_html__('Select Timezone', 'chat-help'),
                                         'dependency' => array(
@@ -899,7 +945,7 @@ class FloatingChatFields
                                         'id' => 'opt-availablity',
                                         'type' => 'tabbed',
                                         'title' => esc_html__('Availability', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-info-desc">' . esc_html__('Set your daily availability using 24-hour format (e.g., 09:00 to 18:00). To mark a full day as offline, set both From and To values to 00:00.', 'chat-help') . '</div>' . '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-do-timezone-and-availability-work-in-whatsapp-chat-help/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-desc">' . esc_html__('Set your daily availability using 24-hour format (e.g., 09:00 to 18:00). To mark a full day as offline, set both From and To values to 00:00.', 'chat-help') . '</div>',
                                         'dependency' => array(
                                             array('chat_layout', 'not-any', 'multi,multi_agent_form', 'any'),
                                         ),
@@ -1042,7 +1088,13 @@ class FloatingChatFields
                                     array(
                                         'id'    => 'box_header_title',
                                         'type'  => 'heading',
-                                        'content' => esc_html__('Box Header', 'chat-help'),
+                                        // Spatial, not contents-based: which fields appear here changes
+                                        // entirely with the layout (close icon + agent photo on the
+                                        // single-agent layouts, agent name + bubble title on the
+                                        // multi-agent ones), so only the region name holds true for
+                                        // all of them. "Bubble", not "Box" — the fields inside it
+                                        // already say Bubble Title / Bubble Subtitle.
+                                        'content' => esc_html__('Bubble Header', 'chat-help'),
                                         'dependency' => array('chat_layout', 'any', 'form,agent,multi,multi_agent_form', 'any'),
                                     ),
                                     // Header close icon
@@ -1064,7 +1116,7 @@ class FloatingChatFields
                                         'type' => 'button_set',
                                         'title' => esc_html__('Agent Photo Type', 'chat-help'),
                                         'title_help' => '<div class="chat-help-info-label">' .
-                                            esc_html__('Choose how the agent photo is displayed:', 'chat-help') . '</div>' . ' <b>Default:</b> ' . esc_html__('Use the plugin’s built-in photo.', 'chat-help') . '<br>' . ' <b>Custom:</b> ' . esc_html__('Upload your own image.', 'chat-help') . '<br>' . ' <b>None:</b> ' . esc_html__('No photo will be shown.', 'chat-help') . '<br>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Use the plugin’s built-in photo, upload your own image, or hide the photo.', 'chat-help') . '</div>',
                                         'options' => array(
                                             'default'   =>  esc_html__('Default', 'chat-help'),
                                             'custom' => esc_html__('Custom', 'chat-help'),
@@ -1080,7 +1132,7 @@ class FloatingChatFields
                                         'id' => 'agent-photo',
                                         'type' => 'media',
                                         'title' => esc_html__('Agent Photo', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/user_image.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Upload an agent photo to display inside the chat bubble.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Upload an agent photo to display inside the chat bubble.', 'chat-help') . '</div>',
                                         'placeholder' => esc_html__('Upload or select an image from the media library.', 'chat-help'),
 
                                         'library' => 'image',
@@ -1093,7 +1145,7 @@ class FloatingChatFields
                                         'id' => 'agent-name',
                                         'type' => 'text',
                                         'title' => esc_html__('Agent Name', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/agent_name.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Enter the agent’s name to display inside the chat bubble.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enter the agent’s name to display inside the chat bubble.', 'chat-help') . '</div>',
                                         'default' => esc_html__('John Doe', 'chat-help'),
                                         'dependency' => array('chat_layout', 'any', 'form,agent,agent_input', 'any'),
                                     ),
@@ -1103,7 +1155,7 @@ class FloatingChatFields
                                         'id' => 'agent-subtitle',
                                         'type' => 'text',
                                         'title' => esc_html__('Subtitle', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/agent_subtitle.png') . '" alt=""></div>' .  '<div class="chat-help-info-label">' . esc_html__('Enter a subtitle to display below the agent’s name in the chat bubble.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enter a subtitle to display below the agent’s name in the chat bubble.', 'chat-help') . '</div>',
                                         'default' => esc_html__('Typically replies within minutes', 'chat-help'),
                                         'dependency' => array('chat_layout', 'any', 'form,agent,agent_input', 'any'),
                                     ),
@@ -1111,7 +1163,7 @@ class FloatingChatFields
                                         'id' => 'offline_agent_subtitle',
                                         'type' => 'text',
                                         'title' => esc_html__('Offline Subtitle', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/agent_subtitle.png') . '" alt=""></div>' .  '<div class="chat-help-info-label">' . esc_html__('Enter a subtitle to display when the agent is offline in the chat bubble.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enter a subtitle to display when the agent is offline in the chat bubble.', 'chat-help') . '</div>',
                                         'default' => esc_html__('Currently offline, will reply soon.', 'chat-help'),
                                         'dependency' => array('chat_layout', 'any', 'form,agent,agent_input', 'any'),
                                     ),
@@ -1123,7 +1175,7 @@ class FloatingChatFields
                                         'id' => 'bubble-title',
                                         'type' => 'text',
                                         'title' => esc_html__('Bubble Title', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/bubble_title.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Enter the main title text to display at the top of the chat bubble.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . '8-header-and-footer/#header-footer-settings-multi-agent-list-grid">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enter the main title text to display at the top of the chat bubble.', 'chat-help') . '</div>',
                                         'default' => esc_html__('Need Help? Send a WhatsApp message now', 'chat-help'),
 
                                         'dependency' => array('chat_layout', 'any', 'multi,multi_agent_form', 'any'),
@@ -1135,12 +1187,9 @@ class FloatingChatFields
                                         'type' => 'text',
                                         'title' => esc_html__('Bubble Subtitle', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/bubble_subtitle.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Enter a subtitle to display below the main title inside the chat bubble.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-multi-agent-list-grid">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'default' => esc_html__('Click one of our representatives below', 'chat-help'),
                                         'dependency' => array('chat_layout', 'any', 'multi,multi_agent_form', 'any'),
                                     ),
@@ -1149,7 +1198,7 @@ class FloatingChatFields
                                         'id' => 'header-content-position',
                                         'type' => 'button_set',
                                         'title' => esc_html__('Bubble Header Content Position', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/header_left_center.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Choose the alignment for the header content.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Choose the alignment for the header content.', 'chat-help') . '</div>',
                                         'default' => 'left',
                                         'options' => array(
                                             'left' => esc_html__('Left', 'chat-help'),
@@ -1161,7 +1210,11 @@ class FloatingChatFields
                                     array(
                                         'id'    => 'box_footer_title',
                                         'type'  => 'heading',
-                                        'content' => esc_html__('Box Footer', 'chat-help'),
+                                        // Names what the region DOES, not just where it sits: the send
+                                        // button's icon and label live here, and they apply to
+                                        // every layout with a send button (Single Agent and
+                                        // Pre-Chat Message too), not only the form layouts.
+                                        'content' => esc_html__('Footer & Send Button', 'chat-help'),
                                         'dependency' => array('chat_layout', 'any', 'form,agent,agent_input,multi,multi_agent_form', 'any'),
                                     ),
 
@@ -1170,7 +1223,7 @@ class FloatingChatFields
                                         'id' => 'gdpr-enable',
                                         'type' => 'switcher',
                                         'title' => esc_html__('GDPR Compliance', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/gdpr.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Enable a GDPR compliance checkbox for user consent before sending a message.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-does-gdpr-compliance-work-in-whatsapp-chat-help/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Enable a GDPR compliance checkbox for user consent before sending a message.', 'chat-help') . '</div>',
                                         'text_on' => esc_html__('Enable', 'chat-help'),
                                         'text_off' => esc_html__('Disable', 'chat-help'),
                                         'text_width' => 100,
@@ -1181,7 +1234,7 @@ class FloatingChatFields
                                         'id' => 'gdpr-compliance-content',
                                         'type' => 'wp_editor',
                                         'title' => esc_html__('GDPR Compliance Message', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Customize the GDPR compliance text shown with the consent checkbox.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-does-gdpr-compliance-work-in-whatsapp-chat-help/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Customize the GDPR compliance text shown with the consent checkbox.', 'chat-help') . '</div>',
                                         'default' => esc_attr__('Please accept our <a href="#">privacy policy</a> before starting a conversation.', 'chat-help'),
                                         'dependency' => array('chat_layout|gdpr-enable', '!=|==', 'button|true', 'any'),
                                     ),
@@ -1210,7 +1263,7 @@ class FloatingChatFields
                                         'id' => 'before-chat-icon',
                                         'type' => 'button_set',
                                         'title' => esc_html__('Icon for Send Message Button', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/send_message_icon.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Select an icon to display before the send message button text.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Select an icon to display before the send message button text.', 'chat-help') . '</div>',
 
                                         'options' => array(
                                             'icofont-brand-whatsapp'    => array(
@@ -1252,9 +1305,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Choose a native icon from the built-in library of 2000+ icons to display before the send message button text.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'default' => 'icofont-brand-whatsapp',
                                         'dependency' => array('chat_layout|before-chat-icon', 'any|', 'form,agent,agent_input|native', 'any'),
@@ -1266,9 +1317,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Upload or select a custom icon from your media library to display before the send message button text.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'dependency' => array('chat_layout|before-chat-icon', 'any|==', 'form,agent,agent_input|custom', 'any'),
                                     ),
@@ -1279,12 +1328,9 @@ class FloatingChatFields
                                         'type' => 'text',
                                         'title' => esc_html__('Send Message Button Label', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/send_message_text.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Enter the text to display on the send message button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'default' => esc_html__('Send Message', 'chat-help'),
 
                                         'dependency' => array('chat_layout', 'any', 'form,agent', 'any'),
@@ -1296,8 +1342,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Enable or disable the footer text below the chat box. You can also replace the default text with your own custom message.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/header-and-footer/?ref=1#box-footer">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'text_on' => esc_html__('Enable', 'chat-help'),
                                         'text_off' => esc_html__('Disable', 'chat-help'),
                                         'text_width' => 100,
@@ -1310,8 +1355,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Enter the text or HTML you’d like to show in the footer when the footer content option is enabled.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/header-and-footer/?ref=1#box-footer">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'default' => __('Chat with us on WhatsApp', 'chat-help'),
 
                                         'dependency' => array('chat_layout|footer_content', '!=|==', 'button|true', 'any'),
@@ -1320,7 +1364,12 @@ class FloatingChatFields
                             ),
 
                             array(
-                                'title' => esc_html__('Button', 'chat-help'),
+                                // `id` pins the section slug. Without it the slug is
+                                // sanitize_title() of the title, so renaming the tab would
+                                // silently move its URL (#/.../button) and break any link
+                                // or bookmark pointing at it.
+                                'id'    => 'button',
+                                'title' => esc_html__('Floating Button', 'chat-help'),
                                 'icon' => 'icofont-scroll-double-right',
                                 'dependency' => array('chat_layout', '!=', 'off', 'any'),
                                 'fields' => array(
@@ -1331,9 +1380,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Choose a style for the floating chat button from the available design options.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'floating-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'options' => array(
                                             '1' => array(
@@ -1361,7 +1408,7 @@ class FloatingChatFields
                                         'type' => 'button_set',
                                         'title' => esc_html__('Agent Avatar Type', 'chat-help'),
                                         'title_help' => '<div class="chat-help-info-label">' .
-                                            esc_html__('Choose how the agent photo is displayed:', 'chat-help') . '</div>' . ' <b>Default:</b> ' . esc_html__('Use the plugin’s built-in photo.', 'chat-help') . '<br>' . ' <b>Custom:</b> ' . esc_html__('Upload your own image.', 'chat-help') . '<br>' . ' <b>None:</b> ' . esc_html__('No photo will be shown.', 'chat-help') . '<br>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Use the plugin’s built-in photo, upload your own image, or hide the photo.', 'chat-help') . '</div>',
                                         'options' => array(
                                             'default'   =>  esc_html__('Default', 'chat-help'),
                                             'custom' => esc_html__('Custom', 'chat-help'),
@@ -1376,7 +1423,7 @@ class FloatingChatFields
                                         'id' => 'agent_avatar',
                                         'type' => 'media',
                                         'title' => esc_html__('Agent Avatar', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/user_image.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Upload an agent photo to display inside the chat bubble.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Upload an agent photo to display inside the chat button.', 'chat-help') . '</div>',
                                         'placeholder' => esc_html__('Upload or select an image from the media library.', 'chat-help'),
 
                                         'library' => 'image',
@@ -1389,12 +1436,50 @@ class FloatingChatFields
                                         'type' => 'button_set',
                                         'title' => esc_html__('Chat Button Image Type', 'chat-help'),
                                         'title_help' => '<div class="chat-help-info-label">' .
-                                            esc_html__('Choose how the button image is displayed:', 'chat-help') . '</div>' . ' <b>Default:</b> ' . esc_html__('Use the plugin’s built-in photo.', 'chat-help') . '<br>' . ' <b>Custom:</b> ' . esc_html__('Upload your own image.', 'chat-help') . '<br>' . ' <b>None:</b> ' . esc_html__('No photo will be shown.', 'chat-help') . '<br>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Use the built-in icon chosen below, upload your own image, or hide the image.', 'chat-help') . '</div>',
                                         'options' => array(
                                             'default'   =>  esc_html__('Default', 'chat-help'),
                                             'custom' => esc_html__('Custom', 'chat-help'),
                                             'none' => esc_html__('None', 'chat-help'),
                                         ),
+
+                                    // Which icon the built-in ("Default") button image shows. The
+                                    // built-in image was a fixed WhatsApp SVG, so "Default" meant
+                                    // one specific brand mark; the circle and simple buttons each
+                                    // had an icon picker but this one did not. Same option set as
+                                    // `circle-button-icon`, minus Native/Custom/No Icon — this
+                                    // button's own Image Type field already expresses those.
+                                    array(
+                                        'id' => 'chat_button_default_icon',
+                                        'type' => 'button_set',
+                                        'title' => esc_html__('Chat Button Default Icon', 'chat-help'),
+                                        'title_help' =>
+                                        '<div class="chat-help-info-label">' .
+                                            esc_html__('Select the icon shown inside the chat button when the image type is Default.', 'chat-help') .
+                                            '</div>',
+                                        'options' => array(
+                                            'icofont-brand-whatsapp'    => array(
+                                                'option_name' => '<i class="icofont-brand-whatsapp"></i>',
+                                            ),
+                                            'icofont-whatsapp'    => array(
+                                                'option_name' => '<i class="icofont-whatsapp"></i>',
+                                            ),
+                                            'icofont-live-support'    => array(
+                                                'option_name' => '<i class="icofont-live-support"></i>',
+                                            ),
+                                            'icofont-ui-messaging'    => array(
+                                                'option_name' => '<i class="icofont-ui-messaging"></i>',
+                                            ),
+                                            'icofont-telegram'    => array(
+                                                'option_name' => '<i class="icofont-telegram"></i>',
+                                            ),
+                                            'icofont-paper-plane'    => array(
+                                                'option_name' => '<i class="icofont-paper-plane"></i>',
+                                            ),
+                                        ),
+                                        'default' => 'icofont-brand-whatsapp',
+                                        'dependency' => array('chat_layout|opt-button-style|chat_button_image_type', 'any|==|==', 'multi,multi_agent_form|10|default', 'any'),
+                                    ),
                                         'default'   => 'default',
                                         'dependency' => array('chat_layout|opt-button-style', 'any|==', 'multi,multi_agent_form|10', 'any'),
                                     ),
@@ -1404,7 +1489,7 @@ class FloatingChatFields
                                         'id' => 'chat_button_image',
                                         'type' => 'media',
                                         'title' => esc_html__('Chat Button Image', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/user_image.png') . '" alt=""></div>' . '<div class="chat-help-info-label">' . esc_html__('Upload an agent photo to display inside the chat bubble.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form">' . esc_html__('Live Demo', 'chat-help') . '</a>' . '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/8-header-and-footer/#header-footer-settings-single-form-single-agent">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' . esc_html__('Upload the image to display inside the chat button.', 'chat-help') . '</div>',
                                         'placeholder' => esc_html__('Upload or select an image from the media library.', 'chat-help'),
                                         'library' => 'image',
                                         'preview' => true,
@@ -1417,12 +1502,9 @@ class FloatingChatFields
                                         'type' => 'text',
                                         'title' => esc_html__('Button Top Label', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/button_text.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Enter the text to display inside the floating chat button top label.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'simple-button/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'default' => esc_html__('John Doe / Technical support', 'chat-help'),
 
                                         'dependency' => array('chat_layout|opt-button-style', 'any|==', 'form,agent,agent_input,button|10', 'any'),
@@ -1432,12 +1514,9 @@ class FloatingChatFields
                                         'type' => 'text',
                                         'title' => esc_html__('Button Main Label', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/button_text.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Enter the text to display inside the floating chat button main label.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'simple-button/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'default' => esc_html__('How may I help you?', 'chat-help'),
 
                                         'dependency' => array('chat_layout|opt-button-style', 'any|!=', 'form,agent,agent_input,button|1', 'any'),
@@ -1447,12 +1526,9 @@ class FloatingChatFields
                                         'type' => 'text',
                                         'title' => esc_html__('Button Top Label', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/button_text.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Enter the text to display inside the floating chat button top label.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'simple-button/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'default' => esc_html__('Support Team', 'chat-help'),
 
                                         'dependency' => array('chat_layout|opt-button-style', 'any|==', 'multi,multi_agent_form|10', 'any'),
@@ -1462,12 +1538,9 @@ class FloatingChatFields
                                         'type' => 'text',
                                         'title' => esc_html__('Button Main Label', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/button_text.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Enter the text to display inside the floating chat button main label.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'simple-button/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'default' => esc_html__('Start a conversation', 'chat-help'),
 
                                         'dependency' => array('chat_layout|opt-button-style', 'any|!=', 'multi,multi_agent_form|1', 'any'),
@@ -1478,12 +1551,9 @@ class FloatingChatFields
                                         'type' => 'text',
                                         'title' => esc_html__('Online Text', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/i_am_on.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Set the text to display when the agent is online and available for chat.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'default' => esc_html__('I Am Online', 'chat-help'),
 
                                         'dependency' => array('chat_layout|opt-button-style', 'not-any|==', 'multi,multi_agent_form|10', 'any'),
@@ -1494,12 +1564,9 @@ class FloatingChatFields
                                         'type' => 'text',
                                         'title' => esc_html__('Offline Text', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/i_am_of.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Set the text to display when the agent is offline or unavailable for chat.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'default' => esc_html__('I Am Offline', 'chat-help'),
 
                                         'dependency' => array('chat_layout|opt-button-style', 'not-any|==', 'multi,multi_agent_form|10', 'any'),
@@ -1511,12 +1578,9 @@ class FloatingChatFields
                                         'type' => 'button_set',
                                         'title' => esc_html__('Icon for Circle Button', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/circle_icon.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Select an icon to display inside the circular chat button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'icon-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#icon-button-minimal-floating-button">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'options' => array(
                                             'icofont-brand-whatsapp'    => array(
@@ -1556,8 +1620,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Choose a native icon from the built-in library of 2000+ icons to display inside the circular chat button.', 'chat-help') .
-                                            '</div>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#icon-button-minimal-floating-button">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'default' => 'icofont-brand-whatsapp',
                                         'dependency' => array('opt-button-style|circle-button-icon-1', '==|==', '1|native', 'any'),
@@ -1569,8 +1632,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Upload or select a custom icon from your media library to display inside the circular chat button.', 'chat-help') .
-                                            '</div>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#icon-button-minimal-floating-button">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'dependency' => array('opt-button-style|circle-button-icon-1', '==|==', '1|custom', 'any'),
                                     ),
@@ -1583,9 +1645,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Select the icon to display when the circular chat button is in the close state.', 'chat-help') .
-                                            '</div>' .
-                                            '<a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'simple-button/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#icon-button-minimal-floating-button">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'options' => array(
                                             'icofont-close'    => array(
@@ -1621,8 +1681,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Choose a native icon from the built-in library to display when the circular chat button is in the close state.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#icon-button-minimal-floating-button">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'default' => 'icofont-close',
                                         'dependency' => array('opt-button-style|circle-button-close-1', '==|==', '1|native', 'any'),
@@ -1634,8 +1693,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Upload or select a custom icon from your media library to display when the circular chat button is in the close state.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#icon-button-minimal-floating-button">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'dependency' => array('opt-button-style|circle-button-close-1', '==|==', '1|custom', 'any'),
                                     ),
@@ -1646,11 +1704,9 @@ class FloatingChatFields
                                         'type' => 'button_set',
                                         'title' => esc_html__('Icon for Button', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/button_icon.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Select an icon to display inside the floating chat button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'options' => array(
                                             'icofont-brand-whatsapp'    => array(
@@ -1692,9 +1748,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Choose a native icon from the built-in library of 2000+ icons to display inside the floating chat button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'simple-button/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'default' => 'icofont-brand-whatsapp',
                                         'dependency' => array('opt-button-style|circle-button-icon', '==|==', '2|native', 'any'),
@@ -1706,9 +1760,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Upload or select a custom icon from your media library to display inside the floating chat button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'dependency' => array('opt-button-style|circle-button-icon', '==|==', '2|custom', 'any'),
                                     ),
@@ -1719,12 +1771,9 @@ class FloatingChatFields
                                         'type' => 'button_set',
                                         'title' => esc_html__('Icon for Button Close', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/button_icon_close.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Select the icon to display when the floating chat button is in the close state.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'options' => array(
                                             'icofont-close'    => array(
@@ -1759,9 +1808,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Choose a native icon from the built-in library to display when the floating chat button is in the close state.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'default' => 'icofont-close',
                                         'dependency' => array('circle-button-icon|opt-button-style|circle-button-close', '!=|==|==', 'no_icon|2|native', 'any'),
@@ -1773,9 +1820,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Upload or select a custom icon from your media library to display when the floating chat button is in the close state.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'dependency' => array('circle-button-icon|opt-button-style|circle-button-close', '!=|==|==', 'no_icon|2|custom', 'any'),
                                     ),
@@ -1787,9 +1832,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Select the animation effect used when toggling the circular chat button between open and close states.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#icon-button-minimal-floating-button">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'options' => array(
                                             '1' => esc_html__('Slide Down', 'chat-help'),
                                             '3' => esc_html__('Fade', 'chat-help'),
@@ -1835,7 +1878,7 @@ class FloatingChatFields
                                         'id'          => 'button_size_custom',
                                         'type'        => 'slider',
                                         'title'       => esc_html__('Custom Switch Size', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-info-desc">' . esc_html__('Scale in percentage relative to normal size.', 'chat-help') . '</div><a class="tooltip_btn_primary" href="' . CHAT_HELP_DEMO_URL . 'simple-button/" target="_blank">' . esc_html__('Live Demo', 'chat-help') . '</a><a class="tooltip_btn_secondary" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1" target="_blank">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-desc">' . esc_html__('Scale in percentage relative to normal size.', 'chat-help') . '</div>',
                                         'default' => '100',
                                         'min'     => 40,
                                         'max'     => 300,
@@ -1843,9 +1886,19 @@ class FloatingChatFields
                                     ),
                                     array(
                                         'id'        => 'bubble_icon_color',
+                                        // Deliberately no default. Buttons.php's fallback for this one
+                                        // colour is conditional: white while the icon sits directly on
+                                        // the coloured pill, but the button's own background colour once
+                                        // Simple Button draws the icon on its white circle
+                                        // (`bubble_icon_bg`, on by default). A fixed '#ffffff' default
+                                        // satisfied `!empty()` there and painted a white icon on that
+                                        // white circle — the Simple Button preview looked iconless.
+                                        // Left unset, the conditional fallback runs, and ColorField
+                                        // already renders an unset swatch as "inherited" rather than
+                                        // asserting black.
                                         'type'      => 'color_group',
                                         'title' => esc_html__('Icon Color', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/icon_background.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' .
+                                        'title_help' => '<div class="chat-help-info-label">' .
                                             esc_html__('You can define normal and hover colors for the button icon.', 'chat-help') .
                                             '</div>',
                                         'options' => array(
@@ -1861,11 +1914,9 @@ class FloatingChatFields
                                         'title' => esc_html__('Icon Background', 'chat-help'),
                                         'text_on' => esc_html__('Enable', 'chat-help'),
                                         'text_off' => esc_html__('Disable', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/icon_background.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' .
-                                            esc_html__('Enable/Disable Button Inner Icon Background', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'simple-button/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                        'title_help' => '<div class="chat-help-info-label">' .
+                                            esc_html__('Draw the icon on its own background circle.', 'chat-help') .
+                                            '</div>',
 
                                         'default' => true,
                                         'text_width' => 90,
@@ -1875,6 +1926,13 @@ class FloatingChatFields
 
                                     array(
                                         'id'        => 'bubble_icon_bg_color',
+                                        // Matches the frontend's own fallback (Buttons.php), so the admin
+                                        // shows the colour that actually renders instead of an empty
+                                        // field whose swatch defaulted to black.
+                                        'default' => array(
+                                        	'normal_color' => '#ffffff',
+                                        	'hover_color'  => '#ffffff',
+                                        ),
                                         'type'      => 'color_group',
                                         'title' => esc_html__('Icon Background Color', 'chat-help'),
                                         'title_help' => '
@@ -1898,11 +1956,9 @@ class FloatingChatFields
                                         'id'        => 'bubble_button_bg',
                                         'type'      => 'color_group',
                                         'title' => esc_html__('Button Background', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/button_background.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' .
+                                        'title_help' => '<div class="chat-help-info-label">' .
                                             esc_html__('Set your button background color.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'options' => array(
                                             'normal_color'   => esc_html__('Normal Color', 'chat-help'),
                                             'hover_color' => esc_html__('Hover Color', 'chat-help'),
@@ -1910,13 +1966,18 @@ class FloatingChatFields
                                     ),
                                     array(
                                         'id'        => 'bubble_button_text',
+                                        // Matches the frontend's own fallback (Buttons.php), so the admin
+                                        // shows the colour that actually renders instead of an empty
+                                        // field whose swatch defaulted to black.
+                                        'default' => array(
+                                        	'normal_color' => '#ffffff',
+                                        	'hover_color'  => '#ffffff',
+                                        ),
                                         'type'      => 'color_group',
                                         'title' => esc_html__('Button Label Color', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/button_text_color.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' .
+                                        'title_help' => '<div class="chat-help-info-label">' .
                                             esc_html__('Set your button label color.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            ' <a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'options' => array(
                                             'normal_color'   => esc_html__('Normal Color', 'chat-help'),
                                             'hover_color' => esc_html__('Hover Color', 'chat-help'),
@@ -1928,11 +1989,9 @@ class FloatingChatFields
                                         'id' => 'bubble_button_border',
                                         'type' => 'border',
                                         'title' => esc_html__('Button Border', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/button_border.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' .
+                                        'title_help' => '<div class="chat-help-info-label">' .
                                             esc_html__('Set border for the floating chat button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'all'      => true,
                                         'hover_color'      => true,
                                         'border_radius'      => true,
@@ -1977,11 +2036,9 @@ class FloatingChatFields
                                         'id' => 'bubble_icon_border',
                                         'type' => 'border',
                                         'title' => esc_html__('Icon Border', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/button_border.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' .
+                                        'title_help' => '<div class="chat-help-info-label">' .
                                             esc_html__('Set border for the floating chat button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'all'      => true,
                                         'hover_color'      => true,
                                         'border_radius'      => true,
@@ -1999,11 +2056,9 @@ class FloatingChatFields
                                         'id' => 'bubble-button-padding',
                                         'type' => 'spacing',
                                         'title' => esc_html__('Button Padding', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/button_padding.jpg') . '" alt=""></div>' . '<div class="chat-help-info-label">' .
+                                        'title_help' => '<div class="chat-help-info-label">' .
                                             esc_html__('Adjust the inner spacing (padding) of the floating chat button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#simple-button-icon-text">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'default' => array(
                                             'top' => '5',
                                             'right' => '15',
@@ -2018,12 +2073,9 @@ class FloatingChatFields
                                         'type' => 'button_set',
                                         'title' => esc_html__('Button Tooltip', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/tooltip.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Enable and customize the tooltip text that appears when hovering over the floating chat button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-agent/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#tooltip-settings">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'options' => array(
                                             'on_hover' => esc_html__('On Hover', 'chat-help'),
@@ -2037,12 +2089,9 @@ class FloatingChatFields
                                         'type' => 'text',
                                         'title' => esc_html__('Button Tooltip Text', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/tooltip.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Enter the text that will appear inside the tooltip when hovering over the floating chat button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-agent/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#tooltip-settings">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'default' => esc_html__('Need Help? Chat with us', 'chat-help'),
 
                                         'dependency' => array('bubble_button_tooltip', '!=', 'hide', 'any'),
@@ -2054,9 +2103,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Choose the background color for the tooltip that appears when hovering over the floating chat button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-agent/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#tooltip-settings">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'default' => '#f5f7f9',
                                         'dependency' => array('bubble_button_tooltip', '!=', 'hide', 'any'),
@@ -2066,12 +2113,9 @@ class FloatingChatFields
                                         'type' => 'slider',
                                         'title' => esc_html__('Button Tooltip Width', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag"><img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/tooltip_width.png') . '" alt=""></div>' .
-                                            '<div class="chat-help-info-label">' .
+                                        '<div class="chat-help-info-label">' .
                                             esc_html__('Set the maximum width of the tooltip that appears when hovering over the floating chat button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-agent/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#tooltip-settings">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'min' => 20,
                                         'max' => 500,
@@ -2092,9 +2136,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Select the screen position where the floating chat button will appear.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'options' => array(
                                             'right_bottom' => esc_html__('Bottom Right', 'chat-help'),
                                             'left_bottom'  => esc_html__('Bottom Left', 'chat-help'),
@@ -2112,9 +2154,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Set the margin (spacing) of the floating chat button from the bottom and right edges of the screen. Adjust to reposition the button as needed.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'top'   => false,
                                         'left'  => false,
@@ -2133,9 +2173,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Set the margin (spacing) of the floating chat button from the bottom and left edges of the screen. Adjust to reposition the button as needed.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'top'   => false,
                                         'right'  => false,
@@ -2154,9 +2192,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Set the margin (spacing) of the floating chat button from the right edge of the screen when positioned in the middle. Adjust to fine-tune its placement.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'top'   => false,
                                         'left'  => false,
@@ -2175,9 +2211,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Set the margin (spacing) of the floating chat button from the left edge of the screen when positioned in the middle. Adjust to fine-tune its placement.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'top'   => false,
                                         'right' => false,
@@ -2196,9 +2230,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Enable this option to set a custom bubble position specifically for tablet devices. Useful for optimizing layout and user experience on medium screens.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'text_on' => esc_html__('Yes', 'chat-help'),
                                         'text_off'  => esc_html__('No', 'chat-help'),
@@ -2212,10 +2244,8 @@ class FloatingChatFields
                                         'title' => esc_html__('Bubble Position', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Select the screen position where the chat bubble will appear.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Select the screen position where the floating chat button will appear.', 'chat-help') .
+                                            '</div>',
                                         'options' => array(
                                             'right_bottom' => esc_html__('Bottom Right', 'chat-help'),
                                             'left_bottom'  => esc_html__('Bottom Left', 'chat-help'),
@@ -2232,10 +2262,8 @@ class FloatingChatFields
                                         'title' => esc_html__('Margin from Bottom Right', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Set the margin (spacing) of the chat bubble from the bottom and right edges of the screen. Adjust to fine-tune its placement.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Set the margin (spacing) of the floating chat button from the bottom and right edges of the screen. Adjust to fine-tune its placement.', 'chat-help') .
+                                            '</div>',
 
                                         'top'   => false,
                                         'left'  => false,
@@ -2253,10 +2281,8 @@ class FloatingChatFields
                                         'title' => esc_html__('Margin from Bottom Left', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Set the margin (spacing) of the chat bubble from the bottom and left edges of the screen. Adjust to fine-tune its placement.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Set the margin (spacing) of the floating chat button from the bottom and left edges of the screen. Adjust to fine-tune its placement.', 'chat-help') .
+                                            '</div>',
 
                                         'top'   => false,
                                         'right'  => false,
@@ -2274,10 +2300,8 @@ class FloatingChatFields
                                         'title' => esc_html__('Margin from Middle Right', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Set the margin (spacing) of the chat bubble from the right edge of the screen when positioned in the middle. Adjust to fine-tune its placement.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Set the margin (spacing) of the floating chat button from the right edge of the screen when positioned in the middle. Adjust to fine-tune its placement.', 'chat-help') .
+                                            '</div>',
 
                                         'top'   => false,
                                         'left'  => false,
@@ -2295,10 +2319,8 @@ class FloatingChatFields
                                         'title' => esc_html__('Margin from Middle Left', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Set the margin (spacing) of the chat bubble from the left edge of the screen when positioned in the middle. Adjust to fine-tune its placement.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Set the margin (spacing) of the floating chat button from the left edge of the screen when positioned in the middle. Adjust to fine-tune its placement.', 'chat-help') .
+                                            '</div>',
 
                                         'top'   => false,
                                         'right' => false,
@@ -2318,9 +2340,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Enable this option to set a custom chat bubble position specifically for mobile devices. Useful for optimizing layout and usability on smaller screens.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'text_on' => esc_html__('Yes', 'chat-help'),
                                         'text_off'  => esc_html__('No', 'chat-help'),
                                         'dependency'    => array('bubble-visibility', '==', 'everywhere', 'any')
@@ -2333,10 +2353,8 @@ class FloatingChatFields
                                         'title' => esc_html__('Bubble Position', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Select the screen position where the chat bubble will appear.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Select the screen position where the floating chat button will appear.', 'chat-help') .
+                                            '</div>',
                                         'options' => array(
                                             'right_bottom' => esc_html__('Bottom Right', 'chat-help'),
                                             'left_bottom'  => esc_html__('Bottom Left', 'chat-help'),
@@ -2354,10 +2372,8 @@ class FloatingChatFields
                                         'title' => esc_html__('Margin from Bottom Right', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Set the margin (spacing) of the chat bubble from the bottom and right edges of the screen. Adjust to reposition the bubble as needed.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Set the margin (spacing) of the floating chat button from the bottom and right edges of the screen. Adjust to reposition the bubble as needed.', 'chat-help') .
+                                            '</div>',
 
                                         'top'   => false,
                                         'left'  => false,
@@ -2375,10 +2391,8 @@ class FloatingChatFields
                                         'title' => esc_html__('Margin from Bottom Left', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Set the margin (spacing) of the chat bubble from the bottom and left edges of the screen. Adjust to reposition the bubble as needed.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Set the margin (spacing) of the floating chat button from the bottom and left edges of the screen. Adjust to reposition the bubble as needed.', 'chat-help') .
+                                            '</div>',
 
                                         'top'   => false,
                                         'right'  => false,
@@ -2396,10 +2410,8 @@ class FloatingChatFields
                                         'title' => esc_html__('Margin from Middle Right', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Set the margin (spacing) of the chat bubble from the right edge of the screen when positioned in the middle. Adjust to fine-tune its placement.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Set the margin (spacing) of the floating chat button from the right edge of the screen when positioned in the middle. Adjust to fine-tune its placement.', 'chat-help') .
+                                            '</div>',
 
                                         'top'   => false,
                                         'left'  => false,
@@ -2417,10 +2429,8 @@ class FloatingChatFields
                                         'title' => esc_html__('Margin from Middle Left', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Set the margin (spacing) of the chat bubble from the left edge of the screen when positioned in the middle. Adjust to fine-tune its placement.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'advance-button/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/button/?ref=1#positioning-desktop-tablet-mobile">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Set the margin (spacing) of the floating chat button from the left edge of the screen when positioned in the middle. Adjust to fine-tune its placement.', 'chat-help') .
+                                            '</div>',
                                         'top'   => false,
                                         'right' => false,
                                         'bottom' => false,
@@ -2434,11 +2444,20 @@ class FloatingChatFields
                             ),
 
                             array(
-                                'title' => esc_html__('Style', 'chat-help'),
+                                // `id` pins the section slug. Without it the slug is
+                                // sanitize_title() of the title, so renaming the tab would
+                                // silently move its URL (#/.../style) and break any link
+                                // or bookmark pointing at it.
+                                'id'    => 'style',
+                                'title' => esc_html__('Appearance', 'chat-help'),
                                 'icon' => 'icofont-paint',
                                 'dependency' => array('chat_layout', '!=', 'off', 'any'),
                                 'fields' => array(
                                     // Autometically show popup
+                                    array(
+                                        'type'    => 'heading',
+                                        'content' => esc_html__('Popup Behaviour', 'chat-help'),
+                                    ),
                                     array(
                                         'id'        => 'autoshow-popup',
                                         'type'      => 'switcher',
@@ -2446,8 +2465,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Enable this option to automatically open the chat popup when the page loads. Useful for drawing visitor attention without requiring a click.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'text_on' => esc_html__('Yes', 'chat-help'),
                                         'text_off'  => esc_html__('No', 'chat-help'),
                                         'default'   => false,
@@ -2462,8 +2480,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Set the delay (in seconds) before the chat popup automatically opens after the page loads.', 'chat-help') .
-                                            '</div>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
 
                                         'min' => 0,
                                         'max' => 30000,
@@ -2481,9 +2498,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Choose an animation style for how the chat bubble appears on the screen. You can pick a specific effect or select "Random" to apply a different animation each time.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-agent/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'options' => array(
                                             '1'      => esc_html__('Fade Right', 'chat-help'),
                                             '2'      => esc_html__('Fade Down', 'chat-help'),
@@ -2505,6 +2520,10 @@ class FloatingChatFields
                                     ),
 
                                     array(
+                                        'type'    => 'heading',
+                                        'content' => esc_html__('Appearance', 'chat-help'),
+                                    ),
+                                    array(
                                         'id'      => 'theme_style',
                                         'type'    => 'layout_preset',
                                         'title' => esc_html__('Theme Style', 'chat-help'),
@@ -2512,9 +2531,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Select the visual style for your chat bubble. This setting changes the overall look and feel of the chat interface.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-agent/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'options' => array(
                                             'flat_theme' => array(
                                                 'image' => CHAT_HELP_DIR_URL . 'src/Admin/assets/images/flat_theme.jpg',
@@ -2522,7 +2539,7 @@ class FloatingChatFields
                                             ),
                                             'whatsapp_theme' => array(
                                                 'image' => CHAT_HELP_DIR_URL . 'src/Admin/assets/images/whatsapp_theme.jpg',
-                                                'text' => esc_html__('Whatsapp Theme', 'chat-help'),
+                                                'text' => esc_html__('WhatsApp Theme', 'chat-help'),
                                             ),
                                         ),
 
@@ -2536,9 +2553,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Choose a color mode for the chat bubble. This controls the overall appearance and theme style of the bubble.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-agent/?ref=1">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'options' => array(
                                             'default' => esc_html__('Light Mode', 'chat-help'),
                                             'dark'    => esc_html__('Dark Mode', 'chat-help'),
@@ -2555,25 +2570,24 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Add custom CSS selectors (e.g., .classname, #idname) that can also act as triggers to open the chat bubble. Useful when you want other elements on your site to open the chat besides the default button.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'placeholder' => esc_html__('.classname, #idname', 'chat-help'),
                                         'dependency' => array('chat_layout', 'any', 'form,agent,agent_input,multi,multi_agent_form', 'any'),
 
+                                    ),
+                                    array(
+                                        'type'    => 'heading',
+                                        'content' => esc_html__('Colors', 'chat-help'),
                                     ),
                                     array(
                                         'id'        => 'color_settings',
                                         'type'      => 'color_group',
                                         'title' => esc_html__('Color Settings', 'chat-help'),
                                         'title_help' =>
-                                        '<div class="chat-help-img-tag">' .
-                                            '<img src="' . esc_url(CHAT_HELP_DIR_URL . 'src/Admin/assets/images/preview/brand_color.png') . '" alt="' . esc_html__('Preview Image', 'chat-help') . '">' .
-                                            '</div> 
+                                        ' 
                                             <div class="chat-help-info-label">' .
                                             esc_html__('Set your brand colors for the chat bubble. Adjust the Primary and Secondary colors to match your site style.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'single-form/">' . esc_html__('Live Demo', 'chat-help') . '</a>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'options' => array(
                                             'primary'   => esc_html__('Primary', 'chat-help'),
                                             'secondary' => esc_html__('Secondary', 'chat-help'),
@@ -2591,8 +2605,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Choose the colors for the send button.', 'chat-help') .
-                                            '</div>' .
-                                            '<a class="tooltip_btn_secondary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'options' => array(
                                             'color'   => esc_html__('Color', 'chat-help'),
                                             'hover_color' => esc_html__('Hover Color', 'chat-help'),
@@ -2608,8 +2621,7 @@ class FloatingChatFields
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
                                             esc_html__('Select the font family and weight for your chat bubble text. Adjust these options to keep the widget consistent with your site’s typography.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/10-style/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            '</div>',
                                         'font_size' => false,
                                         'line_height' => false,
                                         'font_style' => false,
@@ -2625,15 +2637,21 @@ class FloatingChatFields
                             ),
 
                             array(
-                                'title'  => esc_html__('Others', 'chat-help'),
+                                // `id` pins the section slug. Without it the slug is
+                                // sanitize_title() of the title, so renaming the tab would
+                                // silently move its URL (#/.../others) and break any link
+                                // or bookmark pointing at it.
+                                'id'    => 'others',
+                                'title'  => esc_html__('Visibility', 'chat-help'),
                                 'icon'   => 'icofont-settings',
                                 'dependency' => array('chat_layout', '!=', 'off', 'any'),
                                 'fields' => array(
-                                    // Visiblity
+                                    // Names what this group actually holds — the device
+                                    // rules — rather than repeating the tab's own name.
                                     array(
                                         'id'    => 'heading',
                                         'type'  => 'heading',
-                                        'content' => esc_html__('Visiblity', 'chat-help'),
+                                        'content' => esc_html__('Devices', 'chat-help'),
                                     ),
                                     // device visibility
                                     array(
@@ -2642,12 +2660,8 @@ class FloatingChatFields
                                         'title' => esc_html__('Show Chat On', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            '<b>' . esc_html__('Everywhere:', 'chat-help') . '</b> ' . esc_html__('Visible on all devices.', 'chat-help') . '<br />' .
-                                            '<b>' . esc_html__('Desktop Only:', 'chat-help') . '</b> ' . esc_html__('Visible on devices wider than 991px.', 'chat-help') . '<br />' .
-                                            '<b>' . esc_html__('Tablet Only:', 'chat-help') . '</b> ' . esc_html__('Visible on devices between 576px and 991px.', 'chat-help') . '<br />' .
-                                            '<b>' . esc_html__('Mobile Only:', 'chat-help') . '</b> ' . esc_html__('Visible on devices smaller than 576px.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Limit the chat to one screen size: desktop is above 991px, tablet 576–991px, mobile below 576px.', 'chat-help') .
+                                            '</div>',
                                         'options' => array(
                                             'everywhere' => esc_html__('Everywhere', 'chat-help'),
                                             'desktop'    => esc_html__('Desktop Only', 'chat-help'),
@@ -2670,9 +2684,8 @@ class FloatingChatFields
                                         'title' => esc_html__('Enable Visibility Rules By', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Select where the chat bubble should be visible. You can enable it by specific content types such as pages, posts, products, categories, or tags.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                            esc_html__('Select where the floating chat button should be visible. You can enable it by specific content types such as pages, posts, products, categories, or tags.', 'chat-help') .
+                                            '</div>',
                                         'options' => array(
                                             'theme_page'       => esc_html__('Theme Pages', 'chat-help'),
                                             'page'             => esc_html__('Pages', 'chat-help'),
@@ -2702,8 +2715,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected items.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
                                                             'exclude' => esc_html__('Exclude', 'chat-help'),
@@ -2717,8 +2729,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Enable this option to apply the chat bubble visibility rule to all theme pages at once, instead of selecting them individually.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                     ),
                                                     // Include specific
                                                     array(
@@ -2728,8 +2739,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Select a specific theme page where the chat bubble visibility rule should apply. Options include Blog, 404, or Search pages.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options' => array(
                                                             'post_page'   => esc_html__('Blog Page', 'chat-help'),
                                                             '404_page'    => esc_html__('404 Page', 'chat-help'),
@@ -2761,8 +2771,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected pages.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
                                                             'exclude' => esc_html__('Exclude', 'chat-help'),
@@ -2776,8 +2785,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Enable this option to apply the chat bubble visibility rule to all pages across your site, instead of selecting individual pages.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                     ),
                                                     // Include specific
                                                     array(
@@ -2787,8 +2795,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Select one or more specific pages where the chat bubble visibility rule should apply.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options' => 'pages',
 
                                                         'query_args'  => array(
@@ -2820,8 +2827,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected posts.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
                                                             'exclude' => esc_html__('Exclude', 'chat-help'),
@@ -2835,8 +2841,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Enable this option to apply the chat bubble visibility rule to all posts across your site, instead of selecting them individually.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                     ),
                                                     // Include specific
                                                     array(
@@ -2846,8 +2851,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Select one or more specific posts where the chat bubble visibility rule should apply.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options'    => 'posts',
                                                         'chosen'      => true,
                                                         'multiple'     => true,
@@ -2875,8 +2879,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected products.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
                                                             'exclude' => esc_html__('Exclude', 'chat-help'),
@@ -2890,8 +2893,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Enable this option to apply the chat bubble visibility rule to all products across your store, instead of selecting them individually.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                     ),
                                                     // Include specific
                                                     array(
@@ -2901,8 +2903,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Select one or more specific products where the chat bubble visibility rule should apply.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options'    => 'posts',
                                                         'query_args'  => array(
                                                             'post_type' => 'product',
@@ -2934,8 +2935,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected post categories.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
                                                             'exclude' => esc_html__('Exclude', 'chat-help'),
@@ -2949,8 +2949,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Enable this option to apply the chat bubble visibility rule to all post categories, instead of selecting them individually.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
 
                                                     ),
                                                     // Include specific
@@ -2961,8 +2960,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Select one or more specific post categories where the chat bubble visibility rule should apply.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options'    => 'categories',
                                                         'query_args'  => array(
                                                             'posts_per_page' => 1000,
@@ -2993,8 +2991,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Choose whether to include or exclude the selected post tags from displaying the chat bubble.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options'   => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
                                                             'exclude' => esc_html__('Exclude', 'chat-help'),
@@ -3008,8 +3005,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Enable this option to apply the chat bubble visibility rule to all post tags, instead of selecting them individually.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                     ),
                                                     // Include specific
                                                     array(
@@ -3019,8 +3015,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Select one or more specific post tags where the chat bubble visibility rule should apply.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options'    => 'tags',
                                                         'chosen'      => true,
                                                         'multiple'     => true,
@@ -3048,8 +3043,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected product categories.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
                                                             'exclude' => esc_html__('Exclude', 'chat-help'),
@@ -3063,8 +3057,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Enable this option to apply the chat bubble visibility rule to all product categories, instead of selecting them individually.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                     ),
                                                     // Include specific
                                                     array(
@@ -3074,8 +3067,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Select one or more specific product categories where the chat bubble visibility rule should apply.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options'    => 'categories',
                                                         'query_args'  => array(
                                                             'taxonomy' => 'product_cat'
@@ -3083,7 +3075,7 @@ class FloatingChatFields
                                                         'chosen'      => true,
                                                         'multiple'     => true,
                                                         'sortable'    => true,
-                                                        'empty_message'    => esc_html__('You don\'t have any product category available.', 'chat-help'),
+                                                        'empty_message'    => esc_html__('You don\'t have any product categories available.', 'chat-help'),
                                                         'dependency'    => array('product_category_all', '!=', 'true', 'any'),
                                                     ),
                                                 )
@@ -3106,8 +3098,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Choose whether to show (Include) or hide (Exclude) the chat bubble on the selected product tags.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
                                                             'exclude' => esc_html__('Exclude', 'chat-help'),
@@ -3121,8 +3112,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Enable this option to apply the chat bubble visibility rule to all product tags, instead of selecting them individually.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                     ),
                                                     // Include specific
                                                     array(
@@ -3132,8 +3122,7 @@ class FloatingChatFields
                                                         'title_help' =>
                                                         '<div class="chat-help-info-label">' .
                                                             esc_html__('Select one or more specific product tags where the chat bubble visibility rule should apply.', 'chat-help') .
-                                                            '</div>' .
-                                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/11-others/?ref=1">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                                                            '</div>',
                                                         'options'    => 'tags',
                                                         'query_args'  => array(
                                                             'taxonomy' => 'product_tag'
@@ -3150,30 +3139,15 @@ class FloatingChatFields
                                     ),
                                 )
                             ),
-                            array(
-                                'title' => esc_html__('Backup', 'chat-help'),
-                                'icon'  => 'icofont-shield',
-                                'dependency' => array('chat_layout', '!=', 'off', 'any'),
-                                'fields' => array(
-                                    array(
-                                        'title'    => esc_html__('Backup', 'chat-help'),
-                                        'title_help' =>
-                                        '<div class="chat-help-info-label">' .
-                                            esc_html__('Export or import plugin settings for backup or migration purposes.', 'chat-help') .
-                                            '</div>' .
-                                            ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/backup/?ref=1') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
-                                        'type' => 'backup',
-                                    ),
-                                )
-                            ),
         );
 
         if (!$isGlobal) {
-            // "Others" (site-wide visibility-by-content-type targeting) and
-            // "Backup" are meaningless for a single saved Chat Layout — a
-            // layout's targeting is handled by the separate "Assign Layouts"
-            // page, and Backup only makes sense once, globally.
-            array_splice($tabs, 4, 2);
+            // "Others" (site-wide visibility-by-content-type targeting) is
+            // meaningless for a single saved chat — a chat's targeting is
+            // handled by the separate "Assign Chats" page. (Backup used to be
+            // dropped here too; it now lives once, for everything, in
+            // Settings → Import/Export.)
+            array_splice($tabs, 4, 1);
         }
 
         return $tabs;

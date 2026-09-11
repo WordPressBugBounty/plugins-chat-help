@@ -150,7 +150,7 @@ class MetaRest extends AbstractRestController
         }
 
         return [
-            // Chat Layouts shares Global Chat's field/option Pro boundary
+            // Custom Chats shares Global Chat's field/option Pro boundary
             // (ProFeatures::SHARES): the free layout fields are editable, and the
             // Pro-only fields/options are stamped `pro` so the React editor renders
             // just those read-only with a badge — exactly like Global Chat.
@@ -175,6 +175,10 @@ class MetaRest extends AbstractRestController
             'order'          => 'DESC',
         ]);
 
+        // Read once for the whole list: every row needs to know where its chat
+        // is placed, and this is a single option however many chats there are.
+        $assignments = $this->assignments_by_widget();
+
         $items = [];
         foreach ($posts as $post) {
             $meta   = \get_post_meta($post->ID, self::META_KEY, true);
@@ -187,6 +191,7 @@ class MetaRest extends AbstractRestController
                 'layout_label' => $this->layout_label($layout),
                 'date'         => \get_the_date('M j, Y', $post),
                 'date_raw'     => \get_the_date('Y-m-d', $post),
+                'assignments'  => $assignments[$post->ID] ?? [],
             ];
         }
 
@@ -201,6 +206,69 @@ class MetaRest extends AbstractRestController
                 'trash'   => (int) ($counts->trash ?? 0),
             ],
         ]);
+    }
+
+
+    /**
+     * Where each chat is placed, as a map of widget id => list of labels.
+     *
+     * The Assign Chats screen stores every rule in one option, keyed by the
+     * chat it points at, so the list resolves them all in a single read rather
+     * than a query per row. Titles and term names are resolved here because the
+     * ids alone mean nothing to a reader.
+     *
+     * @return array<int,array<int,array{type:string,label:string}>>
+     */
+    private function assignments_by_widget(): array
+    {
+        $option = \get_option('assign_widget', []);
+        $rows   = (\is_array($option) && ! empty($option['assign_widget_data']) && \is_array($option['assign_widget_data']))
+            ? $option['assign_widget_data']
+            : [];
+
+        $out = [];
+        foreach ($rows as $row) {
+            if (! \is_array($row) || empty($row['select_widget'])) {
+                continue;
+            }
+            $widget_id = (int) $row['select_widget'];
+            if ($widget_id <= 0) {
+                continue;
+            }
+
+            $by_taxonomy = (isset($row['select_by']) && $row['select_by'] === 'taxonomy');
+            $values      = $by_taxonomy
+                ? ($row['widget_taxonomy_terms'] ?? [])
+                : ($row['widget_specific_posts'] ?? []);
+            if (! \is_array($values)) {
+                $values = ($values === '' || $values === null) ? [] : [$values];
+            }
+
+            foreach ($values as $value) {
+                if ($by_taxonomy) {
+                    // Stored as `taxonomy:term_id` by the terms field.
+                    $parts   = \explode(':', (string) $value);
+                    $term_id = (int) \end($parts);
+                    $term    = $term_id ? \get_term($term_id) : null;
+                    if (! $term || \is_wp_error($term)) {
+                        continue;
+                    }
+                    $out[$widget_id][] = ['type' => 'term', 'label' => $term->name];
+                    continue;
+                }
+
+                $post = \get_post((int) $value);
+                if (! $post) {
+                    continue;
+                }
+                $out[$widget_id][] = [
+                    'type'  => 'post',
+                    'label' => $post->post_title !== '' ? $post->post_title : \sprintf(\__('(no title) #%d', 'chat-help'), $post->ID),
+                ];
+            }
+        }
+
+        return $out;
     }
 
     /** GET /widgets/schema — schema + defaults for a fresh widget. */
@@ -294,7 +362,7 @@ class MetaRest extends AbstractRestController
         $sections  = $this->get_registered_sections(self::META_KEY);
         $types     = $this->collect_field_types($sections);
         $sanitized = $this->sanitize_values($values, $types);
-        // Chat Layouts shares Global Chat's field/option Pro boundary (see
+        // Custom Chats shares Global Chat's field/option Pro boundary (see
         // ProFeatures::SHARES). Free users build free layouts here; Pro-only
         // fields/options are stripped so they can never be saved, even via a
         // crafted request — the React editor already renders them read-only.

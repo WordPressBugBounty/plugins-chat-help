@@ -247,7 +247,9 @@ class PreviewRest extends AbstractRestController
 
         \ob_start();
         \wp_styles()->do_items($style_handles);
-        $head = \ob_get_clean();
+        // Theme typography first, so the plugin's own rules still take
+        // precedence on ties — the same order the frontend produces.
+        $head = $this->theme_typography_styles() . \ob_get_clean();
 
         \ob_start();
         \wp_print_inline_script_tag(
@@ -258,4 +260,68 @@ class PreviewRest extends AbstractRestController
 
         return [$head, $foot];
     }
+
+    /**
+     * Base typography for the preview iframe, mirroring what the widget
+     * inherits on the real frontend.
+     *
+     * The iframe carries only the plugin's own stylesheet, so any text the
+     * plugin does not set a `font-family` on fell back to the browser default
+     * (a serif) while the live site inherited the theme's font — the preview
+     * misrepresented every layout whenever no Typography font was chosen.
+     *
+     * Block themes declare their body font in theme.json, usually as a
+     * `var(--wp--preset--font-family--*)` reference, so the preset custom
+     * properties (the `variables` layer only — no theme layout/colour rules
+     * that could restyle the widget) go in alongside it. Classic themes expose
+     * nothing readable here, so they get a system sans stack: not the theme's
+     * exact face, but far closer than the serif default.
+     *
+     * Emitted in <head>, ahead of the plugin's own styles, and applied to
+     * `html` so it only ever acts as an inherited default — Frontend's
+     * inline_style() (printed in <body>) still overrides it when a Typography
+     * font is selected.
+     */
+    private function theme_typography_styles(): string
+    {
+        $font = '';
+
+        if (\function_exists('wp_get_global_styles')) {
+            $typography = \wp_get_global_styles(['typography']);
+            if (\is_array($typography) && !empty($typography['fontFamily'])) {
+                $font = (string) $typography['fontFamily'];
+            }
+        }
+
+        $out = '';
+
+        if ($font !== '' && \function_exists('wp_get_global_stylesheet')) {
+            $variables = \wp_get_global_stylesheet(['variables']);
+            if (\is_string($variables) && $variables !== '') {
+                $out .= '<style id="chat-help-preview-theme-vars">' . \strip_tags($variables) . '</style>';
+            }
+
+            // The preset variables only name the family; the @font-face rules
+            // that actually load a theme-bundled webfont live elsewhere and are
+            // printed on `wp_head` on the frontend. Without them a theme font
+            // like Manrope would resolve to its generic fallback here.
+            if (\function_exists('wp_print_font_faces')) {
+                \ob_start();
+                \wp_print_font_faces();
+                $out .= (string) \ob_get_clean();
+            }
+        }
+
+        if ($font === '') {
+            $font = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+        }
+
+        // Not esc_attr(): this lands inside <style>, where entity-encoding would
+        // turn a quoted family ("Segoe UI") into invalid CSS. Strip the only
+        // characters that could break out of the declaration instead.
+        $font = \str_replace(['<', '>', '{', '}', ';'], '', $font);
+
+        return $out . '<style id="chat-help-preview-theme">html{font-family:' . $font . ';}</style>';
+    }
+
 }

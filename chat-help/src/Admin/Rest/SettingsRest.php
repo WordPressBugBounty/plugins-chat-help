@@ -44,7 +44,7 @@ class SettingsRest extends AbstractRestController
             ],
         ]);
 
-        // Posts of ONE post type — backs the Assign Layouts "Select Post(s)"
+        // Posts of ONE post type — backs the Assign Chats "Select Post(s)"
         // field, which must re-list its choices whenever its row's "Post Type"
         // changes. Schema options are resolved once when the page loads, so a
         // per-type lookup can't come from there; this route is what makes the
@@ -67,6 +67,49 @@ class SettingsRest extends AbstractRestController
                 ],
             ],
         ]);
+    }
+
+
+    /**
+     * Translate the old `after`/`before` button positions to the hook names the
+     * Shop, Product and Checkout fields use today.
+     *
+     * Every WooCommerce tab once stored the position as `after` or `before`.
+     * Three of them now store the WooCommerce hook to attach to, and a value
+     * left over from that era matches none of the current options — the select
+     * rendered blank, so the page reported no position at all when one was in
+     * force. The Cart tab still uses `after`/`before`, so it is left alone.
+     *
+     * Display-side only: the value is corrected as it is read, and the next save
+     * writes the current form back.
+     *
+     * @param array $values The merged option values.
+     * @return array
+     */
+    private function normalize_woo_positions(array $values): array
+    {
+        $map = [
+            'shop_page_button_position'     => [
+                'after'  => 'woocommerce_after_shop_loop_item',
+                'before' => 'woocommerce_before_shop_loop_item',
+            ],
+            'product_page_button_position'  => [
+                'after'  => 'woocommerce_after_add_to_cart_form',
+                'before' => 'woocommerce_before_add_to_cart_form',
+            ],
+            'checkout_page_button_position' => [
+                'after'  => 'woocommerce_review_order_after_submit',
+                'before' => 'woocommerce_review_order_before_submit',
+            ],
+        ];
+
+        foreach ($map as $field => $legacy) {
+            if (isset($values[$field]) && isset($legacy[$values[$field]])) {
+                $values[$field] = $legacy[$values[$field]];
+            }
+        }
+
+        return $values;
     }
 
     /**
@@ -138,6 +181,9 @@ class SettingsRest extends AbstractRestController
         // only — save_settings strips them back out, so storage stays empty and
         // the frontend keeps inheriting live).
         $values = $this->fill_global_fallback_values($values, $key);
+        if ($key === 'ch_wooCommerce') {
+            $values = $this->normalize_woo_positions($values);
+        }
 
         return \rest_ensure_response([
             'key'    => $key,
@@ -170,7 +216,7 @@ class SettingsRest extends AbstractRestController
         // Never persist Pro-locked keys/options in the free plugin, even if a
         // crafted request submits them.
         $sanitized = $this->strip_pro_keys($sanitized, $key, $sections);
-        // Assign Layouts: drop any row targeting a Pro-only post type (grouped
+        // Assign Chats: drop any row targeting a Pro-only post type (grouped
         // repeater rows aren't reachable by the flat strip above).
         if ($key === 'assign_widget') {
             $sanitized = \ThemeAtelier\ChatHelp\Admin\Schema\ProFeatures::filter_assign_rows($sanitized);

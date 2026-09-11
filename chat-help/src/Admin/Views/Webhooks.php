@@ -32,10 +32,14 @@ class Webhooks
                 'icon'  => 'icofont-connection',
                 'fields' => array(
                     array(
-                        'type'    => 'subheading',
+                        // An explanation of what webhooks are, not a heading:
+                        // `subheading` rendered it as bold h4 text, which read
+                        // as the section's title rather than as guidance.
+                        'type'    => 'submessage',
+                        'style'   => 'info',
                         'content' => sprintf(
                             /* translators: %s: Documentation link */
-                            __('Webhooks are automated HTTP POST requests that send data to a specified URL whenever certain events occur. They enable applications to communicate in real time, without the need for manual action. <a target="_blank" href="%s">Check WebHooks Documentation</a>', 'chat-help'),
+                            __('Webhooks are automated HTTP POST requests that send data to a specified URL whenever certain events occur. They enable applications to communicate in real time, without the need for manual action. <a target="_blank" href="%s">Check Webhooks Documentation</a>', 'chat-help'),
                             esc_url(CHAT_HELP_DEMO_URL . 'docs/webhooks/#1-webhook-url')
                         ),
 
@@ -45,7 +49,7 @@ class Webhooks
                         'type' => 'text',
                         'title' => esc_html__('Webhook URL', 'chat-help'),
                         'title_help' =>
-                        '<div class="chat-help-info-label">' . esc_html__('Enter the Webhook URL that will be triggered when users click the WhatsApp floating button or interact with multi-agents.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/webhooks/#1-webhook-url') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                        '<div class="chat-help-info-label">' . esc_html__('Enter the Webhook URL that will be triggered when users click the WhatsApp floating button or interact with multi-agents.', 'chat-help') . '</div>',
                     ),
                     array(
                         'id' => 'webhook_values',
@@ -53,7 +57,7 @@ class Webhooks
                         'title' => esc_html__('Webhook Values', 'chat-help'),
                         'class'   => 'google_analytics_repeater',
                         'title_help' =>
-                        '<div class="chat-help-info-label">' . esc_html__('Add custom values to be sent with your Webhook request. You can use dynamic variables, URL parameters, or cookie values.', 'chat-help') . '</div>' . ' <a class="tooltip_btn_primary" target="_blank" href="' . esc_url(CHAT_HELP_DEMO_URL . 'docs/webhooks/#2-webhook-values') . '">' . esc_html__('Open Docs', 'chat-help') . '</a>',
+                        '<div class="chat-help-info-label">' . esc_html__('Add custom values to be sent with your Webhook request. You can use dynamic variables, URL parameters, or cookie values.', 'chat-help') . '</div>',
                         'fields'  => array(
                             array(
                                 'id'    => 'parameter_label',

@@ -193,11 +193,30 @@ abstract class AbstractRestController
             'class', 'library', 'preview', 'multiple', 'fields', 'button_title',
             'add_button', 'settings', 'before', 'after', 'prepend', 'append',
             'all', 'units', 'accordion_title_prefix', 'accordion_title_number',
+            // Spacing/dimensions side switches. A margin field declares the
+            // sides it does NOT use ("Margin from Bottom Right" sets
+            // 'top' => false, 'left' => false); without these in the allowlist
+            // the flags were stripped here and React drew all four inputs, two
+            // of them permanently empty.
+            'top', 'right', 'bottom', 'left',
+            // Guidance shown when a select has nothing to choose from — it
+            // usually links to wherever the missing thing is created ("create a
+            // layout first"), which is the only useful thing an empty dropdown
+            // can say.
+            'empty_message',
+            // A single checkbox's own sentence ("Include an Order Summary link
+            // in the message."). Stripped here, it never reached React and the
+            // text simply vanished from those rows.
+            'label',
+            // Which template tokens a message field offers, and any
+            // page-specific extras ({cartInfo}, {orderInfo}, …). The
+            // renderer turns these into the insert-variable picker.
+            'variables', 'variables_extra',
             'max_items', 'min_items', 'columns', 'chosen', 'from_to',
             // Typography sub-option flags (control which controls render).
             'color', 'hover_color', 'text_align', 'letter_spacing', 'subset',
             'font_size', 'line_height', 'font_style', 'text_transform', 'text_color',
-            // Assign Layouts "Select Post(s)" list follows its row's "Post Type".
+            // Assign Chats "Select Post(s)" list follows its row's "Post Type".
             // Without it in this allowlist the key is stripped from the schema
             // and the renderer never learns the list should be filtered.
             // `options_by_default` is the type to scope by when that sibling has
@@ -302,7 +321,7 @@ abstract class AbstractRestController
                 $post_types = \get_post_types(['public' => true], 'objects');
                 foreach ($post_types as $slug => $obj) {
                     // Media (attachment) isn't a browsable content type users assign
-                    // a chat widget to — exclude it from the Assign Layouts picker.
+                    // a chat widget to — exclude it from the Assign Chats picker.
                     if ($slug === 'attachment') {
                         continue;
                     }

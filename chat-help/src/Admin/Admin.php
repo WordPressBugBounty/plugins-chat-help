@@ -27,6 +27,8 @@ use ThemeAtelier\ChatHelp\Admin\Rest\MetaRest;
 use ThemeAtelier\ChatHelp\Admin\Rest\PreviewRest;
 use ThemeAtelier\ChatHelp\Admin\Rest\HelpRest;
 use ThemeAtelier\ChatHelp\Admin\Rest\OnboardingRest;
+use ThemeAtelier\ChatHelp\Admin\Rest\WooCommerceRest;
+use ThemeAtelier\ChatHelp\Admin\Rest\ImportExportRest;
 use ThemeAtelier\ChatHelp\Admin\Views\AssignWidget;
 use ThemeAtelier\ChatHelp\Admin\Views\WidgetMetabox;
 use ThemeAtelier\ChatHelp\Frontend\Helpers\Helpers;
@@ -98,6 +100,8 @@ class Admin
 		new PreviewRest();
 		new HelpRest();
 		new OnboardingRest();
+		new WooCommerceRest();
+		new ImportExportRest();
 
 		if (! defined('THEMEATELIER_OFFER_BANNER_LOADED')) {
 			define('THEMEATELIER_OFFER_BANNER_LOADED', true);
@@ -116,7 +120,7 @@ class Admin
 		// Every classic settings slug now redirects into the React SPA.
 		add_action('admin_init', array($this, 'redirect_settings_to_spa'));
 
-		// Chat Layouts. The CPT is registered (so its URLs resolve and the SPA's
+		// Custom Chats. The CPT is registered (so its URLs resolve and the SPA's
 		// list/editor can read existing layouts) but it is Pro-locked: MetaRest
 		// refuses every write and the React editor renders read-only.
 		add_action('init', array($this, 'register_chat_help_post_type'));
@@ -135,7 +139,7 @@ class Admin
 	}
 
 	/**
-	 * Register the Assign Layouts schema. Pro-only: rendered read-only.
+	 * Register the Assign Chats schema. Pro-only: rendered read-only.
 	 */
 	public function assign_widget_configs()
 	{
@@ -143,7 +147,7 @@ class Admin
 	}
 
 	/**
-	 * Register the Chat Layouts (floating widget) schema. Pro-only: the editor
+	 * Register the Custom Chats (floating widget) schema. Pro-only: the editor
 	 * renders as a read-only preview and MetaRest refuses every write.
 	 */
 	public function floating_widget_metabox()
@@ -196,7 +200,7 @@ class Admin
 		);
 
 		// Parent group header, rendered as a collapsible toggle in the sidebar
-		// (see admin_menu_styles). Its Global Chat / Chat Layouts / Leads children
+		// (see admin_menu_styles). Its Global Chat / Custom Chats / Leads children
 		// are the next 3 submenu items, registered contiguously right after it.
 		add_submenu_page(
 			'chat-help',
@@ -217,8 +221,8 @@ class Admin
 		);
 		add_submenu_page(
 			'chat-help',
-			esc_html__('Chat Layouts', 'chat-help'),
-			esc_html__('Chat Layouts', 'chat-help'),
+			esc_html__('Custom Chats', 'chat-help'),
+			esc_html__('Custom Chats', 'chat-help'),
 			'manage_options',
 			'edit.php?post_type=floating_widget'
 		);
@@ -235,13 +239,13 @@ class Admin
 			[$this, 'chat_help_settings']
 		);
 
-		// Assign Layouts keeps its registration (so `page=assign-widget` resolves
+		// Assign Chats keeps its registration (so `page=assign-widget` resolves
 		// and redirect_settings_to_spa() can map it) but its <li> is hidden — it's
-		// reached via a tab on the Chat Layouts page, exactly as in Pro.
+		// reached via a tab on the Custom Chats page, exactly as in Pro.
 		add_submenu_page(
 			'chat-help',
-			esc_html__('Assign Layouts', 'chat-help'),
-			esc_html__('Assign Layouts', 'chat-help'),
+			esc_html__('Assign Chats', 'chat-help'),
+			esc_html__('Assign Chats', 'chat-help'),
 			'manage_options',
 			'assign-widget',
 			[$this, 'chat_help_settings']
@@ -366,9 +370,9 @@ class Admin
 	}
 
 	/**
-	 * Register the Chat Layouts post type.
+	 * Register the Custom Chats post type.
 	 *
-	 * Registered in the free plugin so the Chat Layouts screens resolve and the
+	 * Registered in the free plugin so the Custom Chats screens resolve and the
 	 * SPA can list any layouts a user created while running Pro. Creating and
 	 * editing them is Pro-only (MetaRest returns 403; the editor is read-only).
 	 *
@@ -389,28 +393,28 @@ class Admin
 		$labels = apply_filters(
 			'chat_help_post_type_labels',
 			array(
-				'name'               => esc_html__('Floating Widget', 'chat-help'),
-				'singular_name'      => esc_html__('Floating Widget', 'chat-help'),
-				'menu_name'          => esc_html__('Floating Widget', 'chat-help'),
-				'all_items'          => esc_html__('All Widgets', 'chat-help'),
-				'add_new'            => esc_html__('Add Widget', 'chat-help'),
-				'add_new_item'       => esc_html__('Add New Layout', 'chat-help'),
-				'new_item'           => esc_html__('Add New Layout', 'chat-help'),
-				'edit_item'          => esc_html__('Edit Generated Widget', 'chat-help'),
-				'view_item'          => esc_html__('View Generated Widget', 'chat-help'),
-				'name_admin_bar'     => esc_html__('Widget Generator', 'chat-help'),
-				'search_items'       => esc_html__('Search Layout', 'chat-help'),
-				'parent_item_colon'  => esc_html__('Parent Layout:', 'chat-help'),
-				'not_found'          => esc_html__('No Widget found.', 'chat-help'),
-				'not_found_in_trash' => esc_html__('No Widget found in Trash.', 'chat-help'),
+				'name'               => esc_html__('Custom Chats', 'chat-help'),
+				'singular_name'      => esc_html__('Custom Chat', 'chat-help'),
+				'menu_name'          => esc_html__('Custom Chats', 'chat-help'),
+				'all_items'          => esc_html__('All Custom Chats', 'chat-help'),
+				'add_new'            => esc_html__('Add Chat', 'chat-help'),
+				'add_new_item'       => esc_html__('Add New Custom Chat', 'chat-help'),
+				'new_item'           => esc_html__('Add New Custom Chat', 'chat-help'),
+				'edit_item'          => esc_html__('Edit Custom Chat', 'chat-help'),
+				'view_item'          => esc_html__('View Custom Chat', 'chat-help'),
+				'name_admin_bar'     => esc_html__('Custom Chat', 'chat-help'),
+				'search_items'       => esc_html__('Search Custom Chats', 'chat-help'),
+				'parent_item_colon'  => esc_html__('Parent Custom Chat:', 'chat-help'),
+				'not_found'          => esc_html__('No custom chats found.', 'chat-help'),
+				'not_found_in_trash' => esc_html__('No custom chats found in Trash.', 'chat-help'),
 			)
 		);
 
 		$args = apply_filters(
 			'chat_help_post_type_args',
 			array(
-				'label'             => esc_html__('Floating Widget', 'chat-help'),
-				'description'       => esc_html__('Floating Widget', 'chat-help'),
+				'label'             => esc_html__('Custom Chats', 'chat-help'),
+				'description'       => esc_html__('Custom Chats', 'chat-help'),
 				'public'            => false,
 				'show_ui'           => $show_ui,
 				'show_in_nav_menus' => false,
@@ -461,8 +465,8 @@ class Admin
 	/**
 	 * Render the "Floating Chat" submenu as a collapsible group in the WordPress
 	 * admin sidebar. WordPress submenus are flat, so a little scoped CSS/JS nests
-	 * Global Chat / Chat Layouts / Leads under a "Floating Chat" parent. Assign
-	 * Layouts is always hidden here (it's a tab on the Chat Layouts page) but stays
+	 * Global Chat / Custom Chats / Leads under a "Floating Chat" parent. Assign
+	 * Layouts is always hidden here (it's a tab on the Custom Chats page) but stays
 	 * registered so its URL keeps resolving. Mirrors the Pro plugin exactly.
 	 *
 	 * Hooked to admin_head. Only the initial paint happens here — the React app
@@ -522,8 +526,8 @@ class Admin
 				display: none;
 			}
 
-			/* Assign Layouts keeps its submenu registration (so its URL still
-			   resolves) but is reached via a tab on the Chat Layouts page. */
+			/* Assign Chats keeps its submenu registration (so its URL still
+			   resolves) but is reached via a tab on the Custom Chats page. */
 			#toplevel_page_chat-help li:has(> a[href*="page=assign-widget"]) {
 				display: none !important;
 			}

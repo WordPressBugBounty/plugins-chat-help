@@ -1,10 +1,10 @@
-=== ChatHelp – Click to Chat Button, WooCommerce Chat to Order & Floating Chat Form ===
+=== ChatHelp – Click to Chat Button, Chat to Order for WooCommerce & Floating Chat Form ===
 Contributors: ThemeAtelier, faysal61, shshakib2001, tamimaziz
 Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce whatsapp
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.5.9
+Stable tag: 3.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -25,7 +25,7 @@ By offering multiple layouts (Simple Button, Single Agent, Single Form, Multi-Ag
 
 With Chat Help, you’re not just adding a button—you’re creating a complete **WhatsApp customer support system** inside WordPress with a built-in **analytics dashboard** to track real visitors, views, conversions, and leads over time.
 
-**New in 3.5.0:** a completely rebuilt **React admin** with a modern interface, **multiple Chat Layouts** (create as many floating chat widgets as you need, each with its own agents, appearance, and behavior), and **Assign Layouts** to control exactly which posts, pages, or WooCommerce content each layout appears on. Settings now load and save over the **REST API** for a noticeably faster admin experience.
+**New in 3.5.0:** a completely rebuilt **React admin** with a modern interface, **multiple Custom Chats** (create as many floating chat widgets as you need, each with its own agents, appearance, and behavior), and **Assign Chats** to control exactly which posts, pages, or WooCommerce content each layout appears on. Settings now load and save over the **REST API** for a noticeably faster admin experience.
 
 [youtube https://youtu.be/B_xfMNOLP2A]
 
@@ -35,8 +35,8 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 
 ### 💬 Core Chat Features
 - **Modern React Admin**: Fully rebuilt admin interface — fast, clean navigation and a dedicated layout editor. Settings are served over the WordPress REST API for quicker loads and saves.
-- **Multiple Chat Layouts**: Create and manage as many floating chat widgets as you need, each with its own layout, agents, appearance, and behavior settings.
-- **Assign Layouts**: Choose exactly where each saved Chat Layout appears — assign it to specific posts, pages, or WooCommerce content.
+- **Multiple Custom Chats**: Create and manage as many floating chat widgets as you need, each with its own chat experience, agents, appearance, and behavior settings.
+- **Assign Chats**: Choose exactly where each saved chat appears — assign it to specific posts, pages, or WooCommerce content, from the Assign Chats screen or the chat's own Assignment tab.
 - **Floating Chat Layouts**: Choose from multiple chat bubble styles: Single Form, Single Agent, Pre-Chat Message, Floating Button or disable the bubble.
 - **Single Form Builder**: Collect visitor details before chat with text/textarea fields, labels, placeholders, validation messages, and required fields.
 - **Multiple WhatsApp Types Supported**: Personal, Business, or Group — all formats supported in floating chats and buttons.
@@ -71,7 +71,9 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 - **Timezone & Availability**: Set availability per agent/button with automatic Online/Offline switching.
 - **GDPR Compliance**: Add a checkbox with your terms text (supports links & formatting).
 - **Google Analytics Tracking**: Track button clicks with GA events; add custom UTM parameters or dynamic values.
-- **Advanced Settings**: Clean uninstall, import/export settings, custom CSS/JS, and WhatsApp URL behavior control (API/web/intent).
+- **Advanced Settings**: Clean uninstall, custom CSS/JS, and WhatsApp URL behavior control (API/web/intent).
+
+- **Import & Export**: Move your Global Chat, Custom Chats, Leads, WooCommerce and plugin settings between sites, or keep a backup of them — everything as one bundle or a single type, in JSON, CSV or XML.
 - **Security Hardened**: All dynamic output escaped and admin redirects made safe, following WordPress.org Plugin Check recommendations.
 
 ### 🌐 Compatibility & Performance
@@ -240,8 +242,8 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 6. Ready-made WhatsApp chat button styles and shortcode options — icons, agent avatars, hover effects, no-background, and multiple sizes for any layout.
 7. Built-in real-time analytics dashboard tracking WhatsApp visitors, views, conversions, leads, conversion rate, performance trendline, and device breakdown.
 8. Floating Chat admin with multiple chat layouts (Form, Single Agent, Pre-Chat, Chat Button), WhatsApp number, smart variables, and a live preview.
-9. Chat Layouts manager to create, publish, and manage multiple floating WhatsApp chat widgets, each with its own agents, design, and behavior.
-10. Assign Layouts screen to show each WhatsApp chat widget on specific posts, pages, products, or categories for precise placement control.
+9. Custom Chats manager to create, publish, and manage multiple floating WhatsApp chat widgets, each with its own agents, design, and behavior.
+10. Assign Chats screen to show each WhatsApp chat widget on specific posts, pages, products, or categories for precise placement control.
 11. WooCommerce WhatsApp button settings for shop, product, cart, checkout, and thank-you pages with button style, position, and dynamic pre-filled messages.
 12. WooCommerce pre-filled message editor with dynamic product variables (name, SKU, price, stock) and conditional tags for smart WhatsApp order messages.
 13. WhatsApp chat button shortcode generator with live style preview and copy-ready shortcode to add a WhatsApp button to any page, post, or widget.
@@ -249,6 +251,20 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 15. WhatsApp chat button Elementor widget for drag-and-drop customization of agent, number, pre-filled message, and button style on any page.
 
 == Changelog ==
+= 3.6.0 – 11 September 2026 =
+* Added: Import/Export under Settings — move the Global Chat, Custom Chats, Leads, WooCommerce and plugin settings between sites (or keep a backup) as one bundle or per type, in JSON, CSV or XML. Replaces the per-page Backup panels, which have been removed.
+* Added: "Add Chat" now asks for the essentials first — title, chat experience, WhatsApp type and number/group — creates the chat published, and opens it ready to edit.
+* Added: An Assignment tab in the chat editor. A chat's placement rules can be set where the chat is built; they stay in sync with the Assign Chats screen.
+* Added: The WooCommerce screen now explains itself when WooCommerce is missing and can install and activate it, instead of showing settings with nothing to configure.
+* Changed: "Layout" is now "Chat" throughout, and the list's Layout column is "Type" — it names the chat experience, not the record.
+* Changed: The chat editor is rebuilt on the Global Chat layout: a section rail, one record toolbar (back, title, status, preview, Save) and the same field surface as the settings pages.
+* Changed: Custom Chats and Leads share one card with the filters, a status tab strip and a Status column; both screens now show a first-run panel instead of an empty table.
+* Changed: Settings sections renamed — "Advanced Controls" is now "WhatsApp URL" and "Additional CSS & JS" is now "Advanced", with Clean-up Data on Deletion moved under it. Get Help now opens inside the settings screen and is reachable from its rail.
+* Changed: Loading states across the admin: skeletons now match the screen that replaces them, and the Dashboard keeps its figures on screen with a progress bar while a filter refetches.
+* Changed: The PRO badge on locked settings is now gold with a crown, so it no longer reads as more disabled text.
+* Fixed: Menus and dialogs no longer pick up WordPress admin's blue link colour and focus ring.
+* Fixed: Settings pages no longer overflow by the height of the sub-tab row, and the section rail no longer flickers when opening Get Help.
+
 = 3.5.9 – 5 September 2026 =
 * Fixed: "Open in New Tab" was ignored on sites where the Settings page had never been saved: the switch showed as on in the admin, but WhatsApp still opened in the same tab and the visitor left the site. The front end now uses the same default the setting itself declares.
 * Fixed: After a chat form was submitted, WhatsApp could still open in the current tab (or be blocked by the browser's popup blocker) even with "Open in New Tab" on, because the link was opened only after the submission had been saved. The new tab is now opened as part of the click itself.
@@ -653,6 +669,9 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 * Initial release.
 
 == Upgrade Notice ==
+
+= 3.6.0 =
+Adds Import/Export, a guided "Add Chat" dialog and per-chat assignment, and rebuilds the chat editor on the settings layout. The per-page Backup panels are replaced by Import/Export.
 
 = 3.5.7 =
 Fixes the front-end chat form opening a WhatsApp error page instead of the conversation. Recommended for all users.

@@ -225,7 +225,7 @@ class Helpers
 	 * The Global Chat (cwp_option) WhatsApp Number and Group, used as live
 	 * fallbacks anywhere a number/group field is left empty (WooCommerce
 	 * buttons, shortcode, Elementor widget, and as editor defaults for the
-	 * Gutenberg block and new Chat Layouts). Reading the option here — not
+	 * Gutenberg block and new Custom Chats). Reading the option here — not
 	 * copying values around — is what makes the fallback live: change the
 	 * global number once and every empty field follows.
 	 *

@@ -38,6 +38,55 @@ class WooCommerce
      * @param      string $plugin_name       The name of the plugin.
      * @param      string $version    The version of this plugin.
      */
+    /**
+     * The WooCommerce hook to attach a page's button to.
+     *
+     * Every tab once stored its position as `after` or `before`. Shop, Product
+     * and Checkout now store the hook name itself, so a value left from that era
+     * names no hook at all — on the product page it was handed straight to
+     * add_action(), which registered "after" and rendered nothing. Legacy values
+     * are translated here, and an unset one falls back to the default its
+     * settings field declares. (Cart still stores `after`/`before` and does not
+     * go through this.)
+     *
+     * @param string $value Stored position.
+     * @param string $page  shop | product | checkout
+     * @return string
+     */
+    private static function normalize_position($value, $page)
+    {
+        $map = array(
+            'shop'     => array(
+                'after'   => 'woocommerce_after_shop_loop_item',
+                'before'  => 'woocommerce_before_shop_loop_item',
+                'default' => 'woocommerce_before_shop_loop_item',
+            ),
+            'product'  => array(
+                'after'   => 'woocommerce_after_add_to_cart_form',
+                'before'  => 'woocommerce_before_add_to_cart_form',
+                'default' => 'woocommerce_after_add_to_cart_form',
+            ),
+            'checkout' => array(
+                'after'   => 'woocommerce_review_order_after_submit',
+                'before'  => 'woocommerce_review_order_before_submit',
+                'default' => 'woocommerce_review_order_after_submit',
+            ),
+        );
+
+        if (! isset($map[$page])) {
+            return $value;
+        }
+
+        $value = (string) $value;
+        if ($value === '') {
+            return $map[$page]['default'];
+        }
+
+        return isset($map[$page][$value]) && $value !== 'default'
+            ? $map[$page][$value]
+            : $value;
+    }
+
     public function __construct()
     {
         $ch_wooCommerce = get_option('ch_wooCommerce');
@@ -90,7 +139,10 @@ class WooCommerce
         $ch_wooCommerce = get_option('ch_wooCommerce');
 
         $shop_page_button = isset($ch_wooCommerce['shop_page_button']) ? $ch_wooCommerce['shop_page_button'] : '';
-        $button_position = isset($ch_wooCommerce['shop_page_button_position']) ? $ch_wooCommerce['shop_page_button_position'] : 'after';
+        $button_position = self::normalize_position(
+            isset($ch_wooCommerce['shop_page_button_position']) ? $ch_wooCommerce['shop_page_button_position'] : '',
+            'shop'
+        );
         $position = 12;
         if ("woocommerce_after_shop_loop_item" === $button_position) {
             $position = 6;
@@ -118,7 +170,10 @@ class WooCommerce
         $wooButton = new WooButton();
         $ch_wooCommerce = get_option('ch_wooCommerce');
         $product_page_button = isset($ch_wooCommerce['product_page_button']) ? $ch_wooCommerce['product_page_button'] : '';
-        $button_position = isset($ch_wooCommerce['product_page_button_position']) ? $ch_wooCommerce['product_page_button_position'] : 'after';
+        $button_position = self::normalize_position(
+            isset($ch_wooCommerce['product_page_button_position']) ? $ch_wooCommerce['product_page_button_position'] : '',
+            'product'
+        );
 
         $type_of_whatsapp_woo = isset($ch_wooCommerce['product_page_button_type_of_whatsapp']) ? $ch_wooCommerce['product_page_button_type_of_whatsapp'] : '';
         $product_page_number = isset($ch_wooCommerce['product_page_button_number']) ? $ch_wooCommerce['product_page_button_number'] : '';
@@ -200,7 +255,10 @@ class WooCommerce
         $ch_wooCommerce = get_option('ch_wooCommerce');
 
         $checkout_page_button = isset($ch_wooCommerce['checkout_page_button']) ? $ch_wooCommerce['checkout_page_button'] : '';
-        $button_position = isset($ch_wooCommerce['checkout_page_button_position']) ? $ch_wooCommerce['checkout_page_button_position'] : 'after';
+        $button_position = self::normalize_position(
+            isset($ch_wooCommerce['checkout_page_button_position']) ? $ch_wooCommerce['checkout_page_button_position'] : '',
+            'checkout'
+        );
 
         $type_of_whatsapp_woo = isset($ch_wooCommerce['checkout_page_button_type_of_whatsapp']) ? $ch_wooCommerce['checkout_page_button_type_of_whatsapp'] : '';
         $checkout_page_number = isset($ch_wooCommerce['checkout_page_button_number']) ? $ch_wooCommerce['checkout_page_button_number'] : '';

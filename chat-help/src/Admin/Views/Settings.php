@@ -47,6 +47,7 @@ class Settings
         Analytics::options($prefix);
         Webhooks::options($prefix);
         AdditionalCssJs::options($prefix);
+        ImportExport::options($prefix);
 
         // Intentionally not registered in the free plugin: there is no license to
         // activate here (and no LicenseRest controller backing the field). This is

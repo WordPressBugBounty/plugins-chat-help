@@ -40,7 +40,7 @@ class WhatsAppFields
             'class'      => $class,
             'type'       => 'text',
             'title'      => esc_html__('WhatsApp Number', 'chat-help'),
-            'title_help' => '<div class="chat-help-info-label">' . esc_html__('Add your WhatsApp number including the country code (e.g., +880123456189).', 'chat-help') . '</div> <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-should-i-enter-my-whatsapp-number-in-the-plugin/?ref=1">' . esc_html__('Detailed explanation', 'chat-help') . '</a>',
+            'title_help' => '<div class="chat-help-info-label">' . esc_html__('Add your WhatsApp number including the country code (e.g., +880123456189).', 'chat-help') . '</div> ',
             'dependency' => $dependency,
         );
     }
@@ -57,7 +57,7 @@ class WhatsAppFields
             'type'       => 'text',
             'class'      => $class,
             'title'      => esc_html__('WhatsApp Group', 'chat-help'),
-            'title_help' => '<div class="chat-help-info-label">' . esc_html__('Invite your visitors to join your WhatsApp group by adding the group’s invite URL here.', 'chat-help') . '</div> <a class="tooltip_btn_primary" target="_blank" href="' . CHAT_HELP_DEMO_URL . 'docs/how-do-i-create-a-whatsapp-group-and-invite-members/?ref=1">' . esc_html__('Detailed explanation', 'chat-help') . '</a>',
+            'title_help' => '<div class="chat-help-info-label">' . esc_html__('Invite your visitors to join your WhatsApp group by adding the group’s invite URL here.', 'chat-help') . '</div> ',
             'dependency' => $dependency,
         );
     }
