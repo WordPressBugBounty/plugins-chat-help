@@ -18,7 +18,7 @@ $select_default_option = isset($form_field['select_default_option']) ? $form_fie
 $select_options = isset($form_field['select_options']) ? $form_field['select_options'] : '';
 $chat_input_label = isset($options['chat_input_label']) ? $options['chat_input_label'] : false;
 
-$dynamic_id = Helpers::generate_safe_field_id($label, 'chat_help_select_' . esc_attr($field_id));
+$dynamic_id = isset($chat_help_field_ids[$field_id]) ? $chat_help_field_ids[$field_id] : Helpers::generate_safe_field_id($label, 'chat_help_select_' . esc_attr($field_id));
 
 if (!empty($select_options)) {
 ?>

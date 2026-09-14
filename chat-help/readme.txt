@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.6.0
+Stable tag: 3.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -251,6 +251,14 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 15. WhatsApp chat button Elementor widget for drag-and-drop customization of agent, number, pre-filled message, and button style on any page.
 
 == Changelog ==
+= 3.6.1 – 14 September 2026 =
+* Added: Form field variables by label — {name}, {message}, {your_email} — shown in the Form Message Template's Insert variable menu. Fields sharing a label are numbered in order: {name_1}, {name_2}.
+* Added: {time} variable for the time the message is sent.
+* Changed: {date} now outputs only the date; use {time} for the time. Both follow the site timezone and the date/time formats in Settings → General.
+* Fixed: Label-based field variables from older versions (e.g. {name}, {message}) output nothing in the WhatsApp message. The {text_1}-style variables and {form_fields} keep working.
+* Fixed: Form fields sharing the same label overwrote each other's value on submission.
+* Fixed: Text typed by a visitor containing a variable such as {ip} is no longer replaced.
+
 = 3.6.0 – 11 September 2026 =
 * Added: Import/Export under Settings — move the Global Chat, Custom Chats, Leads, WooCommerce and plugin settings between sites (or keep a backup) as one bundle or per type, in JSON, CSV or XML. Replaces the per-page Backup panels, which have been removed.
 * Added: "Add Chat" now asks for the essentials first — title, chat experience, WhatsApp type and number/group — creates the chat published, and opens it ready to edit.
@@ -669,6 +677,9 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 * Initial release.
 
 == Upgrade Notice ==
+
+= 3.6.1 =
+Restores label-based form variables such as {name} and {message}, adds {time}, and makes {date} output the date only. Recommended if you use the chat form.
 
 = 3.6.0 =
 Adds Import/Export, a guided "Add Chat" dialog and per-chat assignment, and rebuilds the chat editor on the settings layout. The per-page Backup panels are replaced by Import/Export.

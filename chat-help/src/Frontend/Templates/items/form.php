@@ -59,6 +59,7 @@ if ($product) {
     <div class="user-text">
         <?php
         if ($form_editor) {
+            $chat_help_field_ids = Helpers::form_field_ids($form_editor);
             foreach ($form_editor as $field_id => $form_field) {
                 $field_name = isset($form_field['field_select']) ? $form_field['field_select'] : '';
 

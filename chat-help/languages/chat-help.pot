@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-11 03:57+0000\n"
+"POT-Creation-Date: 2026-09-14 09:35+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -3768,7 +3768,7 @@ msgid "Pre-defined Message"
 msgstr ""
 
 #: src/Frontend/elementor-widgets/elementor-widget.php:138
-msgid "Global Vars - {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date} <br>WooCommerce Vars - {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus}<br><b>NOTE: WooCommerce vars work only on single product pages.</b>"
+msgid "Global Vars - {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date}, {time} <br>WooCommerce Vars - {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus}<br><b>NOTE: WooCommerce vars work only on single product pages.</b>"
 msgstr ""
 
 #: src/Frontend/elementor-widgets/elementor-widget.php:141
@@ -4388,7 +4388,7 @@ msgid "Customize the WhatsApp message template sent after form submission."
 msgstr ""
 
 #: src/Admin/Views/Fields/FloatingChatFields.php:775
-msgid "Use {form_fields} to include all fields, or insert specific variables (e.g., {text_1}, {textarea_2}) for more control."
+msgid "Use {form_fields} to include all fields, or insert specific variables (e.g., {name}, {message}) for more control."
 msgstr ""
 
 #: src/Admin/Views/Fields/FloatingChatFields.php:787

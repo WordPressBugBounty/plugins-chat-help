@@ -772,7 +772,7 @@ class FloatingChatFields
                                         'variables' => 'form',
                                         'type' => 'textarea',
                                         'title' => esc_html__('Form Message Template', 'chat-help'),
-                                        'title_help' => '<div class="chat-help-info-label">' .  esc_html__('Customize the WhatsApp message template sent after form submission.', 'chat-help') . '</div>' . ' ' . esc_html__('Use {form_fields} to include all fields, or insert specific variables (e.g., {text_1}, {textarea_2}) for more control.', 'chat-help') .      '</br>',
+                                        'title_help' => '<div class="chat-help-info-label">' .  esc_html__('Customize the WhatsApp message template sent after form submission.', 'chat-help') . '</div>' . ' ' . esc_html__('Use {form_fields} to include all fields, or insert specific variables (e.g., {name}, {message}) for more control.', 'chat-help') .      '</br>',
                                         'default' => "Hello! \nI’d like to get in touch regarding {currentTitle}.\nHere are my details:\n{form_fields}  {PRODUCT_START}\nProduct: {productName}\nPrice: {productPrice}{PRODUCT_END}",
                                         'desc' => '<div class="message_variables"></div>',
                                         'dependency' => array('chat_layout', 'any', 'form,multi_agent_form', 'any'),

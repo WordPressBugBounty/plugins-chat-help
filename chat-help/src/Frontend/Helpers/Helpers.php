@@ -632,7 +632,10 @@ class Helpers
 		$siteURL = get_site_url();
 		$currentURL = $override_currentURL ?: home_url($wp->request);
 		$siteEmail = get_bloginfo('admin_email');
-		$date    = gmdate('F j, Y, H:i (h:i A) (\G\M\T O)');
+		// {date} is the date alone and {time} the time alone, both in the site's
+		// timezone and its Settings → General formats.
+		$date    = wp_date(get_option('date_format', 'F j, Y'));
+		$time    = wp_date(get_option('time_format', 'g:i a'));
 		$ip = esc_sql(sanitize_text_field($_SERVER['REMOTE_ADDR']));
 
 		// 🔁 Define a list of conditional tag rules
@@ -662,8 +665,8 @@ class Helpers
 		$orderInfo = self::order_info_whatsapp_info();
 		$shippingInfo = self::get_shipping_whatsapp_info();
 
-		$variables = array('{siteTitle}', '{currentTitle}', '{siteURL}', '{currentURL}', '{siteEmail}', '{date}', '{ip}', '{cartInfo}', '{orderInfo}', '{shipping}');
-		$values = array($siteTitle, $currentTitle, $siteURL, $currentURL, $siteEmail, $date, $ip, $cartInfo, $orderInfo, $shippingInfo);
+		$variables = array('{siteTitle}', '{currentTitle}', '{siteURL}', '{currentURL}', '{siteEmail}', '{date}', '{time}', '{ip}', '{cartInfo}', '{orderInfo}', '{shipping}');
+		$values = array($siteTitle, $currentTitle, $siteURL, $currentURL, $siteEmail, $date, $time, $ip, $cartInfo, $orderInfo, $shippingInfo);
 		if (!self::is_valid_wc_product($product)) {
 			$product = null;
 		}
@@ -683,79 +686,161 @@ class Helpers
 		}
 
 		if ($form) {
-			$fields_label = [];
-			$fields_data = [];
-			$field_index = 1;
 			$options = get_option('cwp_option');
 			$form_editor = isset($options['form_editor']) ? $options['form_editor'] : '';
 			$chat_layout = isset($options['chat_layout']) ? $options['chat_layout'] : '';
 
 			if ('agent_input' === $chat_layout) {
 				$variables[] = '{agentMessage}';
-				$values[] = $formData['agent_message'];
+				$values[] = $formData['agent_message'] ?? '';
 			} else {
-				foreach ($form_editor as $field_id => $form_field) {
-					$field_name = isset($form_field['field_select']) ? $form_field['field_select'] : '';
-					switch ($field_name) {
-						case 'text':
-							$field_label = isset($form_field['label']) ? $form_field['label'] : '';
-							$fields_label['label_' . $field_index] = $field_label;
-
-							$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_text_' . esc_attr($field_id));
-							$fields_data['text_' . $field_index] = sanitize_text_field($formData[$dynamic_id] ?? '');
-							break;
-						case 'email':
-							$field_label = isset($form_field['label']) ? $form_field['label'] : '';
-							$fields_label['label_' . $field_index] = $field_label;
-
-							$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_email_' . esc_attr($field_id));
-							$fields_data['email_' . $field_index] = sanitize_email($formData[$dynamic_id] ?? '');
-							break;
-						case 'phone_number':
-							$field_label = isset($form_field['label']) ? $form_field['label'] : '';
-							$fields_label['label_' . $field_index] = $field_label;
-
-							$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_phone_number_' . esc_attr($field_id));
-							$fields_data['phone_number_' . $field_index] = sanitize_text_field($formData[$dynamic_id] ?? '');
-							break;
-						case 'select':
-							$field_label = isset($form_field['label']) ? $form_field['label'] : '';
-							$fields_label['label_' . $field_index] = $field_label;
-
-							$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_select_' . esc_attr($field_id));
-							$fields_data['select_' . $field_index] = sanitize_text_field($formData[$dynamic_id] ?? '');
-							break;
-						case 'textarea':
-							$field_label = isset($form_field['label']) ? $form_field['label'] : '';
-							$fields_label['label_' . $field_index] = $field_label;
-							$dynamic_id = Helpers::generate_safe_field_id($field_label, 'chat_help_textarea_' . esc_attr($field_id));
-							$fields_data['textarea_' . $field_index] = sanitize_textarea_field($formData[$dynamic_id] ?? '');
-					}
-					$field_index++;
-				}
-
-				$form_fields = '';
-				foreach ($fields_label as $key => $label) {
-					$index = str_replace('label_', '', $key);
-					foreach ($fields_data as $data_key => $value) {
-						if (strpos($data_key, "_$index") !== false) {
-							$form_fields .= "$label: $value, ";
-							break;
-						}
-					}
-				}
-				$form_fields = rtrim($form_fields, ', ');
-				foreach ($fields_data as $key => $value) {
-					$variables[] = '{' . $key . '}';
+				$form_values = self::form_field_values($form_editor, $formData);
+				foreach ($form_values['tokens'] as $token => $value) {
+					$variables[] = $token;
 					$values[] = $value;
 				}
 				$variables[] = '{form_fields}';
-				$values[] = $form_fields;
+				$values[] = $form_values['form_fields'];
 			}
 		}
 
-		$replace_vars = trim(str_replace($variables, $values, $message));
+		// strtr() makes a single pass: a later pair wins over an earlier one with
+		// the same token (a form field labelled "Date" beats the global {date}),
+		// and text a visitor typed is never itself scanned for more variables.
+		$replace_vars = trim(strtr($message, array_combine($variables, $values)));
 		return $replace_vars;
+	}
+
+	/**
+	 * Form field types rendered as inputs by items/form.php.
+	 */
+	const FORM_INPUT_TYPES = array('text', 'email', 'phone_number', 'textarea', 'select');
+
+	/**
+	 * Turn a field label into its variable/input key: "Your Name" → "your_name".
+	 *
+	 * @param string $label Field label.
+	 * @return string Key, or '' when the label has no latin letters/digits.
+	 */
+	public static function field_label_key($label)
+	{
+		$key = strtolower(trim((string) $label));
+		$key = preg_replace('/\s+/', '_', $key);
+		return preg_replace('/[^a-z0-9_]/', '', $key);
+	}
+
+	/**
+	 * Input name for every Form Fields row, keyed by row id.
+	 *
+	 * The first "Name" field is `name`, a second one `name_1`, and so on. Unlike
+	 * generate_safe_field_id() the counter is local to the call, so the form
+	 * render and the submission handler always agree on the names.
+	 *
+	 * @param array $form_editor Form Fields rows.
+	 * @return array
+	 */
+	public static function form_field_ids($form_editor)
+	{
+		$ids = array();
+		$used = array();
+		if (!is_array($form_editor)) {
+			return $ids;
+		}
+		foreach ($form_editor as $field_id => $form_field) {
+			$type = isset($form_field['field_select']) ? $form_field['field_select'] : '';
+			if (!in_array($type, self::FORM_INPUT_TYPES, true)) {
+				continue;
+			}
+			$key = self::field_label_key(isset($form_field['label']) ? $form_field['label'] : '');
+			if ('' === $key) {
+				$ids[$field_id] = 'chat_help_' . $type . '_' . esc_attr($field_id);
+				continue;
+			}
+			if (isset($used[$key])) {
+				$used[$key]++;
+				$key .= '_' . $used[$key];
+			} else {
+				$used[$key] = 0;
+			}
+			$ids[$field_id] = $key;
+		}
+		return $ids;
+	}
+
+	/**
+	 * Submitted Form Fields values and the message variables they provide.
+	 *
+	 * Every field is reachable three ways, so templates from any plugin version
+	 * keep working:
+	 * - by label: {name}, {message}. When several fields share a label they are
+	 *   also numbered in order: {name_1}, {name_2} ({name} is the first one).
+	 * - by type and row position: {text_1}, {textarea_2} (older format).
+	 * - all together: {form_fields}.
+	 *
+	 * @param array $form_editor Form Fields rows.
+	 * @param array $formData    Submitted form data.
+	 * @return array { tokens: array, form_fields: string, fields: array }
+	 */
+	public static function form_field_values($form_editor, $formData)
+	{
+		$formData = is_array($formData) ? $formData : array();
+		$ids = self::form_field_ids($form_editor);
+		$fields = array();
+		$label_count = array();
+		$field_index = 1;
+
+		foreach ((is_array($form_editor) ? $form_editor : array()) as $field_id => $form_field) {
+			if (isset($ids[$field_id])) {
+				$type = $form_field['field_select'];
+				$label = isset($form_field['label']) ? $form_field['label'] : '';
+				$raw = isset($formData[$ids[$field_id]]) ? $formData[$ids[$field_id]] : '';
+				if ('email' === $type) {
+					$value = sanitize_email($raw);
+				} elseif ('textarea' === $type) {
+					$value = sanitize_textarea_field($raw);
+				} else {
+					$value = sanitize_text_field($raw);
+				}
+				$key = self::field_label_key($label);
+				if ('' !== $key) {
+					$label_count[$key] = isset($label_count[$key]) ? $label_count[$key] + 1 : 1;
+				}
+				$fields[] = array(
+					'index'    => $field_index,
+					'type'     => $type,
+					'label'    => $label,
+					'key'      => $key,
+					'position' => '' !== $key ? $label_count[$key] : 0,
+					'value'    => $value,
+				);
+			}
+			$field_index++;
+		}
+
+		$tokens = array();
+		$form_fields = array();
+		foreach ($fields as $field) {
+			$tokens['{' . $field['type'] . '_' . $field['index'] . '}'] = $field['value'];
+			$form_fields[] = $field['label'] . ': ' . $field['value'];
+		}
+		// Numbered label tokens first, so a field literally labelled "Name 2"
+		// still owns {name_2} over the second "Name" field.
+		foreach ($fields as $field) {
+			if ('' !== $field['key'] && $label_count[$field['key']] > 1) {
+				$tokens['{' . $field['key'] . '_' . $field['position'] . '}'] = $field['value'];
+			}
+		}
+		foreach ($fields as $field) {
+			if ('' !== $field['key'] && 1 === $field['position']) {
+				$tokens['{' . $field['key'] . '}'] = $field['value'];
+			}
+		}
+
+		return array(
+			'tokens'      => $tokens,
+			'form_fields' => implode(', ', $form_fields),
+			'fields'      => $fields,
+		);
 	}
 
 	/**

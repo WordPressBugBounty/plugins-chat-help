@@ -19,7 +19,7 @@ $required = !empty($form_field['required']) ? 'required' : '';
 $custom_validation_message = isset($form_field['custom_validation_message']) ? $form_field['custom_validation_message'] : '';
 $chat_input_label = isset($options['chat_input_label']) ? $options['chat_input_label'] : false;
 
-$dynamic_id = Helpers::generate_safe_field_id($label, 'chat_help_text_' . esc_attr($field_id));
+$dynamic_id = isset($chat_help_field_ids[$field_id]) ? $chat_help_field_ids[$field_id] : Helpers::generate_safe_field_id($label, 'chat_help_text_' . esc_attr($field_id));
 ?>
 <div class="form_field">
     <?php if ($label && $chat_input_label) { ?>
