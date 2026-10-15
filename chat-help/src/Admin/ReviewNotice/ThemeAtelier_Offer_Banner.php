@@ -63,22 +63,30 @@ class ThemeAtelier_Offer_Banner {
 
 		// Define offer durations.
 		$offers = array(
-		
-			'mega_sale_v2'     => array(
-				'id'    => 'mega_sale_v2_2026',
-				'start' => strtotime( '2026-09-01 00:00:00' ),
-				'end'   => strtotime( '2026-09-30 23:59:59' ),
-				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/mega-sale.svg',
-				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=mega_sale_2026',
+			'halloween_deal'     => array(
+				'id'    => 'halloween_deal_2026',
+				'start' => strtotime( '2026-10-19 00:00:00' ),
+				'end'   => strtotime( '2026-11-05 23:59:59' ),
+				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/halloween-sale.svg',
+				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chathelp_plugin&utm_medium=offer_banner&utm_campaign=halloween_deal_2026',
 			),
-				'mega_sale_v3'     => array(
-				'id'    => 'mega_sale_v3_2026',
-				'start' => strtotime( '2026-10-01 00:00:00' ),
-				'end'   => strtotime( '2026-10-31 23:59:59' ),
-				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/mega-sale.svg',
-				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chat_help_plugin&utm_medium=offer_banner&utm_campaign=mega_sale_2026',
+
+			'black_friday_deal'     => array(
+				'id'    => 'black_friday_deal_2026',
+				'start' => strtotime( '2026-11-06 00:00:00' ),
+				'end'   => strtotime( '2026-12-15 23:59:59' ),
+				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/black-friday-sale.svg',
+				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chathelp_plugin&utm_medium=offer_banner&utm_campaign=black_friday_deal_2026',
 			),
-			
+
+			'christmas_deal'     => array(
+				'id'    => 'christmas_deal_2026',
+				'start' => strtotime( '2026-12-20 00:00:00' ),
+				'end'   => strtotime( '2027-01-15 23:59:59' ),
+				'image' => CHAT_HELP_DIR_URL . 'src/Admin/ReviewNotice/assets/img/christmas-sale.svg',
+				'link'  => 'https://wpchathelp.com/pricing/?utm_source=chathelp_plugin&utm_medium=offer_banner&utm_campaign=christmas_deal_2026',
+			),
+
 		);
 
 		$active_offers = array();

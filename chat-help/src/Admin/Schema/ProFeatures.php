@@ -1,5 +1,12 @@
 <?php
 
+namespace ThemeAtelier\ChatHelp\Admin\Schema;
+
+if (! defined('ABSPATH')) {
+    die;
+}
+
+
 /**
  * Central Pro-feature lock map for the free plugin.
  *
@@ -55,12 +62,6 @@
  * @subpackage chat-help/src/Admin/Schema
  * @author     ThemeAtelier<themeatelierbd@gmail.com>
  */
-
-namespace ThemeAtelier\ChatHelp\Admin\Schema;
-
-if (! defined('ABSPATH')) {
-    die;
-}
 
 class ProFeatures
 {

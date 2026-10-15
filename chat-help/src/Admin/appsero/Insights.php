@@ -240,7 +240,7 @@ class Insights
             $data['tracking_skipped'] = true;
         }
 
-        return apply_filters($this->client->slug . '_tracker_data', $data);
+        return apply_filters($this->client->slug . '_tracker_data', $data); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound -- Bundled Appsero SDK, kept as shipped.
     }
 
     /**
@@ -327,9 +327,9 @@ class Insights
     {
         return false;
 
-        $is_local = in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'));
+        $is_local = in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1')); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated -- Bundled Appsero SDK, kept as shipped.
 
-        return apply_filters('appsero_is_local', $is_local);
+        return apply_filters('appsero_is_local', $is_local); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Bundled Appsero SDK, kept as shipped.
     }
 
     /**
@@ -479,7 +479,7 @@ class Insights
     {
         global $wpdb;
 
-        return (int) $wpdb->get_var("SELECT count(ID) FROM $wpdb->posts WHERE post_type = '$post_type' and post_status = 'publish'");
+        return (int) $wpdb->get_var($wpdb->prepare("SELECT count(ID) FROM $wpdb->posts WHERE post_type = %s and post_status = 'publish'", $post_type)); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Bundled Appsero SDK; a single count for the opt-in report.
     }
 
     /**
@@ -494,7 +494,7 @@ class Insights
         $server_data = array();
 
         if (isset($_SERVER['SERVER_SOFTWARE']) && ! empty($_SERVER['SERVER_SOFTWARE'])) {
-            $server_data['software'] = $_SERVER['SERVER_SOFTWARE'];
+            $server_data['software'] = $_SERVER['SERVER_SOFTWARE']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Bundled Appsero SDK, kept as shipped.
         }
 
         if (function_exists('phpversion')) {
@@ -744,13 +744,13 @@ class Insights
     public function uninstall_reason_submission()
     {
 
-        if (! isset($_POST['reason_id'])) {
+        if (! isset($_POST['reason_id'])) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Bundled Appsero SDK, kept as shipped.
             wp_send_json_error();
         }
 
         $data                = $this->get_tracking_data();
-        $data['reason_id']   = sanitize_text_field($_POST['reason_id']);
-        $data['reason_info'] = isset($_REQUEST['reason_info']) ? trim(stripslashes($_REQUEST['reason_info'])) : '';
+        $data['reason_id']   = sanitize_text_field($_POST['reason_id']); // phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Bundled Appsero SDK, kept as shipped.
+        $data['reason_info'] = isset($_REQUEST['reason_info']) ? trim(stripslashes($_REQUEST['reason_info'])) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Bundled Appsero SDK, kept as shipped.
 
         $this->client->send_request($data, 'deactivate');
 
@@ -772,7 +772,7 @@ class Insights
 
         $this->deactivation_modal_styles();
         $reasons = $this->get_uninstall_reasons();
-        $custom_reasons = apply_filters('appsero_custom_deactivation_reasons', []);
+        $custom_reasons = apply_filters('appsero_custom_deactivation_reasons', []); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Bundled Appsero SDK, kept as shipped.
 ?>
 
         <div class="wd-dr-modal" id="<?php echo esc_attr($this->client->slug); ?>-wd-dr-modal">

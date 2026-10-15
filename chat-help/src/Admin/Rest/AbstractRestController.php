@@ -303,6 +303,7 @@ abstract class AbstractRestController
                 foreach (\get_posts($args) as $post) {
                     $out[(string) $post->ID] = ($post->post_title !== '')
                         ? $post->post_title
+                        /* translators: %d: post ID. */
                         : \sprintf(\__('(no title) #%d', 'chat-help'), $post->ID);
                 }
                 break;
@@ -312,6 +313,7 @@ abstract class AbstractRestController
                 foreach (\get_pages(['post_status' => 'publish']) as $page) {
                     $out[(string) $page->ID] = ($page->post_title !== '')
                         ? $page->post_title
+                        /* translators: %d: post ID. */
                         : \sprintf(\__('(no title) #%d', 'chat-help'), $page->ID);
                 }
                 break;

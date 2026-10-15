@@ -108,7 +108,7 @@ class Analytics
         $country = $this->detect_country();
         $browser = $this->detect_browser();
 
-        $wpdb->insert(
+        $wpdb->insert( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- The plugin's own analytics / leads table, named $wpdb->prefix . 'chat_help_*'; no core API reads or writes it.
             $this->table,
             [
                 'widget_id'   => $widget_id,
@@ -125,6 +125,9 @@ class Analytics
         return new WP_REST_Response(['success' => true], 200);
     }
 
+    // Report queries on the plugin's own tables ($wpdb->prefix . 'chat_help_analytics' / 'chat_help_leads').
+    // Every interpolated fragment ($widget_where, $date_where, $leads_where) comes from $wpdb->prepare().
+    // phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
     public function get_summary(WP_REST_Request $request)
     {
         global $wpdb;
@@ -286,6 +289,8 @@ class Analytics
             'message' => __('Traffic Breakdown is a Pro feature. Upgrade to see countries, pages, and browsers.', 'chat-help'),
         ], 403);
     }
+    // phpcs:enable WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+
 
     private function build_where(array $params)
     {
@@ -318,39 +323,39 @@ class Analytics
 
         switch ($period) {
             case 'last_week':
-                $dow         = (int) date('N', $now);
+                $dow         = (int) gmdate('N', $now);
                 $this_monday = $now - ($dow - 1) * DAY_IN_SECONDS;
                 $last_monday = $this_monday - 7 * DAY_IN_SECONDS;
-                $from        = date('Y-m-d', $last_monday);
-                $to          = date('Y-m-d', $last_monday + 6 * DAY_IN_SECONDS);
+                $from        = gmdate('Y-m-d', $last_monday);
+                $to          = gmdate('Y-m-d', $last_monday + 6 * DAY_IN_SECONDS);
                 break;
             case 'this_month':
-                $from = date('Y-m-01', $now);
-                $to   = date('Y-m-t', $now);
+                $from = gmdate('Y-m-01', $now);
+                $to   = gmdate('Y-m-t', $now);
                 break;
             case 'last_month':
-                $first_of_this = mktime(0, 0, 0, (int) date('m', $now), 1, (int) date('Y', $now));
+                $first_of_this = gmmktime(0, 0, 0, (int) gmdate('m', $now), 1, (int) gmdate('Y', $now));
                 $last_ts       = $first_of_this - DAY_IN_SECONDS;
-                $from          = date('Y-m-01', $last_ts);
-                $to            = date('Y-m-t', $last_ts);
+                $from          = gmdate('Y-m-01', $last_ts);
+                $to            = gmdate('Y-m-t', $last_ts);
                 break;
             case 'this_year':
-                $from = date('Y-01-01', $now);
-                $to   = date('Y-12-31', $now);
+                $from = gmdate('Y-01-01', $now);
+                $to   = gmdate('Y-12-31', $now);
                 break;
             case 'last_year':
-                $year = (int) date('Y', $now) - 1;
+                $year = (int) gmdate('Y', $now) - 1;
                 $from = "{$year}-01-01";
                 $to   = "{$year}-12-31";
                 break;
             case 'custom':
-                $from = ! empty($date_from) ? sanitize_text_field($date_from) : date('Y-m-d', $now - 6 * DAY_IN_SECONDS);
-                $to   = ! empty($date_to)   ? sanitize_text_field($date_to)   : date('Y-m-d', $now);
+                $from = ! empty($date_from) ? sanitize_text_field($date_from) : gmdate('Y-m-d', $now - 6 * DAY_IN_SECONDS);
+                $to   = ! empty($date_to)   ? sanitize_text_field($date_to)   : gmdate('Y-m-d', $now);
                 break;
             default: // this_week
-                $dow  = (int) date('N', $now);
-                $from = date('Y-m-d', $now - ($dow - 1) * DAY_IN_SECONDS);
-                $to   = date('Y-m-d', $now + (7 - $dow) * DAY_IN_SECONDS);
+                $dow  = (int) gmdate('N', $now);
+                $from = gmdate('Y-m-d', $now - ($dow - 1) * DAY_IN_SECONDS);
+                $to   = gmdate('Y-m-d', $now + (7 - $dow) * DAY_IN_SECONDS);
         }
 
         return [$from, $to];
@@ -364,12 +369,12 @@ class Analytics
 
         if ($group_by === 'month') {
             while ($start <= $end) {
-                $labels[] = date('Y-m', $start);
-                $start    = mktime(0, 0, 0, (int) date('m', $start) + 1, 1, (int) date('Y', $start));
+                $labels[] = gmdate('Y-m', $start);
+                $start    = gmmktime(0, 0, 0, (int) gmdate('m', $start) + 1, 1, (int) gmdate('Y', $start));
             }
         } else {
             while ($start <= $end) {
-                $labels[] = date('Y-m-d', $start);
+                $labels[] = gmdate('Y-m-d', $start);
                 $start   += DAY_IN_SECONDS;
             }
         }
@@ -381,7 +386,7 @@ class Analytics
     {
         $headers = ['CF-IPCountry', 'HTTP_X_COUNTRY_CODE', 'HTTP_GEOIP_COUNTRY_CODE'];
         foreach ($headers as $h) {
-            $val = $_SERVER[$h] ?? '';
+            $val = isset($_SERVER[$h]) ? sanitize_text_field(wp_unslash($_SERVER[$h])) : '';
             if ($val && strlen($val) <= 3) {
                 return strtoupper(sanitize_text_field($val));
             }
@@ -391,7 +396,7 @@ class Analytics
 
     private function detect_browser()
     {
-        $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
+        $ua = isset($_SERVER['HTTP_USER_AGENT']) ? sanitize_text_field(wp_unslash($_SERVER['HTTP_USER_AGENT'])) : '';
         if (stripos($ua, 'Edg') !== false)    return 'Edge';
         if (stripos($ua, 'OPR') !== false)    return 'Opera';
         if (stripos($ua, 'YaBrowser') !== false) return 'Yandex';

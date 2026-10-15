@@ -308,7 +308,7 @@ class Admin
 			return;
 		}
 
-		$page = isset($_GET['page']) ? sanitize_key(wp_unslash($_GET['page'])) : '';
+		$page = isset($_GET['page']) ? sanitize_key(wp_unslash($_GET['page'])) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reads the admin page / tab from the URL to decide what to load; nothing is changed.
 		$map  = array(
 			'chat-help-floating'  => '#/global',
 			'floating-chat'       => '#/global',
@@ -320,12 +320,12 @@ class Admin
 			'assign-widget'       => '#/assign-widget',
 		);
 
-		if (isset($map[$page]) && empty($_GET['classic'])) {
+		if (isset($map[$page]) && empty($_GET['classic'])) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reads the admin page / tab from the URL to decide what to load; nothing is changed.
 			wp_safe_redirect(admin_url('admin.php?page=chat-help#/global?section=general') . $map[$page]);
 			exit;
 		}
 
-		if (! empty($_GET['classic'])) {
+		if (! empty($_GET['classic'])) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reads the admin page / tab from the URL to decide what to load; nothing is changed.
 			return;
 		}
 
@@ -335,26 +335,26 @@ class Admin
 		$base = admin_url('admin.php?page=chat-help#/global?section=general');
 
 		if ($pagenow === 'edit.php'
-			&& isset($_GET['post_type'])
-			&& sanitize_key(wp_unslash($_GET['post_type'])) === 'floating_widget'
+			&& isset($_GET['post_type']) // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reads the admin page / tab from the URL to decide what to load; nothing is changed.
+			&& sanitize_key(wp_unslash($_GET['post_type'])) === 'floating_widget' // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reads the admin page / tab from the URL to decide what to load; nothing is changed.
 		) {
 			wp_safe_redirect($base . '#/widgets');
 			exit;
 		}
 
 		if ($pagenow === 'post-new.php'
-			&& isset($_GET['post_type'])
-			&& sanitize_key(wp_unslash($_GET['post_type'])) === 'floating_widget'
+			&& isset($_GET['post_type']) // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reads the admin page / tab from the URL to decide what to load; nothing is changed.
+			&& sanitize_key(wp_unslash($_GET['post_type'])) === 'floating_widget' // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reads the admin page / tab from the URL to decide what to load; nothing is changed.
 		) {
 			wp_safe_redirect($base . '#/widgets/new');
 			exit;
 		}
 
 		if ($pagenow === 'post.php'
-			&& isset($_GET['post'])
-			&& get_post_type((int) $_GET['post']) === 'floating_widget'
+			&& isset($_GET['post']) // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reads the admin page / tab from the URL to decide what to load; nothing is changed.
+			&& get_post_type((int) $_GET['post']) === 'floating_widget' // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reads the admin page / tab from the URL to decide what to load; nothing is changed.
 		) {
-			wp_safe_redirect($base . '#/widgets/' . (int) $_GET['post']);
+			wp_safe_redirect($base . '#/widgets/' . (int) $_GET['post']); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reads the admin page / tab from the URL to decide what to load; nothing is changed.
 			exit;
 		}
 	}
@@ -658,14 +658,14 @@ class Admin
 			return $text;
 		}
 
-		$review = sprintf(
+		$review = '<i>' . sprintf(
 			/* translators: 1: start strong tag, 2: close strong tag. 3: start link 4: close link */
-			__('<i>Enjoying %1$sWhatsApp Chat Help?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊</i>', 'chat-help'),
+			__('Enjoying %1$sWhatsApp Chat Help?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊', 'chat-help'),
 			'<strong>',
 			'</strong>',
 			'<span class="chat-help-footer-text-star">★★★★★</span> <a href="https://wordpress.org/support/plugin/chat-help/reviews/#new-post" target="_blank">',
 			'</a>'
-		);
+		) . '</i>';
 
 		echo wp_kses_post($review);
 

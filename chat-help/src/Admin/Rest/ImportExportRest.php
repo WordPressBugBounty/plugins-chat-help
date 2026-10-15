@@ -220,7 +220,7 @@ class ImportExportRest extends AbstractRestController
         if ($scope === 'leads') {
             global $wpdb;
             $table = $wpdb->prefix . 'chat_help_leads';
-            // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter -- The plugin's own leads table; the name is $wpdb->prefix . 'chat_help_leads'.
             $rows = $wpdb->get_results("SELECT field, meta, agent_name, created_at FROM {$table} ORDER BY id ASC", ARRAY_A);
             return \is_array($rows) ? $rows : [];
         }
@@ -357,7 +357,7 @@ class ImportExportRest extends AbstractRestController
     /** Envelope → `scope,key,value` rows. Non-scalars are JSON in the cell. */
     private function to_csv(array $envelope): string
     {
-        $handle = \fopen('php://temp', 'r+');
+        $handle = \fopen('php://temp', 'r+'); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen -- An in-memory php://temp stream for fputcsv() / fgetcsv(); nothing is written to disk.
         \fputcsv($handle, ['scope', 'key', 'value']);
 
         foreach ($envelope['data'] as $scope => $payload) {
@@ -378,7 +378,7 @@ class ImportExportRest extends AbstractRestController
 
         \rewind($handle);
         $csv = (string) \stream_get_contents($handle);
-        \fclose($handle);
+        \fclose($handle); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose -- An in-memory php://temp stream for fputcsv() / fgetcsv(); nothing is written to disk.
 
         return $csv;
     }
@@ -386,13 +386,13 @@ class ImportExportRest extends AbstractRestController
     /** The same rows back, with JSON cells decoded where they were encoded. */
     private function from_csv(string $content): ?array
     {
-        $handle = \fopen('php://temp', 'r+');
-        \fwrite($handle, $content);
+        $handle = \fopen('php://temp', 'r+'); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen -- An in-memory php://temp stream for fputcsv() / fgetcsv(); nothing is written to disk.
+        \fwrite($handle, $content); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fwrite -- An in-memory php://temp stream for fputcsv() / fgetcsv(); nothing is written to disk.
         \rewind($handle);
 
         $header = \fgetcsv($handle);
         if (! $header || \count($header) < 3) {
-            \fclose($handle);
+            \fclose($handle); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose -- An in-memory php://temp stream for fputcsv() / fgetcsv(); nothing is written to disk.
             return null;
         }
 
@@ -413,7 +413,7 @@ class ImportExportRest extends AbstractRestController
             // into a map of "0", "1", …
             $data[$scope][\is_numeric($key) ? (int) $key : $key] = $value;
         }
-        \fclose($handle);
+        \fclose($handle); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose -- An in-memory php://temp stream for fputcsv() / fgetcsv(); nothing is written to disk.
 
         return $data ? ['data' => $data] : null;
     }

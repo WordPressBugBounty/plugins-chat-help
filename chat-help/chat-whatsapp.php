@@ -3,7 +3,7 @@
 Plugin Name: 	ChatHelp
 Plugin URI: 	https://wpchathelp.com/
 Description: 	WhatsApp 💬 ChatHelp 🔥 Unlimited customer support tool that allows visitors to engage using "WhatsApp" or "WhatsApp Business". WhatsApp button included.
-Version: 		3.6.1
+Version: 		3.7.0
 Author:         ThemeAtelier
 Author URI:     https://themeatelier.net/
 License:        GPL-2.0+
@@ -26,7 +26,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 use ThemeAtelier\ChatHelp\Includes\ChatHelp;
 
 if (!defined('CHAT_HELP_VERSION')) {
-    define('CHAT_HELP_VERSION', '3.6.1');
+    define('CHAT_HELP_VERSION', '3.7.0');
 }
 if (!defined('CHAT_HELP_FILE')) {
     define('CHAT_HELP_FILE', __FILE__);
@@ -70,11 +70,11 @@ if (! (is_plugin_active('chat-help-pro/chat-help-pro.php') || is_plugin_active_f
     chat_help_run();
 }
 
-$pro_plugin_slug = 'chat-help-pro/chat-help-pro.php';
+$chat_help_pro_plugin_slug = 'chat-help-pro/chat-help-pro.php';
 // kick-off the plugin
-if (!is_plugin_active($pro_plugin_slug)) {
+if (!is_plugin_active($chat_help_pro_plugin_slug)) {
     // Register block
-    function create_chat_help_block_init()
+    function create_chat_help_block_init() // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- Existing public name; renaming would break code that references it.
     {
         register_block_type_from_metadata(CHAT_HELP_DIR_PATH . 'src/Frontend/blocks/');
     }
@@ -148,8 +148,8 @@ function chat_help_detect_activation_country()
     // Reverse-proxy geo header (Cloudflare, etc.), when present — instant,
     // no network call.
     foreach (['HTTP_CF_IPCOUNTRY', 'HTTP_X_COUNTRY_CODE', 'HTTP_GEOIP_COUNTRY_CODE'] as $header) {
-        if (!empty($_SERVER[$header]) && strlen($_SERVER[$header]) === 2) {
-            return strtolower(sanitize_text_field($_SERVER[$header]));
+        if (!empty($_SERVER[$header]) && strlen($_SERVER[$header]) === 2) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Only the length is checked here; the value is sanitized where it is used.
+            return strtolower(sanitize_text_field(wp_unslash($_SERVER[$header])));
         }
     }
 
@@ -190,7 +190,7 @@ register_activation_hook(CHAT_HELP_FILE, 'chat_help_activate');
  *
  * @return void
  */
-function whatsHelp_chat_appsero_init()
+function whatsHelp_chat_appsero_init() // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- Existing public name; renaming would break code that references it.
 {
     if (!class_exists('WhatsHelpAppSero\Insights')) {
         require_once CHAT_HELP_DIR_PATH . 'src/Admin/appsero/Client.php';

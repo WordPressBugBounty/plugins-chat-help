@@ -71,7 +71,7 @@ class Frontend
         }
         $handle          = 'chat-help-google-font-' . sanitize_key($font_family);
         $font_url_family = str_replace(' ', '+', $font_family);
-        wp_enqueue_style($handle, "https://fonts.googleapis.com/css2?family={$font_url_family}&display=swap", [], null);
+        wp_enqueue_style($handle, "https://fonts.googleapis.com/css2?family={$font_url_family}&display=swap", [], null); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts stylesheet; a version query string would only defeat its caching.
         return $handle;
     }
 
@@ -199,7 +199,7 @@ class Frontend
         }
 
         wp_add_inline_style('chat-help-style', $custom_css);
-        wp_enqueue_script('moment', array('jquery'), '1.0', true);
+        wp_enqueue_script('moment');
         wp_enqueue_script('moment-timezone-with-data');
         wp_enqueue_script('jquery_validate');
         wp_enqueue_script('chat-help-script');
@@ -222,7 +222,7 @@ class Frontend
                 'ajaxurl' => admin_url('admin-ajax.php'),
                 'nonce'   => wp_create_nonce('chat_help_nonce'),
                 'open_in_new_tab'   => $open_in_new_tab,
-                'ip'   => esc_sql(sanitize_text_field($_SERVER['REMOTE_ADDR'])),
+                'ip'   => (isset($_SERVER['REMOTE_ADDR']) ? esc_sql(sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR']))) : ''),
             )
         );
     }
@@ -381,16 +381,17 @@ class Frontend
     public function handle_form_submission()
     {
         // Verify the nonce
-        if (!isset($_POST['nonce']) || !wp_verify_nonce(wp_unslash($_POST['nonce']), 'chat_help_nonce')) {
+        if (!isset($_POST['nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['nonce'])), 'chat_help_nonce')) {
             wp_send_json_error('Invalid nonce');
             wp_die();
         }
 
-        parse_str($_POST['data'], $formData);
-        $product_id = isset($_POST['product_id']) ? sanitize_text_field($_POST['product_id']) : '';
-        $current_url = isset($_POST['current_url']) ? sanitize_url($_POST['current_url']) : '';
-        $current_title = isset($_POST['current_title']) ? sanitize_text_field($_POST['current_title']) : '';
-        $agentName = isset($_POST['agentName']) ? sanitize_text_field($_POST['agentName']) : '';
+        parse_str(isset($_POST['data']) ? wp_unslash($_POST['data']) : '', $formData); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- URL-encoded form string; every parsed value is sanitized on the next line.
+        $formData = map_deep($formData, 'sanitize_textarea_field');
+        $product_id = isset($_POST['product_id']) ? sanitize_text_field(wp_unslash($_POST['product_id'])) : '';
+        $current_url = isset($_POST['current_url']) ? sanitize_url(wp_unslash($_POST['current_url'])) : '';
+        $current_title = isset($_POST['current_title']) ? sanitize_text_field(wp_unslash($_POST['current_title'])) : '';
+        $agentName = isset($_POST['agentName']) ? sanitize_text_field(wp_unslash($_POST['agentName'])) : '';
         $options = get_option('cwp_option');
         $ch_settings = get_option('ch_settings');
         $agent_number = isset($_POST['number']) && $_POST['number'] !== ''
@@ -415,7 +416,7 @@ class Frontend
         $url = Helpers::whatsAppUrl($agent_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
 
         if ($chat_help_leads) {
-            $userInfo = isset($_POST['userInfo']) && is_array($_POST['userInfo']) ? array_map('sanitize_text_field', $_POST['userInfo']) : [];
+            $userInfo = isset($_POST['userInfo']) && is_array($_POST['userInfo']) ? array_map('sanitize_text_field', wp_unslash($_POST['userInfo'])) : [];
 
             $current_user_id    = get_current_user_id();
             if ($current_user_id) {
@@ -434,7 +435,7 @@ class Frontend
 
             global $wpdb;
             $tableUsers = $wpdb->prefix . 'chat_help_leads';
-            $wpdb->insert(
+            $wpdb->insert( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- The plugin's own analytics / leads table, named $wpdb->prefix . 'chat_help_*'; no core API reads or writes it.
                 $tableUsers,
                 [
                     'field'     => maybe_serialize($formData),

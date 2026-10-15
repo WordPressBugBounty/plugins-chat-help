@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Template files are included from inside a method, so these variables are local, not globals. Their names are part of the theme-override contract.
 if (! defined('ABSPATH')) {
     die;
 } // Cannot access directly.

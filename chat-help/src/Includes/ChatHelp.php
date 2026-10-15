@@ -129,7 +129,7 @@ class ChatHelp
     // load text domain from plugin folder
     function chat_help_load_textdomain()
     {
-        load_plugin_textdomain('chat-help', false, CHAT_HELP_DIRNAME . "/languages");
+        // Translations are loaded by WordPress itself for plugins hosted on WordPress.org.
     }
 
     function register_ctw_widget($widgets_manager)

@@ -126,7 +126,7 @@ class Leads
     {
         global $wpdb;
         $table_name = $wpdb->prefix . 'chat_help_leads'; // table name
-        $results = $wpdb->get_results("SELECT * FROM {$table_name}", ARRAY_A);
+        $results = $wpdb->get_results("SELECT * FROM {$table_name}", ARRAY_A); // phpcs:ignore PluginCheck.Security.DirectDB.UnescapedDBParameter, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- The plugin's own analytics / leads table, named $wpdb->prefix . 'chat_help_*'; no core API reads or writes it.
 
         foreach ($results as &$row) {
             if (!empty($row['field'])) {
@@ -153,7 +153,7 @@ class Leads
         $table_name = $wpdb->prefix . 'chat_help_leads';
         $id = intval($request['id']);
 
-        $deleted = $wpdb->delete($table_name, ['id' => $id], ['%d']);
+        $deleted = $wpdb->delete($table_name, ['id' => $id], ['%d']); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- The plugin's own analytics / leads table, named $wpdb->prefix . 'chat_help_*'; no core API reads or writes it.
 
         if ($deleted === false) {
             return new \WP_Error('db_error', 'Failed to delete leads', ['status' => 500]);

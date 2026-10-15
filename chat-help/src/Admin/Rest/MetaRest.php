@@ -263,6 +263,7 @@ class MetaRest extends AbstractRestController
                 }
                 $out[$widget_id][] = [
                     'type'  => 'post',
+                    /* translators: %d: post ID. */
                     'label' => $post->post_title !== '' ? $post->post_title : \sprintf(\__('(no title) #%d', 'chat-help'), $post->ID),
                 ];
             }

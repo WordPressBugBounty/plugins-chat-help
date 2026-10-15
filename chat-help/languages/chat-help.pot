@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-14 09:35+0000\n"
+"POT-Creation-Date: 2026-10-15 04:26+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -124,10 +124,10 @@ msgstr ""
 
 #. translators: 1: start strong tag, 2: close strong tag. 3: start link 4: close link
 #: src/Admin/Admin.php:663
-msgid "<i>Enjoying %1$sWhatsApp Chat Help?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊</i>"
+msgid "Enjoying %1$sWhatsApp Chat Help?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊"
 msgstr ""
 
-#: src/Admin/Analytics.php:286
+#: src/Admin/Analytics.php:289
 msgid "Traffic Breakdown is a Pro feature. Upgrade to see countries, pages, and browsers."
 msgstr ""
 
@@ -260,15 +260,15 @@ msgid "All Agents"
 msgstr ""
 
 #. translators: %d: post ID.
-#: src/Admin/Rest/AbstractRestController.php:306, src/Admin/Rest/AbstractRestController.php:315, src/Admin/Rest/MetaRest.php:266, src/Admin/Rest/SettingsRest.php:148
+#: src/Admin/Rest/AbstractRestController.php:307, src/Admin/Rest/AbstractRestController.php:317, src/Admin/Rest/MetaRest.php:267, src/Admin/Rest/SettingsRest.php:148
 msgid "(no title) #%d"
 msgstr ""
 
-#: src/Admin/Rest/AbstractRestController.php:800
+#: src/Admin/Rest/AbstractRestController.php:802
 msgid "Leave empty to use the WhatsApp Number from Global Chat settings."
 msgstr ""
 
-#: src/Admin/Rest/AbstractRestController.php:801
+#: src/Admin/Rest/AbstractRestController.php:803
 msgid "Leave empty to use the WhatsApp Group from Global Chat settings."
 msgstr ""
 
@@ -340,16 +340,16 @@ msgstr ""
 msgid "(no title)"
 msgstr ""
 
-#: src/Admin/Rest/MetaRest.php:317
+#: src/Admin/Rest/MetaRest.php:318
 msgid "Untitled Widget"
 msgstr ""
 
 #. translators: %s: original widget title.
-#: src/Admin/Rest/MetaRest.php:418
+#: src/Admin/Rest/MetaRest.php:419
 msgid "%s (Copy)"
 msgstr ""
 
-#: src/Admin/Rest/MetaRest.php:550
+#: src/Admin/Rest/MetaRest.php:551
 msgid "Imported Layout"
 msgstr ""
 
@@ -561,44 +561,46 @@ msgstr ""
 msgid "Select Post(s)"
 msgstr ""
 
-#: src/Admin/Views/AssignWidget.php:126
+#. translators: %s: content type name, such as Post or Page.
+#: src/Admin/Views/AssignWidget.php:127
 msgid "Select %s(s)"
 msgstr ""
 
-#: src/Admin/Views/AssignWidget.php:143, src/Admin/Views/AssignWidget.php:177
+#: src/Admin/Views/AssignWidget.php:144, src/Admin/Views/AssignWidget.php:179
 msgid "Choose the posts to display. Sort the posts position by drag & drop."
 msgstr ""
 
-#: src/Admin/Views/AssignWidget.php:149
+#: src/Admin/Views/AssignWidget.php:150
 msgid "Choose Posts"
 msgstr ""
 
-#: src/Admin/Views/AssignWidget.php:152
+#. translators: %s: content type name, such as Post or Page.
+#: src/Admin/Views/AssignWidget.php:154
 msgid "Choose %s(s)"
 msgstr ""
 
-#: src/Admin/Views/AssignWidget.php:163
+#: src/Admin/Views/AssignWidget.php:165
 msgid "Select Categories/Taxonomies"
 msgstr ""
 
-#: src/Admin/Views/AssignWidget.php:165
+#: src/Admin/Views/AssignWidget.php:167
 msgid "Choose the categories or taxonomy terms. The selected widget will show on all posts within these terms."
 msgstr ""
 
-#: src/Admin/Views/AssignWidget.php:168
+#: src/Admin/Views/AssignWidget.php:170
 msgid "Choose Categories/Terms"
 msgstr ""
 
-#: src/Admin/Views/AssignWidget.php:175
+#: src/Admin/Views/AssignWidget.php:177
 msgid "Select Chat"
 msgstr ""
 
-#: src/Admin/Views/AssignWidget.php:178
+#: src/Admin/Views/AssignWidget.php:180
 msgid "Choose Chat"
 msgstr ""
 
 #. translators: %1$s: opening link tag to the new-layout screen, %2$s: closing link tag.
-#: src/Admin/Views/AssignWidget.php:181
+#: src/Admin/Views/AssignWidget.php:183
 msgid "No chat layout is created. Please %1$screate%2$s a layout first."
 msgstr ""
 
@@ -4363,7 +4365,7 @@ msgstr ""
 msgid "Your Name"
 msgstr ""
 
-#: src/Admin/Views/Fields/FloatingChatFields.php:751, src/Frontend/Templates/items/form.php:16
+#: src/Admin/Views/Fields/FloatingChatFields.php:751, src/Frontend/Templates/items/form.php:17
 msgid "Message"
 msgstr ""
 
@@ -5359,14 +5361,14 @@ msgstr ""
 msgid "Invite your visitors to join your WhatsApp group by adding the group’s invite URL here."
 msgstr ""
 
-#: src/Frontend/Templates/items/form.php:15
+#: src/Frontend/Templates/items/form.php:16
 msgid "Your name?"
 msgstr ""
 
-#: src/Frontend/Templates/items/form.php:18
+#: src/Frontend/Templates/items/form.php:19
 msgid "Send a message"
 msgstr ""
 
-#: src/Frontend/Templates/items/single-template-header.php:20
+#: src/Frontend/Templates/items/single-template-header.php:21
 msgid "Close"
 msgstr ""

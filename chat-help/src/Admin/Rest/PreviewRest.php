@@ -298,7 +298,7 @@ class PreviewRest extends AbstractRestController
         if ($font !== '' && \function_exists('wp_get_global_stylesheet')) {
             $variables = \wp_get_global_stylesheet(['variables']);
             if (\is_string($variables) && $variables !== '') {
-                $out .= '<style id="chat-help-preview-theme-vars">' . \strip_tags($variables) . '</style>';
+                $out .= '<style id="chat-help-preview-theme-vars">' . \wp_strip_all_tags($variables) . '</style>';
             }
 
             // The preset variables only name the family; the @font-face rules

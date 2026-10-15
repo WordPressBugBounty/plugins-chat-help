@@ -2718,7 +2718,7 @@ class FloatingChatFields
                                                             '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
-                                                            'exclude' => esc_html__('Exclude', 'chat-help'),
+                                                            'exclude' => esc_html__('Exclude', 'chat-help'), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- An option key in a settings field, not a query argument.
                                                         ),
 
                                                     ),
@@ -2774,7 +2774,7 @@ class FloatingChatFields
                                                             '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
-                                                            'exclude' => esc_html__('Exclude', 'chat-help'),
+                                                            'exclude' => esc_html__('Exclude', 'chat-help'), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- An option key in a settings field, not a query argument.
                                                         ),
 
                                                     ),
@@ -2830,7 +2830,7 @@ class FloatingChatFields
                                                             '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
-                                                            'exclude' => esc_html__('Exclude', 'chat-help'),
+                                                            'exclude' => esc_html__('Exclude', 'chat-help'), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- An option key in a settings field, not a query argument.
                                                         ),
 
                                                     ),
@@ -2882,7 +2882,7 @@ class FloatingChatFields
                                                             '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
-                                                            'exclude' => esc_html__('Exclude', 'chat-help'),
+                                                            'exclude' => esc_html__('Exclude', 'chat-help'), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- An option key in a settings field, not a query argument.
                                                         ),
 
                                                     ),
@@ -2938,7 +2938,7 @@ class FloatingChatFields
                                                             '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
-                                                            'exclude' => esc_html__('Exclude', 'chat-help'),
+                                                            'exclude' => esc_html__('Exclude', 'chat-help'), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- An option key in a settings field, not a query argument.
                                                         ),
 
                                                     ),
@@ -2994,7 +2994,7 @@ class FloatingChatFields
                                                             '</div>',
                                                         'options'   => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
-                                                            'exclude' => esc_html__('Exclude', 'chat-help'),
+                                                            'exclude' => esc_html__('Exclude', 'chat-help'), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- An option key in a settings field, not a query argument.
                                                         ),
 
                                                     ),
@@ -3046,7 +3046,7 @@ class FloatingChatFields
                                                             '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
-                                                            'exclude' => esc_html__('Exclude', 'chat-help'),
+                                                            'exclude' => esc_html__('Exclude', 'chat-help'), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- An option key in a settings field, not a query argument.
                                                         ),
 
                                                     ),
@@ -3101,7 +3101,7 @@ class FloatingChatFields
                                                             '</div>',
                                                         'options' => array(
                                                             'include' => esc_html__('Include', 'chat-help'),
-                                                            'exclude' => esc_html__('Exclude', 'chat-help'),
+                                                            'exclude' => esc_html__('Exclude', 'chat-help'), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- An option key in a settings field, not a query argument.
                                                         ),
 
                                                     ),

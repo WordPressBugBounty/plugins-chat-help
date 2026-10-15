@@ -292,7 +292,7 @@ class Helpers
 		 * @param array  $context         Extra context about the call.
 		 */
 		$whatsapp_number = apply_filters(
-			'chathelp_whatsapp_number',
+			'chathelp_whatsapp_number', // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Core / third-party hook, or a public hook kept unchanged for backward compatibility.
 			$whatsapp_number,
 			array(
 				'post_id' => $post_id,
@@ -343,7 +343,7 @@ class Helpers
 		 * let  filter the final URL too.
 		 */
 		$url = apply_filters(
-			'chathelp_whatsapp_url',
+			'chathelp_whatsapp_url', // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Core / third-party hook, or a public hook kept unchanged for backward compatibility.
 			$url,
 			array(
 				'post_id'  => $post_id,
@@ -619,7 +619,8 @@ class Helpers
 		if ($product_id) {
 			$product = wc_get_product($product_id); // Manually load product object
 		} else {
-			global $product;
+			// A copy, so the reset below never clears WooCommerce's own global.
+			$product = isset($GLOBALS['product']) ? $GLOBALS['product'] : null;
 		}
 		$remove = function () {
 			return '-';
@@ -636,7 +637,7 @@ class Helpers
 		// timezone and its Settings → General formats.
 		$date    = wp_date(get_option('date_format', 'F j, Y'));
 		$time    = wp_date(get_option('time_format', 'g:i a'));
-		$ip = esc_sql(sanitize_text_field($_SERVER['REMOTE_ADDR']));
+		$ip = (isset($_SERVER['REMOTE_ADDR']) ? esc_sql(sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR']))) : '');
 
 		// 🔁 Define a list of conditional tag rules
 		$conditional_blocks = [

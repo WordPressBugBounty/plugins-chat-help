@@ -1,10 +1,10 @@
 === ChatHelp – Click to Chat Button, Chat to Order for WooCommerce & Floating Chat Form ===
 Contributors: ThemeAtelier, faysal61, shshakib2001, tamimaziz
 Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce whatsapp
-Requires at least: 5.0
+Requires at least: 5.7
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.6.1
+Stable tag: 3.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -251,6 +251,15 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 15. WhatsApp chat button Elementor widget for drag-and-drop customization of agent, number, pre-filled message, and button style on any page.
 
 == Changelog ==
+= 3.7.0 – 15 October 2026 =
+* Improved: The plugin now passes the WordPress.org Plugin Check with no errors or code warnings. Request values are sanitized, output is escaped, and database queries are prepared.
+* Improved: Chat form entries are cleaned before they are saved as leads; line breaks are kept.
+* Improved: The Help page shows plugin icons provided by the WordPress.org API instead of loading hard-coded remote images.
+* Improved: Translations are loaded by WordPress itself, as they are for every plugin hosted on WordPress.org.
+* Fixed: Filling in message variables on a page with no WooCommerce product could clear WooCommerce's global product for the rest of the page.
+* Fixed: Analytics date ranges no longer shift if another plugin changes PHP's default time zone.
+* Changed: Minimum WordPress version is now 5.7, which the plugin already needed.
+
 = 3.6.1 – 14 September 2026 =
 * Added: Form field variables by label — {name}, {message}, {your_email} — shown in the Form Message Template's Insert variable menu. Fields sharing a label are numbered in order: {name_1}, {name_2}.
 * Added: {time} variable for the time the message is sent.
@@ -678,6 +687,9 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 
 == Upgrade Notice ==
 
+= 3.6.2 =
+Security and standards update with no changes to your settings. Now requires WordPress 5.7 or later.
+
 = 3.6.1 =
 Restores label-based form variables such as {name} and {message}, adds {time}, and makes {date} output the date only. Recommended if you use the chat form.
 
@@ -700,7 +712,7 @@ Security release: fixes an authenticated (Contributor+) stored XSS in the chat b
 Bug-fix release: Chat Layouts and the analytics dashboard now load correctly on sites using the "Plain" permalink setting. Recommended for all users.
 
 = 3.5.0 =
-Major update: brand-new React admin, multiple Chat Layouts with per-layout agents and styling, Assign Layouts for precise placement, REST API-powered settings for faster loads, security hardening, and a 2.6 MB smaller download. All existing settings are preserved. Webhooks are now a Pro feature (the free version never sent webhook requests; saved values are kept).
+Major update: new admin, multiple Chat Layouts with their own agents and styling, Assign Layouts for precise placement, faster settings and a 2.6 MB smaller download. All existing settings are preserved. Webhooks are now a Pro feature; saved values are kept.
 
 = 3.4.0 =
 Major update: introduces a built-in Analytics Dashboard with real-time visitor, view, conversion, and lead tracking — including performance trendlines, device breakdown, and flexible date filters. Upgrade recommended for all users.

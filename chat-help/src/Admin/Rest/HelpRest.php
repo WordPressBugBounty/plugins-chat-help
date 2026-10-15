@@ -80,7 +80,7 @@ class HelpRest extends AbstractRestController
     ];
 
     /** Transient key for the WordPress.org author-plugins response. */
-    const TRANSIENT = 'chat_help_ta_plugins';
+    const TRANSIENT = 'chat_help_ta_plugins_v2';
 
     public function register_routes(): void
     {
@@ -189,6 +189,7 @@ class HelpRest extends AbstractRestController
                     'num_ratings',
                     'short_description',
                     'author',
+                    'icons' => true,
                 ],
             ];
             $request = [
@@ -214,6 +215,7 @@ class HelpRest extends AbstractRestController
                             'rating'            => $pl->rating,
                             'num_ratings'       => $pl->num_ratings,
                             'short_description' => \html_entity_decode($pl->short_description, ENT_QUOTES | ENT_HTML5, 'UTF-8'),
+                            'icons'             => isset($pl->icons) ? (array) $pl->icons : [],
                         ];
                     }
                 }
@@ -241,15 +243,13 @@ class HelpRest extends AbstractRestController
 
             $plugin_file = self::PLUGIN_FILES[$plugin_slug] ?? $plugin_slug . '.php';
 
-            // A few wp.org icons aren't PNGs.
-            $image_type = 'png';
-            switch ($plugin_slug) {
-                case 'postify':
-                    $image_type = 'jpg';
+            $icons = isset($plugin['icons']) ? (array) $plugin['icons'] : [];
+            $icon  = '';
+            foreach (['2x', '1x', 'svg', 'default'] as $icon_size) {
+                if (! empty($icons[$icon_size])) {
+                    $icon = $icons[$icon_size];
                     break;
-                case 'darkify':
-                    $image_type = 'gif?rev=3301202';
-                    break;
+                }
             }
 
             $is_installed = \file_exists(WP_PLUGIN_DIR . '/' . $plugin_slug . '/' . $plugin_file);
@@ -263,7 +263,7 @@ class HelpRest extends AbstractRestController
                 'rating'            => $plugin['rating'],
                 'num_ratings'       => $plugin['num_ratings'],
                 'short_description' => \html_entity_decode($plugin['short_description'], ENT_QUOTES | ENT_HTML5, 'UTF-8'),
-                'icon'              => 'https://ps.w.org/' . $plugin_slug . '/assets/icon-256x256.' . $image_type,
+                'icon'              => $icon,
                 'is_installed'      => $is_installed,
                 'is_active'         => $is_active,
                 'install_url'       => \wp_nonce_url(\self_admin_url('update.php?action=install-plugin&plugin=' . $plugin_slug), 'install-plugin_' . $plugin_slug),

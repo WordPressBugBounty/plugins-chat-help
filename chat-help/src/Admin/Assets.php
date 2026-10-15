@@ -52,7 +52,7 @@ class Assets
      */
     public function is_chat_help_admin_page(): bool
     {
-        $page = isset($_GET['page']) ? sanitize_key(wp_unslash($_GET['page'])) : '';
+        $page = isset($_GET['page']) ? sanitize_key(wp_unslash($_GET['page'])) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reads the admin page / tab from the URL to decide what to load; nothing is changed.
         return in_array($page, self::SPA_SLUGS, true);
     }
 

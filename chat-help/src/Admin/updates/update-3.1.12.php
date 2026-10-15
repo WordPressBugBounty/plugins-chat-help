@@ -169,7 +169,7 @@ function chat_help_convert_old_to_new_data_3_1_12($options)
 /**
  * Update old to new data.
  */
-$options = get_option('cwp_option');
+$options = get_option('cwp_option'); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Update routine included from DBUpdates, so this variable is local to that method.
 if ($options) {
     chat_help_convert_old_to_new_data_3_1_12($options);
 }

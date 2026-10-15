@@ -185,7 +185,7 @@ function chat_help_convert_data_3_2_0($options)
 /**
  * Update old to new data.
  */
-$cwp_option = get_option('cwp_option');
+$cwp_option = get_option('cwp_option'); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Update routine included from DBUpdates, so this variable is local to that method.
 if ($cwp_option) {
     chat_help_convert_data_3_2_0($cwp_option);
 }

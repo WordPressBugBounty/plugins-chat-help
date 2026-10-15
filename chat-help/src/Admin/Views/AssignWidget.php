@@ -123,6 +123,7 @@ class AssignWidget
 								// for that sibling's own option label, so it stays in
 								// sync with whatever post types are actually
 								// registered instead of being hardcoded here.
+								/* translators: %s: content type name, such as Post or Page. */
 								'title_template' => __('Select %s(s)', 'chat-help'),
 								'options'     => 'posts',
 								// The choices follow this row's own "Post Type"
@@ -149,6 +150,7 @@ class AssignWidget
 								'placeholder' => __('Choose Posts', 'chat-help'),
 								// Same sibling-driven swap as `title_template` above,
 								// applied to the empty-state placeholder text.
+								/* translators: %s: content type name, such as Post or Page. */
 								'placeholder_template' => __('Choose %s(s)', 'chat-help'),
 								'query_args'  => array(
 									'posts_per_page' => -1,
