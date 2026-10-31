@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.7
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.7.0
+Stable tag: 3.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -25,8 +25,6 @@ By offering multiple layouts (Simple Button, Single Agent, Single Form, Multi-Ag
 
 With Chat Help, you’re not just adding a button—you’re creating a complete **WhatsApp customer support system** inside WordPress with a built-in **analytics dashboard** to track real visitors, views, conversions, and leads over time.
 
-**New in 3.5.0:** a completely rebuilt **React admin** with a modern interface, **multiple Custom Chats** (create as many floating chat widgets as you need, each with its own agents, appearance, and behavior), and **Assign Chats** to control exactly which posts, pages, or WooCommerce content each layout appears on. Settings now load and save over the **REST API** for a noticeably faster admin experience.
-
 [youtube https://youtu.be/B_xfMNOLP2A]
 
 **👁️[Plugin Demo](https://wpchathelp.com/) | 📖 [Documentation](https://wpchathelp.com/docs/) | 🚀[Pro Version](https://wpchathelp.com/pricing/) | 👩🏼‍💻[Support](https://wordpress.org/support/plugin/chat-help/) | 🌟[Rate this plugin](https://wordpress.org/support/plugin/chat-help/reviews/#new-post)**
@@ -39,8 +37,9 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 - **Assign Chats**: Choose exactly where each saved chat appears — assign it to specific posts, pages, or WooCommerce content, from the Assign Chats screen or the chat's own Assignment tab.
 - **Floating Chat Layouts**: Choose from multiple chat bubble styles: Single Form, Single Agent, Pre-Chat Message, Floating Button or disable the bubble.
 - **Single Form Builder**: Collect visitor details before chat with text/textarea fields, labels, placeholders, validation messages, and required fields.
+- **Desktop QR Code**: Optional QR code for desktop visitors — hover a chat button, the Send Message button or an agent and scan to continue in WhatsApp on the phone. Works for numbers (with the pre-filled message) and groups, waits for valid form input on form layouts, respects GDPR consent and agent availability, and has a customizable caption.
 - **Multiple WhatsApp Types Supported**: Personal, Business, or Group — all formats supported in floating chats and buttons.
-- **Smart Pre-Filled Messages**: Ready-to-send messages with global variables (`{siteTitle}`, `{currentURL}`, `{date}`, `{ip}`) and WooCommerce variables (`{productName}`, `{productPrice}`, `{stockStatus}`). Conditional tags like `{PRODUCT_START}...{PRODUCT_END}` and `{LOGGEDIN_START}...{LOGGEDIN_END}` make messages dynamic.
+- **Smart Pre-Filled Messages**: Ready-to-send messages with global variables (`{siteTitle}`, `{currentURL}`, `{date}`, `{time}`, `{ip}`), form field variables by label (`{name}`, `{message}`, `{your_email}`) and WooCommerce variables (`{productName}`, `{productPrice}`, `{stockStatus}`). Conditional tags like `{PRODUCT_START}...{PRODUCT_END}` and `{LOGGEDIN_START}...{LOGGEDIN_END}` make messages dynamic.
 
 - **Leads Management**: Collect, search, filter, export, and analyze all chat leads with full form data and rich metadata — right from your WordPress dashboard.
 
@@ -74,7 +73,7 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 - **Advanced Settings**: Clean uninstall, custom CSS/JS, and WhatsApp URL behavior control (API/web/intent).
 
 - **Import & Export**: Move your Global Chat, Custom Chats, Leads, WooCommerce and plugin settings between sites, or keep a backup of them — everything as one bundle or a single type, in JSON, CSV or XML.
-- **Security Hardened**: All dynamic output escaped and admin redirects made safe, following WordPress.org Plugin Check recommendations.
+- **Security Hardened**: Passes the WordPress.org Plugin Check with no errors — request values sanitized, output escaped, database queries prepared.
 
 ### 🌐 Compatibility & Performance
 - **WordPress 7.0 Ready**: The WhatsApp Button block uses Block API version 3 for full compatibility with the iframe block editor.
@@ -251,6 +250,13 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 15. WhatsApp chat button Elementor widget for drag-and-drop customization of agent, number, pre-filled message, and button style on any page.
 
 == Changelog ==
+= 3.7.1 – 31 October 2026 =
+* Added: QR Code on Desktop (Settings › WhatsApp URL), off by default. Desktop visitors who hover a chat button, the Send Message button or an agent see a QR code to scan with their phone and continue the chat in WhatsApp. Works for WhatsApp numbers (with the pre-filled message) and groups (invite link).
+* Added: QR Code Caption setting for the text under the QR code ("Scan the code" by default; leave it empty to show the QR code only).
+* Added: Form Chat and Pre-Chat Message show the QR code only after every required field is filled in correctly, with the same message the form would send. The form, its validation and lead saving work as before.
+* Added: The QR code also appears on WooCommerce, shortcode, Elementor and block chat buttons.
+* Added: The QR code respects GDPR consent and agent availability, never loads on phones, and shows in the admin Live Preview.
+
 = 3.7.0 – 15 October 2026 =
 * Improved: The plugin now passes the WordPress.org Plugin Check with no errors or code warnings. Request values are sanitized, output is escaped, and database queries are prepared.
 * Improved: Chat form entries are cleaned before they are saved as leads; line breaks are kept.
@@ -686,6 +692,9 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 * Initial release.
 
 == Upgrade Notice ==
+
+= 3.7.1 =
+Adds an optional desktop QR code so visitors can continue the chat on their phone. It is off by default; your existing settings are unchanged.
 
 = 3.6.2 =
 Security and standards update with no changes to your settings. Now requires WordPress 5.7 or later.

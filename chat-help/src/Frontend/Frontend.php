@@ -109,6 +109,8 @@ class Frontend
         add_action('wp_footer', array($this, 'chat_help_content'));
         add_action('wp_ajax_handle_form_submission', [$this, 'handle_form_submission']);
         add_action('wp_ajax_nopriv_handle_form_submission', [$this, 'handle_form_submission']);
+        add_action('wp_ajax_chat_help_qr_url', [$this, 'desktop_qr_url']);
+        add_action('wp_ajax_nopriv_chat_help_qr_url', [$this, 'desktop_qr_url']);
 
         add_filter('kses_allowed_protocols', [$this, 'allow_whatsapp_protocol']);
         add_action('wp_head', array($this, 'chat_help_header_script'), 1);
@@ -204,6 +206,8 @@ class Frontend
         wp_enqueue_script('jquery_validate');
         wp_enqueue_script('chat-help-script');
         wp_enqueue_script('tma-bubble-stack');
+        // Desktop QR code (off by default; never on mobile).
+        Helpers::enqueue_desktop_qr($ch_settings);
 
         $chat_help_frontend_scripts = array(
             'autoShowPopup'        => $auto_show_popup,
@@ -452,5 +456,55 @@ class Frontend
             'message'     => $message,
         ));
         wp_die();
+    }
+
+    /**
+     * WhatsApp URL for the desktop QR code of a form layout.
+     *
+     * Builds the message and URL exactly as handle_form_submission() does for
+     * the same form data, but only returns them: the visitor hasn't submitted
+     * anything yet, so no lead is stored and nothing else happens.
+     */
+    public function desktop_qr_url()
+    {
+        $nonce = isset($_POST['nonce']) ? sanitize_text_field(wp_unslash($_POST['nonce'])) : '';
+        if (!wp_verify_nonce($nonce, 'chat_help_nonce')) {
+            wp_send_json_error('Invalid nonce');
+        }
+        $ch_settings = get_option('ch_settings');
+        if (!Helpers::desktop_qr_enabled($ch_settings)) {
+            wp_send_json_error('Disabled');
+        }
+
+        $form_data = array();
+        // Parsed the same way as handle_form_submission() so the message matches.
+        parse_str(isset($_POST['data']) ? (string) $_POST['data'] : '', $form_data); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- each value is handled by Helpers::replacement_vars(), as on submit.
+        $product_id = isset($_POST['product_id']) ? sanitize_text_field(wp_unslash($_POST['product_id'])) : '';
+        $current_url = isset($_POST['current_url']) ? sanitize_url(wp_unslash($_POST['current_url'])) : '';
+        $current_title = isset($_POST['current_title']) ? sanitize_text_field(wp_unslash($_POST['current_title'])) : '';
+        $options = get_option('cwp_option');
+        $agent_number = isset($_POST['number']) && '' !== $_POST['number']
+            ? sanitize_text_field(wp_unslash($_POST['number']))
+            : (isset($options['opt-number']) ? $options['opt-number'] : '');
+        $whatsapp_group = isset($_POST['group']) && '' !== $_POST['group']
+            ? esc_url_raw(wp_unslash($_POST['group']))
+            : (isset($options['opt-group']) ? $options['opt-group'] : '');
+        $type_of_whatsapp = isset($_POST['type']) && 'group' === $_POST['type'] ? 'group' : 'number';
+        $url_for_desktop = isset($ch_settings['url_for_desktop']) ? $ch_settings['url_for_desktop'] : '';
+        $url_for_mobile = isset($ch_settings['url_for_mobile']) ? $ch_settings['url_for_mobile'] : '';
+        $chat_layout = isset($options['chat_layout']) ? $options['chat_layout'] : '';
+        if ('agent_input' === $chat_layout) {
+            $template = isset($options['agent_with_input_prefilled_message']) ? $options['agent_with_input_prefilled_message'] : '';
+        } else {
+            $template = isset($options['whatsapp_message_template']) ? $options['whatsapp_message_template'] : '';
+        }
+
+        $message = Helpers::replacement_vars($template, true, $form_data, $product_id, $current_url, $current_title);
+        $url = Helpers::whatsAppUrl($agent_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
+
+        wp_send_json_success(array(
+            'url'  => $url,
+            'type' => $type_of_whatsapp,
+        ));
     }
 }

@@ -64,6 +64,26 @@ class AdvancedControls
                         '<div class="chat-help-info-label">' . esc_html__('Choose how WhatsApp opens on mobile devices: "API" uses the standard WhatsApp API link, while "Protocol" directly triggers the WhatsApp app via protocol handler.', 'chat-help') . '</div>',
                         'default' => 'api',
                     ),
+                    // Desktop QR code (frontend: src/Frontend/assets/js/chat-help-qr.js).
+                    // New keys, off by default — existing installs are unaffected
+                    // until the option is switched on.
+                    array(
+                        'id'      => 'desktop_qr_code',
+                        'type'    => 'switcher',
+                        'title'   => esc_html__('QR Code on Desktop', 'chat-help'),
+                        'default' => false,
+                        'title_help' =>
+                        '<div class="chat-help-info-label">' . esc_html__('Show a scannable QR code when desktop visitors hover over a chat button or an agent, so they can continue the conversation on their phone. Works for WhatsApp numbers and groups.', 'chat-help') . '</div>',
+                    ),
+                    array(
+                        'id'         => 'desktop_qr_code_text',
+                        'type'       => 'text',
+                        'title'      => esc_html__('QR Code Caption', 'chat-help'),
+                        'default'    => esc_html__('Scan the code', 'chat-help'),
+                        'title_help' =>
+                        '<div class="chat-help-info-label">' . esc_html__('Short text shown under the QR code. Leave empty to show the QR code only.', 'chat-help') . '</div>',
+                        'dependency' => array('desktop_qr_code', '==', 'true'),
+                    ),
                 )
             )
         );

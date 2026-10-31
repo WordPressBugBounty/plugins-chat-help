@@ -244,6 +244,13 @@ class PreviewRest extends AbstractRestController
         if ($google_font_handle) {
             $style_handles[] = $google_font_handle;
         }
+        // Desktop QR code: same opt-in as the frontend, so hovering a chat
+        // button in the preview shows the QR exactly as visitors will see it.
+        $script_handles = ['jquery', 'moment', 'moment-timezone-with-data', 'jquery_validate', 'chat-help-script'];
+        if (Helpers::enqueue_desktop_qr($ch_settings)) {
+            $style_handles[] = 'chat-help-qr';
+            $script_handles[] = 'chat-help-qr';
+        }
 
         \ob_start();
         \wp_styles()->do_items($style_handles);
@@ -255,7 +262,7 @@ class PreviewRest extends AbstractRestController
         \wp_print_inline_script_tag(
             'var alternativeWHelpBubble = ' . \wp_json_encode((string) $alternative_bubble) . ';'
         );
-        \wp_scripts()->do_items(['jquery', 'moment', 'moment-timezone-with-data', 'jquery_validate', 'chat-help-script']);
+        \wp_scripts()->do_items($script_handles);
         $foot = \ob_get_clean();
 
         return [$head, $foot];

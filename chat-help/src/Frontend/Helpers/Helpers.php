@@ -72,6 +72,62 @@ class Helpers
 		wp_register_script('jquery_validate', CHAT_HELP_ASSETS . 'js/jquery.validate' . $this->min . '.js', array('jquery'), CHAT_HELP_VERSION, true);
 		wp_register_script('chat-help-script', CHAT_HELP_ASSETS . 'js/chat-help-script' . $this->min . '.js', array('jquery'), CHAT_HELP_VERSION, true);
 		wp_register_script('tma-bubble-stack', CHAT_HELP_ASSETS . 'js/bubble-stack.js', array(), CHAT_HELP_VERSION, true);
+		// Desktop QR code — only ever enqueued via Helpers::enqueue_desktop_qr().
+		wp_register_style('chat-help-qr', CHAT_HELP_ASSETS . 'css/chat-help-qr' . $this->min . '.css', array(), CHAT_HELP_VERSION, 'all');
+		wp_register_script('chat-help-qr', CHAT_HELP_ASSETS . 'js/chat-help-qr' . $this->min . '.js', array(), CHAT_HELP_VERSION, true);
+	}
+
+	/**
+	 * Whether the desktop QR code should load for this request.
+	 *
+	 * Mirrors Joinchat's "On Desktop › Display QR code" option: off unless
+	 * Settings › Advanced Controls › "QR Code on Desktop" is switched on, and
+	 * never on mobile, where the chat opens WhatsApp directly. Filterable for
+	 * developers via `chat_help_enqueue_desktop_qr`.
+	 *
+	 * @param mixed $ch_settings The `ch_settings` option.
+	 * @return bool
+	 */
+	public static function desktop_qr_enabled($ch_settings)
+	{
+		$enabled = is_array($ch_settings) && !empty($ch_settings['desktop_qr_code']) && !wp_is_mobile();
+
+		return (bool) apply_filters('chat_help_enqueue_desktop_qr', $enabled, $ch_settings);
+	}
+
+	/**
+	 * Enqueue the desktop QR code assets when enabled.
+	 *
+	 * @param mixed $ch_settings The `ch_settings` option.
+	 * @return bool True when the assets were enqueued.
+	 */
+	public static function enqueue_desktop_qr($ch_settings)
+	{
+		if (!self::desktop_qr_enabled($ch_settings)) {
+			return false;
+		}
+
+		// A saved empty caption means "QR only"; a missing key means the
+		// default caption (the option was never saved with this field).
+		$text = isset($ch_settings['desktop_qr_code_text'])
+			? sanitize_text_field((string) $ch_settings['desktop_qr_code_text'])
+			: __('Scan the code', 'chat-help');
+
+		wp_enqueue_style('chat-help-qr');
+		wp_enqueue_script('chat-help-qr');
+		wp_localize_script(
+			'chat-help-qr',
+			'chat_help_qr',
+			array(
+				'text'    => $text,
+				// Form layouts ask the server for the URL their submit would open.
+				'ajaxurl' => admin_url('admin-ajax.php'),
+				'action'  => 'chat_help_qr_url',
+				'nonce'   => wp_create_nonce('chat_help_nonce'),
+			)
+		);
+
+		return true;
 	}
 
 	public static function user_availability($optAvailablity)
