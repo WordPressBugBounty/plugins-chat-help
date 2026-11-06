@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.7
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.7.1
+Stable tag: 3.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -250,6 +250,17 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 15. WhatsApp chat button Elementor widget for drag-and-drop customization of agent, number, pre-filled message, and button style on any page.
 
 == Changelog ==
+= 3.7.2 – 6 November 2026 =
+* Improved: Analytics tracking is far lighter. A tracking request now stops before the rest of the site loads and runs a single database insert.
+* Improved: Visitors' browsers send at most one tracking request per page view, batched when the page is hidden or closed.
+* Improved: Search engines and other known bots are no longer tracked, in the browser or on the server.
+* Improved: The analytics dashboard reads daily summaries instead of scanning every event. New events and leads appear within seconds.
+* Improved: Pages no longer run database schema checks on every load.
+* Added: Track Logged-in Editors setting (Settings › Analytics), off by default. When off, your team's own visits are not counted.
+* Added: Keep Raw Events setting (Settings › Analytics), 90 days by default. Reports keep their full history through the daily summaries.
+* Security: The tracking endpoint now requires a signed token and is rate limited per visitor.
+* Note: Existing analytics are imported into the summaries automatically after updating.
+
 = 3.7.1 – 31 October 2026 =
 * Added: QR Code on Desktop (Settings › WhatsApp URL), off by default. Desktop visitors who hover a chat button, the Send Message button or an agent see a QR code to scan with their phone and continue the chat in WhatsApp. Works for WhatsApp numbers (with the pre-filled message) and groups (invite link).
 * Added: QR Code Caption setting for the text under the QR code ("Scan the code" by default; leave it empty to show the QR code only).

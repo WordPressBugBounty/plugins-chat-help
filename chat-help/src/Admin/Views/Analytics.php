@@ -32,6 +32,22 @@ class Analytics
                 'icon'  => 'icofont-chart-bar-graph',
                 'fields' => array(
                     array(
+                        'id'      => 'analytics_track_editors',
+                        'type'    => 'switcher',
+                        'title'   => esc_html__('Track Logged-in Editors', 'chat-help'),
+                        'default' => false,
+                        'title_help' =>
+                        '<div class="chat-help-info-label">' . esc_html__('Include your own team in the dashboard numbers. When off, visitors who can edit posts are not tracked.', 'chat-help') . '</div>',
+                    ),
+                    array(
+                        'id'      => 'analytics_retention_days',
+                        'type'    => 'number',
+                        'title'   => esc_html__('Keep Raw Events (days)', 'chat-help'),
+                        'default' => 90,
+                        'title_help' =>
+                        '<div class="chat-help-info-label">' . esc_html__('Older raw events are deleted once they are counted in the daily summaries, so reports keep their full history. Use 0 to keep raw events forever.', 'chat-help') . '</div>',
+                    ),
+                    array(
                         'id'      => 'google_analytics',
                         'type'    => 'switcher',
                         'title'   => esc_html__('Google Analytics', 'chat-help'),

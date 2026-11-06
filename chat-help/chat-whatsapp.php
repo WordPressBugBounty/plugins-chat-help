@@ -3,7 +3,7 @@
 Plugin Name: 	ChatHelp
 Plugin URI: 	https://wpchathelp.com/
 Description: 	WhatsApp 💬 ChatHelp 🔥 Unlimited customer support tool that allows visitors to engage using "WhatsApp" or "WhatsApp Business". WhatsApp button included.
-Version: 		3.7.1
+Version: 		3.7.2
 Author:         ThemeAtelier
 Author URI:     https://themeatelier.net/
 License:        GPL-2.0+
@@ -24,9 +24,22 @@ if (!defined('ABSPATH')) {
 require_once __DIR__ . '/vendor/autoload.php';
 
 use ThemeAtelier\ChatHelp\Includes\ChatHelp;
+use ThemeAtelier\ChatHelp\Admin\AnalyticsStore;
+use ThemeAtelier\ChatHelp\Admin\AnalyticsTracker;
+
+// Answers analytics track requests and exits, before the rest of the site loads.
+// When Pro is active it owns these requests. A current Pro has already answered
+// them by now, and an older Pro expects them on its own REST route, with the old
+// payload this version only accepts after running its own migration.
+if (
+    ! in_array('chat-help-pro/chat-help-pro.php', (array) get_option('active_plugins', []), true)
+    && ! (is_multisite() && isset(((array) get_site_option('active_sitewide_plugins', []))['chat-help-pro/chat-help-pro.php']))
+) {
+    AnalyticsTracker::maybe_handle_early();
+}
 
 if (!defined('CHAT_HELP_VERSION')) {
-    define('CHAT_HELP_VERSION', '3.7.1');
+    define('CHAT_HELP_VERSION', '3.7.2');
 }
 if (!defined('CHAT_HELP_FILE')) {
     define('CHAT_HELP_FILE', __FILE__);
@@ -184,6 +197,8 @@ function chat_help_activate()
     }
 }
 register_activation_hook(CHAT_HELP_FILE, 'chat_help_activate');
+register_activation_hook(CHAT_HELP_FILE, [AnalyticsStore::class, 'activate']);
+register_deactivation_hook(CHAT_HELP_FILE, [AnalyticsStore::class, 'deactivate']);
 
 /**
  * Initialize the plugin tracker

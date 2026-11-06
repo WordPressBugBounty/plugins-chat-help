@@ -43,8 +43,6 @@ class Leads
             // SPA always opened on the Dashboard route.
             add_action('admin_head', array($this, 'chat_help_localize_script'));
             add_action('rest_api_init', [$this, 'register_rest_routes']);
-
-            $this->create_chat_help_leads_table();
         }
     }
 
@@ -60,30 +58,6 @@ class Leads
             window.chatHelpString = <?php echo json_encode(self::chat_help_string()); ?>;
         </script>
 <?php
-    }
-
-    /**
-     * Creates the Leads database table if it doesn't exist.
-     *
-     * @since 3.1.0
-     */
-    public function create_chat_help_leads_table()
-    {
-        global $wpdb;
-        $table_name = $wpdb->prefix . 'chat_help_leads';
-        $charset_collate = $wpdb->get_charset_collate();
-
-        $sql = "CREATE TABLE $table_name (
-        id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-        field LONGTEXT NOT NULL,
-        meta LONGTEXT NOT NULL,
-        agent_name VARCHAR(255),
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        PRIMARY KEY  (id)
-    ) $charset_collate;";
-
-        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-        dbDelta($sql);
     }
 
     public function register_rest_routes()

@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-31 05:09+0000\n"
+"POT-Creation-Date: 2026-11-06 14:52+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: chat-whatsapp.php:130
+#: chat-whatsapp.php:143
 msgid "Whatsapp block"
 msgstr ""
 
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Custom Chats"
 msgstr ""
 
-#: src/Admin/Admin.php:235, src/Admin/Admin.php:236, src/Admin/Leads.php:183, src/Admin/Views/Fields/FloatingChatFields.php:881
+#: src/Admin/Admin.php:235, src/Admin/Admin.php:236, src/Admin/Leads.php:157, src/Admin/Views/Fields/FloatingChatFields.php:881
 msgid "Leads"
 msgstr ""
 
@@ -127,135 +127,135 @@ msgstr ""
 msgid "Enjoying %1$sWhatsApp Chat Help?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊"
 msgstr ""
 
-#: src/Admin/Analytics.php:289
+#: src/Admin/Analytics.php:166
 msgid "Traffic Breakdown is a Pro feature. Upgrade to see countries, pages, and browsers."
 msgstr ""
 
-#: src/Admin/Leads.php:184
+#: src/Admin/Leads.php:158
 msgid "All Email"
 msgstr ""
 
-#: src/Admin/Leads.php:185
+#: src/Admin/Leads.php:159
 msgid "Pending Verification"
 msgstr ""
 
-#: src/Admin/Leads.php:186
+#: src/Admin/Leads.php:160
 msgid "Verified"
 msgstr ""
 
-#: src/Admin/Leads.php:187
+#: src/Admin/Leads.php:161
 msgid "Resend"
 msgstr ""
 
-#: src/Admin/Leads.php:188
+#: src/Admin/Leads.php:162
 msgid "You can resend again within"
 msgstr ""
 
-#: src/Admin/Leads.php:189
+#: src/Admin/Leads.php:163
 msgid "All Domain"
 msgstr ""
 
-#: src/Admin/Leads.php:190
+#: src/Admin/Leads.php:164
 msgid "All Extension"
 msgstr ""
 
-#: src/Admin/Leads.php:191
+#: src/Admin/Leads.php:165
 msgid "Search"
 msgstr ""
 
-#: src/Admin/Leads.php:192
+#: src/Admin/Leads.php:166
 msgid "Loading..."
 msgstr ""
 
-#: src/Admin/Leads.php:193
+#: src/Admin/Leads.php:167
 msgid "Delete Lead"
 msgstr ""
 
-#: src/Admin/Leads.php:194
+#: src/Admin/Leads.php:168
 msgid "Are you sure you want to delete this lead?"
 msgstr ""
 
-#: src/Admin/Leads.php:195
+#: src/Admin/Leads.php:169
 msgid "Cancel"
 msgstr ""
 
-#: src/Admin/Leads.php:196
+#: src/Admin/Leads.php:170
 msgid "Yes, Delete"
 msgstr ""
 
-#: src/Admin/Leads.php:197
+#: src/Admin/Leads.php:171
 msgid "Lead(s) deleted successfully!"
 msgstr ""
 
-#: src/Admin/Leads.php:198
+#: src/Admin/Leads.php:172
 msgid "Delete failed!"
 msgstr ""
 
-#: src/Admin/Leads.php:199
+#: src/Admin/Leads.php:173
 msgid "Failed to delete lead"
 msgstr ""
 
-#: src/Admin/Leads.php:200
+#: src/Admin/Leads.php:174
 msgid "Export"
 msgstr ""
 
-#: src/Admin/Leads.php:201
+#: src/Admin/Leads.php:175
 msgid "Action"
 msgstr ""
 
-#: src/Admin/Leads.php:202
+#: src/Admin/Leads.php:176
 msgid "Date"
 msgstr ""
 
-#: src/Admin/Leads.php:203
+#: src/Admin/Leads.php:177
 msgid "Showing"
 msgstr ""
 
-#: src/Admin/Leads.php:204
+#: src/Admin/Leads.php:178
 msgid "Per page"
 msgstr ""
 
-#: src/Admin/Leads.php:205
+#: src/Admin/Leads.php:179
 msgid "Page"
 msgstr ""
 
-#: src/Admin/Leads.php:206
+#: src/Admin/Leads.php:180
 msgid "Others Information"
 msgstr ""
 
-#: src/Admin/Leads.php:207
+#: src/Admin/Leads.php:181
 msgid "Form Submitted Data"
 msgstr ""
 
-#: src/Admin/Leads.php:208
+#: src/Admin/Leads.php:182
 msgid "Show More"
 msgstr ""
 
-#: src/Admin/Leads.php:209
+#: src/Admin/Leads.php:183
 msgid "Show Less"
 msgstr ""
 
-#: src/Admin/Leads.php:210
+#: src/Admin/Leads.php:184
 msgid "All"
 msgstr ""
 
-#: src/Admin/Leads.php:211
+#: src/Admin/Leads.php:185
 msgid "of"
 msgstr ""
 
-#: src/Admin/Leads.php:212
+#: src/Admin/Leads.php:186
 msgid "Copied!"
 msgstr ""
 
-#: src/Admin/Leads.php:213
+#: src/Admin/Leads.php:187
 msgid "No leads to export"
 msgstr ""
 
-#: src/Admin/Leads.php:214
+#: src/Admin/Leads.php:188
 msgid "No leads found."
 msgstr ""
 
-#: src/Admin/Leads.php:215
+#: src/Admin/Leads.php:189
 msgid "All Agents"
 msgstr ""
 
@@ -462,70 +462,86 @@ msgid "Analytics"
 msgstr ""
 
 #: src/Admin/Views/Analytics.php:37
-msgid "Google Analytics"
+msgid "Track Logged-in Editors"
 msgstr ""
 
 #: src/Admin/Views/Analytics.php:40
-msgid "Enable tracking of WhatsApp button clicks and interactions in Google Analytics."
+msgid "Include your own team in the dashboard numbers. When off, visitors who can edit posts are not tracked."
 msgstr ""
 
 #: src/Admin/Views/Analytics.php:45
-msgid "Event Name"
-msgstr ""
-
-#: src/Admin/Views/Analytics.php:46, src/Admin/Views/WidgetMetabox.php:626
-msgid "Chat Help"
+msgid "Keep Raw Events (days)"
 msgstr ""
 
 #: src/Admin/Views/Analytics.php:48
-msgid "Set a custom event name for tracking in Google Analytics.."
+msgid "Older raw events are deleted once they are counted in the daily summaries, so reports keep their full history. Use 0 to keep raw events forever."
+msgstr ""
+
+#: src/Admin/Views/Analytics.php:53
+msgid "Google Analytics"
 msgstr ""
 
 #: src/Admin/Views/Analytics.php:56
+msgid "Enable tracking of WhatsApp button clicks and interactions in Google Analytics."
+msgstr ""
+
+#: src/Admin/Views/Analytics.php:61
+msgid "Event Name"
+msgstr ""
+
+#: src/Admin/Views/Analytics.php:62, src/Admin/Views/WidgetMetabox.php:626
+msgid "Chat Help"
+msgstr ""
+
+#: src/Admin/Views/Analytics.php:64
+msgid "Set a custom event name for tracking in Google Analytics.."
+msgstr ""
+
+#: src/Admin/Views/Analytics.php:72
 msgid "Google Analytics Parameter(s)"
 msgstr ""
 
-#: src/Admin/Views/Analytics.php:58
+#: src/Admin/Views/Analytics.php:74
 msgid "Define additional parameters to send with your Google Analytics events. Supports variables, URL parameters, and cookies."
 msgstr ""
 
-#: src/Admin/Views/Analytics.php:59
+#: src/Admin/Views/Analytics.php:75
 msgid "Variables:"
 msgstr ""
 
-#: src/Admin/Views/Analytics.php:59
+#: src/Admin/Views/Analytics.php:75
 msgid "Use {number}, {group}, {title}, {currentTitle}, {url} to insert the assigned number/group, page title, current title, or current URL."
 msgstr ""
 
-#: src/Admin/Views/Analytics.php:59
+#: src/Admin/Views/Analytics.php:75
 msgid "Retrieving Cookies & URL Parameters"
 msgstr ""
 
-#: src/Admin/Views/Analytics.php:59
+#: src/Admin/Views/Analytics.php:75
 msgid "URL Parameters:"
 msgstr ""
 
-#: src/Admin/Views/Analytics.php:59
+#: src/Admin/Views/Analytics.php:75
 msgid "Wrap the parameter name in single square brackets [ ] to insert its value. Missing parameters return blank."
 msgstr ""
 
-#: src/Admin/Views/Analytics.php:59, src/Admin/Views/Analytics.php:59, src/Admin/Views/Webhooks.php:91, src/Admin/Views/Webhooks.php:91
+#: src/Admin/Views/Analytics.php:75, src/Admin/Views/Analytics.php:75, src/Admin/Views/Webhooks.php:91, src/Admin/Views/Webhooks.php:91
 msgid "Example:"
 msgstr ""
 
-#: src/Admin/Views/Analytics.php:59
+#: src/Admin/Views/Analytics.php:75
 msgid "Cookies:"
 msgstr ""
 
-#: src/Admin/Views/Analytics.php:59
+#: src/Admin/Views/Analytics.php:75
 msgid "Wrap the cookie name in double square brackets [[ ]] to insert its value. Missing cookies return blank."
 msgstr ""
 
-#: src/Admin/Views/Analytics.php:64, src/Admin/Views/Webhooks.php:65
+#: src/Admin/Views/Analytics.php:80, src/Admin/Views/Webhooks.php:65
 msgid "Event Parameter"
 msgstr ""
 
-#: src/Admin/Views/Analytics.php:69, src/Admin/Views/Webhooks.php:70
+#: src/Admin/Views/Analytics.php:85, src/Admin/Views/Webhooks.php:70
 msgid "Value"
 msgstr ""
 

@@ -48,6 +48,17 @@ function chat_help_delete_plugin_data()
 	$wpdb->query("DROP TABLE IF EXISTS `$chat_help_table_name`"); // phpcs:ignore PluginCheck.Security.DirectDB.UnescapedDBParameter, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- Drops the plugin's own tables on uninstall; the names are $wpdb->prefix . 'chat_help_*'.
 	$chat_help_table_name_analytics = $wpdb->prefix . 'chat_help_analytics';
 	$wpdb->query("DROP TABLE IF EXISTS `$chat_help_table_name_analytics`"); // phpcs:ignore PluginCheck.Security.DirectDB.UnescapedDBParameter, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- Drops the plugin's own tables on uninstall; the names are $wpdb->prefix . 'chat_help_*'.
+	foreach (['chat_help_analytics_daily', 'chat_help_analytics_daily_dim'] as $chat_help_table_suffix) {
+		$chat_help_table_name_summary = $wpdb->prefix . $chat_help_table_suffix;
+		$wpdb->query("DROP TABLE IF EXISTS `$chat_help_table_name_summary`"); // phpcs:ignore PluginCheck.Security.DirectDB.UnescapedDBParameter, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- Drops the plugin's own tables on uninstall; the names are $wpdb->prefix . 'chat_help_*'.
+	}
+
+	// With the version option gone, the other edition recreates the tables if it is still installed.
+	foreach (['chat_help_analytics_db_version', 'chat_help_analytics_legacy_until', 'chat_help_analytics_state'] as $chat_help_analytics_option) {
+		delete_option($chat_help_analytics_option);
+	}
+	wp_clear_scheduled_hook('chat_help_analytics_aggregate');
+	wp_clear_scheduled_hook('chat_help_analytics_retention');
 }
 
 // Load WPTP file.

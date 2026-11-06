@@ -12,49 +12,18 @@ if (! defined('ABSPATH')) {
 
 class Analytics
 {
-    private $table;
-    private $leads_table;
-
     function __construct()
     {
-        global $wpdb;
-        $this->table       = $wpdb->prefix . 'chat_help_analytics';
-        $this->leads_table = $wpdb->prefix . 'chat_help_leads';
-
-        $this->create_table();
+        AnalyticsStore::register();
         add_action('rest_api_init', [$this, 'register_rest_routes']);
-        add_action('wp_footer', [$this, 'inject_tracking_script']);
-    }
-
-    public function create_table()
-    {
-        global $wpdb;
-        $charset_collate = $wpdb->get_charset_collate();
-        $table           = $this->table;
-
-        $sql = "CREATE TABLE $table (
-            id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-            widget_id BIGINT(20) UNSIGNED NOT NULL DEFAULT 0,
-            event_type VARCHAR(20) NOT NULL,
-            device_type VARCHAR(10) NOT NULL DEFAULT 'desktop',
-            country VARCHAR(3) NOT NULL DEFAULT '',
-            browser VARCHAR(30) NOT NULL DEFAULT '',
-            page_url VARCHAR(500) NOT NULL DEFAULT '',
-            session_id VARCHAR(64) DEFAULT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            PRIMARY KEY  (id),
-            KEY idx_widget_event_date (widget_id, event_type, created_at),
-            KEY idx_device (device_type),
-            KEY idx_country (country),
-            KEY idx_browser (browser)
-        ) $charset_collate;";
-
-        require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-        dbDelta($sql);
+        add_action('wp_footer', [AnalyticsTracker::class, 'render_script']);
     }
 
     public function register_rest_routes()
     {
+        // Normally answered by AnalyticsTracker::maybe_handle_early() before this
+        // is registered. Public by design: visitors are anonymous, and handle()
+        // checks the signed token, origin and rate limit before any database work.
         register_rest_route('chat-help/v1', '/analytics/track', [
             'methods'             => WP_REST_Server::CREATABLE,
             'callback'            => [$this, 'track_event'],
@@ -93,190 +62,98 @@ class Analytics
 
     public function track_event(WP_REST_Request $request)
     {
-        global $wpdb;
-
-        $event_type = sanitize_text_field($request->get_param('event_type') ?? '');
-        if (! in_array($event_type, ['visitor', 'view', 'conversion'], true)) {
-            return new WP_REST_Response(['success' => false], 400);
-        }
-
-        $widget_id  = absint($request->get_param('widget_id') ?? 0);
-        $device     = sanitize_text_field($request->get_param('device_type') ?? 'desktop');
-        $session_id = sanitize_text_field($request->get_param('session_id') ?? '');
-        $page_url   = esc_url_raw(substr($request->get_param('page_url') ?? '', 0, 500));
-
-        $country = $this->detect_country();
-        $browser = $this->detect_browser();
-
-        $wpdb->insert( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- The plugin's own analytics / leads table, named $wpdb->prefix . 'chat_help_*'; no core API reads or writes it.
-            $this->table,
-            [
-                'widget_id'   => $widget_id,
-                'event_type'  => $event_type,
-                'device_type' => in_array($device, ['desktop', 'mobile', 'other'], true) ? $device : 'desktop',
-                'country'     => substr($country, 0, 3),
-                'browser'     => substr($browser, 0, 30),
-                'page_url'    => $page_url,
-                'session_id'  => substr($session_id, 0, 64),
-            ],
-            ['%d', '%s', '%s', '%s', '%s', '%s', '%s']
-        );
-
-        return new WP_REST_Response(['success' => true], 200);
+        return new WP_REST_Response(null, AnalyticsTracker::handle((string) $request->get_body()));
     }
 
-    // Report queries on the plugin's own tables ($wpdb->prefix . 'chat_help_analytics' / 'chat_help_leads').
-    // Every interpolated fragment ($widget_where, $date_where, $leads_where) comes from $wpdb->prepare().
-    // phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
     public function get_summary(WP_REST_Request $request)
     {
-        global $wpdb;
+        AnalyticsStore::refresh();
+        [$from, $to, $widget] = $this->resolve_filters($request->get_params());
 
-        [$from, $to, $widget_where, $date_where] = $this->build_where($request->get_params());
+        $data = AnalyticsStore::cached('summary', [$from, $to, $widget], static function () use ($from, $to, $widget) {
+            $totals = AnalyticsStore::totals($from, $to, $widget);
 
-        $table = $this->table;
-        $row   = $wpdb->get_row(
-            "SELECT
-                SUM(event_type = 'visitor') AS visitors,
-                SUM(event_type = 'view') AS views,
-                SUM(event_type = 'conversion') AS conversions
-            FROM $table WHERE 1=1 $date_where $widget_where"
-        );
+            return [
+                'visitors'        => $totals['visitor'],
+                'views'           => $totals['view'],
+                'conversions'     => $totals['conversion'],
+                'conversion_rate' => $totals['visitor'] > 0 ? round(($totals['conversion'] / $totals['visitor']) * 100, 1) : 0,
+            ];
+        });
 
-        $visitors    = (int) ($row->visitors ?? 0);
-        $views       = (int) ($row->views ?? 0);
-        $conversions = (int) ($row->conversions ?? 0);
-        $rate        = $visitors > 0 ? round(($conversions / $visitors) * 100, 1) : 0;
+        // Leads are read live, outside the cache. See AnalyticsStore::leads_count().
+        $data['total_leads'] = AnalyticsStore::leads_count($from, $to);
+        $data['data_status'] = AnalyticsStore::status();
 
-        $leads_table  = $this->leads_table;
-        $total_leads  = (int) $wpdb->get_var(
-            $wpdb->prepare(
-                "SELECT COUNT(*) FROM $leads_table WHERE created_at >= %s AND created_at <= %s",
-                $from . ' 00:00:00',
-                $to . ' 23:59:59'
-            )
-        );
-
-        return new WP_REST_Response([
-            'visitors'         => $visitors,
-            'views'            => $views,
-            'conversions'      => $conversions,
-            'conversion_rate'  => $rate,
-            'total_leads'      => $total_leads,
-        ]);
+        return new WP_REST_Response($data);
     }
 
     public function get_chart(WP_REST_Request $request)
     {
-        global $wpdb;
+        AnalyticsStore::refresh();
+        $params               = $request->get_params();
+        [$from, $to, $widget] = $this->resolve_filters($params);
 
-        $params                               = $request->get_params();
-        [$from, $to, $widget_where, $date_where] = $this->build_where($params);
+        $period   = $params['period'] ?? 'this_week';
+        $group_by = in_array($period, ['this_year', 'last_year'], true) ? 'month' : 'day';
 
-        $period    = $params['period'] ?? 'this_week';
-        $group_by  = in_array($period, ['this_year', 'last_year'], true) ? 'month' : 'day';
-        $table     = $this->table;
-        $leads_table = $this->leads_table;
+        $by_month = 'month' === $group_by;
 
-        if ($group_by === 'month') {
-            $select = "DATE_FORMAT(created_at, '%Y-%m') AS period_key";
-            $group  = "DATE_FORMAT(created_at, '%Y-%m')";
-        } else {
-            $select = 'DATE(created_at) AS period_key';
-            $group  = 'DATE(created_at)';
-        }
+        $data = AnalyticsStore::cached('chart', [$from, $to, $widget, $group_by], function () use ($from, $to, $widget, $group_by, $by_month) {
+            $labels   = $this->build_label_range($from, $to, $group_by);
+            $datasets = [
+                'visitors'    => array_fill(0, count($labels), 0),
+                'views'       => array_fill(0, count($labels), 0),
+                'conversions' => array_fill(0, count($labels), 0),
+                'leads'       => array_fill(0, count($labels), 0),
+            ];
 
-        $rows = $wpdb->get_results(
-            "SELECT $select, event_type, COUNT(*) AS cnt
-            FROM $table WHERE 1=1 $date_where $widget_where
-            GROUP BY $group, event_type"
-        );
-
-        $labels   = $this->build_label_range($from, $to, $group_by);
-        $datasets = [
-            'visitors'    => array_fill(0, count($labels), 0),
-            'views'       => array_fill(0, count($labels), 0),
-            'conversions' => array_fill(0, count($labels), 0),
-            'leads'       => array_fill(0, count($labels), 0),
-        ];
-
-        $index_map = array_flip($labels);
-        foreach ($rows as $row) {
-            $key = $group_by === 'month'
-                ? substr($row->period_key, 0, 7)
-                : $row->period_key;
-            if (! isset($index_map[$key])) {
-                continue;
+            $index_map = array_flip($labels);
+            $type_map  = ['visitor' => 'visitors', 'view' => 'views', 'conversion' => 'conversions'];
+            foreach (AnalyticsStore::series($from, $to, $widget, $by_month) as $row) {
+                if (isset($index_map[$row->bucket], $type_map[$row->event_type])) {
+                    $datasets[$type_map[$row->event_type]][$index_map[$row->bucket]] = (int) $row->cnt;
+                }
             }
-            $i = $index_map[$key];
-            $type_map = ['visitor' => 'visitors', 'view' => 'views', 'conversion' => 'conversions'];
-            if (isset($type_map[$row->event_type])) {
-                $datasets[$type_map[$row->event_type]][$i] = (int) $row->cnt;
+
+            return ['labels' => $labels, 'datasets' => $datasets];
+        });
+
+        // Leads are read live, outside the cache. See AnalyticsStore::leads_count().
+        $index_map = array_flip($data['labels']);
+        foreach (AnalyticsStore::leads_series($from, $to, $by_month) as $row) {
+            if (isset($index_map[$row->bucket])) {
+                $data['datasets']['leads'][$index_map[$row->bucket]] = (int) $row->cnt;
             }
         }
 
-        if ($group_by === 'month') {
-            $leads_rows = $wpdb->get_results(
-                $wpdb->prepare(
-                    "SELECT DATE_FORMAT(created_at, '%%Y-%%m') AS period_key, COUNT(*) AS cnt
-                    FROM $leads_table WHERE created_at >= %s AND created_at <= %s
-                    GROUP BY DATE_FORMAT(created_at, '%%Y-%%m')",
-                    $from . ' 00:00:00',
-                    $to . ' 23:59:59'
-                )
-            );
-        } else {
-            $leads_rows = $wpdb->get_results(
-                $wpdb->prepare(
-                    "SELECT DATE(created_at) AS period_key, COUNT(*) AS cnt
-                    FROM $leads_table WHERE created_at >= %s AND created_at <= %s
-                    GROUP BY DATE(created_at)",
-                    $from . ' 00:00:00',
-                    $to . ' 23:59:59'
-                )
-            );
-        }
-
-        foreach ($leads_rows as $row) {
-            if (isset($index_map[$row->period_key])) {
-                $datasets['leads'][$index_map[$row->period_key]] = (int) $row->cnt;
-            }
-        }
-
-        return new WP_REST_Response(['labels' => $labels, 'datasets' => $datasets]);
+        return new WP_REST_Response($data);
     }
 
     public function get_devices(WP_REST_Request $request)
     {
-        global $wpdb;
+        AnalyticsStore::refresh();
+        [$from, $to, $widget] = $this->resolve_filters($request->get_params());
 
-        [$from, $to, $widget_where, $date_where] = $this->build_where($request->get_params());
-        $table = $this->table;
+        $data = AnalyticsStore::cached('devices', [$from, $to, $widget], static function () use ($from, $to, $widget) {
+            $result = [
+                'desktop' => ['visitors' => 0, 'views' => 0, 'conversions' => 0],
+                'mobile'  => ['visitors' => 0, 'views' => 0, 'conversions' => 0],
+                'other'   => ['visitors' => 0, 'views' => 0, 'conversions' => 0],
+            ];
 
-        $rows = $wpdb->get_results(
-            "SELECT device_type, event_type, COUNT(*) AS cnt
-            FROM $table WHERE 1=1 $date_where $widget_where
-            GROUP BY device_type, event_type"
-        );
-
-        $result = [
-            'desktop' => ['visitors' => 0, 'views' => 0, 'conversions' => 0],
-            'mobile'  => ['visitors' => 0, 'views' => 0, 'conversions' => 0],
-            'other'   => ['visitors' => 0, 'views' => 0, 'conversions' => 0],
-        ];
-
-        $type_map = ['visitor' => 'visitors', 'view' => 'views', 'conversion' => 'conversions'];
-        foreach ($rows as $row) {
-            $dev = $row->device_type;
-            if (! isset($result[$dev])) {
-                $dev = 'other';
+            $type_map = ['visitor' => 'visitors', 'view' => 'views', 'conversion' => 'conversions'];
+            foreach (AnalyticsStore::devices($from, $to, $widget) as $row) {
+                $device = isset($result[$row->device_type]) ? $row->device_type : 'other';
+                if (isset($type_map[$row->event_type])) {
+                    $result[$device][$type_map[$row->event_type]] += (int) $row->cnt;
+                }
             }
-            if (isset($type_map[$row->event_type])) {
-                $result[$dev][$type_map[$row->event_type]] = (int) $row->cnt;
-            }
-        }
 
-        return new WP_REST_Response($result);
+            return $result;
+        });
+
+        return new WP_REST_Response($data);
     }
 
     public function get_tables(WP_REST_Request $request)
@@ -289,32 +166,21 @@ class Analytics
             'message' => __('Traffic Breakdown is a Pro feature. Upgrade to see countries, pages, and browsers.', 'chat-help'),
         ], 403);
     }
-    // phpcs:enable WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 
-
-    private function build_where(array $params)
+    /**
+     * @return array{0:string,1:string,2:?int} From date, to date, widget id or null for all.
+     */
+    private function resolve_filters(array $params)
     {
-        global $wpdb;
-
-        $period    = $params['period'] ?? 'this_week';
         $widget_id = $params['widget_id'] ?? 'all';
-        $date_from = $params['date_from'] ?? '';
-        $date_to   = $params['date_to'] ?? '';
 
-        [$from, $to] = $this->resolve_period($period, $date_from, $date_to);
+        $valid = static function ($date) {
+            return is_string($date) && preg_match('/^\d{4}-\d{2}-\d{2}$/', $date) ? $date : '';
+        };
 
-        $widget_where = '';
-        if ($widget_id !== 'all' && is_numeric($widget_id)) {
-            $widget_where = $wpdb->prepare(' AND widget_id = %d', (int) $widget_id);
-        }
+        [$from, $to] = $this->resolve_period($params['period'] ?? 'this_week', $valid($params['date_from'] ?? ''), $valid($params['date_to'] ?? ''));
 
-        $date_where = $wpdb->prepare(
-            ' AND created_at >= %s AND created_at <= %s',
-            $from . ' 00:00:00',
-            $to . ' 23:59:59'
-        );
-
-        return [$from, $to, $widget_where, $date_where];
+        return [$from, $to, ('all' !== $widget_id && is_numeric($widget_id)) ? (int) $widget_id : null];
     }
 
     private function resolve_period($period, $date_from = '', $date_to = '')
@@ -380,61 +246,5 @@ class Analytics
         }
 
         return $labels;
-    }
-
-    private function detect_country()
-    {
-        $headers = ['CF-IPCountry', 'HTTP_X_COUNTRY_CODE', 'HTTP_GEOIP_COUNTRY_CODE'];
-        foreach ($headers as $h) {
-            $val = isset($_SERVER[$h]) ? sanitize_text_field(wp_unslash($_SERVER[$h])) : '';
-            if ($val && strlen($val) <= 3) {
-                return strtoupper(sanitize_text_field($val));
-            }
-        }
-        return '';
-    }
-
-    private function detect_browser()
-    {
-        $ua = isset($_SERVER['HTTP_USER_AGENT']) ? sanitize_text_field(wp_unslash($_SERVER['HTTP_USER_AGENT'])) : '';
-        if (stripos($ua, 'Edg') !== false)    return 'Edge';
-        if (stripos($ua, 'OPR') !== false)    return 'Opera';
-        if (stripos($ua, 'YaBrowser') !== false) return 'Yandex';
-        if (stripos($ua, 'SamsungBrowser') !== false) return 'Samsung';
-        if (stripos($ua, 'Chrome') !== false) return 'Chrome';
-        if (stripos($ua, 'Firefox') !== false) return 'Firefox';
-        if (stripos($ua, 'Safari') !== false) return 'Safari';
-        if (stripos($ua, 'MSIE') !== false || stripos($ua, 'Trident') !== false) return 'IE';
-        return 'Other';
-    }
-
-    public function inject_tracking_script()
-    {
-        $track_url = esc_url_raw(rest_url('chat-help/v1/analytics/track'));
-        ?>
-<script>(function(){
-var trackUrl=<?php echo wp_json_encode($track_url); ?>;
-function getDevice(){var ua=navigator.userAgent;if(/tablet|ipad|playbook|silk/i.test(ua))return"other";if(/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/i.test(ua))return"mobile";return"desktop";}
-var device=getDevice();
-function track(eventType,widgetId,sessionId){fetch(trackUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({event_type:eventType,widget_id:widgetId||0,device_type:device,session_id:sessionId||"",page_url:window.location.pathname})}).catch(function(){});}
-function getOrCreateSession(){var key="ch_sid";var sid=sessionStorage.getItem(key);if(!sid){sid=Math.random().toString(36).slice(2)+Date.now().toString(36);sessionStorage.setItem(key,sid);}return sid;}
-var sid=getOrCreateSession();
-if(!sessionStorage.getItem("ch_visited")){sessionStorage.setItem("ch_visited","1");track("visitor",0,sid);}
-function setupTracking(){
-var bubbles=document.querySelectorAll(".wHelp_bubble");
-if(!bubbles.length)return;
-if("IntersectionObserver"in window){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){var wid=entry.target.getAttribute("data-widget-id")||0;track("view",wid,sid);observer.unobserve(entry.target);}});},{threshold:0.5});bubbles.forEach(function(el){observer.observe(el);});}
-document.addEventListener("click",function(e){
-if(e.target.closest(".layout_button")){track("conversion",0,sid);return;}
-var analyticsEl=e.target.closest(".wHelp_woo_btn,.chat_help_analytics");if(analyticsEl&&!analyticsEl.hasAttribute("data-tab")){track("conversion",0,sid);return;}
-if(e.target.closest(".wHelp__send-message.chat_help_link:not(.agent_input)")){track("conversion",0,sid);return;}
-var agentItem=e.target.closest(".chat_help_multi_user:not(.avatar-inactive)");
-if(agentItem&&!agentItem.hasAttribute("data-tab")){track("conversion",0,sid);return;}
-},{passive:true});
-document.addEventListener("submit",function(e){var id=e.target.id;if(id==="wHelp_form"||id==="agent_input"){track("conversion",0,sid);}});
-}
-if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",setupTracking);}else{setupTracking();}
-})();</script>
-<?php
     }
 }
