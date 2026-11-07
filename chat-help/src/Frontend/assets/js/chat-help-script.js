@@ -146,7 +146,8 @@ const { autoShowPopup, autoOpenPopupTimeout } = chat_help_script;
 /******************** 01. CURRENT TIME ********************/
 if (wHelpCurrentTime) {
   const today = new Date();
-  wHelpCurrentTime.innerText = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+  const pad = (n) => String(n).padStart(2, "0");
+  wHelpCurrentTime.innerText = `${pad(today.getHours())}:${pad(today.getMinutes())}`;
 }
 
 /******************** 02. OPEN BUTTON ********************/

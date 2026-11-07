@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-06 14:52+0000\n"
+"POT-Creation-Date: 2026-11-07 13:11+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -558,7 +558,7 @@ msgid "Chat"
 msgstr ""
 
 #: src/Admin/Views/AssignWidget.php:80
-msgid "Assign widget based on pages, posts including any post type and Categories/Taxonomies."
+msgid "Show a chat on specific posts, pages or any other post type, or on whole categories and taxonomies."
 msgstr ""
 
 #: src/Admin/Views/AssignWidget.php:80
@@ -570,7 +570,7 @@ msgid "Add New"
 msgstr ""
 
 #: src/Admin/Views/AssignWidget.php:86
-msgid "Assign Layout:"
+msgid "Assign Chat:"
 msgstr ""
 
 #: src/Admin/Views/AssignWidget.php:93
@@ -602,8 +602,8 @@ msgstr ""
 msgid "Select %s(s)"
 msgstr ""
 
-#: src/Admin/Views/AssignWidget.php:144, src/Admin/Views/AssignWidget.php:179
-msgid "Choose the posts to display. Sort the posts position by drag & drop."
+#: src/Admin/Views/AssignWidget.php:144
+msgid "Choose the posts where this chat will appear."
 msgstr ""
 
 #: src/Admin/Views/AssignWidget.php:150
@@ -629,6 +629,10 @@ msgstr ""
 
 #: src/Admin/Views/AssignWidget.php:177
 msgid "Select Chat"
+msgstr ""
+
+#: src/Admin/Views/AssignWidget.php:179
+msgid "Choose which chat to show on the selected content."
 msgstr ""
 
 #: src/Admin/Views/AssignWidget.php:180

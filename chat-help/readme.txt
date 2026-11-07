@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.7
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.7.2
+Stable tag: 3.7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -233,23 +233,32 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 [For basic usage, have a look at ChatHelp quick start guide](https://wpchathelp.com/docs/quick-start-guide/)
 
 == Screenshots ==
-1. Single Form WhatsApp chat widget with subject and message fields to capture leads and start direct customer support conversations.
-2. Pre-Chat welcome message widget with agent profile, online status, and a Start Chat button to boost WhatsApp engagement and conversions.
-3. Floating WhatsApp click-to-chat button with a "Need Help? Chat with us" call-to-action tooltip to increase sales and customer inquiries.
-4. WooCommerce shop and archive pages with "Order Via WhatsApp" buttons on every product plus a floating live-support chat widget for one-click ordering.
-5. WooCommerce single product page "Get a Quote via WhatsApp" order button with the easy WooCommerce button settings panel and position controls.
-6. Ready-made WhatsApp chat button styles and shortcode options — icons, agent avatars, hover effects, no-background, and multiple sizes for any layout.
-7. Built-in real-time analytics dashboard tracking WhatsApp visitors, views, conversions, leads, conversion rate, performance trendline, and device breakdown.
-8. Floating Chat admin with multiple chat layouts (Form, Single Agent, Pre-Chat, Chat Button), WhatsApp number, smart variables, and a live preview.
-9. Custom Chats manager to create, publish, and manage multiple floating WhatsApp chat widgets, each with its own agents, design, and behavior.
-10. Assign Chats screen to show each WhatsApp chat widget on specific posts, pages, products, or categories for precise placement control.
-11. WooCommerce WhatsApp button settings for shop, product, cart, checkout, and thank-you pages with button style, position, and dynamic pre-filled messages.
-12. WooCommerce pre-filled message editor with dynamic product variables (name, SKU, price, stock) and conditional tags for smart WhatsApp order messages.
-13. WhatsApp chat button shortcode generator with live style preview and copy-ready shortcode to add a WhatsApp button to any page, post, or widget.
-14. WhatsApp Button Gutenberg block to add a click-to-chat WhatsApp button directly inside the WordPress block editor with custom text and styling.
-15. WhatsApp chat button Elementor widget for drag-and-drop customization of agent, number, pre-filled message, and button style on any page.
+1. Form Chat layout: visitors enter their name and message, then continue the conversation in WhatsApp. Submissions can be saved as leads.
+2. Single Agent layout with agent name, online status, a welcome message and a Send Message button that opens WhatsApp.
+3. Pre-Chat Message layout: visitors type their first message right in the chat bubble before WhatsApp opens.
+4. Floating WhatsApp click-to-chat button with a "Need Help? Chat with us" tooltip.
+5. WooCommerce shop page with an "Order Via WhatsApp" button on every product.
+6. Ready-made WhatsApp button styles for shortcodes: agent avatar, online/offline status, with or without background, and custom colors.
+7. Built-in analytics dashboard: visitors, views, conversions, conversion rate, leads, a performance trendline and a device breakdown.
+8. Global Chat settings: pick a chat layout, set your WhatsApp number or group, and see every change in the Live Preview before saving.
+9. Appearance settings: auto-open popup, bubble animation, Flat or WhatsApp theme, brand colors and typography.
+10. Custom Chats: create and manage multiple floating WhatsApp chats, each with its own layout, design and assignment.
+11. Add Chat: name a new chat, pick its layout and WhatsApp number, and the editor opens with everything filled in.
+12. Assign Chats: show a specific chat on chosen posts, pages or categories.
+13. Leads: every form submission in one place, with search, date filters, agent filter and CSV export.
+14. WooCommerce settings for the shop, product, cart, checkout and thank-you pages, with pre-filled messages using product variables (name, SKU, price, stock).
+15. Shortcode generator: choose a button style and copy a ready-to-use shortcode for any page, post or widget.
+16. WhatsApp URL settings: open chats in a new tab, choose how WhatsApp opens on desktop and mobile, and show a QR code to desktop visitors.
+17. WhatsApp Button block for the WordPress block editor.
+18. WhatsApp Button widget for Elementor.
 
 == Changelog ==
+= 3.7.3 – 7 November 2026 =
+* Fixed: The time in the chat bubble is now zero-padded (17:05 instead of 17:5) and no longer shows seconds.
+* Fixed: Assign Chats rules are now labelled "Assign Chat" instead of "Assign Layout", matching the rest of the admin.
+* Fixed: Corrected the help text for the Select Chat and Select Post(s) fields in Assign Chats.
+* Improved: New screenshots and banner showing the current admin and chat layouts.
+
 = 3.7.2 – 6 November 2026 =
 * Improved: Analytics tracking is far lighter. A tracking request now stops before the rest of the site loads and runs a single database insert.
 * Improved: Visitors' browsers send at most one tracking request per page view, batched when the page is hidden or closed.

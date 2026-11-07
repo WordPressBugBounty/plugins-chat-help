@@ -77,13 +77,13 @@ class AssignWidget
 
 					array(
 						'type'    => 'submessage',
-						'content' => esc_html__('Assign widget based on pages, posts including any post type and Categories/Taxonomies.', 'chat-help') . ' <a href="https://wpchathelp.com/docs/layout-assignment/" target="_blank">' . esc_html__('See Docs', 'chat-help') . '</a>',
+						'content' => esc_html__('Show a chat on specific posts, pages or any other post type, or on whole categories and taxonomies.', 'chat-help') . ' <a href="https://wpchathelp.com/docs/layout-assignment/" target="_blank">' . esc_html__('See Docs', 'chat-help') . '</a>',
 					),
 					array(
 						'id'                     => 'assign_widget_data',
 						'type'                   => 'group',
 						'button_title'           => __('Add New', 'chat-help'),
-						'accordion_title_prefix' => __('Assign Layout:', 'chat-help'),
+						'accordion_title_prefix' => __('Assign Chat:', 'chat-help'),
 						'accordion_title_number' => true,
 						'fields'                 => array(
 
@@ -141,7 +141,7 @@ class AssignWidget
 								// own default so the list still loads instead of
 								// rendering empty.
 								'options_by_default' => 'post',
-								'title_help'  => __('Choose the posts to display. Sort the posts position by drag & drop.', 'chat-help'),
+								'title_help'  => __('Choose the posts where this chat will appear.', 'chat-help'),
 								'chosen'      => true,
 								'sortable'    => false,
 								'ajax'        => false,
@@ -176,7 +176,7 @@ class AssignWidget
 								'type'        => 'select',
 								'title'       => __('Select Chat', 'chat-help'),
 								'options'     => 'posts',
-								'title_help'  => __('Choose the posts to display. Sort the posts position by drag & drop.', 'chat-help'),
+								'title_help'  => __('Choose which chat to show on the selected content.', 'chat-help'),
 								'placeholder' => __('Choose Chat', 'chat-help'),
 								'empty_message' => sprintf(
 									/* translators: %1$s: opening link tag to the new-layout screen, %2$s: closing link tag. */
