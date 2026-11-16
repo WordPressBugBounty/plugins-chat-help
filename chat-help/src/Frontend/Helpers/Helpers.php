@@ -663,12 +663,94 @@ class Helpers
 	}
 
 	/**
+	 * Attribute text for the {productAttributes} message variable.
+	 *
+	 *  - A variation gives its own values: "Color: Red, Size: M".
+	 *  - Any other product (a variable product before the shopper picks a
+	 *    variation, a simple product with attributes) lists every attribute shown
+	 *    on the product page plus every variation attribute, with all of its
+	 *    options: "Color: Red / Blue, Size: S / M".
+	 *
+	 * @param \WC_Product|null $product Product or variation.
+	 * @return string
+	 */
+	public static function product_attributes_text($product)
+	{
+		if (!self::is_valid_wc_product($product)) {
+			return '';
+		}
+
+		$parts = array();
+		if ($product->is_type('variation')) {
+			$parent = wc_get_product($product->get_parent_id());
+			foreach ($product->get_variation_attributes(false) as $name => $value) {
+				if ('' === $value || null === $value) {
+					// "Any" attribute the variation does not fix.
+					continue;
+				}
+				if (taxonomy_exists($name)) {
+					$term = get_term_by('slug', $value, $name);
+					$value = ($term && !is_wp_error($term)) ? $term->name : $value;
+				}
+				$parts[] = wc_attribute_label($name, $parent ? $parent : $product) . ': ' . $value;
+			}
+		} else {
+			foreach ($product->get_attributes() as $attribute) {
+				if (!($attribute instanceof \WC_Product_Attribute)) {
+					continue;
+				}
+				if (!$attribute->get_visible() && !$attribute->get_variation()) {
+					continue;
+				}
+				$values = $attribute->is_taxonomy()
+					? wc_get_product_terms($product->get_id(), $attribute->get_name(), array('fields' => 'names'))
+					: $attribute->get_options();
+				$values = array_filter(array_map('trim', array_map('strval', (array) $values)), 'strlen');
+				if (empty($values)) {
+					continue;
+				}
+				$parts[] = wc_attribute_label($attribute->get_name(), $product) . ': ' . implode(' / ', $values);
+			}
+		}
+
+		/**
+		 * Filter the {productAttributes} message variable.
+		 *
+		 * @param string      $text    "Color: Red, Size: M".
+		 * @param \WC_Product $product Product or variation.
+		 * @param array       $parts   One "Label: value" entry per attribute.
+		 */
+		return (string) apply_filters('chat_help_product_attributes_text', implode(', ', $parts), $product, $parts);
+	}
+
+	/**
+	 * Labels of a variable product's variation attributes, keyed by the name of
+	 * the matching <select> in the add-to-cart form ("attribute_pa_color").
+	 * Lets the product page script build {productAttributes} for the variation
+	 * the shopper picks, in the same "Label: value" format as the server.
+	 *
+	 * @param \WC_Product|null $product Product.
+	 * @return array
+	 */
+	public static function variation_attribute_labels($product)
+	{
+		$labels = array();
+		if (!self::is_valid_wc_product($product) || !$product->is_type('variable')) {
+			return $labels;
+		}
+		foreach (array_keys($product->get_variation_attributes()) as $name) {
+			$labels['attribute_' . sanitize_title($name)] = wc_attribute_label($name, $product);
+		}
+		return $labels;
+	}
+
+	/**
 	 * Global replacement vars
 	 *
 	 * @return string
 	 */
 
-	public static function replacement_vars($message, $form = false, $formData = '', $product_id = null, $override_currentURL = '', $override_currentTitle = '')
+	public static function replacement_vars($message, $form = false, $formData = '', $product_id = null, $override_currentURL = '', $override_currentTitle = '', $variation_id = 0)
 	{
 		// vars for all types
 		global $wp;
@@ -736,8 +818,19 @@ class Helpers
 			$productSalePrice = $product->get_sale_price();
 			$productSku = $product->get_sku();
 			$productStockStatus = $product->get_stock_status();
-			$product_variables = array('{productName}', '{productSlug}', '{productPrice}', '{productRegularPrice}', '{productSalePrice}', '{productSku}', '{productStockStatus}');
-			$product_values = array($productName, $productSlug, $productPrice, $productRegularPrice, $productSalePrice, $productSku, $productStockStatus);
+			// {productAttributes} follows the variation the shopper picked when the
+			// caller knows it (form submissions send the add-to-cart form's
+			// variation_id); otherwise it lists the product's own attributes.
+			$attributes_product = $product;
+			if ($variation_id) {
+				$variation = wc_get_product(absint($variation_id));
+				if ($variation && $variation->is_type('variation') && (int) $variation->get_parent_id() === (int) $product->get_id()) {
+					$attributes_product = $variation;
+				}
+			}
+			$productAttributes = self::product_attributes_text($attributes_product);
+			$product_variables = array('{productName}', '{productSlug}', '{productPrice}', '{productRegularPrice}', '{productSalePrice}', '{productSku}', '{productStockStatus}', '{productAttributes}');
+			$product_values = array($productName, $productSlug, $productPrice, $productRegularPrice, $productSalePrice, $productSku, $productStockStatus, $productAttributes);
 			$variables = array_merge($variables, $product_variables);
 			$values = array_merge($values, $product_values);
 		}

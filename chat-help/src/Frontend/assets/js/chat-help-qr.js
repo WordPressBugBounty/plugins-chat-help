@@ -205,6 +205,7 @@
 		return {
 			data: data,
 			product_id: form.getAttribute('data-product_attr') || '',
+			variation_id: (function () { var v = document.querySelector('form.variations_form input[name="variation_id"]'); return v && v.value ? v.value : ''; })(),
 			current_url: window.location.href,
 			current_title: document.title,
 			number: trigger.getAttribute('data-number') || '',

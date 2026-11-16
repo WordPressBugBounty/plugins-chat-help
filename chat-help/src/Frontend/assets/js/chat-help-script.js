@@ -502,6 +502,14 @@ if (wHelpChatAvailability) {
     document.addEventListener("keydown", wHelpGroupModalEsc);
   }
 
+  /*
+   * Variation the shopper picked in the product page add-to-cart form, sent
+   * with form submissions so {productAttributes} names that variation.
+   */
+  function wHelpVariationId() {
+    return $("form.variations_form input[name=\"variation_id\"]").first().val() || "";
+  }
+
   /* ========================
      WHATSAPP NAVIGATION
   ======================== */
@@ -575,6 +583,7 @@ if (wHelpChatAvailability) {
         userInfo,
         nonce: chat_help_frontend_scripts.nonce,
         product_id: product_attr,
+        variation_id: wHelpVariationId(),
         current_url: currentUrl,
         current_title: currentTitle,
         agentName: agentName,
@@ -638,6 +647,7 @@ if (wHelpChatAvailability) {
         userInfo,
         nonce: chat_help_frontend_scripts.nonce,
         product_id: product_attr,
+        variation_id: wHelpVariationId(),
         current_url: currentUrl,
         current_title: currentTitle,
         agentName: agentName,

@@ -38,6 +38,13 @@ class WooButton
      */
     protected static $checkout_shipping_script_added = false;
 
+    /**
+     * Whether the product page variation-attributes script has been queued.
+     *
+     * @var bool
+     */
+    protected static $variation_attributes_script_added = false;
+
     public static function woo_button()
     {
         // The Product Page button must only ever render on a single product
@@ -134,6 +141,7 @@ class WooButton
         $margin = $product_page_button_margin_top . $product_page_button_margin_unit . ' ' . $product_page_button_margin_right . $product_page_button_margin_unit . ' ' . $product_page_button_margin_bottom . $product_page_button_margin_unit . ' ' . $product_page_button_margin_left . $product_page_button_margin_unit;
 
         $message = isset($ch_wooCommerce['product_page_button_message']) ? $ch_wooCommerce['product_page_button_message'] : '';
+        $attrs_data_attr = self::variation_attributes_data_attr($message);
         $message = Helpers::replacement_vars($message);
 
         $url = Helpers::whatsAppUrl($product_page_button_number, $product_page_button_type_of_whatsapp, $product_page_button_group, $url_for_desktop, $url_for_mobile, $message);
@@ -154,13 +162,13 @@ class WooButton
         }
 
         if ($product_page_button_style === '1') {
-            echo '<a style="--wHelp-btn-scale: ' . esc_attr($product_page_button_size) . '; --wHelp-margin: ' . esc_attr($margin) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . ';--wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . ';--wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" ' . esc_attr($gaAnalyticsAttr) . ' class="wHelp_button chat_help_analytics product_page_button circle-bubble ' . esc_attr($product_page_button_visibility) . '">';
+            echo '<a style="--wHelp-btn-scale: ' . esc_attr($product_page_button_size) . '; --wHelp-margin: ' . esc_attr($margin) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . ';--wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . ';--wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" ' . $attrs_data_attr . ' ' . esc_attr($gaAnalyticsAttr) . ' class="wHelp_button chat_help_analytics product_page_button circle-bubble ' . esc_attr($product_page_button_visibility) . '">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $attrs_data_attr is built with esc_attr().
             if ($circle_icon) {
                 echo wp_kses_post($circle_icon);
             }
             echo '</a>';
         } else {
-            echo '<a style="--wHelp-padding: ' . esc_attr($padding) . '; --wHelp-btn-scale: ' . esc_attr($product_page_button_size) . '; --wHelp-margin: ' . esc_attr($margin) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . ';--wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-icon-normal-bg-color: ' . esc_attr($normal_bg_color) . '; --wHelp-icon-hover-bg-color: ' . esc_attr($hover_bg_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . '; --wHelp-text-color: ' . esc_attr($text_color) . '; --wHelp-text-hover-color: ' . esc_attr($text_hover_color) . '; --wHelp-icon-border: ' . esc_attr($icon_border_all . ' ' . $icon_border_style) . '; --wHelp-icon-border-color: ' . esc_attr($icon_border_color) . '; --wHelp-hover-icon-border-color: ' . esc_attr($hover_icon_border_color) . '; --wHelp-icon-border-radius: ' . esc_attr($icon_border_radius) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" ' . esc_attr($gaAnalyticsAttr) . ' class="wHelp_button chat_help_analytics product_page_button ' . esc_attr($product_page_button_visibility) . '">';
+            echo '<a style="--wHelp-padding: ' . esc_attr($padding) . '; --wHelp-btn-scale: ' . esc_attr($product_page_button_size) . '; --wHelp-margin: ' . esc_attr($margin) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . ';--wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-icon-normal-color: ' . esc_attr($normal_icon_color) . '; --wHelp-icon-hover-color: ' . esc_attr($hover_icon_color) . '; --wHelp-icon-normal-bg-color: ' . esc_attr($normal_bg_color) . '; --wHelp-icon-hover-bg-color: ' . esc_attr($hover_bg_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . '; --wHelp-text-color: ' . esc_attr($text_color) . '; --wHelp-text-hover-color: ' . esc_attr($text_hover_color) . '; --wHelp-icon-border: ' . esc_attr($icon_border_all . ' ' . $icon_border_style) . '; --wHelp-icon-border-color: ' . esc_attr($icon_border_color) . '; --wHelp-hover-icon-border-color: ' . esc_attr($hover_icon_border_color) . '; --wHelp-icon-border-radius: ' . esc_attr($icon_border_radius) . ';" target="' . esc_attr($open_in_new_tab) . '" href="' . esc_attr($url) . '" ' . $attrs_data_attr . ' ' . esc_attr($gaAnalyticsAttr) . ' class="wHelp_button chat_help_analytics product_page_button ' . esc_attr($product_page_button_visibility) . '">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $attrs_data_attr is built with esc_attr().
             if ($product_page_button_icon_open !== 'no_icon' && $woo_button_icon) {
                 echo '<span class="bubble__icon ' . esc_attr($icon_bg) . '">';
                 echo wp_kses_post($woo_button_icon);
@@ -588,6 +596,133 @@ class WooButton
             echo esc_html($checkout_page_button_text);
             echo '</a>';
         }
+    }
+
+    /**
+     * Data attributes that let the product page button follow the variation
+     * the shopper picks when its message uses {productAttributes}.
+     *
+     * The server can only fill {productAttributes} with every option of a
+     * variable product ("Color: Red / Blue"), because the choice is made in the
+     * browser. So the message is also built with the variable left as a JS
+     * sentinel, and a small script swaps in the picked values ("Color: Red")
+     * whenever the variation changes and again just before the button is
+     * followed.
+     *
+     * @param string $raw_message Message before variables are replaced.
+     * @return string Attribute markup (already escaped), or '' when not needed.
+     */
+    protected static function variation_attributes_data_attr($raw_message)
+    {
+        if (false === strpos((string) $raw_message, '{productAttributes}')) {
+            return '';
+        }
+        $product = isset($GLOBALS['product']) ? $GLOBALS['product'] : null;
+        if (!($product instanceof \WC_Product) || !$product->is_type('variable')) {
+            return '';
+        }
+        $labels = Helpers::variation_attribute_labels($product);
+        if (empty($labels)) {
+            return '';
+        }
+
+        $template_message = Helpers::replacement_vars(str_replace('{productAttributes}', '__CH_ATTRS__', $raw_message));
+
+        if (!self::$variation_attributes_script_added) {
+            self::$variation_attributes_script_added = true;
+            add_action('wp_footer', array(self::class, 'variation_attributes_script'), 99);
+        }
+
+        return 'data-ch-attrs="' . esc_attr(wp_json_encode($labels)) . '"'
+            . ' data-ch-attrs-msg="' . esc_attr($template_message) . '"'
+            . ' data-ch-attrs-default="' . esc_attr(Helpers::product_attributes_text($product)) . '"'
+            . ' data-ch-attrs-product="' . esc_attr($product->get_id()) . '"';
+    }
+
+    /**
+     * Print the script that keeps {productAttributes} in the product page
+     * button's WhatsApp link in step with the variation the shopper picks.
+     *
+     * Reads the add-to-cart form's attribute fields (swatch plugins keep these
+     * in sync too), formats them like Helpers::product_attributes_text() does for
+     * a variation ("Color: Red, Size: M") and rewrites the URL's text parameter.
+     * Falls back to the all-options text while nothing is picked.
+     *
+     * @return void
+     */
+    public static function variation_attributes_script()
+    {
+        ?>
+<script>
+(function () {
+    var SENTINEL = '__CH_ATTRS__';
+
+    function formFor(a) {
+        var id = a.getAttribute('data-ch-attrs-product');
+        return (id && document.querySelector('form.variations_form[data-product_id="' + id + '"]')) ||
+            document.querySelector('form.variations_form');
+    }
+
+    function picked(a, form) {
+        var labels = {};
+        try { labels = JSON.parse(a.getAttribute('data-ch-attrs')) || {}; } catch (e) {}
+        if (!form) return '';
+        var parts = [];
+        Object.keys(labels).forEach(function (name) {
+            var field = null;
+            for (var i = 0; i < form.elements.length; i++) {
+                if (form.elements[i].name === name) { field = form.elements[i]; break; }
+            }
+            if (!field || !field.value) return;
+            var text = field.value;
+            if (field.tagName === 'SELECT' && field.selectedIndex >= 0) {
+                text = field.options[field.selectedIndex].text;
+            }
+            parts.push(labels[name] + ': ' + String(text).trim());
+        });
+        return parts.join(', ');
+    }
+
+    function refresh(a) {
+        var tmpl = a.getAttribute('data-ch-attrs-msg');
+        if (tmpl === null) return;
+        var text = picked(a, formFor(a)) || a.getAttribute('data-ch-attrs-default') || '';
+        var msg = tmpl.split(SENTINEL).join(text);
+        var href = a.getAttribute('href') || '';
+        if (/[?&]text=/.test(href)) {
+            a.setAttribute('href', href.replace(/([?&]text=)[^&#]*/, '$1' + encodeURIComponent(msg)));
+        }
+    }
+
+    function refreshAll() {
+        var links = document.querySelectorAll('a[data-ch-attrs-msg]');
+        for (var i = 0; i < links.length; i++) refresh(links[i]);
+    }
+
+    // Keep the link current, so a copied/hovered link is right too.
+    if (window.jQuery) {
+        jQuery(document).on('found_variation reset_data woocommerce_variation_has_changed', 'form.variations_form', function () {
+            setTimeout(refreshAll, 0);
+        });
+        jQuery(refreshAll);
+    }
+    document.addEventListener('change', function (e) {
+        if (e.target && e.target.closest && e.target.closest('form.variations_form')) refreshAll();
+    }, true);
+
+    // And once more right before the button is followed.
+    function handler(e) {
+        var t = e.target;
+        if (!t || !t.closest) return;
+        var a = t.closest('a[data-ch-attrs-msg]');
+        if (a) refresh(a);
+    }
+    ['pointerdown', 'touchstart', 'click'].forEach(function (ev) {
+        document.addEventListener(ev, handler, true);
+    });
+})();
+</script>
+        <?php
     }
 
     /**

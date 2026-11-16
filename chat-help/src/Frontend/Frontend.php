@@ -393,6 +393,7 @@ class Frontend
         parse_str(isset($_POST['data']) ? wp_unslash($_POST['data']) : '', $formData); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- URL-encoded form string; every parsed value is sanitized on the next line.
         $formData = map_deep($formData, 'sanitize_textarea_field');
         $product_id = isset($_POST['product_id']) ? sanitize_text_field(wp_unslash($_POST['product_id'])) : '';
+        $variation_id = isset($_POST['variation_id']) ? absint(wp_unslash($_POST['variation_id'])) : 0;
         $current_url = isset($_POST['current_url']) ? sanitize_url(wp_unslash($_POST['current_url'])) : '';
         $current_title = isset($_POST['current_title']) ? sanitize_text_field(wp_unslash($_POST['current_title'])) : '';
         $agentName = isset($_POST['agentName']) ? sanitize_text_field(wp_unslash($_POST['agentName'])) : '';
@@ -416,7 +417,7 @@ class Frontend
         $chat_help_leads = isset($options['chat_help_leads']) ? $options['chat_help_leads'] : true;
 
         $form = true;
-        $message = Helpers::replacement_vars($template, $form, $formData, $product_id, $current_url, $current_title);
+        $message = Helpers::replacement_vars($template, $form, $formData, $product_id, $current_url, $current_title, $variation_id);
         $url = Helpers::whatsAppUrl($agent_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
 
         if ($chat_help_leads) {
@@ -480,6 +481,7 @@ class Frontend
         // Parsed the same way as handle_form_submission() so the message matches.
         parse_str(isset($_POST['data']) ? (string) $_POST['data'] : '', $form_data); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- each value is handled by Helpers::replacement_vars(), as on submit.
         $product_id = isset($_POST['product_id']) ? sanitize_text_field(wp_unslash($_POST['product_id'])) : '';
+        $variation_id = isset($_POST['variation_id']) ? absint(wp_unslash($_POST['variation_id'])) : 0;
         $current_url = isset($_POST['current_url']) ? sanitize_url(wp_unslash($_POST['current_url'])) : '';
         $current_title = isset($_POST['current_title']) ? sanitize_text_field(wp_unslash($_POST['current_title'])) : '';
         $options = get_option('cwp_option');
@@ -499,7 +501,7 @@ class Frontend
             $template = isset($options['whatsapp_message_template']) ? $options['whatsapp_message_template'] : '';
         }
 
-        $message = Helpers::replacement_vars($template, true, $form_data, $product_id, $current_url, $current_title);
+        $message = Helpers::replacement_vars($template, true, $form_data, $product_id, $current_url, $current_title, $variation_id);
         $url = Helpers::whatsAppUrl($agent_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
 
         wp_send_json_success(array(
