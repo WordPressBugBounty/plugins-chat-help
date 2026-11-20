@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.7
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.7.4
+Stable tag: 3.7.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -253,6 +253,12 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 18. WhatsApp Button widget for Elementor.
 
 == Changelog ==
+= 3.7.5 – 19 November 2026 =
+* Changed: On variable products, {productAttributes} is now empty until the visitor picks a variation. It no longer lists every option, which read as if the visitor was asking about all of them.
+* Added: {productAttributeValues} message variable. It sends only the picked options, without attribute names ("Red, Large" instead of "Color: Red, Size: Large"). Useful when a product has a single attribute.
+* Fixed: Attribute names and options containing "&" no longer show as "&amp;" in the chat form's WhatsApp message.
+* Fixed: On product pages that also show add-to-cart forms for related products, each WhatsApp button now only uses its own product's picked options.
+
 = 3.7.4 – 16 November 2026 =
 * Added: {productAttributes} message variable for WooCommerce products. It sends the attributes of the product the visitor is viewing, for example "Color: Red / Blue, Size: S / M".
 * Added: On variable products, {productAttributes} sends only the options the visitor picked ("Color: Red, Size: M"). The Product Page button updates its WhatsApp link as soon as the visitor changes their choice.

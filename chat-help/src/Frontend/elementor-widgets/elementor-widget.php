@@ -135,7 +135,7 @@ class Elementor_Ctw_Buttons extends \Elementor\Widget_Base // phpcs:ignore WordP
             'predefined_template',
             [
                 'label' => esc_html__('Pre-defined Message', 'chat-help'),
-                'description' => __('Global Vars - {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date}, {time} <br>WooCommerce Vars - {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus}, {productAttributes}<br><b>NOTE: WooCommerce vars work only on single product pages.</b>', 'chat-help'),
+                'description' => __('Global Vars - {siteTitle}, {siteEmail}, {currentURL}, {currentTitle}, {siteURL}, {ip}, {date}, {time} <br>WooCommerce Vars - {productName}, {productSlug}, {productSku}, {productPrice}, {productRegularPrice}, {productSalePrice}, {productStockStatus}, {productAttributes}, {productAttributeValues}<br><b>NOTE: WooCommerce vars work only on single product pages.</b>', 'chat-help'),
                 'type'  => \Elementor\Controls_Manager::TEXTAREA,
                 'label_block' => true,
                 'default' => esc_html__('Hi! I have a question about your services.', 'chat-help'),

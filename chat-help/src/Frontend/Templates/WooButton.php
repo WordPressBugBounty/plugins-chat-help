@@ -600,21 +600,21 @@ class WooButton
 
     /**
      * Data attributes that let the product page button follow the variation
-     * the shopper picks when its message uses {productAttributes}.
+     * the shopper picks when its message uses {productAttributes} or
+     * {productAttributeValues}.
      *
-     * The server can only fill {productAttributes} with every option of a
-     * variable product ("Color: Red / Blue"), because the choice is made in the
-     * browser. So the message is also built with the variable left as a JS
-     * sentinel, and a small script swaps in the picked values ("Color: Red")
-     * whenever the variation changes and again just before the button is
-     * followed.
+     * The choice is made in the browser, so on a variable product the server
+     * leaves both empty. The message is also built with the variables left as
+     * JS sentinels, and a small script swaps in the picked options
+     * ("Color: Red" / "Red") whenever the variation changes and again just
+     * before the button is followed.
      *
      * @param string $raw_message Message before variables are replaced.
      * @return string Attribute markup (already escaped), or '' when not needed.
      */
     protected static function variation_attributes_data_attr($raw_message)
     {
-        if (false === strpos((string) $raw_message, '{productAttributes}')) {
+        if (false === strpos((string) $raw_message, '{productAttributes}') && false === strpos((string) $raw_message, '{productAttributeValues}')) {
             return '';
         }
         $product = isset($GLOBALS['product']) ? $GLOBALS['product'] : null;
@@ -626,7 +626,10 @@ class WooButton
             return '';
         }
 
-        $template_message = Helpers::replacement_vars(str_replace('{productAttributes}', '__CH_ATTRS__', $raw_message));
+        $template_message = Helpers::replacement_vars(strtr($raw_message, array(
+            '{productAttributes}'      => '__CH_ATTRS__',
+            '{productAttributeValues}' => '__CH_ATTR_VALUES__',
+        )));
 
         if (!self::$variation_attributes_script_added) {
             self::$variation_attributes_script_added = true;
@@ -635,18 +638,21 @@ class WooButton
 
         return 'data-ch-attrs="' . esc_attr(wp_json_encode($labels)) . '"'
             . ' data-ch-attrs-msg="' . esc_attr($template_message) . '"'
-            . ' data-ch-attrs-default="' . esc_attr(Helpers::product_attributes_text($product)) . '"'
             . ' data-ch-attrs-product="' . esc_attr($product->get_id()) . '"';
     }
 
     /**
-     * Print the script that keeps {productAttributes} in the product page
-     * button's WhatsApp link in step with the variation the shopper picks.
+     * Print the script that keeps {productAttributes} / {productAttributeValues}
+     * in the product page button's WhatsApp link in step with the variation the
+     * shopper picks.
      *
      * Reads the add-to-cart form's attribute fields (swatch plugins keep these
      * in sync too), formats them like Helpers::product_attributes_text() does for
-     * a variation ("Color: Red, Size: M") and rewrites the URL's text parameter.
-     * Falls back to the all-options text while nothing is picked.
+     * a variation ("Color: Red, Size: M" / "Red, M") and rewrites the URL's text
+     * parameter. Both stay empty while nothing is picked.
+     *
+     * Each button reads only its own product's form: themes that print add-to-cart
+     * forms for related products put several on one page.
      *
      * @return void
      */
@@ -656,18 +662,23 @@ class WooButton
 <script>
 (function () {
     var SENTINEL = '__CH_ATTRS__';
+    var SENTINEL_VALUES = '__CH_ATTR_VALUES__';
 
     function formFor(a) {
         var id = a.getAttribute('data-ch-attrs-product');
-        return (id && document.querySelector('form.variations_form[data-product_id="' + id + '"]')) ||
-            document.querySelector('form.variations_form');
+        if (!id) return null;
+        var forms = document.querySelectorAll('form.variations_form');
+        for (var i = 0; i < forms.length; i++) {
+            if (forms[i].getAttribute('data-product_id') === id) return forms[i];
+        }
+        return null;
     }
 
     function picked(a, form) {
         var labels = {};
         try { labels = JSON.parse(a.getAttribute('data-ch-attrs')) || {}; } catch (e) {}
-        if (!form) return '';
-        var parts = [];
+        var out = { labelled: [], values: [] };
+        if (!form) return out;
         Object.keys(labels).forEach(function (name) {
             var field = null;
             for (var i = 0; i < form.elements.length; i++) {
@@ -678,16 +689,18 @@ class WooButton
             if (field.tagName === 'SELECT' && field.selectedIndex >= 0) {
                 text = field.options[field.selectedIndex].text;
             }
-            parts.push(labels[name] + ': ' + String(text).trim());
+            text = String(text).trim();
+            out.labelled.push(labels[name] + ': ' + text);
+            out.values.push(text);
         });
-        return parts.join(', ');
+        return out;
     }
 
     function refresh(a) {
         var tmpl = a.getAttribute('data-ch-attrs-msg');
         if (tmpl === null) return;
-        var text = picked(a, formFor(a)) || a.getAttribute('data-ch-attrs-default') || '';
-        var msg = tmpl.split(SENTINEL).join(text);
+        var p = picked(a, formFor(a));
+        var msg = tmpl.split(SENTINEL).join(p.labelled.join(', ')).split(SENTINEL_VALUES).join(p.values.join(', '));
         var href = a.getAttribute('href') || '';
         if (/[?&]text=/.test(href)) {
             a.setAttribute('href', href.replace(/([?&]text=)[^&#]*/, '$1' + encodeURIComponent(msg)));

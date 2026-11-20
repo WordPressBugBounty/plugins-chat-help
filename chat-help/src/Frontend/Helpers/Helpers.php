@@ -663,24 +663,29 @@ class Helpers
 	}
 
 	/**
-	 * Attribute text for the {productAttributes} message variable.
+	 * Attribute text for the {productAttributes} and {productAttributeValues}
+	 * message variables.
 	 *
-	 *  - A variation gives its own values: "Color: Red, Size: M".
-	 *  - Any other product (a variable product before the shopper picks a
-	 *    variation, a simple product with attributes) lists every attribute shown
-	 *    on the product page plus every variation attribute, with all of its
-	 *    options: "Color: Red / Blue, Size: S / M".
+	 *  - A variation gives the options it fixes: "Color: Red, Size: M"
+	 *    (values only: "Red, M").
+	 *  - A variable product gives nothing: until the shopper picks a variation
+	 *    there is no choice to report, and listing every option reads as if the
+	 *    shopper asked about all of them. The product page fills it in from the
+	 *    picked variation.
+	 *  - Any other product (e.g. a simple product) lists the attributes shown on
+	 *    its page: "Brand: Acme, Size: S / M" (values only: "Acme, S / M").
 	 *
-	 * @param \WC_Product|null $product Product or variation.
+	 * @param \WC_Product|null $product     Product or variation.
+	 * @param bool             $values_only Leave out the "Label: " part.
 	 * @return string
 	 */
-	public static function product_attributes_text($product)
+	public static function product_attributes_text($product, $values_only = false)
 	{
 		if (!self::is_valid_wc_product($product)) {
 			return '';
 		}
 
-		$parts = array();
+		$pairs = array();
 		if ($product->is_type('variation')) {
 			$parent = wc_get_product($product->get_parent_id());
 			foreach ($product->get_variation_attributes(false) as $name => $value) {
@@ -692,14 +697,11 @@ class Helpers
 					$term = get_term_by('slug', $value, $name);
 					$value = ($term && !is_wp_error($term)) ? $term->name : $value;
 				}
-				$parts[] = wc_attribute_label($name, $parent ? $parent : $product) . ': ' . $value;
+				$pairs[] = array(wc_attribute_label($name, $parent ? $parent : $product), $value);
 			}
-		} else {
+		} elseif (!$product->is_type('variable')) {
 			foreach ($product->get_attributes() as $attribute) {
-				if (!($attribute instanceof \WC_Product_Attribute)) {
-					continue;
-				}
-				if (!$attribute->get_visible() && !$attribute->get_variation()) {
+				if (!($attribute instanceof \WC_Product_Attribute) || !$attribute->get_visible()) {
 					continue;
 				}
 				$values = $attribute->is_taxonomy()
@@ -709,18 +711,28 @@ class Helpers
 				if (empty($values)) {
 					continue;
 				}
-				$parts[] = wc_attribute_label($attribute->get_name(), $product) . ': ' . implode(' / ', $values);
+				$pairs[] = array(wc_attribute_label($attribute->get_name(), $product), implode(' / ', $values));
 			}
 		}
 
+		$parts = array();
+		foreach ($pairs as $pair) {
+			// WordPress stores "&" in term and attribute names as "&amp;"; the
+			// message is plain text.
+			$label = html_entity_decode((string) $pair[0], ENT_QUOTES, 'UTF-8');
+			$value = html_entity_decode((string) $pair[1], ENT_QUOTES, 'UTF-8');
+			$parts[] = $values_only ? $value : $label . ': ' . $value;
+		}
+
 		/**
-		 * Filter the {productAttributes} message variable.
+		 * Filter the {productAttributes} / {productAttributeValues} text.
 		 *
-		 * @param string      $text    "Color: Red, Size: M".
-		 * @param \WC_Product $product Product or variation.
-		 * @param array       $parts   One "Label: value" entry per attribute.
+		 * @param string      $text        "Color: Red, Size: M" (or "Red, M").
+		 * @param \WC_Product $product     Product or variation.
+		 * @param array       $parts       One entry per attribute.
+		 * @param bool        $values_only True for {productAttributeValues}.
 		 */
-		return (string) apply_filters('chat_help_product_attributes_text', implode(', ', $parts), $product, $parts);
+		return (string) apply_filters('chat_help_product_attributes_text', implode(', ', $parts), $product, $parts, $values_only);
 	}
 
 	/**
@@ -739,7 +751,7 @@ class Helpers
 			return $labels;
 		}
 		foreach (array_keys($product->get_variation_attributes()) as $name) {
-			$labels['attribute_' . sanitize_title($name)] = wc_attribute_label($name, $product);
+			$labels['attribute_' . sanitize_title($name)] = html_entity_decode(wc_attribute_label($name, $product), ENT_QUOTES, 'UTF-8');
 		}
 		return $labels;
 	}
@@ -829,8 +841,9 @@ class Helpers
 				}
 			}
 			$productAttributes = self::product_attributes_text($attributes_product);
-			$product_variables = array('{productName}', '{productSlug}', '{productPrice}', '{productRegularPrice}', '{productSalePrice}', '{productSku}', '{productStockStatus}', '{productAttributes}');
-			$product_values = array($productName, $productSlug, $productPrice, $productRegularPrice, $productSalePrice, $productSku, $productStockStatus, $productAttributes);
+			$productAttributeValues = self::product_attributes_text($attributes_product, true);
+			$product_variables = array('{productName}', '{productSlug}', '{productPrice}', '{productRegularPrice}', '{productSalePrice}', '{productSku}', '{productStockStatus}', '{productAttributes}', '{productAttributeValues}');
+			$product_values = array($productName, $productSlug, $productPrice, $productRegularPrice, $productSalePrice, $productSku, $productStockStatus, $productAttributes, $productAttributeValues);
 			$variables = array_merge($variables, $product_variables);
 			$values = array_merge($values, $product_values);
 		}
