@@ -38,7 +38,8 @@ class Buttons
         $circle_button_close_1 = $options['circle-button-close-1'] ?? 'icofont-close';
         $tooltip_enabled = $options['bubble_button_tooltip'] ?? true;
         $tooltip_text = $options['bubble_button_tooltip_text'] ?? 'Need Help? <strong>Chat with us</strong>';
-        $circle_animation = !empty($options['circle-animation']) ? $options['circle-animation'] : '3';
+        // Free has one transition effect, Slide Down ('1'); the other three are Pro (ProFeatures).
+        $circle_animation = '1';
         $button_label = $options['bubble-text'] ?? '';
         $color_settings = $options['color_settings'] ?? '';
         $tooltip_class = '';
@@ -69,8 +70,8 @@ class Buttons
         }
 
         $color_settings = !empty($options['color_settings']) ? $options['color_settings'] : array();
-        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
+        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#0b5a51';
+        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#084840';
         $button_bg = !empty($options['bubble_button_bg']) ? $options['bubble_button_bg'] : array();
         $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : $color_primary;
         $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : $color_secondary;
@@ -176,7 +177,7 @@ class Buttons
                 $message = Helpers::replacement_vars($message);
                 $url = Helpers::whatsAppUrl($whatsapp_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
 
-                $bubble_type .= '<a href="' . esc_attr($url) . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link chat_help_link"></a>';
+                $bubble_type .= '<a href="' . esc_attr($url) . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link chat_help_link" aria-label="' . esc_attr__('Chat on WhatsApp', 'chat-help') . '"></a>';
             }
             if ($tooltip_enabled != 'hide' && !empty($tooltip_text)) {
                 $bubble_type .= '<span class="tooltip_text">' . wp_kses_post($tooltip_text) . '</span>';
@@ -212,7 +213,7 @@ class Buttons
                 $message = isset($options['prefilled_message']) ? $options['prefilled_message'] : '';
                 $message = Helpers::replacement_vars($message);
                 $url = Helpers::whatsAppUrl($whatsapp_number, $type_of_whatsapp, $whatsapp_group, $url_for_desktop, $url_for_mobile, $message);
-                $bubble_type .= '<a href="' . esc_attr($url) . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link chat_help_link"></a>';
+                $bubble_type .= '<a href="' . esc_attr($url) . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link chat_help_link" aria-label="' . esc_attr__('Chat on WhatsApp', 'chat-help') . '"></a>';
             }
             $bubble_type .= '</div>';
             return $bubble_type;

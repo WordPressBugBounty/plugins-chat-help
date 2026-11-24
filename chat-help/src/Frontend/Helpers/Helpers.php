@@ -795,6 +795,10 @@ class Helpers
 			'NOT_PRODUCT' => !self::is_valid_wc_product($product),
 			'LOGGEDIN' => is_user_logged_in(),
 			'NOT_LOGGEDIN' => !is_user_logged_in(),
+			// {SALE_START}…{SALE_END}: only when the product is on sale, so a template can show
+			// the regular and sale prices without printing an empty "sale: " for other products.
+			'SALE' => self::is_valid_wc_product($product) && $product->is_on_sale(),
+			'NOT_SALE' => self::is_valid_wc_product($product) && !$product->is_on_sale(),
 		];
 
 		// 🔄 Loop through each block and apply conditional logic
@@ -830,6 +834,14 @@ class Helpers
 			$productSalePrice = $product->get_sale_price();
 			$productSku = $product->get_sku();
 			$productStockStatus = $product->get_stock_status();
+			// The visitor-facing label ("In stock"), not the internal key ("instock").
+			// wc_get_stock_status_options() is admin-only, so the three core statuses are mapped here.
+			$stock_labels = array(
+				'instock'     => __('In stock', 'chat-help'),
+				'outofstock'  => __('Out of stock', 'chat-help'),
+				'onbackorder' => __('On backorder', 'chat-help'),
+			);
+			$productStockStatus = isset($stock_labels[$productStockStatus]) ? $stock_labels[$productStockStatus] : $productStockStatus;
 			// {productAttributes} follows the variation the shopper picked when the
 			// caller knows it (form submissions send the add-to-cart form's
 			// variation_id); otherwise it lists the product's own attributes.

@@ -227,7 +227,7 @@ class CartPage
                     'id' => 'cart_page_circle_button_icon_native',
                     'type' => 'icon',
                     'title' => esc_html__('Circle Button Native Icon', 'chat-help'),
-                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Choose a native icon from the built-in library of 2000+ icons to display inside the circular chat button.', 'chat-help') . '</div>',
+                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Choose a native icon from the built-in icon library to display inside the circular chat button.', 'chat-help') . '</div>',
                     'default' => 'icofont-brand-whatsapp',
                     'dependency' => array('cart_page_button|cart_page_button_style|cart_page_circle_button_icon', '==|==|==', 'true|1|native', 'any'),
                 ),
@@ -271,7 +271,7 @@ class CartPage
                     'title' => esc_html__('Button Native Icon', 'chat-help'),
                     'title_help' =>
                     '<div class="chat-help-info-label">' .
-                        esc_html__('Choose a native icon from the built-in library of 2000+ icons to display inside the floating chat button.', 'chat-help') .
+                        esc_html__('Choose a native icon from the built-in icon library to display inside the floating chat button.', 'chat-help') .
                         '</div>',
 
                     'default' => 'icofont-brand-whatsapp',

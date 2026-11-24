@@ -79,7 +79,7 @@ class ProductPage
                     // The token list renders as a searchable picker beside the field
                     // (see MessageTemplateField) rather than as a wall of text under it.
                     'variables' => 'global',
-                    'default' => "Hello! I’d like to ask about {productName} (SKU: {productSku}) on {siteTitle}.\n{PRODUCT_START}Current price: {productPrice} (regular: {productRegularPrice}, sale: {productSalePrice})\nStock: {productStockStatus}{PRODUCT_END}",
+                    'default' => "Hello! I’d like to ask about {productName} (SKU: {productSku}) on {siteTitle}.\n{PRODUCT_START}Current price: {productPrice}{SALE_START} (regular: {productRegularPrice}, sale: {productSalePrice}){SALE_END}\nStock: {productStockStatus}{PRODUCT_END}",
                     'dependency' =>  array(
                         array('product_page_button_type_of_whatsapp',   '==', 'number', 'visible'),
                         array('product_page_button', '==', 'true'),
@@ -225,7 +225,7 @@ class ProductPage
                     'id' => 'product_page_circle_button_icon_native',
                     'type' => 'icon',
                     'title' => esc_html__('Circle Button Native Icon', 'chat-help'),
-                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Choose a native icon from the built-in library of 2000+ icons to display inside the circular chat button.', 'chat-help') . '</div>',
+                    'title_help' => '<div class="chat-help-info-label">' . esc_html__('Choose a native icon from the built-in icon library to display inside the circular chat button.', 'chat-help') . '</div>',
                     'default' => 'icofont-brand-whatsapp',
                     'dependency' => array('product_page_button|product_page_button_style|product_page_circle_button_icon', '==|==|==', 'true|1|native', 'any'),
                 ),
@@ -269,7 +269,7 @@ class ProductPage
                     'title' => esc_html__('Button Native Icon', 'chat-help'),
                     'title_help' =>
                     '<div class="chat-help-info-label">' .
-                        esc_html__('Choose a native icon from the built-in library of 2000+ icons to display inside the floating chat button.', 'chat-help') .
+                        esc_html__('Choose a native icon from the built-in icon library to display inside the floating chat button.', 'chat-help') .
                         '</div>',
 
                     'default' => 'icofont-brand-whatsapp',

@@ -22,8 +22,8 @@ $whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
 $whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
 
 $color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
-$primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-$secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#118c7e';
+$primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#0b5a51';
+$secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
 $color = '#fff';
 $hover_color = '#fff';
 $background = $primary;

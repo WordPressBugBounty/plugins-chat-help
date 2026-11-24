@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.7
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.7.5
+Stable tag: 3.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -56,7 +56,7 @@ With Chat Help, you’re not just adding a button—you’re creating a complete
 - **Flexible Button Options**: Insert WhatsApp buttons anywhere with shortcodes, Gutenberg block, or Elementor widget.
 
 ### 🎨 Design & User Experience
-- **Custom Styling**: Change bubble colors, choose from 900+ Google Fonts, adjust padding, margins, and border radius.
+- **Custom Styling**: Change bubble colors, choose from 1,400+ Google Fonts, adjust padding, margins, and border radius.
 - **Icons**: Use different icon sets for bubble, submit, and circle open/close states.
 - **Tooltips**: Enable tooltips and customize text & width.
 - **Animations & Effects**: Smooth transitions and bubble animations for floating icons.
@@ -125,7 +125,7 @@ Pro options are now shown right inside the free admin with a **"PRO" badge** ins
 
 ### 🎨 Design & User Experience
 - **Dark & Night Mode**: Switch to a modern dark theme for a sleek appearance.
-- **Icon Packs**: 2,000+ icons for Send Message, 2,000+ for Circle Button, and 200+ for Close Icon. Custom icon uploads supported.
+- **Icon Packs**: Pick Send Message, Circle Button and Close icons from the built-in icon library, or upload your own.
 - **Transition Effects for Circle Icon**: Choose from 4 smooth animation styles.
 - **Flexible Bubble Positioning**: Place the floating chat bubble on the right or centered.
 - **Responsive Positioning**: Set separate bubble positions and offsets for desktop and mobile.
@@ -253,6 +253,18 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 18. WhatsApp Button widget for Elementor.
 
 == Changelog ==
+= 3.8.0 – 24 November 2026 =
+* Added: {SALE_START}…{SALE_END} and {NOT_SALE_START}…{NOT_SALE_END} message tags. Text between them is sent only when the product is, or isn't, on sale. Both are in the Insert variable menu.
+* Changed: The default colors are now #0b5a51, with #084840 on hover, so white text passes the WCAG AA contrast check. Colors you saved are kept, and existing WhatsApp Button blocks keep their look.
+* Changed: The circle icon's Slide Down transition is free. The other three transitions are now Pro, as the plugin's comparison table has always listed them.
+* Changed: On the Thank You page button, the agent photo, top label, custom icons and custom size are now marked as Pro, like on the other WooCommerce buttons.
+* Privacy: The chat script no longer contacts ipwhois.app. It sent each visitor's IP address there and nothing used the answer.
+* Fixed: {productStockStatus} now sends "In stock", "Out of stock" or "On backorder" instead of WooCommerce's internal key ("instock").
+* Fixed: The default product messages no longer end with an empty "sale: " for products that aren't on sale.
+* Fixed: Advance-style chat links now have an accessible name, and agent photos have an alt attribute, for screen readers.
+* Fixed: The Help page no longer lists leads export as a Pro feature.
+* Improved: Corrected the icon and Google Fonts descriptions in the readme.
+
 = 3.7.5 – 19 November 2026 =
 * Changed: On variable products, {productAttributes} is now empty until the visitor picks a variation. It no longer lists every option, which read as if the visitor was asking about all of them.
 * Added: {productAttributeValues} message variable. It sends only the picked options, without attribute names ("Red, Large" instead of "Color: Red, Size: Large"). Useful when a product has a single attribute.

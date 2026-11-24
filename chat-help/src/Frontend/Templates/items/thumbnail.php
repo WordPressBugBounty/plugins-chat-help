@@ -35,7 +35,7 @@ if ($agent_photo_type === 'default' || empty($agent_photo_url)) {
 } else {
 ?>
     <div class="image">
-        <img src="<?php echo esc_attr($agent_photo_url); ?>" />
+        <img src="<?php echo esc_attr($agent_photo_url); ?>" alt="" />
     </div>
 <?php
 }

@@ -66,7 +66,7 @@
 		"buttonBorder": {
 			"type": "object",
 			"default": {
-				"color": "#118c7e",
+				"color": "#0b5a51",
 				"style": "solid",
 				"width": "0px"
 			}
@@ -79,14 +79,14 @@
 				"width": "0px"
 			}
 		},
-		"bgColor": { "type": "string", "default": "#118c7e" },
-		"bgHoverColor": { "type": "string", "default": "#0b5a51" },
+		"bgColor": { "type": "string", "default": "#0b5a51" },
+		"bgHoverColor": { "type": "string", "default": "#084840" },
 		"textColor": { "type": "string", "default": "#ffffff" },
 		"textHoverColor": { "type": "string", "default": "#ffffff" },
 		"iconBgColor": { "type": "string", "default": "#ffffff" },
 		"iconBgHoverColor": { "type": "string", "default": "#ffffff" },
-		"iconColor": { "type": "string", "default": "#118c7e" },
-		"iconHoverColor": { "type": "string", "default": "#0b5a51" },
+		"iconColor": { "type": "string", "default": "#0b5a51" },
+		"iconHoverColor": { "type": "string", "default": "#084840" },
 		"borderRadius": {
 			"type": "number",
 			"default": 50

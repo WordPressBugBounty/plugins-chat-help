@@ -75,12 +75,12 @@ class WooButton
         $product_page_button_visibility = 'wooCommerce-' . $product_page_button_visibility . '-only';
         $product_page_button_style = isset($ch_wooCommerce['product_page_button_style']) ? $ch_wooCommerce['product_page_button_style'] : '2';
         $color_settings = !empty($options['color_settings']) ? $options['color_settings'] : array();
-        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
+        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#0b5a51';
+        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#084840';
 
         $button_bg = !empty($ch_wooCommerce['product_page_button_bg']) ? $ch_wooCommerce['product_page_button_bg'] : array();
-        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#118c7e';
-        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#0b5a51';
+        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#0b5a51';
+        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#084840';
 
         $button_text = !empty($ch_wooCommerce['product_page_button_text_color']) ? $ch_wooCommerce['product_page_button_text_color'] : array();
         $text_color = !empty($button_text['normal_color']) ? $button_text['normal_color'] : '#ffffff';
@@ -199,12 +199,12 @@ class WooButton
         $shop_page_button_visibility = 'wooCommerce-' . $shop_page_button_visibility . '-only';
         $shop_page_button_style = isset($ch_wooCommerce['shop_page_button_style']) ? $ch_wooCommerce['shop_page_button_style'] : '2';
         $color_settings = !empty($options['color_settings']) ? $options['color_settings'] : array();
-        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
+        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#0b5a51';
+        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#084840';
 
         $button_bg = !empty($ch_wooCommerce['shop_page_button_bg']) ? $ch_wooCommerce['shop_page_button_bg'] : array();
-        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#118c7e';
-        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#0b5a51';
+        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#0b5a51';
+        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#084840';
 
         $button_text = !empty($ch_wooCommerce['shop_page_button_text_color']) ? $ch_wooCommerce['shop_page_button_text_color'] : array();
         $text_color = !empty($button_text['normal_color']) ? $button_text['normal_color'] : '#ffffff';
@@ -324,12 +324,12 @@ class WooButton
         $cart_page_button_visibility = 'wooCommerce-' . $cart_page_button_visibility . '-only';
         $cart_page_button_style = isset($ch_wooCommerce['cart_page_button_style']) ? $ch_wooCommerce['cart_page_button_style'] : '2';
         $color_settings = !empty($options['color_settings']) ? $options['color_settings'] : array();
-        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
+        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#0b5a51';
+        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#084840';
 
         $button_bg = !empty($ch_wooCommerce['cart_page_button_bg']) ? $ch_wooCommerce['cart_page_button_bg'] : array();
-        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#118c7e';
-        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#0b5a51';
+        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#0b5a51';
+        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#084840';
 
         $button_text = !empty($ch_wooCommerce['cart_page_button_text_color']) ? $ch_wooCommerce['cart_page_button_text_color'] : array();
         $text_color = !empty($button_text['normal_color']) ? $button_text['normal_color'] : '#ffffff';
@@ -462,12 +462,12 @@ class WooButton
         $checkout_page_button_visibility = 'wooCommerce-' . $checkout_page_button_visibility . '-only';
         $checkout_page_button_style = isset($ch_wooCommerce['checkout_page_button_style']) ? $ch_wooCommerce['checkout_page_button_style'] : '2';
         $color_settings = !empty($options['color_settings']) ? $options['color_settings'] : array();
-        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
+        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#0b5a51';
+        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#084840';
 
         $button_bg = !empty($ch_wooCommerce['checkout_page_button_bg']) ? $ch_wooCommerce['checkout_page_button_bg'] : array();
-        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#118c7e';
-        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#0b5a51';
+        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#0b5a51';
+        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#084840';
 
         $button_text = !empty($ch_wooCommerce['checkout_page_button_text_color']) ? $ch_wooCommerce['checkout_page_button_text_color'] : array();
         $text_color = !empty($button_text['normal_color']) ? $button_text['normal_color'] : '#ffffff';
@@ -907,12 +907,12 @@ class WooButton
         $thank_you_page_button_visibility = 'wooCommerce-' . $thank_you_page_button_visibility . '-only';
         $thank_you_page_button_style = isset($ch_wooCommerce['thank_you_page_button_style']) ? $ch_wooCommerce['thank_you_page_button_style'] : '2';
         $color_settings = !empty($options['color_settings']) ? $options['color_settings'] : array();
-        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
+        $color_primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#0b5a51';
+        $color_secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#084840';
 
         $button_bg = !empty($ch_wooCommerce['thank_you_page_button_bg']) ? $ch_wooCommerce['thank_you_page_button_bg'] : array();
-        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#118c7e';
-        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#0b5a51';
+        $bg_color = !empty($button_bg['normal_color']) ? $button_bg['normal_color'] : '#0b5a51';
+        $bg_hover_color = !empty($button_bg['hover_color']) ? $button_bg['hover_color'] : '#084840';
 
         $button_text = !empty($ch_wooCommerce['thank_you_page_button_text_color']) ? $ch_wooCommerce['thank_you_page_button_text_color'] : array();
         $text_color = !empty($button_text['normal_color']) ? $button_text['normal_color'] : '#ffffff';
@@ -1062,13 +1062,13 @@ class WooButton
         } else {
             echo '<div style="--wHelp-padding: ' . esc_attr($padding) . '; --wHelp-btn-scale: ' . esc_attr($thank_you_page_button_size) . '; --wHelp-margin: ' . esc_attr($margin) . '; --wHelp-border: ' . esc_attr($border_all . ' ' . $border_style) . '; --wHelp-border-radius: ' . esc_attr($border_radius) . ';--wHelp-background: ' . esc_attr($bg_color) . '; --wHelp-hover-background: ' . esc_attr($bg_hover_color) . '; --wHelp-border-color: ' . esc_attr($border_color) . '; --wHelp-border-hover-color: ' . esc_attr($hover_border_color) . '; --wHelp-text-color: ' . esc_attr($text_color) . '; --wHelp-text-hover-color: ' . esc_attr($text_hover_color) . '; --wHelp-icon-border: ' . esc_attr($icon_border_all . ' ' . $icon_border_style) . '; --wHelp-icon-border-color: ' . esc_attr($icon_border_color) . '; --wHelp-hover-icon-border-color: ' . esc_attr($hover_icon_border_color) . '; --wHelp-icon-border-radius: ' . esc_attr($icon_border_radius) . ';" ' . esc_attr($gaAnalyticsAttr) . ' class="wHelp_button wHelp_button_advance chat_help_analytics thank_you_page_button ' . esc_attr($thank_you_page_button_visibility) . '">';
             if ($agent_photo_url) {
-                echo '<img decoding="async" src="' . esc_url($agent_photo_url) . '">';
+                echo '<img decoding="async" src="' . esc_url($agent_photo_url) . '" alt="">';
             }
             echo '<div class="info-wrapper">
                         <div class="info">' . esc_html($agent_name) . '</div>
                         <div class="wHelp_title">' . esc_html($thank_you_page_button_text) . '</div>
                     </div>
-				    <a href="' . esc_attr($url) . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link"></a>			
+				    <a href="' . esc_attr($url) . '" target="' . esc_attr($open_in_new_tab) . '" class="chat-link" aria-label="' . esc_attr__('Chat on WhatsApp', 'chat-help') . '"></a>			
                 </div>';
         }
         echo '</div>';

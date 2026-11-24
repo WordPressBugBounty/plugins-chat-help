@@ -470,7 +470,7 @@ class FloatingChatFields
                                                 'title' => esc_html__('Submit Button Native Icon', 'chat-help'),
                                                 'title_help' =>
                                                 '<div class="chat-help-info-label">' .
-                                                    esc_html__('Choose a native icon from the built-in library of 2000+ icons to display before the send message button text.', 'chat-help') .
+                                                    esc_html__('Choose a native icon from the built-in icon library to display before the send message button text.', 'chat-help') .
                                                     '</div>',
 
                                                 'default' => 'icofont-brand-whatsapp',
@@ -1304,7 +1304,7 @@ class FloatingChatFields
                                         'title' => esc_html__('Send Message Native Icon', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Choose a native icon from the built-in library of 2000+ icons to display before the send message button text.', 'chat-help') .
+                                            esc_html__('Choose a native icon from the built-in icon library to display before the send message button text.', 'chat-help') .
                                             '</div>',
 
                                         'default' => 'icofont-brand-whatsapp',
@@ -1619,7 +1619,7 @@ class FloatingChatFields
                                         'title' => esc_html__('Circle Button Native Icon', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Choose a native icon from the built-in library of 2000+ icons to display inside the circular chat button.', 'chat-help') .
+                                            esc_html__('Choose a native icon from the built-in icon library to display inside the circular chat button.', 'chat-help') .
                                             '</div>',
 
                                         'default' => 'icofont-brand-whatsapp',
@@ -1747,7 +1747,7 @@ class FloatingChatFields
                                         'title' => esc_html__('Button Native Icon', 'chat-help'),
                                         'title_help' =>
                                         '<div class="chat-help-info-label">' .
-                                            esc_html__('Choose a native icon from the built-in library of 2000+ icons to display inside the floating chat button.', 'chat-help') .
+                                            esc_html__('Choose a native icon from the built-in icon library to display inside the floating chat button.', 'chat-help') .
                                             '</div>',
 
                                         'default' => 'icofont-brand-whatsapp',
@@ -2594,8 +2594,8 @@ class FloatingChatFields
                                         ),
 
                                         'default'   => array(
-                                            'primary' => '#118c7e',
-                                            'secondary' => '#0b5a51',
+                                            'primary' => '#0b5a51',
+                                            'secondary' => '#084840',
                                         ),
                                     ),
                                     array(

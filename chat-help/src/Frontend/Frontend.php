@@ -301,8 +301,8 @@ class Frontend
         $bubble_position_tablet    = isset($options['bubble-position-tablet']) ? $options['bubble-position-tablet'] : 'right_bottom';
 
         $color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
-        $primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-        $secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#118c7e';
+        $primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#0b5a51';
+        $secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
 
         // Chat bubble typography (`chat_help_typography` field) — only
         // `font-family` is enabled on that field, so that's all that's applied.

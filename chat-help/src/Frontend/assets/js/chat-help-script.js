@@ -721,18 +721,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/******************** 12. USER INFORMATION ********************/
-async function userInformation() {
-  const url = "https://ipwhois.app/json/";
-  try {
-    const response = await fetch(url);
-    const result = await response.json();
-    localStorage.setItem("chat_help_user_information", JSON.stringify(result));
-  } catch (error) {
-    console.error(error.message);
-  }
-}
-userInformation();
 
 window.searchUser = searchUser;
 })();

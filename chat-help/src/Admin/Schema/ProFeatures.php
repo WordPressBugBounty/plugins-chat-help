@@ -166,6 +166,8 @@ class ProFeatures
                 'bubble-style' => array('dark', 'night'),
                 'button_size' => array('custom'),
                 'chat_layout' => array('multi', 'multi_agent_form'),
+                // Owner decision 2026-11-22: Free has one transition effect (Slide Down), Pro all four.
+                'circle-animation' => array('2', '3', '4'),
                 'circle-button-close' => array('custom', 'native'),
                 'circle-button-close-1' => array('custom', 'native'),
                 'circle-button-icon' => array('custom', 'native'),
@@ -211,6 +213,14 @@ class ProFeatures
                 'shop_page_button_top_label',
                 'shop_page_circle_button_icon_custom',
                 'shop_page_circle_button_icon_native',
+                'thank_you_page_agent_photo',
+                'thank_you_page_agent_photo_type',
+                'thank_you_page_button_icon_custom',
+                'thank_you_page_button_icon_native',
+                'thank_you_page_button_size_custom',
+                'thank_you_page_button_top_label',
+                'thank_you_page_circle_button_icon_custom',
+                'thank_you_page_circle_button_icon_native',
             ),
             'options' => array(
                 'cart_page_button_icon_open' => array('custom', 'native'),

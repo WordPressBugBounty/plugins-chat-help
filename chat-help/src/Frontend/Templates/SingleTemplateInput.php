@@ -74,8 +74,8 @@ class SingleTemplateInput
 		$whatsapp_number = isset($options['opt-number']) ? $options['opt-number'] : '';
 		$whatsapp_group = isset($options['opt-group']) ? $options['opt-group'] : '';
 		$color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
-		$primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-		$secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#118c7e';
+		$primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#0b5a51';
+		$secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
 		$send_button_color = isset($options['send_button_color']) ? $options['send_button_color'] : '';
 		$color = !empty($send_button_color['color']) ? $send_button_color['color'] : '#fff';
 		$hover_color = !empty($send_button_color['hover_color']) ? $send_button_color['hover_color'] : '#fff';

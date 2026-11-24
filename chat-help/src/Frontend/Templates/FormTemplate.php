@@ -54,11 +54,11 @@ class FormTemplate
 		$agent_subtitle = isset($options['agent-subtitle']) ? $options['agent-subtitle'] : 'Typically replies within minutes';
 		$offline_agent_subtitle = !empty($options['offline_agent_subtitle']) ? $options['offline_agent_subtitle'] : $agent_subtitle;
 		$color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
-		$primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-		$secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
+		$primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#0b5a51';
+		$secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#084840';
 		$color_settings = isset($options['color_settings']) ? $options['color_settings'] : '';
-		$primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#118c7e';
-		$secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#0b5a51';
+		$primary = !empty($color_settings['primary']) ? $color_settings['primary'] : '#0b5a51';
+		$secondary = !empty($color_settings['secondary']) ? $color_settings['secondary'] : '#084840';
 		$bubble_visibility = isset($options['bubble-visibility']) ? $options['bubble-visibility'] : 'everywhere';
 		$floating_button_style = isset($options['opt-button-style']) ? $options['opt-button-style'] : '1';
 

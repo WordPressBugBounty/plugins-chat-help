@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-20 02:41+0000\n"
+"POT-Creation-Date: 2026-11-24 08:47+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -853,7 +853,7 @@ msgid "Circle Button Native Icon"
 msgstr ""
 
 #: src/Admin/Views/CartPage.php:230, src/Admin/Views/CheckoutPage.php:228, src/Admin/Views/ProductPage.php:228, src/Admin/Views/ShopPage.php:224, src/Admin/Views/ThankYouPage.php:320, src/Admin/Views/Fields/FloatingChatFields.php:1622
-msgid "Choose a native icon from the built-in library of 2000+ icons to display inside the circular chat button."
+msgid "Choose a native icon from the built-in icon library to display inside the circular chat button."
 msgstr ""
 
 #: src/Admin/Views/CartPage.php:237, src/Admin/Views/CheckoutPage.php:235, src/Admin/Views/ProductPage.php:235, src/Admin/Views/ShopPage.php:231, src/Admin/Views/ThankYouPage.php:327, src/Admin/Views/Fields/FloatingChatFields.php:1631
@@ -881,7 +881,7 @@ msgid "Button Native Icon"
 msgstr ""
 
 #: src/Admin/Views/CartPage.php:274, src/Admin/Views/CheckoutPage.php:272, src/Admin/Views/ProductPage.php:272, src/Admin/Views/ShopPage.php:268, src/Admin/Views/ThankYouPage.php:364, src/Admin/Views/Fields/FloatingChatFields.php:1750
-msgid "Choose a native icon from the built-in library of 2000+ icons to display inside the floating chat button."
+msgid "Choose a native icon from the built-in icon library to display inside the floating chat button."
 msgstr ""
 
 #: src/Admin/Views/CartPage.php:283, src/Admin/Views/CheckoutPage.php:281, src/Admin/Views/ProductPage.php:281, src/Admin/Views/ShopPage.php:277, src/Admin/Views/ThankYouPage.php:373, src/Admin/Views/Fields/FloatingChatFields.php:1759
@@ -4045,6 +4045,22 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
+#: src/Frontend/Helpers/Helpers.php:840
+msgid "In stock"
+msgstr ""
+
+#: src/Frontend/Helpers/Helpers.php:841
+msgid "Out of stock"
+msgstr ""
+
+#: src/Frontend/Helpers/Helpers.php:842
+msgid "On backorder"
+msgstr ""
+
+#: src/Frontend/Shortcode/CustomButtonsTemplates.php:75, src/Frontend/Templates/WooButton.php:1071, src/Frontend/Templates/items/Buttons.php:216, src/Frontend/Templates/items/Buttons.php:180
+msgid "Chat on WhatsApp"
+msgstr ""
+
 #: src/Frontend/Shortcode/CustomShortcode.php:59
 msgid "John / Technical support"
 msgstr ""
@@ -4214,7 +4230,7 @@ msgid "Submit Button Native Icon"
 msgstr ""
 
 #: src/Admin/Views/Fields/FloatingChatFields.php:473, src/Admin/Views/Fields/FloatingChatFields.php:1307
-msgid "Choose a native icon from the built-in library of 2000+ icons to display before the send message button text."
+msgid "Choose a native icon from the built-in icon library to display before the send message button text."
 msgstr ""
 
 #: src/Admin/Views/Fields/FloatingChatFields.php:482
