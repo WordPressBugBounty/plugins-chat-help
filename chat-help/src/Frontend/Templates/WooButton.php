@@ -1021,18 +1021,13 @@ class WooButton
 
         global $wp;
         // Check the order with enhanced security validation
-        $order_id               = (int) $wp->query_vars['order-received'];
+        $order_id               = (int) ($wp->query_vars['order-received'] ?? 0);
         if (!$order_id) {
             return '';
         }
 
-        // Validate order access (if security enhancements are loaded)
-        if (function_exists('wa_order_validate_order_access') && !wa_order_validate_order_access($order_id)) {
-            return '';
-        }
-
         $order = wc_get_order($order_id);
-        if (!$order) {
+        if (!Helpers::can_view_order($order)) {
             return '';
         }
 

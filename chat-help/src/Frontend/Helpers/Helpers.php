@@ -538,6 +538,30 @@ class Helpers
 		return implode("\n", $lines);
 	}
 
+	/**
+	 * Whether the current visitor may see this order's details: the order key in the URL must match and, for an
+	 * order placed by a registered customer, that customer must be logged in. Shop managers always may.
+	 *
+	 * @param \WC_Order|false $order Order.
+	 * @return bool
+	 */
+	public static function can_view_order($order)
+	{
+		if (!$order instanceof \WC_Order) {
+			return false;
+		}
+		if (current_user_can('manage_woocommerce')) {
+			return true;
+		}
+		$key = isset($_GET['key']) ? sanitize_text_field(wp_unslash($_GET['key'])) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ('' === $key || !hash_equals((string) $order->get_order_key(), $key)) {
+			return false;
+		}
+		$customer_id = (int) $order->get_user_id();
+
+		return !$customer_id || get_current_user_id() === $customer_id;
+	}
+
 	private static function order_info_whatsapp_info()
 	{
 		$ch_wooCommerce = get_option('ch_wooCommerce');
@@ -568,13 +592,8 @@ class Helpers
 			return '';
 		}
 
-		// Validate order access if function exists
-		if (function_exists('wa_order_validate_order_access') && !wa_order_validate_order_access($order_id)) {
-			return '';
-		}
-
 		$order = wc_get_order($order_id);
-		if (!$order) {
+		if (!self::can_view_order($order)) {
 			return '';
 		}
 

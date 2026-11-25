@@ -4,7 +4,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, click to chat, woocommerce wha
 Requires at least: 5.7
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.8.0
+Stable tag: 3.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Add a WhatsApp chat button, WooCommerce WhatsApp order button & click-to-chat floating widget. Capture leads & convert visitors via chat.
@@ -253,6 +253,14 @@ Yes. Multiple agents are supported in the **[premium version](https://wpchathelp
 18. WhatsApp Button widget for Elementor.
 
 == Changelog ==
+= 3.8.2 – 25 November 2026 =
+* Security: The Thank You Page button shows order details only with the order key, and for a registered customer's order only to that customer. Please update if you use this button.
+* Fixed: In block themes, the Thank You Page text and button were printed above the page header. They are now inside the order confirmation.
+
+= 3.8.1 – 25 November 2026 =
+* Improved: The icon font now loads with font-display: swap, so text and the page appear before the icons have loaded.
+* Fixed: Two help texts in the settings ("Set your button button label color" and "Google Analytics..").
+
 = 3.8.0 – 24 November 2026 =
 * Added: {SALE_START}…{SALE_END} and {NOT_SALE_START}…{NOT_SALE_END} message tags. Text between them is sent only when the product is, or isn't, on sale. Both are in the Insert variable menu.
 * Changed: The default colors are now #0b5a51, with #084840 on hover, so white text passes the WCAG AA contrast check. Colors you saved are kept, and existing WhatsApp Button blocks keep their look.

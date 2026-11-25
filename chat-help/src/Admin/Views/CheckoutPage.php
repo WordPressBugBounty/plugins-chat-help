@@ -395,7 +395,7 @@ class CheckoutPage
                     'type'      => 'color_group',
                     'title' => esc_html__('Button Label Color', 'chat-help'),
                     'title_help' => '<div class="chat-help-info-label">' .
-                        esc_html__('Set your button button label color.', 'chat-help') .
+                        esc_html__('Set your button label color.', 'chat-help') .
                         '</div>',
                     'options' => array(
                         'normal_color'   => esc_html__('Normal Color', 'chat-help'),

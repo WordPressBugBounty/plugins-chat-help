@@ -61,7 +61,7 @@ class Analytics
                         'title'   => esc_html__('Event Name', 'chat-help'),
                         'default' => esc_html__('Chat Help', 'chat-help'),
                         'title_help' =>
-                        '<div class="chat-help-info-label">' . esc_html__('Set a custom event name for tracking in Google Analytics..', 'chat-help') . '</div>',
+                        '<div class="chat-help-info-label">' . esc_html__('Set a custom event name for tracking in Google Analytics.', 'chat-help') . '</div>',
                         'dependency' =>  array('google_analytics',   '==', 'true'),
                     ),
                     array(

@@ -451,7 +451,35 @@ class WooCommerce
 
         if ($thank_you_page_button) {
             if ('number' === $type_of_whatsapp_woo && !empty($thank_you_page_number) || ('group' === $type_of_whatsapp_woo && !empty($thank_you_page_group))) {
-                add_action('woocommerce_thankyou_order_received_text', array($wooButton, 'thank_you_page_button'), 10, 2);
+                // The text filter runs while the order confirmation block is being prepared, before the page header is printed in
+                // block themes: there the button is added to the block's own HTML instead of being printed.
+                $block = 'woocommerce/order-confirmation-status';
+                $state = (object) array('in_block' => false, 'html' => '');
+                add_filter('pre_render_block', function ($pre, $parsed) use ($state, $block) {
+                    if (null === $pre && isset($parsed['blockName']) && $block === $parsed['blockName']) {
+                        $state->in_block = true;
+                        $state->html = '';
+                    }
+                    return $pre;
+                }, 999, 2);
+                add_filter('woocommerce_thankyou_order_received_text', function ($text, $order = null) use ($wooButton, $state) {
+                    ob_start();
+                    $wooButton->thank_you_page_button();
+                    $html = ob_get_clean();
+                    if ($state->in_block) {
+                        // No order: the visitor has not been verified yet, so no order details.
+                        $state->html = $order ? $html : '';
+                        return $text;
+                    }
+                    echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in WooButton.
+                    return '';
+                }, 10, 2);
+                add_filter('render_block_' . $block, function ($content) use ($state) {
+                    $content .= $state->html;
+                    $state->in_block = false;
+                    $state->html = '';
+                    return $content;
+                });
             }
         }
     }
